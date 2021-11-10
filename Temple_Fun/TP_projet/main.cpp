@@ -15,7 +15,7 @@ using namespace rendering;
 
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
-    SDLWindowManager windowManager(800, 600, "GLImac");
+    SDLWindowManager windowManager(800, 600, "Temple_Fun");
 
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
 
-    Sphere sphere(1,20,20);
+    //Sphere sphere(1,20,20);
     Cube cube(2);
 
     TrackballCamera Camera;
@@ -69,12 +69,23 @@ int main(int argc, char** argv) {
     //On débind le vbo de la cible pour éviter de le remodifier
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
+    //Création de l'IBO avec les indices:
+    GLuint ibo;
+    glGenBuffers(1, &ibo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, cube.getVertexCount()*sizeof(int), cube.getIndexPointer(), GL_STATIC_DRAW);
+
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
     //Création du VAO
     GLuint vao;
     glGenVertexArrays(1, &vao);
 
     //Binding du VAO
     glBindVertexArray(vao);
+
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
 
     //Dire à OpenGL qu'on utilise le VAO
     const GLuint VERTEX_ATTR_POSITION = 0;
@@ -132,7 +143,7 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(ViewMatrix));
         glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
 
-        glDrawArrays(GL_TRIANGLES, 0, cube.getVertexCount());
+        glDrawElements(GL_TRIANGLES, cube.getVertexCount(), GL_UNSIGNED_INT,0);
 
         glBindVertexArray(0);
         

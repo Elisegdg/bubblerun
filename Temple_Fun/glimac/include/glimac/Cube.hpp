@@ -13,10 +13,12 @@ class Cube {
 
 private:
     std::vector<ShapeVertex> m_Vertices;
+    std::vector<int> m_index_ibo;
     GLsizei m_nVertexCount;
 
     // Alloue et construit les données (implantation dans le .cpp)
     void build(const float &size);
+    
 
 public:
     // Constructeur: alloue le tableau de données et construit les attributs des vertex
@@ -33,6 +35,7 @@ public:
     // Renvoie le pointeur vers les données
     const ShapeVertex* getDataPointer() const;
     GLsizei getVertexCount() const;
+    const int* getIndexPointer() const;
 
 };
     
