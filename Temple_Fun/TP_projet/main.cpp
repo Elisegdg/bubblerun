@@ -6,10 +6,12 @@
 #include <glimac/glm.hpp>
 #include <glimac/Image.hpp>
 #include <glimac/Sphere.hpp>
+#include <glimac/Cube.hpp>
 #include <glimac/Geometry.hpp>
 #include <rendering/TrackballCamera.hpp>
 
 using namespace glimac;
+using namespace rendering;
 
 int main(int argc, char** argv) {
     // Initialize SDL and open a window
@@ -30,6 +32,7 @@ int main(int argc, char** argv) {
      *********************************/
 
     Sphere sphere(1,20,20);
+    Cube cube(2);
 
     TrackballCamera Camera;
 
@@ -60,8 +63,9 @@ int main(int argc, char** argv) {
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
     //On envoie les données à la CG
-    glBufferData(GL_ARRAY_BUFFER, sphere.getVertexCount()*sizeof(ShapeVertex), sphere.getDataPointer(), GL_STATIC_DRAW);
-
+    //Sphère
+    //glBufferData(GL_ARRAY_BUFFER, sphere.getVertexCount()*sizeof(ShapeVertex), sphere.getDataPointer(), GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, cube.getVertexCount()*sizeof(ShapeVertex), cube.getDataPointer(), GL_STATIC_DRAW);
     //On débind le vbo de la cible pour éviter de le remodifier
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -109,8 +113,10 @@ int main(int argc, char** argv) {
 
         //Ici on récupère les positions de la souris
         glm::ivec2 mousePos = windowManager.getMousePosition();
-        if(windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT)) Camera.moveFront(0.01);
-        else if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)) Camera.moveFront(-0.01);
+        if(windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT)) {
+            Camera.moveFront(0.03);
+        }
+        else if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)) Camera.moveFront(-0.03);
 
         Camera.rotateLeft( mousePos.y );
         Camera.rotateUp( mousePos.x );
@@ -126,7 +132,7 @@ int main(int argc, char** argv) {
         glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(ViewMatrix));
         glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
 
-        glDrawArrays(GL_TRIANGLES, 0, sphere.getVertexCount());
+        glDrawArrays(GL_TRIANGLES, 0, cube.getVertexCount());
 
         glBindVertexArray(0);
         

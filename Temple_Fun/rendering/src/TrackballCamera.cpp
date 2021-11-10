@@ -1,8 +1,8 @@
-#include "glimac/TrackballCamera.hpp"
+#include <rendering/TrackballCamera.hpp>
 #include <iostream>
 #include <math.h>
 
-namespace glimac {
+namespace rendering {
 
     void TrackballCamera::moveFront(float delta){
         m_fDistance += delta;
@@ -24,6 +24,10 @@ namespace glimac {
 
         return ViewMatrix;
 
+    }
+
+    float TrackballCamera::getDistance(){
+        return 3.;
     }
 
 
