@@ -9,6 +9,7 @@
 #include <glimac/Cube.hpp>
 #include <glimac/Geometry.hpp>
 #include <rendering/TrackballCamera.hpp>
+#include <rendering/EyesCamera.hpp>
 
 using namespace glimac;
 using namespace rendering;
@@ -34,7 +35,7 @@ int main(int argc, char** argv) {
     //Sphere sphere(1,20,20);
     Cube cube(2);
 
-    TrackballCamera Camera;
+    EyesCamera camera;
 
     //Chargement des shaders
     FilePath applicationPath(argv[0]);
@@ -112,7 +113,7 @@ int main(int argc, char** argv) {
     bool done = false;
     while(!done) {
         
-        glm::mat4 ViewMatrix = Camera.getViewMatrix();
+        glm::mat4 ViewMatrix = camera.getViewMatrix();
         
         // Event loop:
         SDL_Event e;
@@ -122,15 +123,8 @@ int main(int argc, char** argv) {
             }
         }
 
-        //Ici on récupère les positions de la souris
-        glm::ivec2 mousePos = windowManager.getMousePosition();
-        if(windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT)) {
-            Camera.moveFront(0.03);
-        }
-        else if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)) Camera.moveFront(-0.03);
 
-        Camera.rotateLeft( mousePos.y );
-        Camera.rotateUp( mousePos.x );
+
 
         /*********************************
          * HERE SHOULD COME THE RENDERING CODE
@@ -138,6 +132,37 @@ int main(int argc, char** argv) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
         glBindVertexArray(vao);
+
+                // Event TrackballCamera
+        /*
+        glm::ivec2 mousePos = windowManager.getMousePosition();
+        if(windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT)) {
+            camera.moveFront(0.03);
+        }
+        else if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)) camera.moveFront(-0.03);
+
+        camera.rotateLeft( mousePos.y );
+        camera.rotateUp( mousePos.x );*/
+
+        //Event EyesCamera
+
+        if(windowManager.isKeyPressed(SDLK_s)) camera.moveFront(-0.1);
+        if(windowManager.isKeyPressed(SDLK_z)) camera.moveFront(0.1);
+        if(windowManager.isKeyPressed(SDLK_q)) camera.moveLeft(0.1);
+        if(windowManager.isKeyPressed(SDLK_d)) camera.moveLeft(-0.1);
+        if(windowManager.isKeyPressed(SDLK_i)) camera.rotateLeft(5.0);
+        if(windowManager.isKeyPressed(SDLK_k)) camera.rotateUp(5.0);
+        
+        glm::ivec2 mousePos = glm::ivec2(0.0);
+        if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)){
+            mousePos = windowManager.getMousePosition();
+            float mousePosX = mousePos.x/800.0f - 0.5;
+            float mousePosY = mousePos.y/600.0f - 0.5;
+
+            camera.rotateLeft(-2*mousePosX);
+            camera.rotateUp(-2*mousePosY);
+
+        }
 
         glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * ViewMatrix));
         glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(ViewMatrix));

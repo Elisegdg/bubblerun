@@ -1,5 +1,4 @@
 #include <rendering/TrackballCamera.hpp>
-#include <iostream>
 #include <math.h>
 
 namespace rendering {
@@ -9,11 +8,11 @@ namespace rendering {
     }
 
     void TrackballCamera::rotateLeft(float degrees){
-        m_fAngleX = degrees / 180 * M_PI;
+        m_fAngleX = glm::radians(degrees);
     }
 
     void TrackballCamera::rotateUp(float degrees){
-        m_fAngleY = degrees / 180 * M_PI;
+        m_fAngleY = glm::radians(degrees);
     }
 
     glm::mat4 TrackballCamera::getViewMatrix() const{
@@ -27,7 +26,7 @@ namespace rendering {
     }
 
     float TrackballCamera::getDistance(){
-        return 3.;
+        return m_fDistance;
     }
 
 

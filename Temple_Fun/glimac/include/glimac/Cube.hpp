@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _CUBE_HPP
+#define _CUBE_HPP
 
 #include <vector>
 
@@ -40,3 +41,5 @@ public:
 };
     
 }
+
+#endif

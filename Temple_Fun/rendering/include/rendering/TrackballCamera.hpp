@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _TRACKBALLCAMERA_HPP
+#define _TRACKBALLCAMERA_HPP
+
 #include "glimac/glm.hpp"
 
 namespace rendering {
@@ -36,3 +38,5 @@ public:
 };
 
 }
+
+#endif
