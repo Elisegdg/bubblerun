@@ -1,5 +1,7 @@
 #include <rendering/TrackballCamera.hpp>
 #include <math.h>
+#include <glimac/SDLWindowManager.hpp>
+
 
 namespace rendering {
 
@@ -7,6 +9,9 @@ namespace rendering {
         m_fDistance += delta;
     }
 
+    void TrackballCamera::moveLeft(float delta){
+        return;
+    }
     void TrackballCamera::rotateLeft(float degrees){
         m_fAngleX = glm::radians(degrees);
     }
@@ -29,6 +34,16 @@ namespace rendering {
         return m_fDistance;
     }
 
+    void TrackballCamera::eventCamera(SDLWindowManager windowManager){
+        glm::ivec2 mousePos = windowManager.getMousePosition();
+        if(windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT)) {
+            moveFront(0.03);
+        }
+        else if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)) moveFront(-0.03);
+
+        rotateLeft( mousePos.y );
+        rotateUp( mousePos.x );
+    }
 
 
 

@@ -2,16 +2,12 @@
 #define _EYESCAMERA_HPP
 
 #include "glimac/glm.hpp"
-
-
-#pragma once
-#include "glimac/glm.hpp"
-#include <math.h>
-
+#include "rendering/Camera.hpp"
+#include <glimac/SDLWindowManager.hpp>
 
 namespace rendering {
 
-class EyesCamera{
+class EyesCamera : public Camera{
 private:
     // Attributs
     glm::vec3 m_Position;
@@ -29,18 +25,25 @@ public:
         m_Position = glm::vec3(0.,0.,0.);
 	    m_fPhi = M_PI;
         m_fTheta = 0.;
+        m_cameraType = 1;
 	    computeDirectionVectors();
     }
+
+    //Destructor
+    ~EyesCamera(){}
 
     // Methods
     void moveLeft(float t);
     void moveFront(float t);
     void rotateLeft(float degrees);
     void rotateUp(float degrees);
+    glm::mat4 getViewMatrix() const;
+    void eventCamera(SDLWindowManager windowManager);
     
     void computeDirectionVectors();
     
-    glm::mat4 getViewMatrix() const;
+
+
 
 };
 

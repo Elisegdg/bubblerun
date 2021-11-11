@@ -1,7 +1,6 @@
 #include <rendering/EyesCamera.hpp>
-
 #include <math.h>
-
+#include <glimac/SDLWindowManager.hpp>
 
 namespace rendering {
 
@@ -35,6 +34,26 @@ namespace rendering {
     glm::mat4 EyesCamera::getViewMatrix() const{
         glm::mat4 ViewMatrix = glm::lookAt(m_Position, m_Position + m_FrontVector, m_UpVector);        
         return ViewMatrix;
+    }
+
+    void EyesCamera::eventCamera(SDLWindowManager windowManager){
+        if(windowManager.isKeyPressed(SDLK_s)) moveFront(-0.1);
+        if(windowManager.isKeyPressed(SDLK_z)) moveFront(0.1);
+        if(windowManager.isKeyPressed(SDLK_q)) moveLeft(0.1);
+        if(windowManager.isKeyPressed(SDLK_d)) moveLeft(-0.1);
+        if(windowManager.isKeyPressed(SDLK_i)) rotateLeft(5.0);
+        if(windowManager.isKeyPressed(SDLK_k)) rotateUp(5.0);
+        
+        glm::ivec2 mousePos = glm::ivec2(0.0);
+        if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)){
+            mousePos = windowManager.getMousePosition();
+            float mousePosX = mousePos.x/800.0f - 0.5;
+            float mousePosY = mousePos.y/600.0f - 0.5;
+
+            rotateLeft(-2*mousePosX);
+            rotateUp(-2*mousePosY);
+
+        }
     }
 
 

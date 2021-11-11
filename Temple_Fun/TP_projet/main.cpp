@@ -8,6 +8,7 @@
 #include <glimac/Sphere.hpp>
 #include <glimac/Cube.hpp>
 #include <glimac/Geometry.hpp>
+#include <rendering/Camera.hpp>
 #include <rendering/TrackballCamera.hpp>
 #include <rendering/EyesCamera.hpp>
 
@@ -35,7 +36,12 @@ int main(int argc, char** argv) {
     //Sphere sphere(1,20,20);
     Cube cube(2);
 
-    EyesCamera camera;
+    //EyesCamera camera;
+    TrackballCamera trackball_camera;
+    EyesCamera eyes_camera;
+    Camera* camera = &trackball_camera;
+
+
 
     //Chargement des shaders
     FilePath applicationPath(argv[0]);
@@ -113,7 +119,7 @@ int main(int argc, char** argv) {
     bool done = false;
     while(!done) {
         
-        glm::mat4 ViewMatrix = camera.getViewMatrix();
+        glm::mat4 ViewMatrix = camera->getViewMatrix();
         
         // Event loop:
         SDL_Event e;
@@ -121,6 +127,14 @@ int main(int argc, char** argv) {
             if(e.type == SDL_QUIT) {
                 done = true; // Leave the loop after this iteration
             }
+            if(windowManager.isKeyPressed(SDLK_c)){
+            if (camera->getCameraType() == 0){
+                camera = &eyes_camera;
+            }
+            else{
+                camera = &trackball_camera;
+            }
+        }
         }
 
 
@@ -133,36 +147,45 @@ int main(int argc, char** argv) {
         
         glBindVertexArray(vao);
 
-                // Event TrackballCamera
-        /*
-        glm::ivec2 mousePos = windowManager.getMousePosition();
-        if(windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT)) {
-            camera.moveFront(0.03);
-        }
-        else if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)) camera.moveFront(-0.03);
-
-        camera.rotateLeft( mousePos.y );
-        camera.rotateUp( mousePos.x );*/
-
-        //Event EyesCamera
-
-        if(windowManager.isKeyPressed(SDLK_s)) camera.moveFront(-0.1);
-        if(windowManager.isKeyPressed(SDLK_z)) camera.moveFront(0.1);
-        if(windowManager.isKeyPressed(SDLK_q)) camera.moveLeft(0.1);
-        if(windowManager.isKeyPressed(SDLK_d)) camera.moveLeft(-0.1);
-        if(windowManager.isKeyPressed(SDLK_i)) camera.rotateLeft(5.0);
-        if(windowManager.isKeyPressed(SDLK_k)) camera.rotateUp(5.0);
         
-        glm::ivec2 mousePos = glm::ivec2(0.0);
-        if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)){
-            mousePos = windowManager.getMousePosition();
-            float mousePosX = mousePos.x/800.0f - 0.5;
-            float mousePosY = mousePos.y/600.0f - 0.5;
 
-            camera.rotateLeft(-2*mousePosX);
-            camera.rotateUp(-2*mousePosY);
+        
+        glm::ivec2 mousePos_trackball = windowManager.getMousePosition();
+        glm::ivec2 mousePos_eyes = glm::ivec2(0.0);
 
+        // Event TrackBallCamera
+        if(camera->getCameraType() == 0) {
+            if(windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT)) {
+            trackball_camera.moveFront(0.03);
+            }
+            else if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)) trackball_camera.moveFront(-0.03);
+
+            trackball_camera.rotateLeft( mousePos_trackball.y );
+            trackball_camera.rotateUp( mousePos_trackball.x );
         }
+        
+        //Event EyesCamera
+        else {
+            if(windowManager.isKeyPressed(SDLK_s)) camera->moveFront(-0.1);
+            if(windowManager.isKeyPressed(SDLK_z)) camera->moveFront(0.1);
+            if(windowManager.isKeyPressed(SDLK_q)) camera->moveLeft(0.1);
+            if(windowManager.isKeyPressed(SDLK_d)) camera->moveLeft(-0.1);
+            if(windowManager.isKeyPressed(SDLK_i)) camera->rotateLeft(5.0);
+            if(windowManager.isKeyPressed(SDLK_k)) camera->rotateUp(5.0);
+            
+            if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)){
+                mousePos_eyes = windowManager.getMousePosition();
+                float mousePosX = mousePos_eyes.x/800.0f - 0.5;
+                float mousePosY = mousePos_eyes.y/600.0f - 0.5;
+
+                camera->rotateLeft(-2*mousePosX);
+                camera->rotateUp(-2*mousePosY);
+
+            }
+        }
+        
+        
+        
 
         glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * ViewMatrix));
         glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(ViewMatrix));
