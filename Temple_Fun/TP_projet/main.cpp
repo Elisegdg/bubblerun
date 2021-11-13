@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
     //EyesCamera camera;
     TrackballCamera trackball_camera;
     EyesCamera eyes_camera;
-    Camera* camera = &trackball_camera;
+    Camera* camera = &eyes_camera;
 
 
 
@@ -58,9 +58,7 @@ int main(int argc, char** argv) {
 
     glEnable(GL_DEPTH_TEST);
 
-    glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 800.f/600.f, 0.1f, 100.f);
-    glm::mat4 MVMatrix = glm::translate(glm::mat4(1), glm::vec3(0,0,-5));
-    glm::mat4 NormalMatrix = glm::transpose(glm::inverse(MVMatrix));    
+    
 
     //Création du VBO
     GLuint vbo;
@@ -118,8 +116,8 @@ int main(int argc, char** argv) {
     // Application loop:
     bool done = false;
     while(!done) {
-        
-        glm::mat4 ViewMatrix = camera->getViewMatrix();
+
+        glm::mat4 ViewMatrix = camera->getViewMatrix();      
         
         // Event loop:
         SDL_Event e;
@@ -128,17 +126,14 @@ int main(int argc, char** argv) {
                 done = true; // Leave the loop after this iteration
             }
             if(windowManager.isKeyPressed(SDLK_c)){
-            if (camera->getCameraType() == 0){
-                camera = &eyes_camera;
-            }
-            else{
-                camera = &trackball_camera;
+                if (camera->getCameraType() == 0){
+                    camera = &eyes_camera;
+                }
+                else{
+                    camera = &trackball_camera;
+                }
             }
         }
-        }
-
-
-
 
         /*********************************
          * HERE SHOULD COME THE RENDERING CODE
@@ -147,9 +142,8 @@ int main(int argc, char** argv) {
         
         glBindVertexArray(vao);
 
-        
+        // Management of the events
 
-        
         glm::ivec2 mousePos_trackball = windowManager.getMousePosition();
         glm::ivec2 mousePos_eyes = glm::ivec2(0.0);
 
@@ -170,28 +164,52 @@ int main(int argc, char** argv) {
             if(windowManager.isKeyPressed(SDLK_z)) camera->moveFront(0.1);
             if(windowManager.isKeyPressed(SDLK_q)) camera->moveLeft(0.1);
             if(windowManager.isKeyPressed(SDLK_d)) camera->moveLeft(-0.1);
-            if(windowManager.isKeyPressed(SDLK_i)) camera->rotateLeft(5.0);
-            if(windowManager.isKeyPressed(SDLK_k)) camera->rotateUp(5.0);
+            if(windowManager.isKeyPressed(SDLK_i)) camera->rotateLeft(0.2);
+            if(windowManager.isKeyPressed(SDLK_k)) camera->rotateUp(0.2);
             
             if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)){
                 mousePos_eyes = windowManager.getMousePosition();
                 float mousePosX = mousePos_eyes.x/800.0f - 0.5;
                 float mousePosY = mousePos_eyes.y/600.0f - 0.5;
+                
+                camera->rotateLeft(-3*mousePosX);
+                std::cout<<"Theta : "<<eyes_camera.getTheta()<<std::endl;
+                std::cout<<"degrees:"<<(-3*mousePosY)<<std::endl;
 
-                camera->rotateLeft(-2*mousePosX);
-                camera->rotateUp(-2*mousePosY);
+                camera->rotateUp(-3*mousePosY);
 
             }
         }
         
+        // Drawing of the hero as a cube
         
+        glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 800.f/600.f, 0.1f, 100.f);
+        ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0, 1.2, 0.));
+        ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));
+        glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix)); 
         
-
         glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * ViewMatrix));
         glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(ViewMatrix));
         glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
 
         glDrawElements(GL_TRIANGLES, cube.getVertexCount(), GL_UNSIGNED_INT,0);
+
+        // Drawing of the path
+        for (int i = -1 ; i <= 1; i ++){
+            for (int j = 0 ; j <= 25 ; j ++) {
+                glm::mat4 newViewMatrix = camera->getViewMatrix();
+                newViewMatrix = glm::translate(newViewMatrix, glm::vec3(2*i, 0, 2*j));
+                newViewMatrix = glm::scale(newViewMatrix, glm::vec3(1, 0.2, 1));
+                glm::mat4 newNormalMatrix = glm::transpose(glm::inverse(newViewMatrix));    
+                newViewMatrix = glm::translate(newViewMatrix, glm::vec3(0, 0, -3*windowManager.getTime()));
+                glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * newViewMatrix));
+                glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(newViewMatrix));
+                glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(newNormalMatrix));
+
+                glDrawElements(GL_TRIANGLES, cube.getVertexCount(), GL_UNSIGNED_INT,0); 
+            }
+            
+        }    
 
         glBindVertexArray(0);
         

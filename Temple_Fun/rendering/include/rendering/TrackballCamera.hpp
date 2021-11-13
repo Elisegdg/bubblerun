@@ -22,7 +22,7 @@ private:
 
 public:
     // Constructor
-    TrackballCamera(float distance = 5.f, float angleX = 0.f, float angleY = 0.f)
+    TrackballCamera(float distance = 10.f, float angleX = 0.f, float angleY = 0.f)
 	: m_fDistance(distance), m_fAngleX(angleX), m_fAngleY(angleY) 
     {
         m_cameraType = 0;
@@ -41,7 +41,6 @@ public:
     float getDistance();
 
 };
-
 }
 
 #endif

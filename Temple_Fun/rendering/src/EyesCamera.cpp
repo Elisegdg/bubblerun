@@ -22,12 +22,34 @@ namespace rendering {
 
 
     void EyesCamera::rotateLeft(float degrees){
-        m_fPhi += glm::radians(degrees);
+        const float rad = glm::radians(degrees);
+        if(degrees >=0){
+            if (m_fPhi + rad < m_fMaxAngleX){
+            m_fPhi += rad;
+            }
+        }
+        else{
+            if(fabs(m_fPhi + rad) < m_fMaxAngleX){
+                m_fPhi += rad;
+            }
+        }             
+       
         computeDirectionVectors();
     }
 
     void EyesCamera::rotateUp(float degrees){
-        m_fTheta += glm::radians(degrees);
+        const float rad = glm::radians(degrees);
+        if(degrees >=0){
+            if (m_fTheta + rad < m_fMaxAngleY){
+                m_fTheta += rad;
+            }
+        }
+        else{
+            if(fabs(m_fTheta + rad) < m_fMaxAngleY){
+                m_fTheta += rad;
+            }
+        }
+        
         computeDirectionVectors();
     }
 
