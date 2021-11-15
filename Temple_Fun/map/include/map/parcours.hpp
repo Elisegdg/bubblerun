@@ -9,12 +9,14 @@
 class Parcours
 {
 private:
-    std::vector<Object> m_parcours;
+    std::vector<Object *> m_parcours;
     int m_sizex; 
     int m_sizey; 
 
 public:
-    Object addObject(int r,int g,int b,float x,float y);
+    void addObject(int r,int g,int b);
     void loadMap(const glimac::FilePath &file);
+    Object* FindObject(glm::vec3 coord);
+
 };
 

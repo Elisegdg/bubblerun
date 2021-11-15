@@ -2,13 +2,14 @@
 #include <GL/glew.h>
 #include <iostream>
 #include <map/parcours.hpp>
+#include <map/object.hpp>
 
 using namespace glimac;
 
 Parcours parcours;
 
 int main(int argc, char** argv) {
-    parcours.loadMap("/home/loulou/Documents/synthese_image_imac2/projet/Temple_Fun/assets/test_parcours.ppm");
+    parcours.loadMap("/home/loulou/Documents/synthese_image_imac2/projet/Temple_Fun/assets/test_parcours2.ppm");
     // Initialize SDL and open a window
     SDLWindowManager windowManager(800, 600, "GLImac");
 
@@ -44,6 +45,7 @@ int main(int argc, char** argv) {
         // Update the display
         windowManager.swapBuffers();
     }
+ 
 
     return EXIT_SUCCESS;
 }

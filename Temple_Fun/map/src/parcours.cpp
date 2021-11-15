@@ -3,28 +3,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <glimac/glm.hpp>
 
-Object Parcours::addObject(int r,int g,int b,float x,float y)
+
+void Parcours::addObject(int r,int g,int b)
 {
+    if(r==255 & g==255 & b==255 )
+    {
+        m_parcours.push_back(new Empty);
+
+    }
+
+    else if (r==255)
+    {
+        m_parcours.push_back(new Straight);
+
     
-    if (r==255 & g==0 & b==0)
-    {
-        std::cout<<"  droit  ";
-        Object droit;
-        return droit;
     }
-    if (r==0 & g==255 & b==0)
+    else if (b==255)
     {
-        std::cout<<"  droite  ";
-        Object droite;
-        return droite;
+        m_parcours.push_back(new Right);
     }
-    if (r==0 & g==0 & b==255)
+    else if (g==255)
     {
-        std::cout<<"  gauche  ";
-        Object gauche;
-        return gauche;
+        m_parcours.push_back(new Left);
     }
+    else
+    {
+        m_parcours.push_back(new Obstacle);
+    }
+
     
 }
 
@@ -49,36 +57,102 @@ void Parcours::loadMap(const glimac::FilePath &file)
     getline(fileMap,line);
     
     fileMap >> m_sizex >>m_sizey;
-    std::cout<<"size x "<<m_sizex<<std::endl;
-    std::cout<<"size y "<<m_sizey<<std::endl;
 
-    getline(fileMap,line);
-    getline(fileMap,line);
+
 
     int r,g,b;
 
-    for (int i = 0; i < m_sizex; i++)
+    fileMap>>r;
+
+    int iterator = 0;
+
+    for (int i = 0; i < m_sizey; i++)
     {
-        for(int j=0;j<m_sizey;j++)
+        for(int j=0;j<m_sizex;j++)
         {
             
             fileMap >>r;
             fileMap >>g;
             fileMap >>b;
+
+            std::cout << r <<" "<<g<<" "<<b<<std::endl;
     
-            if (r!=255 || g!=255 || b!=255)
-            {
-                m_parcours.push_back(addObject(r,g,b, i, j));
-            }
+            
+            addObject(r,g,b);
+            m_parcours[iterator]->AddCoord(j,i,0);
+            m_parcours[iterator]->Draw();
+            std::cout<<m_parcours[iterator]->GetCoord()<<std::endl;
+            
+            
+            iterator ++;
+
+            
+            
             
             
         }
         
 
     }
+
+    // for (int i = 0; i < m_sizex; i++)
+    // {
+    //     m_parcours[i]->Draw();
+    //     std::cout<<m_parcours[i]->GetCoord()<<std::endl;
+    // }
     
 
     
+
+    
+    Object* objet = FindObject(glm::vec3(3,0,0));
+    std::cout<<std::endl;
+    objet->Draw();
+    
+    
+
+}
+
+
+Object* Parcours::FindObject(glm::vec3 coord)
+{
+    Object *ptrObj = nullptr;
+    float m;
+    bool trv = false;
+    int deb = 1;
+    int fin = m_sizex*m_sizey;
+    
+    while(!trv & deb <= fin)
+    {
+        
+        
+        m = floor((deb+fin)/2);
+    
+        if (m_parcours[m]->GetCoord() == coord) 
+        {
+            
+            trv = true;
+
+        }
+
+        
+        else if(coord.y>m_parcours[m]->GetCoord().y ||(coord.y==m_parcours[m]->GetCoord().y && coord.x>m_parcours[m]->GetCoord().x))
+        {
+            deb = m+1;
+        }
+        else if(coord.y<m_parcours[m]->GetCoord().y ||(coord.y==m_parcours[m]->GetCoord().y && coord.x<m_parcours[m]->GetCoord().x))
+        {
+            fin = m-1;
+        }
+
+        
+    }
+    ptrObj = m_parcours[m];
+    std::cout<<std::endl;
+    m_parcours[m]->Draw();
+
+    return m_parcours[m];
+
 
 }
 
