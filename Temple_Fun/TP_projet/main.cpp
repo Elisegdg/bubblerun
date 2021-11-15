@@ -1,5 +1,6 @@
 #include <GL/glew.h>
 #include <iostream>
+#include<vector>
 #include <glimac/SDLWindowManager.hpp>
 #include <glimac/Program.hpp>
 #include <glimac/FilePath.hpp>
@@ -11,6 +12,9 @@
 #include <rendering/Camera.hpp>
 #include <rendering/TrackballCamera.hpp>
 #include <rendering/EyesCamera.hpp>
+#include <rendering/Texture.hpp>
+ 
+
 
 using namespace glimac;
 using namespace rendering;
@@ -32,8 +36,7 @@ int main(int argc, char** argv) {
     /*********************************
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
-
-    //Sphere sphere(1,20,20);
+    
     Cube cube(2);
 
     //EyesCamera camera;
@@ -47,7 +50,7 @@ int main(int argc, char** argv) {
     FilePath applicationPath(argv[0]);
     Program program = loadProgram(
         applicationPath.dirPath() + "shaders/3D.vs.glsl",
-        applicationPath.dirPath() + "shaders/normals.fs.glsl"
+        applicationPath.dirPath() + "shaders/tex3D.fs.glsl"
     );
     program.use();
 
@@ -55,6 +58,7 @@ int main(int argc, char** argv) {
     GLint uMVPMatrix = glGetUniformLocation(program.getGLId(), "uMVPMatrix");
     GLint uMVMatrix = glGetUniformLocation(program.getGLId(), "uMVMatrix");
     GLint uNormalMatrix = glGetUniformLocation(program.getGLId(), "uNormalMatrix");
+    GLint uTexture = glGetUniformLocation(program.getGLId(), "uTexture");
 
     glEnable(GL_DEPTH_TEST);
 
@@ -63,6 +67,8 @@ int main(int argc, char** argv) {
     //Création du VBO
     GLuint vbo;
     glGenBuffers(1, &vbo);
+
+    Texture ground("/home/clara/Documents/Projet/Temple_Fun/assets/textures/ground4.png");
 
     //On bind le vbo sur la cible
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
@@ -140,6 +146,7 @@ int main(int argc, char** argv) {
          *********************************/
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
+
         glBindVertexArray(vao);
 
         // Management of the events
@@ -173,9 +180,6 @@ int main(int argc, char** argv) {
                 float mousePosY = mousePos_eyes.y/600.0f - 0.5;
                 
                 camera->rotateLeft(-3*mousePosX);
-                std::cout<<"Theta : "<<eyes_camera.getTheta()<<std::endl;
-                std::cout<<"degrees:"<<(-3*mousePosY)<<std::endl;
-
                 camera->rotateUp(-3*mousePosY);
 
             }
@@ -200,11 +204,17 @@ int main(int argc, char** argv) {
                 glm::mat4 newViewMatrix = camera->getViewMatrix();
                 newViewMatrix = glm::translate(newViewMatrix, glm::vec3(2*i, 0, 2*j));
                 newViewMatrix = glm::scale(newViewMatrix, glm::vec3(1, 0.2, 1));
-                glm::mat4 newNormalMatrix = glm::transpose(glm::inverse(newViewMatrix));    
+                glm::mat4 newNormalMatrix = glm::transpose(glm::inverse(newViewMatrix));
+                
+                //animation of the path    
                 newViewMatrix = glm::translate(newViewMatrix, glm::vec3(0, 0, -3*windowManager.getTime()));
+                
                 glUniformMatrix4fv(uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * newViewMatrix));
                 glUniformMatrix4fv(uMVMatrix, 1, GL_FALSE, glm::value_ptr(newViewMatrix));
                 glUniformMatrix4fv(uNormalMatrix, 1, GL_FALSE, glm::value_ptr(newNormalMatrix));
+                
+                glBindTexture(GL_TEXTURE_2D, ground.getTextureId());
+                glUniform1i(uTexture, 0);
 
                 glDrawElements(GL_TRIANGLES, cube.getVertexCount(), GL_UNSIGNED_INT,0); 
             }
@@ -212,8 +222,13 @@ int main(int argc, char** argv) {
         }    
 
         glBindVertexArray(0);
+        glBindTexture(GL_TEXTURE_2D, 0);
+
         
         // Update the display
+        //glDeleteTextures(1, &ground.getTextureId());
+        //glDeleteBuffers(1, &vbo);
+        //glDeleteVertexArrays(1, &vao);
         windowManager.swapBuffers();
     }
 

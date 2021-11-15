@@ -25,6 +25,7 @@ public:
         return m_cameraType;
     }
 
+
     virtual void moveFront(float delta) = 0;
     virtual void moveLeft(float delta) = 0;
     virtual void rotateLeft(float degrees) = 0;
