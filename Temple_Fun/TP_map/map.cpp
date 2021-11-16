@@ -8,7 +8,9 @@ using namespace glimac;
 Parcours parcours;
 
 int main(int argc, char** argv) {
+
     parcours.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/test_parcours.ppm");
+
     // Initialize SDL and open a window
     SDLWindowManager windowManager(800, 600, "GLImac");
 
