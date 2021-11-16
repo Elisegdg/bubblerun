@@ -45,4 +45,8 @@ public:
     static const Image* loadImage(const FilePath& filepath);
 };
 
+unsigned int loadCubemap(std::vector<std::string> faces);
+
 }
+
+
