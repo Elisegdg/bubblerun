@@ -1,4 +1,4 @@
-#include "../include/map/object.hpp"
+#include "../include/game/object.hpp"
 #include <glimac/glm.hpp>
 
 Object::Object(): m_coord(glm::vec3(0,0,0))

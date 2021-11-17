@@ -1,8 +1,8 @@
 #include <glimac/SDLWindowManager.hpp>
 #include <GL/glew.h>
 #include <iostream>
-#include <map/parcours.hpp>
-#include <map/object.hpp>
+#include <game/parcours.hpp>
+#include <game/object.hpp>
 
 using namespace glimac;
 
