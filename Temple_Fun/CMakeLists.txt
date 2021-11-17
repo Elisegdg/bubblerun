@@ -15,13 +15,13 @@ set(OPENGL_LIBRARIES /usr/lib/x86_64-linux-gnu/libGL.so.1)
 
 
 include_directories(${SDL_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} glimac/include third-party/include rendering/include)
-include_directories(map/include)
+include_directories(game/include)
 
-set(ALL_LIBRARIES glimac rendering map ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY})
+set(ALL_LIBRARIES glimac rendering game ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY})
 
 add_subdirectory(glimac)
 add_subdirectory(rendering)
-add_subdirectory(map)
+add_subdirectory(game)
 
 
 file(GLOB TP_DIRECTORIES "TP*")
