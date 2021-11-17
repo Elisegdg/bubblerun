@@ -21,6 +21,7 @@ set(ALL_LIBRARIES glimac rendering map ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW
 
 add_subdirectory(glimac)
 add_subdirectory(rendering)
+add_subdirectory(map)
 
 
 file(GLOB TP_DIRECTORIES "TP*")
