@@ -1,5 +1,5 @@
-#include "../include/game/parcours.hpp"
-#include "../include/game/object.hpp"
+#include "../include/game/CourseMap.hpp"
+#include "../include/game/Object.hpp"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

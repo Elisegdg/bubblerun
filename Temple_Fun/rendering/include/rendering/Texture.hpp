@@ -5,6 +5,7 @@
 #include <glimac/glm.hpp>
 #include <glimac/Image.hpp>
 #include <glimac/FilePath.hpp>
+#include <iostream>
 
 
 

@@ -4,7 +4,7 @@
 #include <fstream> 
 #include <iostream>
 #include <glimac/FilePath.hpp>
-#include "object.hpp"
+#include "Object.hpp"
 
 class Parcours
 {

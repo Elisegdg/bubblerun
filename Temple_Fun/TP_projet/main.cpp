@@ -7,7 +7,6 @@
 #include <glimac/glm.hpp>
 #include <glimac/Image.hpp>
 #include <glimac/Sphere.hpp>
-#include <glimac/Cube.hpp>
 #include <glimac/Geometry.hpp>
 #include <rendering/Camera.hpp>
 #include <rendering/TrackballCamera.hpp>
@@ -15,6 +14,7 @@
 #include <rendering/Texture.hpp>
 #include <rendering/Program.hpp>
 #include <rendering/Skybox.hpp>
+#include <rendering/Cube.hpp>
 
 using namespace glimac;
 using namespace rendering;
@@ -22,7 +22,7 @@ using namespace rendering;
 int main(int argc, char **argv)
 {
     // Initialize SDL and open a window
-    SDLWindowManager windowManager(800, 600, "Temple_Fun");
+    SDLWindowManager windowManager(2000, 1000, "Temple_Fun");
 
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
@@ -38,8 +38,10 @@ int main(int argc, char **argv)
     /*********************************
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
-
-    Cube cube(2);
+    Texture ground("/home/clara/Documents/Projet/Temple_Fun/assets/textures/ground4.png");
+    Texture nemo("/home/clara/Documents/Projet/Temple_Fun/assets/textures/nemo.jpg");
+    Cube2 cube_path(ground,2);
+    Cube2 cube_nemo(nemo, 2);
 
     TrackballCamera trackball_camera;
     EyesCamera eyes_camera;
@@ -65,9 +67,8 @@ int main(int argc, char **argv)
     unsigned int cubemapTexture = loadCubemap(skybox_sky);
 
     // Creation of the Path
-    GLuint vbo;
+    /*GLuint vbo;
     glGenBuffers(1, &vbo);
-    Texture ground("/home/clara/Documents/Projet/Temple_Fun/assets/textures/ground4.png");
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     glBufferData(GL_ARRAY_BUFFER, cube.getVertexCount() * sizeof(ShapeVertex), cube.getDataPointer(), GL_STATIC_DRAW);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -94,7 +95,14 @@ int main(int argc, char **argv)
     glVertexAttribPointer(VERTEX_ATTR_NORMAL, 3, GL_FLOAT, GL_FALSE, sizeof(ShapeVertex), (const GLvoid *)offsetof(ShapeVertex, normal));
     glVertexAttribPointer(VERTEX_ATTR_TEXCOORDS, 2, GL_FLOAT, GL_FALSE, sizeof(ShapeVertex), (const GLvoid *)offsetof(ShapeVertex, texCoords));
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindVertexArray(0);
+    glBindVertexArray(0);*/
+    cube_path.setVbo();
+    cube_path.setIbo();
+    cube_path.setVao();
+
+    cube_nemo.setVbo();
+    cube_nemo.setIbo();
+    cube_nemo.setVao();
 
     // Application loop:
     bool done = false;
@@ -159,8 +167,8 @@ int main(int argc, char **argv)
             if (windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT))
             {
                 mousePos_eyes = windowManager.getMousePosition();
-                float mousePosX = mousePos_eyes.x / 800.0f - 0.5;
-                float mousePosY = mousePos_eyes.y / 600.0f - 0.5;
+                float mousePosX = mousePos_eyes.x / 2000.0f - 0.5;
+                float mousePosY = mousePos_eyes.y / 1000.0f - 0.5;
 
                 camera->rotateLeft(-3 * mousePosX);
                 camera->rotateUp(-3 * mousePosY);
@@ -171,12 +179,12 @@ int main(int argc, char **argv)
          * HERE SHOULD COME THE RENDERING CODE
          *********************************/
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glBindVertexArray(vao);
+        //glBindVertexArray(vao);
 
         pathProgram.m_Program.use();
 
         // Drawing of the hero as a cube
-        glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 800.f / 600.f, 0.1f, 100.f);
+        glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 2000.f / 1000.f, 0.1f, 100.f);
         ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0, 1.2, 0.));
         ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));
         glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
@@ -185,8 +193,8 @@ int main(int argc, char **argv)
         glUniformMatrix4fv(pathProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(ViewMatrix));
         glUniformMatrix4fv(pathProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
 
-        glDrawElements(GL_TRIANGLES, cube.getVertexCount(), GL_UNSIGNED_INT, 0);
-
+        //glDrawElements(GL_TRIANGLES, cube.getVertexCount(), GL_UNSIGNED_INT, 0);
+        cube_nemo.draw();
         // Drawing of the path
         for (int i = -1; i <= 1; i++)
         {
@@ -204,9 +212,10 @@ int main(int argc, char **argv)
                 glUniformMatrix4fv(pathProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(newViewMatrix));
                 glUniformMatrix4fv(pathProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(newNormalMatrix));
 
-                glBindTexture(GL_TEXTURE_2D, ground.getTextureId());
+                //glBindTexture(GL_TEXTURE_2D, ground.getTextureId());
                 glUniform1i(pathProgram.uTexture, 0);
-                glDrawElements(GL_TRIANGLES, cube.getVertexCount(), GL_UNSIGNED_INT, 0);
+                //glDrawElements(GL_TRIANGLES, cube.getVertexCount(), GL_UNSIGNED_INT, 0);
+                cube_path.draw();
             }
         }
 
