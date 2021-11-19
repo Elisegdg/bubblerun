@@ -6,41 +6,56 @@
 #include <glimac/glm.hpp>
 #include <glimac/FilePath.hpp>
 #include <glimac/Program.hpp>
+#include <vector>
+#include<map>
 
-struct PathProgram{
-    Program m_Program;
-    GLint uMVPMatrix;
-    GLint uMVMatrix;
-    GLint uNormalMatrix;
-    GLint uTexture;
 
-    PathProgram(const FilePath& applicationPath):
-        m_Program(loadProgram(applicationPath.dirPath() + "shaders/3D.vs.glsl",
-                              applicationPath.dirPath() + "shaders/tex3D.fs.glsl")) {
+class ShaderManager{
 
-        uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVPMatrix");
-        uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "uMVMatrix");
-        uNormalMatrix = glGetUniformLocation(m_Program.getGLId(), "uNormalMatrix");
-        uTexture = glGetUniformLocation(m_Program.getGLId(), "uTexture");
+private:
+    glimac::Program m_program;
+    glimac::FilePath m_vsPath;
+    glimac::FilePath m_fsPath;
+    std::map<std::string, GLint> m_uniformVars;
+
+public:
+    ShaderManager() = default;
+    ShaderManager(const FilePath& applicationPath, const glimac::FilePath &vs, const glimac::FilePath &fs):
+        m_vsPath(vs), m_fsPath(fs), m_program(glimac::loadProgram(applicationPath.dirPath() + vs, 
+                                                                applicationPath.dirPath() +fs))
+        {}
+
+    ~ShaderManager() = default;
+
+    GLuint getId(){
+        return m_program.getGLId();
     }
+
+    void addUniform(const std::string &name){
+        GLint uName = glGetUniformLocation(getId(), name.c_str());
+        m_uniformVars.insert(std::pair<std::string, GLint>(name, uName));
+    }
+
+    void uniformMatrix4fv(std::string name, glm::mat4 value){
+        glUniformMatrix4fv(m_uniformVars[name], 1, GL_FALSE, glm::value_ptr(value));
+    }
+
+
+    void uniform1i(std::string name, int value){
+        glUniform1i(m_uniformVars[name], value);
+    }
+
+    void use(){
+        m_program.use();
+    }
+
+
 };
 
-struct SkyboxProgram{
-    Program m_Program;
 
-    GLint uMVPMatrix;
-    GLint uMVMatrix;
-    GLint uNormalMatrix;
-    GLint uSkybox;
 
-    SkyboxProgram(const FilePath& applicationPath):
-        m_Program(loadProgram(applicationPath.dirPath() + "shaders/skybox.vs.glsl",
-                              applicationPath.dirPath() + "shaders/skybox.fs.glsl")) {
 
-        uMVPMatrix = glGetUniformLocation(m_Program.getGLId(), "projection");
-        uMVMatrix = glGetUniformLocation(m_Program.getGLId(), "view");
-        uSkybox = glGetUniformLocation(m_Program.getGLId(), "uSkybox");
-        }
-};
+
+
 
 #endif

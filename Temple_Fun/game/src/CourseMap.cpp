@@ -79,9 +79,9 @@ void Parcours::loadMap(const glimac::FilePath &file)
     
             
             addObject(r,g,b);
-            m_parcours[iterator]->AddCoord(j,i,0);
-            m_parcours[iterator]->Draw();
-            std::cout<<m_parcours[iterator]->GetCoord()<<std::endl;
+            m_parcours[iterator]->addCoord(j,i,0);
+            //m_parcours[iterator]->Draw();
+            std::cout<<m_parcours[iterator]->getCoord()<<std::endl;
             
             
             iterator ++;
@@ -105,16 +105,16 @@ void Parcours::loadMap(const glimac::FilePath &file)
     
 
     
-    Object* objet = FindObject(glm::vec3(3,0,0));
+    Object* objet = findObject(glm::vec3(3,0,0));
     std::cout<<std::endl;
-    objet->Draw();
+    //objet->Draw();
     
     
 
 }
 
 
-Object* Parcours::FindObject(glm::vec3 coord)
+Object* Parcours::findObject(glm::vec3 coord)
 {
     Object *ptrObj = nullptr;
     float m;
@@ -128,7 +128,7 @@ Object* Parcours::FindObject(glm::vec3 coord)
         
         m = floor((deb+fin)/2);
     
-        if (m_parcours[m]->GetCoord() == coord) 
+        if (m_parcours[m]->getCoord() == coord) 
         {
             
             trv = true;
@@ -136,11 +136,11 @@ Object* Parcours::FindObject(glm::vec3 coord)
         }
 
         
-        else if(coord.y>m_parcours[m]->GetCoord().y ||(coord.y==m_parcours[m]->GetCoord().y && coord.x>m_parcours[m]->GetCoord().x))
+        else if(coord.y>m_parcours[m]->getCoord().y ||(coord.y==m_parcours[m]->getCoord().y && coord.x>m_parcours[m]->getCoord().x))
         {
             deb = m+1;
         }
-        else if(coord.y<m_parcours[m]->GetCoord().y ||(coord.y==m_parcours[m]->GetCoord().y && coord.x<m_parcours[m]->GetCoord().x))
+        else if(coord.y<m_parcours[m]->getCoord().y ||(coord.y==m_parcours[m]->getCoord().y && coord.x<m_parcours[m]->getCoord().x))
         {
             fin = m-1;
         }
@@ -149,10 +149,19 @@ Object* Parcours::FindObject(glm::vec3 coord)
     }
     ptrObj = m_parcours[m];
     std::cout<<std::endl;
-    m_parcours[m]->Draw();
+    //m_parcours[m]->Draw();
 
     return m_parcours[m];
 
 
 }
 
+int Parcours::getSize(){
+    return m_sizex;
+}
+
+void Parcours::drawMap(glm::mat4 ViewMatrix){
+    for(int i = 0 ; i< m_parcours.size(); i++){
+        m_parcours[i]->draw(ViewMatrix, m_sizey);
+    }
+}

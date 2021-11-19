@@ -6,6 +6,8 @@
 #include <glimac/FilePath.hpp>
 #include "Object.hpp"
 
+
+
 class Parcours
 {
 private:
@@ -16,7 +18,9 @@ private:
 public:
     void addObject(int r,int g,int b);
     void loadMap(const glimac::FilePath &file);
-    Object* FindObject(glm::vec3 coord);
+    Object* findObject(glm::vec3 coord);
+    int getSize();
+    void drawMap(glm::mat4 ViewMatrix);
 
 };
 
