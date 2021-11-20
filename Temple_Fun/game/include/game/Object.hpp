@@ -35,7 +35,7 @@ class Right : public Object
 public: 
     Right() = default;
     ~Right() = default;
-    void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize) override;
+    //void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize) override;
  
 };
 
@@ -44,7 +44,7 @@ class Left : public Object
 public: 
     Left()= default;
     ~Left()= default;
-    void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize) override;
+    //void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize) override;
 
 };
 
@@ -53,7 +53,7 @@ class Straight : public Object
 public:
     Straight()= default;
     ~Straight()= default;
-    void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize);
+    //void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize);
 
 };
 
@@ -63,7 +63,7 @@ class Obstacle : public Object
 public:
     Obstacle()= default;
     ~Obstacle()= default;
-    void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize) override;
+    void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize);
 };
 
 class  Empty: public Object
@@ -71,7 +71,7 @@ class  Empty: public Object
 public:
     Empty()= default;
     ~Empty()= default;
-    void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize) override;
+    void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize);
 };
 
 #endif

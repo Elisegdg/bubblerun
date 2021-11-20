@@ -156,7 +156,6 @@ Object* Parcours::findObject(glm::vec3 coord)
     }
     ptrObj = m_parcours[m];
     std::cout<<std::endl;
-    //m_parcours[m]->Draw();
 
     return m_parcours[m];
 
@@ -169,15 +168,9 @@ int Parcours::getSize(){
 
 void Parcours::drawMap(rendering::Cube* mesh, rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix)
 {
-
         for(int i = 0 ; i< m_parcours.size(); i++){
-        m_parcours[i]->draw(camera, Program, ProjMatrix, m_sizey);
-        mesh->draw();
-
-        }
-        //std::cout<<m_parcours[394]->getCoord()<<std::endl;
-       
-        //std::cout<<"camera : "<<camera->getCameraType()<<std::endl;
-        //mesh.getVertexCount();
+            m_parcours[i]->draw(camera, Program, ProjMatrix, m_sizey);
+            mesh->draw();
+        }       
     
 }

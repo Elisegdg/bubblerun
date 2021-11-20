@@ -36,9 +36,10 @@ int main(int argc, char **argv)
     std::cout << "OpenGL Version : " << glGetString(GL_VERSION) << std::endl;
     std::cout << "GLEW Version : " << glewGetString(GLEW_VERSION) << std::endl;
 
-    /*********************************
-     * HERE SHOULD COME THE INITIALIZATION CODE
-     *********************************/
+   /*********************************
+    *     INITIALIZATION CODE       *
+   *********************************/
+
     Parcours map;
     map.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/test_parcours.ppm");
     Texture ground("/home/clara/Documents/Projet/Temple_Fun/assets/textures/ground4.png");
@@ -93,7 +94,6 @@ int main(int argc, char **argv)
     bool done = false;
     while (!done)
     {
-
         glm::mat4 ViewMatrix = camera->getViewMatrix();
 
         // Event loop:
@@ -161,8 +161,9 @@ int main(int argc, char **argv)
         }
 
         /*********************************
-         * HERE SHOULD COME THE RENDERING CODE
+         *      RENDERING CODE           *
          *********************************/
+
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         //glBindVertexArray(vao);
 
@@ -173,55 +174,16 @@ int main(int argc, char **argv)
         ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0, 0.6, 0.));
         ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));
         glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
-
         
-       TextureProgram.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
-       TextureProgram.uniformMatrix4fv("uMVMatrix", ViewMatrix);
-       TextureProgram.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
+        TextureProgram.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
+        TextureProgram.uniformMatrix4fv("uMVMatrix", ViewMatrix);
+        TextureProgram.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
 
-
-        //glDrawElements(GL_TRIANGLES, cube.getVertexCount(), GL_UNSIGNED_INT, 0);
         cube_nemo.draw();
 
-        /*
-        // Drawing of the path
-        for (int i = -1; i <= 1; i++)
-        {
-            for (int j = 0; j <= 25; j++)
-            {
-                glm::mat4 newViewMatrix = camera->getViewMatrix();
-                newViewMatrix = glm::translate(newViewMatrix, glm::vec3(i, 0,  j));
-                newViewMatrix = glm::scale(newViewMatrix, glm::vec3(1, 0.2, 1));
-                glm::mat4 newNormalMatrix = glm::transpose(glm::inverse(newViewMatrix));
-
-                //animation of the path
-                newViewMatrix = glm::translate(newViewMatrix, glm::vec3(0, 0, -3 * windowManager.getTime()));
-
-                TextureProgram.uniformMatrix4fv("uMVPMatrix", ProjMatrix * newViewMatrix);
-                TextureProgram.uniformMatrix4fv("uMVMatrix", newViewMatrix);
-                TextureProgram.uniformMatrix4fv("uNormalMatrix", newNormalMatrix);
-                TextureProgram.uniform1i("uTexture",0);
-
-                cube_path.draw();
-
-            }
-        }
-        */
-        
-        
-        /*glm::mat4 newViewMatrix = camera->getViewMatrix();
-        newViewMatrix = glm::translate(newViewMatrix, glm::vec3(14, 0,  19));
-        newViewMatrix = glm::scale(newViewMatrix, glm::vec3(1, 0.2, 1));
-        glm::mat4 newNormalMatrix = glm::transpose(glm::inverse(newViewMatrix));
-        
-        TextureProgram.uniformMatrix4fv("uMVPMatrix", ProjMatrix * newViewMatrix);
-        TextureProgram.uniformMatrix4fv("uMVMatrix", newViewMatrix);
-        TextureProgram.uniformMatrix4fv("uNormalMatrix", newNormalMatrix);
-        TextureProgram.uniform1i("uTexture",0);
-
-        cube_path.draw();*/
+        // Drawing of the Path
         map.drawMap(&cube_path,camera, &TextureProgram, ProjMatrix);
-        //cube_path.draw();
+
 
         // Drawing of the Skybox
         glDepthFunc(GL_LEQUAL); // change depth function so depth test passes when values are equal to depth buffer's content
