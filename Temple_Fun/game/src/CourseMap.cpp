@@ -4,6 +4,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <glimac/glm.hpp>
+#include<rendering/Program.hpp>
+#include <rendering/Camera.hpp>
+#include <rendering/Texture.hpp>
+#include <rendering/Model.hpp>
+#include <rendering/Cube.hpp>
+
+
 
 
 void Parcours::addObject(int r,int g,int b)
@@ -75,13 +82,13 @@ void Parcours::loadMap(const glimac::FilePath &file)
             fileMap >>g;
             fileMap >>b;
 
-            std::cout << r <<" "<<g<<" "<<b<<std::endl;
+            //std::cout << r <<" "<<g<<" "<<b<<std::endl;
     
             
             addObject(r,g,b);
             m_parcours[iterator]->addCoord(j,i,0);
             //m_parcours[iterator]->Draw();
-            std::cout<<m_parcours[iterator]->getCoord()<<std::endl;
+            //std::cout<<m_parcours[iterator]->getCoord()<<std::endl;
             
             
             iterator ++;
@@ -160,8 +167,17 @@ int Parcours::getSize(){
     return m_sizex;
 }
 
-void Parcours::drawMap(glm::mat4 ViewMatrix){
-    for(int i = 0 ; i< m_parcours.size(); i++){
-        m_parcours[i]->draw(ViewMatrix, m_sizey);
-    }
+void Parcours::drawMap(rendering::Cube* mesh, rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix)
+{
+
+        for(int i = 0 ; i< m_parcours.size(); i++){
+        m_parcours[i]->draw(camera, Program, ProjMatrix, m_sizey);
+        mesh->draw();
+
+        }
+        //std::cout<<m_parcours[394]->getCoord()<<std::endl;
+       
+        //std::cout<<"camera : "<<camera->getCameraType()<<std::endl;
+        //mesh.getVertexCount();
+    
 }

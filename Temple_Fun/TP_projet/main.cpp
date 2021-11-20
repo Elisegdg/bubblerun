@@ -39,34 +39,17 @@ int main(int argc, char **argv)
     /*********************************
      * HERE SHOULD COME THE INITIALIZATION CODE
      *********************************/
-    //Parcours map;
-    //map.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/test_parcours.ppm");
+    Parcours map;
+    map.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/test_parcours.ppm");
     Texture ground("/home/clara/Documents/Projet/Temple_Fun/assets/textures/ground4.png");
     Texture nemo("/home/clara/Documents/Projet/Temple_Fun/assets/textures/nemo.jpg");
-    Cube2 cube_path(ground,1);
-    Cube2 cube_nemo(nemo, 1);
+    Cube cube_path(ground,1);
+    Cube cube_nemo(nemo, 1);
 
     TrackballCamera trackball_camera;
     EyesCamera eyes_camera;
     Camera *camera = &eyes_camera;
 
-    struct SkyboxProgram{
-    Program m_Program;
-
-    GLint projection;
-    GLint view;
-    //GLint uNormalMatrix;
-    GLint uSkybox;
-
-    SkyboxProgram(const FilePath& applicationPath):
-        m_Program(loadProgram(applicationPath.dirPath() + "shaders/skybox.vs.glsl",
-                              applicationPath.dirPath() + "shaders/skybox.fs.glsl")) {
-
-        projection = glGetUniformLocation(m_Program.getGLId(), "projection");
-        view = glGetUniformLocation(m_Program.getGLId(), "view");
-        uSkybox = glGetUniformLocation(m_Program.getGLId(), "uSkybox");
-        }
-};
 
     // Shaders loading
     FilePath applicationPath(argv[0]);
@@ -97,36 +80,7 @@ int main(int argc, char **argv)
 
     unsigned int cubemapTexture = loadCubemap(skybox_sky);
 
-    // Creation of the Path
-    /*GLuint vbo;
-    glGenBuffers(1, &vbo);
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
-    glBufferData(GL_ARRAY_BUFFER, cube.getVertexCount() * sizeof(ShapeVertex), cube.getDataPointer(), GL_STATIC_DRAW);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-    GLuint ibo;
-    glGenBuffers(1, &ibo);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, cube.getVertexCount() * sizeof(int), cube.getIndexPointer(), GL_STATIC_DRAW);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-
-    GLuint vao;
-    glGenVertexArrays(1, &vao);
-    glBindVertexArray(vao);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
-
-    const GLuint VERTEX_ATTR_POSITION = 0;
-    const GLuint VERTEX_ATTR_NORMAL = 1;
-    const GLuint VERTEX_ATTR_TEXCOORDS = 2;
-    glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
-    glEnableVertexAttribArray(VERTEX_ATTR_NORMAL);
-    glEnableVertexAttribArray(VERTEX_ATTR_TEXCOORDS);
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
-    glVertexAttribPointer(VERTEX_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, sizeof(ShapeVertex), (const GLvoid *)offsetof(ShapeVertex, position));
-    glVertexAttribPointer(VERTEX_ATTR_NORMAL, 3, GL_FLOAT, GL_FALSE, sizeof(ShapeVertex), (const GLvoid *)offsetof(ShapeVertex, normal));
-    glVertexAttribPointer(VERTEX_ATTR_TEXCOORDS, 2, GL_FLOAT, GL_FALSE, sizeof(ShapeVertex), (const GLvoid *)offsetof(ShapeVertex, texCoords));
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindVertexArray(0);*/
+   //Creation of the cube used for the Player and the Path
     cube_path.setVbo();
     cube_path.setIbo();
     cube_path.setVao();
@@ -216,14 +170,11 @@ int main(int argc, char **argv)
 
         // Drawing of the hero as a cube
         glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 2000.f / 1000.f, 0.1f, 100.f);
-        ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0, 1.2, 0.));
+        ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0, 0.6, 0.));
         ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));
         glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
-        /*glUniformMatrix4fv(pathProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * ViewMatrix));
-        glUniformMatrix4fv(pathProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(ViewMatrix));
-        glUniformMatrix4fv(pathProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(NormalMatrix));
-        */
+        
        TextureProgram.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
        TextureProgram.uniformMatrix4fv("uMVMatrix", ViewMatrix);
        TextureProgram.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
@@ -232,6 +183,7 @@ int main(int argc, char **argv)
         //glDrawElements(GL_TRIANGLES, cube.getVertexCount(), GL_UNSIGNED_INT, 0);
         cube_nemo.draw();
 
+        /*
         // Drawing of the path
         for (int i = -1; i <= 1; i++)
         {
@@ -245,25 +197,31 @@ int main(int argc, char **argv)
                 //animation of the path
                 newViewMatrix = glm::translate(newViewMatrix, glm::vec3(0, 0, -3 * windowManager.getTime()));
 
-                /*glUniformMatrix4fv(pathProgram.uMVPMatrix, 1, GL_FALSE, glm::value_ptr(ProjMatrix * newViewMatrix));
-                glUniformMatrix4fv(pathProgram.uMVMatrix, 1, GL_FALSE, glm::value_ptr(newViewMatrix));
-                glUniformMatrix4fv(pathProgram.uNormalMatrix, 1, GL_FALSE, glm::value_ptr(newNormalMatrix));
-                */
                 TextureProgram.uniformMatrix4fv("uMVPMatrix", ProjMatrix * newViewMatrix);
                 TextureProgram.uniformMatrix4fv("uMVMatrix", newViewMatrix);
                 TextureProgram.uniformMatrix4fv("uNormalMatrix", newNormalMatrix);
-                
-
-                
-                //glBindTexture(GL_TEXTURE_2D, ground.getTextureId());
-                //glUniform1i(pathProgram.uTexture, 0);
                 TextureProgram.uniform1i("uTexture",0);
-                
-                //glDrawElements(GL_TRIANGLES, cube.getVertexCount(), GL_UNSIGNED_INT, 0);
+
                 cube_path.draw();
 
             }
         }
+        */
+        
+        
+        /*glm::mat4 newViewMatrix = camera->getViewMatrix();
+        newViewMatrix = glm::translate(newViewMatrix, glm::vec3(14, 0,  19));
+        newViewMatrix = glm::scale(newViewMatrix, glm::vec3(1, 0.2, 1));
+        glm::mat4 newNormalMatrix = glm::transpose(glm::inverse(newViewMatrix));
+        
+        TextureProgram.uniformMatrix4fv("uMVPMatrix", ProjMatrix * newViewMatrix);
+        TextureProgram.uniformMatrix4fv("uMVMatrix", newViewMatrix);
+        TextureProgram.uniformMatrix4fv("uNormalMatrix", newNormalMatrix);
+        TextureProgram.uniform1i("uTexture",0);
+
+        cube_path.draw();*/
+        map.drawMap(&cube_path,camera, &TextureProgram, ProjMatrix);
+        //cube_path.draw();
 
         // Drawing of the Skybox
         glDepthFunc(GL_LEQUAL); // change depth function so depth test passes when values are equal to depth buffer's content

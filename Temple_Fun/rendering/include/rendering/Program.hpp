@@ -10,6 +10,8 @@
 #include<map>
 
 
+namespace rendering{
+
 class ShaderManager{
 
 private:
@@ -20,11 +22,15 @@ private:
 
 public:
     ShaderManager() = default;
+
     ShaderManager(const FilePath& applicationPath, const glimac::FilePath &vs, const glimac::FilePath &fs):
         m_vsPath(vs), m_fsPath(fs), m_program(glimac::loadProgram(applicationPath.dirPath() + vs, 
                                                                 applicationPath.dirPath() +fs))
         {}
 
+    ShaderManager(const ShaderManager &copy){
+        
+    }
     ~ShaderManager() = default;
 
     GLuint getId(){
@@ -51,6 +57,10 @@ public:
 
 
 };
+
+
+}
+
 
 
 

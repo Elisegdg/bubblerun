@@ -3,14 +3,16 @@
 
 #include <rendering/Model.hpp>
 
-class Cube2 : public Model{
+namespace rendering{
+class Cube : public Model{
 
 public:
-    Cube2(rendering::Texture texture, float size) : Model(texture) {
+    Cube(rendering::Texture texture, float size) : Model(texture) {
         build(size);
     }
     void build(const float &size);
 
 };
+}
 
 #endif

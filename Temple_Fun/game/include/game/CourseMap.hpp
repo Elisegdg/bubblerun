@@ -1,10 +1,15 @@
-#pragma once 
+#ifndef _COURSEMAP_HPP
+#define _COURSEMAP_HPP
 
 #include <vector>
 #include <fstream> 
 #include <iostream>
 #include <glimac/FilePath.hpp>
 #include "Object.hpp"
+#include <rendering/Camera.hpp>
+#include <rendering/Program.hpp>
+#include <rendering/Model.hpp>
+#include <rendering/Cube.hpp>
 
 
 
@@ -20,7 +25,7 @@ public:
     void loadMap(const glimac::FilePath &file);
     Object* findObject(glm::vec3 coord);
     int getSize();
-    void drawMap(glm::mat4 ViewMatrix);
-
+    void drawMap(rendering::Cube* mesh, rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix);
 };
 
+#endif

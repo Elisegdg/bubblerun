@@ -4,7 +4,9 @@
 #include "glimac/common.hpp"
 #include "rendering/Cube.hpp"
 
-void Cube2::build(const float &size)
+
+namespace rendering{
+void Cube::build(const float &size)
     {
 
         float halfSize = size / 2.;
@@ -58,3 +60,4 @@ void Cube2::build(const float &size)
                        20,21,22,21,22,23    //BOTTOM FACE
                        };  
     }
+}

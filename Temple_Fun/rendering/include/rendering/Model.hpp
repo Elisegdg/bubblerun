@@ -7,6 +7,8 @@
 #include <glimac/common.hpp>
 
 
+namespace rendering{
+
 class Model{
 
 protected:
@@ -28,7 +30,16 @@ public:
     ~Model() = default;
 
     // METHODS
-    void draw();
+    void draw(){
+    glBindVertexArray(m_vao);
+    glBindTexture(GL_TEXTURE_2D, m_texture.getTextureId());
+    if(m_isIbo){
+        glDrawElements(GL_TRIANGLES, getVertexCount(), GL_UNSIGNED_INT,0);
+    }
+    else{
+        glDrawArrays(GL_TRIANGLES, 0, getVertexCount());
+    }
+}
 
     GLuint getVao(){
         return m_vao;
@@ -46,11 +57,13 @@ public:
     void setVbo();
     void setIbo();
     const glimac::ShapeVertex* getDataPointer() const;
-    GLsizei getVertexCount() const;
+    GLsizei getVertexCount() const{
+    return m_vertexCount;
+}
     const int* getIndexPointer() const;
 
 };
 
-
+}
 
 #endif

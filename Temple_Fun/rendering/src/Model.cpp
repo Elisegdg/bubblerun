@@ -1,5 +1,8 @@
 #include <rendering/Model.hpp>
 
+namespace rendering{
+
+
 void Model::setVbo(){
     GLuint vbo;
     m_vbo = vbo;
@@ -45,21 +48,12 @@ const glimac::ShapeVertex* Model::getDataPointer() const{
     return &m_vertices[0];
 }
 
-GLsizei Model::getVertexCount() const{
-    return m_vertexCount;
-}
+
 
 const int* Model::getIndexPointer() const{
     return &m_index[0];
 }
 
-void Model::draw(){
-    glBindVertexArray(m_vao);
-    glBindTexture(GL_TEXTURE_2D, m_texture.getTextureId());
-    if(m_isIbo){
-        glDrawElements(GL_TRIANGLES, getVertexCount(), GL_UNSIGNED_INT,0);
-    }
-    else{
-        glDrawArrays(GL_TRIANGLES, 0, getVertexCount());
-    }
+
+
 }
