@@ -1,42 +1,42 @@
-#include "../include/game/parcours.hpp"
-#include "../include/game/object.hpp"
+#include "../include/game/CourseMap.hpp"
+#include "../include/game/Object.hpp"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <glimac/glm.hpp>
 
 
-void Parcours::addObject(int r,int g,int b)
+void CourseMap::addObject(int r,int g,int b)
 {
     if(r==255 & g==255 & b==255 )
     {
-        m_parcours.push_back(new Empty);
+        m_CourseMap.push_back(new Empty);
 
     }
 
     else if (r==255)
     {
-        m_parcours.push_back(new Straight);
+        m_CourseMap.push_back(new Straight);
 
     
     }
     else if (b==255)
     {
-        m_parcours.push_back(new Right);
+        m_CourseMap.push_back(new Right);
     }
     else if (g==255)
     {
-        m_parcours.push_back(new Left);
+        m_CourseMap.push_back(new Left);
     }
     else
     {
-        m_parcours.push_back(new Obstacle);
+        m_CourseMap.push_back(new Obstacle);
     }
 
     
 }
 
-void Parcours::loadMap(const glimac::FilePath &file)
+void CourseMap::loadMap(const glimac::FilePath &file)
 {
     std::ifstream fileMap(file);
 
@@ -75,14 +75,9 @@ void Parcours::loadMap(const glimac::FilePath &file)
             fileMap >>g;
             fileMap >>b;
 
-            std::cout << r <<" "<<g<<" "<<b<<std::endl;
-    
             
             addObject(r,g,b);
-            m_parcours[iterator]->AddCoord(j,i,0);
-            m_parcours[iterator]->Draw();
-            std::cout<<m_parcours[iterator]->GetCoord()<<std::endl;
-            
+            m_CourseMap[iterator]->addCoord(j,i,0);
             
             iterator ++;
 
@@ -97,24 +92,24 @@ void Parcours::loadMap(const glimac::FilePath &file)
 
     // for (int i = 0; i < m_sizex; i++)
     // {
-    //     m_parcours[i]->Draw();
-    //     std::cout<<m_parcours[i]->GetCoord()<<std::endl;
+    //     m_CourseMap[i]->draw();
+    //     std::cout<<m_CourseMap[i]->GetCoord()<<std::endl;
     // }
     
 
     
 
     
-    Object* objet = FindObject(glm::vec3(3,0,0));
-    std::cout<<std::endl;
-    objet->Draw();
+    // Object* objet = findObject(glm::vec3(2,0,0));
+    // std::cout<<std::endl;
+    // objet->draw();
     
     
 
 }
 
 
-Object* Parcours::FindObject(glm::vec3 coord)
+Object* CourseMap::findObject(glm::vec3 coord)
 {
     Object *ptrObj = nullptr;
     float m;
@@ -128,7 +123,7 @@ Object* Parcours::FindObject(glm::vec3 coord)
         
         m = floor((deb+fin)/2);
     
-        if (m_parcours[m]->GetCoord() == coord) 
+        if (m_CourseMap[m]->getCoord() == coord) 
         {
             
             trv = true;
@@ -136,23 +131,38 @@ Object* Parcours::FindObject(glm::vec3 coord)
         }
 
         
-        else if(coord.y>m_parcours[m]->GetCoord().y ||(coord.y==m_parcours[m]->GetCoord().y && coord.x>m_parcours[m]->GetCoord().x))
+        else if(coord.y>m_CourseMap[m]->getCoord().y ||(coord.y==m_CourseMap[m]->getCoord().y && coord.x>m_CourseMap[m]->getCoord().x))
         {
             deb = m+1;
         }
-        else if(coord.y<m_parcours[m]->GetCoord().y ||(coord.y==m_parcours[m]->GetCoord().y && coord.x<m_parcours[m]->GetCoord().x))
+        else if(coord.y<m_CourseMap[m]->getCoord().y ||(coord.y==m_CourseMap[m]->getCoord().y && coord.x<m_CourseMap[m]->getCoord().x))
         {
             fin = m-1;
         }
 
         
     }
-    ptrObj = m_parcours[m];
-    std::cout<<std::endl;
-    m_parcours[m]->Draw();
+    ptrObj = m_CourseMap[m];
 
-    return m_parcours[m];
+    return m_CourseMap[m];
 
 
 }
 
+
+glm::vec3 CourseMap::start()
+{
+    int i =0; 
+    while (m_CourseMap[i]->getName()!="straight")
+    {
+    
+        i++;
+    }
+   
+    return glm::vec3(i+1,0,0);
+}
+
+int CourseMap::end()
+{
+    return m_sizey -1;
+}

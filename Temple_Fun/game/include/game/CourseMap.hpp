@@ -4,19 +4,21 @@
 #include <fstream> 
 #include <iostream>
 #include <glimac/FilePath.hpp>
-#include "object.hpp"
+#include "Object.hpp"
 
-class Parcours
+class CourseMap
 {
 private:
-    std::vector<Object *> m_parcours;
+    std::vector<Object *> m_CourseMap;
     int m_sizex; 
     int m_sizey; 
 
 public:
     void addObject(int r,int g,int b);
     void loadMap(const glimac::FilePath &file);
-    Object* FindObject(glm::vec3 coord);
+    Object* findObject(glm::vec3 coord);
+    glm::vec3 start();
+    int end();
 
 };
 
