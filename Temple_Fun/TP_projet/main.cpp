@@ -67,7 +67,7 @@ int main(int argc, char **argv)
     // Creation of the Path
     GLuint vbo;
     glGenBuffers(1, &vbo);
-    Texture ground("/home/clara/Documents/Projet/Temple_Fun/assets/textures/ground4.png");
+    Texture ground("/home/loulou/Documents/synthese_image_imac2/projet/Temple_Fun/assets/textures/ground4.png");
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     glBufferData(GL_ARRAY_BUFFER, cube.getVertexCount() * sizeof(ShapeVertex), cube.getDataPointer(), GL_STATIC_DRAW);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
