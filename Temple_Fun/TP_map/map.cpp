@@ -20,207 +20,145 @@ int main(int argc, char** argv) {
 
     Object* objet = courseMap.findObject(player.getCoord()); 
 
-    bool turnRight = false;
-    bool turnLeft = false;
-    bool doubleturn = false;
+    bool right = false;
+    bool left = false;
+    bool up = false;
+    bool down = true;
  
 
     while (player.isLife() & player.getCoord()[1] != courseMap.end())
     {
-        while ((player.isLife() & player.getCoord()[1] != courseMap.end() & turnRight == false & turnLeft == false & doubleturn ==false) || (player.isLife() & player.getCoord()[1] != courseMap.end() & turnRight == true & turnLeft == true & doubleturn ==false))
+
+        objet = courseMap.findObject(player.getCoord());
+
+        std::cout<<std::endl;
+        objet->draw();
+        std::cout<<std::endl;
+
+        
+
+        
+        std::cout << player.getCoord() << std::endl;
+
+        if (objet->getName() == "straight")
         {
-            std::cout<<"droit Y1"<<std::endl;
-            player.moveY(1);
-            objet = courseMap.findObject(player.getCoord());
+            char a = 0;
+            std::cout << "q gauche d droite" << std::endl;
+            std::cin >> a;
 
-            std::cout << std::endl;
-            objet->draw();
-            std::cout << std::endl;
-            std::cout << player.getCoord() << std::endl;
-
-            if (objet->getName() == "empty")
+            if (right == true)
             {
-                std::cout << "test" << std::endl;
-                player.setLife();
-            }
-
-            else if (objet->getName() == "right")
-            {
-                turnRight = true;
-                turnLeft = false;
-            }
-            else if (objet->getName() == "left")
-            {
-                turnLeft = true;
-                turnRight = false;
-            }
-
-            else if (objet->getName() == "straight")
-            {
-                char a = 0;
-                std::cout << "q gauche d droite" << std::endl;
-                std::cin >> a;
                 if (a == 'd')
                 {
-                    player.moveX(1);
+                    player.move(glm::vec3(0,1,0));
                 }
                 if (a == 'q')
                 {
-                    player.moveX(-1);
+                    player.move(glm::vec3(0,-1,0));
                 }
             }
 
-            else if (objet->getName() == "obstacle" & player.getCoord()[2] == 0)
+            if (left == true)
             {
-                player.setLife();
-            }
-        }
-
-        while (player.isLife() & player.getCoord()[1] != courseMap.end() & turnRight == true & turnLeft == false & doubleturn ==false)
-        {
-            std::cout<<"droite X-1"<<std::endl;
-            player.moveX(-1);
-            objet = courseMap.findObject(player.getCoord());
-
-            std::cout << std::endl;
-            objet->draw();
-            std::cout << std::endl;
-            std::cout << player.getCoord() << std::endl;
-
-            if (objet->getName() == "empty")
-            {
-                std::cout << "test" << std::endl;
-                player.setLife();
-            }
-
-            else if (objet->getName() == "right")
-            {
-                //turnRight = false;
-                doubleturn = true;
-            }
-            else if (objet->getName() == "left")
-            {
-                turnLeft = true;
-            }
-
-            else if (objet->getName() == "straight")
-            {
-                char a = 0;
-                std::cout << "q gauche d droite" << std::endl;
-                std::cin >> a;
                 if (a == 'd')
                 {
-                    player.moveY(1);
+                    player.move(glm::vec3(0,-1,0));
                 }
                 if (a == 'q')
                 {
-                    player.moveY(-1);
+                    player.move(glm::vec3(0,1,0));
                 }
             }
 
-            else if (objet->getName() == "obstacle" & player.getCoord()[2] == 0)
+            if (up == true)
             {
-                player.setLife();
-            }
-        }
-
-        while (player.isLife() & player.getCoord()[1] != courseMap.end() & turnRight == false & turnLeft == true & doubleturn ==false)
-        {
-            std::cout<<"left X1"<<std::endl;
-            player.moveX(1);
-            objet = courseMap.findObject(player.getCoord());
-
-            std::cout << std::endl;
-            objet->draw();
-            std::cout << std::endl;
-            std::cout << player.getCoord() << std::endl;
-
-            if (objet->getName() == "empty")
-            {
-                std::cout << "test" << std::endl;
-                player.setLife();
-            }
-
-            else if (objet->getName() == "right")
-            {
-                turnRight = true;
-            }
-            else if (objet->getName() == "left")
-            {
-                //turnLeft = false;
-                doubleturn = true;
-            }
-
-            else if (objet->getName() == "straight")
-            {
-                char a = 0;
-                std::cout << "q gauche d droite" << std::endl;
-                std::cin >> a;
                 if (a == 'd')
                 {
-                    player.moveY(1);
+                    player.move(glm::vec3(-1,0,0));
                 }
                 if (a == 'q')
                 {
-                    player.moveY(-1);
+                    player.move(glm::vec3(1,0,0));
                 }
             }
 
-            else if (objet->getName() == "obstacle" & player.getCoord()[2] == 0)
+            if (down == true)
             {
-                player.setLife();
-            }
-        }
-
-        while (player.isLife() & player.getCoord()[1] != courseMap.end() & doubleturn == true)
-        {
-            
-            std::cout<<"double Y-1"<<std::endl;
-            player.moveY(-1);
-            objet = courseMap.findObject(player.getCoord());
-
-            std::cout << std::endl;
-            objet->draw();
-            std::cout << std::endl;
-            std::cout << player.getCoord() << std::endl;
-
-            if (objet->getName() == "empty")
-            {
-                std::cout << "test" << std::endl;
-                player.setLife();
-            }
-
-            else if (objet->getName() == "right")
-            {
-                turnRight = true;
-                doubleturn = false;
-            }
-            else if (objet->getName() == "left")
-            {
-                turnLeft = true;
-                doubleturn = false;
-            }
-
-            else if (objet->getName() == "straight")
-            {
-                char a = 0;
-                std::cout << "q gauche d droite" << std::endl;
-                std::cin >> a;
                 if (a == 'd')
                 {
-                    player.moveX(1);
+                    player.move(glm::vec3(1,0,0));
                 }
                 if (a == 'q')
                 {
-                    player.moveX(-1);
+                    player.move(glm::vec3(-1,0,0));
                 }
             }
-
-            else if (objet->getName() == "obstacle" & player.getCoord()[2] == 0)
-            {
-                player.setLife();
-            }
         }
+        if (objet->getName() == "up")
+        {
+            up = true;
+            right = false;
+            left = false;
+            down = false;
+ 
+
+        }
+        if (objet->getName() == "down")
+        {
+            up = false;
+            right = false;
+            left = false;
+            down = true;
+        }
+        
+        if (objet->getName() == "right")
+        {
+            up = false;
+            right = true;
+            left = false;
+            down = false;
+        }
+        if (objet->getName() == "left")
+        {
+            up = false;
+            right = false;
+            left = true;
+            down = false;
+        }
+        if (objet->getName() == "empty")
+        {
+
+            player.setLife();
+        }
+
+        if (objet->getName() == "obstacle" & player.getCoord()[2] == 0)
+        {
+            player.setLife();
+        }
+        
+        if (right ==true)
+        {
+            player.move(glm::vec3(1,0,0));
+        }
+
+        if (left == true)
+        {
+            player.move(glm::vec3(-1,0,0));
+        }
+
+        if (up==true)
+        {
+            player.move(glm::vec3(0,-1,0));
+        }
+
+        if (down==true)  
+        {
+            player.move(glm::vec3(0,1,0));
+        }
+
+
+        
+
     }
 
     // Initialize SDL and open a window

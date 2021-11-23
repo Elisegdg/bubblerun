@@ -41,6 +41,23 @@ public:
 
 };
 
+class Up : public Object
+{
+public: 
+    Up():Object("up"){}
+    ~Up()= default;
+    void draw() override;
+
+};
+
+class Down : public Object
+{
+public: 
+    Down():Object("down"){}
+    ~Down()= default;
+    void draw() override;
+
+};
 class Straight : public Object
 {
 public:

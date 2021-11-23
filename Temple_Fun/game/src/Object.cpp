@@ -47,3 +47,13 @@ void Left::draw()
 {
     std::cout<<"left"<<std::endl;
 }
+
+void Up::draw()
+{
+    std::cout<<"Up"<<std::endl;
+}
+
+void Down::draw()
+{
+    std::cout<<"Down"<<std::endl;
+}

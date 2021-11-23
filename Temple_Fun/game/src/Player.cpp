@@ -28,16 +28,11 @@ bool Player::isLife()
     return m_life;
 }
 
-void Player::moveX(int a )
-{
-    m_coord = glm::vec3(m_coord[0]+a,m_coord[1],m_coord[2]);
-}
 
-void Player::moveY(int a )
+void Player::move(glm::vec3 coord_move)
 {
-    m_coord = glm::vec3(m_coord[0],m_coord[1]+a,m_coord[2]);
+    m_coord = glm::vec3(m_coord[0]+coord_move[0],m_coord[1]+coord_move[1],m_coord[2]+coord_move[2]);
 }
-
 
 void Player::setLife()
 {

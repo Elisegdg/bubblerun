@@ -17,7 +17,6 @@ public:
     int getCoins();
     bool isLife();
     void setLife();
-    void moveX(int a);
-    void moveY(int a);
+    void move(glm::vec3 coord_add);
 };
 
