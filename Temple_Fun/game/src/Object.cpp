@@ -18,10 +18,7 @@ std::string Object::getName()
 }
 
 
-void Right::draw()
-{
-    std::cout<<"right"<<std::endl;
-}
+
 
 void Object::draw()
 {
@@ -38,22 +35,3 @@ void Obstacle ::draw()
     std::cout<<"obstacle"<<std::endl;
 }
 
-void Straight::draw()
-{
-    std::cout<<"straight"<<std::endl;
-}
-
-void Left::draw()
-{
-    std::cout<<"left"<<std::endl;
-}
-
-void Up::draw()
-{
-    std::cout<<"Up"<<std::endl;
-}
-
-void Down::draw()
-{
-    std::cout<<"Down"<<std::endl;
-}
