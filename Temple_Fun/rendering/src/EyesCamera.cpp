@@ -24,13 +24,19 @@ namespace rendering {
     void EyesCamera::rotateLeft(float degrees){
         const float rad = glm::radians(degrees);
         if(degrees >=0){
-            if (m_fPhi + rad < m_fMaxAngleX){
+            if (m_fPhi + rad <= m_fMaxAngleX){
             m_fPhi += rad;
+            }
+            else{
+                m_fPhi = m_fMaxAngleX;
             }
         }
         else{
-            if(fabs(m_fPhi + rad) < m_fMaxAngleX){
+            if(fabs(m_fPhi + rad) <= m_fMaxAngleX){
                 m_fPhi += rad;
+            }
+            else{
+                m_fPhi = -m_fMaxAngleX;
             }
         }             
        
@@ -43,6 +49,8 @@ namespace rendering {
             if (m_fTheta + rad < m_fMaxAngleY){
                 m_fTheta += rad;
             }
+            
+           
         }
         else{
             if(fabs(m_fTheta + rad) < m_fMaxAngleY){
@@ -58,24 +66,29 @@ namespace rendering {
         return ViewMatrix;
     }
 
-    void EyesCamera::eventCamera(SDLWindowManager windowManager){
-        if(windowManager.isKeyPressed(SDLK_s)) moveFront(-0.1);
-        if(windowManager.isKeyPressed(SDLK_z)) moveFront(0.1);
-        if(windowManager.isKeyPressed(SDLK_q)) moveLeft(0.1);
-        if(windowManager.isKeyPressed(SDLK_d)) moveLeft(-0.1);
-        if(windowManager.isKeyPressed(SDLK_i)) rotateLeft(5.0);
-        if(windowManager.isKeyPressed(SDLK_k)) rotateUp(5.0);
+    void EyesCamera::eventCamera(SDLWindowManager* windowManager){
+        if(windowManager->isKeyPressed(SDLK_s)) moveFront(-0.1);
+        if(windowManager->isKeyPressed(SDLK_z)) moveFront(0.1);
+        if(windowManager->isKeyPressed(SDLK_q)) moveLeft(0.1);
+        if(windowManager->isKeyPressed(SDLK_d)) moveLeft(-0.1);
+        if(windowManager->isKeyPressed(SDLK_i)) rotateLeft(-89.0);
+        if(windowManager->isKeyPressed(SDLK_u)) rotateLeft(89.0);
+        if(windowManager->isKeyPressed(SDLK_k)) rotateUp(5.0);
         
         glm::ivec2 mousePos = glm::ivec2(0.0);
-        if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)){
-            mousePos = windowManager.getMousePosition();
-            float mousePosX = mousePos.x/800.0f - 0.5;
-            float mousePosY = mousePos.y/600.0f - 0.5;
+        if(windowManager->isMouseButtonPressed(SDL_BUTTON_LEFT)){
+            mousePos = windowManager->getMousePosition();
+            float mousePosX = mousePos.x/2000.0f - 0.5;
+            float mousePosY = mousePos.y/1000.0f - 0.5;
 
             rotateLeft(-2*mousePosX);
             rotateUp(-2*mousePosY);
 
         }
+    }
+
+    void EyesCamera::update(){
+        m_fMaxAngleX +=M_PI/2.;
     }
 
 

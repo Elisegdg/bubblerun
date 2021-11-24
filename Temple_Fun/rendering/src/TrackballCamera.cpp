@@ -34,15 +34,18 @@ namespace rendering {
         return m_fDistance;
     }
 
-    void TrackballCamera::eventCamera(SDLWindowManager windowManager){
-        glm::ivec2 mousePos = windowManager.getMousePosition();
-        if(windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT)) {
+    void TrackballCamera::eventCamera(SDLWindowManager* windowManager){
+        glm::ivec2 mousePos = windowManager->getMousePosition();
+        if(windowManager->isMouseButtonPressed(SDL_BUTTON_RIGHT)) {
             moveFront(0.03);
         }
-        else if(windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT)) moveFront(-0.03);
+        else if(windowManager->isMouseButtonPressed(SDL_BUTTON_LEFT)) moveFront(-0.03);
 
         rotateLeft( mousePos.y );
         rotateUp( mousePos.x );
+    }
+    void TrackballCamera::update(){
+        return;
     }
 
 

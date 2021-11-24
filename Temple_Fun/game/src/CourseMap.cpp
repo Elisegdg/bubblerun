@@ -13,7 +13,7 @@
 
 
 
-void Parcours::addObject(int r,int g,int b)
+void Parcours::addObject(const unsigned int r,const unsigned int g,const unsigned int b)
 {
     if(r==255 & g==255 & b==255 )
     {
@@ -65,8 +65,6 @@ void Parcours::loadMap(const glimac::FilePath &file)
     
     fileMap >> m_sizex >>m_sizey;
 
-
-
     int r,g,b;
 
     fileMap>>r;
@@ -87,41 +85,18 @@ void Parcours::loadMap(const glimac::FilePath &file)
             
             addObject(r,g,b);
             m_parcours[iterator]->addCoord(j,i,0);
-            //m_parcours[iterator]->Draw();
-            //std::cout<<m_parcours[iterator]->getCoord()<<std::endl;
-            
-            
-            iterator ++;
 
-            
-            
-            
-            
-        }
-        
-
+           iterator ++; 
+        }        
     }
-
-    // for (int i = 0; i < m_sizex; i++)
-    // {
-    //     m_parcours[i]->Draw();
-    //     std::cout<<m_parcours[i]->GetCoord()<<std::endl;
-    // }
-    
-
-    
-
     
     Object* objet = findObject(glm::vec3(3,0,0));
     std::cout<<std::endl;
-    //objet->Draw();
-    
-    
 
 }
 
 
-Object* Parcours::findObject(glm::vec3 coord)
+Object* Parcours::findObject(const glm::vec3 coord)
 {
     Object *ptrObj = nullptr;
     float m;
@@ -162,14 +137,12 @@ Object* Parcours::findObject(glm::vec3 coord)
 
 }
 
-int Parcours::getSize(){
-    return m_sizex;
-}
 
-void Parcours::drawMap(rendering::Cube* mesh, rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix)
+
+void Parcours::drawMap(rendering::Cube* mesh, const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager* windowManager) const
 {
         for(int i = 0 ; i< m_parcours.size(); i++){
-            m_parcours[i]->draw(camera, Program, ProjMatrix, m_sizey);
+            m_parcours[i]->draw(camera, Program, ProjMatrix, m_sizey, windowManager);
             mesh->draw();
         }       
     

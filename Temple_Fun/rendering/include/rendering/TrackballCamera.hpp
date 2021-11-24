@@ -22,7 +22,7 @@ private:
 
 public:
     // Constructor
-    TrackballCamera(float distance = 10.f, float angleX = 0.f, float angleY = 0.f)
+    TrackballCamera(float distance = 5.f, float angleX = 0.f, float angleY = 0.f)
 	: m_fDistance(distance), m_fAngleX(angleX), m_fAngleY(angleY) 
     {
         m_cameraType = 0;
@@ -37,8 +37,9 @@ public:
     void rotateLeft(float degrees);
     void rotateUp(float degrees);    
     glm::mat4 getViewMatrix() const;
-    void eventCamera(SDLWindowManager windowManager);
+    void eventCamera(SDLWindowManager* windowManager);
     float getDistance();
+    void update();
 
 };
 }

@@ -9,6 +9,7 @@
 #include <rendering/Program.hpp>
 #include<rendering/Cube.hpp>
 #include<rendering/Texture.hpp>
+#include <glimac/SDLWindowManager.hpp>
 
 
 
@@ -16,16 +17,16 @@ class Object
 {
 protected:
     glm::vec3 m_coord;
-    rendering::Model* m_model;
+    std::string m_name;
 public:
     Object();
-    Object(rendering::Model *model):
-        m_model(model){}
     ~Object() = default;
     void addCoord(float x,float y,float z);
     glm::vec3 getCoord();
-    virtual void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize);
-    
+    virtual void draw(const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager);
+    std::string getName(){
+        return m_name;
+    }
     
 };
 
@@ -33,27 +34,28 @@ class Right : public Object
 {
 
 public: 
-    Right() = default;
+    Right() {
+        m_name = "right";
+    }
     ~Right() = default;
-    //void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize) override;
  
 };
 
 class Left : public Object
 {
 public: 
-    Left()= default;
+    Left(){
+    }
     ~Left()= default;
-    //void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize) override;
 
 };
 
 class Straight : public Object
 {
 public:
-    Straight()= default;
+    Straight(){
+    }
     ~Straight()= default;
-    //void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize);
 
 };
 
@@ -63,7 +65,7 @@ class Obstacle : public Object
 public:
     Obstacle()= default;
     ~Obstacle()= default;
-    void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize);
+    void draw(const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager);
 };
 
 class  Empty: public Object
@@ -71,7 +73,7 @@ class  Empty: public Object
 public:
     Empty()= default;
     ~Empty()= default;
-    void draw(rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize);
+    void draw(const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager);
 };
 
 #endif

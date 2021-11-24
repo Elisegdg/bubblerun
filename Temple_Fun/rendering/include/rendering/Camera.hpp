@@ -21,7 +21,7 @@ public:
     //Destructor
 
     //Methods
-    unsigned int getCameraType(){
+    unsigned int getCameraType() const{
         return m_cameraType;
     }
 
@@ -31,8 +31,8 @@ public:
     virtual void rotateLeft(float degrees) = 0;
     virtual void rotateUp(float degrees) = 0;    
     virtual glm::mat4 getViewMatrix() const =0;
-    virtual void eventCamera(SDLWindowManager windowManager)=0;
-
+    virtual void eventCamera(SDLWindowManager* windowManager)=0;
+    virtual void update() = 0;
 };
 
 

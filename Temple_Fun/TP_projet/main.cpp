@@ -116,50 +116,11 @@ int main(int argc, char **argv)
                 }
             }
         }
-        glm::ivec2 mousePos_trackball = windowManager.getMousePosition();
-        glm::ivec2 mousePos_eyes = glm::ivec2(0.0);
 
-        // Event TrackBallCamera
-        if (camera->getCameraType() == 0)
-        {
-            if (windowManager.isMouseButtonPressed(SDL_BUTTON_RIGHT))
-            {
-                trackball_camera.moveFront(0.03);
-            }
-            else if (windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT))
-                trackball_camera.moveFront(-0.03);
+        camera->eventCamera(&windowManager);
+        
 
-            trackball_camera.rotateLeft(mousePos_trackball.y);
-            trackball_camera.rotateUp(mousePos_trackball.x);
-        }
-
-        //Event EyesCamera
-        else
-        {
-            if (windowManager.isKeyPressed(SDLK_s))
-                camera->moveFront(-0.1);
-            if (windowManager.isKeyPressed(SDLK_z))
-                camera->moveFront(0.1);
-            if (windowManager.isKeyPressed(SDLK_q))
-                camera->moveLeft(0.1);
-            if (windowManager.isKeyPressed(SDLK_d))
-                camera->moveLeft(-0.1);
-            if (windowManager.isKeyPressed(SDLK_i))
-                camera->rotateLeft(0.2);
-            if (windowManager.isKeyPressed(SDLK_k))
-                camera->rotateUp(0.2);
-
-            if (windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT))
-            {
-                mousePos_eyes = windowManager.getMousePosition();
-                float mousePosX = mousePos_eyes.x / 2000.0f - 0.5;
-                float mousePosY = mousePos_eyes.y / 1000.0f - 0.5;
-
-                camera->rotateLeft(-3 * mousePosX);
-                camera->rotateUp(-3 * mousePosY);
-            }
-        }
-
+        
         /*********************************
          *      RENDERING CODE           *
          *********************************/
@@ -171,7 +132,8 @@ int main(int argc, char **argv)
 
         // Drawing of the hero as a cube
         glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 2000.f / 1000.f, 0.1f, 100.f);
-        ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0, 0.6, 0.));
+
+        ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0., 0.6, 0.));
         ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));
         glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
         
@@ -182,7 +144,7 @@ int main(int argc, char **argv)
         cube_nemo.draw();
 
         // Drawing of the Path
-        map.drawMap(&cube_path,camera, &TextureProgram, ProjMatrix);
+        map.drawMap(&cube_path,camera, &TextureProgram, ProjMatrix, &windowManager);
 
 
         // Drawing of the Skybox

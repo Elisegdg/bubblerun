@@ -10,6 +10,7 @@
 #include <rendering/Program.hpp>
 #include <rendering/Model.hpp>
 #include <rendering/Cube.hpp>
+#include <glimac/SDLWindowManager.hpp>
 
 
 
@@ -21,11 +22,10 @@ private:
     int m_sizey; 
 
 public:
-    void addObject(int r,int g,int b);
+    void addObject(const unsigned int r, const unsigned int g, const unsigned int b);
     void loadMap(const glimac::FilePath &file);
-    Object* findObject(glm::vec3 coord);
-    int getSize();
-    void drawMap(rendering::Cube* mesh, rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix);
+    Object* findObject(const glm::vec3 coord);
+    void drawMap(rendering::Cube* mesh, const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager* windowManager)const;
 };
 
 #endif
