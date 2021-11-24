@@ -6,11 +6,6 @@
 #include <glimac/SDLWindowManager.hpp>
 
 
-Object::Object(): m_coord(glm::vec3(0,0,0))
-{
-    
-}
-
 
 void Object::addCoord(float x,float y,float z)
 {

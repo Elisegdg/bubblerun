@@ -40,7 +40,7 @@ int main(int argc, char **argv)
     *     INITIALIZATION CODE       *
    *********************************/
 
-    Parcours map;
+    CourseMap map;
     map.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/test_parcours.ppm");
     Texture ground("/home/clara/Documents/Projet/Temple_Fun/assets/textures/ground4.png");
     Texture nemo("/home/clara/Documents/Projet/Temple_Fun/assets/textures/nemo.jpg");
@@ -133,7 +133,7 @@ int main(int argc, char **argv)
         // Drawing of the hero as a cube
         glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 2000.f / 1000.f, 0.1f, 100.f);
 
-        ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0., 0.6, 0.));
+        ViewMatrix = glm::translate(ViewMatrix, glm::vec3(1., 0.6, 0.));
         ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));
         glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
         
