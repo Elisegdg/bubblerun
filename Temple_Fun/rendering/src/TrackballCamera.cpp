@@ -37,9 +37,9 @@ namespace rendering {
     void TrackballCamera::eventCamera(SDLWindowManager* windowManager){
         glm::ivec2 mousePos = windowManager->getMousePosition();
         if(windowManager->isMouseButtonPressed(SDL_BUTTON_RIGHT)) {
-            moveFront(0.03);
+            moveFront(0.2);
         }
-        else if(windowManager->isMouseButtonPressed(SDL_BUTTON_LEFT)) moveFront(-0.03);
+        else if(windowManager->isMouseButtonPressed(SDL_BUTTON_LEFT)) moveFront(-0.2);
 
         rotateLeft( mousePos.y );
         rotateUp( mousePos.x );

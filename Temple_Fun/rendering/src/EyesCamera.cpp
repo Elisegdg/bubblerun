@@ -71,8 +71,6 @@ namespace rendering {
         if(windowManager->isKeyPressed(SDLK_z)) moveFront(0.1);
         if(windowManager->isKeyPressed(SDLK_q)) moveLeft(0.1);
         if(windowManager->isKeyPressed(SDLK_d)) moveLeft(-0.1);
-        if(windowManager->isKeyPressed(SDLK_i)) rotateLeft(-89.0);
-        if(windowManager->isKeyPressed(SDLK_u)) rotateLeft(89.0);
         if(windowManager->isKeyPressed(SDLK_k)) rotateUp(5.0);
         
         glm::ivec2 mousePos = glm::ivec2(0.0);

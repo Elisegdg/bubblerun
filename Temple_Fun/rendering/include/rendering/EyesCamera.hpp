@@ -5,6 +5,7 @@
 #include "rendering/Camera.hpp"
 #include <glimac/SDLWindowManager.hpp>
 
+
 namespace rendering {
 
 class EyesCamera : public Camera{
@@ -24,7 +25,7 @@ private:
 public:
     // Constructor
     EyesCamera(){
-        m_Position = glm::vec3(0.,3.,0.); //4 is the "height" of the hero, we need to define it somewhere
+        m_Position = glm::vec3(0.,2.,0.); //4 is the "height" of the hero, we need to define it somewhere
 	    m_fPhi = 0.;
         m_fTheta = 0.;
         m_cameraType = 1;

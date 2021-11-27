@@ -39,3 +39,18 @@ void Player::setLife()
     m_life =false;
 }
 
+
+void Player::draw(rendering::Model* mesh, const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix)
+{
+    glm::mat4 ViewMatrix = camera->getViewMatrix();
+    ViewMatrix = glm::translate(ViewMatrix, convertCoord());
+    ViewMatrix = glm::scale(ViewMatrix,glm::vec3(0.5, 1.2, 0.5));
+    glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
+
+    Program->uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
+    Program->uniformMatrix4fv("uMVMatrix", ViewMatrix);
+    Program->uniformMatrix4fv("uNormalMatrix", NormalMatrix);
+    Program->uniform1i("uTexture", 0);
+    mesh->draw();
+
+}

@@ -2,6 +2,7 @@
 #pragma once 
 #include <glimac/glm.hpp>
 #include "../include/game/CourseMap.hpp"
+#include "rendering/Model.hpp"
 
 class Player
 {
@@ -19,4 +20,8 @@ public:
     bool isLife();
     void setLife();
     void move(glm::vec3 coord_add);
+    glm::vec3 convertCoord(){
+        return glm::vec3((m_coord.x - 1), 0, m_coord.y);
+    }
+    void draw(rendering::Model* mesh, const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix);
 };
