@@ -2,6 +2,7 @@
 #include "../include/game/CourseMap.hpp"
 #include <glimac/glm.hpp>
 
+
 void Player::setCoord(glm::vec3 coord)
 {
     m_coord = coord;
@@ -39,3 +40,26 @@ void Player::setLife()
     m_life =false;
 }
 
+glm::vec3 Player::convertCoord(){
+    return glm::vec3(getCoord().x - 1, 0, getCoord().y);
+}
+
+void Player::draw(rendering::Model* mesh, rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix)
+{
+
+    glm::mat4 ViewMatrix = camera->getViewMatrix();
+    ViewMatrix = glm::translate(ViewMatrix, convertCoord());
+    ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0,0.6,0));
+
+    ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 1, 1));
+    //ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0,0,-3*windowManager->getTime()));
+    glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
+
+    Program->uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
+    Program->uniformMatrix4fv("uMVMatrix", ViewMatrix);
+    Program->uniformMatrix4fv("uNormalMatrix", NormalMatrix);
+    Program->uniform1i("uTexture", 0);
+
+    mesh->draw();
+
+}

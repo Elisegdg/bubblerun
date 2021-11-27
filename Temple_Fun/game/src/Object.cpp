@@ -21,7 +21,7 @@ glm::vec3 Object::getCoord()
 void Object::draw(const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager)
 {
     glm::mat4 ViewMatrix = camera->getViewMatrix();
-    ViewMatrix = glm::translate(ViewMatrix, glm::vec3(getCoord().x - 14, 0,  mapSize-1 - getCoord().y));
+    ViewMatrix = glm::translate(ViewMatrix, glm::vec3(getCoord().x - 1, 0, getCoord().y));
     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 0.2, 1));
     //ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0,0,-3*windowManager->getTime()));
 
@@ -40,7 +40,7 @@ void Obstacle ::draw(const rendering::Camera* camera, rendering::ShaderManager* 
 {
 
     glm::mat4 ViewMatrix = camera->getViewMatrix();
-    ViewMatrix = glm::translate(ViewMatrix, glm::vec3(getCoord().x - 14, 0.5,  mapSize-1 - getCoord().y));
+    ViewMatrix = glm::translate(ViewMatrix, glm::vec3(getCoord().x - 1, 0.4, getCoord().y));
     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 1, 1));
     //ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0,0,-3*windowManager->getTime()));
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
