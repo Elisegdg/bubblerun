@@ -4,11 +4,12 @@
 #include "glimac/glm.hpp"
 #include "rendering/Camera.hpp"
 #include <glimac/SDLWindowManager.hpp>
+#include <game/Player.hpp>
 
 
 namespace rendering {
 
-const float cameraPlayerDistance = 5.f;
+const float cameraPlayerDistance = 2.f;
 const float minDistance = 3.0f;
 const float maxDistance = 7.0f;
 
@@ -18,14 +19,15 @@ private:
     float m_fDistance;
     float m_fAngleX;
     float m_fAngleY;
-
+    Player* m_player;
 
 public:
     // Constructor
-    TrackballCamera(float distance = 5.f, float angleX = 0.f, float angleY = 0.f)
-	: m_fDistance(distance), m_fAngleX(angleX), m_fAngleY(angleY) 
+    TrackballCamera(Player* player, float distance = 5.f, float angleX = 0.f, float angleY = 0.f)
+	:m_fDistance(distance), m_fAngleX(angleX), m_fAngleY(angleY) 
     {
         m_cameraType = 0;
+         m_player = player;
     }
 
     // Destructor
@@ -39,7 +41,7 @@ public:
     glm::mat4 getViewMatrix() const;
     void eventCamera(SDLWindowManager* windowManager);
     float getDistance();
-    void update();
+    
 
 };
 }

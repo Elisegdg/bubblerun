@@ -21,12 +21,10 @@ void CourseMap::addObject(int r,int g,int b)
 
     else if(r==255 & g==255)
     {
-        std::cout<<"test up"<<std::endl;
         m_CourseMap.push_back(new Up);
     }
     else if(r==255 & b==255)
     {
-        std::cout<<"test down"<<std::endl;
         m_CourseMap.push_back(new Down);
     }
     else if (r==255)

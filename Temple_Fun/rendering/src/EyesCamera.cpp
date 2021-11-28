@@ -11,12 +11,15 @@ namespace rendering {
     }
 
     void EyesCamera::moveLeft(float t){
-        m_Position += t*m_LeftVector;
+        //std::cout<<"initial coord"<<m_player->convertCoord()<<std::endl;
+        m_Position = t*m_LeftVector;
         computeDirectionVectors();
     }
 
     void EyesCamera::moveFront(float t){
-        m_Position += t*m_FrontVector;
+        
+        m_Position = glm::vec3(m_player->convertCoord().x, 2., m_player->convertCoord().z);
+        std::cout<<m_player->convertCoord()<<std::endl;
         computeDirectionVectors();
     }
 
@@ -68,9 +71,9 @@ namespace rendering {
 
     void EyesCamera::eventCamera(SDLWindowManager* windowManager){
         if(windowManager->isKeyPressed(SDLK_s)) moveFront(-0.1);
-        if(windowManager->isKeyPressed(SDLK_z)) moveFront(0.1);
-        if(windowManager->isKeyPressed(SDLK_q)) moveLeft(0.1);
-        if(windowManager->isKeyPressed(SDLK_d)) moveLeft(-0.1);
+        if(windowManager->isKeyPressed(SDLK_z)) moveFront(1);
+        if(windowManager->isKeyPressed(SDLK_q)) moveLeft(1);
+        if(windowManager->isKeyPressed(SDLK_d)) moveLeft(-1);
         if(windowManager->isKeyPressed(SDLK_i)) rotateLeft(-89.0);
         if(windowManager->isKeyPressed(SDLK_u)) rotateLeft(89.0);
         if(windowManager->isKeyPressed(SDLK_k)) rotateUp(5.0);
@@ -87,9 +90,7 @@ namespace rendering {
         }
     }
 
-    void EyesCamera::update(){
-        m_fMaxAngleX +=M_PI/2.;
-    }
+    
 
 
 

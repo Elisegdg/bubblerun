@@ -1,6 +1,8 @@
+
 #include "../include/game/Player.hpp"
 #include "../include/game/CourseMap.hpp"
 #include <glimac/glm.hpp>
+
 
 
 void Player::setCoord(glm::vec3 coord)
@@ -63,3 +65,4 @@ void Player::draw(rendering::Model* mesh, rendering::Camera* camera, rendering::
     mesh->draw();
 
 }
+

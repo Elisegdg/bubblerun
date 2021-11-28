@@ -59,8 +59,8 @@ int main(int argc, char **argv)
     Cube cube_path(ground, 1);
     Cube cube_nemo(nemo, 1);
 
-    TrackballCamera trackball_camera;
-    EyesCamera eyes_camera;
+    TrackballCamera trackball_camera(&player);
+    EyesCamera eyes_camera(&player);
     Camera *camera = &eyes_camera;
 
     // Shaders loading
@@ -126,7 +126,12 @@ int main(int argc, char **argv)
                 }
             }
 
-            camera->eventCamera(&windowManager);
+            if (camera->getCameraType() == 1 ){
+                //if(windowManager.isKeyPressed(SDLK_z)) camera->moveFront(1);
+
+            }
+
+            
 
             if (player.isLife() & player.getCoord()[1] != courseMap.end())
             {
@@ -136,7 +141,7 @@ int main(int argc, char **argv)
                 std::cout << std::endl;
                 std::cout << std::endl;
 
-                std::cout << player.getCoord() << std::endl;
+                std::cout << "player.converCoord"<<player.convertCoord() << std::endl;
 
                 if (objet->getName() == "straight")
                 {
@@ -257,7 +262,7 @@ int main(int argc, char **argv)
                     }
                 }
             }
-
+            camera->eventCamera(&windowManager);
             /*********************************
          *      RENDERING CODE           *
          *********************************/
