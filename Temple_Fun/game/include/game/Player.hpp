@@ -9,8 +9,9 @@ private:
     glm::vec3 m_coord;
     unsigned int m_coins;
     bool m_life;
+    float m_orientation;
 public:
-    Player(CourseMap CourseMap):m_coord(CourseMap.start()),m_coins(0),m_life(true){}
+    Player(CourseMap CourseMap):m_coord(CourseMap.start()),m_coins(0),m_life(true),m_orientation(0){}
     ~Player() = default;
     void setCoord(glm::vec3 coord);
     glm::vec3 getCoord();
@@ -19,4 +20,8 @@ public:
     bool isLife();
     void setLife();
     void move(glm::vec3 coord_add);
+    void moveOrientation();
+    void setOrientation(float orientatioin);
+    float getOrientation();
+    void moveside(char a);
 };

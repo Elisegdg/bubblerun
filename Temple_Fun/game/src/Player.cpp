@@ -39,3 +39,82 @@ void Player::setLife()
     m_life =false;
 }
 
+void Player::moveOrientation()
+{
+    if (m_orientation == 0.)
+    {
+        move(glm::vec3(0,1,0));
+    }
+    if (m_orientation == 90.)
+    {
+        move(glm::vec3(1,0,0));
+    }
+    if (m_orientation == -90.)
+    {
+        move(glm::vec3(-1,0,0));
+    }
+    if (m_orientation == 180.)
+    {
+        move(glm::vec3(0,-1,0));
+    }
+    
+    
+}
+
+void Player::setOrientation(float orientation )
+{
+    m_orientation = orientation;
+}
+
+float Player::getOrientation()
+{
+    return m_orientation;
+}
+
+void Player::moveside(char a )
+{
+    if (m_orientation == 0.)
+    {
+        if (a == 'd')
+        {
+            move(glm::vec3(-1, 0, 0));
+        }
+        if (a == 'q')
+        {
+            move(glm::vec3(1, 0, 0));
+        }
+    }
+    if (m_orientation == 90.)
+    {
+        if (a == 'd')
+        {
+            move(glm::vec3(0, 1, 0));
+        }
+        if (a == 'q')
+        {
+            move(glm::vec3(0, -1, 0));
+        }
+    }
+    if (m_orientation == -90.)
+    {
+        if (a == 'd')
+        {
+            move(glm::vec3(0, -1, 0));
+        }
+        if (a == 'q')
+        {
+            move(glm::vec3(0, 1, 0));
+        }
+    }
+    if (m_orientation == 180.)
+    {
+        if (a == 'd')
+        {
+            move(glm::vec3(1, 0, 0));
+        }
+        if (a == 'q')
+        {
+            move(glm::vec3(-1, 0, 0));
+        }
+    }
+}

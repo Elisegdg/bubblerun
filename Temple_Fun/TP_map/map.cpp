@@ -20,10 +20,7 @@ int main(int argc, char** argv) {
 
     Object* objet = courseMap.findObject(player.getCoord()); 
 
-    bool right = false;
-    bool left = false;
-    bool up = false;
-    bool down = true;
+    
  
 
     while (player.isLife() & player.getCoord()[1] != courseMap.end() & player.getCoord()[0]>=0 & player.getCoord()[1]>=0 )
@@ -46,90 +43,37 @@ int main(int argc, char** argv) {
             char a = 0;
             std::cout << "q gauche d droite" << std::endl;
             std::cin >> a;
-
-            if (right == true)
-            {
-                if (a == 'd')
-                {
-                    player.move(glm::vec3(0,1,0));
-                }
-                if (a == 'q')
-                {
-                    player.move(glm::vec3(0,-1,0));
-                }
-            }
-
-            if (left == true)
-            {
-                if (a == 'd')
-                {
-                    player.move(glm::vec3(0,-1,0));
-                }
-                if (a == 'q')
-                {
-                    player.move(glm::vec3(0,1,0));
-                }
-            }
-
-            if (up == true)
-            {
-                if (a == 'd')
-                {
-                    player.move(glm::vec3(-1,0,0));
-                }
-                if (a == 'q')
-                {
-                    player.move(glm::vec3(1,0,0));
-                }
-            }
-
-            if (down == true)
-            {
-                if (a == 'd')
-                {
-                    player.move(glm::vec3(1,0,0));
-                }
-                if (a == 'q')
-                {
-                    player.move(glm::vec3(-1,0,0));
-                }
-            }
+            player.moveside(a);
+            
         }
         if (objet->getName() == "up")
         {
-            up = true;
-            right = false;
-            left = false;
-            down = false;
+            
+            player.setOrientation(180.);
  
 
         }
         if (objet->getName() == "down")
         {
-            up = false;
-            right = false;
-            left = false;
-            down = true;
+            
+            player.setOrientation(0.);
         }
         
         if (objet->getName() == "right")
         {
-            up = false;
-            right = true;
-            left = false;
-            down = false;
+        
+            player.setOrientation(90.);
         }
         if (objet->getName() == "left")
         {
-            up = false;
-            right = false;
-            left = true;
-            down = false;
+           
+            player.setOrientation(-90.);
         }
         if (objet->getName() == "empty")
         {
 
             player.setLife();
+            
         }
 
         if (objet->getName() == "obstacle" & player.getCoord()[2] == 0)
@@ -137,25 +81,9 @@ int main(int argc, char** argv) {
             player.setLife();
         }
         
-        if (right ==true)
-        {
-            player.move(glm::vec3(1,0,0));
-        }
+       
 
-        if (left == true)
-        {
-            player.move(glm::vec3(-1,0,0));
-        }
-
-        if (up==true)
-        {
-            player.move(glm::vec3(0,-1,0));
-        }
-
-        if (down==true)  
-        {
-            player.move(glm::vec3(0,1,0));
-        }
+        player.moveOrientation();
 
 
         
