@@ -56,3 +56,18 @@ void Empty::draw(const rendering::Camera* camera, rendering::ShaderManager* Prog
 {
     return;
 }
+
+void Coins::draw(const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager)
+{
+
+    glm::mat4 ViewMatrix = camera->getViewMatrix();
+    ViewMatrix = glm::translate(ViewMatrix, glm::vec3(getCoord().x - 14, 0.5,  mapSize-1 - getCoord().y));
+    ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 1, 1));
+    //ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0,0,-3*windowManager->getTime()));
+    glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
+
+    Program->uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
+    Program->uniformMatrix4fv("uMVMatrix", ViewMatrix);
+    Program->uniformMatrix4fv("uNormalMatrix", NormalMatrix);
+    Program->uniform1i("uTexture", 0);
+}

@@ -4,11 +4,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <glimac/glm.hpp>
-#include<rendering/Program.hpp>
+#include <rendering/Program.hpp>
 #include <rendering/Camera.hpp>
 #include <rendering/Texture.hpp>
 #include <rendering/Model.hpp>
 #include <rendering/Cube.hpp>
+#include <random>
+#include <iostream>
+#include <functional>
+#include <chrono>
 
 
 void CourseMap::addObject(int r,int g,int b)
@@ -21,17 +25,18 @@ void CourseMap::addObject(int r,int g,int b)
 
     else if(r==255 & g==255)
     {
-        std::cout<<"test up"<<std::endl;
         m_CourseMap.push_back(new Up);
     }
     else if(r==255 & b==255)
     {
-        std::cout<<"test down"<<std::endl;
         m_CourseMap.push_back(new Down);
     }
     else if (r==255)
     {
-        m_CourseMap.push_back(new Straight);
+        std::default_random_engine re(std::chrono::system_clock::now().time_since_epoch().count());
+        std::uniform_int_distribution<int>distrib{0,1};
+        
+        m_CourseMap.push_back(new Straight(distrib(re)));
 
     
     }
@@ -102,6 +107,7 @@ void CourseMap::loadMap(const glimac::FilePath &file)
             
             
             
+            
         }
         
 
@@ -109,8 +115,8 @@ void CourseMap::loadMap(const glimac::FilePath &file)
 
     // for (int i = 0; i < m_sizex; i++)
     // {
-    //     m_CourseMap[i]->draw();
-    //     std::cout<<m_CourseMap[i]->GetCoord()<<std::endl;
+        
+    //     std::cout<<m_CourseMap[iterator]->getName()<<std::endl;
     // }
     
 
@@ -191,6 +197,10 @@ void CourseMap::drawMap(rendering::Cube* mesh, const rendering::Camera* camera, 
         for(int i = 0 ; i< m_CourseMap.size(); i++){
             m_CourseMap[i]->draw(camera, Program, ProjMatrix, m_sizey, windowManager);
             mesh->draw();
+            if(m_CourseMap[i]->getIfCoins())
+            {
+                std::cout<<"test coins"<<std::endl;
+            }
         }       
     
 }

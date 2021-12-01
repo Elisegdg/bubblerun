@@ -11,7 +11,7 @@ find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 
 # Pour gérer un bug a la fac, a supprimer sur machine perso:
-set(OPENGL_LIBRARIES /usr/lib/x86_64-linux-gnu/libGL.so.1)
+#set(OPENGL_LIBRARIES /usr/lib/x86_64-linux-gnu/libGL.so.1)
 
 
 include_directories(${SDL_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} glimac/include third-party/include rendering/include)

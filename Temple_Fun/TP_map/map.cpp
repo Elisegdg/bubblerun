@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
 
 
     CourseMap courseMap;
-    courseMap.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/test_parcours4.ppm");
+    courseMap.loadMap("/home/loulou/Documents/synthese_image_imac2/projet/templefun/Temple_Fun/assets/test_parcours4.ppm");
 
     Player player(courseMap);
 
@@ -26,12 +26,13 @@ int main(int argc, char** argv) {
     bool down = true;
  
 
-    while (player.isLife() & player.getCoord()[1] != courseMap.end())
+    while (player.isLife() & player.getCoord()[1] != courseMap.end() & player.getCoord()[0]>=0 & player.getCoord()[1]>=0 )
     {
 
         objet = courseMap.findObject(player.getCoord());
 
         std::cout<<std::endl;
+        std::cout<<objet->getIfCoins();
         std::cout<<std::endl;
 
         
@@ -41,6 +42,7 @@ int main(int argc, char** argv) {
 
         if (objet->getName() == "straight")
         {
+            
             char a = 0;
             std::cout << "q gauche d droite" << std::endl;
             std::cin >> a;

@@ -52,12 +52,12 @@ float skyboxVertices[] = {
 
 std::vector<std::string> skybox_sky = 
     {
-        "/home/clara/Documents/Projet/Temple_Fun/assets/textures/right.png",
-        "/home/clara/Documents/Projet/Temple_Fun/assets/textures/left.png",
-        "/home/clara/Documents/Projet/Temple_Fun/assets/textures/top.png",
-        "/home/clara/Documents/Projet/Temple_Fun/assets/textures/bottom.png",
-        "/home/clara/Documents/Projet/Temple_Fun/assets/textures/front.png",
-        "/home/clara/Documents/Projet/Temple_Fun/assets/textures/back.png"
+        "/home/loulou/Documents/synthese_image_imac2/projet/templefun/Temple_Fun/assets/textures/right.png",
+        "/home/loulou/Documents/synthese_image_imac2/projet/templefun/Temple_Fun/assets/textures/left.png",
+        "/home/loulou/Documents/synthese_image_imac2/projet/templefun/Temple_Fun/assets/textures/top.png",
+        "/home/loulou/Documents/synthese_image_imac2/projet/templefun/Temple_Fun/assets/textures/bottom.png",
+        "/home/loulou/Documents/synthese_image_imac2/projet/templefun/Temple_Fun/assets/textures/front.png",
+        "/home/loulou/Documents/synthese_image_imac2/projet/templefun/Temple_Fun/assets/textures/back.png"
     };
 
 

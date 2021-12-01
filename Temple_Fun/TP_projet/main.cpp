@@ -16,6 +16,8 @@
 #include <rendering/Skybox.hpp>
 #include <rendering/Cube.hpp>
 #include <game/CourseMap.hpp>
+#include <game/Object.hpp>
+#include <game/Player.hpp>
 
 using namespace glimac;
 using namespace rendering;
@@ -41,9 +43,9 @@ int main(int argc, char **argv)
    *********************************/
 
     CourseMap map;
-    map.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/test_parcours.ppm");
-    Texture ground("/home/clara/Documents/Projet/Temple_Fun/assets/textures/ground4.png");
-    Texture nemo("/home/clara/Documents/Projet/Temple_Fun/assets/textures/nemo.jpg");
+    map.loadMap("/home/loulou/Documents/synthese_image_imac2/projet/templefun/Temple_Fun/assets/test_parcours.ppm");
+    Texture ground("/home/loulou/Documents/synthese_image_imac2/projet/templefun/Temple_Fun/assets/textures/ground4.png");
+    Texture nemo("/home/loulou/Documents/synthese_image_imac2/projet/templefun/Temple_Fun/assets/textures/nemo.jpg");
     Cube cube_path(ground,1);
     Cube cube_nemo(nemo, 1);
 
@@ -51,6 +53,14 @@ int main(int argc, char **argv)
     EyesCamera eyes_camera;
     Camera *camera = &eyes_camera;
 
+    Player player(map);
+
+    Object* objet = map.findObject(player.getCoord()); 
+
+    bool right = false;
+    bool left = false;
+    bool up = false;
+    bool down = true;
 
     // Shaders loading
     FilePath applicationPath(argv[0]);
@@ -119,7 +129,7 @@ int main(int argc, char **argv)
 
         camera->eventCamera(&windowManager);
         
-
+        
         
         /*********************************
          *      RENDERING CODE           *
