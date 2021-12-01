@@ -24,7 +24,7 @@ using namespace rendering;
 int main(int argc, char **argv)
 {
     // Initialize SDL and open a window
-    SDLWindowManager windowManager(2000, 1000, "Temple_Fun");
+    SDLWindowManager windowManager(1700, 900, "Temple_Fun");
 
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
@@ -125,157 +125,67 @@ int main(int argc, char **argv)
                     camera = &trackball_camera;
                 }
             }
-
-            if (camera->getCameraType() == 1)
+            if (windowManager.isKeyPressed(SDLK_l))
             {
-                //if(windowManager.isKeyPressed(SDLK_z)) camera->moveFront(1);
+                camera->setLocker();
             }
 
-            if (player.isLife() & player.getCoord()[1] != courseMap.end())
+            if (player.isLife() & player.getCoord()[1] != courseMap.end() & player.getCoord()[0] >= 0 & player.getCoord()[1] >= 0)
             {
 
                 objet = courseMap.findObject(player.getCoord());
 
-                std::cout << std::endl;
-                std::cout << std::endl;
-
-                std::cout << "player.converCoord" << player.convertCoord() << std::endl;
-
-                if (objet->getName() == "straight")
-                {
-                    char a = 0;
-                    //std::cout << "q gauche d droite" << std::endl;
-                    //std::cin >> a;
-
-                    if (right == true)
+                    if (objet->getName() == "straight")
                     {
-                        if (windowManager.isKeyPressed(SDLK_d))
-                        {
-                            player.move(glm::vec3(0, 1, 0));
-                        }
-                        if (windowManager.isKeyPressed(SDLK_q))
-                        {
-                            player.move(glm::vec3(0, -1, 0));
-                        }
-                        
+                        player.moveside(&windowManager);
+                    }
+                    if (objet->getName() == "up")
+                    {
+
+                        player.setOrientation(180.);
+                        camera->rotateLeft(player.getOrientation());
+                    }
+                    if (objet->getName() == "down")
+                    {
+
+                        player.setOrientation(0.);
+                        camera->rotateLeft(player.getOrientation());
                     }
 
-                    if (left == true)
+                    if (objet->getName() == "right")
                     {
-                        if (windowManager.isKeyPressed(SDLK_d))
-                        {
-                            player.move(glm::vec3(0, -1, 0));
-                        }
-                        if (windowManager.isKeyPressed(SDLK_q))
-                        {
-                            player.move(glm::vec3(0, 1, 0));
-                        }
+
+                        player.setOrientation(90.);
+                        camera->rotateLeft(player.getOrientation());
+                    }
+                    if (objet->getName() == "left")
+                    {
+
+                        player.setOrientation(-90.);
+                        camera->rotateLeft(player.getOrientation());
+                    }
+                    if (objet->getName() == "empty")
+                    {
+
+                        player.setLife();
                     }
 
-                    if (up == true)
+                    if (objet->getName() == "obstacle" & player.getCoord()[2] == 0)
                     {
-                        if (windowManager.isKeyPressed(SDLK_d))
-                        {
-                            player.move(glm::vec3(1, 0, 0));
-                        }
-                        if (windowManager.isKeyPressed(SDLK_q))
-                        {
-                            player.move(glm::vec3(-1, 0, 0));
-                        }
+                        player.setLife();
                     }
-
-                    if (down == true)
-                    {
-                        if (windowManager.isKeyPressed(SDLK_d))
-                        {
-                            player.move(glm::vec3(-1, 0, 0));
-                        }
-                        if (windowManager.isKeyPressed(SDLK_q))
-                        {
-                            player.move(glm::vec3(1, 0, 0));
-                        }
-                    }
-                }
-
-                if (objet->getName() == "up")
-                {
-                    up = true;
-                    right = false;
-                    left = false;
-                    down = false;
-                    camera->rotateLeft(90);
-                }
-                if (objet->getName() == "down")
-                {
-                    up = false;
-                    right = false;
-                    left = false;
-                    down = true;
-                    camera->rotateLeft(0);
-                }
-
-                if (objet->getName() == "right")
-                {
-                    up = false;
-                    right = true;
-                    left = false;
-                    down = false;
-                    camera->rotateLeft(45);
-
-                }
-                if (objet->getName() == "left")
-                {
-                    up = false;
-                    right = false;
-                    left = true;
-                    down = false;
-                    camera->rotateLeft(-40);
-
-                }
-                if (objet->getName() == "empty")
-                {
-
-                    player.setLife();
-                }
-
-                if (objet->getName() == "obstacle" & player.getCoord()[2] == 0)
-                {
-                    player.setLife();
-                }
-
                 if (windowManager.isKeyPressed(SDLK_z))
                 {
-
-                    if (right == true)
-                    {
-                        player.move(glm::vec3(1, 0, 0));
-                        camera->rotateLeft(90);
-
-                    }
-
-                    if (left == true)
-                    {
-                        player.move(glm::vec3(-1, 0, 0));
-                        camera->rotateLeft(-90);
-
-                    }
-
-                    if (up == true)
-                    {
-                        player.move(glm::vec3(0, -1, 0));
-                        camera->rotateLeft(180);
-                    }
-
-                    if (down == true)
-                    {
-                        player.move(glm::vec3(0, 1, 0));
-                        camera->rotateLeft(0);
-                    }
+                    player.moveOrientation();
                 }
             }
-            else{
-                done=true;
+
+         
+            else
+            {
+                done = true;
             }
+            
             camera->eventCamera(&windowManager);
             /*********************************
         *      RENDERING CODE           *
@@ -287,7 +197,7 @@ int main(int argc, char **argv)
             TextureProgram.use();
 
             // Drawing of the hero as a cube
-            glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 2000.f / 1000.f, 0.1f, 100.f);
+            glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 1700.f / 900.f, 0.1f, 100.f);
 
             player.draw(&cube_nemo, camera, &TextureProgram, ProjMatrix);
 

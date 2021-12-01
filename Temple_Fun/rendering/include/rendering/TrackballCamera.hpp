@@ -23,11 +23,12 @@ private:
 
 public:
     // Constructor
-    TrackballCamera(Player* player, float distance = 5.f, float angleX = 0.f, float angleY = 0.f)
+    TrackballCamera(Player* player, float distance = 5.f, float angleX = -100.f, float angleY = 600.f)
 	:m_fDistance(distance), m_fAngleX(angleX), m_fAngleY(angleY) 
     {
         m_cameraType = 0;
-         m_player = player;
+        m_player = player;
+        m_locked = 0;
     }
 
     // Destructor

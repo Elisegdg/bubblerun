@@ -15,7 +15,9 @@ class Camera{
 protected:
     // Attributs
     unsigned int m_cameraType; // 0 : Trackball / 1 : Eyes
+    unsigned int m_locked; //0 : not locked / 1 : locked
     //Player m_player;
+
 public:
     
     //Camera();
@@ -34,11 +36,22 @@ public:
     virtual void rotateUp(float degrees) = 0;    
     virtual glm::mat4 getViewMatrix() const =0;
     virtual void eventCamera(SDLWindowManager* windowManager)=0;
+    void setLocker(){
+        
+        if (m_locked == 0)
+        {
+            m_locked = 1;
+        }
+        else
+        {
+            m_locked = 0;
+        }
+    
+    }
 };
 
 
 
 }
-
 
 #endif

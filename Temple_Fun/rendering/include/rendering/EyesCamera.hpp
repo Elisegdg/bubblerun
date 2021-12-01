@@ -33,6 +33,7 @@ public:
         m_cameraType = 1;
         m_fMaxAngleX = 0.6;
         m_fMaxAngleY = 0.8;
+        m_locked = 0;
 	    computeDirectionVectors();
     }
 
@@ -47,6 +48,7 @@ public:
     glm::mat4 getViewMatrix() const;
     void rotateLeftMouse(float degrees);
     void eventCamera(SDLWindowManager* windowManager);
+    
     
     
     void computeDirectionVectors();
