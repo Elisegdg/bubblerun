@@ -126,12 +126,10 @@ int main(int argc, char **argv)
                 }
             }
 
-            if (camera->getCameraType() == 1 ){
+            if (camera->getCameraType() == 1)
+            {
                 //if(windowManager.isKeyPressed(SDLK_z)) camera->moveFront(1);
-
             }
-
-            
 
             if (player.isLife() & player.getCoord()[1] != courseMap.end())
             {
@@ -141,7 +139,7 @@ int main(int argc, char **argv)
                 std::cout << std::endl;
                 std::cout << std::endl;
 
-                std::cout << "player.converCoord"<<player.convertCoord() << std::endl;
+                std::cout << "player.converCoord" << player.convertCoord() << std::endl;
 
                 if (objet->getName() == "straight")
                 {
@@ -159,6 +157,7 @@ int main(int argc, char **argv)
                         {
                             player.move(glm::vec3(0, -1, 0));
                         }
+                        
                     }
 
                     if (left == true)
@@ -177,11 +176,11 @@ int main(int argc, char **argv)
                     {
                         if (windowManager.isKeyPressed(SDLK_d))
                         {
-                            player.move(glm::vec3(-1, 0, 0));
+                            player.move(glm::vec3(1, 0, 0));
                         }
                         if (windowManager.isKeyPressed(SDLK_q))
                         {
-                            player.move(glm::vec3(1, 0, 0));
+                            player.move(glm::vec3(-1, 0, 0));
                         }
                     }
 
@@ -189,11 +188,11 @@ int main(int argc, char **argv)
                     {
                         if (windowManager.isKeyPressed(SDLK_d))
                         {
-                            player.move(glm::vec3(1, 0, 0));
+                            player.move(glm::vec3(-1, 0, 0));
                         }
                         if (windowManager.isKeyPressed(SDLK_q))
                         {
-                            player.move(glm::vec3(-1, 0, 0));
+                            player.move(glm::vec3(1, 0, 0));
                         }
                     }
                 }
@@ -204,6 +203,7 @@ int main(int argc, char **argv)
                     right = false;
                     left = false;
                     down = false;
+                    camera->rotateLeft(90);
                 }
                 if (objet->getName() == "down")
                 {
@@ -211,6 +211,7 @@ int main(int argc, char **argv)
                     right = false;
                     left = false;
                     down = true;
+                    camera->rotateLeft(0);
                 }
 
                 if (objet->getName() == "right")
@@ -219,6 +220,8 @@ int main(int argc, char **argv)
                     right = true;
                     left = false;
                     down = false;
+                    camera->rotateLeft(45);
+
                 }
                 if (objet->getName() == "left")
                 {
@@ -226,6 +229,8 @@ int main(int argc, char **argv)
                     right = false;
                     left = true;
                     down = false;
+                    camera->rotateLeft(-40);
+
                 }
                 if (objet->getName() == "empty")
                 {
@@ -244,27 +249,36 @@ int main(int argc, char **argv)
                     if (right == true)
                     {
                         player.move(glm::vec3(1, 0, 0));
+                        camera->rotateLeft(90);
+
                     }
 
                     if (left == true)
                     {
                         player.move(glm::vec3(-1, 0, 0));
+                        camera->rotateLeft(-90);
+
                     }
 
                     if (up == true)
                     {
                         player.move(glm::vec3(0, -1, 0));
+                        camera->rotateLeft(180);
                     }
 
                     if (down == true)
                     {
                         player.move(glm::vec3(0, 1, 0));
+                        camera->rotateLeft(0);
                     }
                 }
             }
+            else{
+                done=true;
+            }
             camera->eventCamera(&windowManager);
             /*********************************
-         *      RENDERING CODE           *
+        *      RENDERING CODE           *
          *********************************/
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
