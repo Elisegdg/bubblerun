@@ -18,7 +18,7 @@ glm::vec3 Object::getCoord()
 }
 
 
-void Object::draw(const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager)
+void Object::draw(rendering::Cube* mesh,const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager)
 {
     glm::mat4 ViewMatrix = camera->getViewMatrix();
     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(getCoord().x - 1, 0, getCoord().y));
@@ -32,11 +32,11 @@ void Object::draw(const rendering::Camera* camera, rendering::ShaderManager* Pro
     Program->uniformMatrix4fv("uMVMatrix", ViewMatrix);
     Program->uniformMatrix4fv("uNormalMatrix", NormalMatrix);
     Program->uniform1i("uTexture", 0);
-
+    mesh->draw();
     
 }
 
-void Obstacle ::draw(const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager)
+void Obstacle ::draw(rendering::Cube* mesh,const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager)
 {
 
     glm::mat4 ViewMatrix = camera->getViewMatrix();
@@ -49,10 +49,11 @@ void Obstacle ::draw(const rendering::Camera* camera, rendering::ShaderManager* 
     Program->uniformMatrix4fv("uMVMatrix", ViewMatrix);
     Program->uniformMatrix4fv("uNormalMatrix", NormalMatrix);
     Program->uniform1i("uTexture", 0);
+    mesh->draw();
 }
 
 
-void Empty::draw(const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager)
+void Empty::draw(rendering::Cube* mesh,const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager)
 {
     return;
 }

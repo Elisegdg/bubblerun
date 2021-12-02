@@ -26,7 +26,7 @@ public:
     ~Object() = default;
     void addCoord(float x,float y,float z);
     glm::vec3 getCoord();
-    virtual void draw(const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager);
+    virtual void draw(rendering::Cube* mesh,const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager);
     std::string getName(){
         return m_name;
     }
@@ -81,7 +81,7 @@ class Obstacle : public Object
 public:
     Obstacle() : Object("obstacle"){}
     ~Obstacle()= default;
-    void draw(const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager);
+    void draw(rendering::Cube* mesh,const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager);
 };
 
 class  Empty: public Object
@@ -89,7 +89,7 @@ class  Empty: public Object
 public:
     Empty() : Object("empty"){}
     ~Empty()= default;
-    void draw(const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager);
+    void draw(rendering::Cube* mesh,const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager);
 };
 
 #endif

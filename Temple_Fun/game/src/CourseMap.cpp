@@ -22,30 +22,35 @@ void CourseMap::addObject(int r,int g,int b)
     else if(r==255 & g==255)
     {
         m_CourseMap.push_back(new Up);
+        m_PathVec.push_back(new Up);
     }
     else if(r==255 & b==255)
     {
         m_CourseMap.push_back(new Down);
+        m_PathVec.push_back(new Down);    
     }
     else if (r==255)
     {
         m_CourseMap.push_back(new Straight);
-
+        m_PathVec.push_back(new Straight);
     
     }
     else if (b==255)
     {
         m_CourseMap.push_back(new Right);
+        m_PathVec.push_back(new Right);
     }
     else if (g==255)
     {
         m_CourseMap.push_back(new Left);
+        m_PathVec.push_back(new Left);
     }
 
     
     else
     {
         m_CourseMap.push_back(new Obstacle);
+        m_ObstacleVec.push_back(new Obstacle());
     }
 
     
@@ -93,6 +98,8 @@ void CourseMap::loadMap(const glimac::FilePath &file)
             
             addObject(r,g,b);
             m_CourseMap[iterator]->addCoord(j,i,0);
+            //m_PathVec[iterator]->addCoord(j,i,0);
+            //m_ObstacleVec[iterator]->addCoord(j,i,0);
             
             iterator ++;
 
@@ -187,8 +194,21 @@ int CourseMap::end()
 void CourseMap::drawMap(rendering::Cube* mesh, const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager* windowManager) const
 {
         for(int i = 0 ; i< m_CourseMap.size(); i++){
-            m_CourseMap[i]->draw(camera, Program, ProjMatrix, m_sizey, windowManager);
-            mesh->draw();
+            if(m_CourseMap[i]->getName() != "obstacle"){
+                m_CourseMap[i]->draw(mesh, camera, Program, ProjMatrix, m_sizey, windowManager);
+            }
+            
+        }       
+    
+}
+
+void CourseMap::drawObstacle(rendering::Cube* mesh, const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager* windowManager) const
+{
+        for(int i = 0 ; i< m_CourseMap.size(); i++){
+            if(m_CourseMap[i]->getName() == "obstacle"){
+                m_CourseMap[i]->draw(mesh, camera, Program, ProjMatrix, m_sizey, windowManager);
+            }
+            
         }       
     
 }

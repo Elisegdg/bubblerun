@@ -43,6 +43,8 @@ public:
     void eventCamera(SDLWindowManager* windowManager);
     float getDistance();
     
+    void rotateLeftTest(float degrees);
+
 
 };
 }

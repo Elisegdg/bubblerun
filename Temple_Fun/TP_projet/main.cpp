@@ -25,6 +25,7 @@ int main(int argc, char **argv)
 {
     // Initialize SDL and open a window
     SDLWindowManager windowManager(1700, 900, "Temple_Fun");
+    int previousTime = 0, currentTime = 0;
 
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
@@ -43,25 +44,25 @@ int main(int argc, char **argv)
 
     CourseMap courseMap;
     courseMap.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/test_parcours4.ppm");
-
     Player player(courseMap);
-
     Object *objet = courseMap.findObject(player.getCoord());
-
-    bool right = false;
-    bool left = false;
-    bool up = false;
-    bool down = true;
-
     courseMap.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/test_parcours4.ppm");
-    Texture ground("/home/clara/Documents/Projet/Temple_Fun/assets/textures/ground4.png");
-    Texture nemo("/home/clara/Documents/Projet/Temple_Fun/assets/textures/nemo.jpg");
-    Cube cube_path(ground, 1);
-    Cube cube_nemo(nemo, 1);
 
     TrackballCamera trackball_camera(&player);
     EyesCamera eyes_camera(&player);
     Camera *camera = &eyes_camera;
+
+
+    Texture obstacle("/home/clara/Documents/Projet/Temple_Fun/assets/textures/ground.png");
+    Texture nemo("/home/clara/Documents/Projet/Temple_Fun/assets/textures/nemo.jpg");
+    Texture ground("/home/clara/Documents/Projet/Temple_Fun/assets/textures/test.png");
+
+
+    Cube cube_path(ground, 1);
+    Cube cube_nemo(nemo, 1);
+    Cube cube_obstacle(obstacle, 1);
+
+
 
     // Shaders loading
     FilePath applicationPath(argv[0]);
@@ -71,6 +72,7 @@ int main(int argc, char **argv)
     TextureProgram.addUniform("uMVMatrix");
     TextureProgram.addUniform("uNormalMatrix");
     TextureProgram.addUniform("uTexture");
+    
 
     ShaderManager SkyboxProgram(applicationPath, "shaders/skybox.vs.glsl", "shaders/skybox.fs.glsl");
     SkyboxProgram.addUniform("projection");
@@ -100,10 +102,16 @@ int main(int argc, char **argv)
     cube_nemo.setIbo();
     cube_nemo.setVao();
 
+    cube_obstacle.setVbo();
+    cube_obstacle.setIbo();
+    cube_obstacle.setVao();
+
     // Application loop:
     bool done = false;
     while (!done)
-    {
+    {   
+        currentTime= SDL_GetTicks();
+
         glm::mat4 ViewMatrix = camera->getViewMatrix();
 
         // Event loop:
@@ -114,6 +122,9 @@ int main(int argc, char **argv)
             {
                 done = true;
             }
+
+            
+
             if (windowManager.isKeyPressed(SDLK_c))
             {
                 if (camera->getCameraType() == 0)
@@ -129,101 +140,112 @@ int main(int argc, char **argv)
             {
                 camera->setLocker();
             }
+        }
 
             if (player.isLife() & player.getCoord()[1] != courseMap.end() & player.getCoord()[0] >= 0 & player.getCoord()[1] >= 0)
             {
 
                 objet = courseMap.findObject(player.getCoord());
-
-                    if (objet->getName() == "straight")
-                    {
-                        player.moveside(&windowManager);
-                    }
-                    if (objet->getName() == "up")
-                    {
-
-                        player.setOrientation(180.);
-                        camera->rotateLeft(player.getOrientation());
-                    }
-                    if (objet->getName() == "down")
-                    {
-
-                        player.setOrientation(0.);
-                        camera->rotateLeft(player.getOrientation());
-                    }
-
-                    if (objet->getName() == "right")
-                    {
-
-                        player.setOrientation(90.);
-                        camera->rotateLeft(player.getOrientation());
-                    }
-                    if (objet->getName() == "left")
-                    {
-
-                        player.setOrientation(-90.);
-                        camera->rotateLeft(player.getOrientation());
-                    }
-                    if (objet->getName() == "empty")
-                    {
-
-                        player.setLife();
-                    }
-
-                    if (objet->getName() == "obstacle" & player.getCoord()[2] == 0)
-                    {
-                        player.setLife();
-                    }
-                if (windowManager.isKeyPressed(SDLK_z))
+                
+                if (objet->getName() == "straight")
                 {
-                    player.moveOrientation();
+                    player.moveside(&windowManager);
                 }
+                if (objet->getName() == "up")
+                {
+
+                    player.setOrientation(180.);
+                    camera->rotateLeft(player.getOrientation());
+                }
+                if (objet->getName() == "down")
+                {
+
+                    player.setOrientation(0.);
+                    camera->rotateLeft(player.getOrientation());
+                }
+
+                if (objet->getName() == "right")
+                {
+
+                    player.setOrientation(90.);
+                    camera->rotateLeft(player.getOrientation());
+                }
+                if (objet->getName() == "left")
+                {
+
+                    player.setOrientation(-90.);
+                    camera->rotateLeft(player.getOrientation());
+                }
+                if (objet->getName() == "empty")
+                {
+
+                    player.setLife();
+                }
+
+                if (objet->getName() == "obstacle" & player.getCoord()[2] == 0)
+                {
+                    player.setLife();
+                }
+            
+                //if (windowManager.isKeyPressed(SDLK_z))
+                //{
+                if (currentTime-previousTime > 100) {
+                    player.moveOrientation();
+                    if(camera->getCameraType() == 1) camera->moveFront(1);
+                    previousTime=currentTime;
+
+                }
+                //}
             }
 
-         
             else
             {
                 done = true;
             }
-            
-            camera->eventCamera(&windowManager);
-            /*********************************
+        
+
+        
+        camera->eventCamera(&windowManager);
+        /*********************************
         *      RENDERING CODE           *
          *********************************/
 
-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            //glBindVertexArray(vao);
 
-            TextureProgram.use();
 
-            // Drawing of the hero as a cube
-            glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 1700.f / 900.f, 0.1f, 100.f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        //glBindVertexArray(vao);
 
-            player.draw(&cube_nemo, camera, &TextureProgram, ProjMatrix);
+        TextureProgram.use();
 
-            // Drawing of the Path
-            courseMap.drawMap(&cube_path, camera, &TextureProgram, ProjMatrix, &windowManager);
+        // Drawing of the hero as a cube
+        glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 1700.f / 900.f, 0.1f, 100.f);
 
-            // Drawing of the Skybox
-            glDepthFunc(GL_LEQUAL); // change depth function so depth test passes when values are equal to depth buffer's content
-            SkyboxProgram.use();
-            glm::mat4 skyboxViewMatrix = glm::mat4(glm::mat3(camera->getViewMatrix()));
-            SkyboxProgram.uniformMatrix4fv("projection", ProjMatrix);
-            SkyboxProgram.uniformMatrix4fv("view", skyboxViewMatrix);
+        player.draw(&cube_nemo, camera, &TextureProgram, ProjMatrix);
 
-            glBindVertexArray(skyboxVAO);
-            glActiveTexture(GL_TEXTURE0);
-            glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
-            SkyboxProgram.uniform1i("uSkybox", 0);
-            glDrawArrays(GL_TRIANGLES, 0, 36);
-            glBindVertexArray(0);
-            glDepthFunc(GL_LESS);
+        // Drawing of the Path
+        courseMap.drawMap(&cube_path, camera, &TextureProgram, ProjMatrix, &windowManager);
+        courseMap.drawObstacle(&cube_obstacle, camera, &TextureProgram, ProjMatrix, &windowManager);
 
-            glBindVertexArray(0);
-            glBindTexture(GL_TEXTURE_2D, 0);
+        // Drawing of the Skybox
+        glDepthFunc(GL_LEQUAL); // change depth function so depth test passes when values are equal to depth buffer's content
+        SkyboxProgram.use();
+        glm::mat4 skyboxViewMatrix = glm::mat4(glm::mat3(camera->getViewMatrix()));
+        SkyboxProgram.uniformMatrix4fv("projection", ProjMatrix);
+        SkyboxProgram.uniformMatrix4fv("view", skyboxViewMatrix);
 
-            windowManager.swapBuffers();
-        }
+        glBindVertexArray(skyboxVAO);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
+        SkyboxProgram.uniform1i("uSkybox", 0);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glBindVertexArray(0);
+        glDepthFunc(GL_LESS);
+
+        glBindVertexArray(0);
+        glBindTexture(GL_TEXTURE_2D, 0);
+   		
+
+        windowManager.swapBuffers();
     }
 
     return EXIT_SUCCESS;

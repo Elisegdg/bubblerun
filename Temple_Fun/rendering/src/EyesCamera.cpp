@@ -83,8 +83,8 @@ namespace rendering
     void EyesCamera::eventCamera(SDLWindowManager *windowManager)
     {
 
-        if (windowManager->isKeyPressed(SDLK_z))
-            moveFront(1);
+        /*if (windowManager->isKeyPressed(SDLK_z))
+            moveFront(1);*/
         if (windowManager->isKeyPressed(SDLK_q))
             moveLeft(1);
         if (windowManager->isKeyPressed(SDLK_d))

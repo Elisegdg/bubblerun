@@ -103,8 +103,10 @@ void Player::moveside(glimac::SDLWindowManager* windowManager)
 {
     if (m_orientation == 0.)
     {
+
         if (windowManager->isKeyPressed(SDLK_d))
         {
+
             move(glm::vec3(-1, 0, 0));
         }
         if (windowManager->isKeyPressed(SDLK_q))
