@@ -146,7 +146,7 @@ Object* CourseMap::findObject(glm::vec3 coord)
         
         m = floor((deb+fin)/2);
     
-        if (m_CourseMap[m]->getCoord() == coord) 
+        if (m_CourseMap[m]->getCoord().x == coord.x & m_CourseMap[m]->getCoord().y == coord.y) 
         {
             
             trv = true;
@@ -197,10 +197,10 @@ void CourseMap::drawMap(rendering::Cube* mesh, const rendering::Camera* camera, 
         for(int i = 0 ; i< m_CourseMap.size(); i++){
             m_CourseMap[i]->draw(camera, Program, ProjMatrix, m_sizey, windowManager);
             mesh->draw();
-            if(m_CourseMap[i]->getIfCoins())
-            {
-                std::cout<<"test coins"<<std::endl;
-            }
+            // if(m_CourseMap[i]->getIfCoins())
+            // {
+                
+            // }
         }       
     
 }

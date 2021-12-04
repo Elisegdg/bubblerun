@@ -4,7 +4,8 @@
 #include <game/CourseMap.hpp>
 #include <game/Object.hpp>
 #include <game/Player.hpp>
-
+#include <ft2build.h>
+#include FT_FREETYPE_H  
 
 using namespace glimac;
 
@@ -12,9 +13,13 @@ using namespace glimac;
 
 int main(int argc, char** argv) {
 
+    //freetype 
+    //load arial 
+                  
 
     CourseMap courseMap;
-    courseMap.loadMap("/home/loulou/Documents/synthese_image_imac2/projet/templefun/Temple_Fun/assets/test_parcours4.ppm");
+    courseMap.loadMap("../Temple_Fun/assets/test_parcours4.ppm");
+
 
     Player player(courseMap);
 
