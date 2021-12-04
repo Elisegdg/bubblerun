@@ -14,14 +14,14 @@ namespace rendering
 
     void EyesCamera::moveLeft(float t)
     {
-        m_Position = glm::vec3(m_player->convertCoord().x, 2., m_player->convertCoord().z);
+        m_Position = glm::vec3(m_player->convertCoord().x, m_player->convertCoord().y +2. , m_player->convertCoord().z);
         computeDirectionVectors();
     }
 
     void EyesCamera::moveFront(float t)
     {
 
-        m_Position = glm::vec3(m_player->convertCoord().x, 2., m_player->convertCoord().z);
+        m_Position = glm::vec3(m_player->convertCoord().x, m_player->convertCoord().y +2., m_player->convertCoord().z);
         computeDirectionVectors();
     }
 

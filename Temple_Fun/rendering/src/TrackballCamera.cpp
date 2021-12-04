@@ -70,9 +70,9 @@ namespace rendering
                 rotateUp(mousePos.y / 5);
             }
 
-            if (windowManager.isKeyPressed(SDLK_k)){
-                rotateLeftTest(3.);
-            }
+            //if (windowManager.isKeyPressed(SDLK_k)){
+                //rotateLeftTest(3.);
+            //}
 
             
         }

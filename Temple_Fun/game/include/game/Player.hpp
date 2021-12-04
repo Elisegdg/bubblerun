@@ -18,9 +18,10 @@ private:
     unsigned int m_coins;
     bool m_life;
     float m_orientation;
+    bool m_isJumping;
 
 public:
-    Player(CourseMap CourseMap):m_coord(CourseMap.start()),m_coins(0),m_life(true),m_orientation(0){}
+    Player(CourseMap CourseMap):m_coord(CourseMap.start()),m_coins(0),m_life(true),m_orientation(0), m_isJumping(false){}
     ~Player() = default;
     void setCoord(glm::vec3 coord);
     glm::vec3 getCoord();
@@ -33,8 +34,10 @@ public:
     void setOrientation(float orientatioin);
     float getOrientation();
     void moveside(glimac::SDLWindowManager& windowManager, bool& repeat);
-    void jump(glimac::SDLWindowManager& windowManager, bool& repeat);
-    void fall();
+    void jump(glimac::SDLWindowManager& windowManager, bool& repeat, float &step);
+    void fall(float &step);
+    bool isJumping();
+    void setJump(glimac::SDLWindowManager &windowManager, bool &repeat);
 
 
     glm::vec3 convertCoord();

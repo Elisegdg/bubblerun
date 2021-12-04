@@ -1,10 +1,11 @@
+
 #include "../include/game/CourseMap.hpp"
 #include "../include/game/Object.hpp"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <glimac/glm.hpp>
-#include<rendering/Program.hpp>
+#include <rendering/Program.hpp>
 #include <rendering/Camera.hpp>
 #include <rendering/Texture.hpp>
 #include <rendering/Model.hpp>
@@ -20,40 +21,42 @@ void CourseMap::addObject(int r,int g,int b)
     if(r==255 & g==255 & b==255 )
     {
         m_CourseMap.push_back(new Empty);
+
     }
 
     else if(r==255 & g==255)
     {
         m_CourseMap.push_back(new Up);
     }
-
     else if(r==255 & b==255)
     {
         m_CourseMap.push_back(new Down);
     }
-
     else if (r==255)
     {
         std::default_random_engine re(std::chrono::system_clock::now().time_since_epoch().count());
         std::uniform_int_distribution<int>distrib{0,1};
         
-        m_CourseMap.push_back(new Straight(distrib(re)));    
-    }
+        m_CourseMap.push_back(new Straight(distrib(re)));
 
+    
+    }
     else if (b==255)
     {
         m_CourseMap.push_back(new Right);
     }
-
     else if (g==255)
     {
         m_CourseMap.push_back(new Left);
     }
+
     
     else
     {
         m_CourseMap.push_back(new Obstacle);
     }
+
+    
 }
 
 void CourseMap::loadMap(const glimac::FilePath &file)
@@ -77,25 +80,56 @@ void CourseMap::loadMap(const glimac::FilePath &file)
     getline(fileMap,line);
     
     fileMap >> m_sizex >>m_sizey;
+
+
+
     int r,g,b;
+
     fileMap>>r;
+
     int iterator = 0;
 
     for (int i = 0; i < m_sizey; i++)
     {
         for(int j=0;j<m_sizex;j++)
         {
+            
             fileMap >>r;
             fileMap >>g;
             fileMap >>b;
+
             
             addObject(r,g,b);
             m_CourseMap[iterator]->addCoord(j,i,0);
             
             iterator ++;
-   
+
+            
+            
+            
+            
+            
         }
+        
+
     }
+
+    // for (int i = 0; i < m_sizex; i++)
+    // {
+        
+    //     std::cout<<m_CourseMap[iterator]->getName()<<std::endl;
+    // }
+    
+
+    
+
+    
+    // Object* objet = findObject(glm::vec3(2,0,0));
+    // std::cout<<std::endl;
+    // objet->draw();
+    
+    
+
 }
 
 
@@ -113,7 +147,7 @@ Object* CourseMap::findObject(glm::vec3 coord)
         
         m = floor((deb+fin)/2);
     
-        if (m_CourseMap[m]->getCoord() == coord) 
+        if (m_CourseMap[m]->getCoord().x == coord.x & m_CourseMap[m]->getCoord().y == coord.y) 
         {
             
             trv = true;
@@ -156,6 +190,8 @@ int CourseMap::end()
 {
     return m_sizey -1;
 }
+
+
 
 
 

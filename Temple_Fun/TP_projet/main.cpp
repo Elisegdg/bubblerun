@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 
     TrackballCamera trackball_camera(&player);
     EyesCamera eyes_camera(&player);
-    Camera *camera = &eyes_camera;
+    Camera *camera = &trackball_camera;
 
     Texture obstacle("/home/clara/Documents/Projet/Temple_Fun/assets/textures/ground.png");
     Texture nemo("/home/clara/Documents/Projet/Temple_Fun/assets/textures/nemo.jpg");
@@ -111,10 +111,10 @@ int main(int argc, char **argv)
     // Application loop:
     bool done = false;
     bool repeat = false;
+    float step = 0.;
     while (!done)
     {
         currentTime = SDL_GetTicks();
-
         glm::mat4 ViewMatrix = camera->getViewMatrix();
 
         // Event loop:
@@ -126,6 +126,7 @@ int main(int argc, char **argv)
                 done = true;
             }
 
+            // CAMERA SWITCH AND LOCK
             if (windowManager.isKeyPressed(SDLK_c))
             {
                 if (camera->getCameraType() == 0)
@@ -137,11 +138,13 @@ int main(int argc, char **argv)
                     camera = &trackball_camera;
                 }
             }
+
             if (windowManager.isKeyPressed(SDLK_l))
             {
                 camera->setLocker();
             }
-
+            
+            // PREVENT THE EVENT FROM REPEATING OUTSIDE POLLEVENT
             if (windowManager.isKeyPressed(SDLK_d))
             {
                 repeat = true;
@@ -158,42 +161,45 @@ int main(int argc, char **argv)
             }
         }
 
+
+        //GAME LOOP
         if (player.isLife() & player.getCoord()[1] != courseMap.end() & player.getCoord()[0] >= 0 & player.getCoord()[1] >= 0)
         {
-
-            objet = courseMap.findObject(player.getCoord()); // TO DO : change with the jump bc no object with 1 on the y/z axis
-            player.fall();
+            
+            objet = courseMap.findObject(player.getCoord()); 
+                            
             if (objet->getName() == "straight")
             {
-                player.jump(windowManager,repeat);
-
                 player.moveside(windowManager, repeat);
+                player.setJump(windowManager,repeat);
             }
+
             if (objet->getName() == "up")
             {
-
                 player.setOrientation(180.);
                 camera->rotateLeft(player.getOrientation());
             }
+
             if (objet->getName() == "down")
             {
-
                 player.setOrientation(0.);
                 camera->rotateLeft(player.getOrientation());
             }
 
             if (objet->getName() == "right")
             {
-
                 player.setOrientation(90.);
                 camera->rotateLeft(player.getOrientation());
             }
+
             if (objet->getName() == "left")
             {
-
                 player.setOrientation(-90.);
                 camera->rotateLeft(player.getOrientation());
+
+                
             }
+            
             if (objet->getName() == "empty")
             {
 
@@ -208,8 +214,16 @@ int main(int argc, char **argv)
             if (currentTime - previousTime > 200)  // TO DO : set the speed in a variable
             {
                 player.moveOrientation();
+
+                if (player.isJumping())    player.jump(windowManager, repeat, step);
+                
+
+                if (step>1)   player.fall(step);
+            
+
                 if (camera->getCameraType() == 1)
                     camera->moveFront(1);
+
                 previousTime = currentTime;
             }
             
