@@ -43,10 +43,10 @@ void Player::setLife()
 }
 
 glm::vec3 Player::convertCoord(){
-    return glm::vec3(getCoord().x - 1, 0, getCoord().y);
+    return glm::vec3(getCoord().x - 1, getCoord().z, getCoord().y);
 }
 
-void Player::draw(rendering::Model* mesh, rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix)
+void Player::draw(rendering::Model& mesh, rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix)
 {
 
     glm::mat4 ViewMatrix = camera->getViewMatrix();
@@ -54,15 +54,14 @@ void Player::draw(rendering::Model* mesh, rendering::Camera* camera, rendering::
     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0,0.6,0));
 
     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 1, 1));
-    //ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0,0,-3*windowManager->getTime()));
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
-    Program->uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
-    Program->uniformMatrix4fv("uMVMatrix", ViewMatrix);
-    Program->uniformMatrix4fv("uNormalMatrix", NormalMatrix);
-    Program->uniform1i("uTexture", 0);
+    Program.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
+    Program.uniformMatrix4fv("uMVMatrix", ViewMatrix);
+    Program.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
+    Program.uniform1i("uTexture", 0);
 
-    mesh->draw();
+    mesh.draw();
 
 }
 
@@ -99,53 +98,83 @@ float Player::getOrientation()
     return m_orientation;
 }
 
-void Player::moveside(glimac::SDLWindowManager* windowManager)
-{
+void Player::moveside(glimac::SDLWindowManager& windowManager, bool& repeat)
+{   
     if (m_orientation == 0.)
     {
-
-        if (windowManager->isKeyPressed(SDLK_d))
+        
+        if (windowManager.isKeyPressed(SDLK_d) && repeat)
         {
+                SDL_EnableKeyRepeat(0,0);
 
+            repeat = false;
             move(glm::vec3(-1, 0, 0));
+            
         }
-        if (windowManager->isKeyPressed(SDLK_q))
+        if (windowManager.isKeyPressed(SDLK_q)&& repeat)
         {
+            repeat = false;
             move(glm::vec3(1, 0, 0));
+            
         }
     }
     if (m_orientation == 90.)
     {
-        if (windowManager->isKeyPressed(SDLK_d))
+        if (windowManager.isKeyPressed(SDLK_d) && repeat)
         {
+            repeat = false;
             move(glm::vec3(0, 1, 0));
         }
-        if (windowManager->isKeyPressed(SDLK_q))
+        if (windowManager.isKeyPressed(SDLK_q)&&repeat)
         {
+            repeat = false;
             move(glm::vec3(0, -1, 0));
         }
     }
     if (m_orientation == -90.)
     {
-        if (windowManager->isKeyPressed(SDLK_d))
+        if (windowManager.isKeyPressed(SDLK_d) && repeat)
         {
+            repeat = false;
             move(glm::vec3(0, -1, 0));
         }
-        if (windowManager->isKeyPressed(SDLK_q))
+        if (windowManager.isKeyPressed(SDLK_q) && repeat)
         {
+            repeat = false;
             move(glm::vec3(0, 1, 0));
         }
     }
     if (m_orientation == 180.)
     {
-        if (windowManager->isKeyPressed(SDLK_d))
+        if (windowManager.isKeyPressed(SDLK_d) && repeat)
         {
+            repeat = false;
             move(glm::vec3(1, 0, 0));
         }
-        if (windowManager->isKeyPressed(SDLK_q))
+        if (windowManager.isKeyPressed(SDLK_q) && repeat)
         {
+            repeat = false;
             move(glm::vec3(-1, 0, 0));
         }
     }
+
 }
 
+
+void Player::jump(glimac::SDLWindowManager& windowManager, bool& repeat)
+{
+
+    if (windowManager.isKeyPressed(SDLK_z) && repeat)
+    {
+        move(glm::vec3(0,0,1));
+        repeat = false;
+        std::cout<<" after jump : "<<convertCoord()<<std::endl;
+    }
+
+}
+
+void Player::fall()
+{
+
+    m_coord.z = 0;
+}

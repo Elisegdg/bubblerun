@@ -32,9 +32,13 @@ public:
     void moveOrientation();
     void setOrientation(float orientatioin);
     float getOrientation();
-    void moveside(glimac::SDLWindowManager* windowManager);
+    void moveside(glimac::SDLWindowManager& windowManager, bool& repeat);
+    void jump(glimac::SDLWindowManager& windowManager, bool& repeat);
+    void fall();
+
+
     glm::vec3 convertCoord();
-    void draw(rendering::Model* mesh, rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix);
+    void draw(rendering::Model& mesh, rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix);
 };
 
 

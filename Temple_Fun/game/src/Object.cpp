@@ -18,42 +18,55 @@ glm::vec3 Object::getCoord()
 }
 
 
-void Object::draw(rendering::Cube* mesh,const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager)
+void Object::draw(rendering::Cube& mesh,const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager)
 {
     glm::mat4 ViewMatrix = camera->getViewMatrix();
     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(getCoord().x - 1, 0, getCoord().y));
     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 0.2, 1));
-    //ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0,0,-3*windowManager->getTime()));
-
-    //camera->rotateLeft(45.);
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
-    Program->uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
-    Program->uniformMatrix4fv("uMVMatrix", ViewMatrix);
-    Program->uniformMatrix4fv("uNormalMatrix", NormalMatrix);
-    Program->uniform1i("uTexture", 0);
-    mesh->draw();
+    Program.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
+    Program.uniformMatrix4fv("uMVMatrix", ViewMatrix);
+    Program.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
+    Program.uniform1i("uTexture", 0);
+    mesh.draw();
     
 }
 
-void Obstacle ::draw(rendering::Cube* mesh,const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager)
+void Obstacle ::draw(rendering::Cube& mesh,const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager)
 {
 
     glm::mat4 ViewMatrix = camera->getViewMatrix();
     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(getCoord().x - 1, 0.4, getCoord().y));
     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 1, 1));
-    //ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0,0,-3*windowManager->getTime()));
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
-    Program->uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
-    Program->uniformMatrix4fv("uMVMatrix", ViewMatrix);
-    Program->uniformMatrix4fv("uNormalMatrix", NormalMatrix);
-    Program->uniform1i("uTexture", 0);
-    mesh->draw();
+    Program.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
+    Program.uniformMatrix4fv("uMVMatrix", ViewMatrix);
+    Program.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
+    Program.uniform1i("uTexture", 0);
+    mesh.draw();
 }
 
 
-void Empty::draw(rendering::Cube* mesh,const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, int mapSize, glimac::SDLWindowManager* windowManager)
+void Empty::draw(rendering::Cube& mesh,const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager)
 {
     return;
+}
+
+
+void Object::drawCoins(rendering::Cube& mesh, const rendering::Camera *camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager)
+{
+
+    glm::mat4 ViewMatrix = camera->getViewMatrix();
+    ViewMatrix = glm::translate(ViewMatrix, glm::vec3(getCoord().x - 1, 0.2, getCoord().y));
+    ViewMatrix = glm::scale(ViewMatrix,glm::vec3(0.3, 0.3, 0.3));
+    ViewMatrix = glm::rotate(ViewMatrix, windowManager.getTime(), glm::vec3(0,1,0)); // Translation * Rotation
+    glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
+
+    Program.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
+    Program.uniformMatrix4fv("uMVMatrix", ViewMatrix);
+    Program.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
+    Program.uniform1i("uTexture", 0);
+    mesh.draw();
 }

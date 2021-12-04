@@ -8,15 +8,12 @@ namespace rendering
     void EyesCamera::computeDirectionVectors()
     {
         m_FrontVector = glm::vec3(cos(m_fTheta) * sin(m_fPhi), sin(m_fTheta), cos(m_fTheta) * cos(m_fPhi));
-        //m_LeftVector = glm::vec3(sin(m_fTheta + (M_PI / 2.)), 0., cos(m_fPhi + (M_PI / 2.))) ;
         m_LeftVector = glm::cross(glm::vec3(0, 1, 0), m_FrontVector);
         m_UpVector = glm::cross(m_FrontVector, m_LeftVector);
-        //m_fMaxAngleX = 0.6 + glm::radians(m_player->getOrientation());
     }
 
     void EyesCamera::moveLeft(float t)
     {
-        //std::cout<<"initial coord"<<m_player->convertCoord()<<std::endl;
         m_Position = glm::vec3(m_player->convertCoord().x, 2., m_player->convertCoord().z);
         computeDirectionVectors();
     }
@@ -80,21 +77,20 @@ namespace rendering
     }
 
 
-    void EyesCamera::eventCamera(SDLWindowManager *windowManager)
+    void EyesCamera::eventCamera(SDLWindowManager& windowManager)
     {
 
-        /*if (windowManager->isKeyPressed(SDLK_z))
-            moveFront(1);*/
-        if (windowManager->isKeyPressed(SDLK_q))
+        
+        if (windowManager.isKeyPressed(SDLK_q))
             moveLeft(1);
-        if (windowManager->isKeyPressed(SDLK_d))
+        if (windowManager.isKeyPressed(SDLK_d))
             moveLeft(-1);
         
         
         glm::ivec2 mousePos = glm::ivec2(0.0);
-        if (windowManager->isMouseButtonPressed(SDL_BUTTON_LEFT))
+        if (windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT))
         {
-            mousePos = windowManager->getMousePosition();
+            mousePos = windowManager.getMousePosition();
             float mousePosX = mousePos.x / 1700.0f - 0.5;
             float mousePosY = mousePos.y / 900.0f - 0.5;
 

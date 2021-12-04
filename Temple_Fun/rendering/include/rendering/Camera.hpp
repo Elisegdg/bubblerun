@@ -16,15 +16,10 @@ protected:
     // Attributs
     unsigned int m_cameraType; // 0 : Trackball / 1 : Eyes
     unsigned int m_locked; //0 : not locked / 1 : locked
-    //Player m_player;
 
 public:
     
-    //Camera();
-
-    //Destructor
-
-    //Methods
+    
     unsigned int getCameraType() const{
         return m_cameraType;
     }
@@ -35,7 +30,7 @@ public:
     virtual void rotateLeft(float degrees) = 0;
     virtual void rotateUp(float degrees) = 0;    
     virtual glm::mat4 getViewMatrix() const =0;
-    virtual void eventCamera(SDLWindowManager* windowManager)=0;
+    virtual void eventCamera(SDLWindowManager& windowManager)=0;
     void setLocker(){
         
         if (m_locked == 0)
@@ -49,8 +44,6 @@ public:
     
     }
 };
-
-
 
 }
 
