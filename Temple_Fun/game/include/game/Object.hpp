@@ -36,6 +36,9 @@ public:
         return m_coins;
         
     }
+    void removeCoin(){
+        m_coins = 0;
+    }
 
     
 };

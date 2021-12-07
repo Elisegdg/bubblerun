@@ -184,7 +184,7 @@ void Player::setJump(glimac::SDLWindowManager &windowManager, bool &repeat){
     }
 }
 
-void Player::jump(glimac::SDLWindowManager &windowManager, bool &repeat, float &step)
+void Player::jump(glimac::SDLWindowManager &windowManager, bool &repeat, int &step)
 {
 
     //if (windowManager.isKeyPressed(SDLK_z) && repeat)
@@ -204,7 +204,7 @@ void Player::jump(glimac::SDLWindowManager &windowManager, bool &repeat, float &
             step++;
             m_isJumping = true;*/
 
-        if (step <= 1.){
+        if (step <= 1){
             m_coord.z ++;
             //m_isJumping = true;
             //repeat = false;
@@ -215,7 +215,7 @@ void Player::jump(glimac::SDLWindowManager &windowManager, bool &repeat, float &
     
 }
 
-void Player::fall(float &step)
+void Player::fall(int &step)
 {
         
     if (step <4){

@@ -43,10 +43,9 @@ int main(int argc, char **argv)
    *********************************/
 
     CourseMap courseMap;
-    courseMap.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/test_parcours4.ppm");
+    courseMap.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/map.ppm");
     Player player(courseMap);
     Object *objet = courseMap.findObject(player.getCoord());
-    courseMap.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/test_parcours4.ppm");
 
     TrackballCamera trackball_camera(&player);
     EyesCamera eyes_camera(&player);
@@ -111,7 +110,7 @@ int main(int argc, char **argv)
     // Application loop:
     bool done = false;
     bool repeat = false;
-    float step = 0.;
+    int step = 0;
     while (!done)
     {
         currentTime = SDL_GetTicks();
@@ -167,7 +166,9 @@ int main(int argc, char **argv)
         {
             
             objet = courseMap.findObject(player.getCoord()); 
-                            
+            if(objet->getIfCoins()){
+                objet->removeCoin();
+            }
             if (objet->getName() == "straight")
             {
                 player.moveside(windowManager, repeat);
@@ -211,7 +212,11 @@ int main(int argc, char **argv)
                 player.setLife();
             }
 
-            if (currentTime - previousTime > 200)  // TO DO : set the speed in a variable
+            
+
+
+
+            if (currentTime - previousTime > 100)  // TO DO : set the speed in a variable
             {
                 player.moveOrientation();
 

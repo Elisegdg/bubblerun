@@ -34,8 +34,8 @@ public:
     void setOrientation(float orientatioin);
     float getOrientation();
     void moveside(glimac::SDLWindowManager& windowManager, bool& repeat);
-    void jump(glimac::SDLWindowManager& windowManager, bool& repeat, float &step);
-    void fall(float &step);
+    void jump(glimac::SDLWindowManager& windowManager, bool& repeat, int &step);
+    void fall(int &step);
     bool isJumping();
     void setJump(glimac::SDLWindowManager &windowManager, bool &repeat);
 

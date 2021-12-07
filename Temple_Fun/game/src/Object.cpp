@@ -38,7 +38,7 @@ void Obstacle ::draw(rendering::Cube& mesh,const rendering::Camera* camera, rend
 
     glm::mat4 ViewMatrix = camera->getViewMatrix();
     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(getCoord().x - 1, 0.4, getCoord().y));
-    ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 1, 1));
+    ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 0.6, 1));
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
     Program.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
