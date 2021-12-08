@@ -103,32 +103,10 @@ void CourseMap::loadMap(const glimac::FilePath &file)
             m_CourseMap[iterator]->addCoord(j,i,0);
             
             iterator ++;
-
-            
-            
-            
-            
             
         }
         
-
     }
-
-    // for (int i = 0; i < m_sizex; i++)
-    // {
-        
-    //     std::cout<<m_CourseMap[iterator]->getName()<<std::endl;
-    // }
-    
-
-    
-
-    
-    // Object* objet = findObject(glm::vec3(2,0,0));
-    // std::cout<<std::endl;
-    // objet->draw();
-    
-    
 
 }
 

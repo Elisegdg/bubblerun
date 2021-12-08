@@ -17,9 +17,14 @@
 #include <rendering/Cube.hpp>
 #include <game/CourseMap.hpp>
 #include <game/Player.hpp>
+#include <rendering/Text.hpp>
+#include <ft2build.h>
+#include FT_FREETYPE_H
+#include <string.h>
 
 using namespace glimac;
 using namespace rendering;
+
 
 int main(int argc, char **argv)
 {
@@ -46,16 +51,21 @@ int main(int argc, char **argv)
     courseMap.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/map.ppm");
     Player player(courseMap);
     Object *objet = courseMap.findObject(player.getCoord());
+    double score = 0;
 
     TrackballCamera trackball_camera(&player);
     EyesCamera eyes_camera(&player);
     Camera *camera = &trackball_camera;
 
-    Texture obstacle("/home/clara/Documents/Projet/Temple_Fun/assets/textures/ground.png");
-    Texture nemo("/home/clara/Documents/Projet/Temple_Fun/assets/textures/nemo.jpg");
-    Texture ground("/home/clara/Documents/Projet/Temple_Fun/assets/textures/stone_ground.png");
-    Texture coin("/home/clara/Documents/Projet/Temple_Fun/assets/textures/gold.png");
+    Texture obstacle("../Temple_Fun/assets/textures/ground.png");
+    Texture nemo("../Temple_Fun/assets/textures/nemo.jpg");
+    Texture ground("../Temple_Fun/assets/textures/stone_ground.png");
+    Texture coin("../Temple_Fun/assets/textures/gold.png");
 
+    unsigned int VAO, VBO;
+    std::map<char, Text> Characters;
+    Text text;
+    text.loadFont(Characters);
 
     Cube cube_path(ground, 1);
     Cube cube_nemo(nemo, 1);
@@ -75,6 +85,27 @@ int main(int argc, char **argv)
     SkyboxProgram.addUniform("projection");
     SkyboxProgram.addUniform("view");
     SkyboxProgram.addUniform("uSkybox");
+
+    ShaderManager TextProgram(applicationPath, "shaders/text.vs.glsl", "shaders/text.fs.glsl");
+    TextProgram.addUniform("projection");
+
+    glm::mat4 projection = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f);
+    TextProgram.use();
+    glUniformMatrix4fv(glGetUniformLocation(TextProgram.getId(), "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+
+    glEnable(GL_DEPTH_TEST);
+
+    
+    
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    glBindVertexArray(VAO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
 
     glEnable(GL_DEPTH_TEST);
 
@@ -131,10 +162,12 @@ int main(int argc, char **argv)
                 if (camera->getCameraType() == 0)
                 {
                     camera = &eyes_camera;
+                    camera->rotateLeft(player.getOrientation());
                 }
                 else
                 {
                     camera = &trackball_camera;
+                    camera->rotateLeft(player.getOrientation());
                 }
             }
 
@@ -276,6 +309,15 @@ int main(int argc, char **argv)
         glBindVertexArray(0);
         glBindTexture(GL_TEXTURE_2D, 0);
 
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        TextProgram.use();
+        GLuint id = TextProgram.getId();
+        std::string scorestring=std::to_string(int(score));
+        text.RenderText(id,Characters, "BUBBLE RUN", 25.0f, 25.0f, 1.0f, glm::vec3(0.87f, 0.325f, 0.03f),VAO,VBO);
+        text.RenderText(id,Characters, "Score : "+scorestring, 650.0f, 570.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f),VAO,VBO);
+
+        glDisable(GL_BLEND);
         windowManager.swapBuffers();
     }
 

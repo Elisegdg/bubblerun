@@ -23,7 +23,8 @@ protected:
     std::string m_name;
     bool m_coins;
 public:
-    Object(std::string name = 0,bool value_coins=0) :m_coord(glm::vec3(0,0,0)), m_name(name),m_coins(value_coins){}    ~Object() = default;
+    Object(std::string name = 0,bool value_coins=0) :m_coord(glm::vec3(0,0,0)), m_name(name),m_coins(value_coins){}    
+    ~Object() = default;
     void addCoord(float x,float y,float z);
     glm::vec3 getCoord();
     virtual void draw(rendering::Cube& mesh, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager);
