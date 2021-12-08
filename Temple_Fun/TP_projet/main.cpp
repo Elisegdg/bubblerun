@@ -216,7 +216,7 @@ int main(int argc, char **argv)
 
 
 
-            if (currentTime - previousTime > 100)  // TO DO : set the speed in a variable
+            if (currentTime - previousTime > 200)  // TO DO : set the speed in a variable
             {
                 player.moveOrientation();
 
