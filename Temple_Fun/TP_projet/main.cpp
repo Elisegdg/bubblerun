@@ -22,6 +22,7 @@
 #include <game/Player.hpp>
 #include <ft2build.h>
 #include FT_FREETYPE_H  
+#include <string.h>
 
 
 using namespace glimac;
@@ -140,7 +141,8 @@ int main(int argc, char **argv)
     cube_nemo.setIbo();
     cube_nemo.setVao();
 
-
+    double score = 0;
+    
     
 
     // Application loop:
@@ -167,6 +169,10 @@ int main(int argc, char **argv)
                 {
                     camera = &trackball_camera;
                 }
+            }
+            if(windowManager.isKeyPressed(SDLK_a))
+            {
+                score +=50;
             }
         }
 
@@ -228,12 +234,14 @@ int main(int argc, char **argv)
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         TextProgram.use();
         GLuint id = TextProgram.getId();
-        text.RenderText(id,Characters, "AQUA RUN", 25.0f, 25.0f, 1.0f, glm::vec3(0.87, 0.325f, 0.03f),VAO,VBO);
-        text.RenderText(id,Characters, "Score", 540.0f, 570.0f, 0.5f, glm::vec3(0.3, 0.7f, 0.9f),VAO,VBO);
+        std::string scorestring=std::to_string(int(score));
+        text.RenderText(id,Characters, "BUBBLE RUN", 25.0f, 25.0f, 1.0f, glm::vec3(0.87f, 0.325f, 0.03f),VAO,VBO);
+        text.RenderText(id,Characters, "Score : "+scorestring, 650.0f, 570.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f),VAO,VBO);
 
         glDisable(GL_BLEND);
 
         //222, 83, 9
+        //0, 10, 99
 
         windowManager.swapBuffers();
     }
