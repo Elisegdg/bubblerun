@@ -4,10 +4,11 @@
 #include "glimac/glm.hpp"
 #include "rendering/Camera.hpp"
 #include <glimac/SDLWindowManager.hpp>
+#include <game/Player.hpp>
+
 
 
 namespace rendering {
-
 class EyesCamera : public Camera{
 private:
     // Attributs
@@ -19,18 +20,20 @@ private:
     glm::vec3 m_FrontVector;
     glm::vec3 m_LeftVector;
     glm::vec3 m_UpVector;
-
+    Player* m_player;
     
 
 public:
     // Constructor
-    EyesCamera(){
-        m_Position = glm::vec3(0.,2.,0.); //4 is the "height" of the hero, we need to define it somewhere
+    EyesCamera(Player* player){
+        m_player = player;
+        m_Position = glm::vec3(0, 2., 0); //2is the "height" of the hero, we need to define it somewhere
 	    m_fPhi = 0.;
         m_fTheta = 0.;
         m_cameraType = 1;
-        m_fMaxAngleX = M_PI / 2.;
+        m_fMaxAngleX = 0.6;
         m_fMaxAngleY = 0.8;
+        m_locked = 0;
 	    computeDirectionVectors();
     }
 
@@ -43,8 +46,10 @@ public:
     void rotateLeft(float degrees);
     void rotateUp(float degrees);
     glm::mat4 getViewMatrix() const;
-    void eventCamera(SDLWindowManager* windowManager);
-    void update();
+    void rotateLeftMouse(float degrees);
+    void eventCamera(SDLWindowManager& windowManager);
+    
+    
     
     void computeDirectionVectors();
 
