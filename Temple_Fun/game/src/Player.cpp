@@ -12,6 +12,10 @@ glm::vec3 Player::getCoord()
 {
     return m_coord;
 }
+glm::vec3 Player::getFloorCoord()
+{
+    return glm::vec3(floor(m_coord.x),floor(m_coord.y),floor(m_coord.z));
+}
 
 void Player::addCoins()
 {
@@ -65,19 +69,19 @@ void Player::moveOrientation()
 {
     if (m_orientation == 0.)
     {
-        move(glm::vec3(0, 1, 0));
+        move(glm::vec3(0, 0.1, 0));
     }
     if (m_orientation == 90.)
     {
-        move(glm::vec3(1, 0, 0));
+        move(glm::vec3(0.1, 0, 0));
     }
     if (m_orientation == -90.)
     {
-        move(glm::vec3(-1, 0, 0));
+        move(glm::vec3(-0.1, 0, 0));
     }
     if (m_orientation == 180.)
     {
-        move(glm::vec3(0, -1, 0));
+        move(glm::vec3(0, -0.1, 0));
     }
 }
 
@@ -101,12 +105,12 @@ void Player::moveside(glimac::SDLWindowManager &windowManager, bool &repeat)
             SDL_EnableKeyRepeat(0, 0);
 
             repeat = false;
-            move(glm::vec3(-1, 0, 0));
+            move(glm::vec3(-1., 0, 0));
         }
         if (windowManager.isKeyPressed(SDLK_q) && repeat)
         {
             repeat = false;
-            move(glm::vec3(1, 0, 0));
+            move(glm::vec3(1., 0, 0));
         }
         // if (windowManager.isKeyPressed(SDLK_z) && repeat)
         // {
@@ -120,12 +124,12 @@ void Player::moveside(glimac::SDLWindowManager &windowManager, bool &repeat)
         if (windowManager.isKeyPressed(SDLK_d) && repeat)
         {
             repeat = false;
-            move(glm::vec3(0, 1, 0));
+            move(glm::vec3(0, 1., 0));
         }
         if (windowManager.isKeyPressed(SDLK_q) && repeat)
         {
             repeat = false;
-            move(glm::vec3(0, -1, 0));
+            move(glm::vec3(0, -1., 0));
         }
         // if (windowManager.isKeyPressed(SDLK_z) && repeat)
         // {
@@ -140,12 +144,12 @@ void Player::moveside(glimac::SDLWindowManager &windowManager, bool &repeat)
         if (windowManager.isKeyPressed(SDLK_d) && repeat)
         {
             repeat = false;
-            move(glm::vec3(0, -1, 0));
+            move(glm::vec3(0, -1., 0));
         }
         if (windowManager.isKeyPressed(SDLK_q) && repeat)
         {
             repeat = false;
-            move(glm::vec3(0, 1, 0));
+            move(glm::vec3(0, 1., 0));
         }
         // if (windowManager.isKeyPressed(SDLK_z) && repeat)
         // {
@@ -160,12 +164,12 @@ void Player::moveside(glimac::SDLWindowManager &windowManager, bool &repeat)
         if (windowManager.isKeyPressed(SDLK_d) && repeat)
         {
             repeat = false;
-            move(glm::vec3(1, 0, 0));
+            move(glm::vec3(1., 0, 0));
         }
         if (windowManager.isKeyPressed(SDLK_q) && repeat)
         {
             repeat = false;
-            move(glm::vec3(-1, 0, 0));
+            move(glm::vec3(-1., 0, 0));
         }
     }
         //if (windowManager.isKeyPressed(SDLK_z) && repeat)
@@ -204,9 +208,9 @@ void Player::jump(glimac::SDLWindowManager &windowManager, bool &repeat, int &st
             step++;
             m_isJumping = true;*/
 
-        if (step <= 1){
-            m_coord.z ++;
-            //m_isJumping = true;
+        if (step < 10){
+            m_coord.z +=0.1;
+            m_isJumping = true;
             //repeat = false;
             moveOrientation();
             step ++;
@@ -218,14 +222,15 @@ void Player::jump(glimac::SDLWindowManager &windowManager, bool &repeat, int &st
 void Player::fall(int &step)
 {
         
-    if (step <4){
-    m_coord.z -- ;
-    m_isJumping = false;
+    if (step <20){
+    m_coord.z -= 0.1 ;
+    
     moveOrientation();
     step ++;
     }
     else{
         step = 0;
+        m_isJumping = false;
     }
     
 }

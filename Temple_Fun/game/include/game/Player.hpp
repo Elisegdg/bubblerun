@@ -25,6 +25,7 @@ public:
     ~Player() = default;
     void setCoord(glm::vec3 coord);
     glm::vec3 getCoord();
+    glm::vec3 getFloorCoord();
     void addCoins();
     int getCoins();
     bool isLife();

@@ -50,7 +50,7 @@ int main(int argc, char **argv)
     CourseMap courseMap;
     courseMap.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/map.ppm");
     Player player(courseMap);
-    Object *objet = courseMap.findObject(player.getCoord());
+    Object *objet = courseMap.findObject(player.getFloorCoord());
     double score = 0;
 
     TrackballCamera trackball_camera(&player);
@@ -198,8 +198,12 @@ int main(int argc, char **argv)
         if (player.isLife() & player.getCoord()[1] != courseMap.end() & player.getCoord()[0] >= 0 & player.getCoord()[1] >= 0)
         {
             
-            objet = courseMap.findObject(player.getCoord()); 
-            if(objet->getIfCoins()){
+            objet = courseMap.findObject(player.getFloorCoord()); 
+            std::cout<<"getCoord : "<<player.getCoord()<<std::endl;
+            std::cout<<"getFloorCoord : "<<player.getFloorCoord()<<std::endl;
+            std::cout<<"object : "<<objet->getName()<<std::endl;
+            std::cout<<std::endl;
+            if(objet->getIfCoins() & !player.isJumping()){
                 objet->removeCoin();
             }
             if (objet->getName() == "straight")
@@ -234,33 +238,35 @@ int main(int argc, char **argv)
                 
             }
             
-            if (objet->getName() == "empty")
+            if (objet->getName() == "empty" & player.getCoord()[2]<0.3 )
             {
 
                 player.setLife();
+                std::cout<<"oops, you fell"<<std::endl;
             }
 
-            if (objet->getName() == "obstacle" & player.getCoord()[2] == 0)
+            if (objet->getName() == "obstacle" & player.getCoord()[2]<0.3)
             {
                 player.setLife();
+                std::cout<<"oops you stumbled over an obstacle"<<std::endl;
             }
 
             
 
 
 
-            if (currentTime - previousTime > 200)  // TO DO : set the speed in a variable
+            if (currentTime - previousTime > 5)  // TO DO : set the speed in a variable
             {
                 player.moveOrientation();
 
                 if (player.isJumping())    player.jump(windowManager, repeat, step);
                 
 
-                if (step>1)   player.fall(step);
+                if (step>=10)   player.fall(step);
             
 
                 if (camera->getCameraType() == 1)
-                    camera->moveFront(1);
+                    camera->moveFront(0.1);
 
                 previousTime = currentTime;
             }
@@ -270,6 +276,7 @@ int main(int argc, char **argv)
         else
         {
             done = true;
+            
         }
 
         camera->eventCamera(windowManager);
