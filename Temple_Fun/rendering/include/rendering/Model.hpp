@@ -31,14 +31,14 @@ public:
 
     // METHODS
     void draw(){
-    glBindVertexArray(m_vao);
-    glBindTexture(GL_TEXTURE_2D, m_texture.getTextureId());
-    if(m_isIbo){
-        glDrawElements(GL_TRIANGLES, getVertexCount(), GL_UNSIGNED_INT,0);
-    }
-    else{
-        glDrawArrays(GL_TRIANGLES, 0, getVertexCount());
-    }
+        glBindVertexArray(m_vao);
+        glBindTexture(GL_TEXTURE_2D, m_texture.getTextureId());
+        if(m_isIbo){
+            glDrawElements(GL_TRIANGLES, getVertexCount(), GL_UNSIGNED_INT,0);
+        }
+        else{
+            glDrawArrays(GL_TRIANGLES, 0, getVertexCount());
+        }
 }
 
     GLuint getVao(){

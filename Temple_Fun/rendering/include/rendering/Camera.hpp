@@ -3,10 +3,11 @@
 
 #include "glimac/glm.hpp"
 #include <glimac/SDLWindowManager.hpp>
+//#include <game/Player.hpp>
 using namespace glimac;
 
+//class Player;
 namespace rendering{
-
 
 // Abstract class
 class Camera{
@@ -14,13 +15,11 @@ class Camera{
 protected:
     // Attributs
     unsigned int m_cameraType; // 0 : Trackball / 1 : Eyes
+    unsigned int m_locked; //0 : not locked / 1 : locked
 
 public:
-
-
-    //Destructor
-
-    //Methods
+    
+    
     unsigned int getCameraType() const{
         return m_cameraType;
     }
@@ -31,13 +30,21 @@ public:
     virtual void rotateLeft(float degrees) = 0;
     virtual void rotateUp(float degrees) = 0;    
     virtual glm::mat4 getViewMatrix() const =0;
-    virtual void eventCamera(SDLWindowManager* windowManager)=0;
-    virtual void update() = 0;
+    virtual void eventCamera(SDLWindowManager& windowManager)=0;
+    void setLocker(){
+        
+        if (m_locked == 0)
+        {
+            m_locked = 1;
+        }
+        else
+        {
+            m_locked = 0;
+        }
+    
+    }
 };
 
-
-
 }
-
 
 #endif

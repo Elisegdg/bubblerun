@@ -1,3 +1,4 @@
+
 #include "../include/game/CourseMap.hpp"
 #include "../include/game/Object.hpp"
 #include <stdio.h>
@@ -102,32 +103,11 @@ void CourseMap::loadMap(const glimac::FilePath &file)
             m_CourseMap[iterator]->addCoord(j,i,0);
             
             iterator ++;
-
-            
-            
-            
             
             
         }
         
-
     }
-
-    // for (int i = 0; i < m_sizex; i++)
-    // {
-        
-    //     std::cout<<m_CourseMap[iterator]->getName()<<std::endl;
-    // }
-    
-
-    
-
-    
-    // Object* objet = findObject(glm::vec3(2,0,0));
-    // std::cout<<std::endl;
-    // objet->draw();
-    
-    
 
 }
 
@@ -192,15 +172,29 @@ int CourseMap::end()
 
 
 
-void CourseMap::drawMap(rendering::Cube* mesh, const rendering::Camera* camera, rendering::ShaderManager* Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager* windowManager) const
+
+
+void CourseMap::drawMap(rendering::Cube& mesh_path,rendering::Cube& mesh_coin, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager) const
 {
         for(int i = 0 ; i< m_CourseMap.size(); i++){
-            m_CourseMap[i]->draw(camera, Program, ProjMatrix, m_sizey, windowManager);
-            mesh->draw();
-            // if(m_CourseMap[i]->getIfCoins())
-            // {
-                
-            // }
+            if(m_CourseMap[i]->getName() != "obstacle"){
+                m_CourseMap[i]->draw(mesh_path, camera, Program, ProjMatrix, windowManager);
+            }
+            if(m_CourseMap[i]->getIfCoins()){
+                m_CourseMap[i]->drawCoins(mesh_coin, camera, Program, ProjMatrix, windowManager);
+
+            }            
+        }       
+    
+}
+
+void CourseMap::drawObstacle(rendering::Cube& mesh, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager) const
+{
+        for(int i = 0 ; i< m_CourseMap.size(); i++){
+            if(m_CourseMap[i]->getName() == "obstacle"){
+                m_CourseMap[i]->draw(mesh, camera, Program, ProjMatrix, windowManager);
+            }
+            
         }       
     
 }

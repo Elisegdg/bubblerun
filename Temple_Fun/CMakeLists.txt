@@ -18,10 +18,10 @@ find_package(Freetype REQUIRED)
 include_directories(${SDL_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR} ${GLEW_INCLUDE_DIR} ${FREETYPE_INCLUDE_DIRS} glimac/include third-party/include rendering/include)
 include_directories(game/include)
 
-set(FREETYPE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/freetype-2.11.0)
+set(FREETYPE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/freetype-2.11.1)
 link_directories(${FREETYPE_DIRECTORY})
 include_directories(${FREETYPE_DIRECTORY})
-find_library(freetype-2.11.0 freetype-2.11.0 ${FREETYPE_DIRECTORY})
+find_library(freetype-2.11.1 freetype-2.11.1 ${FREETYPE_DIRECTORY})
 
 set(ALL_LIBRARIES glimac rendering game ${SDL_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${FREETYPE_LIBRARIES})
 
