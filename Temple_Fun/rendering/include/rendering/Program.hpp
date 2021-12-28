@@ -46,11 +46,21 @@ public:
         glUniformMatrix4fv(m_uniformVars[name], 1, GL_FALSE, glm::value_ptr(value));
     }
 
+    void uniformMatrix3fv(std::string name, glm::mat3 value){
+        glUniformMatrix3fv(m_uniformVars[name], 1, GL_FALSE, glm::value_ptr(value));
+    }
+
 
     void uniform1i(std::string name, int value){
         glUniform1i(m_uniformVars[name], value);
     }
 
+    void uniform3f(std::string name,float value1,float value2,float value3)
+    {
+        glUniform3f(m_uniformVars[name],value1,value2,value3);
+
+    }
+    
     void use(){
         m_program.use();
     }
