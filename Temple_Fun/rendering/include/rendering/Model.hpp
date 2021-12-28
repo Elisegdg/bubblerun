@@ -56,6 +56,7 @@ public:
     void setVao();
     void setVbo();
     void setIbo();
+    void setBuffers();
     const glimac::ShapeVertex* getDataPointer() const;
     GLsizei getVertexCount() const{
     return m_vertexCount;

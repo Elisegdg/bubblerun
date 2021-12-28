@@ -25,10 +25,20 @@ namespace rendering
         else m_fAngleY = glm::radians(degrees);
     }
 
-    void TrackballCamera::rotateLeftTest(float degrees)
+    void TrackballCamera::rotateLeftTest(float degrees, int &step)
     {
-        m_fAngleY += glm::radians(90.);
-        std::cout<<"angleY  =  "<<m_fAngleY<<std::endl;
+        if(step<=10){
+            m_fAngleY += glm::radians(degrees)/step;
+            step ++;
+        }
+        
+        else{
+            step = 0;
+        }
+
+    m_fAngleY = glm::radians(degrees);
+
+        
     }
 
     void TrackballCamera::rotateUp(float degrees)

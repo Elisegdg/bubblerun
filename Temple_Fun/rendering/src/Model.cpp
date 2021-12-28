@@ -44,6 +44,12 @@ void Model::setVao(){
     glBindVertexArray(0);
 }
 
+void Model::setBuffers() {
+    setVbo();
+    setIbo();  
+    setVao();
+}
+
 const glimac::ShapeVertex* Model::getDataPointer() const{
     return &m_vertices[0];
 }
@@ -53,6 +59,7 @@ const glimac::ShapeVertex* Model::getDataPointer() const{
 const int* Model::getIndexPointer() const{
     return &m_index[0];
 }
+
 
 
 

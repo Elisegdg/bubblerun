@@ -31,7 +31,7 @@ int main(int argc, char **argv)
     // Initialize SDL and open a window
     SDLWindowManager windowManager(1700, 900, "Temple_Fun");
     int previousTime = 0, currentTime = 0;
-
+    
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
     if (GLEW_OK != glewInitError)
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
    *********************************/
 
     CourseMap courseMap;
-    courseMap.loadMap("/home/clara/Documents/Projet/Temple_Fun/assets/map.ppm");
+    courseMap.loadMap("../Temple_Fun/assets/map.ppm");
     Player player(courseMap);
     Object *objet = courseMap.findObject(player.getFloorCoord());
     double score = 0;
@@ -122,22 +122,13 @@ int main(int argc, char **argv)
     unsigned int cubemapTexture = loadCubemap(skybox_sky);
 
     //Creation of the cube used for the Player and the Path
-    cube_path.setVbo();
-    cube_path.setIbo();
-    cube_path.setVao();
+    cube_path.setBuffers();
 
-    cube_nemo.setVbo();
-    cube_nemo.setIbo();
-    cube_nemo.setVao();
+    cube_nemo.setBuffers();
 
-    cube_coin.setVbo();
-    cube_coin.setIbo();
-    cube_coin.setVao();
+    cube_coin.setBuffers();
 
-    cube_obstacle.setVbo();
-    cube_obstacle.setIbo();
-    cube_obstacle.setVao();
-
+    cube_obstacle.setBuffers();
     // Application loop:
     bool done = false;
     bool repeat = false;
@@ -199,10 +190,7 @@ int main(int argc, char **argv)
         {
             
             objet = courseMap.findObject(player.getFloorCoord()); 
-            std::cout<<"getCoord : "<<player.getCoord()<<std::endl;
-            std::cout<<"getFloorCoord : "<<player.getFloorCoord()<<std::endl;
-            std::cout<<"object : "<<objet->getName()<<std::endl;
-            std::cout<<std::endl;
+            
             if(objet->getIfCoins() & !player.isJumping()){
                 objet->removeCoin();
             }
@@ -214,33 +202,38 @@ int main(int argc, char **argv)
 
             if (objet->getName() == "up")
             {
+                player.setCoord(objet->getCoord());
                 player.setOrientation(180.);
+                player.move(glm::vec3(0,-1,0));
                 camera->rotateLeft(player.getOrientation());
             }
 
             if (objet->getName() == "down")
             {
+                player.setCoord(objet->getCoord());
                 player.setOrientation(0.);
+                player.move(glm::vec3(0, 1, 0));
                 camera->rotateLeft(player.getOrientation());
             }
 
             if (objet->getName() == "right")
             {
+                player.setCoord(objet->getCoord());
                 player.setOrientation(90.);
+                player.move(glm::vec3(1, 0, 0));
                 camera->rotateLeft(player.getOrientation());
             }
 
             if (objet->getName() == "left")
             {
+                player.setCoord(objet->getCoord());
                 player.setOrientation(-90.);
+                player.move(glm::vec3(-1, 0, 0));
                 camera->rotateLeft(player.getOrientation());
-
-                
             }
             
             if (objet->getName() == "empty" & player.getCoord()[2]<0.3 )
             {
-
                 player.setLife();
                 std::cout<<"oops, you fell"<<std::endl;
             }
@@ -250,8 +243,6 @@ int main(int argc, char **argv)
                 player.setLife();
                 std::cout<<"oops you stumbled over an obstacle"<<std::endl;
             }
-
-            
 
 
 

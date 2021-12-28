@@ -29,6 +29,7 @@ public:
         m_cameraType = 0;
         m_player = player;
         m_locked = 0;
+        m_isRotating = false;
     }
 
     // Destructor
@@ -43,7 +44,7 @@ public:
     void eventCamera(SDLWindowManager& windowManager);
     float getDistance();
     
-    void rotateLeftTest(float degrees);
+    void rotateLeftTest(float degrees, int &step);
 
 
 };
