@@ -40,7 +40,6 @@ public:
         return Advance;
     }
 
-
     void loadFont(std::map<char, Text> &Characters)
     {
 

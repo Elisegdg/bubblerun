@@ -18,10 +18,10 @@
 #include <rendering/Cube.hpp>
 #include <rendering/Text.hpp>
 #include <rendering/Menu.hpp>
+#include <rendering/Cursor.hpp>
 #include <game/CourseMap.hpp>
 #include <game/Object.hpp>
 #include <game/Player.hpp>
-#include <rendering/Text.hpp>
 #include <ft2build.h>
 #include FT_FREETYPE_H
 #include <string.h>
@@ -29,6 +29,39 @@
 using namespace glimac;
 using namespace rendering;
 
+static SDL_Cursor *init_system_cursor(const char *image[])
+{
+  int i, row, col;
+  Uint8 data[4*32];
+  Uint8 mask[4*32];
+  int hot_x, hot_y;
+
+  i = -1;
+  for (row=0; row<32; ++row) {
+    for (col=0; col<32; ++col) {
+      if (col % 8) {
+        data[i] <<= 1;
+        mask[i] <<= 1;
+      } else {
+        ++i;
+        data[i] = mask[i] = 0;
+      }
+      switch (image[4+row][col]) {
+        case 'X':
+          data[i] |= 0x01;
+          mask[i] |= 0x01;
+          break;
+        case '.':
+          mask[i] |= 0x01;
+          break;
+        case ' ':
+          break;
+      }
+    }
+  }
+  sscanf(image[4+row], "%d,%d", &hot_x, &hot_y);
+  return SDL_CreateCursor(data, mask, 32, 32, hot_x, hot_y);
+}
 
 
 int main(int argc, char **argv)
@@ -52,6 +85,11 @@ int main(int argc, char **argv)
     /*********************************
     *     INITIALIZATION CODE       *
    *********************************/
+
+    SDL_Cursor *cursor = init_system_cursor(arrow);
+    SDL_Cursor *cursor2 = init_system_cursor(arrow2);
+    
+    
 
     bool menu_bool = true;
     Menu menu;
@@ -126,17 +164,6 @@ int main(int argc, char **argv)
 
     
     
-    // glGenVertexArrays(1, &VAO);
-    // glGenBuffers(1, &VBO);
-    // glBindVertexArray(VAO);
-    // glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    // glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
-    // glEnableVertexAttribArray(0);
-    // glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
-    // glBindBuffer(GL_ARRAY_BUFFER, 0);
-    // glBindVertexArray(0);
-    
-    
 
     // Creation of the Skybox
     GLuint skyboxVAO, skyboxVBO;
@@ -170,11 +197,6 @@ int main(int argc, char **argv)
     cube_obstacle.setVao();
 
 
-
-    
-
-    
-
     // Application loop:
     bool done = false;
     bool repeat = false;
@@ -187,6 +209,22 @@ int main(int argc, char **argv)
         int x;
         int y;
         SDL_GetMouseState(&x,&y);
+        //std::cout<<x<<"  "<<y<<std::endl;
+
+        SDL_SetCursor(cursor);
+        if(menu_bool == true & x>764 & y>425 & x<932 & y<467)
+        {
+            SDL_SetCursor(cursor2);
+            
+
+        }
+        if(menu_bool == true & x>764 & y>540 & x<932 & y<583)
+        {
+            SDL_SetCursor(cursor2);
+            
+
+        }
+        
 
         // Event loop:
         SDL_Event e;
@@ -197,7 +235,12 @@ int main(int argc, char **argv)
                 done = true;
             }
 
-            if (menu_bool == true & e.type == SDL_MOUSEBUTTONUP & x<400 & y<400)
+            if (menu_bool == true & e.type == SDL_MOUSEBUTTONUP & x>764 & y>425 & x<932 & y<467)
+            {
+                menu_bool =false;
+                
+            }
+            if (menu_bool == true & e.type == SDL_MOUSEBUTTONUP & x>764 & y>540 & x<932 & y<583)
             {
                 menu_bool =false;
                 
@@ -267,6 +310,9 @@ int main(int argc, char **argv)
             
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            
             
 
             menuShader.use();
@@ -282,7 +328,7 @@ int main(int argc, char **argv)
             // On rebind le vao
             glBindVertexArray(menu.getVaoMenu());
             menuShader.uniformMatrix4fv("uModelMatrix",bouton_play);
-            menuShader.uniform3f("uColor",0,0,1);
+            menuShader.uniform3f("uColor",0.f, 0.04f, 0.39f);
             
            
 
@@ -294,23 +340,23 @@ int main(int argc, char **argv)
 
             glBindVertexArray(menu.getVaoMenu());
             menuShader.uniformMatrix4fv("uModelMatrix",bouton_score);
-            menuShader.uniform3f("uColor",1,0,0);
+            menuShader.uniform3f("uColor",0.f, 0.04f, 0.39f);
             glDrawArrays(GL_TRIANGLES, 0, 6);
 
             glBindVertexArray(0);
 
             
             glEnable(GL_BLEND);
-            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            //glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
             
             glDepthFunc(GL_LEQUAL);
-            //glClearColor(1.0f, 1.0f,1.0f, 1.0f);
+            glClearColor(1.0f, 1.0f,1.0f, 1.0f);
             //glClear(GL_COLOR_BUFFER_BIT);
             TextProgram.use();
             GLuint id = TextProgram.getId();
-            text.RenderText(id, Characters, "BUBBLE RUN", 210.0f, 400.0f, 1.5f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
-            text.RenderText(id, Characters,"play :", 370.0f, 320.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
-            
+            text.RenderText(id, Characters, "... BUBBLE RUN ...", 270.0f, 400.0f, 0.8f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
+            text.RenderText(id, Characters,"play :", 365.0f, 320.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
+            text.RenderText(id, Characters,"score :", 360.0f, 245.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
             glDisable(GL_BLEND);
 
             

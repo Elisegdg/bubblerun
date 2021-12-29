@@ -4,7 +4,7 @@
 #include <game/CourseMap.hpp>
 #include <game/Object.hpp>
 #include <game/Player.hpp>
-#include <ft2build.h>
+#include <include/ft2build.h>
 #include FT_FREETYPE_H  
 
 using namespace glimac;
