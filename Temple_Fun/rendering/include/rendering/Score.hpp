@@ -12,6 +12,7 @@ private:
 public:
     Score();
     void addScore(int sccore);
+    json getArray(){return m_array;}
     
 };
 

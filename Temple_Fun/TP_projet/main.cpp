@@ -96,6 +96,8 @@ int main(int argc, char **argv)
     bool menu_bool = true;
     Menu menu;
 
+    bool menu_score = false;
+
     Score scorejson;
 
     CourseMap courseMap;
@@ -216,18 +218,22 @@ int main(int argc, char **argv)
         //std::cout<<x<<"  "<<y<<std::endl;
 
         SDL_SetCursor(cursor);
-        if(menu_bool == true & x>764 & y>425 & x<932 & y<467)
+        if(menu_bool & !menu_score & x>764 & y>425 & x<932 & y<467)
         {
             SDL_SetCursor(cursor2);
             
 
         }
-        if(menu_bool == true & x>764 & y>540 & x<932 & y<583)
+        if(menu_bool & !menu_score & x>764 & y>540 & x<932 & y<583)
         {
             SDL_SetCursor(cursor2);
             
 
         }
+        if (!menu_bool & menu_score & x>1447 & y>789 & x<1613 & y<829)
+            {
+                SDL_SetCursor(cursor2);            
+            }
         
 
         // Event loop:
@@ -239,14 +245,21 @@ int main(int argc, char **argv)
                 done = true;
             }
 
-            if (menu_bool == true & e.type == SDL_MOUSEBUTTONUP & x>764 & y>425 & x<932 & y<467)
+            if (menu_bool & !menu_score & e.type == SDL_MOUSEBUTTONUP & x>764 & y>425 & x<932 & y<467)
             {
                 menu_bool =false;
                 
             }
-            if (menu_bool == true & e.type == SDL_MOUSEBUTTONUP & x>764 & y>540 & x<932 & y<583)
+            if (menu_bool & !menu_score & e.type == SDL_MOUSEBUTTONUP & x>764 & y>540 & x<932 & y<583)
             {
+                menu_score =true;
                 menu_bool =false;
+                
+            }
+            if (!menu_bool & menu_score & e.type == SDL_MOUSEBUTTONUP & x>1447 & y>789 & x<1613 & y<829)
+            {
+                menu_score =false;
+                menu_bool =true;
                 
             }
 
@@ -296,82 +309,101 @@ int main(int argc, char **argv)
             
         }
 
-        //menu = false;
-        if (menu_bool)
+        if (menu_bool & menu_score==false)
         {
-            
-            
-        
-
             glm::mat4 uModelMatrix;
-            // = glm::translate(uModelMatrix,glm::vec3(0,2,1));
-            glm::mat4 scale_reset = glm::scale(uModelMatrix,glm::vec3(1,1,1)); //mise a l'echelle
+            glm::mat4 scale_reset = glm::scale(uModelMatrix,glm::vec3(1,1,1));
             glm::mat4 translate_bouton_play=glm::translate(uModelMatrix,glm::vec3(0,0,-0.5));
             glm::mat4 bouton_play=glm::scale(translate_bouton_play,glm::vec3(0.1,0.05,1));
             glm::mat4 translate_bouton_score=glm::translate(uModelMatrix,glm::vec3(0,-0.25,-0.5));
             glm::mat4 bouton_score=glm::scale(translate_bouton_score,glm::vec3(0.1,0.05,1));
 
             
-
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
             glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
             
-            
-
             menuShader.use();
-            
-            //glDepthFunc(GL_LESS);
 
+            //fond du menu
             glBindVertexArray(menu.getVaoMenu());
             menuShader.uniformMatrix4fv("uModelMatrix",scale_reset);
             menuShader.uniform3f("uColor",1,1,1);
             glDrawArrays(GL_TRIANGLES, 0, 6);
             glBindVertexArray(0);
 
-            // On rebind le vao
+            //bouton play
             glBindVertexArray(menu.getVaoMenu());
             menuShader.uniformMatrix4fv("uModelMatrix",bouton_play);
             menuShader.uniform3f("uColor",0.f, 0.04f, 0.39f);
-            
-           
-
-            // On dessine le triangle
             glDrawArrays(GL_TRIANGLES, 0, 6);
             glBindVertexArray(0);
 
-            
-
+            //bouton score
             glBindVertexArray(menu.getVaoMenu());
             menuShader.uniformMatrix4fv("uModelMatrix",bouton_score);
             menuShader.uniform3f("uColor",0.f, 0.04f, 0.39f);
             glDrawArrays(GL_TRIANGLES, 0, 6);
-
             glBindVertexArray(0);
 
-            
+            //texte
             glEnable(GL_BLEND);
-            //glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-            
             glDepthFunc(GL_LEQUAL);
-            glClearColor(1.0f, 1.0f,1.0f, 1.0f);
-            //glClear(GL_COLOR_BUFFER_BIT);
             TextProgram.use();
             GLuint id = TextProgram.getId();
             text.RenderText(id, Characters, "... BUBBLE RUN ...", 270.0f, 400.0f, 0.8f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
             text.RenderText(id, Characters,"play :", 365.0f, 320.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
             text.RenderText(id, Characters,"score :", 360.0f, 245.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
             glDisable(GL_BLEND);
+        }
 
+        if(menu_score & menu_bool ==false)
+        {
+            glm::mat4 uModelMatrix;
+            glm::mat4 scale_reset = glm::scale(uModelMatrix,glm::vec3(1,1,1));
+            glm::mat4 translate_bouton_back=glm::translate(uModelMatrix,glm::vec3(0.8,-0.8,-0.5));
+            glm::mat4 bouton_back=glm::scale(translate_bouton_back,glm::vec3(-0.1,0.05,1));
+
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
             
+            menuShader.use();
 
-           
+            //fond du menu score
+            glBindVertexArray(menu.getVaoMenu());
+            menuShader.uniformMatrix4fv("uModelMatrix",scale_reset);
+            menuShader.uniform3f("uColor",1,1,1);
+            glDrawArrays(GL_TRIANGLES, 0, 6);
+            glBindVertexArray(0);
+
+            //bouton play
+            glBindVertexArray(menu.getVaoMenu());
+            menuShader.uniformMatrix4fv("uModelMatrix",bouton_back);
+            menuShader.uniform3f("uColor",0.f, 0.04f, 0.39f);
+            glDrawArrays(GL_TRIANGLES, 0, 6);
+            glBindVertexArray(0);
+
+            //texte
+            glEnable(GL_BLEND);
+            glDepthFunc(GL_LEQUAL);
+            TextProgram.use();
+            GLuint id = TextProgram.getId();
+            int first=scorejson.getArray()["score"][0];
+            int second = scorejson.getArray()["score"][1];
+            int third = scorejson.getArray()["score"][2];
+            text.RenderText(id, Characters, "Best scores :", 300.0f, 400.0f, 0.6f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
+            text.RenderText(id, Characters,"First    " + std::to_string(first), 320.0f, 300.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
+            text.RenderText(id, Characters,"Second   "+std::to_string(second), 320.0f, 250.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
+            text.RenderText(id, Characters,"Third    " +std::to_string(third), 320.0f, 200.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
+            text.RenderText(id, Characters,"Back", 690.0f, 80.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
+            
+            glDisable(GL_BLEND);
+
         }
 
             // if (currentTime - previousTime > 5)  // TO DO : set the speed in a variable
         
         
-        if(menu_bool==false)
+        if(menu_bool==false & menu_score==false)
         {
             // GAME LOOP
             if (player.isLife() & player.getCoord()[1] != courseMap.end() & player.getCoord()[0] >= 0 & player.getCoord()[1] >= 0)
