@@ -14,7 +14,7 @@ glm::vec3 Player::getCoord()
 }
 glm::vec3 Player::getFloorCoord()
 {
-    return glm::vec3(floor(m_coord.x),floor(m_coord.y),floor(m_coord.z));
+    return glm::vec3(floor(m_coord.x),floor(m_coord.y),m_coord.z);
 }
 
 void Player::addCoins()

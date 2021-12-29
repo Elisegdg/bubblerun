@@ -16,9 +16,11 @@
 #include <rendering/Program.hpp>
 #include <rendering/Skybox.hpp>
 #include <rendering/Cube.hpp>
-#include <rendering/Text.hpp>
+#include <rendering/Text.hpp> 
 #include <rendering/Menu.hpp>
 #include <rendering/Cursor.hpp>
+#include <rendering/json.hpp>
+#include <rendering/Score.hpp>
 #include <game/CourseMap.hpp>
 #include <game/Object.hpp>
 #include <game/Player.hpp>
@@ -28,6 +30,8 @@
 
 using namespace glimac;
 using namespace rendering;
+using json = nlohmann::json;
+
 
 static SDL_Cursor *init_system_cursor(const char *image[])
 {
@@ -89,10 +93,10 @@ int main(int argc, char **argv)
     SDL_Cursor *cursor = init_system_cursor(arrow);
     SDL_Cursor *cursor2 = init_system_cursor(arrow2);
     
-    
-
     bool menu_bool = true;
     Menu menu;
+
+    Score scorejson;
 
     CourseMap courseMap;
     courseMap.loadMap("../Temple_Fun/assets/map.ppm");
@@ -381,6 +385,7 @@ int main(int argc, char **argv)
                 if (objet->getIfCoins() & !player.isJumping())
                 {
                     objet->removeCoin();
+                    score+=50;
                 }
                 if (objet->getName() == "straight")
                 {
@@ -390,25 +395,33 @@ int main(int argc, char **argv)
 
                 if (objet->getName() == "up")
                 {
+                    player.setCoord(objet->getCoord());
                     player.setOrientation(180.);
+                    player.move(glm::vec3(0, -1, 0));
                     camera->rotateLeft(player.getOrientation());
                 }
 
                 if (objet->getName() == "down")
                 {
+                    player.setCoord(objet->getCoord());
                     player.setOrientation(0.);
+                    player.move(glm::vec3(0, 1, 0));
                     camera->rotateLeft(player.getOrientation());
                 }
 
                 if (objet->getName() == "right")
                 {
+                    player.setCoord(objet->getCoord());
                     player.setOrientation(90.);
+                    player.move(glm::vec3(1, 0, 0));
                     camera->rotateLeft(player.getOrientation());
                 }
 
                 if (objet->getName() == "left")
                 {
+                    player.setCoord(objet->getCoord());
                     player.setOrientation(-90.);
+                    player.move(glm::vec3(-1, 0, 0));
                     camera->rotateLeft(player.getOrientation());
                 }
 
@@ -441,10 +454,18 @@ int main(int argc, char **argv)
                     previousTime = currentTime;
                 }
             }
+            else if (player.isLife()==false)
+            {
+                scorejson.addScore(score);
+                menu_bool = true;
+            }
+            
 
             else
             {
-                done = true;
+                scorejson.addScore(score);
+                menu_bool = true;
+                
             }
 
             camera->eventCamera(windowManager);
