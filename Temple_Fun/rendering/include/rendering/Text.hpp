@@ -25,17 +25,17 @@ public:
         return TextureID;
     }  
 
-    glm::ivec2   getSize()
+    glm::ivec2   getSize() const
     {
         return Size;
     }  
 
-    glm::ivec2   getBearing()
+    glm::ivec2   getBearing() const
     {
         return Bearing;
     } 
 
-    unsigned int getAdvance()
+    unsigned int getAdvance() const
     {
         return Advance;
     }

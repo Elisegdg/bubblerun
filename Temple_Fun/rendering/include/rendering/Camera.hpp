@@ -26,12 +26,10 @@ public:
     }
 
 
-    virtual void moveFront(float delta) = 0;
-    virtual void moveLeft(float delta) = 0;
-    virtual void rotateLeft(float degrees) = 0;
-    virtual void rotateLeftTest(float degrees, int& step)=0;
-
-    virtual void rotateUp(float degrees) = 0;    
+    virtual void moveFront(const float delta) = 0;
+    virtual void moveLeft(const float delta) = 0;
+    virtual void rotateLeft(const float degrees) = 0;
+    virtual void rotateUp(const float degrees) = 0;    
     virtual glm::mat4 getViewMatrix() const =0;
     virtual void eventCamera(SDLWindowManager& windowManager)=0;
     void setLocker(){

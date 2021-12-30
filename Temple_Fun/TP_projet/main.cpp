@@ -46,27 +46,41 @@ int main(int argc, char **argv)
     /*********************************
     *     INITIALIZATION CODE       *
    *********************************/
-
+    // Loading of the map as a .ppm file
     CourseMap courseMap;
-    courseMap.loadMap("../Temple_Fun/assets/map.ppm");
+
+    try{
+        courseMap.loadMap("../Temple_Fun/assets/map.ppm");
+    }
+    catch(std::string &s){
+        std::cerr<<"Error : "<<s<<std::endl;
+    }
+
     Player player(courseMap);
     Object *objet = courseMap.findObject(player.getFloorCoord());
     double score = 0;
 
+    // Initialization of the cameras
     TrackballCamera trackball_camera(&player);
     EyesCamera eyes_camera(&player);
     Camera *camera = &trackball_camera;
 
+    // Initialization of the textures
     Texture obstacle("../Temple_Fun/assets/textures/ground.png");
     Texture nemo("../Temple_Fun/assets/textures/nemo.jpg");
     Texture ground("../Temple_Fun/assets/textures/stone_ground.png");
     Texture coin("../Temple_Fun/assets/textures/gold.png");
+    
+    
+    
 
+    // Text management
     unsigned int VAO, VBO;
     std::map<char, Text> Characters;
     Text text;
     text.loadFont(Characters);
 
+    // Initialization of the models (temporarily cube)
     Cube cube_path(ground, 1);
     Cube cube_nemo(nemo, 1);
     Cube cube_obstacle(obstacle, 1);
@@ -118,17 +132,21 @@ int main(int argc, char **argv)
     glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
+    unsigned int cubemapTexture;
 
-    unsigned int cubemapTexture = loadCubemap(skybox_sky);
+    try{
+        cubemapTexture = loadCubemap(skybox_sky);
+    }
+    catch(std::string &s){
+        std::cerr<<"Error : "<<s<<std::endl;
+    }
 
     //Creation of the cube used for the Player and the Path
     cube_path.setBuffers();
-
     cube_nemo.setBuffers();
-
     cube_coin.setBuffers();
-
     cube_obstacle.setBuffers();
+    
     // Application loop:
     bool done = false;
     bool repeat = false;
@@ -162,26 +180,16 @@ int main(int argc, char **argv)
                 }
             }
 
-            if (windowManager.isKeyPressed(SDLK_l))
-            {
-                camera->setLocker();
-            }
+            if (windowManager.isKeyPressed(SDLK_l))     camera->setLocker();
+
             
             // PREVENT THE EVENT FROM REPEATING OUTSIDE POLLEVENT
-            if (windowManager.isKeyPressed(SDLK_d))
-            {
-                repeat = true;
-            }
+            if (windowManager.isKeyPressed(SDLK_d))     repeat = true;
 
-            if (windowManager.isKeyPressed(SDLK_q))
-            {
-                repeat = true;
-            }
+            if (windowManager.isKeyPressed(SDLK_q))     repeat = true;
 
-            if (windowManager.isKeyPressed(SDLK_z))
-            {
-                repeat = true;
-            }
+            if (windowManager.isKeyPressed(SDLK_z))     repeat = true;
+
         }
 
 
@@ -295,7 +303,6 @@ int main(int argc, char **argv)
         glm::mat4 skyboxViewMatrix = glm::mat4(glm::mat3(camera->getViewMatrix()));
         SkyboxProgram.uniformMatrix4fv("projection", ProjMatrix);
         SkyboxProgram.uniformMatrix4fv("view", skyboxViewMatrix);
-
         glBindVertexArray(skyboxVAO);
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);

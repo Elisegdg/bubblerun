@@ -36,18 +36,16 @@ public:
     ~TrackballCamera(){}
 
     // Methods
-    void moveFront(float delta);
-    void moveLeft(float delta);
-    void rotateLeft(float degrees);
-    void rotateUp(float degrees);    
+    void moveFront(const float delta);
+    void moveLeft(const float delta);
+    void rotateLeft(const float degrees);
+    void rotateUp(const float degrees);    
     glm::mat4 getViewMatrix() const;
     void eventCamera(SDLWindowManager& windowManager);
     float getDistance();
     
-    void rotateLeftTest(float degrees, int &step);
-
-
 };
+
 }
 
 #endif

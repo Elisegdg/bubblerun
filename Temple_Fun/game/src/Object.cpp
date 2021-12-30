@@ -12,7 +12,7 @@ void Object::addCoord(float x,float y,float z)
     m_coord = glm::vec3(x,y,z);
 }
 
-glm::vec3 Object::getCoord()
+glm::vec3 Object::getCoord() const
 {
     return m_coord;
 }

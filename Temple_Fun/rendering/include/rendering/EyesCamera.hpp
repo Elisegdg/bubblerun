@@ -41,13 +41,12 @@ public:
     ~EyesCamera(){}
 
     // Methods
-    void moveLeft(float t);
-    void moveFront(float t);
-    void rotateLeft(float degrees);
-    void rotateLeftTest(float degrees, int& step);
-    void rotateUp(float degrees);
+    void moveLeft(const float t);
+    void moveFront(const float t);
+    void rotateLeft(const float degrees);
+    void rotateUp(const float degrees);
     glm::mat4 getViewMatrix() const;
-    void rotateLeftMouse(float degrees);
+    void rotateLeftMouse(const float degrees);
     void eventCamera(SDLWindowManager& windowManager);
     
     

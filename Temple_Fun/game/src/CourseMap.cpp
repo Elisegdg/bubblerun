@@ -57,13 +57,13 @@ void CourseMap::loadMap(const glimac::FilePath &file)
 
     if (fileMap.fail())
     {
-        std::cout << "erreur de chargement" << std::endl;
+        throw std::string("Loading of the map failed");
         return;
     }
 
     if (file.ext() != "ppm")
     {
-        std::cout << "pas le bon type de fichier" << std::endl;
+        throw std::string("Please load a .ppm file");
         return;
     }
 
@@ -161,6 +161,8 @@ void CourseMap::drawMap(rendering::Cube &mesh_path, rendering::Cube &mesh_coin, 
         }
     }
 
+    delete it;
+
 }
 
 void CourseMap::drawObstacle(rendering::Cube &mesh, const rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager &windowManager)
@@ -173,4 +175,5 @@ void CourseMap::drawObstacle(rendering::Cube &mesh, const rendering::Camera *cam
             (*it->Current())->draw(mesh, camera, Program, ProjMatrix, windowManager);
         }
     }
+    delete it;
 }

@@ -30,13 +30,23 @@ public:
         m_textureId(0), 
         m_texturePath(textureFile) 
     {
-        loadTexture();
+        try{
+            loadTexture();
+        }
+        catch(const std::string &s){
+            std::cerr<<"Error : "<<s<<std::endl;
+        }
     }
 
     Texture(const Texture& texture):
         m_textureId(0), m_texturePath(texture.m_texturePath) 
     {
-        loadTexture();
+        try{
+            loadTexture();
+        }
+        catch(const std::string &s){
+            std::cerr<<"Error : "<<s<<std::endl;
+        }
     }
 
     // Destructor
@@ -52,7 +62,7 @@ public:
         m_textureImage = glimac::loadImage(m_texturePath);
 
         if (m_textureImage == nullptr){
-            std::cout<<"Error, texture could not be loaded"<<std::endl; // TO DO : exception
+            throw std::string("Texture could not be loaded at " + m_texturePath); // TO DO : exception
         }
 
         glGenTextures(1, &m_textureId);

@@ -5,16 +5,16 @@
 namespace rendering
 {
 
-    void TrackballCamera::moveFront(float delta)
+    void TrackballCamera::moveFront(const float delta)
     {
         m_fDistance += delta;
     }
 
-    void TrackballCamera::moveLeft(float delta)
+    void TrackballCamera::moveLeft(const float delta)
     {
         return;
     }
-    void TrackballCamera::rotateLeft(float degrees)
+    void TrackballCamera::rotateLeft(const float degrees)
     {
         if(degrees==0){
             m_fAngleY = glm::radians(180.);
@@ -25,23 +25,8 @@ namespace rendering
         else m_fAngleY = glm::radians(degrees);
     }
 
-    void TrackballCamera::rotateLeftTest(float degrees, int &step)
-    {
-        if(step<=10){
-            m_fAngleY += glm::radians(degrees)/step;
-            step ++;
-        }
-        
-        else{
-            step = 0;
-        }
 
-    m_fAngleY = glm::radians(degrees);
-
-        
-    }
-
-    void TrackballCamera::rotateUp(float degrees)
+    void TrackballCamera::rotateUp(const float degrees)
     {
         m_fAngleX = glm::radians(degrees);
     }
@@ -79,11 +64,6 @@ namespace rendering
                 rotateLeft(mousePos.x / 5);
                 rotateUp(mousePos.y / 5);
             }
-
-            //if (windowManager.isKeyPressed(SDLK_k)){
-                //rotateLeftTest(3.);
-            //}
-
             
         }
     }

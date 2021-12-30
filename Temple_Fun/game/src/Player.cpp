@@ -8,11 +8,11 @@ void Player::setCoord(glm::vec3 coord)
     m_coord = coord;
 }
 
-glm::vec3 Player::getCoord()
+glm::vec3 Player::getCoord() const
 {
     return m_coord;
 }
-glm::vec3 Player::getFloorCoord()
+glm::vec3 Player::getFloorCoord() const
 {
 
     return glm::vec3(floor(m_coord.x),floor(m_coord.y),floor(m_coord.z));
@@ -23,12 +23,12 @@ void Player::addCoins()
     m_coins++;
 }
 
-int Player::getCoins()
+int Player::getCoins() const
 {
     return m_coins;
 }
 
-bool Player::isLife()
+bool Player::isLife() const
 {
     return m_life;
 }
@@ -43,7 +43,7 @@ void Player::setLife()
     m_life = false;
 }
 
-glm::vec3 Player::convertCoord()
+glm::vec3 Player::convertCoord() const
 {
     return glm::vec3(getCoord().x - 1., getCoord().z, getCoord().y);
 }
@@ -196,7 +196,7 @@ void Player::fall(int &step)
     
 }
 
-bool Player::isJumping()
+bool Player::isJumping() const
 {
     return m_isJumping;
 }

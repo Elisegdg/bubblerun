@@ -33,7 +33,7 @@ public:
     }
     ~ShaderManager() = default;
 
-    GLuint getId(){
+    GLuint getId() const {
         return m_program.getGLId();
     }
 
@@ -42,7 +42,7 @@ public:
         m_uniformVars.insert(std::pair<std::string, GLint>(name, uName));
     }
 
-    void uniformMatrix4fv(std::string name, glm::mat4 value){
+    void uniformMatrix4fv(std::string name, glm::mat4 value) {
         glUniformMatrix4fv(m_uniformVars[name], 1, GL_FALSE, glm::value_ptr(value));
     }
 
@@ -60,12 +60,6 @@ public:
 
 
 }
-
-
-
-
-
-
 
 
 #endif

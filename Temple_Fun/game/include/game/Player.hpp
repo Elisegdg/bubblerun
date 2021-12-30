@@ -21,15 +21,21 @@ private:
     bool m_isJumping;
 
 public:
+
     Player(CourseMap CourseMap):m_coord(CourseMap.start()),m_coins(0),m_life(true),m_orientation(0), m_isJumping(false){}
     ~Player() = default;
+
     void setCoord(glm::vec3 coord);
-    glm::vec3 getCoord();
-    glm::vec3 getFloorCoord();
+    glm::vec3 getCoord() const;
+    glm::vec3 getFloorCoord() const;
+    glm::vec3 convertCoord()const ;
+
     void addCoins();
-    int getCoins();
-    bool isLife();
+    int getCoins() const;
+
+    bool isLife() const;
     void setLife();
+
     void move(glm::vec3 coord_add);
     void moveOrientation();
     void setOrientation(float orientatioin);
@@ -37,12 +43,11 @@ public:
     void moveside(glimac::SDLWindowManager& windowManager, bool& repeat);
     void jump(glimac::SDLWindowManager& windowManager, bool& repeat, int &step);
     void fall(int &step);
-    bool isJumping();
+    bool isJumping() const;
     void setJump(glimac::SDLWindowManager &windowManager, bool &repeat);
-
-
-    glm::vec3 convertCoord();
+    
     void draw(rendering::Model& mesh, rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix);
+
 };
 
 

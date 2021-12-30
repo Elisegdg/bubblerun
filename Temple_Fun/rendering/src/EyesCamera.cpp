@@ -12,33 +12,28 @@ namespace rendering
         m_UpVector = glm::cross(m_FrontVector, m_LeftVector);
     }
 
-    void EyesCamera::moveLeft(float t)
+    void EyesCamera::moveLeft(const float t)
     {
         m_Position = glm::vec3(m_player->convertCoord().x, m_player->convertCoord().y +2. , m_player->convertCoord().z);
         computeDirectionVectors();
     }
 
-    void EyesCamera::moveFront(float t)
+    void EyesCamera::moveFront(const float t)
     {
 
         m_Position = glm::vec3(m_player->convertCoord().x, m_player->convertCoord().y +2., m_player->convertCoord().z);
         computeDirectionVectors();
     }
 
-    void EyesCamera::rotateLeft(float degrees)
-    {
-        const float rad = glm::radians(degrees);
-        m_fPhi = rad;
-        computeDirectionVectors();
-    }
-    void EyesCamera::rotateLeftTest(float degrees, int &step)
+    void EyesCamera::rotateLeft(const float degrees)
     {
         const float rad = glm::radians(degrees);
         m_fPhi = rad;
         computeDirectionVectors();
     }
 
-    void EyesCamera::rotateLeftMouse(float degrees)
+
+    void EyesCamera::rotateLeftMouse(const float degrees)
     {
         const float rad = glm::radians(degrees);
         if (!m_locked)
@@ -52,7 +47,7 @@ namespace rendering
         computeDirectionVectors();
     }
 
-    void EyesCamera::rotateUp(float degrees)
+    void EyesCamera::rotateUp(const float degrees)
     {
         const float rad = glm::radians(degrees);
         if (!m_locked)
