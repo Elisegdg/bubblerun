@@ -41,7 +41,7 @@ public:
     void removeCoin(){
         m_coins = 0;
     }
-
+    
     
 };
 

@@ -14,7 +14,7 @@ glm::vec3 Player::getCoord()
 }
 glm::vec3 Player::getFloorCoord()
 {
-    return glm::vec3(floor(m_coord.x),floor(m_coord.y),m_coord.z);
+    return glm::vec3(floor(m_coord.x), floor(m_coord.y), m_coord.z);
 }
 
 void Player::addCoins()
@@ -44,7 +44,7 @@ void Player::setLife(bool life)
 
 glm::vec3 Player::convertCoord()
 {
-    return glm::vec3(getCoord().x - 1, getCoord().z, getCoord().y);
+    return glm::vec3(getCoord().x - 1., getCoord().z, getCoord().y);
 }
 
 void Player::draw(rendering::Model &mesh, rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix)
@@ -95,7 +95,7 @@ float Player::getOrientation()
     return m_orientation;
 }
 
-void Player::moveside(glimac::SDLWindowManager &windowManager, bool &repeat,bool &turn_up,bool &turn_down,bool &turn_right,bool &turn_left)
+void Player::moveside(glimac::SDLWindowManager &windowManager, bool &repeat, bool &turn_up, bool &turn_down, bool &turn_right, bool &turn_left)
 {
     if (m_orientation == 0.)
     {
@@ -110,38 +110,24 @@ void Player::moveside(glimac::SDLWindowManager &windowManager, bool &repeat,bool
         if (windowManager.isKeyPressed(SDLK_q) && repeat)
         {
             repeat = false;
-            turn_right= true;
+            turn_right = true;
             move(glm::vec3(1., 0, 0));
         }
-        // if (windowManager.isKeyPressed(SDLK_z) && repeat)
-        // {
-        //     move(glm::vec3(0, 1, 1));
-        //     repeat = false;
-        //     m_isJumping = true;
-        // }
     }
     if (m_orientation == 90.)
     {
         if (windowManager.isKeyPressed(SDLK_d) && repeat)
         {
             repeat = false;
-            std::cout << " 90  d"<<std::endl;
             turn_down = true;
             move(glm::vec3(0, 1., 0));
         }
         if (windowManager.isKeyPressed(SDLK_q) && repeat)
         {
             repeat = false;
-            std::cout << " 90  q"<<std::endl;
             turn_up = true;
             move(glm::vec3(0, -1., 0));
         }
-        // if (windowManager.isKeyPressed(SDLK_z) && repeat)
-        // {
-        //     move(glm::vec3(1, 0, 1));
-        //     repeat = false;
-        //     m_isJumping = true;
-        // }
     }
 
     if (m_orientation == -90.)
@@ -149,23 +135,15 @@ void Player::moveside(glimac::SDLWindowManager &windowManager, bool &repeat,bool
         if (windowManager.isKeyPressed(SDLK_d) && repeat)
         {
             repeat = false;
-            turn_up=true;
-            std::cout << " -90  d"<<std::endl;
+            turn_up = true;
             move(glm::vec3(0, -1., 0));
         }
         if (windowManager.isKeyPressed(SDLK_q) && repeat)
         {
             repeat = false;
             turn_down = true;
-            std::cout << " -90  q"<<std::endl;
             move(glm::vec3(0, 1., 0));
         }
-        // if (windowManager.isKeyPressed(SDLK_z) && repeat)
-        // {
-        //     move(glm::vec3(-1, 0, 1));
-        //     repeat = false;
-        //     m_isJumping = true;
-        // }
     }
 
     if (m_orientation == 180.)
@@ -173,7 +151,6 @@ void Player::moveside(glimac::SDLWindowManager &windowManager, bool &repeat,bool
         if (windowManager.isKeyPressed(SDLK_d) && repeat)
         {
             repeat = false;
-            std::cout << " 180  d"<<std::endl;
             turn_right = true;
 
             move(glm::vec3(1., 0, 0));
@@ -182,20 +159,13 @@ void Player::moveside(glimac::SDLWindowManager &windowManager, bool &repeat,bool
         {
             repeat = false;
             turn_left = true;
-            std::cout << " 180  q"<<std::endl;
             move(glm::vec3(-1., 0, 0));
         }
     }
-        //if (windowManager.isKeyPressed(SDLK_z) && repeat)
-        // {
-        //     move(glm::vec3(0, -1, 1));
-        //     repeat = false;
-        //     m_isJumping = true;
-        // }
-        
 }
 
-void Player::setJump(glimac::SDLWindowManager &windowManager, bool &repeat){
+void Player::setJump(glimac::SDLWindowManager &windowManager, bool &repeat)
+{
     if (windowManager.isKeyPressed(SDLK_z) && repeat)
     {
         m_isJumping = true;
@@ -206,51 +176,129 @@ void Player::setJump(glimac::SDLWindowManager &windowManager, bool &repeat){
 void Player::jump(glimac::SDLWindowManager &windowManager, bool &repeat, int &step)
 {
 
-    //if (windowManager.isKeyPressed(SDLK_z) && repeat)
-    //{
-        
-        /*if (step == 0.)
-            move(glm::vec3(0, 0, 1));
-            moveOrientation();
-            repeat = false;
-            step ++;
-            std::cout << " after jump : " << convertCoord() << std::endl;
-            m_isJumping = true;
-        if (step == 1.)
-            move(glm::vec3(0, 0, 1));
-            moveOrientation();
-            repeat = false;
-            step++;
-            m_isJumping = true;*/
-
-        if (step < 10){
-            m_coord.z +=0.1;
-            m_isJumping = true;
-            //repeat = false;
-            moveOrientation();
-            step ++;
-        }
-
-    
+    if (step < 10)
+    {
+        m_coord.z += 0.1;
+        m_isJumping = true;
+        moveOrientation();
+        step++;
+    }
 }
 
 void Player::fall(int &step)
 {
-        
-    if (step <20){
-    m_coord.z -= 0.1 ;
-    
-    moveOrientation();
-    step ++;
+
+    if (step < 20)
+    {
+        m_coord.z -= 0.1;
+
+        moveOrientation();
+        step++;
     }
-    else{
+    else
+    {
         step = 0;
         m_isJumping = false;
     }
-    
 }
 
 bool Player::isJumping()
 {
     return m_isJumping;
+}
+
+void Player::moveManager(Object *objet, rendering::Camera *camera, int &score, glimac::SDLWindowManager &windowManager, bool &repeat, bool &turn_up, bool &turn_down, bool &turn_right, bool &turn_left, int &step_turn)
+{
+    if (objet->getIfCoins() & !m_isJumping)
+    {
+        objet->removeCoin();
+        score += 50;
+    }
+    if (objet->getName() == "straight")
+    {
+        moveside(windowManager, repeat, turn_up, turn_down, turn_right, turn_left);
+        setJump(windowManager, repeat);
+    }
+
+    if (objet->getName() == "up" & turn_up)
+    {
+        turn_up = false;
+        step_turn = 0;
+        setCoord(objet->getCoord());
+        setOrientation(180.);
+        move(glm::vec3(0, -1, 0));
+        camera->rotateLeft(getOrientation());
+    }
+
+    if (objet->getName() == "down" & turn_down)
+    {
+        turn_down = false;
+        step_turn = 0;
+        setCoord(objet->getCoord());
+        setOrientation(0.);
+        move(glm::vec3(0, 1, 0));
+        camera->rotateLeft(getOrientation());
+    }
+
+    if (objet->getName() == "right" & turn_right)
+    {
+        turn_right = false;
+        step_turn = 0;
+        setCoord(objet->getCoord());
+        setOrientation(90.);
+        move(glm::vec3(1, 0, 0));
+        camera->rotateLeft(getOrientation());
+    }
+
+    if (objet->getName() == "left" & turn_left)
+    {
+        turn_right = false;
+        step_turn = 0;
+        setCoord(objet->getCoord());
+        setOrientation(-90.);
+        move(glm::vec3(-1, 0, 0));
+        camera->rotateLeft(getOrientation());
+    }
+
+    if (objet->getName() == "empty" & getCoord()[2] < 0.3 || getCoord().x < 0)
+    {
+        setLife(false);
+    }
+
+    if (objet->getName() == "obstacle" & getCoord()[2] < 0.3)
+    {
+        setLife(false);
+    }
+}
+
+
+void Player::moveEnemyManager(Object* objet_enemy)
+{
+    if (objet_enemy->getName() == "up")
+    {
+        setCoord(objet_enemy->getCoord());
+        move(glm::vec3(0, -1, 0));
+        setOrientation(180.);
+    }
+
+    if (objet_enemy->getName() == "down")
+    {
+        setCoord(objet_enemy->getCoord());
+        move(glm::vec3(0, 1, 0));
+        setOrientation(0.);
+    }
+
+    if (objet_enemy->getName() == "right")
+    {
+        setCoord(objet_enemy->getCoord());
+        move(glm::vec3(1, 0, 0));
+        setOrientation(90.);
+    }
+
+    if (objet_enemy->getName() == "left")
+    {
+        setCoord(objet_enemy->getCoord());
+        move(glm::vec3(-1, 0, 0));
+        setOrientation(-90.);
+    }
 }

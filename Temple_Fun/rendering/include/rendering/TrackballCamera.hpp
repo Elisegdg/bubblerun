@@ -29,6 +29,7 @@ public:
         m_cameraType = 0;
         m_player = player;
         m_locked = 0;
+        m_isRotating = false;
     }
 
     // Destructor
@@ -40,10 +41,10 @@ public:
     void rotateLeft(float degrees);
     void rotateUp(float degrees);    
     glm::mat4 getViewMatrix() const;
-    void eventCamera(SDLWindowManager& windowManager);
+    void eventCamera(glimac::SDLWindowManager& windowManager);
     float getDistance();
     
-    void rotateLeftTest(float degrees);
+    void rotateLeftTest(float degrees, int &step);
 
 
 };

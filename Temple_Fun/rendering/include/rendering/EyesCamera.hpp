@@ -44,10 +44,11 @@ public:
     void moveLeft(float t);
     void moveFront(float t);
     void rotateLeft(float degrees);
+    void rotateLeftTest(float degrees, int& step);
     void rotateUp(float degrees);
     glm::mat4 getViewMatrix() const;
     void rotateLeftMouse(float degrees);
-    void eventCamera(SDLWindowManager& windowManager);
+    void eventCamera(glimac::SDLWindowManager& windowManager);
     
     
     

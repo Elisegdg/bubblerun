@@ -27,7 +27,10 @@ public:
         m_texture(texture)
         {}
 
-    ~Model() = default;
+    ~Model(){
+        glDeleteBuffers(1, &m_vbo);
+        glDeleteVertexArrays(1, &m_vao);
+    };
 
     // METHODS
     void draw(){
@@ -56,6 +59,7 @@ public:
     void setVao();
     void setVbo();
     void setIbo();
+    void setBuffers();
     const glimac::ShapeVertex* getDataPointer() const;
     GLsizei getVertexCount() const{
     return m_vertexCount;

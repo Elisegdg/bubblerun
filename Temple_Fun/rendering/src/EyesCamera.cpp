@@ -31,6 +31,12 @@ namespace rendering
         m_fPhi = rad;
         computeDirectionVectors();
     }
+    void EyesCamera::rotateLeftTest(float degrees, int &step)
+    {
+        const float rad = glm::radians(degrees);
+        m_fPhi = rad;
+        computeDirectionVectors();
+    }
 
     void EyesCamera::rotateLeftMouse(float degrees)
     {
@@ -77,7 +83,7 @@ namespace rendering
     }
 
 
-    void EyesCamera::eventCamera(SDLWindowManager& windowManager)
+    void EyesCamera::eventCamera(glimac::SDLWindowManager& windowManager)
     {
 
         

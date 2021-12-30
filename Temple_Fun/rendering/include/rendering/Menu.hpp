@@ -1,9 +1,11 @@
-#pragma one
+#ifndef _MENU_HPP
+#define _MENU_HPP
 
 #include <glimac/glm.hpp>
 #include <GL/glew.h>
 #include <vector>
 #include <glimac/common.hpp>
+
 
 class Menu
 {
@@ -11,62 +13,144 @@ private:
     GLuint m_vbo;
     GLuint m_vao;
     std::vector<glimac::Vertex2DColor> m_vertices;
+
 public:
-    
     Menu();
-    GLuint getVaoMenu(){return m_vao;}
-    
+    ~Menu()=default;
+    void setMenuBool(rendering::ShaderManager &menuShader);
+    void setMenuScore(rendering::ShaderManager &menuShader);
+    void setMenuPlayAgain(rendering::ShaderManager &menuShader);
 
+    GLuint getVaoMenu() { return m_vao; }
 };
-
-
 Menu::Menu()
 {
-    //Création d'un VBO
     glGenBuffers(1, &m_vbo);
-
-    //Bindind du vbo sur la cible
     glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
-
-    //Création d'un tableau de float pour stocker les points du VBO
-    //On utilise la structure nouvellement créée
     m_vertices = {
-        glimac::Vertex2DColor(glm::vec3(-1., -1.,1), glm::vec3(1, 1, 1)),
-        glimac::Vertex2DColor(glm::vec3(1., -1.,1), glm::vec3(1, 1, 1)),
-        glimac::Vertex2DColor(glm::vec3(-1., 1.,1), glm::vec3(1, 1, 1)),
+        glimac::Vertex2DColor(glm::vec3(-1., -1., 1), glm::vec3(1, 1, 1)),
+        glimac::Vertex2DColor(glm::vec3(1., -1., 1), glm::vec3(1, 1, 1)),
+        glimac::Vertex2DColor(glm::vec3(-1., 1., 1), glm::vec3(1, 1, 1)),
 
-        glimac::Vertex2DColor(glm::vec3(-1., 1.,1), glm::vec3(1, 1, 1)),
-        glimac::Vertex2DColor(glm::vec3(1., 1.,1), glm::vec3(1, 1, 1)),
-        glimac::Vertex2DColor(glm::vec3(1., -1.,1), glm::vec3(1, 1, 1))
-    };
-    //Puis on envois les données à la CG
-    glBufferData(GL_ARRAY_BUFFER, 6*sizeof(glimac::Vertex2DColor), m_vertices.data(), GL_STATIC_DRAW);
-
-    //Débindind du vbo de la cible pour éviter de le remodifier
+        glimac::Vertex2DColor(glm::vec3(-1., 1., 1), glm::vec3(1, 1, 1)),
+        glimac::Vertex2DColor(glm::vec3(1., 1., 1), glm::vec3(1, 1, 1)),
+        glimac::Vertex2DColor(glm::vec3(1., -1., 1), glm::vec3(1, 1, 1))};
+    glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(glimac::Vertex2DColor), m_vertices.data(), GL_STATIC_DRAW);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-    //Création du VAO
     glGenVertexArrays(1, &m_vao);
-
-    //Binding du vao (un seul à la fois)
     glBindVertexArray(m_vao);
 
-    //Dire à OpenGL qu'on utilise le VAO
     const GLuint VERTEX_ATTR_POSITION = 0;
     const GLuint VERTEX_ATTR_COLOR = 1;
     glEnableVertexAttribArray(VERTEX_ATTR_POSITION);
     glEnableVertexAttribArray(VERTEX_ATTR_COLOR);
 
-    //Indiquer à OpenGL où trouver les sommets
-    //Bindind du vbo sur la cible
     glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
-    //Spécification du format de l'attribut de sommet position
-    glVertexAttribPointer(VERTEX_ATTR_POSITION, 2, GL_FLOAT, GL_FALSE, sizeof(glimac::Vertex2DColor), (const GLvoid*)offsetof(glimac::Vertex2DColor, position));
-    glVertexAttribPointer(VERTEX_ATTR_COLOR, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::Vertex2DColor), (const GLvoid*)offsetof(glimac::Vertex2DColor, color));
-    //Débindind du vbo de la cible pour éviter de le remodifier
+    glVertexAttribPointer(VERTEX_ATTR_POSITION, 2, GL_FLOAT, GL_FALSE, sizeof(glimac::Vertex2DColor), (const GLvoid *)offsetof(glimac::Vertex2DColor, position));
+    glVertexAttribPointer(VERTEX_ATTR_COLOR, 3, GL_FLOAT, GL_FALSE, sizeof(glimac::Vertex2DColor), (const GLvoid *)offsetof(glimac::Vertex2DColor, color));
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-    //Débindind du vao de la cible pour éviter de le remodifier
     glBindVertexArray(0);
 }
 
+void Menu::setMenuBool(rendering::ShaderManager &menuShader)
+{
+    glm::mat4 uModelMatrix;
+    glm::mat4 translate_background = glm::translate(uModelMatrix, glm::vec3(0, 0, 0.5));
+    glm::mat4 scale_reset = glm::scale(translate_background, glm::vec3(1, 1, 1));
+    glm::mat4 bouton_play = glm::scale(uModelMatrix, glm::vec3(0.15, 0.06, 1));
+    glm::mat4 translate_bouton_score = glm::translate(uModelMatrix, glm::vec3(0, -0.25, 0));
+    glm::mat4 bouton_score = glm::scale(translate_bouton_score, glm::vec3(0.15, 0.06, 1));
+
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    menuShader.use();
+
+    // Background
+    glBindVertexArray(getVaoMenu());
+    menuShader.uniformMatrix4fv("uModelMatrix", scale_reset);
+    menuShader.uniform3f("uColor", 1, 1, 1);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glBindVertexArray(0);
+
+    // Play Button
+    glBindVertexArray(getVaoMenu());
+    menuShader.uniformMatrix4fv("uModelMatrix", bouton_play);
+    menuShader.uniform3f("uColor", 0.f, 0.04f, 0.39f);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glBindVertexArray(0);
+
+    // Score Button
+    glBindVertexArray(getVaoMenu());
+    menuShader.uniformMatrix4fv("uModelMatrix", bouton_score);
+    menuShader.uniform3f("uColor", 0.f, 0.04f, 0.39f);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glBindVertexArray(0);
+}
+void Menu::setMenuScore(rendering::ShaderManager &menuShader)
+{
+    glm::mat4 uModelMatrix;
+    glm::mat4 translate_background = glm::translate(uModelMatrix, glm::vec3(0, 0, 0.5));
+    glm::mat4 scale_reset = glm::scale(translate_background, glm::vec3(1, 1, 1));
+    glm::mat4 translate_bouton_back = glm::translate(uModelMatrix, glm::vec3(0.8, -0.8, 0.3));
+    glm::mat4 bouton_back = glm::scale(translate_bouton_back, glm::vec3(-0.1, 0.05, 1));
+
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    menuShader.use();
+
+    // Score Background
+    glBindVertexArray(getVaoMenu());
+    menuShader.uniformMatrix4fv("uModelMatrix", scale_reset);
+    menuShader.uniform3f("uColor", 1, 1, 1);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glBindVertexArray(0);
+
+    // Play Button
+    glBindVertexArray(getVaoMenu());
+    menuShader.uniformMatrix4fv("uModelMatrix", bouton_back);
+    menuShader.uniform3f("uColor", 0.f, 0.04f, 0.39f);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glBindVertexArray(0);
+}
+
+void Menu::setMenuPlayAgain(rendering::ShaderManager &menuShader)
+{
+    
+    glm::mat4 uModelMatrix;
+
+    glm::mat4 translate_background = glm::translate(uModelMatrix, glm::vec3(0, 0, 0.5));
+    glm::mat4 scale_reset = glm::scale(translate_background, glm::vec3(1, 1, 1));
+    glm::mat4 bouton_play_again = glm::scale(uModelMatrix, glm::vec3(0.2, 0.06, 1));
+    glm::mat4 translate_bouton_score = glm::translate(uModelMatrix, glm::vec3(0, -0.25, 0));
+    glm::mat4 bouton_score = glm::scale(translate_bouton_score, glm::vec3(0.15, 0.06, 1));
+
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    menuShader.use();
+
+    //Background
+    glBindVertexArray(getVaoMenu());
+    menuShader.uniformMatrix4fv("uModelMatrix", scale_reset);
+    menuShader.uniform3f("uColor", 1, 1, 1);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glBindVertexArray(0);
+
+    //Play Button
+    glBindVertexArray(getVaoMenu());
+    menuShader.uniformMatrix4fv("uModelMatrix", bouton_play_again);
+    menuShader.uniform3f("uColor", 0.f, 0.04f, 0.39f);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glBindVertexArray(0);
+
+    //Score Button
+    glBindVertexArray(getVaoMenu());
+    menuShader.uniformMatrix4fv("uModelMatrix", bouton_score);
+    menuShader.uniform3f("uColor", 0.f, 0.04f, 0.39f);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glBindVertexArray(0);
+}
+
+#endif

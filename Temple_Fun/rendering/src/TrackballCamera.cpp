@@ -25,10 +25,20 @@ namespace rendering
         else m_fAngleY = glm::radians(degrees);
     }
 
-    void TrackballCamera::rotateLeftTest(float degrees)
+    void TrackballCamera::rotateLeftTest(float degrees, int &step)
     {
-        m_fAngleY += glm::radians(90.);
-        std::cout<<"angleY  =  "<<m_fAngleY<<std::endl;
+        if(step<=10){
+            m_fAngleY += glm::radians(degrees)/step;
+            step ++;
+        }
+        
+        else{
+            step = 0;
+        }
+
+    m_fAngleY = glm::radians(degrees);
+
+        
     }
 
     void TrackballCamera::rotateUp(float degrees)
@@ -52,7 +62,7 @@ namespace rendering
         return m_fDistance;
     }
 
-    void TrackballCamera::eventCamera(SDLWindowManager& windowManager)
+    void TrackballCamera::eventCamera(glimac::SDLWindowManager& windowManager)
     {
         glm::ivec2 mousePos = windowManager.getMousePosition();
 
@@ -69,11 +79,6 @@ namespace rendering
                 rotateLeft(mousePos.x / 5);
                 rotateUp(mousePos.y / 5);
             }
-
-            //if (windowManager.isKeyPressed(SDLK_k)){
-                //rotateLeftTest(3.);
-            //}
-
             
         }
     }

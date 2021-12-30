@@ -10,6 +10,7 @@ public:
     Cube(rendering::Texture texture, float size) : Model(texture) {
         build(size);
     }
+    ~Cube() = default;
     void build(const float &size);
 
 };

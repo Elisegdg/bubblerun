@@ -1,4 +1,6 @@
-#pragma one
+#ifndef _SCORE_HPP
+#define _SCORE_HPP
+
 #include <vector>
 #include "../include/rendering/json.hpp"
 using json = nlohmann::json;
@@ -11,23 +13,10 @@ private:
     int first;
 public:
     Score();
+    ~Score()=default;
     void addScore(int sccore);
     json getArray(){return m_array;}
     
 };
 
-// //read
-//     std::ifstream i("../Temple_Fun/assets/score.json");
-//     json j;
-//     i >> j;
-
-//     //int first = j["list"][0];
-
-//     //write
-//     std::vector<int> vecint;
-    
-//     json array;
-//     array["list"] = {vecint};
-//     std::ofstream o("../Temple_Fun/assets/score.json");
-//     o<<array;
-
+#endif
