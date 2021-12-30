@@ -248,7 +248,18 @@ int main(int argc, char **argv)
             {
                 SDL_SetCursor(cursor2);            
             }
-        
+        if(menu_play_again & !menu_bool & !menu_score & x>764 & y>540 & x<932 & y<583)
+        {
+            SDL_SetCursor(cursor2);
+            
+
+        }
+        if(menu_play_again & !menu_bool & !menu_score & x>679 & y>423 & x<1018 & y<474)
+        {
+            SDL_SetCursor(cursor2);
+            
+
+        }
 
         // Event loop:
         SDL_Event e;
@@ -265,7 +276,7 @@ int main(int argc, char **argv)
                 
             }
 
-            if (menu_play_again & !menu_bool & !menu_score & e.type == SDL_MOUSEBUTTONUP & x>764 & y>425 & x<932 & y<467)
+            if (menu_play_again & !menu_bool & !menu_score & e.type == SDL_MOUSEBUTTONUP & x>679 & y>423 & x<1018 & y<474)
             {
                 menu_play_again =false;
                 
@@ -497,7 +508,7 @@ int main(int argc, char **argv)
         
         if(!menu_bool & !menu_score & !menu_play_again)
         {
-            std::cout << "getCoord : " << player.getCoord() << std::endl;
+            //std::cout << "getCoord : " << player.getCoord() << std::endl;
             // GAME LOOP
             if (player.isLife() & player.getCoord()[1] != courseMap.end() & player.getCoord()[0] >= 0 & player.getCoord()[1] >= 0)
             {
