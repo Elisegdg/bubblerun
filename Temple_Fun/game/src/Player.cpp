@@ -15,7 +15,7 @@ glm::vec3 Player::getCoord() const
 glm::vec3 Player::getFloorCoord() const
 {
 
-    return glm::vec3(floor(m_coord.x),floor(m_coord.y),floor(m_coord.z));
+    return glm::vec3(floor(m_coord.x), floor(m_coord.y), floor(m_coord.z));
 }
 
 void Player::addCoins()
@@ -113,7 +113,6 @@ void Player::moveside(glimac::SDLWindowManager &windowManager, bool &repeat)
             repeat = false;
             move(glm::vec3(1., 0, 0));
         }
-
     }
     if (m_orientation == 90.)
     {
@@ -141,7 +140,6 @@ void Player::moveside(glimac::SDLWindowManager &windowManager, bool &repeat)
             repeat = false;
             move(glm::vec3(0, 1., 0));
         }
-       
     }
 
     if (m_orientation == 180.)
@@ -157,10 +155,10 @@ void Player::moveside(glimac::SDLWindowManager &windowManager, bool &repeat)
             move(glm::vec3(-1., 0, 0));
         }
     }
-        
 }
 
-void Player::setJump(glimac::SDLWindowManager &windowManager, bool &repeat){
+void Player::setJump(glimac::SDLWindowManager &windowManager, bool &repeat)
+{
     if (windowManager.isKeyPressed(SDLK_z) && repeat)
     {
         m_isJumping = true;
@@ -171,32 +169,121 @@ void Player::setJump(glimac::SDLWindowManager &windowManager, bool &repeat){
 void Player::jump(glimac::SDLWindowManager &windowManager, bool &repeat, int &step)
 {
 
-        if (step < 10){
-            m_coord.z +=0.1;
-            m_isJumping = true;
-            moveOrientation();
-            step ++;
-        }
-    
+    if (step < 10)
+    {
+        m_coord.z += 0.1;
+        m_isJumping = true;
+        moveOrientation();
+        step++;
+    }
 }
 
 void Player::fall(int &step)
 {
-        
-    if (step <20){
-    m_coord.z -= 0.1 ;
-    
-    moveOrientation();
-    step ++;
+
+    if (step < 20)
+    {
+        m_coord.z -= 0.1;
+
+        moveOrientation();
+        step++;
     }
-    else{
+    else
+    {
         step = 0;
         m_isJumping = false;
     }
-    
 }
 
 bool Player::isJumping() const
 {
     return m_isJumping;
+}
+
+void Player::moveManager(Object *objet, glimac::SDLWindowManager &windowManager, bool &repeat, rendering::Camera *camera)
+{
+    if (objet->getIfCoins() & !m_isJumping)
+    {
+        objet->removeCoin();
+    }
+    if (objet->getName() == "straight")
+    {
+        moveside(windowManager, repeat);
+        setJump(windowManager, repeat);
+    }
+
+    if (objet->getName() == "up")
+    {
+        setCoord(objet->getCoord());
+        setOrientation(180.);
+        move(glm::vec3(0, -1, 0));
+        camera->rotateLeft(getOrientation());
+    }
+
+    if (objet->getName() == "down")
+    {
+        setCoord(objet->getCoord());
+        setOrientation(0.);
+        move(glm::vec3(0, 1, 0));
+        camera->rotateLeft(getOrientation());
+    }
+
+    if (objet->getName() == "right")
+    {
+        setCoord(objet->getCoord());
+        setOrientation(90.);
+        move(glm::vec3(1, 0, 0));
+        camera->rotateLeft(getOrientation());
+    }
+
+    if (objet->getName() == "left")
+    {
+        setCoord(objet->getCoord());
+        setOrientation(-90.);
+        move(glm::vec3(-1, 0, 0));
+        camera->rotateLeft(getOrientation());
+    }
+
+    if (objet->getName() == "empty" & getCoord()[2] < 0.3)
+    {
+        setLife();
+        std::cout << "oops, you fell" << std::endl;
+    }
+
+    if (objet->getName() == "obstacle" & getCoord()[2] < 0.3)
+    {
+        setLife();
+        std::cout << "oops you stumbled over an obstacle" << std::endl;
+    }
+}
+
+void Player::moveEnemyManager(Object* objet_enemy)
+{
+    if (objet_enemy->getName() == "up")
+    {
+        setCoord(objet_enemy->getCoord());
+        move(glm::vec3(0, -1, 0));
+        setOrientation(180.);
+    }
+
+    if (objet_enemy->getName() == "down")
+    {
+        setCoord(objet_enemy->getCoord());
+        move(glm::vec3(0, 1, 0));
+        setOrientation(0.);
+    }
+
+    if (objet_enemy->getName() == "right")
+    {
+        setCoord(objet_enemy->getCoord());
+        move(glm::vec3(1, 0, 0));
+        setOrientation(90.);
+    }
+
+    if (objet_enemy->getName() == "left")
+    {
+        setCoord(objet_enemy->getCoord());
+        move(glm::vec3(-1, 0, 0));
+        setOrientation(-90.);
+    }
 }

@@ -22,7 +22,7 @@ private:
 
 public:
 
-    Player(CourseMap CourseMap):m_coord(CourseMap.start()),m_coins(0),m_life(true),m_orientation(0), m_isJumping(false){}
+    Player(CourseMap CourseMap, glm::vec3 initialPos):m_coord(initialPos),m_coins(0),m_life(true),m_orientation(0), m_isJumping(false){}
     ~Player() = default;
 
     void setCoord(glm::vec3 coord);
@@ -45,7 +45,8 @@ public:
     void fall(int &step);
     bool isJumping() const;
     void setJump(glimac::SDLWindowManager &windowManager, bool &repeat);
-    
+    void moveManager(Object* objet, glimac::SDLWindowManager& windowManager, bool& repeat, rendering::Camera* camera);
+    void moveEnemyManager(Object* objet_enemy);
     void draw(rendering::Model& mesh, rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix);
 
 };

@@ -22,16 +22,13 @@
 #include FT_FREETYPE_H
 #include <string.h>
 
-using namespace glimac;
-using namespace rendering;
-
 
 int main(int argc, char **argv)
 {
     // Initialize SDL and open a window
     SDLWindowManager windowManager(1700, 900, "Temple_Fun");
     int previousTime = 0, currentTime = 0;
-    
+
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
     if (GLEW_OK != glewInitError)
@@ -49,58 +46,63 @@ int main(int argc, char **argv)
     // Loading of the map as a .ppm file
     CourseMap courseMap;
 
-    try{
+    try
+    {
         courseMap.loadMap("../Temple_Fun/assets/map.ppm");
     }
-    catch(std::string &s){
-        std::cerr<<"Error : "<<s<<std::endl;
+    catch (std::string &s)
+    {
+        std::cerr << "Error : " << s << std::endl;
     }
 
-    Player player(courseMap);
+    Player player(courseMap, glm::vec3(1, 3, 0));
+    Player enemy(courseMap, glm::vec3(1, 0, 0));
+
     Object *objet = courseMap.findObject(player.getFloorCoord());
+    Object *objet_enemy = courseMap.findObject(enemy.getFloorCoord());
+
     double score = 0;
 
     // Initialization of the cameras
-    TrackballCamera trackball_camera(&player);
-    EyesCamera eyes_camera(&player);
-    Camera *camera = &trackball_camera;
+    rendering::TrackballCamera trackball_camera(&player);
+    rendering::EyesCamera eyes_camera(&player);
+    rendering::Camera *camera = &trackball_camera;
 
     // Initialization of the textures
-    Texture obstacle("../Temple_Fun/assets/textures/ground.png");
-    Texture nemo("../Temple_Fun/assets/textures/nemo.jpg");
-    Texture ground("../Temple_Fun/assets/textures/stone_ground.png");
-    Texture coin("../Temple_Fun/assets/textures/gold.png");
-    
-    
-    
+    rendering::Texture obstacle("../Temple_Fun/assets/textures/ground.png");
+    rendering::Texture nemo("../Temple_Fun/assets/textures/nemo.jpg");
+    rendering::Texture shark("../Temple_Fun/assets/textures/shark.png");
+    rendering::Texture ground("../Temple_Fun/assets/textures/stone_ground.png");
+    rendering::Texture coin("../Temple_Fun/assets/textures/gold.png");
 
     // Text management
     unsigned int VAO, VBO;
-    std::map<char, Text> Characters;
-    Text text;
+    std::map<char, rendering::Text> Characters;
+    rendering::Text text;
     text.loadFont(Characters);
 
     // Initialization of the models (temporarily cube)
-    Cube cube_path(ground, 1);
-    Cube cube_nemo(nemo, 1);
-    Cube cube_obstacle(obstacle, 1);
-    Cube cube_coin(coin, 1);
+    rendering::Cube cube_path(ground, 1);
+    rendering::Cube cube_nemo(nemo, 1);
+    rendering::Cube cube_obstacle(obstacle, 1);
+    rendering::Cube cube_coin(coin, 1);
+    rendering::Cube cube_shark(shark, 1);
 
     // Shaders loading
     FilePath applicationPath(argv[0]);
 
-    ShaderManager TextureProgram(applicationPath, "shaders/3D.vs.glsl", "shaders/tex3D.fs.glsl");
+    rendering::ShaderManager TextureProgram(applicationPath, "shaders/3D.vs.glsl", "shaders/tex3D.fs.glsl");
     TextureProgram.addUniform("uMVPMatrix");
     TextureProgram.addUniform("uMVMatrix");
     TextureProgram.addUniform("uNormalMatrix");
     TextureProgram.addUniform("uTexture");
 
-    ShaderManager SkyboxProgram(applicationPath, "shaders/skybox.vs.glsl", "shaders/skybox.fs.glsl");
+    rendering::ShaderManager SkyboxProgram(applicationPath, "shaders/skybox.vs.glsl", "shaders/skybox.fs.glsl");
     SkyboxProgram.addUniform("projection");
     SkyboxProgram.addUniform("view");
     SkyboxProgram.addUniform("uSkybox");
 
-    ShaderManager TextProgram(applicationPath, "shaders/text.vs.glsl", "shaders/text.fs.glsl");
+    rendering::ShaderManager TextProgram(applicationPath, "shaders/text.vs.glsl", "shaders/text.fs.glsl");
     TextProgram.addUniform("projection");
 
     glm::mat4 projection = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f);
@@ -109,8 +111,6 @@ int main(int argc, char **argv)
 
     glEnable(GL_DEPTH_TEST);
 
-    
-    
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     glBindVertexArray(VAO);
@@ -134,11 +134,13 @@ int main(int argc, char **argv)
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
     unsigned int cubemapTexture;
 
-    try{
+    try
+    {
         cubemapTexture = loadCubemap(skybox_sky);
     }
-    catch(std::string &s){
-        std::cerr<<"Error : "<<s<<std::endl;
+    catch (std::string &s)
+    {
+        std::cerr << "Error : " << s << std::endl;
     }
 
     //Creation of the cube used for the Player and the Path
@@ -146,7 +148,8 @@ int main(int argc, char **argv)
     cube_nemo.setBuffers();
     cube_coin.setBuffers();
     cube_obstacle.setBuffers();
-    
+    cube_shark.setBuffers();
+
     // Application loop:
     bool done = false;
     bool repeat = false;
@@ -180,102 +183,50 @@ int main(int argc, char **argv)
                 }
             }
 
-            if (windowManager.isKeyPressed(SDLK_l))     camera->setLocker();
+            if (windowManager.isKeyPressed(SDLK_l))
+                camera->setLocker();
 
-            
             // PREVENT THE EVENT FROM REPEATING OUTSIDE POLLEVENT
-            if (windowManager.isKeyPressed(SDLK_d))     repeat = true;
+            if (windowManager.isKeyPressed(SDLK_d))
+                repeat = true;
 
-            if (windowManager.isKeyPressed(SDLK_q))     repeat = true;
+            if (windowManager.isKeyPressed(SDLK_q))
+                repeat = true;
 
-            if (windowManager.isKeyPressed(SDLK_z))     repeat = true;
-
+            if (windowManager.isKeyPressed(SDLK_z))
+                repeat = true;
         }
-
 
         //GAME LOOP
         if (player.isLife() & player.getCoord()[1] != courseMap.end() & player.getCoord()[0] >= 0 & player.getCoord()[1] >= 0)
         {
-            
-            objet = courseMap.findObject(player.getFloorCoord()); 
-            
-            if(objet->getIfCoins() & !player.isJumping()){
-                objet->removeCoin();
-            }
-            if (objet->getName() == "straight")
-            {
-                player.moveside(windowManager, repeat);
-                player.setJump(windowManager,repeat);
-            }
 
-            if (objet->getName() == "up")
-            {
-                player.setCoord(objet->getCoord());
-                player.setOrientation(180.);
-                player.move(glm::vec3(0,-1,0));
-                camera->rotateLeft(player.getOrientation());
-            }
+            objet = courseMap.findObject(player.getFloorCoord());
+            objet_enemy = courseMap.findObject(enemy.getFloorCoord());
 
-            if (objet->getName() == "down")
-            {
-                player.setCoord(objet->getCoord());
-                player.setOrientation(0.);
-                player.move(glm::vec3(0, 1, 0));
-                camera->rotateLeft(player.getOrientation());
-            }
-
-            if (objet->getName() == "right")
-            {
-                player.setCoord(objet->getCoord());
-                player.setOrientation(90.);
-                player.move(glm::vec3(1, 0, 0));
-                camera->rotateLeft(player.getOrientation());
-            }
-
-            if (objet->getName() == "left")
-            {
-                player.setCoord(objet->getCoord());
-                player.setOrientation(-90.);
-                player.move(glm::vec3(-1, 0, 0));
-                camera->rotateLeft(player.getOrientation());
-            }
-            
-            if (objet->getName() == "empty" & player.getCoord()[2]<0.3 )
-            {
-                player.setLife();
-                std::cout<<"oops, you fell"<<std::endl;
-            }
-
-            if (objet->getName() == "obstacle" & player.getCoord()[2]<0.3)
-            {
-                player.setLife();
-                std::cout<<"oops you stumbled over an obstacle"<<std::endl;
-            }
-
-
-
-            if (currentTime - previousTime > 5)  // TO DO : set the speed in a variable
+            player.moveManager(objet, windowManager, repeat, camera);
+            enemy.moveEnemyManager(objet_enemy);
+   
+            if (currentTime - previousTime > 5) // TO DO : set the speed in a variable
             {
                 player.moveOrientation();
+                enemy.moveOrientation();
+                if (player.isJumping())
+                    player.jump(windowManager, repeat, step);
 
-                if (player.isJumping())    player.jump(windowManager, repeat, step);
-                
-
-                if (step>=10)   player.fall(step);
-            
+                if (step >= 10)
+                    player.fall(step);
 
                 if (camera->getCameraType() == 1)
                     camera->moveFront(0.1);
 
                 previousTime = currentTime;
             }
-            
         }
 
         else
         {
             done = true;
-            
         }
 
         camera->eventCamera(windowManager);
@@ -292,13 +243,14 @@ int main(int argc, char **argv)
         glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 1700.f / 900.f, 0.1f, 100.f);
 
         player.draw(cube_nemo, camera, TextureProgram, ProjMatrix);
+        enemy.draw(cube_shark, camera, TextureProgram, ProjMatrix);
 
         // Drawing of the Path
         courseMap.drawMap(cube_path, cube_coin, camera, TextureProgram, ProjMatrix, windowManager);
         courseMap.drawObstacle(cube_obstacle, camera, TextureProgram, ProjMatrix, windowManager);
 
         // Drawing of the Skybox
-        glDepthFunc(GL_LEQUAL); 
+        glDepthFunc(GL_LEQUAL);
         SkyboxProgram.use();
         glm::mat4 skyboxViewMatrix = glm::mat4(glm::mat3(camera->getViewMatrix()));
         SkyboxProgram.uniformMatrix4fv("projection", ProjMatrix);
@@ -318,9 +270,9 @@ int main(int argc, char **argv)
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         TextProgram.use();
         GLuint id = TextProgram.getId();
-        std::string scorestring=std::to_string(int(score));
-        text.RenderText(id,Characters, "BUBBLE RUN", 25.0f, 25.0f, 1.0f, glm::vec3(0.87f, 0.325f, 0.03f),VAO,VBO);
-        text.RenderText(id,Characters, "Score : "+scorestring, 650.0f, 570.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f),VAO,VBO);
+        std::string scorestring = std::to_string(int(score));
+        text.RenderText(id, Characters, "BUBBLE RUN", 25.0f, 25.0f, 1.0f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
+        text.RenderText(id, Characters, "Score : " + scorestring, 650.0f, 570.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
 
         glDisable(GL_BLEND);
         windowManager.swapBuffers();
