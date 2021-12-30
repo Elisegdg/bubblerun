@@ -29,12 +29,12 @@ public:
     void addCoins();
     int getCoins();
     bool isLife();
-    void setLife();
+    void setLife(bool life);
     void move(glm::vec3 coord_add);
     void moveOrientation();
     void setOrientation(float orientatioin);
     float getOrientation();
-    void moveside(glimac::SDLWindowManager& windowManager, bool& repeat);
+    void moveside(glimac::SDLWindowManager& windowManager, bool& repeat,bool& turn_up,bool& turn_down,bool& turn_right,bool& turn_left);
     void jump(glimac::SDLWindowManager& windowManager, bool& repeat, int &step);
     void fall(int &step);
     bool isJumping();

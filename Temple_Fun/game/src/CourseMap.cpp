@@ -34,10 +34,10 @@ void CourseMap::addObject(int r,int g,int b)
     }
     else if (r==255)
     {
-        std::default_random_engine re(std::chrono::system_clock::now().time_since_epoch().count());
-        std::uniform_int_distribution<int>distrib{0,1};
+        // std::default_random_engine re(std::chrono::system_clock::now().time_since_epoch().count());
+        // std::uniform_int_distribution<int>distrib{0,1};
         
-        m_CourseMap.push_back(new Straight(distrib(re)));
+        m_CourseMap.push_back(new Straight(false));
 
     
     }
@@ -148,7 +148,7 @@ Object* CourseMap::findObject(glm::vec3 coord)
     ptrObj = m_CourseMap[m];
 
     return m_CourseMap[m];
-
+/* code */
 
 }
 
@@ -167,7 +167,7 @@ glm::vec3 CourseMap::start()
 
 int CourseMap::end()
 {
-    return m_sizey -1;
+    return m_sizey-1;
 }
 
 
@@ -197,4 +197,19 @@ void CourseMap::drawObstacle(rendering::Cube& mesh, const rendering::Camera* cam
             
         }       
     
+}
+
+
+void CourseMap::loadCoins()
+{
+    for(int i = 0; i<m_sizex*m_sizey;i++)
+    {
+        if (m_CourseMap[i]->getName() == "straight")
+        {
+            std::default_random_engine re(std::chrono::system_clock::now().time_since_epoch().count());
+            std::uniform_int_distribution<int>distrib{0,1};    
+            m_CourseMap[i]->setCoins(distrib(re));
+        }
+        
+    }
 }

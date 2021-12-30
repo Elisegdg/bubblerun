@@ -98,12 +98,16 @@ int main(int argc, char **argv)
 
     bool menu_score = false;
 
+    bool menu_play_again = false;
+
     Score scorejson;
 
     CourseMap courseMap;
     courseMap.loadMap("../Temple_Fun/assets/map.ppm");
+    courseMap.loadCoins();
     Player player(courseMap);
     Object *objet = courseMap.findObject(player.getFloorCoord());
+    //Object *objet;
     double score = 0;
 
     TrackballCamera trackball_camera(&player);
@@ -207,8 +211,18 @@ int main(int argc, char **argv)
     bool done = false;
     bool repeat = false;
     int step = 0;
+    int step_turn = 0;
+    bool turn_up = false;
+    bool turn_down = false;
+    bool turn_right = false;
+    bool turn_left = false;
+    
+    bool again= true;
+
     while (!done)
     {
+        
+        
         currentTime = SDL_GetTicks();
         glm::mat4 ViewMatrix = camera->getViewMatrix();
 
@@ -245,11 +259,24 @@ int main(int argc, char **argv)
                 done = true;
             }
 
-            if (menu_bool & !menu_score & e.type == SDL_MOUSEBUTTONUP & x>764 & y>425 & x<932 & y<467)
+            if (menu_bool & !menu_score & !menu_play_again & e.type == SDL_MOUSEBUTTONUP & x>764 & y>425 & x<932 & y<467)
             {
                 menu_bool =false;
                 
             }
+
+            if (menu_play_again & !menu_bool & !menu_score & e.type == SDL_MOUSEBUTTONUP & x>764 & y>425 & x<932 & y<467)
+            {
+                menu_play_again =false;
+                
+            }
+            if (menu_play_again & !menu_bool & !menu_score & e.type == SDL_MOUSEBUTTONUP & x>764 & y>540 & x<932 & y<583)
+            {
+                menu_play_again = false;
+                menu_score =true;
+                
+            }
+            
             if (menu_bool & !menu_score & e.type == SDL_MOUSEBUTTONUP & x>764 & y>540 & x<932 & y<583)
             {
                 menu_score =true;
@@ -293,7 +320,7 @@ int main(int argc, char **argv)
             // PREVENT THE EVENT FROM REPEATING OUTSIDE POLLEVENT
             if (windowManager.isKeyPressed(SDLK_d))
             {
-                repeat = true;
+                repeat = true;  
             }
 
             if (windowManager.isKeyPressed(SDLK_q))
@@ -309,14 +336,15 @@ int main(int argc, char **argv)
             
         }
 
-        if (menu_bool & menu_score==false)
+        if (menu_bool & !menu_score  & !menu_play_again)
         {
             glm::mat4 uModelMatrix;
-            glm::mat4 scale_reset = glm::scale(uModelMatrix,glm::vec3(1,1,1));
-            glm::mat4 translate_bouton_play=glm::translate(uModelMatrix,glm::vec3(0,0,-0.5));
-            glm::mat4 bouton_play=glm::scale(translate_bouton_play,glm::vec3(0.1,0.05,1));
-            glm::mat4 translate_bouton_score=glm::translate(uModelMatrix,glm::vec3(0,-0.25,-0.5));
-            glm::mat4 bouton_score=glm::scale(translate_bouton_score,glm::vec3(0.1,0.05,1));
+            glm::mat4 translate_background=glm::translate(uModelMatrix,glm::vec3(0,0,0.5));
+            glm::mat4 scale_reset = glm::scale(translate_background,glm::vec3(1,1,1));
+            //glm::mat4 translate_bouton_play=glm::translate(uModelMatrix,glm::vec3(0,0,0.5));
+            glm::mat4 bouton_play=glm::scale(uModelMatrix,glm::vec3(0.15,0.06,1));
+            glm::mat4 translate_bouton_score=glm::translate(uModelMatrix,glm::vec3(0,-0.25,0));
+            glm::mat4 bouton_score=glm::scale(translate_bouton_score,glm::vec3(0.15,0.06,1));
 
             
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -351,16 +379,17 @@ int main(int argc, char **argv)
             TextProgram.use();
             GLuint id = TextProgram.getId();
             text.RenderText(id, Characters, "... BUBBLE RUN ...", 270.0f, 400.0f, 0.8f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
-            text.RenderText(id, Characters,"play :", 365.0f, 320.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
-            text.RenderText(id, Characters,"score :", 360.0f, 245.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
+            text.RenderText(id, Characters,"play :", 365.0f, 290.0f, 0.5f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
+            text.RenderText(id, Characters,"score :", 360.0f, 215.0f, 0.5f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
             glDisable(GL_BLEND);
         }
 
-        if(menu_score & menu_bool ==false)
+        if(menu_score & !menu_bool & !menu_play_again)
         {
             glm::mat4 uModelMatrix;
-            glm::mat4 scale_reset = glm::scale(uModelMatrix,glm::vec3(1,1,1));
-            glm::mat4 translate_bouton_back=glm::translate(uModelMatrix,glm::vec3(0.8,-0.8,-0.5));
+            glm::mat4 translate_background=glm::translate(uModelMatrix,glm::vec3(0,0,0.5));
+            glm::mat4 scale_reset = glm::scale(translate_background,glm::vec3(1,1,1));
+            glm::mat4 translate_bouton_back=glm::translate(uModelMatrix,glm::vec3(0.8,-0.8,0.3));
             glm::mat4 bouton_back=glm::scale(translate_bouton_back,glm::vec3(-0.1,0.05,1));
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -394,26 +423,88 @@ int main(int argc, char **argv)
             text.RenderText(id, Characters,"First    " + std::to_string(first), 320.0f, 300.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
             text.RenderText(id, Characters,"Second   "+std::to_string(second), 320.0f, 250.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
             text.RenderText(id, Characters,"Third    " +std::to_string(third), 320.0f, 200.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
-            text.RenderText(id, Characters,"Back", 690.0f, 80.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
+            text.RenderText(id, Characters,"Back", 690.0f, 50.0f, 0.5f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
             
             glDisable(GL_BLEND);
 
         }
 
+        if(menu_play_again & !menu_score & !menu_bool)
+        {
+            player.setCoord(glm::vec3(1,0,0));
+            player.setLife(true);
+            player.setOrientation(0);
+            camera->rotateLeft(player.getOrientation());
+            
+            again = true;
+            glm::mat4 uModelMatrix;
+            score = 0;
+            glm::mat4 translate_background=glm::translate(uModelMatrix,glm::vec3(0,0,0.5));
+            glm::mat4 scale_reset = glm::scale(translate_background,glm::vec3(1,1,1));
+            //glm::mat4 translate_bouton_play=glm::translate(uModelMatrix,glm::vec3(0,0,0.5));
+            glm::mat4 bouton_play_again=glm::scale(uModelMatrix,glm::vec3(0.2,0.06,1));
+            glm::mat4 translate_bouton_score=glm::translate(uModelMatrix,glm::vec3(0,-0.25,0));
+            glm::mat4 bouton_score=glm::scale(translate_bouton_score,glm::vec3(0.15,0.06,1));
+
+            
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            
+            menuShader.use();
+
+            //fond du menu
+            glBindVertexArray(menu.getVaoMenu());
+            menuShader.uniformMatrix4fv("uModelMatrix",scale_reset);
+            menuShader.uniform3f("uColor",1,1,1);
+            glDrawArrays(GL_TRIANGLES, 0, 6);
+            glBindVertexArray(0);
+
+            //bouton play
+            glBindVertexArray(menu.getVaoMenu());
+            menuShader.uniformMatrix4fv("uModelMatrix",bouton_play_again);
+            menuShader.uniform3f("uColor",0.f, 0.04f, 0.39f);
+            glDrawArrays(GL_TRIANGLES, 0, 6);
+            glBindVertexArray(0);
+
+            //bouton score
+            glBindVertexArray(menu.getVaoMenu());
+            menuShader.uniformMatrix4fv("uModelMatrix",bouton_score);
+            menuShader.uniform3f("uColor",0.f, 0.04f, 0.39f);
+            glDrawArrays(GL_TRIANGLES, 0, 6);
+            glBindVertexArray(0);
+
+            //texte
+            glEnable(GL_BLEND);
+            glDepthFunc(GL_LEQUAL);
+            TextProgram.use();
+            GLuint id = TextProgram.getId();
+            text.RenderText(id, Characters, "... BUBBLE RUN ...", 270.0f, 400.0f, 0.8f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
+            text.RenderText(id, Characters,"play again :", 325.0f, 290.0f, 0.5f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
+            text.RenderText(id, Characters,"score :", 360.0f, 215.0f, 0.5f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
+            glDisable(GL_BLEND);
+        }
+
             // if (currentTime - previousTime > 5)  // TO DO : set the speed in a variable
         
-        
-        if(menu_bool==false & menu_score==false)
+        if (again = true & !menu_play_again & player.getCoord()==glm::vec3(1,0,0))
         {
+            courseMap.loadCoins();
+            again=false;
+        }
+        
+        
+        if(!menu_bool & !menu_score & !menu_play_again)
+        {
+            std::cout << "getCoord : " << player.getCoord() << std::endl;
             // GAME LOOP
             if (player.isLife() & player.getCoord()[1] != courseMap.end() & player.getCoord()[0] >= 0 & player.getCoord()[1] >= 0)
             {
-
+                
                 objet = courseMap.findObject(player.getFloorCoord());
-                std::cout << "getCoord : " << player.getCoord() << std::endl;
-                std::cout << "getFloorCoord : " << player.getFloorCoord() << std::endl;
-                std::cout << "object : " << objet->getName() << std::endl;
-                std::cout << std::endl;
+                
+                // std::cout << "getFloorCoord : " << player.getFloorCoord() << std::endl;
+                //std::cout << "object : " << objet->getName() << std::endl;
+                //std::cout << std::endl;
                 if (objet->getIfCoins() & !player.isJumping())
                 {
                     objet->removeCoin();
@@ -421,52 +512,64 @@ int main(int argc, char **argv)
                 }
                 if (objet->getName() == "straight")
                 {
-                    player.moveside(windowManager, repeat);
+                    player.moveside(windowManager, repeat,turn_up, turn_down, turn_right, turn_left);
                     player.setJump(windowManager, repeat);
                 }
 
-                if (objet->getName() == "up")
+                if (objet->getName() == "up" & turn_up)
                 {
+                    std::cout << "object : " << objet->getName() << std::endl;
+                    turn_up = false;
+                    step_turn =0;
                     player.setCoord(objet->getCoord());
                     player.setOrientation(180.);
                     player.move(glm::vec3(0, -1, 0));
                     camera->rotateLeft(player.getOrientation());
                 }
 
-                if (objet->getName() == "down")
+                if (objet->getName() == "down" & turn_down)
                 {
+                    std::cout << "object : " << objet->getName() << std::endl;
+                    turn_down = false;
+                    step_turn =0;
                     player.setCoord(objet->getCoord());
                     player.setOrientation(0.);
                     player.move(glm::vec3(0, 1, 0));
                     camera->rotateLeft(player.getOrientation());
                 }
 
-                if (objet->getName() == "right")
+                if (objet->getName() == "right" & turn_right)
                 {
+                    std::cout << "object : " << objet->getName() << std::endl;
+                    turn_right = false;
+                    step_turn =0;
                     player.setCoord(objet->getCoord());
                     player.setOrientation(90.);
                     player.move(glm::vec3(1, 0, 0));
                     camera->rotateLeft(player.getOrientation());
                 }
 
-                if (objet->getName() == "left")
+                if (objet->getName() == "left"  & turn_left)
                 {
+                    std::cout << "object : " << objet->getName() << std::endl;
+                    turn_right = false;
+                    step_turn =0;
                     player.setCoord(objet->getCoord());
                     player.setOrientation(-90.);
                     player.move(glm::vec3(-1, 0, 0));
                     camera->rotateLeft(player.getOrientation());
                 }
 
-                if (objet->getName() == "empty" & player.getCoord()[2] < 0.3)
+                if (objet->getName() == "empty" & player.getCoord()[2] < 0.3 || player.getCoord().x<0)
                 {
 
-                    player.setLife();
+                    player.setLife(false);
                     std::cout << "oops, you fell" << std::endl;
                 }
 
                 if (objet->getName() == "obstacle" & player.getCoord()[2] < 0.3)
                 {
-                    player.setLife();
+                    player.setLife(false);
                     std::cout << "oops you stumbled over an obstacle" << std::endl;
                 }
 
@@ -483,20 +586,34 @@ int main(int argc, char **argv)
                     if (camera->getCameraType() == 1)
                         camera->moveFront(0.1);
 
+                    if(step_turn<30 & (turn_right || turn_up || turn_down || turn_left) )
+                    {
+                        step_turn+=1;
+                    }
+                    if(step_turn>=30)
+                    {
+                        turn_up = false;
+                        turn_down = false;
+                        turn_left = false;
+                        turn_up = false;
+                        step_turn =0;
+                    }
+
                     previousTime = currentTime;
                 }
             }
-            else if (player.isLife()==false)
+            if (player.isLife()==false)
             {
+                std::cout<<"mort"<<std::endl;
                 scorejson.addScore(score);
-                menu_bool = true;
+                menu_play_again = true;
             }
             
 
-            else
+            if(player.getFloorCoord().y==courseMap.end())
             {
                 scorejson.addScore(score);
-                menu_bool = true;
+                menu_play_again = true;
                 
             }
 
