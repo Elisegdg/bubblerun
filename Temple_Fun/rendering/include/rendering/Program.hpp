@@ -50,6 +50,9 @@ public:
         glUniformMatrix3fv(m_uniformVars[name], 1, GL_FALSE, glm::value_ptr(value));
     }
 
+    void uniform1f(std::string name, double value){
+        glUniform1f(m_uniformVars[name], value);
+    }
 
     void uniform1i(std::string name, int value){
         glUniform1i(m_uniformVars[name], value);

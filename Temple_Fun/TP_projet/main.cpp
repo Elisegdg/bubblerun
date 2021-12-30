@@ -110,16 +110,31 @@ int main(int argc, char **argv)
     menuShader.addUniform("uModelMatrix");
     menuShader.addUniform("uColor");
 
-    rendering::ShaderManager TextureProgram(applicationPath, "shaders/3D.vs.glsl", "shaders/tex3D.fs.glsl");
+    /*rendering::ShaderManager TextureProgram(applicationPath, "shaders/3D.vs.glsl", "shaders/tex3D.fs.glsl");
     TextureProgram.addUniform("uMVPMatrix");
     TextureProgram.addUniform("uMVMatrix");
     TextureProgram.addUniform("uNormalMatrix");
-    TextureProgram.addUniform("uTexture");
+    TextureProgram.addUniform("uTexture");*/
 
     rendering::ShaderManager SkyboxProgram(applicationPath, "shaders/skybox.vs.glsl", "shaders/skybox.fs.glsl");
     SkyboxProgram.addUniform("projection");
     SkyboxProgram.addUniform("view");
     SkyboxProgram.addUniform("uSkybox");
+
+    rendering::ShaderManager LightProgram(applicationPath, "shaders/3D.vs.glsl", "shaders/multipleLights.fs.glsl");
+    LightProgram.addUniform("uKd");
+    LightProgram.addUniform("uKs");
+    LightProgram.addUniform("uKd2");
+    LightProgram.addUniform("uKs2");
+    LightProgram.addUniform("uShininess");
+    LightProgram.addUniform("uLightDir_vs");
+    LightProgram.addUniform("uLightPos_vs");
+    LightProgram.addUniform("uLightIntensity");
+    LightProgram.addUniform("uMVPMatrix");
+    LightProgram.addUniform("uMVMatrix");
+    LightProgram.addUniform("uNormalMatrix");
+    LightProgram.addUniform("uTexture");
+
 
     rendering::ShaderManager TextProgram(applicationPath, "shaders/text.vs.glsl", "shaders/text.fs.glsl");
     TextProgram.addUniform("projection");
@@ -318,16 +333,41 @@ int main(int argc, char **argv)
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-            TextureProgram.use();
-            glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 1700.f / 900.f, 0.1f, 100.f);
 
+            glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 2000.f / 1000.f, 0.1f, 100.f);
+            glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
+
+            // Draw the lights
+            LightProgram.use();
+
+            LightProgram.uniform3f("uKd", 0.4,0.4,1.0);
+            LightProgram.uniform3f("uKs", 0.2,0.5,0.8);
+            LightProgram.uniform3f("uKd2", 0.5,0.0,0);
+            LightProgram.uniform3f("uKs2", 0.5,0,0);
+            LightProgram.uniform1i("uShininess", 10);
+
+            glm::vec4 LightDir = camera->getViewMatrix() * glm::vec4(0.0,1.0,0.0,0.0);
+            LightProgram.uniform3f("uLightDir_vs", LightDir.x, LightDir.y, LightDir.z);
+
+            glm::vec4 LightPos = glm::vec4(0.5,0.5,0.5,0.0) * camera->getViewMatrix();
+            LightProgram.uniform3f("uLightPos_vs", LightPos.x, LightPos.y, LightPos.z);
+
+            LightProgram.uniform3f("uLightIntensity", 0.6,0.6,0.6);
+
+            LightProgram.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
+            LightProgram.uniformMatrix4fv("uMVMatrix", ViewMatrix);
+            LightProgram.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
+
+            ViewMatrix = glm::translate(ViewMatrix, glm::vec3(1., 0.6, 0.));
+            ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));
+        
             // Drawing of the Characters as cubes
-            player.draw(cube_nemo, camera, TextureProgram, ProjMatrix);
-            enemy.draw(cube_shark, camera, TextureProgram, ProjMatrix);
+            player.draw(cube_nemo, camera, LightProgram, ProjMatrix);
+            enemy.draw(cube_shark, camera, LightProgram, ProjMatrix);
 
             // Drawing of the Path
-            courseMap.drawMap(cube_path, cube_coin, camera, TextureProgram, ProjMatrix, windowManager);
-            courseMap.drawObstacle(cube_obstacle, camera, TextureProgram, ProjMatrix, windowManager);
+            courseMap.drawMap(cube_path, cube_coin, camera, LightProgram, ProjMatrix, windowManager);
+            courseMap.drawObstacle(cube_obstacle, camera, LightProgram, ProjMatrix, windowManager);
 
             // Drawing of the Skybox
             glDepthFunc(GL_LEQUAL);
