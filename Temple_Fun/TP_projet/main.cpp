@@ -108,7 +108,7 @@ int main(int argc, char **argv)
     Player player(courseMap);
     Object *objet = courseMap.findObject(player.getFloorCoord());
     //Object *objet;
-    double score = 0;
+    int score = 0;
 
     TrackballCamera trackball_camera(&player);
     EyesCamera eyes_camera(&player);
@@ -435,10 +435,9 @@ int main(int argc, char **argv)
             player.setLife(true);
             player.setOrientation(0);
             camera->rotateLeft(player.getOrientation());
-            
             again = true;
             glm::mat4 uModelMatrix;
-            score = 0;
+            
             glm::mat4 translate_background=glm::translate(uModelMatrix,glm::vec3(0,0,0.5));
             glm::mat4 scale_reset = glm::scale(translate_background,glm::vec3(1,1,1));
             //glm::mat4 translate_bouton_play=glm::translate(uModelMatrix,glm::vec3(0,0,0.5));
@@ -481,7 +480,9 @@ int main(int argc, char **argv)
             text.RenderText(id, Characters, "... BUBBLE RUN ...", 270.0f, 400.0f, 0.8f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
             text.RenderText(id, Characters,"play again :", 325.0f, 290.0f, 0.5f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
             text.RenderText(id, Characters,"score :", 360.0f, 215.0f, 0.5f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
+            text.RenderText(id, Characters,"your score : "+ std::to_string(score), 300.0f, 350.0f, 0.4f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
             glDisable(GL_BLEND);
+            
         }
 
             // if (currentTime - previousTime > 5)  // TO DO : set the speed in a variable
@@ -489,6 +490,7 @@ int main(int argc, char **argv)
         if (again = true & !menu_play_again & player.getCoord()==glm::vec3(1,0,0))
         {
             courseMap.loadCoins();
+            score = 0;
             again=false;
         }
         
@@ -658,7 +660,7 @@ int main(int argc, char **argv)
             glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
             TextProgram.use();
             GLuint id = TextProgram.getId();
-            std::string scorestring = std::to_string(int(score));
+            std::string scorestring = std::to_string(score);
             text.RenderText(id, Characters, "BUBBLE RUN", 25.0f, 25.0f, 1.0f, glm::vec3(0.87f, 0.325f, 0.03f), VAO, VBO);
             text.RenderText(id, Characters, "Score : " + scorestring, 650.0f, 570.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f), VAO, VBO);
 
