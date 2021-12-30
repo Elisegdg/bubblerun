@@ -1,3 +1,6 @@
+#ifndef _ITERATOR_HPP
+#define _ITERATOR_HPP
+
 template <typename T, typename U>
 class Iterator {
  public:
@@ -52,3 +55,4 @@ class Container {
   std::vector<T> m_data_;
 };
 
+#endif

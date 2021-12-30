@@ -29,6 +29,7 @@ public:
     glm::vec3 getCoord();
     virtual void draw(rendering::Cube& mesh, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager);
     void drawCoins(rendering::Cube& mesh, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager);
+    void setCoins(bool coins){m_coins = coins;}
 
     std::string getName(){
         return m_name;
@@ -78,9 +79,11 @@ public:
 };
 class Straight : public Object
 {
+
 public:
     Straight(bool value):Object("straight",value){}
     ~Straight()= default;
+    
 
 
 
@@ -108,5 +111,6 @@ class Coins: public Object
     public:
     void draw(rendering::Cube& mesh, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager);
 };
+
 
 #endif

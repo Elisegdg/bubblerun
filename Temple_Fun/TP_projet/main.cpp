@@ -1,6 +1,11 @@
 #include <GL/glew.h>
 #include <iostream>
+#include <map>
 #include <vector>
+#include <ft2build.h>
+#include FT_FREETYPE_H
+#include <string.h>
+
 #include <glimac/SDLWindowManager.hpp>
 #include <glimac/Program.hpp>
 #include <glimac/FilePath.hpp>
@@ -8,6 +13,7 @@
 #include <glimac/Image.hpp>
 #include <glimac/Sphere.hpp>
 #include <glimac/Geometry.hpp>
+
 #include <rendering/Camera.hpp>
 #include <rendering/TrackballCamera.hpp>
 #include <rendering/EyesCamera.hpp>
@@ -15,23 +21,25 @@
 #include <rendering/Program.hpp>
 #include <rendering/Skybox.hpp>
 #include <rendering/Cube.hpp>
-#include <game/CourseMap.hpp>
-#include <game/Player.hpp>
 #include <rendering/Text.hpp>
-#include <ft2build.h>
-#include FT_FREETYPE_H
-#include <string.h>
+#include <rendering/Menu.hpp>
+#include <rendering/Cursor.hpp>
+#include <rendering/json.hpp>
+#include <rendering/Score.hpp>
 
-using namespace glimac;
-using namespace rendering;
+#include <game/CourseMap.hpp>
+#include <game/Object.hpp>
+#include <game/Player.hpp>
 
+using json = nlohmann::json;
 
 int main(int argc, char **argv)
 {
+
     // Initialize SDL and open a window
-    SDLWindowManager windowManager(1700, 900, "Temple_Fun");
+    glimac::SDLWindowManager windowManager(1700, 900, "Temple_Fun");
     int previousTime = 0, currentTime = 0;
-    
+
     // Initialize glew for OpenGL3+ support
     GLenum glewInitError = glewInit();
     if (GLEW_OK != glewInitError)
@@ -47,46 +55,73 @@ int main(int argc, char **argv)
     *     INITIALIZATION CODE       *
    *********************************/
 
+    // Menu initialization
+    SDL_Cursor *cursor = init_system_cursor(arrow), *cursor2 = init_system_cursor(arrow2);
+    Menu menu;
+    bool menu_bool = true, menu_score = false, menu_play_again = false;
+    Score scorejson;
+
+    // Map initialization
     CourseMap courseMap;
-    courseMap.loadMap("../Temple_Fun/assets/map.ppm");
-    Player player(courseMap);
+    try
+    {
+        courseMap.loadMap("../Temple_Fun/assets/map.ppm");
+    }
+    catch (std::string &s)
+    {
+        std::cerr << "Error : " << s << std::endl;
+    }
+    courseMap.loadCoins();
+    Player player(courseMap, glm::vec3(1, 3, 0)), enemy(courseMap, glm::vec3(1, 0, 0));
     Object *objet = courseMap.findObject(player.getFloorCoord());
-    double score = 0;
+    Object *objet_enemy = courseMap.findObject(enemy.getFloorCoord());
+    int score = 0;
+    int speed = 5;
 
-    TrackballCamera trackball_camera(&player);
-    EyesCamera eyes_camera(&player);
-    Camera *camera = &trackball_camera;
+    //Camera initialization
+    rendering::TrackballCamera trackball_camera(&player);
+    rendering::EyesCamera eyes_camera(&player);
+    rendering::Camera *camera = &trackball_camera;
 
-    Texture obstacle("../Temple_Fun/assets/textures/ground.png");
-    Texture nemo("../Temple_Fun/assets/textures/nemo.jpg");
-    Texture ground("../Temple_Fun/assets/textures/stone_ground.png");
-    Texture coin("../Temple_Fun/assets/textures/gold.png");
+    //Textures and mesh initialization
+    rendering::Texture obstacle("../Temple_Fun/assets/textures/ground.png");
+    rendering::Texture nemo("../Temple_Fun/assets/textures/nemo.jpg");
+    rendering::Texture ground("../Temple_Fun/assets/textures/stone_ground.png");
+    rendering::Texture coin("../Temple_Fun/assets/textures/gold.png");
+    rendering::Texture shark("../Temple_Fun/assets/textures/shark.png");
 
-    unsigned int VAO, VBO;
-    std::map<char, Text> Characters;
-    Text text;
+    rendering::Cube cube_path(ground, 1), cube_nemo(nemo, 1), cube_obstacle(obstacle, 1),
+        cube_coin(coin, 1), cube_shark(shark, 1);
+
+    cube_path.setBuffers();
+    cube_nemo.setBuffers();
+    cube_coin.setBuffers();
+    cube_obstacle.setBuffers();
+    cube_shark.setBuffers();
+
+    std::map<char, rendering::Text> Characters;
+    rendering::Text text;
     text.loadFont(Characters);
-
-    Cube cube_path(ground, 1);
-    Cube cube_nemo(nemo, 1);
-    Cube cube_obstacle(obstacle, 1);
-    Cube cube_coin(coin, 1);
+    text.display();
 
     // Shaders loading
-    FilePath applicationPath(argv[0]);
+    glimac::FilePath applicationPath(argv[0]);
+    rendering::ShaderManager menuShader(applicationPath, "shaders/menu.vs.glsl", "shaders/menu.fs.glsl");
+    menuShader.addUniform("uModelMatrix");
+    menuShader.addUniform("uColor");
 
-    ShaderManager TextureProgram(applicationPath, "shaders/3D.vs.glsl", "shaders/tex3D.fs.glsl");
+    rendering::ShaderManager TextureProgram(applicationPath, "shaders/3D.vs.glsl", "shaders/tex3D.fs.glsl");
     TextureProgram.addUniform("uMVPMatrix");
     TextureProgram.addUniform("uMVMatrix");
     TextureProgram.addUniform("uNormalMatrix");
     TextureProgram.addUniform("uTexture");
 
-    ShaderManager SkyboxProgram(applicationPath, "shaders/skybox.vs.glsl", "shaders/skybox.fs.glsl");
+    rendering::ShaderManager SkyboxProgram(applicationPath, "shaders/skybox.vs.glsl", "shaders/skybox.fs.glsl");
     SkyboxProgram.addUniform("projection");
     SkyboxProgram.addUniform("view");
     SkyboxProgram.addUniform("uSkybox");
 
-    ShaderManager TextProgram(applicationPath, "shaders/text.vs.glsl", "shaders/text.fs.glsl");
+    rendering::ShaderManager TextProgram(applicationPath, "shaders/text.vs.glsl", "shaders/text.fs.glsl");
     TextProgram.addUniform("projection");
 
     glm::mat4 projection = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f);
@@ -95,57 +130,71 @@ int main(int argc, char **argv)
 
     glEnable(GL_DEPTH_TEST);
 
-    
-    
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
-    glBindVertexArray(VAO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindVertexArray(0);
-
-    glEnable(GL_DEPTH_TEST);
-
     // Creation of the Skybox
-    GLuint skyboxVAO, skyboxVBO;
-    glGenVertexArrays(1, &skyboxVAO);
-    glGenBuffers(1, &skyboxVBO);
-    glBindVertexArray(skyboxVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, skyboxVBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
+    Skybox skybox;
+    unsigned int cubemapTexture;
+    try
+    {
+        cubemapTexture = glimac::loadCubemap(skybox_sky);
+    }
+    catch (std::string &s)
+    {
+        std::cerr << "Error : " << s << std::endl;
+    }
 
-    unsigned int cubemapTexture = loadCubemap(skybox_sky);
-
-    //Creation of the cube used for the Player and the Path
-    cube_path.setBuffers();
-
-    cube_nemo.setBuffers();
-
-    cube_coin.setBuffers();
-
-    cube_obstacle.setBuffers();
     // Application loop:
-    bool done = false;
-    bool repeat = false;
-    int step = 0;
+    bool done = false, repeat = false, again = true;
+    int step = 0, step_turn = 0;
+    bool turn_up = false, turn_down = false, turn_right = false, turn_left = false;
+
     while (!done)
     {
         currentTime = SDL_GetTicks();
         glm::mat4 ViewMatrix = camera->getViewMatrix();
+
+        int x, y;
+        SDL_GetMouseState(&x, &y);
+        SDL_SetCursor(cursor);
+        setCursors(menu_bool, menu_score, menu_play_again, cursor2, x, y);
 
         // Event loop:
         SDL_Event e;
         while (windowManager.pollEvent(e))
         {
             if (e.type == SDL_QUIT)
-            {
                 done = true;
+
+            // MENU MANAGER
+            if (menu_bool & !menu_score & !menu_play_again & e.type == SDL_MOUSEBUTTONUP & x > 764 & y > 425 & x < 932 & y < 467)
+            {
+                menu_bool = false;
             }
+
+            if (menu_play_again & !menu_bool & !menu_score & e.type == SDL_MOUSEBUTTONUP & x > 679 & y > 423 & x < 1018 & y < 474)
+            {
+                menu_play_again = false;
+            }
+
+            if (menu_play_again & !menu_bool & !menu_score & e.type == SDL_MOUSEBUTTONUP & x > 764 & y > 540 & x < 932 & y < 583)
+            {
+                menu_play_again = false;
+                menu_score = true;
+            }
+
+            if (menu_bool & !menu_score & e.type == SDL_MOUSEBUTTONUP & x > 764 & y > 540 & x < 932 & y < 583)
+            {
+                menu_score = true;
+                menu_bool = false;
+            }
+
+            if (!menu_bool & menu_score & e.type == SDL_MOUSEBUTTONUP & x > 1447 & y > 789 & x < 1613 & y < 829)
+            {
+                menu_score = false;
+                menu_bool = true;
+            }
+
+            if (windowManager.isKeyPressed(SDLK_ESCAPE))
+                menu_bool = true;
 
             // CAMERA SWITCH AND LOCK
             if (windowManager.isKeyPressed(SDLK_c))
@@ -162,159 +211,132 @@ int main(int argc, char **argv)
                 }
             }
 
-            if (windowManager.isKeyPressed(SDLK_l))
-            {
-                camera->setLocker();
-            }
-            
+            if (windowManager.isKeyPressed(SDLK_l))    camera->setLocker();
+
             // PREVENT THE EVENT FROM REPEATING OUTSIDE POLLEVENT
-            if (windowManager.isKeyPressed(SDLK_d))
-            {
-                repeat = true;
-            }
-
-            if (windowManager.isKeyPressed(SDLK_q))
-            {
-                repeat = true;
-            }
-
-            if (windowManager.isKeyPressed(SDLK_z))
-            {
-                repeat = true;
-            }
+            if (windowManager.isKeyPressed(SDLK_d))    repeat = true;
+            if (windowManager.isKeyPressed(SDLK_q))    repeat = true;
+            if (windowManager.isKeyPressed(SDLK_z))    repeat = true;
         }
 
-
-        //GAME LOOP
-        if (player.isLife() & player.getCoord()[1] != courseMap.end() & player.getCoord()[0] >= 0 & player.getCoord()[1] >= 0)
+        // MAIN MENU DISPLAY
+        if (menu_bool & !menu_score & !menu_play_again)
         {
-            
-            objet = courseMap.findObject(player.getFloorCoord()); 
-            
-            if(objet->getIfCoins() & !player.isJumping()){
-                objet->removeCoin();
-            }
-            if (objet->getName() == "straight")
-            {
-                player.moveside(windowManager, repeat);
-                player.setJump(windowManager,repeat);
-            }
-
-            if (objet->getName() == "up")
-            {
-                player.setCoord(objet->getCoord());
-                player.setOrientation(180.);
-                player.move(glm::vec3(0,-1,0));
-                camera->rotateLeft(player.getOrientation());
-            }
-
-            if (objet->getName() == "down")
-            {
-                player.setCoord(objet->getCoord());
-                player.setOrientation(0.);
-                player.move(glm::vec3(0, 1, 0));
-                camera->rotateLeft(player.getOrientation());
-            }
-
-            if (objet->getName() == "right")
-            {
-                player.setCoord(objet->getCoord());
-                player.setOrientation(90.);
-                player.move(glm::vec3(1, 0, 0));
-                camera->rotateLeft(player.getOrientation());
-            }
-
-            if (objet->getName() == "left")
-            {
-                player.setCoord(objet->getCoord());
-                player.setOrientation(-90.);
-                player.move(glm::vec3(-1, 0, 0));
-                camera->rotateLeft(player.getOrientation());
-            }
-            
-            if (objet->getName() == "empty" & player.getCoord()[2]<0.3 )
-            {
-                player.setLife();
-                std::cout<<"oops, you fell"<<std::endl;
-            }
-
-            if (objet->getName() == "obstacle" & player.getCoord()[2]<0.3)
-            {
-                player.setLife();
-                std::cout<<"oops you stumbled over an obstacle"<<std::endl;
-            }
-
-
-
-            if (currentTime - previousTime > 5)  // TO DO : set the speed in a variable
-            {
-                player.moveOrientation();
-
-                if (player.isJumping())    player.jump(windowManager, repeat, step);
-                
-
-                if (step>=10)   player.fall(step);
-            
-
-                if (camera->getCameraType() == 1)
-                    camera->moveFront(0.1);
-
-                previousTime = currentTime;
-            }
-            
+            menu.setMenuBool(menuShader);
+            text.renderMenuText(TextProgram, Characters);
         }
 
-        else
+        // SCORE DISPLAY
+        if (menu_score & !menu_bool & !menu_play_again)
         {
-            done = true;
-            
+            menu.setMenuScore(menuShader);
+            text.renderScoreText(TextProgram, Characters, scorejson);
         }
 
-        camera->eventCamera(windowManager);
-        /*********************************
-        *      RENDERING CODE           *
-         *********************************/
+        // PLAY AGAIN MENU DISPLAY
+        if (menu_play_again & !menu_score & !menu_bool)
+        {
+            player.setCoord(glm::vec3(1, 3, 0));
+            enemy.setCoord(glm::vec3(1, 0, 0));
+            enemy.setOrientation(0);
+            player.setLife(true);
+            player.setOrientation(0);
+            camera->rotateLeft(player.getOrientation());
+            again = true;
 
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        //glBindVertexArray(vao);
+            menu.setMenuPlayAgain(menuShader);
+            text.renderPlayAgainText(TextProgram, Characters, score);
+        }
 
-        TextureProgram.use();
+        // RESET THE GAME DATA IF THE USER WANTS TO PLAY AGAIN
+        if (again = true & !menu_play_again & player.getCoord() == glm::vec3(1, 0, 0))
+        {
+            courseMap.loadCoins();
+            score = 0;
+            again = false;
+        }
 
-        // Drawing of the hero as a cube
-        glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 1700.f / 900.f, 0.1f, 100.f);
+        // GAME DISPLAY
+        if (!menu_bool & !menu_score & !menu_play_again)
+        {
+            // GAME LOOP
+            if (player.isLife() & player.getCoord()[1] != courseMap.end() & player.getCoord()[0] >= 0 & player.getCoord()[1] >= 0)
+            {
+                objet = courseMap.findObject(player.getFloorCoord());
+                objet_enemy = courseMap.findObject(enemy.getFloorCoord());
 
-        player.draw(cube_nemo, camera, TextureProgram, ProjMatrix);
+                player.moveManager(objet, camera, score, windowManager, repeat, turn_up, turn_down, turn_right, turn_left, step_turn);
+                enemy.moveEnemyManager(objet_enemy);
 
-        // Drawing of the Path
-        courseMap.drawMap(cube_path, cube_coin, camera, TextureProgram, ProjMatrix, windowManager);
-        courseMap.drawObstacle(cube_obstacle, camera, TextureProgram, ProjMatrix, windowManager);
+                if (currentTime - previousTime > speed)
+                {
+                    player.moveOrientation();
+                    enemy.moveOrientation();
 
-        // Drawing of the Skybox
-        glDepthFunc(GL_LEQUAL); 
-        SkyboxProgram.use();
-        glm::mat4 skyboxViewMatrix = glm::mat4(glm::mat3(camera->getViewMatrix()));
-        SkyboxProgram.uniformMatrix4fv("projection", ProjMatrix);
-        SkyboxProgram.uniformMatrix4fv("view", skyboxViewMatrix);
+                    if (player.isJumping())
+                        player.jump(windowManager, repeat, step);
 
-        glBindVertexArray(skyboxVAO);
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
-        SkyboxProgram.uniform1i("uSkybox", 0);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-        glBindVertexArray(0);
-        glDepthFunc(GL_LESS);
+                    if (step >= 10)
+                        player.fall(step);
 
-        glBindVertexArray(0);
-        glBindTexture(GL_TEXTURE_2D, 0);
+                    if (camera->getCameraType() == 1)
+                        camera->moveFront(0.1);
 
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        TextProgram.use();
-        GLuint id = TextProgram.getId();
-        std::string scorestring=std::to_string(int(score));
-        text.RenderText(id,Characters, "BUBBLE RUN", 25.0f, 25.0f, 1.0f, glm::vec3(0.87f, 0.325f, 0.03f),VAO,VBO);
-        text.RenderText(id,Characters, "Score : "+scorestring, 650.0f, 570.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f),VAO,VBO);
+                    if (step_turn < 30 & (turn_right || turn_up || turn_down || turn_left))
+                        step_turn += 1;
 
+                    if (step_turn >= 30)
+                    {
+                        turn_up = false;
+                        turn_down = false;
+                        turn_left = false;
+                        turn_up = false;
+                        step_turn = 0;
+                    }
+
+                    previousTime = currentTime;
+                }
+            }
+
+            if (!player.isLife())
+            {
+                scorejson.addScore(score);
+                menu_play_again = true;
+            }
+
+            if (player.getFloorCoord().y == courseMap.end())
+            {
+                scorejson.addScore(score);
+                menu_play_again = true;
+            }
+
+            camera->eventCamera(windowManager);
+
+            /*********************************
+             *      RENDERING CODE           *
+             *********************************/
+
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+            TextureProgram.use();
+            glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 1700.f / 900.f, 0.1f, 100.f);
+
+            // Drawing of the Characters as cubes
+            player.draw(cube_nemo, camera, TextureProgram, ProjMatrix);
+            enemy.draw(cube_shark, camera, TextureProgram, ProjMatrix);
+
+            // Drawing of the Path
+            courseMap.drawMap(cube_path, cube_coin, camera, TextureProgram, ProjMatrix, windowManager);
+            courseMap.drawObstacle(cube_obstacle, camera, TextureProgram, ProjMatrix, windowManager);
+
+            // Drawing of the Skybox
+            glDepthFunc(GL_LEQUAL);
+            SkyboxProgram.use();
+            skybox.draw(SkyboxProgram, camera, ProjMatrix, cubemapTexture);
+
+            // Display the text
+            text.renderGameText(TextProgram, Characters, score);
+        }
         glDisable(GL_BLEND);
         windowManager.swapBuffers();
     }

@@ -40,7 +40,9 @@ public:
     }
 
     // Destructor
-    ~Texture(){}
+    ~Texture(){
+        glDeleteTextures(1, &m_textureId);
+    }
 
     // Methods
     GLuint getTextureId() const{

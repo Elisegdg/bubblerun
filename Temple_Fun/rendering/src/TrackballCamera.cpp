@@ -62,7 +62,7 @@ namespace rendering
         return m_fDistance;
     }
 
-    void TrackballCamera::eventCamera(SDLWindowManager& windowManager)
+    void TrackballCamera::eventCamera(glimac::SDLWindowManager& windowManager)
     {
         glm::ivec2 mousePos = windowManager.getMousePosition();
 
@@ -79,11 +79,6 @@ namespace rendering
                 rotateLeft(mousePos.x / 5);
                 rotateUp(mousePos.y / 5);
             }
-
-            //if (windowManager.isKeyPressed(SDLK_k)){
-                //rotateLeftTest(3.);
-            //}
-
             
         }
     }

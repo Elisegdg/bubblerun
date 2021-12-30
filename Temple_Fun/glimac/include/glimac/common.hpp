@@ -11,4 +11,14 @@ struct ShapeVertex {
     glm::vec2 texCoords;
 };
 
+struct Vertex2DColor
+{
+    glm::vec3 position;
+    glm::vec3 color;
+
+    Vertex2DColor(){}
+    Vertex2DColor(glm::vec3 position, glm::vec3 color):position(position), color(color){}
+};
+
+
 }

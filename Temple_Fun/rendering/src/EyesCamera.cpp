@@ -83,7 +83,7 @@ namespace rendering
     }
 
 
-    void EyesCamera::eventCamera(SDLWindowManager& windowManager)
+    void EyesCamera::eventCamera(glimac::SDLWindowManager& windowManager)
     {
 
         

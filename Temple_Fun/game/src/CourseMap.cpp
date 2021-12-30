@@ -31,10 +31,7 @@ void CourseMap::addObject(int r, int g, int b)
     }
     else if (r == 255)
     {
-        std::default_random_engine re(std::chrono::system_clock::now().time_since_epoch().count());
-        std::uniform_int_distribution<int> distrib{0, 1};
-
-        m_CourseMap.Add(new Straight(distrib(re)));
+        m_CourseMap.Add(new Straight(false));
     }
     else if (b == 255)
     {
@@ -57,13 +54,13 @@ void CourseMap::loadMap(const glimac::FilePath &file)
 
     if (fileMap.fail())
     {
-        std::cout << "erreur de chargement" << std::endl;
+        throw std::string("Loading of the map failed");
         return;
     }
 
     if (file.ext() != "ppm")
     {
-        std::cout << "pas le bon type de fichier" << std::endl;
+        throw std::string("Please load a .ppm file");
         return;
     }
 
@@ -127,6 +124,8 @@ Object *CourseMap::findObject(glm::vec3 coord)
     ptrObj = m_CourseMap[m];
 
     return m_CourseMap[m];
+
+
 }
 
 glm::vec3 CourseMap::start()
@@ -141,7 +140,7 @@ glm::vec3 CourseMap::start()
     return glm::vec3(i + 1, 0, 0);
 }
 
-int CourseMap::end()
+int CourseMap::end() const
 {
     return m_sizey - 1;
 }
@@ -160,10 +159,11 @@ void CourseMap::drawMap(rendering::Cube &mesh_path, rendering::Cube &mesh_coin, 
             (*it->Current())->drawCoins(mesh_coin, camera, Program, ProjMatrix, windowManager);
         }
     }
+    delete it;
 
 }
 
-void CourseMap::drawObstacle(rendering::Cube &mesh, const rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager &windowManager)
+void CourseMap::drawObstacle(rendering::Cube &mesh, const rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager &windowManager) 
 {
     Iterator<Object*, Container<Object*>> *it = m_CourseMap.CreateIterator();
     for (it->First(); !it->IsDone(); it->Next())
@@ -172,5 +172,21 @@ void CourseMap::drawObstacle(rendering::Cube &mesh, const rendering::Camera *cam
         {
             (*it->Current())->draw(mesh, camera, Program, ProjMatrix, windowManager);
         }
+    }
+    delete it;
+}
+
+
+void CourseMap::loadCoins()
+{
+    for(int i = 0; i<m_sizex*m_sizey;i++)
+    {
+        if (m_CourseMap[i]->getName() == "straight")
+        {
+            std::default_random_engine re(std::chrono::system_clock::now().time_since_epoch().count());
+            std::uniform_int_distribution<int>distrib{0,1};    
+            m_CourseMap[i]->setCoins(distrib(re));
+        }
+        
     }
 }

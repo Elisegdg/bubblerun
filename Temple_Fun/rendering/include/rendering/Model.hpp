@@ -27,7 +27,10 @@ public:
         m_texture(texture)
         {}
 
-    ~Model() = default;
+    ~Model(){
+        glDeleteBuffers(1, &m_vbo);
+        glDeleteVertexArrays(1, &m_vao);
+    };
 
     // METHODS
     void draw(){
