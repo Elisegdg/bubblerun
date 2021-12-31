@@ -1,0 +1,197 @@
+\hypertarget{type__gentype_8hpp_source}{}\doxysection{type\+\_\+gentype.\+hpp}
+\label{type__gentype_8hpp_source}\index{third-\/party/include/glm/detail/type\_gentype.hpp@{third-\/party/include/glm/detail/type\_gentype.hpp}}
+\mbox{\hyperlink{type__gentype_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#ifndef glm\_core\_type\_gentype}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00030}00030 \textcolor{preprocessor}{\#define glm\_core\_type\_gentype}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00032}00032 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00034}\mbox{\hyperlink{namespaceglm_a33617ea243a270b94b41bd15f2016c20}{00034}}     \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceglm_a33617ea243a270b94b41bd15f2016c20}{profile}}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00035}00035     \{}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00036}\mbox{\hyperlink{namespaceglm_a33617ea243a270b94b41bd15f2016c20a4db08750bfab5aa3ab0b53272bf0b046}{00036}}         \mbox{\hyperlink{namespaceglm_a33617ea243a270b94b41bd15f2016c20a4db08750bfab5aa3ab0b53272bf0b046}{nice}},}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00037}\mbox{\hyperlink{namespaceglm_a33617ea243a270b94b41bd15f2016c20a3bd0edffe0c08ddf271cd850df68dbf2}{00037}}         \mbox{\hyperlink{namespaceglm_a33617ea243a270b94b41bd15f2016c20a3bd0edffe0c08ddf271cd850df68dbf2}{fast}},}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00038}00038         \mbox{\hyperlink{namespaceglm_a33617ea243a270b94b41bd15f2016c20a09f53cd4344bdc0d7cb74c6721f6f0d3}{simd}}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00039}\mbox{\hyperlink{namespaceglm_a33617ea243a270b94b41bd15f2016c20a09f53cd4344bdc0d7cb74c6721f6f0d3}{00039}}     \};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00041}\mbox{\hyperlink{namespaceglm_ae49d80f7bfe4be96585fe8f1d3431cc6}{00041}}     \textcolor{keyword}{typedef} std::size\_t \mbox{\hyperlink{namespaceglm_ae49d80f7bfe4be96585fe8f1d3431cc6}{sizeType}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00042}00042     }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00043}00043 \textcolor{keyword}{namespace }detail}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00044}00044 \{}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00045}00045     \textcolor{keyword}{template}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00046}00046     <}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00047}00047         \textcolor{keyword}{typename} VALTYPE, }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00048}00048         \textcolor{keyword}{template} <\textcolor{keyword}{typename}> \textcolor{keyword}{class }TYPE}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00049}00049     >}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00050}\mbox{\hyperlink{structglm_1_1detail_1_1genType}{00050}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1genType}{genType}}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00051}00051     \{}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00052}00052     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00053}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a67fe8a1e8d43ab9e9151868ed277be94}{00053}}         \textcolor{keyword}{enum} \mbox{\hyperlink{structglm_1_1detail_1_1genType_a67fe8a1e8d43ab9e9151868ed277be94}{ctor}}\{\mbox{\hyperlink{structglm_1_1detail_1_1genType_a67fe8a1e8d43ab9e9151868ed277be94a95dbe65e3036a53702aa8c21f040d753}{null}}\};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00055}\mbox{\hyperlink{structglm_1_1detail_1_1genType_ad59e126a45bca74a36732a30cdaee520}{00055}}         \textcolor{keyword}{typedef} VALTYPE \mbox{\hyperlink{structglm_1_1detail_1_1genType_ad59e126a45bca74a36732a30cdaee520}{value\_type}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00056}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a557d18598a777df9f16fa1bd7c637ca4}{00056}}         \textcolor{keyword}{typedef} VALTYPE \& \mbox{\hyperlink{structglm_1_1detail_1_1genType_a557d18598a777df9f16fa1bd7c637ca4}{value\_reference}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00057}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a3b272e7be29ab920f2877c00646f6f9b}{00057}}         \textcolor{keyword}{typedef} VALTYPE * \mbox{\hyperlink{structglm_1_1detail_1_1genType_a3b272e7be29ab920f2877c00646f6f9b}{value\_pointer}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00058}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a34e169ae6d50e1c76574c850eae2c7fc}{00058}}         \textcolor{keyword}{typedef} VALTYPE \textcolor{keyword}{const} * \mbox{\hyperlink{structglm_1_1detail_1_1genType_a34e169ae6d50e1c76574c850eae2c7fc}{value\_const\_pointer}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00059}\mbox{\hyperlink{structglm_1_1detail_1_1genType_ac338f0b4e47d5daa9c8e5411f0d37554}{00059}}         \textcolor{keyword}{typedef} TYPE<bool> \mbox{\hyperlink{structglm_1_1detail_1_1genType_ac338f0b4e47d5daa9c8e5411f0d37554}{bool\_type}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00061}\mbox{\hyperlink{structglm_1_1detail_1_1genType_af4fa06eb65eebb96960fae19a3b439eb}{00061}}         \textcolor{keyword}{typedef} \mbox{\hyperlink{namespaceglm_ae49d80f7bfe4be96585fe8f1d3431cc6}{sizeType}} \mbox{\hyperlink{structglm_1_1detail_1_1genType_af4fa06eb65eebb96960fae19a3b439eb}{size\_type}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00062}00062         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{structglm_1_1detail_1_1genType_ae83087df55201bdc46a37decf3d1c34c}{is\_vector}}();}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00063}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a78c650375558d5e2ccfba383cdb59479}{00063}}         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{structglm_1_1detail_1_1genType_a78c650375558d5e2ccfba383cdb59479}{is\_matrix}}();}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00064}00064         }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00065}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a17dbd44c7a86d09e6ea05b72cb02bccf}{00065}}         \textcolor{keyword}{typedef} TYPE<VALTYPE> \mbox{\hyperlink{structglm_1_1detail_1_1genType_a17dbd44c7a86d09e6ea05b72cb02bccf}{type}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00066}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a0b4ddd0af4ae5665c60055e5b622808e}{00066}}         \textcolor{keyword}{typedef} TYPE<VALTYPE> * \mbox{\hyperlink{structglm_1_1detail_1_1genType_a0b4ddd0af4ae5665c60055e5b622808e}{pointer}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00067}\mbox{\hyperlink{structglm_1_1detail_1_1genType_ade82fbfd7b15096223e1b133c148b5e2}{00067}}         \textcolor{keyword}{typedef} TYPE<VALTYPE> \textcolor{keyword}{const} * \mbox{\hyperlink{structglm_1_1detail_1_1genType_ade82fbfd7b15096223e1b133c148b5e2}{const\_pointer}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00068}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a4f3f1bc18abdbdba5757fc63052157fa}{00068}}         \textcolor{keyword}{typedef} TYPE<VALTYPE> \textcolor{keyword}{const} * \textcolor{keyword}{const} \mbox{\hyperlink{structglm_1_1detail_1_1genType_a4f3f1bc18abdbdba5757fc63052157fa}{const\_pointer\_const}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00069}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a4d7745054035d7efed18ec1d7215bbf0}{00069}}         \textcolor{keyword}{typedef} TYPE<VALTYPE> * \textcolor{keyword}{const} \mbox{\hyperlink{structglm_1_1detail_1_1genType_a4d7745054035d7efed18ec1d7215bbf0}{pointer\_const}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00070}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a14792cf03ce9cfb37becd2da5d9ae06a}{00070}}         \textcolor{keyword}{typedef} TYPE<VALTYPE> \& \mbox{\hyperlink{structglm_1_1detail_1_1genType_a14792cf03ce9cfb37becd2da5d9ae06a}{reference}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00071}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a509ca374a85f8a9ea319bc5a980d5f1a}{00071}}         \textcolor{keyword}{typedef} TYPE<VALTYPE> \textcolor{keyword}{const} \& \mbox{\hyperlink{structglm_1_1detail_1_1genType_a509ca374a85f8a9ea319bc5a980d5f1a}{const\_reference}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00072}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a92c8b989f574a63d4e0f5bfc8a4f3a32}{00072}}         \textcolor{keyword}{typedef} TYPE<VALTYPE> \textcolor{keyword}{const} \& \mbox{\hyperlink{structglm_1_1detail_1_1genType_a92c8b989f574a63d4e0f5bfc8a4f3a32}{param\_type}};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00075}00075         \textcolor{comment}{// Address (Implementation details)}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00077}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a5dcc128cfa6f3fdc478d7169ec3cb71b}{00077}}         \mbox{\hyperlink{structglm_1_1detail_1_1genType_a34e169ae6d50e1c76574c850eae2c7fc}{value\_const\_pointer}} \mbox{\hyperlink{structglm_1_1detail_1_1genType_a5dcc128cfa6f3fdc478d7169ec3cb71b}{value\_address}}()\textcolor{keyword}{ const}\{\textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1detail_1_1genType_a3b272e7be29ab920f2877c00646f6f9b}{value\_pointer}}(\textcolor{keyword}{this});\}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00078}\mbox{\hyperlink{structglm_1_1detail_1_1genType_a146973ec142766743080c1895a9e3c65}{00078}}         \mbox{\hyperlink{structglm_1_1detail_1_1genType_a3b272e7be29ab920f2877c00646f6f9b}{value\_pointer}} \mbox{\hyperlink{structglm_1_1detail_1_1genType_a146973ec142766743080c1895a9e3c65}{value\_address}}()\{\textcolor{keywordflow}{return} \mbox{\hyperlink{structglm_1_1detail_1_1genType_a3b272e7be29ab920f2877c00646f6f9b}{value\_pointer}}(\textcolor{keyword}{this});\}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00080}00080     \textcolor{comment}{//protected:}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00081}00081     \textcolor{comment}{//  enum kind}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00082}00082     \textcolor{comment}{//  \{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00083}00083     \textcolor{comment}{//      GEN\_TYPE,}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00084}00084     \textcolor{comment}{//      VEC\_TYPE,}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00085}00085     \textcolor{comment}{//      MAT\_TYPE}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00086}00086     \textcolor{comment}{//  \};}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00088}00088     \textcolor{comment}{//  typedef typename TYPE::kind kind;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00089}00089     \};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00091}00091     \textcolor{keyword}{template}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00092}00092     <}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00093}00093         \textcolor{keyword}{typename} VALTYPE, }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00094}00094         \textcolor{keyword}{template} <\textcolor{keyword}{typename}> \textcolor{keyword}{class }TYPE}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00095}00095     >}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00096}\mbox{\hyperlink{structglm_1_1detail_1_1genType_ae83087df55201bdc46a37decf3d1c34c}{00096}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structglm_1_1detail_1_1genType_ae83087df55201bdc46a37decf3d1c34c}{genType<VALTYPE, TYPE>::is\_vector}}()}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00097}00097     \{}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00098}00098         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00099}00099     \}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00100}00100 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00101}00101 \textcolor{comment}{    template <typename valTypeT, unsigned int colT, unsigned int rowT, profile proT = nice>}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00102}00102 \textcolor{comment}{    class base}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00103}00103 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00104}00104 \textcolor{comment}{    public:}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00106}00106 \textcolor{comment}{        // Traits}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00107}00107 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00108}00108 \textcolor{comment}{        typedef sizeType                            size\_type;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00109}00109 \textcolor{comment}{        typedef valTypeT                            value\_type;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00110}00110 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00111}00111 \textcolor{comment}{        typedef base<value\_type, colT, rowT>        class\_type;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00112}00112 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00113}00113 \textcolor{comment}{        typedef base<bool, colT, rowT>              bool\_type;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00114}00114 \textcolor{comment}{        typedef base<value\_type, rowT, 1>           col\_type;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00115}00115 \textcolor{comment}{        typedef base<value\_type, colT, 1>           row\_type;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00116}00116 \textcolor{comment}{        typedef base<value\_type, rowT, colT>        transpose\_type;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00117}00117 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00118}00118 \textcolor{comment}{        static size\_type                            col\_size();}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00119}00119 \textcolor{comment}{        static size\_type                            row\_size();}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00120}00120 \textcolor{comment}{        static size\_type                            value\_size();}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00121}00121 \textcolor{comment}{        static bool                                 is\_scalar();}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00122}00122 \textcolor{comment}{        static bool                                 is\_vector();}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00123}00123 \textcolor{comment}{        static bool                                 is\_matrix();}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00124}00124 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00125}00125 \textcolor{comment}{    private:}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00126}00126 \textcolor{comment}{        // Data }}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00127}00127 \textcolor{comment}{        col\_type value[colT];       }}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00128}00128 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00129}00129 \textcolor{comment}{    public:}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00131}00131 \textcolor{comment}{        // Constructors}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00132}00132 \textcolor{comment}{        base();}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00133}00133 \textcolor{comment}{        base(class\_type const \& m);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00134}00134 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00135}00135 \textcolor{comment}{        explicit base(T const \& x);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00136}00136 \textcolor{comment}{        explicit base(value\_type const * const x);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00137}00137 \textcolor{comment}{        explicit base(col\_type const * const x);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00138}00138 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00140}00140 \textcolor{comment}{        // Conversions}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00141}00141 \textcolor{comment}{        template <typename vU, uint cU, uint rU, profile pU>}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00142}00142 \textcolor{comment}{        explicit base(base<vU, cU, rU, pU> const \& m);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00143}00143 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00145}00145 \textcolor{comment}{        // Accesses}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00146}00146 \textcolor{comment}{        col\_type\& operator[](size\_type i);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00147}00147 \textcolor{comment}{        col\_type const \& operator[](size\_type i) const;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00148}00148 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00150}00150 \textcolor{comment}{        // Unary updatable operators}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00151}00151 \textcolor{comment}{        class\_type\& operator=  (class\_type const \& x);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00152}00152 \textcolor{comment}{        class\_type\& operator+= (T const \& x);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00153}00153 \textcolor{comment}{        class\_type\& operator+= (class\_type const \& x);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00154}00154 \textcolor{comment}{        class\_type\& operator-\/= (T const \& x);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00155}00155 \textcolor{comment}{        class\_type\& operator-\/= (class\_type const \& x);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00156}00156 \textcolor{comment}{        class\_type\& operator*= (T const \& x);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00157}00157 \textcolor{comment}{        class\_type\& operator*= (class\_type const \& x);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00158}00158 \textcolor{comment}{        class\_type\& operator/= (T const \& x);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00159}00159 \textcolor{comment}{        class\_type\& operator/= (class\_type const \& x);}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00160}00160 \textcolor{comment}{        class\_type\& operator++ ();}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00161}00161 \textcolor{comment}{        class\_type\& operator-\/-\/ ();}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00162}00162 \textcolor{comment}{    \};}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00163}00163 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00164}00164     }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00165}00165     \textcolor{comment}{//template <typename T>}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00166}00166     \textcolor{comment}{//struct traits}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00167}00167     \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00168}00168     \textcolor{comment}{//  static const bool is\_signed = false;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00169}00169     \textcolor{comment}{//  static const bool is\_float = false;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00170}00170     \textcolor{comment}{//  static const bool is\_vector = false;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00171}00171     \textcolor{comment}{//  static const bool is\_matrix = false;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00172}00172     \textcolor{comment}{//  static const bool is\_genType = false;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00173}00173     \textcolor{comment}{//  static const bool is\_genIType = false;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00174}00174     \textcolor{comment}{//  static const bool is\_genUType = false;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00175}00175     \textcolor{comment}{//\};}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00176}00176     }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00177}00177     \textcolor{comment}{//template <>}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00178}00178     \textcolor{comment}{//struct traits<half>}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00179}00179     \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00180}00180     \textcolor{comment}{//  static const bool is\_float = true;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00181}00181     \textcolor{comment}{//  static const bool is\_genType = true;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00182}00182     \textcolor{comment}{//\};}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00183}00183     }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00184}00184     \textcolor{comment}{//template <>}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00185}00185     \textcolor{comment}{//struct traits<float>}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00186}00186     \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00187}00187     \textcolor{comment}{//  static const bool is\_float = true;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00188}00188     \textcolor{comment}{//  static const bool is\_genType = true;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00189}00189     \textcolor{comment}{//\};}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00190}00190     }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00191}00191     \textcolor{comment}{//template <>}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00192}00192     \textcolor{comment}{//struct traits<double>}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00193}00193     \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00194}00194     \textcolor{comment}{//  static const bool is\_float = true;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00195}00195     \textcolor{comment}{//  static const bool is\_genType = true;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00196}00196     \textcolor{comment}{//\};}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00197}00197     }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00198}00198     \textcolor{comment}{//template <typename genType>}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00199}00199     \textcolor{comment}{//struct desc}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00200}00200     \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00201}00201     \textcolor{comment}{//  typedef genType                         type;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00202}00202     \textcolor{comment}{//  typedef genType *                       pointer;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00203}00203     \textcolor{comment}{//  typedef genType const*                  const\_pointer;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00204}00204     \textcolor{comment}{//  typedef genType const *const            const\_pointer\_const;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00205}00205     \textcolor{comment}{//  typedef genType *const                  pointer\_const;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00206}00206     \textcolor{comment}{//  typedef genType \&                       reference;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00207}00207     \textcolor{comment}{//  typedef genType const\&                  const\_reference;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00208}00208     \textcolor{comment}{//  typedef genType const\&                  param\_type;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00209}00209     }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00210}00210     \textcolor{comment}{//  typedef typename genType::value\_type    value\_type;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00211}00211     \textcolor{comment}{//  typedef typename genType::size\_type     size\_type;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00212}00212     \textcolor{comment}{//  static const typename size\_type         value\_size;}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00213}00213     \textcolor{comment}{//\};}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00214}00214     }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00215}00215     \textcolor{comment}{//template <typename genType>}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00216}00216     \textcolor{comment}{//const typename desc<genType>::size\_type desc<genType>::value\_size = genType::value\_size();}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00217}00217     }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00218}00218 \}\textcolor{comment}{//namespace detail}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00219}00219 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00220}00220 }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00221}00221 \textcolor{comment}{//\#include "{}type\_gentype.inl"{}}}
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{type__gentype_8hpp_source_l00223}00223 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//glm\_core\_type\_gentype}}
+
+\end{DoxyCode}

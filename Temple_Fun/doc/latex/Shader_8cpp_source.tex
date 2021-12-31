@@ -1,0 +1,48 @@
+\hypertarget{Shader_8cpp_source}{}\doxysection{Shader.\+cpp}
+\label{Shader_8cpp_source}\index{glimac/src/Shader.cpp@{glimac/src/Shader.cpp}}
+\mbox{\hyperlink{Shader_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Shader_8hpp}{glimac/Shader.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00008}00008 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglimac}{glimac}} \{}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00010}\mbox{\hyperlink{classglimac_1_1Shader_a1e6c6814a6275dd698b3befdb89aa647}{00010}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classglimac_1_1Shader_a1e6c6814a6275dd698b3befdb89aa647}{Shader::compile}}() \{}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00011}00011     glCompileShader(m\_nGLId);}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00012}00012     GLint status;}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00013}00013     glGetShaderiv(m\_nGLId, GL\_COMPILE\_STATUS, \&status);}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00014}00014     \textcolor{keywordflow}{return} status == GL\_TRUE;}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00015}00015 \}}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00017}\mbox{\hyperlink{classglimac_1_1Shader_aa0de6702041087187d8eca874000cfa6}{00017}} \textcolor{keyword}{const} std::string \mbox{\hyperlink{classglimac_1_1Shader_aa0de6702041087187d8eca874000cfa6}{Shader::getInfoLog}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00018}00018     GLint \mbox{\hyperlink{group__core__func__geometric_ga03b2831439defb8922832b540b91b8a7}{length}};}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00019}00019     glGetShaderiv(m\_nGLId, GL\_INFO\_LOG\_LENGTH, \&\mbox{\hyperlink{group__core__func__geometric_ga03b2831439defb8922832b540b91b8a7}{length}});}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00020}00020     \textcolor{keywordtype}{char}* \mbox{\hyperlink{group__core__func__exponential_ga0c8da2d2921da250e8700ac4476916a1}{log}} = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[\mbox{\hyperlink{group__core__func__geometric_ga03b2831439defb8922832b540b91b8a7}{length}}];}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00021}00021     glGetShaderInfoLog(m\_nGLId, \mbox{\hyperlink{group__core__func__geometric_ga03b2831439defb8922832b540b91b8a7}{length}}, 0, \mbox{\hyperlink{group__core__func__exponential_ga0c8da2d2921da250e8700ac4476916a1}{log}});}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00022}00022     std::string logString(\mbox{\hyperlink{group__core__func__exponential_ga0c8da2d2921da250e8700ac4476916a1}{log}});}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00023}00023     \textcolor{keyword}{delete} [] \mbox{\hyperlink{group__core__func__exponential_ga0c8da2d2921da250e8700ac4476916a1}{log}};}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00024}00024     \textcolor{keywordflow}{return} logString;}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00025}00025 \}}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00027}\mbox{\hyperlink{namespaceglimac_aa154f6bbc6caafaa2b8aa5e4dc433523}{00027}} \mbox{\hyperlink{classglimac_1_1Shader}{Shader}} \mbox{\hyperlink{namespaceglimac_aa154f6bbc6caafaa2b8aa5e4dc433523}{loadShader}}(GLenum type, \textcolor{keyword}{const} \mbox{\hyperlink{classglimac_1_1FilePath}{FilePath}}\& filepath) \{}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00028}00028     std::ifstream input(filepath.\mbox{\hyperlink{classglimac_1_1FilePath_ae823251a25bf0f9a9294368ac020e5e8}{c\_str}}());}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00029}00029     \textcolor{keywordflow}{if}(!input) \{}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00030}00030         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Unable to load the file "{}} + filepath.\mbox{\hyperlink{classglimac_1_1FilePath_adaf6363c96f8247c9c4519674cf7c943}{str}}());}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00031}00031     \}}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00032}00032     }
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00033}00033     std::stringstream buffer;}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00034}00034     buffer << input.rdbuf();}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00035}00035     }
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00036}00036     \mbox{\hyperlink{classglimac_1_1Shader}{Shader}} shader(type);}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00037}00037     shader.\mbox{\hyperlink{classglimac_1_1Shader_a66701118e7f1d789a258936c82b32874}{setSource}}(buffer.str().c\_str());}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00039}00039     \textcolor{keywordflow}{return} shader;}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00040}00040 \}}
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{Shader_8cpp_source_l00042}00042 \}}
+
+\end{DoxyCode}

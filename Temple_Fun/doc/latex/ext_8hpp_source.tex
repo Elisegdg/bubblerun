@@ -1,0 +1,89 @@
+\hypertarget{ext_8hpp_source}{}\doxysection{ext.\+hpp}
+\label{ext_8hpp_source}\index{third-\/party/include/glm/ext.hpp@{third-\/party/include/glm/ext.hpp}}
+\mbox{\hyperlink{ext_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00058}00058 \textcolor{preprocessor}{\#ifndef GLM\_EXT\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00059}00059 \textcolor{preprocessor}{\#define GLM\_EXT\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00061}00061 \textcolor{preprocessor}{\#if(defined(GLM\_MESSAGES) \&\& !defined(GLM\_MESSAGE\_EXT\_INCLUDED\_DISPLAYED))}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00062}00062 \textcolor{preprocessor}{\#   define GLM\_MESSAGE\_EXT\_INCLUDED\_DISPLAYED}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00063}00063 \textcolor{preprocessor}{\#   pragma message("{}GLM: All extensions included (not recommanded)"{}})}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00064}00064 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_MESSAGES}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00066}00066 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gtc_2constants_8hpp}{./gtc/constants.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00067}00067 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gtc_2epsilon_8hpp}{./gtc/epsilon.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00068}00068 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{matrix__access_8hpp}{./gtc/matrix\_access.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00069}00069 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{matrix__integer_8hpp}{./gtc/matrix\_integer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00070}00070 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{matrix__inverse_8hpp}{./gtc/matrix\_inverse.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00071}00071 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{matrix__transform_8hpp}{./gtc/matrix\_transform.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00072}00072 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gtc_2noise_8hpp}{./gtc/noise.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00073}00073 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gtc_2packing_8hpp}{./gtc/packing.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00074}00074 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gtc_2quaternion_8hpp}{./gtc/quaternion.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00075}00075 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gtc_2random_8hpp}{./gtc/random.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00076}00076 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gtc_2reciprocal_8hpp}{./gtc/reciprocal.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00077}00077 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{type__precision_8hpp}{./gtc/type\_precision.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00078}00078 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{type__ptr_8hpp}{./gtc/type\_ptr.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00079}00079 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gtc_2ulp_8hpp}{./gtc/ulp.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00081}00081 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{associated__min__max_8hpp}{./gtx/associated\_min\_max.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00082}00082 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{bit_8hpp}{./gtx/bit.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00083}00083 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{closest__point_8hpp}{./gtx/closest\_point.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00084}00084 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{color__space_8hpp}{./gtx/color\_space.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00085}00085 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{color__space__YCoCg_8hpp}{./gtx/color\_space\_YCoCg.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00086}00086 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{compatibility_8hpp}{./gtx/compatibility.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00087}00087 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{component__wise_8hpp}{./gtx/component\_wise.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00088}00088 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{dual__quaternion_8hpp}{./gtx/dual\_quaternion.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00089}00089 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{euler__angles_8hpp}{./gtx/euler\_angles.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00090}00090 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{extend_8hpp}{./gtx/extend.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00091}00091 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{extented__min__max_8hpp}{./gtx/extented\_min\_max.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00092}00092 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{fast__exponential_8hpp}{./gtx/fast\_exponential.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00093}00093 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{fast__square__root_8hpp}{./gtx/fast\_square\_root.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00094}00094 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{fast__trigonometry_8hpp}{./gtx/fast\_trigonometry.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00095}00095 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gradient__paint_8hpp}{./gtx/gradient\_paint.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00096}00096 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{handed__coordinate__space_8hpp}{./gtx/handed\_coordinate\_space.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00097}00097 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{inertia_8hpp}{./gtx/inertia.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00098}00098 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{int__10__10__10__2_8hpp}{./gtx/int\_10\_10\_10\_2.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00099}00099 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gtx_2integer_8hpp}{./gtx/integer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00100}00100 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{intersect_8hpp}{./gtx/intersect.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00101}00101 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{log__base_8hpp}{./gtx/log\_base.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00102}00102 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{matrix__cross__product_8hpp}{./gtx/matrix\_cross\_product.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00103}00103 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{matrix__interpolation_8hpp}{./gtx/matrix\_interpolation.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00104}00104 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{matrix__major__storage_8hpp}{./gtx/matrix\_major\_storage.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00105}00105 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{matrix__operation_8hpp}{./gtx/matrix\_operation.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00106}00106 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{matrix__query_8hpp}{./gtx/matrix\_query.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00107}00107 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mixed__product_8hpp}{./gtx/mixed\_product.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00108}00108 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{multiple_8hpp}{./gtx/multiple.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00109}00109 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{norm_8hpp}{./gtx/norm.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00110}00110 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{normal_8hpp}{./gtx/normal.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00111}00111 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{normalize__dot_8hpp}{./gtx/normalize\_dot.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00112}00112 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{number__precision_8hpp}{./gtx/number\_precision.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00113}00113 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{optimum__pow_8hpp}{./gtx/optimum\_pow.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00114}00114 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{orthonormalize_8hpp}{./gtx/orthonormalize.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00115}00115 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{perpendicular_8hpp}{./gtx/perpendicular.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00116}00116 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{polar__coordinates_8hpp}{./gtx/polar\_coordinates.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00117}00117 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{projection_8hpp}{./gtx/projection.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00118}00118 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{gtx_2quaternion_8hpp}{./gtx/quaternion.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00119}00119 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{raw__data_8hpp}{./gtx/raw\_data.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00120}00120 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{rotate__vector_8hpp}{./gtx/rotate\_vector.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00121}00121 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{spline_8hpp}{./gtx/spline.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00122}00122 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{std__based__type_8hpp}{./gtx/std\_based\_type.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00123}00123 \textcolor{preprocessor}{\#if(!(GLM\_COMPILER \& GLM\_COMPILER\_CUDA))}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00124}00124 \textcolor{preprocessor}{\#   include "{}\mbox{\hyperlink{string__cast_8hpp}{./gtx/string\_cast.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00125}00125 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00126}00126 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{transform_8hpp}{./gtx/transform.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00127}00127 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{transform2_8hpp}{./gtx/transform2.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00128}00128 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{vec1_8hpp}{./gtx/vec1.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00129}00129 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{vector__angle_8hpp}{./gtx/vector\_angle.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00130}00130 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{vector__query_8hpp}{./gtx/vector\_query.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00131}00131 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{wrap_8hpp}{./gtx/wrap.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00133}00133 \textcolor{preprocessor}{\#if(GLM\_ARCH \& GLM\_ARCH\_SSE2)}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00134}00134 \textcolor{preprocessor}{\#   include "{}\mbox{\hyperlink{simd__vec4_8hpp}{./gtx/simd\_vec4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00135}00135 \textcolor{preprocessor}{\#   include "{}\mbox{\hyperlink{simd__mat4_8hpp}{./gtx/simd\_mat4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00136}00136 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{ext_8hpp_source_l00138}00138 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//GLM\_EXT\_INCLUDED}}
+
+\end{DoxyCode}

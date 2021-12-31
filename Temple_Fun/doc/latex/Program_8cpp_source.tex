@@ -1,0 +1,80 @@
+\hypertarget{Program_8cpp_source}{}\doxysection{Program.\+cpp}
+\label{Program_8cpp_source}\index{glimac/src/Program.cpp@{glimac/src/Program.cpp}}
+\mbox{\hyperlink{Program_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{glimac_2include_2glimac_2Program_8hpp}{glimac/Program.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00004}00004 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglimac}{glimac}} \{}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00006}\mbox{\hyperlink{classglimac_1_1Program_a2f32f4f66ff9742750418f6fda054931}{00006}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classglimac_1_1Program_a2f32f4f66ff9742750418f6fda054931}{Program::link}}() \{}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00007}00007     glLinkProgram(m\_nGLId);}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00008}00008     GLint status;}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00009}00009     glGetProgramiv(m\_nGLId, GL\_LINK\_STATUS, \&status);}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00010}00010     \textcolor{keywordflow}{return} status == GL\_TRUE;}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00011}00011 \}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00013}\mbox{\hyperlink{classglimac_1_1Program_aaf1769457ca41bca4afad7ecf90e9c3f}{00013}} \textcolor{keyword}{const} std::string \mbox{\hyperlink{classglimac_1_1Program_aaf1769457ca41bca4afad7ecf90e9c3f}{Program::getInfoLog}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00014}00014     GLint \mbox{\hyperlink{group__core__func__geometric_ga03b2831439defb8922832b540b91b8a7}{length}};}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00015}00015     glGetProgramiv(m\_nGLId, GL\_INFO\_LOG\_LENGTH, \&\mbox{\hyperlink{group__core__func__geometric_ga03b2831439defb8922832b540b91b8a7}{length}});}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00016}00016     \textcolor{keywordtype}{char}* \mbox{\hyperlink{group__core__func__exponential_ga0c8da2d2921da250e8700ac4476916a1}{log}} = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[\mbox{\hyperlink{group__core__func__geometric_ga03b2831439defb8922832b540b91b8a7}{length}}];}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00017}00017     glGetProgramInfoLog(m\_nGLId, \mbox{\hyperlink{group__core__func__geometric_ga03b2831439defb8922832b540b91b8a7}{length}}, 0, \mbox{\hyperlink{group__core__func__exponential_ga0c8da2d2921da250e8700ac4476916a1}{log}});}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00018}00018     std::string logString(\mbox{\hyperlink{group__core__func__exponential_ga0c8da2d2921da250e8700ac4476916a1}{log}});}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00019}00019     \textcolor{keyword}{delete} [] \mbox{\hyperlink{group__core__func__exponential_ga0c8da2d2921da250e8700ac4476916a1}{log}};}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00020}00020     \textcolor{keywordflow}{return} logString;}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00021}00021 \}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00023}00023 \textcolor{comment}{// Build a GLSL program from source code}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00024}\mbox{\hyperlink{namespaceglimac_a3d534d78277f9bab3c4fa83f263f3633}{00024}} \mbox{\hyperlink{classglimac_1_1Program}{Program}} \mbox{\hyperlink{namespaceglimac_a3d534d78277f9bab3c4fa83f263f3633}{buildProgram}}(\textcolor{keyword}{const} GLchar* vsSrc, \textcolor{keyword}{const} GLchar* fsSrc) \{}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00025}00025     \mbox{\hyperlink{classglimac_1_1Shader}{Shader}} vs(GL\_VERTEX\_SHADER);}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00026}00026     vs.\mbox{\hyperlink{classglimac_1_1Shader_a66701118e7f1d789a258936c82b32874}{setSource}}(vsSrc);}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00028}00028     \textcolor{keywordflow}{if}(!vs.\mbox{\hyperlink{classglimac_1_1Shader_a1e6c6814a6275dd698b3befdb89aa647}{compile}}()) \{}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00029}00029         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Compilation error for vertex shader: "{}} + vs.\mbox{\hyperlink{classglimac_1_1Shader_aa0de6702041087187d8eca874000cfa6}{getInfoLog}}());}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00030}00030     \}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00032}00032     \mbox{\hyperlink{classglimac_1_1Shader}{Shader}} fs(GL\_FRAGMENT\_SHADER);}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00033}00033     fs.\mbox{\hyperlink{classglimac_1_1Shader_a66701118e7f1d789a258936c82b32874}{setSource}}(fsSrc);}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00035}00035     \textcolor{keywordflow}{if}(!fs.\mbox{\hyperlink{classglimac_1_1Shader_a1e6c6814a6275dd698b3befdb89aa647}{compile}}()) \{}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00036}00036         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Compilation error for fragment shader: "{}} + fs.\mbox{\hyperlink{classglimac_1_1Shader_aa0de6702041087187d8eca874000cfa6}{getInfoLog}}());}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00039}00039     \mbox{\hyperlink{classglimac_1_1Program}{Program}} program;}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00040}00040     program.\mbox{\hyperlink{classglimac_1_1Program_a5aac165d28cd6f704c01a3e0eee2119d}{attachShader}}(vs);}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00041}00041     program.\mbox{\hyperlink{classglimac_1_1Program_a5aac165d28cd6f704c01a3e0eee2119d}{attachShader}}(fs);}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00043}00043     \textcolor{keywordflow}{if}(!program.\mbox{\hyperlink{classglimac_1_1Program_a2f32f4f66ff9742750418f6fda054931}{link}}()) \{}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00044}00044         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Link error: "{}} + program.\mbox{\hyperlink{classglimac_1_1Program_aaf1769457ca41bca4afad7ecf90e9c3f}{getInfoLog}}());}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00047}00047     \textcolor{keywordflow}{return} program;}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00048}00048 \}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00050}00050 \textcolor{comment}{// Load source code from files and build a GLSL program}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00051}\mbox{\hyperlink{namespaceglimac_a9c42759cac55f7ef947d2972b19e18a6}{00051}} \mbox{\hyperlink{classglimac_1_1Program}{Program}} \mbox{\hyperlink{namespaceglimac_a9c42759cac55f7ef947d2972b19e18a6}{loadProgram}}(\textcolor{keyword}{const} \mbox{\hyperlink{classglimac_1_1FilePath}{FilePath}}\& vsFile, \textcolor{keyword}{const} \mbox{\hyperlink{classglimac_1_1FilePath}{FilePath}}\& fsFile) \{}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00052}00052     \mbox{\hyperlink{classglimac_1_1Shader}{Shader}} vs = \mbox{\hyperlink{namespaceglimac_aa154f6bbc6caafaa2b8aa5e4dc433523}{loadShader}}(GL\_VERTEX\_SHADER, vsFile);}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00053}00053     \mbox{\hyperlink{classglimac_1_1Shader}{Shader}} fs = \mbox{\hyperlink{namespaceglimac_aa154f6bbc6caafaa2b8aa5e4dc433523}{loadShader}}(GL\_FRAGMENT\_SHADER, fsFile);}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00055}00055     \textcolor{keywordflow}{if}(!vs.\mbox{\hyperlink{classglimac_1_1Shader_a1e6c6814a6275dd698b3befdb89aa647}{compile}}()) \{}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00056}00056         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Compilation error for vertex shader (from file "{}} + std::string(vsFile) + \textcolor{stringliteral}{"{}): "{}} + vs.\mbox{\hyperlink{classglimac_1_1Shader_aa0de6702041087187d8eca874000cfa6}{getInfoLog}}());}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00057}00057     \}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00059}00059     \textcolor{keywordflow}{if}(!fs.\mbox{\hyperlink{classglimac_1_1Shader_a1e6c6814a6275dd698b3befdb89aa647}{compile}}()) \{}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00060}00060         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Compilation error for fragment shader (from file "{}} + std::string(fsFile) + \textcolor{stringliteral}{"{}): "{}} + fs.\mbox{\hyperlink{classglimac_1_1Shader_aa0de6702041087187d8eca874000cfa6}{getInfoLog}}());}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00061}00061     \}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00063}00063     \mbox{\hyperlink{classglimac_1_1Program}{Program}} program;}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00064}00064     program.\mbox{\hyperlink{classglimac_1_1Program_a5aac165d28cd6f704c01a3e0eee2119d}{attachShader}}(vs);}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00065}00065     program.\mbox{\hyperlink{classglimac_1_1Program_a5aac165d28cd6f704c01a3e0eee2119d}{attachShader}}(fs);}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00067}00067     \textcolor{keywordflow}{if}(!program.\mbox{\hyperlink{classglimac_1_1Program_a2f32f4f66ff9742750418f6fda054931}{link}}()) \{}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00068}00068         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Link error (for files "{}} + vsFile.\mbox{\hyperlink{classglimac_1_1FilePath_adaf6363c96f8247c9c4519674cf7c943}{str}}() + \textcolor{stringliteral}{"{} and "{}} + fsFile.\mbox{\hyperlink{classglimac_1_1FilePath_adaf6363c96f8247c9c4519674cf7c943}{str}}() + \textcolor{stringliteral}{"{}): "{}} + program.\mbox{\hyperlink{classglimac_1_1Program_aaf1769457ca41bca4afad7ecf90e9c3f}{getInfoLog}}());}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00069}00069     \}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00071}00071     \textcolor{keywordflow}{return} program;}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00072}00072 \}}
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{Program_8cpp_source_l00074}00074 \}}
+
+\end{DoxyCode}

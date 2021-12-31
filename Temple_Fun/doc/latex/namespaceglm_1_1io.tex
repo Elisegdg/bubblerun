@@ -1,0 +1,177 @@
+\hypertarget{namespaceglm_1_1io}{}\doxysection{glm\+::io Namespace Reference}
+\label{namespaceglm_1_1io}\index{glm::io@{glm::io}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classglm_1_1io_1_1basic__format__saver}{basic\+\_\+format\+\_\+saver}}
+\item 
+class \mbox{\hyperlink{classglm_1_1io_1_1basic__state__saver}{basic\+\_\+state\+\_\+saver}}
+\item 
+struct \mbox{\hyperlink{structglm_1_1io_1_1delimeter}{delimeter}}
+\item 
+class \mbox{\hyperlink{classglm_1_1io_1_1format__punct}{format\+\_\+punct}}
+\item 
+struct \mbox{\hyperlink{structglm_1_1io_1_1order}{order}}
+\item 
+struct \mbox{\hyperlink{structglm_1_1io_1_1precision}{precision}}
+\item 
+struct \mbox{\hyperlink{structglm_1_1io_1_1width}{width}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classglm_1_1io_1_1basic__state__saver}{basic\+\_\+state\+\_\+saver}}$<$ char $>$ \mbox{\hyperlink{namespaceglm_1_1io_a84d63ac771c3125d38f144dc15234764}{state\+\_\+saver}}
+\item 
+typedef \mbox{\hyperlink{classglm_1_1io_1_1basic__state__saver}{basic\+\_\+state\+\_\+saver}}$<$ wchar\+\_\+t $>$ \mbox{\hyperlink{namespaceglm_1_1io_a7a46501fc459c05fa3dc0f2bcbf3e92f}{wstate\+\_\+saver}}
+\item 
+typedef \mbox{\hyperlink{classglm_1_1io_1_1basic__format__saver}{basic\+\_\+format\+\_\+saver}}$<$ char $>$ \mbox{\hyperlink{namespaceglm_1_1io_afdc168a994ef9e9ca4295578e9097495}{format\+\_\+saver}}
+\item 
+typedef \mbox{\hyperlink{classglm_1_1io_1_1basic__format__saver}{basic\+\_\+format\+\_\+saver}}$<$ wchar\+\_\+t $>$ \mbox{\hyperlink{namespaceglm_1_1io_a6229ca888648a0ff823eb120f61de481}{wformat\+\_\+saver}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceglm_1_1io_a3497781803fe594a37177e05ab2a795f}{order\+\_\+type}} \{ \mbox{\hyperlink{namespaceglm_1_1io_a3497781803fe594a37177e05ab2a795faab661780f7f081ee11c34be9b0742229}{column\+\_\+major}}
+, \mbox{\hyperlink{namespaceglm_1_1io_a3497781803fe594a37177e05ab2a795fad080bb2f932ea4078fd0fc10ea1c991c}{row\+\_\+major}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename FTy , typename CTy , typename CTr $>$ }\\FTy const \& \mbox{\hyperlink{namespaceglm_1_1io_a7c6f4eda7e7d16cdf24a2ba4809b107c}{get\+\_\+facet}} (std\+::basic\+\_\+ios$<$ CTy, CTr $>$ \&)
+\item 
+{\footnotesize template$<$typename FTy , typename CTy , typename CTr $>$ }\\std\+::basic\+\_\+ios$<$ CTy, CTr $>$ \& \mbox{\hyperlink{namespaceglm_1_1io_a05207ede58f2b3657b594dfa593ad4f3}{formatted}} (std\+::basic\+\_\+ios$<$ CTy, CTr $>$ \&)
+\item 
+{\footnotesize template$<$typename FTy , typename CTy , typename CTr $>$ }\\std\+::basic\+\_\+ios$<$ CTy, CTr $>$ \& \mbox{\hyperlink{namespaceglm_1_1io_af16ee47fdbf1297424875b0eb4589fb5}{unformattet}} (std\+::basic\+\_\+ios$<$ CTy, CTr $>$ \&)
+\item 
+{\footnotesize template$<$typename CTy , typename CTr $>$ }\\std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \& \mbox{\hyperlink{namespaceglm_1_1io_ad49d9a893511841d7927c9c4c8c2c715}{operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \&, \mbox{\hyperlink{structglm_1_1io_1_1precision}{precision}} const \&)
+\item 
+{\footnotesize template$<$typename CTy , typename CTr $>$ }\\std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \& \mbox{\hyperlink{namespaceglm_1_1io_a7413b9cd8dbc9f8cddf3cd8f08487a0e}{operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \&, \mbox{\hyperlink{structglm_1_1io_1_1width}{width}} const \&)
+\item 
+{\footnotesize template$<$typename CTy , typename CTr $>$ }\\std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \& \mbox{\hyperlink{namespaceglm_1_1io_a721b0bde3ed5f7d7b11a1d90d22a8ad3}{operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \&, \mbox{\hyperlink{structglm_1_1io_1_1delimeter}{delimeter}}$<$ CTy $>$ const \&)
+\item 
+{\footnotesize template$<$typename CTy , typename CTr $>$ }\\std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \& \mbox{\hyperlink{namespaceglm_1_1io_a7dd17b4f4831408c810fdcd1eda0d9f6}{operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \&, \mbox{\hyperlink{structglm_1_1io_1_1order}{order}} const \&)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceglm_1_1io_afdc168a994ef9e9ca4295578e9097495}\label{namespaceglm_1_1io_afdc168a994ef9e9ca4295578e9097495}} 
+\index{glm::io@{glm::io}!format\_saver@{format\_saver}}
+\index{format\_saver@{format\_saver}!glm::io@{glm::io}}
+\doxysubsubsection{\texorpdfstring{format\_saver}{format\_saver}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classglm_1_1io_1_1basic__format__saver}{basic\+\_\+format\+\_\+saver}}$<$char$>$ \mbox{\hyperlink{namespaceglm_1_1io_afdc168a994ef9e9ca4295578e9097495}{glm\+::io\+::format\+\_\+saver}}}
+
+
+
+Definition at line \mbox{\hyperlink{io_8hpp_source_l00134}{134}} of file \mbox{\hyperlink{io_8hpp_source}{io.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceglm_1_1io_a84d63ac771c3125d38f144dc15234764}\label{namespaceglm_1_1io_a84d63ac771c3125d38f144dc15234764}} 
+\index{glm::io@{glm::io}!state\_saver@{state\_saver}}
+\index{state\_saver@{state\_saver}!glm::io@{glm::io}}
+\doxysubsubsection{\texorpdfstring{state\_saver}{state\_saver}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classglm_1_1io_1_1basic__state__saver}{basic\+\_\+state\+\_\+saver}}$<$char$>$ \mbox{\hyperlink{namespaceglm_1_1io_a84d63ac771c3125d38f144dc15234764}{glm\+::io\+::state\+\_\+saver}}}
+
+
+
+Definition at line \mbox{\hyperlink{io_8hpp_source_l00116}{116}} of file \mbox{\hyperlink{io_8hpp_source}{io.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceglm_1_1io_a6229ca888648a0ff823eb120f61de481}\label{namespaceglm_1_1io_a6229ca888648a0ff823eb120f61de481}} 
+\index{glm::io@{glm::io}!wformat\_saver@{wformat\_saver}}
+\index{wformat\_saver@{wformat\_saver}!glm::io@{glm::io}}
+\doxysubsubsection{\texorpdfstring{wformat\_saver}{wformat\_saver}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classglm_1_1io_1_1basic__format__saver}{basic\+\_\+format\+\_\+saver}}$<$wchar\+\_\+t$>$ \mbox{\hyperlink{namespaceglm_1_1io_a6229ca888648a0ff823eb120f61de481}{glm\+::io\+::wformat\+\_\+saver}}}
+
+
+
+Definition at line \mbox{\hyperlink{io_8hpp_source_l00135}{135}} of file \mbox{\hyperlink{io_8hpp_source}{io.\+hpp}}.
+
+\mbox{\Hypertarget{namespaceglm_1_1io_a7a46501fc459c05fa3dc0f2bcbf3e92f}\label{namespaceglm_1_1io_a7a46501fc459c05fa3dc0f2bcbf3e92f}} 
+\index{glm::io@{glm::io}!wstate\_saver@{wstate\_saver}}
+\index{wstate\_saver@{wstate\_saver}!glm::io@{glm::io}}
+\doxysubsubsection{\texorpdfstring{wstate\_saver}{wstate\_saver}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classglm_1_1io_1_1basic__state__saver}{basic\+\_\+state\+\_\+saver}}$<$wchar\+\_\+t$>$ \mbox{\hyperlink{namespaceglm_1_1io_a7a46501fc459c05fa3dc0f2bcbf3e92f}{glm\+::io\+::wstate\+\_\+saver}}}
+
+
+
+Definition at line \mbox{\hyperlink{io_8hpp_source_l00117}{117}} of file \mbox{\hyperlink{io_8hpp_source}{io.\+hpp}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespaceglm_1_1io_a3497781803fe594a37177e05ab2a795f}\label{namespaceglm_1_1io_a3497781803fe594a37177e05ab2a795f}} 
+\index{glm::io@{glm::io}!order\_type@{order\_type}}
+\index{order\_type@{order\_type}!glm::io@{glm::io}}
+\doxysubsubsection{\texorpdfstring{order\_type}{order\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceglm_1_1io_a3497781803fe594a37177e05ab2a795f}{glm\+::io\+::order\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{column\_major@{column\_major}!glm::io@{glm::io}}\index{glm::io@{glm::io}!column\_major@{column\_major}}}\mbox{\Hypertarget{namespaceglm_1_1io_a3497781803fe594a37177e05ab2a795faab661780f7f081ee11c34be9b0742229}\label{namespaceglm_1_1io_a3497781803fe594a37177e05ab2a795faab661780f7f081ee11c34be9b0742229}} 
+column\+\_\+major&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{row\_major@{row\_major}!glm::io@{glm::io}}\index{glm::io@{glm::io}!row\_major@{row\_major}}}\mbox{\Hypertarget{namespaceglm_1_1io_a3497781803fe594a37177e05ab2a795fad080bb2f932ea4078fd0fc10ea1c991c}\label{namespaceglm_1_1io_a3497781803fe594a37177e05ab2a795fad080bb2f932ea4078fd0fc10ea1c991c}} 
+row\+\_\+major&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{io_8hpp_source_l00065}{65}} of file \mbox{\hyperlink{io_8hpp_source}{io.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065 \{ \mbox{\hyperlink{namespaceglm_1_1io_a3497781803fe594a37177e05ab2a795faab661780f7f081ee11c34be9b0742229}{column\_major}}, \mbox{\hyperlink{namespaceglm_1_1io_a3497781803fe594a37177e05ab2a795fad080bb2f932ea4078fd0fc10ea1c991c}{row\_major}}\};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceglm_1_1io_a05207ede58f2b3657b594dfa593ad4f3}\label{namespaceglm_1_1io_a05207ede58f2b3657b594dfa593ad4f3}} 
+\index{glm::io@{glm::io}!formatted@{formatted}}
+\index{formatted@{formatted}!glm::io@{glm::io}}
+\doxysubsubsection{\texorpdfstring{formatted()}{formatted()}}
+{\footnotesize\ttfamily template$<$typename FTy , typename CTy , typename CTr $>$ \\
+std\+::basic\+\_\+ios$<$ CTy, CTr $>$ \& glm\+::io\+::formatted (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ios$<$ CTy, CTr $>$ \&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceglm_1_1io_a7c6f4eda7e7d16cdf24a2ba4809b107c}\label{namespaceglm_1_1io_a7c6f4eda7e7d16cdf24a2ba4809b107c}} 
+\index{glm::io@{glm::io}!get\_facet@{get\_facet}}
+\index{get\_facet@{get\_facet}!glm::io@{glm::io}}
+\doxysubsubsection{\texorpdfstring{get\_facet()}{get\_facet()}}
+{\footnotesize\ttfamily template$<$typename FTy , typename CTy , typename CTr $>$ \\
+FTy const  \& glm\+::io\+::get\+\_\+facet (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ios$<$ CTy, CTr $>$ \&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceglm_1_1io_a721b0bde3ed5f7d7b11a1d90d22a8ad3}\label{namespaceglm_1_1io_a721b0bde3ed5f7d7b11a1d90d22a8ad3}} 
+\index{glm::io@{glm::io}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!glm::io@{glm::io}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename CTy , typename CTr $>$ \\
+std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \& glm\+::io\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \&}]{,  }\item[{\mbox{\hyperlink{structglm_1_1io_1_1delimeter}{delimeter}}$<$ CTy $>$ const \&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceglm_1_1io_a7dd17b4f4831408c810fdcd1eda0d9f6}\label{namespaceglm_1_1io_a7dd17b4f4831408c810fdcd1eda0d9f6}} 
+\index{glm::io@{glm::io}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!glm::io@{glm::io}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename CTy , typename CTr $>$ \\
+std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \& glm\+::io\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \&}]{,  }\item[{\mbox{\hyperlink{structglm_1_1io_1_1order}{order}} const \&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceglm_1_1io_ad49d9a893511841d7927c9c4c8c2c715}\label{namespaceglm_1_1io_ad49d9a893511841d7927c9c4c8c2c715}} 
+\index{glm::io@{glm::io}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!glm::io@{glm::io}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename CTy , typename CTr $>$ \\
+std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \& glm\+::io\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \&}]{,  }\item[{\mbox{\hyperlink{structglm_1_1io_1_1precision}{precision}} const \&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceglm_1_1io_a7413b9cd8dbc9f8cddf3cd8f08487a0e}\label{namespaceglm_1_1io_a7413b9cd8dbc9f8cddf3cd8f08487a0e}} 
+\index{glm::io@{glm::io}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!glm::io@{glm::io}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename CTy , typename CTr $>$ \\
+std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \& glm\+::io\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CTy, CTr $>$ \&}]{,  }\item[{\mbox{\hyperlink{structglm_1_1io_1_1width}{width}} const \&}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceglm_1_1io_af16ee47fdbf1297424875b0eb4589fb5}\label{namespaceglm_1_1io_af16ee47fdbf1297424875b0eb4589fb5}} 
+\index{glm::io@{glm::io}!unformattet@{unformattet}}
+\index{unformattet@{unformattet}!glm::io@{glm::io}}
+\doxysubsubsection{\texorpdfstring{unformattet()}{unformattet()}}
+{\footnotesize\ttfamily template$<$typename FTy , typename CTy , typename CTr $>$ \\
+std\+::basic\+\_\+ios$<$ CTy, CTr $>$ \& glm\+::io\+::unformattet (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ios$<$ CTy, CTr $>$ \&}]{ }\end{DoxyParamCaption})}
+

@@ -1,0 +1,58 @@
+\hypertarget{intersect_8hpp}{}\doxysection{third-\/party/include/glm/gtx/intersect.hpp File Reference}
+\label{intersect_8hpp}\index{third-\/party/include/glm/gtx/intersect.hpp@{third-\/party/include/glm/gtx/intersect.hpp}}
+
+
+Open\+GL Mathematics (glm.\+g-\/truc.\+net)  
+
+
+{\ttfamily \#include \char`\"{}../glm.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../gtx/closest\+\_\+point.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}intersect.\+inl\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceglm}{glm}}
+\begin{DoxyCompactList}\small\item\em Open\+GL Mathematics (glm.\+g-\/truc.\+net) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename gen\+Type $>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} bool \mbox{\hyperlink{group__gtx__intersect_gad3697a9700ea379739a667ea02573488}{glm\+::intersect\+Ray\+Plane}} (gen\+Type const \&orig, gen\+Type const \&dir, gen\+Type const \&plane\+Orig, gen\+Type const \&plane\+Normal, typename gen\+Type\+::value\+\_\+type \&intersection\+Distance)
+\begin{DoxyCompactList}\small\item\em Compute the intersection of a ray and a triangle. Ray direction and plane normal must be unit length. From GLM\+\_\+\+GTX\+\_\+intersect extension. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename gen\+Type $>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} bool \mbox{\hyperlink{group__gtx__intersect_gab16c1b47c10451e7604b51b39a7ef21d}{glm\+::intersect\+Ray\+Triangle}} (gen\+Type const \&orig, gen\+Type const \&dir, gen\+Type const \&vert0, gen\+Type const \&vert1, gen\+Type const \&vert2, gen\+Type \&bary\+Position)
+\begin{DoxyCompactList}\small\item\em Compute the intersection of a ray and a triangle. From GLM\+\_\+\+GTX\+\_\+intersect extension. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename gen\+Type $>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} bool \mbox{\hyperlink{group__gtx__intersect_ga9d29b9b3acb504d43986502f42740df4}{glm\+::intersect\+Line\+Triangle}} (gen\+Type const \&orig, gen\+Type const \&dir, gen\+Type const \&vert0, gen\+Type const \&vert1, gen\+Type const \&vert2, gen\+Type \&position)
+\begin{DoxyCompactList}\small\item\em Compute the intersection of a line and a triangle. From GLM\+\_\+\+GTX\+\_\+intersect extension. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename gen\+Type $>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} bool \mbox{\hyperlink{group__gtx__intersect_gac88f8cd84c4bcb5b947d56acbbcfa56e}{glm\+::intersect\+Ray\+Sphere}} (gen\+Type const \&ray\+Starting, gen\+Type const \&ray\+Normalized\+Direction, gen\+Type const \&sphere\+Center, typename gen\+Type\+::value\+\_\+type const sphere\+Radius\+Squered, typename gen\+Type\+::value\+\_\+type \&intersection\+Distance)
+\begin{DoxyCompactList}\small\item\em Compute the intersection distance of a ray and a sphere. The ray direction vector is unit length. From GLM\+\_\+\+GTX\+\_\+intersect extension. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename gen\+Type $>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} bool \mbox{\hyperlink{group__gtx__intersect_gad28c00515b823b579c608aafa1100c1d}{glm\+::intersect\+Ray\+Sphere}} (gen\+Type const \&ray\+Starting, gen\+Type const \&ray\+Normalized\+Direction, gen\+Type const \&sphere\+Center, const typename gen\+Type\+::value\+\_\+type sphere\+Radius, gen\+Type \&intersection\+Position, gen\+Type \&intersection\+Normal)
+\begin{DoxyCompactList}\small\item\em Compute the intersection of a ray and a sphere. From GLM\+\_\+\+GTX\+\_\+intersect extension. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename gen\+Type $>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} bool \mbox{\hyperlink{group__gtx__intersect_ga9c68139f3d8a4f3d7fe45f9dbc0de5b7}{glm\+::intersect\+Line\+Sphere}} (gen\+Type const \&point0, gen\+Type const \&point1, gen\+Type const \&sphere\+Center, typename gen\+Type\+::value\+\_\+type sphere\+Radius, gen\+Type \&intersection\+Position1, gen\+Type \&intersection\+Normal1, gen\+Type \&intersection\+Position2=gen\+Type(), gen\+Type \&intersection\+Normal2=gen\+Type())
+\begin{DoxyCompactList}\small\item\em Compute the intersection of a line and a sphere. From GLM\+\_\+\+GTX\+\_\+intersect extension. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Open\+GL Mathematics (glm.\+g-\/truc.\+net) 
+
+Copyright (c) 2005 -\/ 2014 G-\/\+Truc Creation (www.\+g-\/truc.\+net) Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+\mbox{\hyperlink{group__gtx__intersect}{GLM\+\_\+\+GTX\+\_\+intersect}}
+
+\begin{DoxyDate}{Date}
+2007-\/04-\/03 / 2011-\/06-\/07 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Christophe Riccio
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__core}{GLM Core}} (dependence) 
+
+\mbox{\hyperlink{group__gtx__closest__point}{GLM\+\_\+\+GTX\+\_\+closest\+\_\+point}} (dependence) 
+\end{DoxySeeAlso}
+
+
+Definition in file \mbox{\hyperlink{intersect_8hpp_source}{intersect.\+hpp}}.
+

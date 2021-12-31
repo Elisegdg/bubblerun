@@ -1,0 +1,188 @@
+\hypertarget{classnlohmann_1_1detail_1_1binary__reader}{}\doxysection{nlohmann\+::detail\+::binary\+\_\+reader\texorpdfstring{$<$}{<} Basic\+Json\+Type, Input\+Adapter\+Type, SAX \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classnlohmann_1_1detail_1_1binary__reader}\index{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}}
+
+
+deserialization of CBOR, Message\+Pack, and UBJSON values  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader_a2aee4c3507eca623f7cec32544fdc5b2}{binary\+\_\+reader}} (Input\+Adapter\+Type \&\&adapter) noexcept
+\begin{DoxyCompactList}\small\item\em create a binary reader \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader_ab29d56b1e980a7b9a3383cf1ce862d1b}{binary\+\_\+reader}} (const \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{binary\+\_\+reader}} \&)=delete
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader_acca2c4076df85f27dc1c904475e05c26}{binary\+\_\+reader}} (\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{binary\+\_\+reader}} \&\&)=default
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{binary\+\_\+reader}} \& \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader_a13fd2840d1b037f2fd0958a603f076f0}{operator=}} (const \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{binary\+\_\+reader}} \&)=delete
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{binary\+\_\+reader}} \& \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader_a7a18eca2aae5c5de1d706985803e0015}{operator=}} (\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{binary\+\_\+reader}} \&\&)=default
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader_a359031cba136452d9030ed9ab4517b74}{$\sim$binary\+\_\+reader}} ()=default
+\item 
+bool \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader_ab4afd9ee276bbb15a0f898061aad94dd}{sax\+\_\+parse}} (const \mbox{\hyperlink{namespacenlohmann_1_1detail_aa554fc6a11519e4f347deb25a9f0db40}{input\+\_\+format\+\_\+t}} format, json\+\_\+sax\+\_\+t $\ast$sax\+\_\+, const bool strict=true, const \mbox{\hyperlink{namespacenlohmann_1_1detail_a58bb1ef1a9ad287a9cfaf1855784d9ac}{cbor\+\_\+tag\+\_\+handler\+\_\+t}} tag\+\_\+handler=\mbox{\hyperlink{namespacenlohmann_1_1detail_a58bb1ef1a9ad287a9cfaf1855784d9acacb5e100e5a9a3e7f6d1fd97512215282}{cbor\+\_\+tag\+\_\+handler\+\_\+t\+::error}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Basic\+Json\+Type, typename Input\+Adapter\+Type, typename SAX = json\+\_\+sax\+\_\+dom\+\_\+parser$<$\+Basic\+Json\+Type$>$$>$\newline
+class nlohmann\+::detail\+::binary\+\_\+reader$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$}
+deserialization of CBOR, Message\+Pack, and UBJSON values 
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l08447}{8447}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__reader_a2aee4c3507eca623f7cec32544fdc5b2}\label{classnlohmann_1_1detail_1_1binary__reader_a2aee4c3507eca623f7cec32544fdc5b2}} 
+\index{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}!binary\_reader@{binary\_reader}}
+\index{binary\_reader@{binary\_reader}!nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}}
+\doxysubsubsection{\texorpdfstring{binary\_reader()}{binary\_reader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type , typename SAX  = json\+\_\+sax\+\_\+dom\+\_\+parser$<$\+Basic\+Json\+Type$>$$>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{nlohmann\+::detail\+::binary\+\_\+reader}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$\+::binary\+\_\+reader (\begin{DoxyParamCaption}\item[{Input\+Adapter\+Type \&\&}]{adapter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+
+
+
+create a binary reader 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em adapter} & input adapter to read from \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l08464}{8464}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{08464                                                                 : ia(std::move(adapter))}
+\DoxyCodeLine{08465     \{}
+\DoxyCodeLine{08466         (void)detail::is\_sax\_static\_asserts<SAX, BasicJsonType> \{\};}
+\DoxyCodeLine{08467     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__reader_ab29d56b1e980a7b9a3383cf1ce862d1b}\label{classnlohmann_1_1detail_1_1binary__reader_ab29d56b1e980a7b9a3383cf1ce862d1b}} 
+\index{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}!binary\_reader@{binary\_reader}}
+\index{binary\_reader@{binary\_reader}!nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}}
+\doxysubsubsection{\texorpdfstring{binary\_reader()}{binary\_reader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type , typename SAX  = json\+\_\+sax\+\_\+dom\+\_\+parser$<$\+Basic\+Json\+Type$>$$>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{nlohmann\+::detail\+::binary\+\_\+reader}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$\+::binary\+\_\+reader (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{binary\+\_\+reader}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__reader_acca2c4076df85f27dc1c904475e05c26}\label{classnlohmann_1_1detail_1_1binary__reader_acca2c4076df85f27dc1c904475e05c26}} 
+\index{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}!binary\_reader@{binary\_reader}}
+\index{binary\_reader@{binary\_reader}!nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}}
+\doxysubsubsection{\texorpdfstring{binary\_reader()}{binary\_reader()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type , typename SAX  = json\+\_\+sax\+\_\+dom\+\_\+parser$<$\+Basic\+Json\+Type$>$$>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{nlohmann\+::detail\+::binary\+\_\+reader}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$\+::binary\+\_\+reader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{binary\+\_\+reader}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__reader_a359031cba136452d9030ed9ab4517b74}\label{classnlohmann_1_1detail_1_1binary__reader_a359031cba136452d9030ed9ab4517b74}} 
+\index{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}!````~binary\_reader@{$\sim$binary\_reader}}
+\index{````~binary\_reader@{$\sim$binary\_reader}!nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$binary\_reader()}{~binary\_reader()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type , typename SAX  = json\+\_\+sax\+\_\+dom\+\_\+parser$<$\+Basic\+Json\+Type$>$$>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{nlohmann\+::detail\+::binary\+\_\+reader}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$\+::$\sim$\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{binary\+\_\+reader}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__reader_a7a18eca2aae5c5de1d706985803e0015}\label{classnlohmann_1_1detail_1_1binary__reader_a7a18eca2aae5c5de1d706985803e0015}} 
+\index{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type , typename SAX  = json\+\_\+sax\+\_\+dom\+\_\+parser$<$\+Basic\+Json\+Type$>$$>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{binary\+\_\+reader}} \& \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{nlohmann\+::detail\+::binary\+\_\+reader}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{binary\+\_\+reader}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$ \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__reader_a13fd2840d1b037f2fd0958a603f076f0}\label{classnlohmann_1_1detail_1_1binary__reader_a13fd2840d1b037f2fd0958a603f076f0}} 
+\index{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type , typename SAX  = json\+\_\+sax\+\_\+dom\+\_\+parser$<$\+Basic\+Json\+Type$>$$>$ \\
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{binary\+\_\+reader}} \& \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{nlohmann\+::detail\+::binary\+\_\+reader}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{binary\+\_\+reader}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1binary__reader_ab4afd9ee276bbb15a0f898061aad94dd}\label{classnlohmann_1_1detail_1_1binary__reader_ab4afd9ee276bbb15a0f898061aad94dd}} 
+\index{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}!sax\_parse@{sax\_parse}}
+\index{sax\_parse@{sax\_parse}!nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$@{nlohmann::detail::binary\_reader$<$ BasicJsonType, InputAdapterType, SAX $>$}}
+\doxysubsubsection{\texorpdfstring{sax\_parse()}{sax\_parse()}}
+{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type , typename Input\+Adapter\+Type , typename SAX  = json\+\_\+sax\+\_\+dom\+\_\+parser$<$\+Basic\+Json\+Type$>$$>$ \\
+bool \mbox{\hyperlink{classnlohmann_1_1detail_1_1binary__reader}{nlohmann\+::detail\+::binary\+\_\+reader}}$<$ Basic\+Json\+Type, Input\+Adapter\+Type, SAX $>$\+::sax\+\_\+parse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacenlohmann_1_1detail_aa554fc6a11519e4f347deb25a9f0db40}{input\+\_\+format\+\_\+t}}}]{format,  }\item[{json\+\_\+sax\+\_\+t $\ast$}]{sax\+\_\+,  }\item[{const bool}]{strict = {\ttfamily true},  }\item[{const \mbox{\hyperlink{namespacenlohmann_1_1detail_a58bb1ef1a9ad287a9cfaf1855784d9ac}{cbor\+\_\+tag\+\_\+handler\+\_\+t}}}]{tag\+\_\+handler = {\ttfamily \mbox{\hyperlink{namespacenlohmann_1_1detail_a58bb1ef1a9ad287a9cfaf1855784d9acacb5e100e5a9a3e7f6d1fd97512215282}{cbor\+\_\+tag\+\_\+handler\+\_\+t\+::error}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em format} & the binary format to parse \\
+\hline
+\mbox{\texttt{ in}}  & {\em sax\+\_\+} & a SAX event processor \\
+\hline
+\mbox{\texttt{ in}}  & {\em strict} & whether to expect the input to be consumed completed \\
+\hline
+\mbox{\texttt{ in}}  & {\em tag\+\_\+handler} & how to treat CBOR tags\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether parsing was successful 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l08485}{8485}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{08489     \{}
+\DoxyCodeLine{08490         sax = sax\_;}
+\DoxyCodeLine{08491         \textcolor{keywordtype}{bool} result = \textcolor{keyword}{false};}
+\DoxyCodeLine{08492 }
+\DoxyCodeLine{08493         \textcolor{keywordflow}{switch} (format)}
+\DoxyCodeLine{08494         \{}
+\DoxyCodeLine{08495             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_aa554fc6a11519e4f347deb25a9f0db40a0b6879b186bfb2b1ec65d2460e4eccd4}{input\_format\_t::bson}}:}
+\DoxyCodeLine{08496                 result = parse\_bson\_internal();}
+\DoxyCodeLine{08497                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{08498 }
+\DoxyCodeLine{08499             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_aa554fc6a11519e4f347deb25a9f0db40aaf9de350d652f0c9055ddab514bd23ea}{input\_format\_t::cbor}}:}
+\DoxyCodeLine{08500                 result = parse\_cbor\_internal(\textcolor{keyword}{true}, tag\_handler);}
+\DoxyCodeLine{08501                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{08502 }
+\DoxyCodeLine{08503             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_aa554fc6a11519e4f347deb25a9f0db40ac40d516627022a54003ac2b74a82688a}{input\_format\_t::msgpack}}:}
+\DoxyCodeLine{08504                 result = parse\_msgpack\_internal();}
+\DoxyCodeLine{08505                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{08506 }
+\DoxyCodeLine{08507             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_aa554fc6a11519e4f347deb25a9f0db40a4537f20910e85437f6d07701864084e8}{input\_format\_t::ubjson}}:}
+\DoxyCodeLine{08508                 result = parse\_ubjson\_internal();}
+\DoxyCodeLine{08509                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{08510 }
+\DoxyCodeLine{08511             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacenlohmann_1_1detail_aa554fc6a11519e4f347deb25a9f0db40a466deec76ecdf5fca6d38571f6324d54}{input\_format\_t::json}}: \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{08512             \textcolor{keywordflow}{default}:            \textcolor{comment}{// LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{08513                 \mbox{\hyperlink{json_8hpp_a69f131cff49da1989667220173fbeae6}{JSON\_ASSERT}}(\textcolor{keyword}{false}); \textcolor{comment}{// NOLINT(cert-\/dcl03-\/c,hicpp-\/static-\/assert,misc-\/static-\/assert) LCOV\_EXCL\_LINE}}
+\DoxyCodeLine{08514         \}}
+\DoxyCodeLine{08515 }
+\DoxyCodeLine{08516         \textcolor{comment}{// strict mode: next byte must be EOF}}
+\DoxyCodeLine{08517         \textcolor{keywordflow}{if} (result \&\& strict)}
+\DoxyCodeLine{08518         \{}
+\DoxyCodeLine{08519             \textcolor{keywordflow}{if} (format == \mbox{\hyperlink{namespacenlohmann_1_1detail_aa554fc6a11519e4f347deb25a9f0db40a4537f20910e85437f6d07701864084e8}{input\_format\_t::ubjson}})}
+\DoxyCodeLine{08520             \{}
+\DoxyCodeLine{08521                 get\_ignore\_noop();}
+\DoxyCodeLine{08522             \}}
+\DoxyCodeLine{08523             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{08524             \{}
+\DoxyCodeLine{08525                 get();}
+\DoxyCodeLine{08526             \}}
+\DoxyCodeLine{08527 }
+\DoxyCodeLine{08528             \textcolor{keywordflow}{if} (\mbox{\hyperlink{json_8hpp_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(current != std::char\_traits<char\_type>::eof()))}
+\DoxyCodeLine{08529             \{}
+\DoxyCodeLine{08530                 \textcolor{keywordflow}{return} sax-\/>parse\_error(chars\_read, get\_token\_string(),}
+\DoxyCodeLine{08531                                         \mbox{\hyperlink{classnlohmann_1_1detail_1_1parse__error_ae77bd584cb9101140790219af7fec1ce}{parse\_error::create}}(110, chars\_read, exception\_message(format, \textcolor{stringliteral}{"{}expected end of input; last byte: 0x"{}} + get\_token\_string(), \textcolor{stringliteral}{"{}value"{}}), BasicJsonType()));}
+\DoxyCodeLine{08532             \}}
+\DoxyCodeLine{08533         \}}
+\DoxyCodeLine{08534 }
+\DoxyCodeLine{08535         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{08536     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+rendering/include/rendering/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

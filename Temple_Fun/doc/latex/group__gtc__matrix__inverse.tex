@@ -1,0 +1,70 @@
+\hypertarget{group__gtc__matrix__inverse}{}\doxysection{GLM\+\_\+\+GTC\+\_\+matrix\+\_\+inverse}
+\label{group__gtc__matrix__inverse}\index{GLM\_GTC\_matrix\_inverse@{GLM\_GTC\_matrix\_inverse}}
+
+
+Defines additional matrix inverting functions. \texorpdfstring{$<$}{<}\mbox{\hyperlink{matrix__inverse_8hpp}{glm/gtc/matrix\+\_\+inverse.\+hpp}}\texorpdfstring{$>$}{>} need to be included to use these functionalities.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename gen\+Type $>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} gen\+Type \mbox{\hyperlink{group__gtc__matrix__inverse_gae0fcc5fc8783291f9702272de428fa0e}{glm\+::affine\+Inverse}} (gen\+Type const \&m)
+\begin{DoxyCompactList}\small\item\em Fast matrix inverse for affine matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename gen\+Type $>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} gen\+Type\+::value\+\_\+type \mbox{\hyperlink{group__gtc__matrix__inverse_gac23f1be9db49b929cc74e40f17f48593}{glm\+::inverse\+Transpose}} (gen\+Type const \&m)
+\begin{DoxyCompactList}\small\item\em Compute the inverse transpose of a matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines additional matrix inverting functions. \texorpdfstring{$<$}{<}\mbox{\hyperlink{matrix__inverse_8hpp}{glm/gtc/matrix\+\_\+inverse.\+hpp}}\texorpdfstring{$>$}{>} need to be included to use these functionalities. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__gtc__matrix__inverse_gae0fcc5fc8783291f9702272de428fa0e}\label{group__gtc__matrix__inverse_gae0fcc5fc8783291f9702272de428fa0e}} 
+\index{GLM\_GTC\_matrix\_inverse@{GLM\_GTC\_matrix\_inverse}!affineInverse@{affineInverse}}
+\index{affineInverse@{affineInverse}!GLM\_GTC\_matrix\_inverse@{GLM\_GTC\_matrix\_inverse}}
+\doxysubsubsection{\texorpdfstring{affineInverse()}{affineInverse()}}
+{\footnotesize\ttfamily template$<$typename gen\+Type $>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} gen\+Type glm\+::affine\+Inverse (\begin{DoxyParamCaption}\item[{gen\+Type const \&}]{m }\end{DoxyParamCaption})}
+
+
+
+Fast matrix inverse for affine matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Input matrix to invert. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em gen\+Type} & Squared floating-\/point matrix\+: half, float or double. Inverse of matrix based of half-\/precision floating point value is highly innacurate. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__gtc__matrix__inverse}{GLM\+\_\+\+GTC\+\_\+matrix\+\_\+inverse}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__gtc__matrix__inverse_gac23f1be9db49b929cc74e40f17f48593}\label{group__gtc__matrix__inverse_gac23f1be9db49b929cc74e40f17f48593}} 
+\index{GLM\_GTC\_matrix\_inverse@{GLM\_GTC\_matrix\_inverse}!inverseTranspose@{inverseTranspose}}
+\index{inverseTranspose@{inverseTranspose}!GLM\_GTC\_matrix\_inverse@{GLM\_GTC\_matrix\_inverse}}
+\doxysubsubsection{\texorpdfstring{inverseTranspose()}{inverseTranspose()}}
+{\footnotesize\ttfamily template$<$typename gen\+Type $>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} gen\+Type\+::value\+\_\+type glm\+::inverse\+Transpose (\begin{DoxyParamCaption}\item[{gen\+Type const \&}]{m }\end{DoxyParamCaption})}
+
+
+
+Compute the inverse transpose of a matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Input matrix to invert transpose. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em gen\+Type} & Squared floating-\/point matrix\+: half, float or double. Inverse of matrix based of half-\/precision floating point value is highly innacurate. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__gtc__matrix__inverse}{GLM\+\_\+\+GTC\+\_\+matrix\+\_\+inverse}} 
+\end{DoxySeeAlso}

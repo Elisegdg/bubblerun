@@ -1,0 +1,48 @@
+\hypertarget{matrix__access_8hpp_source}{}\doxysection{matrix\+\_\+access.\+hpp}
+\label{matrix__access_8hpp_source}\index{third-\/party/include/glm/gtc/matrix\_access.hpp@{third-\/party/include/glm/gtc/matrix\_access.hpp}}
+\mbox{\hyperlink{matrix__access_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00037}00037 \textcolor{preprocessor}{\#ifndef GLM\_GTC\_matrix\_access}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00038}00038 \textcolor{preprocessor}{\#define GLM\_GTC\_matrix\_access}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00040}00040 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#include "{}../detail/setup.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#if(defined(GLM\_MESSAGES) \&\& !defined(GLM\_EXT\_INCLUDED))}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTC\_matrix\_access extension included"{}})}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00047}00047 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00048}00048 \{}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00054}00054     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00055}\mbox{\hyperlink{group__gtc__matrix__access_ga5b874831eef18913dbe30153e52a2476}{00055}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \textcolor{keyword}{typename} genType::row\_type \mbox{\hyperlink{group__gtc__matrix__access_ga5b874831eef18913dbe30153e52a2476}{row}}(}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00056}00056         genType \textcolor{keyword}{const} \& m, }
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00057}00057         \mbox{\hyperlink{namespaceglm_a090a0de2260835bee80e71a702492ed9}{length\_t}} \textcolor{keyword}{const} \& index);}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00061}00061     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00062}\mbox{\hyperlink{group__gtc__matrix__access_gacb34e8dca9cd0efdd247a65e36ed0a86}{00062}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} genType \mbox{\hyperlink{group__gtc__matrix__access_ga5b874831eef18913dbe30153e52a2476}{row}}(}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00063}00063         genType \textcolor{keyword}{const} \& m,}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00064}00064         \mbox{\hyperlink{namespaceglm_a090a0de2260835bee80e71a702492ed9}{length\_t}} \textcolor{keyword}{const} \& index,}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00065}00065         \textcolor{keyword}{typename} genType::row\_type \textcolor{keyword}{const} \& x);}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00069}00069     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00070}\mbox{\hyperlink{group__gtc__matrix__access_ga5c37fbeb062151f930e8a231c37e6b81}{00070}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \textcolor{keyword}{typename} genType::col\_type \mbox{\hyperlink{group__gtc__matrix__access_ga5c37fbeb062151f930e8a231c37e6b81}{column}}(}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00071}00071         genType \textcolor{keyword}{const} \& m,}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00072}00072         \mbox{\hyperlink{namespaceglm_a090a0de2260835bee80e71a702492ed9}{length\_t}} \textcolor{keyword}{const} \& index);}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00076}00076     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00077}\mbox{\hyperlink{group__gtc__matrix__access_gaff0c6f887deb04ce0519084d32aadb85}{00077}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} genType \mbox{\hyperlink{group__gtc__matrix__access_ga5c37fbeb062151f930e8a231c37e6b81}{column}}(}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00078}00078         genType \textcolor{keyword}{const} \& m,}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00079}00079         \mbox{\hyperlink{namespaceglm_a090a0de2260835bee80e71a702492ed9}{length\_t}} \textcolor{keyword}{const} \& index,}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00080}00080         \textcolor{keyword}{typename} genType::col\_type \textcolor{keyword}{const} \& x);}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00083}00083 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00085}00085 \textcolor{preprocessor}{\#include "{}matrix\_access.inl"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{matrix__access_8hpp_source_l00087}00087 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_GTC\_matrix\_access}}
+
+\end{DoxyCode}

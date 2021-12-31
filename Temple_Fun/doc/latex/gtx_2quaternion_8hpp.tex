@@ -1,0 +1,84 @@
+\hypertarget{gtx_2quaternion_8hpp}{}\doxysection{third-\/party/include/glm/gtx/quaternion.hpp File Reference}
+\label{gtx_2quaternion_8hpp}\index{third-\/party/include/glm/gtx/quaternion.hpp@{third-\/party/include/glm/gtx/quaternion.hpp}}
+
+
+Open\+GL Mathematics (glm.\+g-\/truc.\+net)  
+
+
+{\ttfamily \#include \char`\"{}../glm.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../gtc/constants.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../gtc/quaternion.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../gtx/norm.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}quaternion.\+inl\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceglm}{glm}}
+\begin{DoxyCompactList}\small\item\em Open\+GL Mathematics (glm.\+g-\/truc.\+net) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tvec3$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_gaafe4ed2ee1a4d1b31ad3eb6a9e41889b}{glm\+::cross}} (detail\+::tquat$<$ T, P $>$ const \&q, detail\+::tvec3$<$ T, P $>$ const \&v)
+\begin{DoxyCompactList}\small\item\em Compute a cross product between a quaternion and a vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tvec3$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_gab034f8ae2c6e887b838597cd4307bef4}{glm\+::cross}} (detail\+::tvec3$<$ T, P $>$ const \&v, detail\+::tquat$<$ T, P $>$ const \&q)
+\begin{DoxyCompactList}\small\item\em Compute a cross product between a vector and a quaternion. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tquat$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_ga59d13a989b349899d5810a3421163d24}{glm\+::squad}} (detail\+::tquat$<$ T, P $>$ const \&q1, detail\+::tquat$<$ T, P $>$ const \&q2, detail\+::tquat$<$ T, P $>$ const \&s1, detail\+::tquat$<$ T, P $>$ const \&s2, T const \&h)
+\begin{DoxyCompactList}\small\item\em Compute a point on a path according squad equation. q1 and q2 are control points; s1 and s2 are intermediate control points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tquat$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_ga7a595b0fbf51c279ad42c40b5317ff6a}{glm\+::intermediate}} (detail\+::tquat$<$ T, P $>$ const \&prev, detail\+::tquat$<$ T, P $>$ const \&curr, detail\+::tquat$<$ T, P $>$ const \&next)
+\begin{DoxyCompactList}\small\item\em Returns an intermediate control point for squad interpolation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tquat$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_ga0590ad46334b5dcbc5fce60db4040bc3}{glm\+::exp}} (detail\+::tquat$<$ T, P $>$ const \&q)
+\begin{DoxyCompactList}\small\item\em Returns a exp of a quaternion. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tquat$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_ga94d331755157cb105831e71cf49f4c6c}{glm\+::log}} (detail\+::tquat$<$ T, P $>$ const \&q)
+\begin{DoxyCompactList}\small\item\em Returns a log of a quaternion. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tquat$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_ga71136ec3bb17819a39342d3d5d68f6ae}{glm\+::pow}} (detail\+::tquat$<$ T, P $>$ const \&x, T const \&y)
+\begin{DoxyCompactList}\small\item\em Returns x raised to the y power. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tvec3$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_ga537290016f423d8f14cf362aa256e0b0}{glm\+::rotate}} (detail\+::tquat$<$ T, P $>$ const \&q, detail\+::tvec3$<$ T, P $>$ const \&v)
+\begin{DoxyCompactList}\small\item\em Returns quarternion square root. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tvec4$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_gae80b9286122be5dadd4080deac4f8322}{glm\+::rotate}} (detail\+::tquat$<$ T, P $>$ const \&q, detail\+::tvec4$<$ T, P $>$ const \&v)
+\begin{DoxyCompactList}\small\item\em Rotates a 4 components vector by a quaternion. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} T \mbox{\hyperlink{group__gtx__quaternion_gaad86e595f0021253cb9d34ca32f27f3c}{glm\+::extract\+Real\+Component}} (detail\+::tquat$<$ T, P $>$ const \&q)
+\begin{DoxyCompactList}\small\item\em Extract the real component of a quaternion. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tmat3x3$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_ga438bee4c60dafb37c2258b644fbc4c8d}{glm\+::to\+Mat3}} (detail\+::tquat$<$ T, P $>$ const \&x)
+\begin{DoxyCompactList}\small\item\em Converts a quaternion to a 3 $\ast$ 3 matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tmat4x4$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_gace324e2ef2cc7f092a886221a80d4fdb}{glm\+::to\+Mat4}} (detail\+::tquat$<$ T, P $>$ const \&x)
+\begin{DoxyCompactList}\small\item\em Converts a quaternion to a 4 $\ast$ 4 matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tquat$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_ga0550e1eda181798fd35bb3a262db52ba}{glm\+::to\+Quat}} (detail\+::tmat3x3$<$ T, P $>$ const \&x)
+\begin{DoxyCompactList}\small\item\em Converts a 3 $\ast$ 3 matrix to a quaternion. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tquat$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_gaea85e61f398143945765d155b3ac708d}{glm\+::to\+Quat}} (detail\+::tmat4x4$<$ T, P $>$ const \&x)
+\begin{DoxyCompactList}\small\item\em Converts a 4 $\ast$ 4 matrix to a quaternion. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tquat$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_ga2080247e41ee6c5732cf64fc8a0f2fe4}{glm\+::short\+Mix}} (detail\+::tquat$<$ T, P $>$ const \&x, detail\+::tquat$<$ T, P $>$ const \&y, T const \&a)
+\begin{DoxyCompactList}\small\item\em Quaternion interpolation using the rotation short path. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tquat$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_ga6276ae3f4e4545e4e8fc131eaaccec9b}{glm\+::fast\+Mix}} (detail\+::tquat$<$ T, P $>$ const \&x, detail\+::tquat$<$ T, P $>$ const \&y, T const \&a)
+\begin{DoxyCompactList}\small\item\em Quaternion normalized linear interpolation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::tquat$<$ T, P $>$ \mbox{\hyperlink{group__gtx__quaternion_gaa98ad9c71575b64fc660a3970a4d4c19}{glm\+::rotation}} (detail\+::tvec3$<$ T, P $>$ const \&orig, detail\+::tvec3$<$ T, P $>$ const \&dest)
+\begin{DoxyCompactList}\small\item\em Compute the rotation between two vectors. param orig vector, needs to be normalized param dest vector, needs to be normalized. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} T \mbox{\hyperlink{group__gtx__quaternion_gaac8d704c7dfac92835109953b88f1c92}{glm\+::length2}} (detail\+::tquat$<$ T, P $>$ const \&q)
+\begin{DoxyCompactList}\small\item\em Returns the squared length of x. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Open\+GL Mathematics (glm.\+g-\/truc.\+net) 
+
+Copyright (c) 2005 -\/ 2014 G-\/\+Truc Creation (www.\+g-\/truc.\+net) Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \char`\"{}\+AS IS\char`\"{}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+\mbox{\hyperlink{group__gtx__quaternion}{GLM\+\_\+\+GTX\+\_\+quaternion}}
+
+\begin{DoxyDate}{Date}
+2005-\/12-\/21 / 2011-\/06-\/07 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Christophe Riccio
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__core}{GLM Core}} (dependence) 
+
+\mbox{\hyperlink{group__gtx__extented__min__max}{GLM\+\_\+\+GTX\+\_\+extented\+\_\+min\+\_\+max}} (dependence) 
+\end{DoxySeeAlso}
+
+
+Definition in file \mbox{\hyperlink{gtx_2quaternion_8hpp_source}{quaternion.\+hpp}}.
+

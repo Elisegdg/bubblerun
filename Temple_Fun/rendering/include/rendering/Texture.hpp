@@ -1,3 +1,8 @@
+/**
+ * \file Texture.hpp
+ * \brief Declaration of the class Texture
+*/
+
 #ifndef _TEXTURE_HPP
 #define _TEXTURE_HPP
 
@@ -10,22 +15,35 @@
 
 
 namespace rendering{
-
+/*! \class Texture
+   * \brief Texture manager Class
+   *
+   *  This class manages the textures
+   */
 class Texture {
 
 private:
-    GLuint m_textureId; 
-    std::string m_texturePath; 
-    std::unique_ptr<glimac::Image> m_textureImage; 
+    GLuint m_textureId; /*!< The texture Id */
+    std::string m_texturePath; /*!< Texture filepath*/
+    std::unique_ptr<glimac::Image> m_textureImage; /*!< Pointer to the texture*/
 
 public:
-	// Constructors
+
+    /*!
+    *  \brief Default Constructor of the Texture class
+    */
     Texture():
 		m_textureId(0), m_texturePath("")
 	{
 
     }
     
+    /*!
+     *  \brief Constructor of the Texture class
+     * 
+     *  \param texutreFile : The filepath of the texture
+     * 
+     */ 
     Texture(const std::string &textureFile):
         m_textureId(0), 
         m_texturePath(textureFile) 
@@ -33,22 +51,37 @@ public:
         loadTexture();
     }
 
+    /*!
+     *  \brief Copy constructor of the Texture class
+     * 
+     *  \param Texture : The texture that needs to be copied
+     */ 
     Texture(const Texture& texture):
         m_textureId(0), m_texturePath(texture.m_texturePath) 
     {
         loadTexture();
     }
 
-    // Destructor
+    /*!
+     *  \brief Destructor of the Texture class
+     *  Deletes the texture at the end of the program using glDeleteTextures
+     */
     ~Texture(){
         glDeleteTextures(1, &m_textureId);
     }
 
-    // Methods
+    /*!
+     *  \brief Getter of the texture id 
+     */
     GLuint getTextureId() const{
         return m_textureId;
     }
     
+    /*!
+     *  \brief Loads the texture and binds it
+     *
+     * 
+     */
     void loadTexture(){
 
         m_textureImage = glimac::loadImage(m_texturePath);

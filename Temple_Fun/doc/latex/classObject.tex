@@ -1,0 +1,277 @@
+\hypertarget{classObject}{}\doxysection{Object Class Reference}
+\label{classObject}\index{Object@{Object}}
+
+
+{\ttfamily \#include $<$Object.\+hpp$>$}
+
+Inheritance diagram for Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{classObject}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classObject_a192768c5099813aa0a517f466559a28b}{Object}} (std\+::string name=0, bool value\+\_\+coins=0)
+\item 
+\mbox{\hyperlink{classObject_adb9bbf2bf1e778bde47e313e9890ad5b}{$\sim$\+Object}} ()=default
+\item 
+void \mbox{\hyperlink{classObject_a3cba8f65543000b6fc8b9172a44f116f}{add\+Coord}} (float x, float y, float z)
+\item 
+glm\+::vec3 \mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{get\+Coord}} ()
+\item 
+virtual void \mbox{\hyperlink{classObject_a51742c3e9d8234a53030f4a428bcfabf}{draw}} (\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&mesh, const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Program, glm\+::mat4 Proj\+Matrix, glimac\+::\+SDLWindow\+Manager \&window\+Manager)
+\item 
+void \mbox{\hyperlink{classObject_af46871da5f87a5435db4ed403a554297}{draw\+Coins}} (\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&mesh, const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Program, glm\+::mat4 Proj\+Matrix, glimac\+::\+SDLWindow\+Manager \&window\+Manager)
+\item 
+void \mbox{\hyperlink{classObject_a98186104257500ddfd3b3477514cff4b}{set\+Coins}} (bool coins)
+\item 
+std\+::string \mbox{\hyperlink{classObject_ae2e7f745c015b67a580c735609cba5b8}{get\+Name}} ()
+\item 
+bool \mbox{\hyperlink{classObject_ac3088854ee92f65d8bddf0390ac4c37f}{get\+If\+Coins}} ()
+\item 
+void \mbox{\hyperlink{classObject_a68012e5a1c065d32282a7b6845e44fa1}{remove\+Coin}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{classObject_aadd2a0bc15208160d8192f735c2c075b}{m\+\_\+coord}}
+\item 
+std\+::string \mbox{\hyperlink{classObject_a8b83c95c705d2c3ba0d081fe1710f48d}{m\+\_\+name}}
+\item 
+bool \mbox{\hyperlink{classObject_a1831097f8b9e34c8c9ef2ae6df55c7f8}{m\+\_\+coins}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Object_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{Object_8hpp_source}{Object.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classObject_a192768c5099813aa0a517f466559a28b}\label{classObject_a192768c5099813aa0a517f466559a28b}} 
+\index{Object@{Object}!Object@{Object}}
+\index{Object@{Object}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}}
+{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}\item[{std\+::string}]{name = {\ttfamily 0},  }\item[{bool}]{value\+\_\+coins = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Object_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{Object_8hpp_source}{Object.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026 :\mbox{\hyperlink{classObject_aadd2a0bc15208160d8192f735c2c075b}{m\_coord}}(glm::vec3(0,0,0)), \mbox{\hyperlink{classObject_a8b83c95c705d2c3ba0d081fe1710f48d}{m\_name}}(name),\mbox{\hyperlink{classObject_a1831097f8b9e34c8c9ef2ae6df55c7f8}{m\_coins}}(value\_coins)\{\}    }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_adb9bbf2bf1e778bde47e313e9890ad5b}\label{classObject_adb9bbf2bf1e778bde47e313e9890ad5b}} 
+\index{Object@{Object}!````~Object@{$\sim$Object}}
+\index{````~Object@{$\sim$Object}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{$\sim$Object()}{~Object()}}
+{\footnotesize\ttfamily Object\+::$\sim$\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classObject_a3cba8f65543000b6fc8b9172a44f116f}\label{classObject_a3cba8f65543000b6fc8b9172a44f116f}} 
+\index{Object@{Object}!addCoord@{addCoord}}
+\index{addCoord@{addCoord}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{addCoord()}{addCoord()}}
+{\footnotesize\ttfamily void Object\+::add\+Coord (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Object_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011 \{}
+\DoxyCodeLine{00012     \mbox{\hyperlink{classObject_aadd2a0bc15208160d8192f735c2c075b}{m\_coord}} = glm::vec3(x,y,z);}
+\DoxyCodeLine{00013 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a51742c3e9d8234a53030f4a428bcfabf}\label{classObject_a51742c3e9d8234a53030f4a428bcfabf}} 
+\index{Object@{Object}!draw@{draw}}
+\index{draw@{draw}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Object\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&}]{mesh,  }\item[{const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$}]{camera,  }\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Program,  }\item[{glm\+::mat4}]{Proj\+Matrix,  }\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classObstacle_a5a2520138eb3560c434b1f548e470457}{Obstacle}}, \mbox{\hyperlink{classEmpty_ae5842ac90c0b4f4b41a650f4dda22a90}{Empty}}, and \mbox{\hyperlink{classCoins_aa715f16dd47271bc95ebe62a1ab76573}{Coins}}.
+
+
+
+Definition at line \mbox{\hyperlink{Object_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022 \{}
+\DoxyCodeLine{00023     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
+\DoxyCodeLine{00024     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}().x -\/ 1, 0, \mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}().y));}
+\DoxyCodeLine{00025     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 0.2, 1));}
+\DoxyCodeLine{00026     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
+\DoxyCodeLine{00029     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVMatrix"{}}, ViewMatrix);}
+\DoxyCodeLine{00030     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uNormalMatrix"{}}, NormalMatrix);}
+\DoxyCodeLine{00031     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_ad8f60d9ab9e7a1c0572914e6ea47b498}{uniform1i}}(\textcolor{stringliteral}{"{}uTexture"{}}, 0);}
+\DoxyCodeLine{00032     mesh.\mbox{\hyperlink{classrendering_1_1Model_a71dea11e780bdefb98cd9603cfa1758b}{draw}}();}
+\DoxyCodeLine{00033     }
+\DoxyCodeLine{00034 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_af46871da5f87a5435db4ed403a554297}\label{classObject_af46871da5f87a5435db4ed403a554297}} 
+\index{Object@{Object}!drawCoins@{drawCoins}}
+\index{drawCoins@{drawCoins}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{drawCoins()}{drawCoins()}}
+{\footnotesize\ttfamily void Object\+::draw\+Coins (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&}]{mesh,  }\item[{const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$}]{camera,  }\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Program,  }\item[{glm\+::mat4}]{Proj\+Matrix,  }\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Object_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059 \{}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
+\DoxyCodeLine{00062     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}().x -\/ 1, 0.2, \mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}().y));}
+\DoxyCodeLine{00063     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(0.3, 0.3, 0.3));}
+\DoxyCodeLine{00064     \textcolor{comment}{//ViewMatrix = glm::rotate(ViewMatrix, windowManager.getTime(), glm::vec3(0,1,0)); // Translation * Rotation}}
+\DoxyCodeLine{00065     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
+\DoxyCodeLine{00068     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVMatrix"{}}, ViewMatrix);}
+\DoxyCodeLine{00069     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uNormalMatrix"{}}, NormalMatrix);}
+\DoxyCodeLine{00070     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_ad8f60d9ab9e7a1c0572914e6ea47b498}{uniform1i}}(\textcolor{stringliteral}{"{}uTexture"{}}, 0);}
+\DoxyCodeLine{00071     mesh.\mbox{\hyperlink{classrendering_1_1Model_a71dea11e780bdefb98cd9603cfa1758b}{draw}}();}
+\DoxyCodeLine{00072 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a05b68de764b133f5a0a27a9c707f9774}\label{classObject_a05b68de764b133f5a0a27a9c707f9774}} 
+\index{Object@{Object}!getCoord@{getCoord}}
+\index{getCoord@{getCoord}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{getCoord()}{getCoord()}}
+{\footnotesize\ttfamily glm\+::vec3 Object\+::get\+Coord (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Object_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016 \{}
+\DoxyCodeLine{00017     \textcolor{keywordflow}{return} \mbox{\hyperlink{classObject_aadd2a0bc15208160d8192f735c2c075b}{m\_coord}};}
+\DoxyCodeLine{00018 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_ac3088854ee92f65d8bddf0390ac4c37f}\label{classObject_ac3088854ee92f65d8bddf0390ac4c37f}} 
+\index{Object@{Object}!getIfCoins@{getIfCoins}}
+\index{getIfCoins@{getIfCoins}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{getIfCoins()}{getIfCoins()}}
+{\footnotesize\ttfamily bool Object\+::get\+If\+Coins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Object_8hpp_source_l00037}{37}} of file \mbox{\hyperlink{Object_8hpp_source}{Object.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037                      \{}
+\DoxyCodeLine{00038         \textcolor{keywordflow}{return} \mbox{\hyperlink{classObject_a1831097f8b9e34c8c9ef2ae6df55c7f8}{m\_coins}};}
+\DoxyCodeLine{00039         }
+\DoxyCodeLine{00040     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_ae2e7f745c015b67a580c735609cba5b8}\label{classObject_ae2e7f745c015b67a580c735609cba5b8}} 
+\index{Object@{Object}!getName@{getName}}
+\index{getName@{getName}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Object\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Object_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{Object_8hpp_source}{Object.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034                        \{}
+\DoxyCodeLine{00035         \textcolor{keywordflow}{return} \mbox{\hyperlink{classObject_a8b83c95c705d2c3ba0d081fe1710f48d}{m\_name}};}
+\DoxyCodeLine{00036     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a68012e5a1c065d32282a7b6845e44fa1}\label{classObject_a68012e5a1c065d32282a7b6845e44fa1}} 
+\index{Object@{Object}!removeCoin@{removeCoin}}
+\index{removeCoin@{removeCoin}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{removeCoin()}{removeCoin()}}
+{\footnotesize\ttfamily void Object\+::remove\+Coin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Object_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{Object_8hpp_source}{Object.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041                      \{}
+\DoxyCodeLine{00042         \mbox{\hyperlink{classObject_a1831097f8b9e34c8c9ef2ae6df55c7f8}{m\_coins}} = 0;}
+\DoxyCodeLine{00043     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObject_a98186104257500ddfd3b3477514cff4b}\label{classObject_a98186104257500ddfd3b3477514cff4b}} 
+\index{Object@{Object}!setCoins@{setCoins}}
+\index{setCoins@{setCoins}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{setCoins()}{setCoins()}}
+{\footnotesize\ttfamily void Object\+::set\+Coins (\begin{DoxyParamCaption}\item[{bool}]{coins }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Object_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{Object_8hpp_source}{Object.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032 \{\mbox{\hyperlink{classObject_a1831097f8b9e34c8c9ef2ae6df55c7f8}{m\_coins}} = coins;\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classObject_a1831097f8b9e34c8c9ef2ae6df55c7f8}\label{classObject_a1831097f8b9e34c8c9ef2ae6df55c7f8}} 
+\index{Object@{Object}!m\_coins@{m\_coins}}
+\index{m\_coins@{m\_coins}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{m\_coins}{m\_coins}}
+{\footnotesize\ttfamily bool Object\+::m\+\_\+coins\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{Object_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{Object_8hpp_source}{Object.\+hpp}}.
+
+\mbox{\Hypertarget{classObject_aadd2a0bc15208160d8192f735c2c075b}\label{classObject_aadd2a0bc15208160d8192f735c2c075b}} 
+\index{Object@{Object}!m\_coord@{m\_coord}}
+\index{m\_coord@{m\_coord}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{m\_coord}{m\_coord}}
+{\footnotesize\ttfamily glm\+::vec3 Object\+::m\+\_\+coord\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{Object_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{Object_8hpp_source}{Object.\+hpp}}.
+
+\mbox{\Hypertarget{classObject_a8b83c95c705d2c3ba0d081fe1710f48d}\label{classObject_a8b83c95c705d2c3ba0d081fe1710f48d}} 
+\index{Object@{Object}!m\_name@{m\_name}}
+\index{m\_name@{m\_name}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{m\_name}{m\_name}}
+{\footnotesize\ttfamily std\+::string Object\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{Object_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{Object_8hpp_source}{Object.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+game/include/game/\mbox{\hyperlink{Object_8hpp}{Object.\+hpp}}\item 
+game/src/\mbox{\hyperlink{Object_8cpp}{Object.\+cpp}}\end{DoxyCompactItemize}

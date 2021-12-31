@@ -1,0 +1,44 @@
+\hypertarget{fast__square__root_8hpp_source}{}\doxysection{fast\+\_\+square\+\_\+root.\+hpp}
+\label{fast__square__root_8hpp_source}\index{third-\/party/include/glm/gtx/fast\_square\_root.hpp@{third-\/party/include/glm/gtx/fast\_square\_root.hpp}}
+\mbox{\hyperlink{fast__square__root_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00040}00040 \textcolor{preprocessor}{\#ifndef GLM\_GTX\_fast\_square\_root}}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#define GLM\_GTX\_fast\_square\_root}}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00043}00043 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#include "{}../glm.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#if(defined(GLM\_MESSAGES) \&\& !defined(GLM\_EXT\_INCLUDED))}}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00047}00047 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTX\_fast\_square\_root extension included"{}})}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00048}00048 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00050}00050 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00051}00051 \{}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00057}00057     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genType> }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00058}\mbox{\hyperlink{group__gtx__fast__square__root_gab07ddede2731f3438d687a652c843673}{00058}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} genType \mbox{\hyperlink{group__gtx__fast__square__root_gab07ddede2731f3438d687a652c843673}{fastSqrt}}(genType \textcolor{keyword}{const} \& x);}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00062}00062     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genType> }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00063}\mbox{\hyperlink{group__gtx__fast__square__root_ga65237d716748c6262f316ec1eaf7f073}{00063}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} genType \mbox{\hyperlink{group__gtx__fast__square__root_ga65237d716748c6262f316ec1eaf7f073}{fastInverseSqrt}}(genType \textcolor{keyword}{const} \& x);}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00067}00067     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P, \textcolor{keyword}{template} <\textcolor{keyword}{typename}, precision> \textcolor{keyword}{class }vecType>}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00068}\mbox{\hyperlink{group__gtx__fast__square__root_ga88d752341910fbd4a54f085d8062a388}{00068}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} vecType<T, P> \mbox{\hyperlink{group__gtx__fast__square__root_ga65237d716748c6262f316ec1eaf7f073}{fastInverseSqrt}}(vecType<T, P> \textcolor{keyword}{const} \& x);}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00072}00072     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genType> }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00073}\mbox{\hyperlink{group__gtx__fast__square__root_ga70aa3c80d8bb22e021c6c3ebdcf8e3ee}{00073}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \textcolor{keyword}{typename} genType::value\_type \mbox{\hyperlink{group__gtx__fast__square__root_ga70aa3c80d8bb22e021c6c3ebdcf8e3ee}{fastLength}}(genType \textcolor{keyword}{const} \& x);}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00077}00077     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genType> }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00078}\mbox{\hyperlink{group__gtx__fast__square__root_ga69778792fcadc29f586efa3ec2118cdc}{00078}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \textcolor{keyword}{typename} genType::value\_type \mbox{\hyperlink{group__gtx__fast__square__root_ga69778792fcadc29f586efa3ec2118cdc}{fastDistance}}(genType \textcolor{keyword}{const} \& x, genType \textcolor{keyword}{const} \& y);}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00082}00082     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genType> }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00083}\mbox{\hyperlink{group__gtx__fast__square__root_ga3b02c1d6e0c754144e2f1e110bf9f16c}{00083}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} genType \mbox{\hyperlink{group__gtx__fast__square__root_ga3b02c1d6e0c754144e2f1e110bf9f16c}{fastNormalize}}(genType \textcolor{keyword}{const} \& x);}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00086}00086 \}\textcolor{comment}{// namespace glm}}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00088}00088 \textcolor{preprocessor}{\#include "{}fast\_square\_root.inl"{}}}
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{fast__square__root_8hpp_source_l00090}00090 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_GTX\_fast\_square\_root}}
+
+\end{DoxyCode}

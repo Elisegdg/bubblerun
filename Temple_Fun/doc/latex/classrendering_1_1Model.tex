@@ -1,0 +1,478 @@
+\hypertarget{classrendering_1_1Model}{}\doxysection{rendering\+::Model Class Reference}
+\label{classrendering_1_1Model}\index{rendering::Model@{rendering::Model}}
+
+
+Class of \mbox{\hyperlink{classrendering_1_1Model}{Model}}.  
+
+
+
+
+{\ttfamily \#include $<$Model.\+hpp$>$}
+
+Inheritance diagram for rendering\+::Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrendering_1_1Model}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrendering_1_1Model_ad5fb02eca2ae3d40fbcab9594ae39df8}{Model}} (\mbox{\hyperlink{classrendering_1_1Texture}{rendering\+::\+Texture}} texture)
+\begin{DoxyCompactList}\small\item\em Constructor of the \mbox{\hyperlink{classrendering_1_1Model}{Model}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrendering_1_1Model_a2dd5f24b8b6147b73f72577acedbb86c}{$\sim$\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Destructor of the \mbox{\hyperlink{classrendering_1_1Model}{Model}} class Deletes the buffers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Model_a71dea11e780bdefb98cd9603cfa1758b}{draw}} ()
+\begin{DoxyCompactList}\small\item\em Draw the model. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{classrendering_1_1Model_a7dc70738e2eb5a03c0c2ae9c3e0b2c88}{get\+Vao}} () const
+\begin{DoxyCompactList}\small\item\em Getter of the vao of the model. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{classrendering_1_1Model_a1057fb2255cba45733fd7578899cb8ab}{get\+Vbo}} () const
+\begin{DoxyCompactList}\small\item\em Getter of the vbo of the model. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{classrendering_1_1Model_a853b0feba5455bae2af5454ba1f64f42}{get\+Ibo}} () const
+\begin{DoxyCompactList}\small\item\em Getter of the ibo of the model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Model_a68c2100e9f8bbbdd77be0accd1e9835c}{set\+Vao}} ()
+\begin{DoxyCompactList}\small\item\em Set and bind the vao. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Model_acf3b673e2481d91ecc9115c0926fcaad}{set\+Vbo}} ()
+\begin{DoxyCompactList}\small\item\em Set and bind the vbo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Model_abe5fba00ce7ffce494d161a0bb2b5899}{set\+Ibo}} ()
+\begin{DoxyCompactList}\small\item\em Set and bind the ibo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Model_ae735601092c5c3a731da95b9eeff3505}{set\+Buffers}} ()
+\begin{DoxyCompactList}\small\item\em Set the buffers. \end{DoxyCompactList}\item 
+const glimac\+::\+Shape\+Vertex $\ast$ \mbox{\hyperlink{classrendering_1_1Model_a763e16cede9c66fd3e575c0325580650}{get\+Data\+Pointer}} () const
+\item 
+GLsizei \mbox{\hyperlink{classrendering_1_1Model_a1b18132062f390fd76171e30fce8e345}{get\+Vertex\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Getter of the number of vertices. \end{DoxyCompactList}\item 
+const int $\ast$ \mbox{\hyperlink{classrendering_1_1Model_acc2949adef22aef0707208a1535db3d7}{get\+Index\+Pointer}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+GLuint \mbox{\hyperlink{classrendering_1_1Model_a1b4e4749b3ed3d9412b59adcded10c86}{m\+\_\+vbo}}
+\item 
+GLuint \mbox{\hyperlink{classrendering_1_1Model_ab7f6d0aab1e64bf7ba03d2b986fc08b4}{m\+\_\+vao}}
+\item 
+GLuint \mbox{\hyperlink{classrendering_1_1Model_ac38fe327945479fb45cd30e093c15ef2}{m\+\_\+ibo}}
+\item 
+bool \mbox{\hyperlink{classrendering_1_1Model_ad1ad57b7c16e0be1c3700b4555a07693}{m\+\_\+is\+Ibo}} = false
+\item 
+\mbox{\hyperlink{classrendering_1_1Texture}{rendering\+::\+Texture}} \mbox{\hyperlink{classrendering_1_1Model_abc479d7aec5fa43dd2c14c5b9073dba0}{m\+\_\+texture}}
+\item 
+std\+::vector$<$ glimac\+::\+Shape\+Vertex $>$ \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\+\_\+vertices}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classrendering_1_1Model_ab9a4020386d3d3df53c88b2738671130}{m\+\_\+index}}
+\item 
+GLsizei \mbox{\hyperlink{classrendering_1_1Model_af68d6e56dc36e18ff4be587f5f75f5e5}{m\+\_\+vertex\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class of \mbox{\hyperlink{classrendering_1_1Model}{Model}}. 
+
+This class enables to create meshes 
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrendering_1_1Model_ad5fb02eca2ae3d40fbcab9594ae39df8}\label{classrendering_1_1Model_ad5fb02eca2ae3d40fbcab9594ae39df8}} 
+\index{rendering::Model@{rendering::Model}!Model@{Model}}
+\index{Model@{Model}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{Model()}{Model()}}
+{\footnotesize\ttfamily rendering\+::\+Model\+::\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1Texture}{rendering\+::\+Texture}}}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor of the \mbox{\hyperlink{classrendering_1_1Model}{Model}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & The texture of the model \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039                                    :}
+\DoxyCodeLine{00040         \mbox{\hyperlink{classrendering_1_1Model_abc479d7aec5fa43dd2c14c5b9073dba0}{m\_texture}}(texture)}
+\DoxyCodeLine{00041         \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Model_a2dd5f24b8b6147b73f72577acedbb86c}\label{classrendering_1_1Model_a2dd5f24b8b6147b73f72577acedbb86c}} 
+\index{rendering::Model@{rendering::Model}!````~Model@{$\sim$Model}}
+\index{````~Model@{$\sim$Model}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{$\sim$Model()}{~Model()}}
+{\footnotesize\ttfamily rendering\+::\+Model\+::$\sim$\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor of the \mbox{\hyperlink{classrendering_1_1Model}{Model}} class Deletes the buffers. 
+
+
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00048}{48}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048             \{}
+\DoxyCodeLine{00049         glDeleteBuffers(1, \&\mbox{\hyperlink{classrendering_1_1Model_a1b4e4749b3ed3d9412b59adcded10c86}{m\_vbo}});}
+\DoxyCodeLine{00050         glDeleteVertexArrays(1, \&\mbox{\hyperlink{classrendering_1_1Model_ab7f6d0aab1e64bf7ba03d2b986fc08b4}{m\_vao}});}
+\DoxyCodeLine{00051     \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrendering_1_1Model_a71dea11e780bdefb98cd9603cfa1758b}\label{classrendering_1_1Model_a71dea11e780bdefb98cd9603cfa1758b}} 
+\index{rendering::Model@{rendering::Model}!draw@{draw}}
+\index{draw@{draw}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void rendering\+::\+Model\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Draw the model. 
+
+
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00056}{56}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056                \{}
+\DoxyCodeLine{00057         glBindVertexArray(\mbox{\hyperlink{classrendering_1_1Model_ab7f6d0aab1e64bf7ba03d2b986fc08b4}{m\_vao}});}
+\DoxyCodeLine{00058         glBindTexture(GL\_TEXTURE\_2D, \mbox{\hyperlink{classrendering_1_1Model_abc479d7aec5fa43dd2c14c5b9073dba0}{m\_texture}}.\mbox{\hyperlink{classrendering_1_1Texture_a1b12f268ef0314ce316378f76c64ef52}{getTextureId}}());}
+\DoxyCodeLine{00059         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classrendering_1_1Model_ad1ad57b7c16e0be1c3700b4555a07693}{m\_isIbo}})\{}
+\DoxyCodeLine{00060             glDrawElements(GL\_TRIANGLES, \mbox{\hyperlink{classrendering_1_1Model_a1b18132062f390fd76171e30fce8e345}{getVertexCount}}(), GL\_UNSIGNED\_INT,0);}
+\DoxyCodeLine{00061         \}}
+\DoxyCodeLine{00062         \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00063             glDrawArrays(GL\_TRIANGLES, 0, \mbox{\hyperlink{classrendering_1_1Model_a1b18132062f390fd76171e30fce8e345}{getVertexCount}}());}
+\DoxyCodeLine{00064         \}}
+\DoxyCodeLine{00065 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Model_a763e16cede9c66fd3e575c0325580650}\label{classrendering_1_1Model_a763e16cede9c66fd3e575c0325580650}} 
+\index{rendering::Model@{rendering::Model}!getDataPointer@{getDataPointer}}
+\index{getDataPointer@{getDataPointer}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{getDataPointer()}{getDataPointer()}}
+{\footnotesize\ttfamily const glimac\+::\+Shape\+Vertex $\ast$ rendering\+::\+Model\+::get\+Data\+Pointer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Model_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{Model_8cpp_source}{Model.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053                                                     \{}
+\DoxyCodeLine{00054     \textcolor{keywordflow}{return} \&\mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}[0];}
+\DoxyCodeLine{00055 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Model_a853b0feba5455bae2af5454ba1f64f42}\label{classrendering_1_1Model_a853b0feba5455bae2af5454ba1f64f42}} 
+\index{rendering::Model@{rendering::Model}!getIbo@{getIbo}}
+\index{getIbo@{getIbo}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{getIbo()}{getIbo()}}
+{\footnotesize\ttfamily GLuint rendering\+::\+Model\+::get\+Ibo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter of the ibo of the model. 
+
+
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00084}{84}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084                          \{}
+\DoxyCodeLine{00085         \textcolor{keywordflow}{return} \mbox{\hyperlink{classrendering_1_1Model_ab7f6d0aab1e64bf7ba03d2b986fc08b4}{m\_vao}};}
+\DoxyCodeLine{00086     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Model_acc2949adef22aef0707208a1535db3d7}\label{classrendering_1_1Model_acc2949adef22aef0707208a1535db3d7}} 
+\index{rendering::Model@{rendering::Model}!getIndexPointer@{getIndexPointer}}
+\index{getIndexPointer@{getIndexPointer}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{getIndexPointer()}{getIndexPointer()}}
+{\footnotesize\ttfamily const int $\ast$ rendering\+::\+Model\+::get\+Index\+Pointer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Model_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{Model_8cpp_source}{Model.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059                                        \{}
+\DoxyCodeLine{00060     \textcolor{keywordflow}{return} \&\mbox{\hyperlink{classrendering_1_1Model_ab9a4020386d3d3df53c88b2738671130}{m\_index}}[0];}
+\DoxyCodeLine{00061 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Model_a7dc70738e2eb5a03c0c2ae9c3e0b2c88}\label{classrendering_1_1Model_a7dc70738e2eb5a03c0c2ae9c3e0b2c88}} 
+\index{rendering::Model@{rendering::Model}!getVao@{getVao}}
+\index{getVao@{getVao}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{getVao()}{getVao()}}
+{\footnotesize\ttfamily GLuint rendering\+::\+Model\+::get\+Vao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter of the vao of the model. 
+
+
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00070}{70}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070                          \{}
+\DoxyCodeLine{00071         \textcolor{keywordflow}{return} \mbox{\hyperlink{classrendering_1_1Model_ab7f6d0aab1e64bf7ba03d2b986fc08b4}{m\_vao}};}
+\DoxyCodeLine{00072     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Model_a1057fb2255cba45733fd7578899cb8ab}\label{classrendering_1_1Model_a1057fb2255cba45733fd7578899cb8ab}} 
+\index{rendering::Model@{rendering::Model}!getVbo@{getVbo}}
+\index{getVbo@{getVbo}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{getVbo()}{getVbo()}}
+{\footnotesize\ttfamily GLuint rendering\+::\+Model\+::get\+Vbo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter of the vbo of the model. 
+
+
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077                           \{}
+\DoxyCodeLine{00078         \textcolor{keywordflow}{return} \mbox{\hyperlink{classrendering_1_1Model_a1b4e4749b3ed3d9412b59adcded10c86}{m\_vbo}};}
+\DoxyCodeLine{00079     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Model_a1b18132062f390fd76171e30fce8e345}\label{classrendering_1_1Model_a1b18132062f390fd76171e30fce8e345}} 
+\index{rendering::Model@{rendering::Model}!getVertexCount@{getVertexCount}}
+\index{getVertexCount@{getVertexCount}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{getVertexCount()}{getVertexCount()}}
+{\footnotesize\ttfamily GLsizei rendering\+::\+Model\+::get\+Vertex\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter of the number of vertices. 
+
+
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00111}{111}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111                                   \{}
+\DoxyCodeLine{00112     \textcolor{keywordflow}{return} \mbox{\hyperlink{classrendering_1_1Model_af68d6e56dc36e18ff4be587f5f75f5e5}{m\_vertexCount}};}
+\DoxyCodeLine{00113     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Model_ae735601092c5c3a731da95b9eeff3505}\label{classrendering_1_1Model_ae735601092c5c3a731da95b9eeff3505}} 
+\index{rendering::Model@{rendering::Model}!setBuffers@{setBuffers}}
+\index{setBuffers@{setBuffers}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{setBuffers()}{setBuffers()}}
+{\footnotesize\ttfamily void rendering\+::\+Model\+::set\+Buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set the buffers. 
+
+
+
+Definition at line \mbox{\hyperlink{Model_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{Model_8cpp_source}{Model.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047                        \{}
+\DoxyCodeLine{00048     \mbox{\hyperlink{classrendering_1_1Model_acf3b673e2481d91ecc9115c0926fcaad}{setVbo}}();}
+\DoxyCodeLine{00049     \mbox{\hyperlink{classrendering_1_1Model_abe5fba00ce7ffce494d161a0bb2b5899}{setIbo}}();  }
+\DoxyCodeLine{00050     \mbox{\hyperlink{classrendering_1_1Model_a68c2100e9f8bbbdd77be0accd1e9835c}{setVao}}();}
+\DoxyCodeLine{00051 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Model_abe5fba00ce7ffce494d161a0bb2b5899}\label{classrendering_1_1Model_abe5fba00ce7ffce494d161a0bb2b5899}} 
+\index{rendering::Model@{rendering::Model}!setIbo@{setIbo}}
+\index{setIbo@{setIbo}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{setIbo()}{setIbo()}}
+{\footnotesize\ttfamily void rendering\+::\+Model\+::set\+Ibo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set and bind the ibo. 
+
+
+
+Definition at line \mbox{\hyperlink{Model_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{Model_8cpp_source}{Model.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015                   \{}
+\DoxyCodeLine{00016     GLuint ibo;}
+\DoxyCodeLine{00017     \mbox{\hyperlink{classrendering_1_1Model_ac38fe327945479fb45cd30e093c15ef2}{m\_ibo}} = ibo;}
+\DoxyCodeLine{00018     \mbox{\hyperlink{classrendering_1_1Model_ad1ad57b7c16e0be1c3700b4555a07693}{m\_isIbo}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00019     glGenBuffers(1, \&\mbox{\hyperlink{classrendering_1_1Model_ac38fe327945479fb45cd30e093c15ef2}{m\_ibo}});}
+\DoxyCodeLine{00020     glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER, \mbox{\hyperlink{classrendering_1_1Model_ac38fe327945479fb45cd30e093c15ef2}{m\_ibo}});}
+\DoxyCodeLine{00021     glBufferData(GL\_ELEMENT\_ARRAY\_BUFFER, \mbox{\hyperlink{classrendering_1_1Model_a1b18132062f390fd76171e30fce8e345}{getVertexCount}}() * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}), \mbox{\hyperlink{classrendering_1_1Model_acc2949adef22aef0707208a1535db3d7}{getIndexPointer}}(), GL\_STATIC\_DRAW);}
+\DoxyCodeLine{00022     glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER, 0);}
+\DoxyCodeLine{00023 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Model_a68c2100e9f8bbbdd77be0accd1e9835c}\label{classrendering_1_1Model_a68c2100e9f8bbbdd77be0accd1e9835c}} 
+\index{rendering::Model@{rendering::Model}!setVao@{setVao}}
+\index{setVao@{setVao}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{setVao()}{setVao()}}
+{\footnotesize\ttfamily void rendering\+::\+Model\+::set\+Vao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set and bind the vao. 
+
+
+
+Definition at line \mbox{\hyperlink{Model_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{Model_8cpp_source}{Model.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025                   \{}
+\DoxyCodeLine{00026     GLuint vao;}
+\DoxyCodeLine{00027     \mbox{\hyperlink{classrendering_1_1Model_ab7f6d0aab1e64bf7ba03d2b986fc08b4}{m\_vao}} = vao;}
+\DoxyCodeLine{00028     glGenVertexArrays(1, \&\mbox{\hyperlink{classrendering_1_1Model_ab7f6d0aab1e64bf7ba03d2b986fc08b4}{m\_vao}});}
+\DoxyCodeLine{00029     glBindVertexArray(\mbox{\hyperlink{classrendering_1_1Model_ab7f6d0aab1e64bf7ba03d2b986fc08b4}{m\_vao}});}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{if}(\mbox{\hyperlink{classrendering_1_1Model_ad1ad57b7c16e0be1c3700b4555a07693}{m\_isIbo}})\{        }
+\DoxyCodeLine{00031         glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER, \mbox{\hyperlink{classrendering_1_1Model_ac38fe327945479fb45cd30e093c15ef2}{m\_ibo}});}
+\DoxyCodeLine{00032     \}}
+\DoxyCodeLine{00033     \textcolor{keyword}{const} GLuint VERTEX\_ATTR\_POSITION = 0;}
+\DoxyCodeLine{00034     \textcolor{keyword}{const} GLuint VERTEX\_ATTR\_NORMAL = 1;}
+\DoxyCodeLine{00035     \textcolor{keyword}{const} GLuint VERTEX\_ATTR\_TEXCOORDS = 2;}
+\DoxyCodeLine{00036     glEnableVertexAttribArray(VERTEX\_ATTR\_POSITION);}
+\DoxyCodeLine{00037     glEnableVertexAttribArray(VERTEX\_ATTR\_NORMAL);}
+\DoxyCodeLine{00038     glEnableVertexAttribArray(VERTEX\_ATTR\_TEXCOORDS);}
+\DoxyCodeLine{00039     glBindBuffer(GL\_ARRAY\_BUFFER, \mbox{\hyperlink{classrendering_1_1Model_a1b4e4749b3ed3d9412b59adcded10c86}{m\_vbo}});}
+\DoxyCodeLine{00040     glVertexAttribPointer(VERTEX\_ATTR\_POSITION, 3, GL\_FLOAT, GL\_FALSE, \textcolor{keyword}{sizeof}(glimac::ShapeVertex), (\textcolor{keyword}{const} GLvoid *)offsetof(glimac::ShapeVertex, position));}
+\DoxyCodeLine{00041     glVertexAttribPointer(VERTEX\_ATTR\_NORMAL, 3, GL\_FLOAT, GL\_FALSE, \textcolor{keyword}{sizeof}(glimac::ShapeVertex), (\textcolor{keyword}{const} GLvoid *)offsetof(glimac::ShapeVertex, normal));}
+\DoxyCodeLine{00042     glVertexAttribPointer(VERTEX\_ATTR\_TEXCOORDS, 2, GL\_FLOAT, GL\_FALSE, \textcolor{keyword}{sizeof}(glimac::ShapeVertex), (\textcolor{keyword}{const} GLvoid *)offsetof(glimac::ShapeVertex, texCoords));}
+\DoxyCodeLine{00043     glBindBuffer(GL\_ARRAY\_BUFFER, 0);}
+\DoxyCodeLine{00044     glBindVertexArray(0);}
+\DoxyCodeLine{00045 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Model_acf3b673e2481d91ecc9115c0926fcaad}\label{classrendering_1_1Model_acf3b673e2481d91ecc9115c0926fcaad}} 
+\index{rendering::Model@{rendering::Model}!setVbo@{setVbo}}
+\index{setVbo@{setVbo}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{setVbo()}{setVbo()}}
+{\footnotesize\ttfamily void rendering\+::\+Model\+::set\+Vbo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set and bind the vbo. 
+
+
+
+Definition at line \mbox{\hyperlink{Model_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{Model_8cpp_source}{Model.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006                   \{}
+\DoxyCodeLine{00007     GLuint vbo;}
+\DoxyCodeLine{00008     \mbox{\hyperlink{classrendering_1_1Model_a1b4e4749b3ed3d9412b59adcded10c86}{m\_vbo}} = vbo;}
+\DoxyCodeLine{00009     glGenBuffers(1, \&\mbox{\hyperlink{classrendering_1_1Model_a1b4e4749b3ed3d9412b59adcded10c86}{m\_vbo}});}
+\DoxyCodeLine{00010     glBindBuffer(GL\_ARRAY\_BUFFER, \mbox{\hyperlink{classrendering_1_1Model_a1b4e4749b3ed3d9412b59adcded10c86}{m\_vbo}});}
+\DoxyCodeLine{00011     glBufferData(GL\_ARRAY\_BUFFER, \mbox{\hyperlink{classrendering_1_1Model_a1b18132062f390fd76171e30fce8e345}{getVertexCount}}() * \textcolor{keyword}{sizeof}(glimac::ShapeVertex), \mbox{\hyperlink{classrendering_1_1Model_a763e16cede9c66fd3e575c0325580650}{getDataPointer}}(), GL\_STATIC\_DRAW);}
+\DoxyCodeLine{00012     glBindBuffer(GL\_ARRAY\_BUFFER, 0);}
+\DoxyCodeLine{00013 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classrendering_1_1Model_ac38fe327945479fb45cd30e093c15ef2}\label{classrendering_1_1Model_ac38fe327945479fb45cd30e093c15ef2}} 
+\index{rendering::Model@{rendering::Model}!m\_ibo@{m\_ibo}}
+\index{m\_ibo@{m\_ibo}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{m\_ibo}{m\_ibo}}
+{\footnotesize\ttfamily GLuint rendering\+::\+Model\+::m\+\_\+ibo\hspace{0.3cm}{\ttfamily [protected]}}
+
+ibo of the model 
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+\mbox{\Hypertarget{classrendering_1_1Model_ab9a4020386d3d3df53c88b2738671130}\label{classrendering_1_1Model_ab9a4020386d3d3df53c88b2738671130}} 
+\index{rendering::Model@{rendering::Model}!m\_index@{m\_index}}
+\index{m\_index@{m\_index}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{m\_index}{m\_index}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ rendering\+::\+Model\+::m\+\_\+index\hspace{0.3cm}{\ttfamily [protected]}}
+
+Number of indices to draw 
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+\mbox{\Hypertarget{classrendering_1_1Model_ad1ad57b7c16e0be1c3700b4555a07693}\label{classrendering_1_1Model_ad1ad57b7c16e0be1c3700b4555a07693}} 
+\index{rendering::Model@{rendering::Model}!m\_isIbo@{m\_isIbo}}
+\index{m\_isIbo@{m\_isIbo}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{m\_isIbo}{m\_isIbo}}
+{\footnotesize\ttfamily bool rendering\+::\+Model\+::m\+\_\+is\+Ibo = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+Boolean that shows if there is an ibo or not 
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00027}{27}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+\mbox{\Hypertarget{classrendering_1_1Model_abc479d7aec5fa43dd2c14c5b9073dba0}\label{classrendering_1_1Model_abc479d7aec5fa43dd2c14c5b9073dba0}} 
+\index{rendering::Model@{rendering::Model}!m\_texture@{m\_texture}}
+\index{m\_texture@{m\_texture}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{m\_texture}{m\_texture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrendering_1_1Texture}{rendering\+::\+Texture}} rendering\+::\+Model\+::m\+\_\+texture\hspace{0.3cm}{\ttfamily [protected]}}
+
+texture of the model 
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+\mbox{\Hypertarget{classrendering_1_1Model_ab7f6d0aab1e64bf7ba03d2b986fc08b4}\label{classrendering_1_1Model_ab7f6d0aab1e64bf7ba03d2b986fc08b4}} 
+\index{rendering::Model@{rendering::Model}!m\_vao@{m\_vao}}
+\index{m\_vao@{m\_vao}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{m\_vao}{m\_vao}}
+{\footnotesize\ttfamily GLuint rendering\+::\+Model\+::m\+\_\+vao\hspace{0.3cm}{\ttfamily [protected]}}
+
+vao of the model 
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00025}{25}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+\mbox{\Hypertarget{classrendering_1_1Model_a1b4e4749b3ed3d9412b59adcded10c86}\label{classrendering_1_1Model_a1b4e4749b3ed3d9412b59adcded10c86}} 
+\index{rendering::Model@{rendering::Model}!m\_vbo@{m\_vbo}}
+\index{m\_vbo@{m\_vbo}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{m\_vbo}{m\_vbo}}
+{\footnotesize\ttfamily GLuint rendering\+::\+Model\+::m\+\_\+vbo\hspace{0.3cm}{\ttfamily [protected]}}
+
+vbo of the model 
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+\mbox{\Hypertarget{classrendering_1_1Model_af68d6e56dc36e18ff4be587f5f75f5e5}\label{classrendering_1_1Model_af68d6e56dc36e18ff4be587f5f75f5e5}} 
+\index{rendering::Model@{rendering::Model}!m\_vertexCount@{m\_vertexCount}}
+\index{m\_vertexCount@{m\_vertexCount}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{m\_vertexCount}{m\_vertexCount}}
+{\footnotesize\ttfamily GLsizei rendering\+::\+Model\+::m\+\_\+vertex\+Count\hspace{0.3cm}{\ttfamily [protected]}}
+
+Number of vertices to draw 
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+\mbox{\Hypertarget{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}\label{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}} 
+\index{rendering::Model@{rendering::Model}!m\_vertices@{m\_vertices}}
+\index{m\_vertices@{m\_vertices}!rendering::Model@{rendering::Model}}
+\doxysubsubsection{\texorpdfstring{m\_vertices}{m\_vertices}}
+{\footnotesize\ttfamily std\+::vector$<$glimac\+::\+Shape\+Vertex$>$ rendering\+::\+Model\+::m\+\_\+vertices\hspace{0.3cm}{\ttfamily [protected]}}
+
+Vector that contains the vertices (position, texture, normals) 
+
+Definition at line \mbox{\hyperlink{Model_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{Model_8hpp_source}{Model.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rendering/include/rendering/\mbox{\hyperlink{Model_8hpp}{Model.\+hpp}}\item 
+rendering/src/\mbox{\hyperlink{Model_8cpp}{Model.\+cpp}}\end{DoxyCompactItemize}

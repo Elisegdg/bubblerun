@@ -1,0 +1,81 @@
+\hypertarget{Texture_8hpp_source}{}\doxysection{Texture.\+hpp}
+\label{Texture_8hpp_source}\index{rendering/include/rendering/Texture.hpp@{rendering/include/rendering/Texture.hpp}}
+\mbox{\hyperlink{Texture_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#ifndef \_TEXTURE\_HPP}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#define \_TEXTURE\_HPP}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <GL/glew.h>}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include <glimac/glm.hpp>}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <glimac/Image.hpp>}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#include <glimac/FilePath.hpp>}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00013}00013 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00017}00017 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacerendering}{rendering}}\{}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00023}\mbox{\hyperlink{classrendering_1_1Texture}{00023}} \textcolor{keyword}{class }\mbox{\hyperlink{classrendering_1_1Texture}{Texture}} \{}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00025}00025 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00026}00026     GLuint m\_textureId; }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00027}00027     std::string m\_texturePath; }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00028}00028     std::unique\_ptr<glimac::Image> m\_textureImage; }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00030}00030 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00035}\mbox{\hyperlink{classrendering_1_1Texture_aa6d379be9865441b185deec753b8694f}{00035}}     \mbox{\hyperlink{classrendering_1_1Texture_aa6d379be9865441b185deec753b8694f}{Texture}}():}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00036}00036         m\_textureId(0), m\_texturePath(\textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00037}00037     \{}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00040}00040     }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00047}\mbox{\hyperlink{classrendering_1_1Texture_a1f54944a3c9211aff5b46be1db19a0b3}{00047}}     \mbox{\hyperlink{classrendering_1_1Texture_a1f54944a3c9211aff5b46be1db19a0b3}{Texture}}(\textcolor{keyword}{const} std::string \&textureFile):}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00048}00048         m\_textureId(0), }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00049}00049         m\_texturePath(textureFile) }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00050}00050     \{}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00051}00051         \mbox{\hyperlink{classrendering_1_1Texture_af40ec554f6504d00ce743e3268983066}{loadTexture}}();}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00052}00052     \}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00059}\mbox{\hyperlink{classrendering_1_1Texture_a6e4e579765760ee7268f30fe48d4fadf}{00059}}     \mbox{\hyperlink{classrendering_1_1Texture_a6e4e579765760ee7268f30fe48d4fadf}{Texture}}(\textcolor{keyword}{const} \mbox{\hyperlink{classrendering_1_1Texture}{Texture}}\& texture):}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00060}00060         m\_textureId(0), m\_texturePath(texture.m\_texturePath) }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00061}00061     \{}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00062}00062         \mbox{\hyperlink{classrendering_1_1Texture_af40ec554f6504d00ce743e3268983066}{loadTexture}}();}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00063}00063     \}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00069}\mbox{\hyperlink{classrendering_1_1Texture_aa5f38cd4d16fb2691d074b58072825f9}{00069}}     \mbox{\hyperlink{classrendering_1_1Texture_aa5f38cd4d16fb2691d074b58072825f9}{\string~Texture}}()\{}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00070}00070         glDeleteTextures(1, \&m\_textureId);}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00071}00071     \}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00076}\mbox{\hyperlink{classrendering_1_1Texture_a1b12f268ef0314ce316378f76c64ef52}{00076}}     GLuint \mbox{\hyperlink{classrendering_1_1Texture_a1b12f268ef0314ce316378f76c64ef52}{getTextureId}}()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00077}00077         \textcolor{keywordflow}{return} m\_textureId;}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00078}00078     \}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00079}00079     }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00085}\mbox{\hyperlink{classrendering_1_1Texture_af40ec554f6504d00ce743e3268983066}{00085}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1Texture_af40ec554f6504d00ce743e3268983066}{loadTexture}}()\{}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00087}00087         m\_textureImage = glimac::loadImage(m\_texturePath);}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00089}00089         \textcolor{keywordflow}{if} (m\_textureImage == \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00090}00090             std::cout<<\textcolor{stringliteral}{"{}Error, texture could not be loaded"{}}<<std::endl; \textcolor{comment}{// TO DO : exception}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00091}00091         \}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00093}00093         glGenTextures(1, \&m\_textureId);}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00094}00094         }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00095}00095         glBindTexture(GL\_TEXTURE\_2D, m\_textureId);}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00096}00096         }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00097}00097         glTexImage2D(GL\_TEXTURE\_2D, 0, GL\_RGBA, m\_textureImage-\/>getWidth(), m\_textureImage-\/>getHeight(), 0, GL\_RGBA, GL\_FLOAT, m\_textureImage-\/>getPixels());}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00098}00098         glTexParameteri(GL\_TEXTURE\_2D, GL\_TEXTURE\_MIN\_FILTER, GL\_LINEAR);}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00099}00099         glTexParameteri(GL\_TEXTURE\_2D, GL\_TEXTURE\_MAG\_FILTER, GL\_LINEAR);}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00100}00100         }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00101}00101         glBindTexture(GL\_TEXTURE\_2D, 0);}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00102}00102     \}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00103}00103     }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00104}00104 \};}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00107}00107 \}}
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{Texture_8hpp_source_l00111}00111 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

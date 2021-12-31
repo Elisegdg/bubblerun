@@ -1,0 +1,114 @@
+\hypertarget{group__gtx__color__space}{}\doxysection{GLM\+\_\+\+GTX\+\_\+color\+\_\+space}
+\label{group__gtx__color__space}\index{GLM\_GTX\_color\_space@{GLM\_GTX\_color\_space}}
+
+
+Related to RGB to HSV conversions and operations.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ \mbox{\hyperlink{group__gtx__color__space_ga01b6da9909aafda7b5d5ecd681214763}{glm\+::rgb\+Color}} (\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ const \&hsv\+Value)
+\begin{DoxyCompactList}\small\item\em Converts a color from HSV color space to its color in RGB color space. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ \mbox{\hyperlink{group__gtx__color__space_gadd03467335b6befd8c06a5ac14dd27ad}{glm\+::hsv\+Color}} (\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ const \&rgb\+Value)
+\begin{DoxyCompactList}\small\item\em Converts a color from RGB color space to its color in HSV color space. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail\+::tmat4x4}}$<$ T, \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545a9d21ccd8b5a009ec7eb7677befc3bf51}{defaultp}} $>$ \mbox{\hyperlink{group__gtx__color__space_gab3622d6912ed2a2a675ef4e0a408dec9}{glm\+::saturation}} (T const s)
+\begin{DoxyCompactList}\small\item\em Build a saturation matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ \mbox{\hyperlink{group__gtx__color__space_ga8bc5491c38e42eaccb315176049a0da8}{glm\+::saturation}} (T const s, \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ const \&color)
+\begin{DoxyCompactList}\small\item\em Modify the saturation of a color. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail\+::tvec4}}$<$ T, P $>$ \mbox{\hyperlink{group__gtx__color__space_ga10a7dc30a930ca3b3a8f7c138e42a887}{glm\+::saturation}} (T const s, \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail\+::tvec4}}$<$ T, P $>$ const \&color)
+\begin{DoxyCompactList}\small\item\em Modify the saturation of a color. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} T \mbox{\hyperlink{group__gtx__color__space_ga3fb6710bbbf4f3e2303b06946e9cf00c}{glm\+::luminosity}} (\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ const \&color)
+\begin{DoxyCompactList}\small\item\em Compute color luminosity associating ratios (0.\+33, 0.\+59, 0.\+11) to RGB canals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Related to RGB to HSV conversions and operations. 
+
+\texorpdfstring{$<$}{<}\mbox{\hyperlink{color__space_8hpp}{glm/gtx/color\+\_\+space.\+hpp}}\texorpdfstring{$>$}{>} need to be included to use these functionalities. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__gtx__color__space_gadd03467335b6befd8c06a5ac14dd27ad}\label{group__gtx__color__space_gadd03467335b6befd8c06a5ac14dd27ad}} 
+\index{GLM\_GTX\_color\_space@{GLM\_GTX\_color\_space}!hsvColor@{hsvColor}}
+\index{hsvColor@{hsvColor}!GLM\_GTX\_color\_space@{GLM\_GTX\_color\_space}}
+\doxysubsubsection{\texorpdfstring{hsvColor()}{hsvColor()}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ glm\+::hsv\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ const \&}]{rgb\+Value }\end{DoxyParamCaption})}
+
+
+
+Converts a color from RGB color space to its color in HSV color space. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__gtx__color__space}{GLM\+\_\+\+GTX\+\_\+color\+\_\+space}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__gtx__color__space_ga3fb6710bbbf4f3e2303b06946e9cf00c}\label{group__gtx__color__space_ga3fb6710bbbf4f3e2303b06946e9cf00c}} 
+\index{GLM\_GTX\_color\_space@{GLM\_GTX\_color\_space}!luminosity@{luminosity}}
+\index{luminosity@{luminosity}!GLM\_GTX\_color\_space@{GLM\_GTX\_color\_space}}
+\doxysubsubsection{\texorpdfstring{luminosity()}{luminosity()}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} T glm\+::luminosity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ const \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Compute color luminosity associating ratios (0.\+33, 0.\+59, 0.\+11) to RGB canals. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__gtx__color__space}{GLM\+\_\+\+GTX\+\_\+color\+\_\+space}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__gtx__color__space_ga01b6da9909aafda7b5d5ecd681214763}\label{group__gtx__color__space_ga01b6da9909aafda7b5d5ecd681214763}} 
+\index{GLM\_GTX\_color\_space@{GLM\_GTX\_color\_space}!rgbColor@{rgbColor}}
+\index{rgbColor@{rgbColor}!GLM\_GTX\_color\_space@{GLM\_GTX\_color\_space}}
+\doxysubsubsection{\texorpdfstring{rgbColor()}{rgbColor()}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ glm\+::rgb\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ const \&}]{hsv\+Value }\end{DoxyParamCaption})}
+
+
+
+Converts a color from HSV color space to its color in RGB color space. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__gtx__color__space}{GLM\+\_\+\+GTX\+\_\+color\+\_\+space}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__gtx__color__space_gab3622d6912ed2a2a675ef4e0a408dec9}\label{group__gtx__color__space_gab3622d6912ed2a2a675ef4e0a408dec9}} 
+\index{GLM\_GTX\_color\_space@{GLM\_GTX\_color\_space}!saturation@{saturation}}
+\index{saturation@{saturation}!GLM\_GTX\_color\_space@{GLM\_GTX\_color\_space}}
+\doxysubsubsection{\texorpdfstring{saturation()}{saturation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail\+::tmat4x4}}$<$ T, \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545a9d21ccd8b5a009ec7eb7677befc3bf51}{defaultp}} $>$ glm\+::saturation (\begin{DoxyParamCaption}\item[{T const}]{s }\end{DoxyParamCaption})}
+
+
+
+Build a saturation matrix. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__gtx__color__space}{GLM\+\_\+\+GTX\+\_\+color\+\_\+space}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__gtx__color__space_ga8bc5491c38e42eaccb315176049a0da8}\label{group__gtx__color__space_ga8bc5491c38e42eaccb315176049a0da8}} 
+\index{GLM\_GTX\_color\_space@{GLM\_GTX\_color\_space}!saturation@{saturation}}
+\index{saturation@{saturation}!GLM\_GTX\_color\_space@{GLM\_GTX\_color\_space}}
+\doxysubsubsection{\texorpdfstring{saturation()}{saturation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ glm\+::saturation (\begin{DoxyParamCaption}\item[{T const}]{s,  }\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ const \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Modify the saturation of a color. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__gtx__color__space}{GLM\+\_\+\+GTX\+\_\+color\+\_\+space}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{group__gtx__color__space_ga10a7dc30a930ca3b3a8f7c138e42a887}\label{group__gtx__color__space_ga10a7dc30a930ca3b3a8f7c138e42a887}} 
+\index{GLM\_GTX\_color\_space@{GLM\_GTX\_color\_space}!saturation@{saturation}}
+\index{saturation@{saturation}!GLM\_GTX\_color\_space@{GLM\_GTX\_color\_space}}
+\doxysubsubsection{\texorpdfstring{saturation()}{saturation()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail\+::tvec4}}$<$ T, P $>$ glm\+::saturation (\begin{DoxyParamCaption}\item[{T const}]{s,  }\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail\+::tvec4}}$<$ T, P $>$ const \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Modify the saturation of a color. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__gtx__color__space}{GLM\+\_\+\+GTX\+\_\+color\+\_\+space}} 
+\end{DoxySeeAlso}

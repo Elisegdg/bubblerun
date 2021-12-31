@@ -1,0 +1,198 @@
+\hypertarget{dual__quaternion_8hpp_source}{}\doxysection{dual\+\_\+quaternion.\+hpp}
+\label{dual__quaternion_8hpp_source}\index{third-\/party/include/glm/gtx/dual\_quaternion.hpp@{third-\/party/include/glm/gtx/dual\_quaternion.hpp}}
+\mbox{\hyperlink{dual__quaternion_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#ifndef GLM\_GTX\_dual\_quaternion}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#define GLM\_GTX\_dual\_quaternion}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00044}00044 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#include "{}../glm.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#include "{}../gtc/constants.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00047}00047 \textcolor{preprocessor}{\#include "{}../gtc/quaternion.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00049}00049 \textcolor{preprocessor}{\#if(defined(GLM\_MESSAGES) \&\& !defined(GLM\_EXT\_INCLUDED))}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00050}00050 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTX\_dual\_quaternion extension included"{}})}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00051}00051 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00053}00053 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00054}00054 \textcolor{keyword}{namespace }detail}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00055}00055 \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00056}00056     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00057}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{00057}}     \textcolor{keyword}{struct }\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{tdualquat}}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00058}00058     \{}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00059}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_ace336aab392c50d450452edacc3d7f41}{00059}}         \textcolor{keyword}{enum} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_ace336aab392c50d450452edacc3d7f41}{ctor}}\{\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_ace336aab392c50d450452edacc3d7f41a9649d51893e82ea43ff08e3c5f06bdc9}{null}}\};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00060}00060         }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00061}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a811e451c41fec5277ac7c99381152df4}{00061}}         \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm::detail::tquat<T, P>}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a811e451c41fec5277ac7c99381152df4}{part\_type}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00062}00062         }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00063}00063     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00064}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a6d739e4771a6244cc15562c2ecda7fdc}{00064}}         \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm::detail::tquat<T, P>}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_abebb177d1dca2b170fe7d01e9970eb37}{real}}, \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a6d739e4771a6244cc15562c2ecda7fdc}{dual}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00065}00065         }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00066}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_ab97752b8ae3e54cf2ef68cafb1a80a0f}{00066}}         \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{setup_8hpp_a08b807947b47031d3a511f03f89645ad}{GLM\_CONSTEXPR}} \textcolor{keywordtype}{int} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_ab97752b8ae3e54cf2ef68cafb1a80a0f}{length}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00067}00067         }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00068}00068         \textcolor{comment}{// Constructors}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00069}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a6171d5f9ac73010d13d15084ff448711}{00069}}         \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a6171d5f9ac73010d13d15084ff448711}{tdualquat}}();}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00070}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a49f045262f15dc7c80c274f5d98fc453}{00070}}         \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \textcolor{keyword}{explicit} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a49f045262f15dc7c80c274f5d98fc453}{tdualquat}}(\mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat<T, P>}} \textcolor{keyword}{const} \& \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_abebb177d1dca2b170fe7d01e9970eb37}{real}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00071}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_aa08fb087e7dea8ae473d4711377e1034}{00071}}         \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_aa08fb087e7dea8ae473d4711377e1034}{tdualquat}}(\mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat<T, P>}} \textcolor{keyword}{const} \& \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_abebb177d1dca2b170fe7d01e9970eb37}{real}},\mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat<T, P>}} \textcolor{keyword}{const} \& \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a6d739e4771a6244cc15562c2ecda7fdc}{dual}});}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00072}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a4ad7762ae545960d239cbf5a306962eb}{00072}}         \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a4ad7762ae545960d239cbf5a306962eb}{tdualquat}}(\mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat<T, P>}} \textcolor{keyword}{const} \& \mbox{\hyperlink{group__gtx__rotate__vector_ga1e557e56c436d2376cdf800544cf6f67}{orientation}},\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{tvec3<T, P>}} \textcolor{keyword}{const}\& translation);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00073}00073         }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00075}00075         \textcolor{comment}{// tdualquat conversions}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00076}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a77d499fe54dc5217e10e4bd15ece007a}{00076}}         \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \textcolor{keyword}{explicit} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a77d499fe54dc5217e10e4bd15ece007a}{tdualquat}}(\mbox{\hyperlink{structglm_1_1detail_1_1tmat2x4}{tmat2x4<T, P>}} \textcolor{keyword}{const} \& holder\_mat);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00077}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_aef31f28a2572fe67e0af66fde2823a54}{00077}}         \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \textcolor{keyword}{explicit} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_aef31f28a2572fe67e0af66fde2823a54}{tdualquat}}(\mbox{\hyperlink{structglm_1_1detail_1_1tmat3x4}{tmat3x4<T, P>}} \textcolor{keyword}{const} \& aug\_mat);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00078}00078         }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00079}00079         \textcolor{comment}{// Accesses}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00080}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_ae663303e5c520c523015107c1bb85578}{00080}}         \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{part\_type}} \& \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_ae663303e5c520c523015107c1bb85578}{operator[]}}(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00081}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a64a9b56148f04cb56ecd3a6422d435fc}{00081}}         \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{part\_type}} \textcolor{keyword}{const} \& \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a64a9b56148f04cb56ecd3a6422d435fc}{operator[]}}(\textcolor{keywordtype}{int} i) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00082}00082         }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00083}00083         \textcolor{comment}{// Operators}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00084}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a6f4a2c7819104e56f64aa38c69974dca}{00084}}         \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{tdualquat<T, P>}} \& \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_a6f4a2c7819104e56f64aa38c69974dca}{operator*=}}(T \textcolor{keyword}{const} \& s);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00085}\mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_acec7a70147a2ded69cd9a8de6f03fbfd}{00085}}         \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{tdualquat<T, P>}} \& \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat_acec7a70147a2ded69cd9a8de6f03fbfd}{operator/=}}(T \textcolor{keyword}{const} \& s);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00086}00086     \};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00087}00087     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00088}00088     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00089}00089     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{detail::tquat<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_a54fb9622bc40ded8d766cf69d9abd372}{operator-\/ }}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00090}00090         \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{detail::tquat<T, P>}} \textcolor{keyword}{const} \& q);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00091}00091     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00092}00092     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00093}\mbox{\hyperlink{namespaceglm_1_1detail_a9f7fd123df247068996a941c50b36bbd}{00093}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_a9dca3c4447835450ac8254d03697f57c}{operator+ }}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00094}00094         \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \textcolor{keyword}{const} \& q,}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00095}00095         \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \textcolor{keyword}{const} \& p);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00096}00096     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00097}00097     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00098}\mbox{\hyperlink{namespaceglm_1_1detail_a328b1caf9049ec4c920e50813ab53203}{00098}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_ad057ae3e6bede53c831fc6bab7724716}{operator* }}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00099}00099         \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \textcolor{keyword}{const} \& q,}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00100}00100         \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \textcolor{keyword}{const} \& p);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00101}00101     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00102}00102     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00103}00103     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_ad057ae3e6bede53c831fc6bab7724716}{operator* }}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00104}00104         \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{detail::tquat<T, P>}} \textcolor{keyword}{const} \& q,}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00105}00105         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& v);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00106}00106     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00107}00107     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00108}00108     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_ad057ae3e6bede53c831fc6bab7724716}{operator* }}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00109}00109         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& v,}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00110}00110         \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{detail::tquat<T, P>}} \textcolor{keyword}{const} \& q);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00111}00111     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00112}00112     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00113}00113     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_ad057ae3e6bede53c831fc6bab7724716}{operator* }}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00114}00114         \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{detail::tquat<T, P>}} \textcolor{keyword}{const} \& q,}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00115}00115         \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \textcolor{keyword}{const} \& v);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00116}00116     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00117}00117     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00118}00118     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_ad057ae3e6bede53c831fc6bab7724716}{operator* }}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00119}00119         \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \textcolor{keyword}{const} \& v,}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00120}00120         \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{detail::tquat<T, P>}} \textcolor{keyword}{const} \& q);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00121}00121     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00122}00122     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00123}\mbox{\hyperlink{namespaceglm_1_1detail_add463e233e746390709bfe942dfc6b35}{00123}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_ad057ae3e6bede53c831fc6bab7724716}{operator* }}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00124}00124         \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \textcolor{keyword}{const} \& q,}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00125}00125         T \textcolor{keyword}{const} \& s);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00126}00126     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00127}00127     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00128}\mbox{\hyperlink{namespaceglm_1_1detail_a923cb2ba2cc27a147fadb5c9ac71dd07}{00128}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_ad057ae3e6bede53c831fc6bab7724716}{operator* }}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00129}00129         T \textcolor{keyword}{const} \& s,}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00130}00130         \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \textcolor{keyword}{const} \& q);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00131}00131     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00132}00132     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00133}\mbox{\hyperlink{namespaceglm_1_1detail_ab6ab8cb1d1dab95a5a226e82157a4e46}{00133}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_a35081c5038f3a7d3ee35a0710cd874f4}{operator/ }}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00134}00134         \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \textcolor{keyword}{const} \& q,}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00135}00135         T \textcolor{keyword}{const} \& s);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00136}00136 \} \textcolor{comment}{//namespace detail}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00137}00137     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00144}00144     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00145}\mbox{\hyperlink{group__gtc__dual__quaternion_gaec31174d74553341aafc348de45e8fd9}{00145}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \mbox{\hyperlink{group__core__func__geometric_ga15aa87101457e41663b08a8dcc3357f8}{normalize}}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00146}00146         \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \textcolor{keyword}{const} \& q);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00151}00151     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00152}\mbox{\hyperlink{group__gtc__dual__quaternion_gaebc92add1bd2368380ad92246c69743c}{00152}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \mbox{\hyperlink{group__gtc__quaternion_ga0f05dd5a392254674994ca057b35f89f}{lerp}}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00153}00153         \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \textcolor{keyword}{const} \& x,}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00154}00154         \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \textcolor{keyword}{const} \& y,}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00155}00155         T \textcolor{keyword}{const} \& a);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00156}00156 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00160}00160     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00161}\mbox{\hyperlink{group__gtc__dual__quaternion_ga03e306dad55261eab333f4863e3930e2}{00161}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \mbox{\hyperlink{group__core__func__matrix_gaff4e89603cf51cdbcedebc57cd8808a3}{inverse}}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00162}00162         \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \textcolor{keyword}{const} \& q);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00164}00164     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00169}00169 \textcolor{comment}{    template <typename T, precision P>}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00170}00170 \textcolor{comment}{    detail::tmat3x3<T, P> mat3\_cast(}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00171}00171 \textcolor{comment}{        detail::tdualquat<T, P> const \& x);}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00172}00172 \textcolor{comment}{    */}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00173}00173     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00177}00177     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00178}\mbox{\hyperlink{group__gtc__dual__quaternion_gafed355c745373b7fd3082932160c1409}{00178}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat2x4}{detail::tmat2x4<T, P>}} \mbox{\hyperlink{group__gtc__dual__quaternion_gafed355c745373b7fd3082932160c1409}{mat2x4\_cast}}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00179}00179         \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \textcolor{keyword}{const} \& x);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00180}00180 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00184}00184     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00185}\mbox{\hyperlink{group__gtc__dual__quaternion_ga729a050a6762740fc726f356a18afe02}{00185}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat3x4}{detail::tmat3x4<T, P>}} \mbox{\hyperlink{group__gtc__dual__quaternion_ga729a050a6762740fc726f356a18afe02}{mat3x4\_cast}}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00186}00186         \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \textcolor{keyword}{const} \& x);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00187}00187 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00191}00191     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00192}\mbox{\hyperlink{group__gtc__dual__quaternion_ga3caf475f281a3c891823b4e8f0e9075a}{00192}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \mbox{\hyperlink{group__gtc__dual__quaternion_ga3caf475f281a3c891823b4e8f0e9075a}{dualquat\_cast}}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00193}00193         \mbox{\hyperlink{structglm_1_1detail_1_1tmat2x4}{detail::tmat2x4<T, P>}} \textcolor{keyword}{const} \& x);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00194}00194 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00198}00198     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00199}\mbox{\hyperlink{group__gtc__dual__quaternion_ga8f1a071d821db2268f1c32383dc64d03}{00199}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<T, P>}} \mbox{\hyperlink{group__gtc__dual__quaternion_ga3caf475f281a3c891823b4e8f0e9075a}{dualquat\_cast}}(}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00200}00200         \mbox{\hyperlink{structglm_1_1detail_1_1tmat3x4}{detail::tmat3x4<T, P>}} \textcolor{keyword}{const} \& x);}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00201}00201 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00202}00202     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00206}\mbox{\hyperlink{group__gtc__dual__quaternion_gae1772179edc60f4e8b46c8772eeeccee}{00206}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<float, lowp>}}        \mbox{\hyperlink{group__gtc__dual__quaternion_gae1772179edc60f4e8b46c8772eeeccee}{lowp\_dualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00207}00207     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00211}\mbox{\hyperlink{group__gtc__dual__quaternion_ga71fc1c10a382330c1fee55ce29703405}{00211}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<float, mediump>}}  \mbox{\hyperlink{group__gtc__dual__quaternion_ga71fc1c10a382330c1fee55ce29703405}{mediump\_dualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00212}00212     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00216}\mbox{\hyperlink{group__gtc__dual__quaternion_gaf3a01deb502f53ca555ee1d45e6d6776}{00216}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<float, highp>}}      \mbox{\hyperlink{group__gtc__dual__quaternion_gaf3a01deb502f53ca555ee1d45e6d6776}{highp\_dualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00217}00217 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00218}00218 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00222}\mbox{\hyperlink{group__gtc__dual__quaternion_gae62c636c63c9eb3c1ea6d10f4b7d7c81}{00222}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<float, lowp>}}        \mbox{\hyperlink{group__gtc__dual__quaternion_gae62c636c63c9eb3c1ea6d10f4b7d7c81}{lowp\_fdualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00223}00223     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00227}\mbox{\hyperlink{group__gtc__dual__quaternion_gab211d24786158490e57dfa57d7744f71}{00227}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<float, mediump>}}  \mbox{\hyperlink{group__gtc__dual__quaternion_gab211d24786158490e57dfa57d7744f71}{mediump\_fdualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00228}00228     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00232}\mbox{\hyperlink{group__gtc__dual__quaternion_ga2ed3283c09d3ffaf52a0e0a4b248eab6}{00232}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<float, highp>}}      \mbox{\hyperlink{group__gtc__dual__quaternion_ga2ed3283c09d3ffaf52a0e0a4b248eab6}{highp\_fdualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00233}00233     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00234}00234     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00238}\mbox{\hyperlink{group__gtc__dual__quaternion_ga29461fddd543ffdf65a199fc28c42458}{00238}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<double, lowp>}}      \mbox{\hyperlink{group__gtc__dual__quaternion_ga29461fddd543ffdf65a199fc28c42458}{lowp\_ddualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00239}00239     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00243}\mbox{\hyperlink{group__gtc__dual__quaternion_ga62d8cbf30e2afd0b1044204268a69066}{00243}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<double, mediump>}}    \mbox{\hyperlink{group__gtc__dual__quaternion_ga62d8cbf30e2afd0b1044204268a69066}{mediump\_ddualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00244}00244     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00248}\mbox{\hyperlink{group__gtc__dual__quaternion_ga61b654c21f080135aedcf23461eb1037}{00248}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{detail::tdualquat<double, highp>}}    \mbox{\hyperlink{group__gtc__dual__quaternion_ga61b654c21f080135aedcf23461eb1037}{highp\_ddualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00249}00249 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00250}00250     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00251}00251 \textcolor{preprocessor}{\#if(!defined(GLM\_PRECISION\_HIGHP\_FLOAT) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_FLOAT) \&\& !defined(GLM\_PRECISION\_LOWP\_FLOAT))}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00255}\mbox{\hyperlink{group__gtc__dual__quaternion_ga2f6227b5f9dc08a2e7682065a84b3aa9}{00255}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{highp\_fdualquat}}          \mbox{\hyperlink{group__gtc__dual__quaternion_ga2f6227b5f9dc08a2e7682065a84b3aa9}{dualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00256}00256     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00260}\mbox{\hyperlink{group__gtc__dual__quaternion_ga436906129bc69ca5059555cafcbac9fd}{00260}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{highp\_fdualquat}}          \mbox{\hyperlink{group__gtc__dual__quaternion_ga436906129bc69ca5059555cafcbac9fd}{fdualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00261}00261 \textcolor{preprocessor}{\#elif(defined(GLM\_PRECISION\_HIGHP\_FLOAT) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_FLOAT) \&\& !defined(GLM\_PRECISION\_LOWP\_FLOAT))}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00262}00262     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{highp\_fdualquat}}          \mbox{\hyperlink{group__gtc__dual__quaternion_ga2f6227b5f9dc08a2e7682065a84b3aa9}{dualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00263}00263     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{highp\_fdualquat}}          \mbox{\hyperlink{group__gtc__dual__quaternion_ga436906129bc69ca5059555cafcbac9fd}{fdualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00264}00264 \textcolor{preprocessor}{\#elif(!defined(GLM\_PRECISION\_HIGHP\_FLOAT) \&\& defined(GLM\_PRECISION\_MEDIUMP\_FLOAT) \&\& !defined(GLM\_PRECISION\_LOWP\_FLOAT))}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00265}00265     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{mediump\_fdualquat}}      \mbox{\hyperlink{group__gtc__dual__quaternion_ga2f6227b5f9dc08a2e7682065a84b3aa9}{dualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00266}00266     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{mediump\_fdualquat}}      \mbox{\hyperlink{group__gtc__dual__quaternion_ga436906129bc69ca5059555cafcbac9fd}{fdualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00267}00267 \textcolor{preprocessor}{\#elif(!defined(GLM\_PRECISION\_HIGHP\_FLOAT) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_FLOAT) \&\& defined(GLM\_PRECISION\_LOWP\_FLOAT))}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00268}00268     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{lowp\_fdualquat}}            \mbox{\hyperlink{group__gtc__dual__quaternion_ga2f6227b5f9dc08a2e7682065a84b3aa9}{dualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00269}00269     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{lowp\_fdualquat}}            \mbox{\hyperlink{group__gtc__dual__quaternion_ga436906129bc69ca5059555cafcbac9fd}{fdualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00270}00270 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00271}00271 \textcolor{preprocessor}{\#   error "{}GLM error: multiple default precision requested for single-\/precision floating-\/point types"{}}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00272}00272 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00273}00273     }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00274}00274 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00275}00275 \textcolor{preprocessor}{\#if(!defined(GLM\_PRECISION\_HIGHP\_DOUBLE) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_DOUBLE) \&\& !defined(GLM\_PRECISION\_LOWP\_DOUBLE))}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00279}\mbox{\hyperlink{group__gtc__dual__quaternion_ga373431ffdd82d5c03c258217a9e1f1a6}{00279}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{highp\_ddualquat}}          \mbox{\hyperlink{group__gtc__dual__quaternion_ga373431ffdd82d5c03c258217a9e1f1a6}{ddualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00280}00280 \textcolor{preprocessor}{\#elif(defined(GLM\_PRECISION\_HIGHP\_DOUBLE) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_DOUBLE) \&\& !defined(GLM\_PRECISION\_LOWP\_DOUBLE))}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00281}00281     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{highp\_ddualquat}}          \mbox{\hyperlink{group__gtc__dual__quaternion_ga373431ffdd82d5c03c258217a9e1f1a6}{ddualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00282}00282 \textcolor{preprocessor}{\#elif(!defined(GLM\_PRECISION\_HIGHP\_DOUBLE) \&\& defined(GLM\_PRECISION\_MEDIUMP\_DOUBLE) \&\& !defined(GLM\_PRECISION\_LOWP\_DOUBLE))}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00283}00283     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{mediump\_ddualquat}}      \mbox{\hyperlink{group__gtc__dual__quaternion_ga373431ffdd82d5c03c258217a9e1f1a6}{ddualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00284}00284 \textcolor{preprocessor}{\#elif(!defined(GLM\_PRECISION\_HIGHP\_DOUBLE) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_DOUBLE) \&\& defined(GLM\_PRECISION\_LOWP\_DOUBLE))}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00285}00285     \textcolor{keyword}{typedef} \mbox{\hyperlink{structglm_1_1detail_1_1tdualquat}{lowp\_ddualquat}}            \mbox{\hyperlink{group__gtc__dual__quaternion_ga373431ffdd82d5c03c258217a9e1f1a6}{ddualquat}};}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00286}00286 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00287}00287 \textcolor{preprocessor}{\#   error "{}GLM error: Multiple default precision requested for double-\/precision floating-\/point types"{}}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00288}00288 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00289}00289 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00291}00291 \} \textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00292}00292 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00293}00293 \textcolor{preprocessor}{\#include "{}dual\_quaternion.inl"{}}}
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00294}00294 }
+\DoxyCodeLine{\Hypertarget{dual__quaternion_8hpp_source_l00295}00295 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_GTX\_dual\_quaternion}}
+
+\end{DoxyCode}

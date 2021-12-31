@@ -5,7 +5,7 @@
 #include <rendering/Model.hpp>
 #include <glimac/SDLWindowManager.hpp>
 
-
+namespace game{
 
 void Object::addCoord(float x,float y,float z)
 {
@@ -69,4 +69,5 @@ void Object::drawCoins(rendering::Cube& mesh, const rendering::Camera *camera, r
     Program.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
     Program.uniform1i("uTexture", 0);
     mesh.draw();
+}
 }

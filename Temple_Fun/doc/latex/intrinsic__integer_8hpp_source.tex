@@ -1,0 +1,30 @@
+\hypertarget{intrinsic__integer_8hpp_source}{}\doxysection{intrinsic\+\_\+integer.\+hpp}
+\label{intrinsic__integer_8hpp_source}\index{third-\/party/include/glm/detail/intrinsic\_integer.hpp@{third-\/party/include/glm/detail/intrinsic\_integer.hpp}}
+\mbox{\hyperlink{intrinsic__integer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#ifndef glm\_detail\_intrinsic\_integer}}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00030}00030 \textcolor{preprocessor}{\#define glm\_detail\_intrinsic\_integer}}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{third-party_2include_2glm_2glm_8hpp}{glm/glm.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00034}00034 \textcolor{preprocessor}{\#if(!(GLM\_ARCH \& GLM\_ARCH\_SSE2))}}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00035}00035 \textcolor{preprocessor}{\#   error "{}SSE2 instructions not supported or enabled"{}}}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00036}00036 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00038}00038 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00039}00039 \textcolor{keyword}{namespace }detail}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00040}00040 \{}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00041}00041     \_\_m128i \_mm\_bit\_interleave\_si128(\_\_m128i x);}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00042}00042     \_\_m128i \_mm\_bit\_interleave\_si128(\_\_m128i x, \_\_m128i y);}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00044}00044 \}\textcolor{comment}{//namespace detail}}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00045}00045 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00047}00047 \textcolor{preprocessor}{\#include "{}intrinsic\_integer.inl"{}}}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00049}00049 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_ARCH}}
+\DoxyCodeLine{\Hypertarget{intrinsic__integer_8hpp_source_l00050}00050 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//glm\_detail\_intrinsic\_integer}}
+
+\end{DoxyCode}

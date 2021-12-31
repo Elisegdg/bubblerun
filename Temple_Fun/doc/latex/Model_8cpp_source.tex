@@ -1,0 +1,72 @@
+\hypertarget{Model_8cpp_source}{}\doxysection{Model.\+cpp}
+\label{Model_8cpp_source}\index{rendering/src/Model.cpp@{rendering/src/Model.cpp}}
+\mbox{\hyperlink{Model_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Model_8hpp}{rendering/Model.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00003}00003 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacerendering}{rendering}}\{}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00006}\mbox{\hyperlink{classrendering_1_1Model_acf3b673e2481d91ecc9115c0926fcaad}{00006}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1Model_acf3b673e2481d91ecc9115c0926fcaad}{Model::setVbo}}()\{}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00007}00007     GLuint vbo;}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00008}00008     \mbox{\hyperlink{classrendering_1_1Model_a1b4e4749b3ed3d9412b59adcded10c86}{m\_vbo}} = vbo;}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00009}00009     glGenBuffers(1, \&\mbox{\hyperlink{classrendering_1_1Model_a1b4e4749b3ed3d9412b59adcded10c86}{m\_vbo}});}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00010}00010     glBindBuffer(GL\_ARRAY\_BUFFER, \mbox{\hyperlink{classrendering_1_1Model_a1b4e4749b3ed3d9412b59adcded10c86}{m\_vbo}});}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00011}00011     glBufferData(GL\_ARRAY\_BUFFER, \mbox{\hyperlink{classrendering_1_1Model_a1b18132062f390fd76171e30fce8e345}{getVertexCount}}() * \textcolor{keyword}{sizeof}(glimac::ShapeVertex), \mbox{\hyperlink{classrendering_1_1Model_a763e16cede9c66fd3e575c0325580650}{getDataPointer}}(), GL\_STATIC\_DRAW);}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00012}00012     glBindBuffer(GL\_ARRAY\_BUFFER, 0);}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00013}00013 \}}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00015}\mbox{\hyperlink{classrendering_1_1Model_abe5fba00ce7ffce494d161a0bb2b5899}{00015}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1Model_abe5fba00ce7ffce494d161a0bb2b5899}{Model::setIbo}}()\{}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00016}00016     GLuint ibo;}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00017}00017     \mbox{\hyperlink{classrendering_1_1Model_ac38fe327945479fb45cd30e093c15ef2}{m\_ibo}} = ibo;}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00018}00018     \mbox{\hyperlink{classrendering_1_1Model_ad1ad57b7c16e0be1c3700b4555a07693}{m\_isIbo}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00019}00019     glGenBuffers(1, \&\mbox{\hyperlink{classrendering_1_1Model_ac38fe327945479fb45cd30e093c15ef2}{m\_ibo}});}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00020}00020     glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER, \mbox{\hyperlink{classrendering_1_1Model_ac38fe327945479fb45cd30e093c15ef2}{m\_ibo}});}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00021}00021     glBufferData(GL\_ELEMENT\_ARRAY\_BUFFER, \mbox{\hyperlink{classrendering_1_1Model_a1b18132062f390fd76171e30fce8e345}{getVertexCount}}() * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}), \mbox{\hyperlink{classrendering_1_1Model_acc2949adef22aef0707208a1535db3d7}{getIndexPointer}}(), GL\_STATIC\_DRAW);}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00022}00022     glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER, 0);}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00023}00023 \}}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00025}\mbox{\hyperlink{classrendering_1_1Model_a68c2100e9f8bbbdd77be0accd1e9835c}{00025}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1Model_a68c2100e9f8bbbdd77be0accd1e9835c}{Model::setVao}}()\{}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00026}00026     GLuint vao;}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00027}00027     \mbox{\hyperlink{classrendering_1_1Model_ab7f6d0aab1e64bf7ba03d2b986fc08b4}{m\_vao}} = vao;}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00028}00028     glGenVertexArrays(1, \&\mbox{\hyperlink{classrendering_1_1Model_ab7f6d0aab1e64bf7ba03d2b986fc08b4}{m\_vao}});}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00029}00029     glBindVertexArray(\mbox{\hyperlink{classrendering_1_1Model_ab7f6d0aab1e64bf7ba03d2b986fc08b4}{m\_vao}});}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00030}00030     \textcolor{keywordflow}{if}(\mbox{\hyperlink{classrendering_1_1Model_ad1ad57b7c16e0be1c3700b4555a07693}{m\_isIbo}})\{        }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00031}00031         glBindBuffer(GL\_ELEMENT\_ARRAY\_BUFFER, \mbox{\hyperlink{classrendering_1_1Model_ac38fe327945479fb45cd30e093c15ef2}{m\_ibo}});}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00032}00032     \}}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00033}00033     \textcolor{keyword}{const} GLuint VERTEX\_ATTR\_POSITION = 0;}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00034}00034     \textcolor{keyword}{const} GLuint VERTEX\_ATTR\_NORMAL = 1;}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00035}00035     \textcolor{keyword}{const} GLuint VERTEX\_ATTR\_TEXCOORDS = 2;}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00036}00036     glEnableVertexAttribArray(VERTEX\_ATTR\_POSITION);}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00037}00037     glEnableVertexAttribArray(VERTEX\_ATTR\_NORMAL);}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00038}00038     glEnableVertexAttribArray(VERTEX\_ATTR\_TEXCOORDS);}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00039}00039     glBindBuffer(GL\_ARRAY\_BUFFER, \mbox{\hyperlink{classrendering_1_1Model_a1b4e4749b3ed3d9412b59adcded10c86}{m\_vbo}});}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00040}00040     glVertexAttribPointer(VERTEX\_ATTR\_POSITION, 3, GL\_FLOAT, GL\_FALSE, \textcolor{keyword}{sizeof}(glimac::ShapeVertex), (\textcolor{keyword}{const} GLvoid *)offsetof(glimac::ShapeVertex, position));}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00041}00041     glVertexAttribPointer(VERTEX\_ATTR\_NORMAL, 3, GL\_FLOAT, GL\_FALSE, \textcolor{keyword}{sizeof}(glimac::ShapeVertex), (\textcolor{keyword}{const} GLvoid *)offsetof(glimac::ShapeVertex, normal));}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00042}00042     glVertexAttribPointer(VERTEX\_ATTR\_TEXCOORDS, 2, GL\_FLOAT, GL\_FALSE, \textcolor{keyword}{sizeof}(glimac::ShapeVertex), (\textcolor{keyword}{const} GLvoid *)offsetof(glimac::ShapeVertex, texCoords));}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00043}00043     glBindBuffer(GL\_ARRAY\_BUFFER, 0);}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00044}00044     glBindVertexArray(0);}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00045}00045 \}}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00047}\mbox{\hyperlink{classrendering_1_1Model_ae735601092c5c3a731da95b9eeff3505}{00047}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1Model_ae735601092c5c3a731da95b9eeff3505}{Model::setBuffers}}() \{}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00048}00048     \mbox{\hyperlink{classrendering_1_1Model_acf3b673e2481d91ecc9115c0926fcaad}{setVbo}}();}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00049}00049     \mbox{\hyperlink{classrendering_1_1Model_abe5fba00ce7ffce494d161a0bb2b5899}{setIbo}}();  }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00050}00050     \mbox{\hyperlink{classrendering_1_1Model_a68c2100e9f8bbbdd77be0accd1e9835c}{setVao}}();}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00051}00051 \}}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00053}\mbox{\hyperlink{classrendering_1_1Model_a763e16cede9c66fd3e575c0325580650}{00053}} \textcolor{keyword}{const} glimac::ShapeVertex* \mbox{\hyperlink{classrendering_1_1Model_a763e16cede9c66fd3e575c0325580650}{Model::getDataPointer}}()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00054}00054     \textcolor{keywordflow}{return} \&\mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}[0];}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00059}\mbox{\hyperlink{classrendering_1_1Model_acc2949adef22aef0707208a1535db3d7}{00059}} \textcolor{keyword}{const} \textcolor{keywordtype}{int}* \mbox{\hyperlink{classrendering_1_1Model_acc2949adef22aef0707208a1535db3d7}{Model::getIndexPointer}}()\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00060}00060     \textcolor{keywordflow}{return} \&\mbox{\hyperlink{classrendering_1_1Model_ab9a4020386d3d3df53c88b2738671130}{m\_index}}[0];}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00061}00061 \}}
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{Model_8cpp_source_l00066}00066 \}}
+
+\end{DoxyCode}

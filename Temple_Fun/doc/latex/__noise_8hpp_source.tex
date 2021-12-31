@@ -1,0 +1,110 @@
+\hypertarget{__noise_8hpp_source}{}\doxysection{\+\_\+noise.\+hpp}
+\label{__noise_8hpp_source}\index{third-\/party/include/glm/detail/\_noise.hpp@{third-\/party/include/glm/detail/\_noise.hpp}}
+\mbox{\hyperlink{__noise_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#ifndef GLM\_DETAIL\_NOISE\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00030}00030 \textcolor{preprocessor}{\#define GLM\_DETAIL\_NOISE\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00032}00032 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00033}\mbox{\hyperlink{namespaceglm_1_1detail}{00033}} \textcolor{keyword}{namespace }detail}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00034}00034 \{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00035}00035     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00036}\mbox{\hyperlink{namespaceglm_1_1detail_a9968154b610b2b78f492b2f7babd728c}{00036}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} T \mbox{\hyperlink{namespaceglm_1_1detail_a9968154b610b2b78f492b2f7babd728c}{mod289}}(T \textcolor{keyword}{const} \& x)}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00037}00037     \{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00038}00038         \textcolor{keywordflow}{return} x -\/ \mbox{\hyperlink{group__core__func__common_ga86350252cc9bf86421317460bbd1f21c}{floor}}(x * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1.0) / \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(289.0)) * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(289.0);}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00041}00041     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00042}\mbox{\hyperlink{namespaceglm_1_1detail_adce908e01ac22b5e55c29bacbf6a37a5}{00042}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} T \mbox{\hyperlink{namespaceglm_1_1detail_adce908e01ac22b5e55c29bacbf6a37a5}{permute}}(T \textcolor{keyword}{const} \& x)}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00043}00043     \{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00044}00044         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceglm_1_1detail_a9968154b610b2b78f492b2f7babd728c}{mod289}}(((x * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(34)) + \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)) * x);}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00047}00047     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00048}\mbox{\hyperlink{namespaceglm_1_1detail_ae00707edf5e6f1c3e5073c78b0c1b091}{00048}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec2}{tvec2<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_adce908e01ac22b5e55c29bacbf6a37a5}{permute}}(\mbox{\hyperlink{structglm_1_1detail_1_1tvec2}{tvec2<T, P>}} \textcolor{keyword}{const} \& x)}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00049}00049     \{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00050}00050         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceglm_1_1detail_a9968154b610b2b78f492b2f7babd728c}{mod289}}(((x * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(34)) + \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)) * x);}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00051}00051     \}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00052}00052     }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00053}00053     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00054}\mbox{\hyperlink{namespaceglm_1_1detail_a44c206a387c98d1943a993db6f112f43}{00054}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{tvec3<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_adce908e01ac22b5e55c29bacbf6a37a5}{permute}}(\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{tvec3<T, P>}} \textcolor{keyword}{const} \& x)}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00055}00055     \{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00056}00056         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceglm_1_1detail_a9968154b610b2b78f492b2f7babd728c}{mod289}}(((x * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(34)) + \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)) * x);}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00057}00057     \}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00058}00058     }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00059}00059     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00060}\mbox{\hyperlink{namespaceglm_1_1detail_a66929616603ed59f474bef4c8a3f1d1b}{00060}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{tvec4<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_adce908e01ac22b5e55c29bacbf6a37a5}{permute}}(\mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{tvec4<T, P>}} \textcolor{keyword}{const} \& x)}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00061}00061     \{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00062}00062         \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceglm_1_1detail_a9968154b610b2b78f492b2f7babd728c}{mod289}}(((x * \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(34)) + \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)) * x);}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00063}00063     \}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00064}00064 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00065}00065 \textcolor{comment}{    template <typename T, precision P, template<typename> class vecType>}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00066}00066 \textcolor{comment}{    GLM\_FUNC\_QUALIFIER vecType<T, P> permute(vecType<T, P> const \& x)}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00067}00067 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00068}00068 \textcolor{comment}{        return mod289(((x * T(34)) + T(1)) * x);}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00069}00069 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00070}00070 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00071}00071     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00072}\mbox{\hyperlink{namespaceglm_1_1detail_a82e6fa9d633a5f76f8b7e046ac5d91f4}{00072}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} T \mbox{\hyperlink{namespaceglm_1_1detail_a82e6fa9d633a5f76f8b7e046ac5d91f4}{taylorInvSqrt}}(T \textcolor{keyword}{const} \& r)}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00073}00073     \{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00074}00074         \textcolor{keywordflow}{return} T(1.79284291400159) -\/ T(0.85373472095314) * r;}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00075}00075     \}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00076}00076     }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00077}00077     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00078}\mbox{\hyperlink{namespaceglm_1_1detail_af2f3941d72619c313ae0e58cda0ac2a5}{00078}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec2}{detail::tvec2<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_a82e6fa9d633a5f76f8b7e046ac5d91f4}{taylorInvSqrt}}(\mbox{\hyperlink{structglm_1_1detail_1_1tvec2}{detail::tvec2<T, P>}} \textcolor{keyword}{const} \& r)}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00079}00079     \{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00080}00080         \textcolor{keywordflow}{return} T(1.79284291400159) -\/ T(0.85373472095314) * r;}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00081}00081     \}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00082}00082     }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00083}00083     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00084}\mbox{\hyperlink{namespaceglm_1_1detail_aa3bc0bca209478c9034525571ca2bd0e}{00084}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_a82e6fa9d633a5f76f8b7e046ac5d91f4}{taylorInvSqrt}}(\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& r)}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00085}00085     \{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00086}00086         \textcolor{keywordflow}{return} T(1.79284291400159) -\/ T(0.85373472095314) * r;}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00087}00087     \}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00088}00088     }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00089}00089     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00090}\mbox{\hyperlink{namespaceglm_1_1detail_a14bb785c91c8d449428e383c25f642c2}{00090}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_a82e6fa9d633a5f76f8b7e046ac5d91f4}{taylorInvSqrt}}(\mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \textcolor{keyword}{const} \& r)}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00091}00091     \{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00092}00092         \textcolor{keywordflow}{return} T(1.79284291400159) -\/ T(0.85373472095314) * r;}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00093}00093     \}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00094}00094 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00095}00095 \textcolor{comment}{    template <typename T, precision P, template<typename> class vecType>}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00096}00096 \textcolor{comment}{    GLM\_FUNC\_QUALIFIER vecType<T, P> taylorInvSqrt(vecType<T, P> const \& r)}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00097}00097 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00098}00098 \textcolor{comment}{        return T(1.79284291400159) -\/ T(0.85373472095314) * r;}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00099}00099 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00100}00100 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00101}00101     }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00102}00102     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00103}\mbox{\hyperlink{namespaceglm_1_1detail_a6d54381e49e123425285c087b55d6a50}{00103}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec2}{detail::tvec2<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_a6d54381e49e123425285c087b55d6a50}{fade}}(\mbox{\hyperlink{structglm_1_1detail_1_1tvec2}{detail::tvec2<T, P>}} \textcolor{keyword}{const} \& t)}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00104}00104     \{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00105}00105         \textcolor{keywordflow}{return} (t * t * t) * (t * (t * T(6) -\/ T(15)) + T(10));}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00106}00106     \}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00107}00107     }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00108}00108     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00109}\mbox{\hyperlink{namespaceglm_1_1detail_a3d279608d4d9221bac17634b7d778e7d}{00109}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_a6d54381e49e123425285c087b55d6a50}{fade}}(\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& t)}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00110}00110     \{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00111}00111         \textcolor{keywordflow}{return} (t * t * t) * (t * (t * T(6) -\/ T(15)) + T(10));}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00112}00112     \}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00113}00113     }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00114}00114     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00115}\mbox{\hyperlink{namespaceglm_1_1detail_a7462c2131d1d066d316ce0dcf05e3c10}{00115}}     \mbox{\hyperlink{setup_8hpp_a33fdea6f91c5f834105f7415e2a64407}{GLM\_FUNC\_QUALIFIER}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \mbox{\hyperlink{namespaceglm_1_1detail_a6d54381e49e123425285c087b55d6a50}{fade}}(\mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \textcolor{keyword}{const} \& t)}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00116}00116     \{}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00117}00117         \textcolor{keywordflow}{return} (t * t * t) * (t * (t * T(6) -\/ T(15)) + T(10));}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00118}00118     \}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00119}00119 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00120}00120 \textcolor{comment}{    template <typename T, precision P, template <typename> class vecType>}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00121}00121 \textcolor{comment}{    GLM\_FUNC\_QUALIFIER vecType<T, P> fade(vecType<T, P> const \& t)}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00122}00122 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00123}00123 \textcolor{comment}{        return (t * t * t) * (t * (t * T(6) -\/ T(15)) + T(10));}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00124}00124 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00125}00125 \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00126}00126 \}\textcolor{comment}{//namespace detail}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00127}00127 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00129}00129 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_DETAIL\_NOISE\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{__noise_8hpp_source_l00130}00130 }
+
+\end{DoxyCode}

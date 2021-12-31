@@ -1,0 +1,117 @@
+\hypertarget{classgame_1_1Empty}{}\doxysection{game\+::Empty Class Reference}
+\label{classgame_1_1Empty}\index{game::Empty@{game::Empty}}
+
+
+Class of \mbox{\hyperlink{classgame_1_1Empty}{Empty}}.  
+
+
+
+
+{\ttfamily \#include $<$Object.\+hpp$>$}
+
+Inheritance diagram for game\+::Empty\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgame_1_1Empty}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgame_1_1Empty_a25df1d3d06af183ccf4690829fe67ab3}{Empty}} ()
+\begin{DoxyCompactList}\small\item\em Constructor of the \mbox{\hyperlink{classgame_1_1Empty}{Empty}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgame_1_1Empty_a063325b50c45436e2622416a4d8f4cf7}{$\sim$\+Empty}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor of the \mbox{\hyperlink{classgame_1_1Empty}{Empty}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Empty_a791b300af1328ea03dd93c839d80bc03}{draw}} (\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&mesh, const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Program, glm\+::mat4 Proj\+Matrix, glimac\+::\+SDLWindow\+Manager \&window\+Manager)
+\begin{DoxyCompactList}\small\item\em Draw the empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class of \mbox{\hyperlink{classgame_1_1Empty}{Empty}}. 
+
+This class is the children class of \mbox{\hyperlink{classgame_1_1Object}{Object}}. It indicates that there is no cell of path to draw. It can contain coins. 
+
+Definition at line \mbox{\hyperlink{Object_8hpp_source_l00288}{288}} of file \mbox{\hyperlink{Object_8hpp_source}{Object.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgame_1_1Empty_a25df1d3d06af183ccf4690829fe67ab3}\label{classgame_1_1Empty_a25df1d3d06af183ccf4690829fe67ab3}} 
+\index{game::Empty@{game::Empty}!Empty@{Empty}}
+\index{Empty@{Empty}!game::Empty@{game::Empty}}
+\doxysubsubsection{\texorpdfstring{Empty()}{Empty()}}
+{\footnotesize\ttfamily game\+::\+Empty\+::\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor of the \mbox{\hyperlink{classgame_1_1Empty}{Empty}} class. 
+
+It calls the \mbox{\hyperlink{classgame_1_1Object}{Object}} constructor and sets the name to \char`\"{}empty\char`\"{} 
+
+Definition at line \mbox{\hyperlink{Object_8hpp_source_l00296}{296}} of file \mbox{\hyperlink{Object_8hpp_source}{Object.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00296 : \mbox{\hyperlink{classgame_1_1Object_a41b52b659b76c42572fad39376a1bf23}{Object}}(\textcolor{stringliteral}{"{}empty"{}})\{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Empty_a063325b50c45436e2622416a4d8f4cf7}\label{classgame_1_1Empty_a063325b50c45436e2622416a4d8f4cf7}} 
+\index{game::Empty@{game::Empty}!````~Empty@{$\sim$Empty}}
+\index{````~Empty@{$\sim$Empty}!game::Empty@{game::Empty}}
+\doxysubsubsection{\texorpdfstring{$\sim$Empty()}{~Empty()}}
+{\footnotesize\ttfamily game\+::\+Empty\+::$\sim$\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor of the \mbox{\hyperlink{classgame_1_1Empty}{Empty}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgame_1_1Empty_a791b300af1328ea03dd93c839d80bc03}\label{classgame_1_1Empty_a791b300af1328ea03dd93c839d80bc03}} 
+\index{game::Empty@{game::Empty}!draw@{draw}}
+\index{draw@{draw}!game::Empty@{game::Empty}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void game\+::\+Empty\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&}]{mesh,  }\item[{const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$}]{camera,  }\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Program,  }\item[{glm\+::mat4}]{Proj\+Matrix,  }\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Draw the empty. 
+
+Specifies to NOT draw anythin
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & The mesh corresponding to the obstacle \\
+\hline
+{\em camera} & The camera (to get the View\+Matrix) \\
+\hline
+{\em Program} & The shader \\
+\hline
+{\em Proj\+Matrix} & The Projection Matrix \\
+\hline
+{\em Window\+Manager} & The SDLWindow\+Manager \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classgame_1_1Object_a95fd4656e1ed6d9a11caeb58c131a657}{game\+::\+Object}}.
+
+
+
+Definition at line \mbox{\hyperlink{Object_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053 \{}
+\DoxyCodeLine{00054     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00055 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+game/include/game/\mbox{\hyperlink{Object_8hpp}{Object.\+hpp}}\item 
+game/src/\mbox{\hyperlink{Object_8cpp}{Object.\+cpp}}\end{DoxyCompactItemize}

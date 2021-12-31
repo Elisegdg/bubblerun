@@ -1,0 +1,92 @@
+\hypertarget{type__ptr_8hpp_source}{}\doxysection{type\+\_\+ptr.\+hpp}
+\label{type__ptr_8hpp_source}\index{third-\/party/include/glm/gtc/type\_ptr.hpp@{third-\/party/include/glm/gtc/type\_ptr.hpp}}
+\mbox{\hyperlink{type__ptr_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00059}00059 \textcolor{preprocessor}{\#ifndef GLM\_GTC\_type\_ptr}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00060}00060 \textcolor{preprocessor}{\#define GLM\_GTC\_type\_ptr}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00062}00062 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00063}00063 \textcolor{preprocessor}{\#include "{}../gtc/quaternion.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00064}00064 \textcolor{preprocessor}{\#include "{}../vec2.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00065}00065 \textcolor{preprocessor}{\#include "{}../vec3.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00066}00066 \textcolor{preprocessor}{\#include "{}../vec4.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00067}00067 \textcolor{preprocessor}{\#include "{}../mat2x2.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00068}00068 \textcolor{preprocessor}{\#include "{}../mat2x3.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00069}00069 \textcolor{preprocessor}{\#include "{}../mat2x4.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00070}00070 \textcolor{preprocessor}{\#include "{}../mat3x2.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00071}00071 \textcolor{preprocessor}{\#include "{}../mat3x3.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00072}00072 \textcolor{preprocessor}{\#include "{}../mat3x4.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00073}00073 \textcolor{preprocessor}{\#include "{}../mat4x2.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00074}00074 \textcolor{preprocessor}{\#include "{}../mat4x3.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00075}00075 \textcolor{preprocessor}{\#include "{}../mat4x4.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00076}00076 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00078}00078 \textcolor{preprocessor}{\#if(defined(GLM\_MESSAGES) \&\& !defined(GLM\_EXT\_INCLUDED))}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00079}00079 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTC\_type\_ptr extension included"{}})}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00080}00080 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00082}00082 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00083}00083 \{}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00089}00089     \textcolor{keyword}{template}<\textcolor{keyword}{typename} genType>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00090}\mbox{\hyperlink{group__gtc__type__ptr_gaa6abca1c01d37b11c0d524bdf74b2094}{00090}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \textcolor{keyword}{typename} genType::value\_type \textcolor{keyword}{const} * \mbox{\hyperlink{group__gtc__type__ptr_gaa6abca1c01d37b11c0d524bdf74b2094}{value\_ptr}}(genType \textcolor{keyword}{const} \& vec);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00094}00094     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00095}\mbox{\hyperlink{group__gtc__type__ptr_gad6ad017d6d3a041c566329d901d6a3d2}{00095}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec2}{detail::tvec2<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_gad6ad017d6d3a041c566329d901d6a3d2}{make\_vec2}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00099}00099     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00100}\mbox{\hyperlink{group__gtc__type__ptr_gafebc1c15193b3c3be062eb791dc76d01}{00100}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_gafebc1c15193b3c3be062eb791dc76d01}{make\_vec3}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00104}00104     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00105}\mbox{\hyperlink{group__gtc__type__ptr_ga088ec7554d247dcae9323671a05f84bc}{00105}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_ga088ec7554d247dcae9323671a05f84bc}{make\_vec4}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00109}00109     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00110}\mbox{\hyperlink{group__gtc__type__ptr_gad6b7b01a619026dce5c12a4e118b32d5}{00110}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat2x2}{detail::tmat2x2<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_gad6b7b01a619026dce5c12a4e118b32d5}{make\_mat2x2}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00114}00114     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00115}\mbox{\hyperlink{group__gtc__type__ptr_ga4af30e669b324dd97eeed20c94084d17}{00115}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat2x3}{detail::tmat2x3<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_ga4af30e669b324dd97eeed20c94084d17}{make\_mat2x3}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00119}00119     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00120}\mbox{\hyperlink{group__gtc__type__ptr_ga38e042de06fcf3c193cde17e8bf29d5a}{00120}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat2x4}{detail::tmat2x4<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_ga38e042de06fcf3c193cde17e8bf29d5a}{make\_mat2x4}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00124}00124     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00125}\mbox{\hyperlink{group__gtc__type__ptr_gab80a1acd2b3da8d811fac937731347df}{00125}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat3x2}{detail::tmat3x2<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_gab80a1acd2b3da8d811fac937731347df}{make\_mat3x2}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00129}00129     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00130}\mbox{\hyperlink{group__gtc__type__ptr_ga6d86b12adacf3801101a0b28e319bdfb}{00130}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat3x3}{detail::tmat3x3<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_ga6d86b12adacf3801101a0b28e319bdfb}{make\_mat3x3}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00134}00134     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00135}\mbox{\hyperlink{group__gtc__type__ptr_ga93648a49c87d092e84defdaf89003234}{00135}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat3x4}{detail::tmat3x4<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_ga93648a49c87d092e84defdaf89003234}{make\_mat3x4}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00139}00139     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00140}\mbox{\hyperlink{group__gtc__type__ptr_ga3f03fb800420509a77361de23ff16d9a}{00140}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x2}{detail::tmat4x2<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_ga3f03fb800420509a77361de23ff16d9a}{make\_mat4x2}}(}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00141}00141         T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00145}00145     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00146}\mbox{\hyperlink{group__gtc__type__ptr_ga9b022c55d9de54585b05e460b09ec535}{00146}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x3}{detail::tmat4x3<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_ga9b022c55d9de54585b05e460b09ec535}{make\_mat4x3}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00150}00150     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00151}\mbox{\hyperlink{group__gtc__type__ptr_ga26bf38ada7a1c5c6a714d89f6a85891b}{00151}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_ga26bf38ada7a1c5c6a714d89f6a85891b}{make\_mat4x4}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00152}00152     }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00155}00155     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00156}\mbox{\hyperlink{group__gtc__type__ptr_gae3525592ac68044f9a0df5c349d3df88}{00156}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat2x2}{detail::tmat2x2<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_gae3525592ac68044f9a0df5c349d3df88}{make\_mat2}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00160}00160     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00161}\mbox{\hyperlink{group__gtc__type__ptr_ga6b5d4e2a85c9918e6a769d30bbd7db38}{00161}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat3x3}{detail::tmat3x3<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_ga6b5d4e2a85c9918e6a769d30bbd7db38}{make\_mat3}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00162}00162         }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00165}00165     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00166}\mbox{\hyperlink{group__gtc__type__ptr_gadd96cfe65b1d55df616ae2f89ec7b80a}{00166}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_gadd96cfe65b1d55df616ae2f89ec7b80a}{make\_mat4}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00170}00170     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00171}\mbox{\hyperlink{group__gtc__type__ptr_gaf2cc278a559195845ba4c6b3c196aa9a}{00171}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{detail::tquat<T, defaultp>}} \mbox{\hyperlink{group__gtc__type__ptr_gaf2cc278a559195845ba4c6b3c196aa9a}{make\_quat}}(T \textcolor{keyword}{const} * \textcolor{keyword}{const} ptr);}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00174}00174 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00175}00175 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00176}00176 \textcolor{preprocessor}{\#include "{}type\_ptr.inl"{}}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00177}00177 }
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00178}00178 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_GTC\_type\_ptr}}
+\DoxyCodeLine{\Hypertarget{type__ptr_8hpp_source_l00179}00179 }
+
+\end{DoxyCode}

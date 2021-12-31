@@ -1,0 +1,49 @@
+\hypertarget{intrinsic__matrix_8hpp_source}{}\doxysection{intrinsic\+\_\+matrix.\+hpp}
+\label{intrinsic__matrix_8hpp_source}\index{third-\/party/include/glm/detail/intrinsic\_matrix.hpp@{third-\/party/include/glm/detail/intrinsic\_matrix.hpp}}
+\mbox{\hyperlink{intrinsic__matrix_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#ifndef glm\_detail\_intrinsic\_matrix}}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00030}00030 \textcolor{preprocessor}{\#define glm\_detail\_intrinsic\_matrix}}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{setup_8hpp}{setup.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00034}00034 \textcolor{preprocessor}{\#if(!(GLM\_ARCH \& GLM\_ARCH\_SSE2))}}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00035}00035 \textcolor{preprocessor}{\#   error "{}SSE2 instructions not supported or enabled"{}}}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00036}00036 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00038}00038 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{intrinsic__geometric_8hpp}{intrinsic\_geometric.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00040}00040 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00041}00041 \textcolor{keyword}{namespace }detail}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00042}00042 \{}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00043}00043     \textcolor{keywordtype}{void} sse\_add\_ps(\_\_m128 in1[4], \_\_m128 in2[4], \_\_m128 out[4]);}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00045}00045     \textcolor{keywordtype}{void} sse\_sub\_ps(\_\_m128 in1[4], \_\_m128 in2[4], \_\_m128 out[4]);}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00047}00047     \_\_m128 sse\_mul\_ps(\_\_m128 m[4], \_\_m128 v);}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00049}00049     \_\_m128 sse\_mul\_ps(\_\_m128 v, \_\_m128 m[4]);}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00051}00051     \textcolor{keywordtype}{void} sse\_mul\_ps(\_\_m128 \textcolor{keyword}{const} in1[4], \_\_m128 \textcolor{keyword}{const} in2[4], \_\_m128 out[4]);}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00053}00053     \textcolor{keywordtype}{void} sse\_transpose\_ps(\_\_m128 \textcolor{keyword}{const} in[4], \_\_m128 out[4]);}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00055}00055     \textcolor{keywordtype}{void} sse\_inverse\_ps(\_\_m128 \textcolor{keyword}{const} in[4], \_\_m128 out[4]);}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00057}00057     \textcolor{keywordtype}{void} sse\_rotate\_ps(\_\_m128 \textcolor{keyword}{const} in[4], \textcolor{keywordtype}{float} Angle, \textcolor{keywordtype}{float} \textcolor{keyword}{const} v[3], \_\_m128 out[4]);}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00059}00059     \_\_m128 sse\_det\_ps(\_\_m128 \textcolor{keyword}{const} m[4]);}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00061}00061     \_\_m128 sse\_slow\_det\_ps(\_\_m128 \textcolor{keyword}{const} m[4]);}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00063}00063 \}\textcolor{comment}{//namespace detail}}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00064}00064 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00066}00066 \textcolor{preprocessor}{\#include "{}intrinsic\_matrix.inl"{}}}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00068}00068 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_ARCH}}
+\DoxyCodeLine{\Hypertarget{intrinsic__matrix_8hpp_source_l00069}00069 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//glm\_detail\_intrinsic\_matrix}}
+
+\end{DoxyCode}

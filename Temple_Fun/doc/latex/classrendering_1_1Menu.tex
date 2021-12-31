@@ -1,0 +1,285 @@
+\hypertarget{classrendering_1_1Menu}{}\doxysection{rendering\+::Menu Class Reference}
+\label{classrendering_1_1Menu}\index{rendering::Menu@{rendering::Menu}}
+
+
+Game Menus manager.  
+
+
+
+
+{\ttfamily \#include $<$Menu.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrendering_1_1Menu_a7c7dc6f0638ca6317d3c0b681126bfa9}{Menu}} ()
+\begin{DoxyCompactList}\small\item\em Constructor of the \mbox{\hyperlink{classrendering_1_1Menu}{Menu}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrendering_1_1Menu_a79780a69beec0855a32ed2d28458bee9}{$\sim$\+Menu}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor of the \mbox{\hyperlink{classrendering_1_1Menu}{Menu}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Menu_a4e6c1b1559074973b24930f11d748886}{set\+Menu\+Bool}} (\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&menu\+Shader)
+\begin{DoxyCompactList}\small\item\em Set the main menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Menu_aee21810c2b6b19210b3cc20af4746ccf}{set\+Menu\+Score}} (\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&menu\+Shader)
+\begin{DoxyCompactList}\small\item\em Set the score menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Menu_a427d9855aaec594210cd93b4ecb48ce8}{set\+Menu\+Play\+Again}} (\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&menu\+Shader)
+\begin{DoxyCompactList}\small\item\em Set the \char`\"{}\+Play Again\char`\"{} menu. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{classrendering_1_1Menu_af6eb03ce759583379aa2d9e08c1b5e89}{get\+Vao\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Getter of the vao ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Game Menus manager. 
+
+Definition at line \mbox{\hyperlink{Menu_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{Menu_8hpp_source}{Menu.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrendering_1_1Menu_a7c7dc6f0638ca6317d3c0b681126bfa9}\label{classrendering_1_1Menu_a7c7dc6f0638ca6317d3c0b681126bfa9}} 
+\index{rendering::Menu@{rendering::Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!rendering::Menu@{rendering::Menu}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily rendering\+::\+Menu\+::\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor of the \mbox{\hyperlink{classrendering_1_1Menu}{Menu}} class. 
+
+
+
+Definition at line \mbox{\hyperlink{Menu_8hpp_source_l00070}{70}} of file \mbox{\hyperlink{Menu_8hpp_source}{Menu.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071 \{}
+\DoxyCodeLine{00072     glGenBuffers(1, \&m\_vbo);}
+\DoxyCodeLine{00073     glBindBuffer(GL\_ARRAY\_BUFFER, m\_vbo);}
+\DoxyCodeLine{00074     m\_vertices = \{}
+\DoxyCodeLine{00075         glimac::Vertex2DColor(glm::vec3(-\/1., -\/1., 1), glm::vec3(1, 1, 1)),}
+\DoxyCodeLine{00076         glimac::Vertex2DColor(glm::vec3(1., -\/1., 1), glm::vec3(1, 1, 1)),}
+\DoxyCodeLine{00077         glimac::Vertex2DColor(glm::vec3(-\/1., 1., 1), glm::vec3(1, 1, 1)),}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079         glimac::Vertex2DColor(glm::vec3(-\/1., 1., 1), glm::vec3(1, 1, 1)),}
+\DoxyCodeLine{00080         glimac::Vertex2DColor(glm::vec3(1., 1., 1), glm::vec3(1, 1, 1)),}
+\DoxyCodeLine{00081         glimac::Vertex2DColor(glm::vec3(1., -\/1., 1), glm::vec3(1, 1, 1))\};}
+\DoxyCodeLine{00082     glBufferData(GL\_ARRAY\_BUFFER, 6 * \textcolor{keyword}{sizeof}(glimac::Vertex2DColor), m\_vertices.data(), GL\_STATIC\_DRAW);}
+\DoxyCodeLine{00083     glBindBuffer(GL\_ARRAY\_BUFFER, 0);}
+\DoxyCodeLine{00084     glGenVertexArrays(1, \&m\_vao);}
+\DoxyCodeLine{00085     glBindVertexArray(m\_vao);}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     \textcolor{keyword}{const} GLuint VERTEX\_ATTR\_POSITION = 0;}
+\DoxyCodeLine{00088     \textcolor{keyword}{const} GLuint VERTEX\_ATTR\_COLOR = 1;}
+\DoxyCodeLine{00089     glEnableVertexAttribArray(VERTEX\_ATTR\_POSITION);}
+\DoxyCodeLine{00090     glEnableVertexAttribArray(VERTEX\_ATTR\_COLOR);}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092     glBindBuffer(GL\_ARRAY\_BUFFER, m\_vbo);}
+\DoxyCodeLine{00093     glVertexAttribPointer(VERTEX\_ATTR\_POSITION, 2, GL\_FLOAT, GL\_FALSE, \textcolor{keyword}{sizeof}(glimac::Vertex2DColor), (\textcolor{keyword}{const} GLvoid *)offsetof(glimac::Vertex2DColor, position));}
+\DoxyCodeLine{00094     glVertexAttribPointer(VERTEX\_ATTR\_COLOR, 3, GL\_FLOAT, GL\_FALSE, \textcolor{keyword}{sizeof}(glimac::Vertex2DColor), (\textcolor{keyword}{const} GLvoid *)offsetof(glimac::Vertex2DColor, color));}
+\DoxyCodeLine{00095     glBindBuffer(GL\_ARRAY\_BUFFER, 0);}
+\DoxyCodeLine{00096     glBindVertexArray(0);}
+\DoxyCodeLine{00097 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Menu_a79780a69beec0855a32ed2d28458bee9}\label{classrendering_1_1Menu_a79780a69beec0855a32ed2d28458bee9}} 
+\index{rendering::Menu@{rendering::Menu}!````~Menu@{$\sim$Menu}}
+\index{````~Menu@{$\sim$Menu}!rendering::Menu@{rendering::Menu}}
+\doxysubsubsection{\texorpdfstring{$\sim$Menu()}{~Menu()}}
+{\footnotesize\ttfamily rendering\+::\+Menu\+::$\sim$\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor of the \mbox{\hyperlink{classrendering_1_1Menu}{Menu}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrendering_1_1Menu_af6eb03ce759583379aa2d9e08c1b5e89}\label{classrendering_1_1Menu_af6eb03ce759583379aa2d9e08c1b5e89}} 
+\index{rendering::Menu@{rendering::Menu}!getVaoMenu@{getVaoMenu}}
+\index{getVaoMenu@{getVaoMenu}!rendering::Menu@{rendering::Menu}}
+\doxysubsubsection{\texorpdfstring{getVaoMenu()}{getVaoMenu()}}
+{\footnotesize\ttfamily GLuint rendering\+::\+Menu\+::get\+Vao\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter of the vao ~\newline
+ 
+
+
+
+Definition at line \mbox{\hyperlink{Menu_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{Menu_8hpp_source}{Menu.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066 \{ \textcolor{keywordflow}{return} m\_vao; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Menu_a4e6c1b1559074973b24930f11d748886}\label{classrendering_1_1Menu_a4e6c1b1559074973b24930f11d748886}} 
+\index{rendering::Menu@{rendering::Menu}!setMenuBool@{setMenuBool}}
+\index{setMenuBool@{setMenuBool}!rendering::Menu@{rendering::Menu}}
+\doxysubsubsection{\texorpdfstring{setMenuBool()}{setMenuBool()}}
+{\footnotesize\ttfamily void rendering\+::\+Menu\+::set\+Menu\+Bool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{menu\+Shader }\end{DoxyParamCaption})}
+
+
+
+Set the main menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+Manager} & \+: the SDLWindow\+Manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Menu_8hpp_source_l00099}{99}} of file \mbox{\hyperlink{Menu_8hpp_source}{Menu.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100 \{}
+\DoxyCodeLine{00101     glm::mat4 uModelMatrix;}
+\DoxyCodeLine{00102     glm::mat4 translate\_background = glm::translate(uModelMatrix, glm::vec3(0, 0, 0.5));}
+\DoxyCodeLine{00103     glm::mat4 scale\_reset = glm::scale(translate\_background, glm::vec3(1, 1, 1));}
+\DoxyCodeLine{00104     glm::mat4 bouton\_play = glm::scale(uModelMatrix, glm::vec3(0.15, 0.06, 1));}
+\DoxyCodeLine{00105     glm::mat4 translate\_bouton\_score = glm::translate(uModelMatrix, glm::vec3(0, -\/0.25, 0));}
+\DoxyCodeLine{00106     glm::mat4 bouton\_score = glm::scale(translate\_bouton\_score, glm::vec3(0.15, 0.06, 1));}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108     glClear(GL\_COLOR\_BUFFER\_BIT | GL\_DEPTH\_BUFFER\_BIT);}
+\DoxyCodeLine{00109     glBlendFunc(GL\_SRC\_ALPHA, GL\_ONE\_MINUS\_SRC\_ALPHA);}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_aafe2a52ae6f541da55cb7ac66f9c308e}{use}}();}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113     \textcolor{comment}{// Background}}
+\DoxyCodeLine{00114     glBindVertexArray(\mbox{\hyperlink{classrendering_1_1Menu_af6eb03ce759583379aa2d9e08c1b5e89}{getVaoMenu}}());}
+\DoxyCodeLine{00115     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uModelMatrix"{}}, scale\_reset);}
+\DoxyCodeLine{00116     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uColor"{}}, 1, 1, 1);}
+\DoxyCodeLine{00117     glDrawArrays(GL\_TRIANGLES, 0, 6);}
+\DoxyCodeLine{00118     glBindVertexArray(0);}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120     \textcolor{comment}{// Play Button}}
+\DoxyCodeLine{00121     glBindVertexArray(\mbox{\hyperlink{classrendering_1_1Menu_af6eb03ce759583379aa2d9e08c1b5e89}{getVaoMenu}}());}
+\DoxyCodeLine{00122     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uModelMatrix"{}}, bouton\_play);}
+\DoxyCodeLine{00123     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uColor"{}}, 0.f, 0.04f, 0.39f);}
+\DoxyCodeLine{00124     glDrawArrays(GL\_TRIANGLES, 0, 6);}
+\DoxyCodeLine{00125     glBindVertexArray(0);}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127     \textcolor{comment}{// Score Button}}
+\DoxyCodeLine{00128     glBindVertexArray(\mbox{\hyperlink{classrendering_1_1Menu_af6eb03ce759583379aa2d9e08c1b5e89}{getVaoMenu}}());}
+\DoxyCodeLine{00129     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uModelMatrix"{}}, bouton\_score);}
+\DoxyCodeLine{00130     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uColor"{}}, 0.f, 0.04f, 0.39f);}
+\DoxyCodeLine{00131     glDrawArrays(GL\_TRIANGLES, 0, 6);}
+\DoxyCodeLine{00132     glBindVertexArray(0);}
+\DoxyCodeLine{00133 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Menu_a427d9855aaec594210cd93b4ecb48ce8}\label{classrendering_1_1Menu_a427d9855aaec594210cd93b4ecb48ce8}} 
+\index{rendering::Menu@{rendering::Menu}!setMenuPlayAgain@{setMenuPlayAgain}}
+\index{setMenuPlayAgain@{setMenuPlayAgain}!rendering::Menu@{rendering::Menu}}
+\doxysubsubsection{\texorpdfstring{setMenuPlayAgain()}{setMenuPlayAgain()}}
+{\footnotesize\ttfamily void rendering\+::\+Menu\+::set\+Menu\+Play\+Again (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{menu\+Shader }\end{DoxyParamCaption})}
+
+
+
+Set the \char`\"{}\+Play Again\char`\"{} menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+Manager} & \+: the SDLWindow\+Manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Menu_8hpp_source_l00162}{162}} of file \mbox{\hyperlink{Menu_8hpp_source}{Menu.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00163 \{}
+\DoxyCodeLine{00164     }
+\DoxyCodeLine{00165     glm::mat4 uModelMatrix;}
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00167     glm::mat4 translate\_background = glm::translate(uModelMatrix, glm::vec3(0, 0, 0.5));}
+\DoxyCodeLine{00168     glm::mat4 scale\_reset = glm::scale(translate\_background, glm::vec3(1, 1, 1));}
+\DoxyCodeLine{00169     glm::mat4 bouton\_play\_again = glm::scale(uModelMatrix, glm::vec3(0.2, 0.06, 1));}
+\DoxyCodeLine{00170     glm::mat4 translate\_bouton\_score = glm::translate(uModelMatrix, glm::vec3(0, -\/0.25, 0));}
+\DoxyCodeLine{00171     glm::mat4 bouton\_score = glm::scale(translate\_bouton\_score, glm::vec3(0.15, 0.06, 1));}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173     glClear(GL\_COLOR\_BUFFER\_BIT | GL\_DEPTH\_BUFFER\_BIT);}
+\DoxyCodeLine{00174     glBlendFunc(GL\_SRC\_ALPHA, GL\_ONE\_MINUS\_SRC\_ALPHA);}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_aafe2a52ae6f541da55cb7ac66f9c308e}{use}}();}
+\DoxyCodeLine{00177 }
+\DoxyCodeLine{00178     \textcolor{comment}{//Background}}
+\DoxyCodeLine{00179     glBindVertexArray(\mbox{\hyperlink{classrendering_1_1Menu_af6eb03ce759583379aa2d9e08c1b5e89}{getVaoMenu}}());}
+\DoxyCodeLine{00180     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uModelMatrix"{}}, scale\_reset);}
+\DoxyCodeLine{00181     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uColor"{}}, 1, 1, 1);}
+\DoxyCodeLine{00182     glDrawArrays(GL\_TRIANGLES, 0, 6);}
+\DoxyCodeLine{00183     glBindVertexArray(0);}
+\DoxyCodeLine{00184 }
+\DoxyCodeLine{00185     \textcolor{comment}{//Play Button}}
+\DoxyCodeLine{00186     glBindVertexArray(\mbox{\hyperlink{classrendering_1_1Menu_af6eb03ce759583379aa2d9e08c1b5e89}{getVaoMenu}}());}
+\DoxyCodeLine{00187     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uModelMatrix"{}}, bouton\_play\_again);}
+\DoxyCodeLine{00188     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uColor"{}}, 0.f, 0.04f, 0.39f);}
+\DoxyCodeLine{00189     glDrawArrays(GL\_TRIANGLES, 0, 6);}
+\DoxyCodeLine{00190     glBindVertexArray(0);}
+\DoxyCodeLine{00191 }
+\DoxyCodeLine{00192     \textcolor{comment}{//Score Button}}
+\DoxyCodeLine{00193     glBindVertexArray(\mbox{\hyperlink{classrendering_1_1Menu_af6eb03ce759583379aa2d9e08c1b5e89}{getVaoMenu}}());}
+\DoxyCodeLine{00194     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uModelMatrix"{}}, bouton\_score);}
+\DoxyCodeLine{00195     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uColor"{}}, 0.f, 0.04f, 0.39f);}
+\DoxyCodeLine{00196     glDrawArrays(GL\_TRIANGLES, 0, 6);}
+\DoxyCodeLine{00197     glBindVertexArray(0);}
+\DoxyCodeLine{00198 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Menu_aee21810c2b6b19210b3cc20af4746ccf}\label{classrendering_1_1Menu_aee21810c2b6b19210b3cc20af4746ccf}} 
+\index{rendering::Menu@{rendering::Menu}!setMenuScore@{setMenuScore}}
+\index{setMenuScore@{setMenuScore}!rendering::Menu@{rendering::Menu}}
+\doxysubsubsection{\texorpdfstring{setMenuScore()}{setMenuScore()}}
+{\footnotesize\ttfamily void rendering\+::\+Menu\+::set\+Menu\+Score (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{menu\+Shader }\end{DoxyParamCaption})}
+
+
+
+Set the score menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+Manager} & \+: the SDLWindow\+Manager \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Menu_8hpp_source_l00134}{134}} of file \mbox{\hyperlink{Menu_8hpp_source}{Menu.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135 \{}
+\DoxyCodeLine{00136     glm::mat4 uModelMatrix;}
+\DoxyCodeLine{00137     glm::mat4 translate\_background = glm::translate(uModelMatrix, glm::vec3(0, 0, 0.5));}
+\DoxyCodeLine{00138     glm::mat4 scale\_reset = glm::scale(translate\_background, glm::vec3(1, 1, 1));}
+\DoxyCodeLine{00139     glm::mat4 translate\_bouton\_back = glm::translate(uModelMatrix, glm::vec3(0.8, -\/0.8, 0.3));}
+\DoxyCodeLine{00140     glm::mat4 bouton\_back = glm::scale(translate\_bouton\_back, glm::vec3(-\/0.1, 0.05, 1));}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142     glClear(GL\_COLOR\_BUFFER\_BIT | GL\_DEPTH\_BUFFER\_BIT);}
+\DoxyCodeLine{00143     glBlendFunc(GL\_SRC\_ALPHA, GL\_ONE\_MINUS\_SRC\_ALPHA);}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_aafe2a52ae6f541da55cb7ac66f9c308e}{use}}();}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147     \textcolor{comment}{// Score Background}}
+\DoxyCodeLine{00148     glBindVertexArray(\mbox{\hyperlink{classrendering_1_1Menu_af6eb03ce759583379aa2d9e08c1b5e89}{getVaoMenu}}());}
+\DoxyCodeLine{00149     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uModelMatrix"{}}, scale\_reset);}
+\DoxyCodeLine{00150     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uColor"{}}, 1, 1, 1);}
+\DoxyCodeLine{00151     glDrawArrays(GL\_TRIANGLES, 0, 6);}
+\DoxyCodeLine{00152     glBindVertexArray(0);}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154     \textcolor{comment}{// Play Button}}
+\DoxyCodeLine{00155     glBindVertexArray(\mbox{\hyperlink{classrendering_1_1Menu_af6eb03ce759583379aa2d9e08c1b5e89}{getVaoMenu}}());}
+\DoxyCodeLine{00156     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uModelMatrix"{}}, bouton\_back);}
+\DoxyCodeLine{00157     menuShader.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uColor"{}}, 0.f, 0.04f, 0.39f);}
+\DoxyCodeLine{00158     glDrawArrays(GL\_TRIANGLES, 0, 6);}
+\DoxyCodeLine{00159     glBindVertexArray(0);}
+\DoxyCodeLine{00160 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+rendering/include/rendering/\mbox{\hyperlink{Menu_8hpp}{Menu.\+hpp}}\end{DoxyCompactItemize}

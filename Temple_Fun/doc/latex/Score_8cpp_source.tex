@@ -1,0 +1,29 @@
+\hypertarget{Score_8cpp_source}{}\doxysection{Score.\+cpp}
+\label{Score_8cpp_source}\index{rendering/src/Score.cpp@{rendering/src/Score.cpp}}
+\mbox{\hyperlink{Score_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Score_8hpp}{rendering/Score.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00005}00005 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacerendering}{rendering}}\{}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00007}\mbox{\hyperlink{classrendering_1_1Score_aecbfeabb55d7e96df8c42955d3b40ee5}{00007}} \mbox{\hyperlink{classrendering_1_1Score_aecbfeabb55d7e96df8c42955d3b40ee5}{Score::Score}}()}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00009}00009     std::ifstream i(\textcolor{stringliteral}{"{}../Temple\_Fun/assets/score.json"{}});}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00010}00010     i >> m\_array;}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00011}00011 \}}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00013}\mbox{\hyperlink{classrendering_1_1Score_ac372158e565fd122d0c5e8620d137a20}{00013}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1Score_ac372158e565fd122d0c5e8620d137a20}{Score::addScore}}(\textcolor{keywordtype}{int} score)}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00014}00014 \{}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00015}00015     std::ifstream i(\textcolor{stringliteral}{"{}../Temple\_Fun/assets/score.json"{}});}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00016}00016     i >> m\_array;}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00017}00017     m\_array[\textcolor{stringliteral}{"{}score"{}}].push\_back(score);}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00018}00018     std::sort(m\_array[\textcolor{stringliteral}{"{}score"{}}].rbegin(),m\_array[\textcolor{stringliteral}{"{}score"{}}].rend());}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00019}00019     std::ofstream o(\textcolor{stringliteral}{"{}../Temple\_Fun/assets/score.json"{}});}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00020}00020     o<<m\_array;}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00021}00021 \}}
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{Score_8cpp_source_l00023}00023 \}}
+
+\end{DoxyCode}

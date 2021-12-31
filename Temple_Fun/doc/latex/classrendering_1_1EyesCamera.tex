@@ -1,0 +1,392 @@
+\hypertarget{classrendering_1_1EyesCamera}{}\doxysection{rendering\+::Eyes\+Camera Class Reference}
+\label{classrendering_1_1EyesCamera}\index{rendering::EyesCamera@{rendering::EyesCamera}}
+
+
+First Person \mbox{\hyperlink{classrendering_1_1Camera}{Camera}}.  
+
+
+
+
+{\ttfamily \#include $<$Eyes\+Camera.\+hpp$>$}
+
+Inheritance diagram for rendering\+::Eyes\+Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrendering_1_1EyesCamera}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrendering_1_1EyesCamera_a03ec0f0907dee72591d730570efc4730}{Eyes\+Camera}} (\mbox{\hyperlink{classgame_1_1Player}{game\+::\+Player}} $\ast$player)
+\begin{DoxyCompactList}\small\item\em Constructor of the Eye\+Camera class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrendering_1_1EyesCamera_ac313889ab1995825b506e62d94bafa04}{$\sim$\+Eyes\+Camera}} ()
+\begin{DoxyCompactList}\small\item\em Destructor of the Eye\+Camera class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1EyesCamera_aedcafcb2c0e5336c1c6303f172363783}{move\+Left}} (float t)
+\begin{DoxyCompactList}\small\item\em Moves the camera to the left/right. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1EyesCamera_a74b1b3071a78974fd5fdd5d0af23cd49}{move\+Front}} (float t)
+\begin{DoxyCompactList}\small\item\em Moves the camera forwards / backwards. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1EyesCamera_afccdc0e7ee0669772478ea7402843ac7}{rotate\+Left}} (float degrees)
+\begin{DoxyCompactList}\small\item\em Rotates the camera to the left/right. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1EyesCamera_a9a9cd4c99b364d1e50cdf2f0e9a7fe92}{rotate\+Up}} (float degrees)
+\begin{DoxyCompactList}\small\item\em Rotates the camera upwards / downwards. \end{DoxyCompactList}\item 
+glm\+::mat4 \mbox{\hyperlink{classrendering_1_1EyesCamera_af534fc34cb0858bd13c6e5931d87f3e8}{get\+View\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Calculates and returns the View\+Matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1EyesCamera_a7ef7012bf988d502732a1f352e89b644}{rotate\+Left\+Mouse}} (float degrees)
+\begin{DoxyCompactList}\small\item\em Rotates the camera to the left/right and blocks it at a certain angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1EyesCamera_ade7bb9ab10d6eacf215de7ea41a44d69}{event\+Camera}} (glimac\+::\+SDLWindow\+Manager \&window\+Manager)
+\begin{DoxyCompactList}\small\item\em Defines the event related to the camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1EyesCamera_a99bb4bd96d773166bb5e62d530bb4259}{compute\+Direction\+Vectors}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the Up / Left / Front vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+First Person \mbox{\hyperlink{classrendering_1_1Camera}{Camera}}. 
+
+This camera is attached to the Player and shows what the Player sees 
+
+Definition at line \mbox{\hyperlink{EyesCamera_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{EyesCamera_8hpp_source}{Eyes\+Camera.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrendering_1_1EyesCamera_a03ec0f0907dee72591d730570efc4730}\label{classrendering_1_1EyesCamera_a03ec0f0907dee72591d730570efc4730}} 
+\index{rendering::EyesCamera@{rendering::EyesCamera}!EyesCamera@{EyesCamera}}
+\index{EyesCamera@{EyesCamera}!rendering::EyesCamera@{rendering::EyesCamera}}
+\doxysubsubsection{\texorpdfstring{EyesCamera()}{EyesCamera()}}
+{\footnotesize\ttfamily rendering\+::\+Eyes\+Camera\+::\+Eyes\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgame_1_1Player}{game\+::\+Player}} $\ast$}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor of the Eye\+Camera class. 
+
+Sets the camera\+Type at 1
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \+: the player on which the camera is attached \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{EyesCamera_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{EyesCamera_8hpp_source}{Eyes\+Camera.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046                                   \{}
+\DoxyCodeLine{00047         m\_player = player;}
+\DoxyCodeLine{00048         m\_Position = glm::vec3(0, 2., 0); \textcolor{comment}{//2is the "{}height"{} of the hero}}
+\DoxyCodeLine{00049         m\_fPhi = 0.;}
+\DoxyCodeLine{00050         m\_fTheta = 0.;}
+\DoxyCodeLine{00051         \mbox{\hyperlink{classrendering_1_1Camera_a7ac1ad4a06b1afe7798676f84271e46b}{m\_cameraType}} = 1;}
+\DoxyCodeLine{00052         m\_fMaxAngleX = 0.6;}
+\DoxyCodeLine{00053         m\_fMaxAngleY = 0.8;}
+\DoxyCodeLine{00054         \mbox{\hyperlink{classrendering_1_1Camera_a3a9ad1c6dc7820e106db36b31984c6a3}{m\_locked}} = 0;}
+\DoxyCodeLine{00055         \mbox{\hyperlink{classrendering_1_1EyesCamera_a99bb4bd96d773166bb5e62d530bb4259}{computeDirectionVectors}}();}
+\DoxyCodeLine{00056     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1EyesCamera_ac313889ab1995825b506e62d94bafa04}\label{classrendering_1_1EyesCamera_ac313889ab1995825b506e62d94bafa04}} 
+\index{rendering::EyesCamera@{rendering::EyesCamera}!````~EyesCamera@{$\sim$EyesCamera}}
+\index{````~EyesCamera@{$\sim$EyesCamera}!rendering::EyesCamera@{rendering::EyesCamera}}
+\doxysubsubsection{\texorpdfstring{$\sim$EyesCamera()}{~EyesCamera()}}
+{\footnotesize\ttfamily rendering\+::\+Eyes\+Camera\+::$\sim$\+Eyes\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor of the Eye\+Camera class. 
+
+
+
+Definition at line \mbox{\hyperlink{EyesCamera_8hpp_source_l00061}{61}} of file \mbox{\hyperlink{EyesCamera_8hpp_source}{Eyes\+Camera.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrendering_1_1EyesCamera_a99bb4bd96d773166bb5e62d530bb4259}\label{classrendering_1_1EyesCamera_a99bb4bd96d773166bb5e62d530bb4259}} 
+\index{rendering::EyesCamera@{rendering::EyesCamera}!computeDirectionVectors@{computeDirectionVectors}}
+\index{computeDirectionVectors@{computeDirectionVectors}!rendering::EyesCamera@{rendering::EyesCamera}}
+\doxysubsubsection{\texorpdfstring{computeDirectionVectors()}{computeDirectionVectors()}}
+{\footnotesize\ttfamily void rendering\+::\+Eyes\+Camera\+::compute\+Direction\+Vectors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the Up / Left / Front vectors. 
+
+
+
+Definition at line \mbox{\hyperlink{EyesCamera_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{EyesCamera_8cpp_source}{Eyes\+Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009     \{}
+\DoxyCodeLine{00010         m\_FrontVector = glm::vec3(cos(m\_fTheta) * sin(m\_fPhi), sin(m\_fTheta), cos(m\_fTheta) * cos(m\_fPhi));}
+\DoxyCodeLine{00011         m\_LeftVector = glm::cross(glm::vec3(0, 1, 0), m\_FrontVector);}
+\DoxyCodeLine{00012         m\_UpVector = glm::cross(m\_FrontVector, m\_LeftVector);}
+\DoxyCodeLine{00013     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1EyesCamera_ade7bb9ab10d6eacf215de7ea41a44d69}\label{classrendering_1_1EyesCamera_ade7bb9ab10d6eacf215de7ea41a44d69}} 
+\index{rendering::EyesCamera@{rendering::EyesCamera}!eventCamera@{eventCamera}}
+\index{eventCamera@{eventCamera}!rendering::EyesCamera@{rendering::EyesCamera}}
+\doxysubsubsection{\texorpdfstring{eventCamera()}{eventCamera()}}
+{\footnotesize\ttfamily void rendering\+::\+Eyes\+Camera\+::event\+Camera (\begin{DoxyParamCaption}\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Defines the event related to the camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+Manager} & \+: the SDLWindow\+Manager \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classrendering_1_1Camera_a98d96dfaf0908e0497aac9b6a1b00154}{rendering\+::\+Camera}}.
+
+
+
+Definition at line \mbox{\hyperlink{EyesCamera_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{EyesCamera_8cpp_source}{Eyes\+Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081     \{}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083         }
+\DoxyCodeLine{00084         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_q))}
+\DoxyCodeLine{00085             \mbox{\hyperlink{classrendering_1_1EyesCamera_aedcafcb2c0e5336c1c6303f172363783}{moveLeft}}(1);}
+\DoxyCodeLine{00086         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_d))}
+\DoxyCodeLine{00087             \mbox{\hyperlink{classrendering_1_1EyesCamera_aedcafcb2c0e5336c1c6303f172363783}{moveLeft}}(-\/1);}
+\DoxyCodeLine{00088         }
+\DoxyCodeLine{00089         }
+\DoxyCodeLine{00090         glm::ivec2 mousePos = glm::ivec2(0.0);}
+\DoxyCodeLine{00091         \textcolor{keywordflow}{if} (windowManager.isMouseButtonPressed(SDL\_BUTTON\_LEFT))}
+\DoxyCodeLine{00092         \{}
+\DoxyCodeLine{00093             mousePos = windowManager.getMousePosition();}
+\DoxyCodeLine{00094             \textcolor{keywordtype}{float} mousePosX = mousePos.x / 1700.0f -\/ 0.5;}
+\DoxyCodeLine{00095             \textcolor{keywordtype}{float} mousePosY = mousePos.y / 900.0f -\/ 0.5;}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097             \mbox{\hyperlink{classrendering_1_1EyesCamera_a7ef7012bf988d502732a1f352e89b644}{rotateLeftMouse}}(-\/2 * mousePosX);}
+\DoxyCodeLine{00098             \mbox{\hyperlink{classrendering_1_1EyesCamera_a9a9cd4c99b364d1e50cdf2f0e9a7fe92}{rotateUp}}(-\/2 * mousePosY);}
+\DoxyCodeLine{00099         \}}
+\DoxyCodeLine{00100     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1EyesCamera_af534fc34cb0858bd13c6e5931d87f3e8}\label{classrendering_1_1EyesCamera_af534fc34cb0858bd13c6e5931d87f3e8}} 
+\index{rendering::EyesCamera@{rendering::EyesCamera}!getViewMatrix@{getViewMatrix}}
+\index{getViewMatrix@{getViewMatrix}!rendering::EyesCamera@{rendering::EyesCamera}}
+\doxysubsubsection{\texorpdfstring{getViewMatrix()}{getViewMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 rendering\+::\+Eyes\+Camera\+::get\+View\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculates and returns the View\+Matrix. 
+
+
+
+Implements \mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{rendering\+::\+Camera}}.
+
+
+
+Definition at line \mbox{\hyperlink{EyesCamera_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{EyesCamera_8cpp_source}{Eyes\+Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074     \{}
+\DoxyCodeLine{00075         glm::mat4 ViewMatrix = glm::lookAt(m\_Position, m\_Position + m\_FrontVector, m\_UpVector);}
+\DoxyCodeLine{00076         \textcolor{keywordflow}{return} ViewMatrix;}
+\DoxyCodeLine{00077     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1EyesCamera_a74b1b3071a78974fd5fdd5d0af23cd49}\label{classrendering_1_1EyesCamera_a74b1b3071a78974fd5fdd5d0af23cd49}} 
+\index{rendering::EyesCamera@{rendering::EyesCamera}!moveFront@{moveFront}}
+\index{moveFront@{moveFront}!rendering::EyesCamera@{rendering::EyesCamera}}
+\doxysubsubsection{\texorpdfstring{moveFront()}{moveFront()}}
+{\footnotesize\ttfamily void rendering\+::\+Eyes\+Camera\+::move\+Front (\begin{DoxyParamCaption}\item[{float}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves the camera forwards / backwards. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & \+: the step \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classrendering_1_1Camera_a756b34b162fdc8632ec9e803b9aedd43}{rendering\+::\+Camera}}.
+
+
+
+Definition at line \mbox{\hyperlink{EyesCamera_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{EyesCamera_8cpp_source}{Eyes\+Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022     \{}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024         m\_Position = glm::vec3(m\_player-\/>\mbox{\hyperlink{classgame_1_1Player_aad867a4cf1f38f390d81f29daf9745c9}{convertCoord}}().x, m\_player-\/>\mbox{\hyperlink{classgame_1_1Player_aad867a4cf1f38f390d81f29daf9745c9}{convertCoord}}().y +2., m\_player-\/>\mbox{\hyperlink{classgame_1_1Player_aad867a4cf1f38f390d81f29daf9745c9}{convertCoord}}().z);}
+\DoxyCodeLine{00025         \mbox{\hyperlink{classrendering_1_1EyesCamera_a99bb4bd96d773166bb5e62d530bb4259}{computeDirectionVectors}}();}
+\DoxyCodeLine{00026     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1EyesCamera_aedcafcb2c0e5336c1c6303f172363783}\label{classrendering_1_1EyesCamera_aedcafcb2c0e5336c1c6303f172363783}} 
+\index{rendering::EyesCamera@{rendering::EyesCamera}!moveLeft@{moveLeft}}
+\index{moveLeft@{moveLeft}!rendering::EyesCamera@{rendering::EyesCamera}}
+\doxysubsubsection{\texorpdfstring{moveLeft()}{moveLeft()}}
+{\footnotesize\ttfamily void rendering\+::\+Eyes\+Camera\+::move\+Left (\begin{DoxyParamCaption}\item[{float}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Moves the camera to the left/right. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & \+: the step \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classrendering_1_1Camera_a72a221261edb5054d008646642b2b9f3}{rendering\+::\+Camera}}.
+
+
+
+Definition at line \mbox{\hyperlink{EyesCamera_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{EyesCamera_8cpp_source}{Eyes\+Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016     \{}
+\DoxyCodeLine{00017         m\_Position = glm::vec3(m\_player-\/>\mbox{\hyperlink{classgame_1_1Player_aad867a4cf1f38f390d81f29daf9745c9}{convertCoord}}().x, m\_player-\/>\mbox{\hyperlink{classgame_1_1Player_aad867a4cf1f38f390d81f29daf9745c9}{convertCoord}}().y +2. , m\_player-\/>\mbox{\hyperlink{classgame_1_1Player_aad867a4cf1f38f390d81f29daf9745c9}{convertCoord}}().z);}
+\DoxyCodeLine{00018         \mbox{\hyperlink{classrendering_1_1EyesCamera_a99bb4bd96d773166bb5e62d530bb4259}{computeDirectionVectors}}();}
+\DoxyCodeLine{00019     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1EyesCamera_afccdc0e7ee0669772478ea7402843ac7}\label{classrendering_1_1EyesCamera_afccdc0e7ee0669772478ea7402843ac7}} 
+\index{rendering::EyesCamera@{rendering::EyesCamera}!rotateLeft@{rotateLeft}}
+\index{rotateLeft@{rotateLeft}!rendering::EyesCamera@{rendering::EyesCamera}}
+\doxysubsubsection{\texorpdfstring{rotateLeft()}{rotateLeft()}}
+{\footnotesize\ttfamily void rendering\+::\+Eyes\+Camera\+::rotate\+Left (\begin{DoxyParamCaption}\item[{float}]{degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Rotates the camera to the left/right. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & \+: the rotation angle (in degrees) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}{rendering\+::\+Camera}}.
+
+
+
+Definition at line \mbox{\hyperlink{EyesCamera_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{EyesCamera_8cpp_source}{Eyes\+Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029     \{}
+\DoxyCodeLine{00030         \textcolor{keyword}{const} \textcolor{keywordtype}{float} rad = glm::radians(degrees);}
+\DoxyCodeLine{00031         m\_fPhi = rad;}
+\DoxyCodeLine{00032         \mbox{\hyperlink{classrendering_1_1EyesCamera_a99bb4bd96d773166bb5e62d530bb4259}{computeDirectionVectors}}();}
+\DoxyCodeLine{00033     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1EyesCamera_a7ef7012bf988d502732a1f352e89b644}\label{classrendering_1_1EyesCamera_a7ef7012bf988d502732a1f352e89b644}} 
+\index{rendering::EyesCamera@{rendering::EyesCamera}!rotateLeftMouse@{rotateLeftMouse}}
+\index{rotateLeftMouse@{rotateLeftMouse}!rendering::EyesCamera@{rendering::EyesCamera}}
+\doxysubsubsection{\texorpdfstring{rotateLeftMouse()}{rotateLeftMouse()}}
+{\footnotesize\ttfamily void rendering\+::\+Eyes\+Camera\+::rotate\+Left\+Mouse (\begin{DoxyParamCaption}\item[{float}]{degrees }\end{DoxyParamCaption})}
+
+
+
+Rotates the camera to the left/right and blocks it at a certain angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & \+: the rotation angle (in degrees) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{EyesCamera_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{EyesCamera_8cpp_source}{Eyes\+Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036     \{}
+\DoxyCodeLine{00037         \textcolor{keyword}{const} \textcolor{keywordtype}{float} rad = glm::radians(degrees);}
+\DoxyCodeLine{00038         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classrendering_1_1Camera_a3a9ad1c6dc7820e106db36b31984c6a3}{m\_locked}})}
+\DoxyCodeLine{00039         \{}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041             \textcolor{keywordflow}{if} (m\_fPhi + rad <= glm::radians(m\_player-\/>\mbox{\hyperlink{classgame_1_1Player_a050de77af0f638d6bceae26df7000695}{getOrientation}}()) + m\_fMaxAngleX \&\& m\_fPhi + rad >= glm::radians(m\_player-\/>\mbox{\hyperlink{classgame_1_1Player_a050de77af0f638d6bceae26df7000695}{getOrientation}}()) -\/ m\_fMaxAngleX)}
+\DoxyCodeLine{00042             \{}
+\DoxyCodeLine{00043                 m\_fPhi += rad;}
+\DoxyCodeLine{00044             \}}
+\DoxyCodeLine{00045         \}}
+\DoxyCodeLine{00046         \mbox{\hyperlink{classrendering_1_1EyesCamera_a99bb4bd96d773166bb5e62d530bb4259}{computeDirectionVectors}}();}
+\DoxyCodeLine{00047     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1EyesCamera_a9a9cd4c99b364d1e50cdf2f0e9a7fe92}\label{classrendering_1_1EyesCamera_a9a9cd4c99b364d1e50cdf2f0e9a7fe92}} 
+\index{rendering::EyesCamera@{rendering::EyesCamera}!rotateUp@{rotateUp}}
+\index{rotateUp@{rotateUp}!rendering::EyesCamera@{rendering::EyesCamera}}
+\doxysubsubsection{\texorpdfstring{rotateUp()}{rotateUp()}}
+{\footnotesize\ttfamily void rendering\+::\+Eyes\+Camera\+::rotate\+Up (\begin{DoxyParamCaption}\item[{float}]{degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Rotates the camera upwards / downwards. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & \+: the rotation angle (in degrees) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classrendering_1_1Camera_a94328dd5d51ce6615dc324dc27b6b146}{rendering\+::\+Camera}}.
+
+
+
+Definition at line \mbox{\hyperlink{EyesCamera_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{EyesCamera_8cpp_source}{Eyes\+Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050     \{}
+\DoxyCodeLine{00051         \textcolor{keyword}{const} \textcolor{keywordtype}{float} rad = glm::radians(degrees);}
+\DoxyCodeLine{00052         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classrendering_1_1Camera_a3a9ad1c6dc7820e106db36b31984c6a3}{m\_locked}})}
+\DoxyCodeLine{00053         \{}
+\DoxyCodeLine{00054             \textcolor{keywordflow}{if} (degrees >= 0)}
+\DoxyCodeLine{00055             \{}
+\DoxyCodeLine{00056                 \textcolor{keywordflow}{if} (m\_fTheta + rad < m\_fMaxAngleY)}
+\DoxyCodeLine{00057                 \{}
+\DoxyCodeLine{00058                     m\_fTheta += rad;}
+\DoxyCodeLine{00059                 \}}
+\DoxyCodeLine{00060             \}}
+\DoxyCodeLine{00061             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00062             \{}
+\DoxyCodeLine{00063                 \textcolor{keywordflow}{if} (fabs(m\_fTheta + rad) < m\_fMaxAngleY)}
+\DoxyCodeLine{00064                 \{}
+\DoxyCodeLine{00065                     m\_fTheta += rad;}
+\DoxyCodeLine{00066                 \}}
+\DoxyCodeLine{00067             \}}
+\DoxyCodeLine{00068         \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070         \mbox{\hyperlink{classrendering_1_1EyesCamera_a99bb4bd96d773166bb5e62d530bb4259}{computeDirectionVectors}}();}
+\DoxyCodeLine{00071     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rendering/include/rendering/\mbox{\hyperlink{EyesCamera_8hpp}{Eyes\+Camera.\+hpp}}\item 
+rendering/src/\mbox{\hyperlink{EyesCamera_8cpp}{Eyes\+Camera.\+cpp}}\end{DoxyCompactItemize}

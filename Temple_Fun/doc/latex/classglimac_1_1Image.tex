@@ -1,0 +1,122 @@
+\hypertarget{classglimac_1_1Image}{}\doxysection{glimac\+::Image Class Reference}
+\label{classglimac_1_1Image}\index{glimac::Image@{glimac::Image}}
+
+
+{\ttfamily \#include $<$Image.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classglimac_1_1Image_a8d0769d9756924f57b740e48e9fb09f6}{Image}} (unsigned int width, unsigned int height)
+\item 
+unsigned int \mbox{\hyperlink{classglimac_1_1Image_a23bc966575ee67b85fc575631b035026}{get\+Width}} () const
+\item 
+unsigned int \mbox{\hyperlink{classglimac_1_1Image_a0a2afce624e3df2b12d7d76ba0d31c42}{get\+Height}} () const
+\item 
+const \mbox{\hyperlink{group__core__types_ga5881b1b022d7fd1b7218f5916532dd02}{glm\+::vec4}} $\ast$ \mbox{\hyperlink{classglimac_1_1Image_a387a08dd5e3b29a889bdc36765d083bd}{get\+Pixels}} () const
+\item 
+\mbox{\hyperlink{group__core__types_ga5881b1b022d7fd1b7218f5916532dd02}{glm\+::vec4}} $\ast$ \mbox{\hyperlink{classglimac_1_1Image_ace80703bd82ae308cd490816e50cbbbe}{get\+Pixels}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Image_8hpp_source_l00012}{12}} of file \mbox{\hyperlink{Image_8hpp_source}{Image.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classglimac_1_1Image_a8d0769d9756924f57b740e48e9fb09f6}\label{classglimac_1_1Image_a8d0769d9756924f57b740e48e9fb09f6}} 
+\index{glimac::Image@{glimac::Image}!Image@{Image}}
+\index{Image@{Image}!glimac::Image@{glimac::Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}}
+{\footnotesize\ttfamily glimac\+::\+Image\+::\+Image (\begin{DoxyParamCaption}\item[{unsigned int}]{width,  }\item[{unsigned int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Image_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{Image_8hpp_source}{Image.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018                                                   :}
+\DoxyCodeLine{00019         m\_nWidth(width), m\_nHeight(height), m\_Pixels(\textcolor{keyword}{new} \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{glm::vec4}}[width * height]) \{}
+\DoxyCodeLine{00020     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classglimac_1_1Image_a0a2afce624e3df2b12d7d76ba0d31c42}\label{classglimac_1_1Image_a0a2afce624e3df2b12d7d76ba0d31c42}} 
+\index{glimac::Image@{glimac::Image}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!glimac::Image@{glimac::Image}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily unsigned int glimac\+::\+Image\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Image_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{Image_8hpp_source}{Image.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026                                    \{}
+\DoxyCodeLine{00027         \textcolor{keywordflow}{return} m\_nHeight;}
+\DoxyCodeLine{00028     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classglimac_1_1Image_ace80703bd82ae308cd490816e50cbbbe}\label{classglimac_1_1Image_ace80703bd82ae308cd490816e50cbbbe}} 
+\index{glimac::Image@{glimac::Image}!getPixels@{getPixels}}
+\index{getPixels@{getPixels}!glimac::Image@{glimac::Image}}
+\doxysubsubsection{\texorpdfstring{getPixels()}{getPixels()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__core__types_ga5881b1b022d7fd1b7218f5916532dd02}{glm\+::vec4}} $\ast$ glimac\+::\+Image\+::get\+Pixels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Image_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{Image_8hpp_source}{Image.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034                          \{}
+\DoxyCodeLine{00035         \textcolor{keywordflow}{return} m\_Pixels.get();}
+\DoxyCodeLine{00036     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classglimac_1_1Image_a387a08dd5e3b29a889bdc36765d083bd}\label{classglimac_1_1Image_a387a08dd5e3b29a889bdc36765d083bd}} 
+\index{glimac::Image@{glimac::Image}!getPixels@{getPixels}}
+\index{getPixels@{getPixels}!glimac::Image@{glimac::Image}}
+\doxysubsubsection{\texorpdfstring{getPixels()}{getPixels()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__core__types_ga5881b1b022d7fd1b7218f5916532dd02}{glm\+::vec4}} $\ast$ glimac\+::\+Image\+::get\+Pixels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Image_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{Image_8hpp_source}{Image.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030                                      \{}
+\DoxyCodeLine{00031         \textcolor{keywordflow}{return} m\_Pixels.get();}
+\DoxyCodeLine{00032     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classglimac_1_1Image_a23bc966575ee67b85fc575631b035026}\label{classglimac_1_1Image_a23bc966575ee67b85fc575631b035026}} 
+\index{glimac::Image@{glimac::Image}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!glimac::Image@{glimac::Image}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily unsigned int glimac\+::\+Image\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Image_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{Image_8hpp_source}{Image.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022                                   \{}
+\DoxyCodeLine{00023         \textcolor{keywordflow}{return} m\_nWidth;}
+\DoxyCodeLine{00024     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+glimac/include/glimac/\mbox{\hyperlink{Image_8hpp}{Image.\+hpp}}\end{DoxyCompactItemize}

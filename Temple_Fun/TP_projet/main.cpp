@@ -57,12 +57,12 @@ int main(int argc, char **argv)
 
     // Menu initialization
     SDL_Cursor *cursor = init_system_cursor(arrow), *cursor2 = init_system_cursor(arrow2);
-    Menu menu;
+    rendering::Menu menu;
     bool menu_bool = true, menu_score = false, menu_play_again = false;
-    Score scorejson;
+    rendering::Score scorejson;
 
     // Map initialization
-    CourseMap courseMap;
+    game::CourseMap courseMap;
     try
     {
         courseMap.loadMap("../Temple_Fun/assets/map.ppm");
@@ -72,9 +72,9 @@ int main(int argc, char **argv)
         std::cerr << "Error : " << s << std::endl;
     }
     courseMap.loadCoins();
-    Player player(courseMap, glm::vec3(1, 3, 0)), enemy(courseMap, glm::vec3(1, 0, 0));
-    Object *objet = courseMap.findObject(player.getFloorCoord());
-    Object *objet_enemy = courseMap.findObject(enemy.getFloorCoord());
+    game::Player player(courseMap, glm::vec3(1, 3, 0)), enemy(courseMap, glm::vec3(1, 0, 0));
+    game::Object *objet = courseMap.findObject(player.getFloorCoord());
+    game::Object *objet_enemy = courseMap.findObject(enemy.getFloorCoord());
     int score = 0;
     int speed = 5;
 
@@ -131,11 +131,11 @@ int main(int argc, char **argv)
     glEnable(GL_DEPTH_TEST);
 
     // Creation of the Skybox
-    Skybox skybox;
+    rendering::Skybox skybox;
     unsigned int cubemapTexture;
     try
     {
-        cubemapTexture = glimac::loadCubemap(skybox_sky);
+        cubemapTexture = glimac::loadCubemap(rendering::skybox_sky);
     }
     catch (std::string &s)
     {

@@ -3,6 +3,8 @@
 #include "../include/game/CourseMap.hpp"
 #include <glimac/glm.hpp>
 
+
+namespace game{
 void Player::setCoord(glm::vec3 coord)
 {
     m_coord = coord;
@@ -301,4 +303,6 @@ void Player::moveEnemyManager(Object* objet_enemy)
         move(glm::vec3(-1, 0, 0));
         setOrientation(-90.);
     }
+}
+
 }

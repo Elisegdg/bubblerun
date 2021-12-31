@@ -1,0 +1,85 @@
+\hypertarget{Image_8cpp_source}{}\doxysection{Image.\+cpp}
+\label{Image_8cpp_source}\index{glimac/src/Image.cpp@{glimac/src/Image.cpp}}
+\mbox{\hyperlink{Image_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Image_8hpp}{glimac/Image.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00002}\mbox{\hyperlink{Image_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}{00002}} \textcolor{preprocessor}{\#define STB\_IMAGE\_IMPLEMENTATION}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}stb\_image.h"{}}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <GL/glew.h>}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00008}00008 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglimac}{glimac}} \{}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00011}\mbox{\hyperlink{namespaceglimac_a7d92f451f5235a3299fa0faef1a335f5}{00011}} std::unique\_ptr<Image> \mbox{\hyperlink{namespaceglimac_a7d92f451f5235a3299fa0faef1a335f5}{loadImage}}(\textcolor{keyword}{const} \mbox{\hyperlink{classglimac_1_1FilePath}{FilePath}}\& filepath) \{}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00012}00012     \textcolor{keywordtype}{int} x, y, n;}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00013}00013     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *data = stbi\_load(filepath.\mbox{\hyperlink{classglimac_1_1FilePath_ae823251a25bf0f9a9294368ac020e5e8}{c\_str}}(), \&x, \&y, \&n, 4);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00014}00014     \textcolor{keywordflow}{if}(!data) \{}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00015}00015         \textcolor{keywordflow}{return} std::unique\_ptr<Image>();}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00016}00016     \}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00017}00017     std::unique\_ptr<Image> pImage(\textcolor{keyword}{new} \mbox{\hyperlink{classglimac_1_1Image}{Image}}(x, y));}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00018}00018     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespaceglimac_a66029611b8aa9645c13bb0d68c8f581e}{size}} = x * y;}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00019}00019     \textcolor{keyword}{auto} \mbox{\hyperlink{group__gtc__matrix__transform_gaa91a55ba567dfc382ba3ea562496c22f}{scale}} = 1.f / 255;}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00020}00020     \textcolor{keyword}{auto} ptr = pImage-\/>getPixels();}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00021}00021     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i = 0u; i < \mbox{\hyperlink{namespaceglimac_a66029611b8aa9645c13bb0d68c8f581e}{size}}; ++i) \{}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00022}00022         \textcolor{keyword}{auto} offset = 4 * i;}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00023}00023         ptr-\/>r = data[offset] * \mbox{\hyperlink{group__gtc__matrix__transform_gaa91a55ba567dfc382ba3ea562496c22f}{scale}};}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00024}00024         ptr-\/>g = data[offset + 1] * \mbox{\hyperlink{group__gtc__matrix__transform_gaa91a55ba567dfc382ba3ea562496c22f}{scale}};}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00025}00025         ptr-\/>b = data[offset + 2] * \mbox{\hyperlink{group__gtc__matrix__transform_gaa91a55ba567dfc382ba3ea562496c22f}{scale}};}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00026}00026         ptr-\/>a = data[offset + 3] * \mbox{\hyperlink{group__gtc__matrix__transform_gaa91a55ba567dfc382ba3ea562496c22f}{scale}};}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00027}00027         ++ptr;}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00029}00029     stbi\_image\_free(data);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00030}00030     \textcolor{keywordflow}{return} pImage;}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00031}00031 \}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00033}00033 std::unordered\_map<FilePath, std::unique\_ptr<Image>> ImageManager::m\_ImageMap;}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00035}\mbox{\hyperlink{classglimac_1_1ImageManager_a491965842042b2ef01eade7136ddb54d}{00035}} \textcolor{keyword}{const} \mbox{\hyperlink{classglimac_1_1Image}{Image}}* \mbox{\hyperlink{classglimac_1_1ImageManager_a491965842042b2ef01eade7136ddb54d}{ImageManager::loadImage}}(\textcolor{keyword}{const} \mbox{\hyperlink{classglimac_1_1FilePath}{FilePath}}\& filepath) \{}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00036}00036     \textcolor{keyword}{auto} it = m\_ImageMap.find(filepath);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00037}00037     \textcolor{keywordflow}{if}(it != std::end(m\_ImageMap)) \{}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00038}00038         \textcolor{keywordflow}{return} (*it).second.get();}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00040}00040     \textcolor{keyword}{auto} pImage = \mbox{\hyperlink{namespaceglimac_a7d92f451f5235a3299fa0faef1a335f5}{glimac::loadImage}}(filepath);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00041}00041     \textcolor{keywordflow}{if}(!pImage) \{}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00042}00042         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00043}00043     \}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00044}00044     \textcolor{keyword}{auto}\& img = m\_ImageMap[filepath] = std::move(pImage);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00045}00045     \textcolor{keywordflow}{return} img.get();}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00046}00046 \}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00049}\mbox{\hyperlink{namespaceglimac_a66c7ca34dc0d1e17ebb7cc4ee5cb820d}{00049}} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespaceglimac_a66c7ca34dc0d1e17ebb7cc4ee5cb820d}{loadCubemap}}(std::vector<std::string> faces)}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00050}00050 \{}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00051}00051     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} textureID;}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00052}00052     glGenTextures(1, \&textureID);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00053}00053     glBindTexture(GL\_TEXTURE\_CUBE\_MAP, textureID);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00055}00055     \textcolor{keywordtype}{int} width, height, nrComponents;}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00056}00056     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < faces.size(); i++)}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00057}00057     \{}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00058}00058         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *data = stbi\_load(faces[i].c\_str(), \&width, \&height, \&nrComponents, 0);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00059}00059         \textcolor{keywordflow}{if} (data)}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00060}00060         \{}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00061}00061             glTexImage2D(GL\_TEXTURE\_CUBE\_MAP\_POSITIVE\_X + i, 0, GL\_RGB, width, height, 0, GL\_RGB, GL\_UNSIGNED\_BYTE, data);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00062}00062             stbi\_image\_free(data);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00063}00063         \}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00064}00064         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00065}00065         \{}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00066}00066             \textcolor{keywordflow}{throw} std::string(\textcolor{stringliteral}{"{}Cubemap texture failed to load at path "{}}+ faces[i]);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00067}00067             stbi\_image\_free(data);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00068}00068         \}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00069}00069     \}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00070}00070     glTexParameteri(GL\_TEXTURE\_CUBE\_MAP, GL\_TEXTURE\_MIN\_FILTER, GL\_LINEAR);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00071}00071     glTexParameteri(GL\_TEXTURE\_CUBE\_MAP, GL\_TEXTURE\_MAG\_FILTER, GL\_LINEAR);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00072}00072     glTexParameteri(GL\_TEXTURE\_CUBE\_MAP, GL\_TEXTURE\_WRAP\_S, GL\_CLAMP\_TO\_EDGE);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00073}00073     glTexParameteri(GL\_TEXTURE\_CUBE\_MAP, GL\_TEXTURE\_WRAP\_T, GL\_CLAMP\_TO\_EDGE);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00074}00074     glTexParameteri(GL\_TEXTURE\_CUBE\_MAP, GL\_TEXTURE\_WRAP\_R, GL\_CLAMP\_TO\_EDGE);}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00076}00076     \textcolor{keywordflow}{return} textureID;}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00077}00077 \}}
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{Image_8cpp_source_l00079}00079 \}}
+
+\end{DoxyCode}
