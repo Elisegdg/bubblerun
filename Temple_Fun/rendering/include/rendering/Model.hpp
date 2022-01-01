@@ -6,10 +6,14 @@
 #ifndef _MODEL_HPP
 #define _MODEL_HPP
 
+#ifndef TINYOBJLOADER_IMPLEMENTATION
+#define TINUOBJLOADER_IMPLEMENTATION
+
 #include <glimac/glm.hpp>
 #include <GL/glew.h>
 #include <rendering/Texture.hpp>
 #include <glimac/common.hpp>
+#include <glimac/src/tiny_obj_loader.h>
 
 
 namespace rendering{
@@ -30,7 +34,14 @@ protected:
     std::vector<int> m_index; /*!< Number of indices to draw */
     GLsizei m_vertexCount; /*!< Number of vertices to draw */
 
+
+private :
+    
+
 public:
+
+    void loadModel(const std::string& fileName);
+    /*void loadTextures(glimac::FilePath appPath, std::string fileName, Texture& texture,tinyobj::material_t material);*/
     
     /*!
     *  \brief Constructor of the Model class
@@ -38,7 +49,10 @@ public:
     */
     Model(rendering::Texture texture):
         m_texture(texture)
-        {}
+    {}
+
+    Model()
+        {};
 
     /*!
     *  \brief Destructor of the Model class
@@ -119,4 +133,5 @@ public:
 
 }
 
+#endif
 #endif

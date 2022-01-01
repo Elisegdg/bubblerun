@@ -23,6 +23,7 @@
 #include <rendering/Cube.hpp>
 #include <rendering/Text.hpp>
 #include <rendering/Menu.hpp>
+#include <rendering/Model.hpp>
 #include <rendering/Cursor.hpp>
 #include <rendering/json.hpp>
 #include <rendering/Score.hpp>
@@ -141,6 +142,10 @@ int main(int argc, char **argv)
     glUniformMatrix4fv(glGetUniformLocation(TextProgram.getId(), "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
     glEnable(GL_DEPTH_TEST);
+
+    // Load of the obj
+    rendering::Model obj;
+    obj.loadModel("cornell_box.obj");
 
     // Creation of the Skybox
     rendering::Skybox skybox;
