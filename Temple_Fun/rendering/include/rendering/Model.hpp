@@ -10,9 +10,22 @@
 #include <GL/glew.h>
 #include <rendering/Texture.hpp>
 #include <glimac/common.hpp>
+#include <rendering/Camera.hpp>
+#include <rendering/Program.hpp>
 
 
 namespace rendering{
+
+struct Vertex{
+    glm::vec3 _position;
+    glm::vec3 _normal;
+    glm::vec2 _texCoords;
+
+    Vertex(glm::vec3 pos, glm::vec3 norm, glm::vec2 tex)
+        :_position(pos), _normal(norm), _texCoords(tex)
+    {}
+};
+
 /*! \class Model
    * \brief Class of Model
    *
@@ -117,6 +130,26 @@ public:
     const int* getIndexPointer() const;
 
     void loadModel(const std::string& fileName);
+    void setVbo(std::vector<glimac::ShapeVertex> &model);
+    void draw_model(rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix)
+    {
+
+    glm::mat4 ViewMatrix = camera->getViewMatrix();
+    ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0., 1., 10.));
+    ViewMatrix = glm::scale(ViewMatrix, glm::vec3(1, 1, 1));
+    glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
+
+    Program.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
+    Program.uniformMatrix4fv("uMVMatrix", ViewMatrix);
+    Program.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
+    //Program.uniform1i("uTexture", 0);
+    glBindVertexArray(m_vao);
+    glDrawArrays(GL_TRIANGLES,0,m_vertices.size());
+
+}
+
+
+
 
 };
 

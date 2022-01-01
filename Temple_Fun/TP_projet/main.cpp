@@ -27,12 +27,15 @@
 #include <rendering/json.hpp>
 #include <rendering/Score.hpp>
 #include <rendering/Light.hpp>
+#include <rendering/Model.hpp>
 
 #include <game/CourseMap.hpp>
 #include <game/Object.hpp>
 #include <game/Player.hpp>
 
+
 using json = nlohmann::json;
+
 
 int main(int argc, char **argv)
 {
@@ -156,9 +159,10 @@ int main(int argc, char **argv)
 
 
     // TEST TINY OBJ
-
     rendering::Model obj;
-    obj.loadModel("cornell_box.obj");
+    obj.loadModel("alliance.obj");
+    obj.setVbo();
+    obj.setVao();
 
 
 
@@ -348,7 +352,11 @@ int main(int argc, char **argv)
             enemy.draw(cube_shark, camera, LightProgram, ProjMatrix);
             courseMap.drawMap(cube_path, cube_coin, camera, LightProgram, ProjMatrix, windowManager);
             courseMap.drawObstacle(cube_obstacle, camera, LightProgram, ProjMatrix, windowManager);
-
+            
+            obj.draw_model(camera, LightProgram, ProjMatrix);
+            
+            
+            
             glDepthFunc(GL_LEQUAL);
             SkyboxProgram.use();
             skybox.draw(SkyboxProgram, camera, ProjMatrix, cubemapTexture);
