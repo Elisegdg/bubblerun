@@ -144,10 +144,6 @@ int main(int argc, char **argv)
 
     glEnable(GL_DEPTH_TEST);
 
-    // Load of the obj
-    rendering::Model obj;
-    obj.loadModel("cornell_box.obj", "cornell_box.mtl");
-
     // Creation of the Skybox
     rendering::Skybox skybox;
     unsigned int cubemapTexture;
@@ -159,6 +155,17 @@ int main(int argc, char **argv)
     {
         std::cerr << "Error : " << s << std::endl;
     }
+
+    // TEST TINY OBJ
+    rendering::Model nemo_obj;
+    nemo_obj.loadModel("Nemo.obj");
+    nemo_obj.setVbo();
+    nemo_obj.setVao();
+
+    rendering::Model shark_obj;
+    shark_obj.loadModel("shark.obj");
+    shark_obj.setVbo();
+    shark_obj.setVao();
 
     // Application loop:
     bool done = false, repeat = false, again = true;
@@ -343,8 +350,8 @@ int main(int argc, char **argv)
 
             // Drawing of the different elements
             light.draw(camera,LightProgram, ProjMatrix, NormalMatrix, player);
-            player.draw(cube_nemo, camera, LightProgram, ProjMatrix);
-            enemy.draw(cube_shark, camera, LightProgram, ProjMatrix);
+            player.draw(nemo_obj, camera, LightProgram, ProjMatrix);
+            enemy.draw(shark_obj, camera, LightProgram, ProjMatrix);
             courseMap.drawMap(cube_path, cube_coin, camera, LightProgram, ProjMatrix, windowManager);
             courseMap.drawObstacle(cube_obstacle, camera, LightProgram, ProjMatrix, windowManager);
 
