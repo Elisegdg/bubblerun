@@ -1,6 +1,18 @@
+/**
+ * \file Iterator.hpp
+ * \brief Declaration of the class Iterator and Container
+*/
+
+
 #ifndef _ITERATOR_HPP
 #define _ITERATOR_HPP
 
+/*! \class Iterator
+   * \brief Class of Iterator
+   *
+   *  This class is built as the Design Pattern Iterator. 
+   *  It enables to read a container without knowing how it is built.
+   */
 template <typename T, typename U>
 class Iterator {
  public:
@@ -31,7 +43,12 @@ class Iterator {
 };
 
 
-
+/*! \class Container
+   * \brief Class of Container
+   *
+   *  This class is built as the Design Pattern Iterator. 
+   *  It enables to read a container without knowing how it is built.
+   */
 template <class T>
 class Container {
   friend class Iterator<T, Container>;

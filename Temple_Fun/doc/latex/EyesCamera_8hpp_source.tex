@@ -1,0 +1,66 @@
+\hypertarget{EyesCamera_8hpp_source}{}\doxysection{Eyes\+Camera.\+hpp}
+\label{EyesCamera_8hpp_source}\index{rendering/include/rendering/EyesCamera.hpp@{rendering/include/rendering/EyesCamera.hpp}}
+\mbox{\hyperlink{EyesCamera_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#ifndef \_EYESCAMERA\_HPP}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#define \_EYESCAMERA\_HPP}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}glimac/glm.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Camera_8hpp}{rendering/Camera.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <glimac/SDLWindowManager.hpp>}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Player_8hpp}{game/Player.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00016}00016 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacerendering}{rendering}} \{}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00023}\mbox{\hyperlink{classrendering_1_1EyesCamera}{00023}} \textcolor{keyword}{class }\mbox{\hyperlink{classrendering_1_1EyesCamera}{EyesCamera}} : \textcolor{keyword}{public} \mbox{\hyperlink{classrendering_1_1Camera}{Camera}}\{}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00025}00025 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00026}00026     glm::vec3 m\_Position; }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00027}00027     \textcolor{keywordtype}{float} m\_fPhi; }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00028}00028     \textcolor{keywordtype}{float} m\_fTheta; }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00029}00029     \textcolor{keywordtype}{float} m\_fMaxAngleX; }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00030}00030     \textcolor{keywordtype}{float} m\_fMaxAngleY; }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00031}00031     glm::vec3 m\_FrontVector; }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00032}00032     glm::vec3 m\_LeftVector; }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00033}00033     glm::vec3 m\_UpVector; }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00034}00034     \mbox{\hyperlink{classgame_1_1Player}{game::Player}}* m\_player; }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00037}00037 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00038}00038     }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00046}\mbox{\hyperlink{classrendering_1_1EyesCamera_a03ec0f0907dee72591d730570efc4730}{00046}}     \mbox{\hyperlink{classrendering_1_1EyesCamera_a03ec0f0907dee72591d730570efc4730}{EyesCamera}}(\mbox{\hyperlink{classgame_1_1Player}{game::Player}}* player)\{}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00047}00047         m\_player = player;}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00048}00048         m\_Position = glm::vec3(0, 2., 0); \textcolor{comment}{//2is the "{}height"{} of the hero}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00049}00049         m\_fPhi = 0.;}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00050}00050         m\_fTheta = 0.;}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00051}00051         \mbox{\hyperlink{classrendering_1_1Camera_a7ac1ad4a06b1afe7798676f84271e46b}{m\_cameraType}} = 1;}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00052}00052         m\_fMaxAngleX = 0.6;}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00053}00053         m\_fMaxAngleY = 0.8;}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00054}00054         \mbox{\hyperlink{classrendering_1_1Camera_a3a9ad1c6dc7820e106db36b31984c6a3}{m\_locked}} = 0;}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00055}00055         \mbox{\hyperlink{classrendering_1_1EyesCamera_a99bb4bd96d773166bb5e62d530bb4259}{computeDirectionVectors}}();}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00061}\mbox{\hyperlink{classrendering_1_1EyesCamera_ac313889ab1995825b506e62d94bafa04}{00061}}     \mbox{\hyperlink{classrendering_1_1EyesCamera_ac313889ab1995825b506e62d94bafa04}{\string~EyesCamera}}()\{\}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00063}00063     }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00064}00064     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1EyesCamera_aedcafcb2c0e5336c1c6303f172363783}{moveLeft}}(\textcolor{keywordtype}{float} t);}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00065}00065     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1EyesCamera_a74b1b3071a78974fd5fdd5d0af23cd49}{moveFront}}(\textcolor{keywordtype}{float} t);}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00066}00066     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1EyesCamera_afccdc0e7ee0669772478ea7402843ac7}{rotateLeft}}(\textcolor{keywordtype}{float} degrees);}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00067}00067     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1EyesCamera_a9a9cd4c99b364d1e50cdf2f0e9a7fe92}{rotateUp}}(\textcolor{keywordtype}{float} degrees);}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00068}00068     glm::mat4 \mbox{\hyperlink{classrendering_1_1EyesCamera_af534fc34cb0858bd13c6e5931d87f3e8}{getViewMatrix}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00076}00076     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1EyesCamera_a7ef7012bf988d502732a1f352e89b644}{rotateLeftMouse}}(\textcolor{keywordtype}{float} degrees);}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00077}00077     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1EyesCamera_ade7bb9ab10d6eacf215de7ea41a44d69}{eventCamera}}(glimac::SDLWindowManager\& windowManager);}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00082}00082     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1EyesCamera_a99bb4bd96d773166bb5e62d530bb4259}{computeDirectionVectors}}();}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00085}00085 \};}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00087}00087 \}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8hpp_source_l00090}00090 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

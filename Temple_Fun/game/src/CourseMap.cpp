@@ -14,6 +14,7 @@
 #include <functional>
 #include <chrono>
 
+namespace game {
 void CourseMap::addObject(int r, int g, int b)
 {
     if (r == 255 & g == 255 & b == 255)
@@ -179,14 +180,15 @@ void CourseMap::drawObstacle(rendering::Cube &mesh, const rendering::Camera *cam
 
 void CourseMap::loadCoins()
 {
-    for(int i = 0; i<m_sizex*m_sizey;i++)
-    {
-        if (m_CourseMap[i]->getName() == "straight")
+    Iterator<Object*, Container<Object*>> *it = m_CourseMap.CreateIterator();
+    for (it->First(); !it->IsDone(); it->Next())
+        if ((*it->Current())->getName() == "straight")
         {
             std::default_random_engine re(std::chrono::system_clock::now().time_since_epoch().count());
             std::uniform_int_distribution<int>distrib{0,1};    
-            m_CourseMap[i]->setCoins(distrib(re));
+            (*it->Current())->setCoins(distrib(re));
         }
-        
+    delete it; 
     }
+    
 }

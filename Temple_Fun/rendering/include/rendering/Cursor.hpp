@@ -1,3 +1,9 @@
+/**
+ * \file Cursor.hpp
+ * \brief Initialization of cursors
+*/
+
+
 #ifndef _CURSOR_HPP
 #define _CURSOR_HPP
 

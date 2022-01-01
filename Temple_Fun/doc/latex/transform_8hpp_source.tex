@@ -1,0 +1,40 @@
+\hypertarget{transform_8hpp_source}{}\doxysection{transform.\+hpp}
+\label{transform_8hpp_source}\index{third-\/party/include/glm/gtx/transform.hpp@{third-\/party/include/glm/gtx/transform.hpp}}
+\mbox{\hyperlink{transform_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#ifndef GLM\_GTX\_transform }}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#define GLM\_GTX\_transform}}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00044}00044 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#include "{}../glm.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#include "{}../gtc/matrix\_transform.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00048}00048 \textcolor{preprocessor}{\#if(defined(GLM\_MESSAGES) \&\& !defined(GLM\_EXT\_INCLUDED))}}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00049}00049 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTX\_transform extension included"{}})}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00050}00050 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00052}00052 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00053}00053 \{}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00060}00060     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00061}\mbox{\hyperlink{group__gtx__transform_ga32547289d1eeae0221189ae09126eaa0}{00061}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, P>}} \mbox{\hyperlink{group__gtc__matrix__transform_gae8b88a57664fd6f3229e4b29ae4e1b3a}{translate}}(}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00062}00062         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& v);}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00067}00067     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00068}\mbox{\hyperlink{group__gtx__transform_ga72695b895719f5033337c9f2ce49c6e6}{00068}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, P>}} \mbox{\hyperlink{group__gtc__matrix__transform_gaaa9fc6b00354384ea4e9c13f5789bfd4}{rotate}}(}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00069}00069         T \mbox{\hyperlink{group__gtc__quaternion_ga23a3fc7ada5bbb665ff84c92c6e0542c}{angle}}, }
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00070}00070         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& v);}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00075}00075     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00076}\mbox{\hyperlink{group__gtx__transform_gadefc2610fd6961150a790a506bae5308}{00076}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, P>}} \mbox{\hyperlink{group__gtc__matrix__transform_gaa91a55ba567dfc382ba3ea562496c22f}{scale}}(}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00077}00077         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& v);}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00080}00080 \}\textcolor{comment}{// namespace glm}}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00082}00082 \textcolor{preprocessor}{\#include "{}transform.inl"{}}}
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{transform_8hpp_source_l00084}00084 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_GTX\_transform}}
+
+\end{DoxyCode}

@@ -1,0 +1,633 @@
+\hypertarget{classPlayer}{}\doxysection{Player Class Reference}
+\label{classPlayer}\index{Player@{Player}}
+
+
+{\ttfamily \#include $<$Player.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlayer_ad2e5cfd6970f751909e10c1fca6fa90d}{Player}} (\mbox{\hyperlink{classCourseMap}{Course\+Map}} \mbox{\hyperlink{classCourseMap}{Course\+Map}}, glm\+::vec3 initial\+Pos)
+\item 
+\mbox{\hyperlink{classPlayer_a40d3c47b65e9652c363a8fde41f7bbf5}{$\sim$\+Player}} ()=default
+\item 
+void \mbox{\hyperlink{classPlayer_a1c0b6edb07d01127bf8eb27a6ed29073}{set\+Coord}} (glm\+::vec3 coord)
+\item 
+glm\+::vec3 \mbox{\hyperlink{classPlayer_a8cdcea0832a0fa8b0029d41d94c975d2}{get\+Coord}} ()
+\item 
+glm\+::vec3 \mbox{\hyperlink{classPlayer_ac83539d467be414f62aad93fbf6ba503}{get\+Floor\+Coord}} ()
+\item 
+glm\+::vec3 \mbox{\hyperlink{classPlayer_a8793114bb56efa499192c68473164bb8}{convert\+Coord}} ()
+\item 
+void \mbox{\hyperlink{classPlayer_a57c7d77cc3384cc6c4491451a1ab72ff}{add\+Coins}} ()
+\item 
+int \mbox{\hyperlink{classPlayer_ae61ec5417d7f59770c0850a8a7e95508}{get\+Coins}} ()
+\item 
+bool \mbox{\hyperlink{classPlayer_a139742048b9191022e257d054bd3b0fc}{is\+Life}} ()
+\item 
+void \mbox{\hyperlink{classPlayer_ae532c685de27244647bf661d3f8245fa}{set\+Life}} (bool life)
+\item 
+void \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}} (glm\+::vec3 coord\+\_\+add)
+\item 
+void \mbox{\hyperlink{classPlayer_a668c2b03d3f835e96cd3c90801504fcd}{move\+Orientation}} ()
+\item 
+void \mbox{\hyperlink{classPlayer_a4abc7df56be8134ddf0e7b862a833c85}{set\+Orientation}} (float orientatioin)
+\item 
+float \mbox{\hyperlink{classPlayer_aeb38adafb5e2ef723021225410e20668}{get\+Orientation}} ()
+\item 
+void \mbox{\hyperlink{classPlayer_aa20973c0ab5734da6a3ba4555670d4b1}{moveside}} (glimac\+::\+SDLWindow\+Manager \&window\+Manager, bool \&repeat, bool \&turn\+\_\+up, bool \&turn\+\_\+down, bool \&turn\+\_\+right, bool \&turn\+\_\+left)
+\item 
+void \mbox{\hyperlink{classPlayer_a460a5a336858ec421b09ed3800702549}{jump}} (glimac\+::\+SDLWindow\+Manager \&window\+Manager, bool \&repeat, int \&step)
+\item 
+void \mbox{\hyperlink{classPlayer_a47aa062a98acd5c1fbc1bf58ea89fe1f}{fall}} (int \&step)
+\item 
+bool \mbox{\hyperlink{classPlayer_afe0cb6dbead8a14c89af0b488aba7688}{is\+Jumping}} ()
+\item 
+void \mbox{\hyperlink{classPlayer_af749c93651893717706d825664d562c8}{set\+Jump}} (glimac\+::\+SDLWindow\+Manager \&window\+Manager, bool \&repeat)
+\item 
+void \mbox{\hyperlink{classPlayer_a8ccf5599b2310a403fe90002d9a944f9}{move\+Manager}} (\mbox{\hyperlink{classObject}{Object}} $\ast$objet, \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, int \&score, glimac\+::\+SDLWindow\+Manager \&window\+Manager, bool \&repeat, bool \&turn\+\_\+up, bool \&turn\+\_\+down, bool \&turn\+\_\+right, bool \&turn\+\_\+left, int \&step\+\_\+turn)
+\item 
+void \mbox{\hyperlink{classPlayer_a68da82b2dc6b50997d19b9f3569f5241}{move\+Enemy\+Manager}} (\mbox{\hyperlink{classObject}{Object}} $\ast$objet\+\_\+enemy)
+\item 
+void \mbox{\hyperlink{classPlayer_a7cbea9bdcaaa459aacad0364df2f5485}{draw}} (\mbox{\hyperlink{classrendering_1_1Model}{rendering\+::\+Model}} \&mesh, \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Program, glm\+::mat4 Proj\+Matrix)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Player_8hpp_source_l00014}{14}} of file \mbox{\hyperlink{Player_8hpp_source}{Player.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPlayer_ad2e5cfd6970f751909e10c1fca6fa90d}\label{classPlayer_ad2e5cfd6970f751909e10c1fca6fa90d}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCourseMap}{Course\+Map}}}]{Course\+Map,  }\item[{glm\+::vec3}]{initial\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{Player_8hpp_source}{Player.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024 :m\_coord(initialPos),m\_coins(0),m\_life(\textcolor{keyword}{true}),m\_orientation(0), m\_isJumping(\textcolor{keyword}{false})\{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_a40d3c47b65e9652c363a8fde41f7bbf5}\label{classPlayer_a40d3c47b65e9652c363a8fde41f7bbf5}} 
+\index{Player@{Player}!````~Player@{$\sim$Player}}
+\index{````~Player@{$\sim$Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{$\sim$Player()}{~Player()}}
+{\footnotesize\ttfamily Player\+::$\sim$\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlayer_a57c7d77cc3384cc6c4491451a1ab72ff}\label{classPlayer_a57c7d77cc3384cc6c4491451a1ab72ff}} 
+\index{Player@{Player}!addCoins@{addCoins}}
+\index{addCoins@{addCoins}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{addCoins()}{addCoins()}}
+{\footnotesize\ttfamily void Player\+::add\+Coins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021 \{}
+\DoxyCodeLine{00022     m\_coins++;}
+\DoxyCodeLine{00023 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_a8793114bb56efa499192c68473164bb8}\label{classPlayer_a8793114bb56efa499192c68473164bb8}} 
+\index{Player@{Player}!convertCoord@{convertCoord}}
+\index{convertCoord@{convertCoord}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{convertCoord()}{convertCoord()}}
+{\footnotesize\ttfamily glm\+::vec3 Player\+::convert\+Coord (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046 \{}
+\DoxyCodeLine{00047     \textcolor{keywordflow}{return} glm::vec3(\mbox{\hyperlink{classPlayer_a8cdcea0832a0fa8b0029d41d94c975d2}{getCoord}}().x -\/ 1., \mbox{\hyperlink{classPlayer_a8cdcea0832a0fa8b0029d41d94c975d2}{getCoord}}().z, \mbox{\hyperlink{classPlayer_a8cdcea0832a0fa8b0029d41d94c975d2}{getCoord}}().y);}
+\DoxyCodeLine{00048 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_a7cbea9bdcaaa459aacad0364df2f5485}\label{classPlayer_a7cbea9bdcaaa459aacad0364df2f5485}} 
+\index{Player@{Player}!draw@{draw}}
+\index{draw@{draw}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Player\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1Model}{rendering\+::\+Model}} \&}]{mesh,  }\item[{\mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$}]{camera,  }\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Program,  }\item[{glm\+::mat4}]{Proj\+Matrix }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051 \{}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
+\DoxyCodeLine{00054     ViewMatrix = glm::translate(ViewMatrix, \mbox{\hyperlink{classPlayer_a8793114bb56efa499192c68473164bb8}{convertCoord}}());}
+\DoxyCodeLine{00055     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0, 0.6, 0));}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     ViewMatrix = glm::scale(ViewMatrix, glm::vec3(1, 1, 1));}
+\DoxyCodeLine{00058     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00060     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
+\DoxyCodeLine{00061     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVMatrix"{}}, ViewMatrix);}
+\DoxyCodeLine{00062     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uNormalMatrix"{}}, NormalMatrix);}
+\DoxyCodeLine{00063     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_ad8f60d9ab9e7a1c0572914e6ea47b498}{uniform1i}}(\textcolor{stringliteral}{"{}uTexture"{}}, 0);}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     mesh.\mbox{\hyperlink{classrendering_1_1Model_a71dea11e780bdefb98cd9603cfa1758b}{draw}}();}
+\DoxyCodeLine{00066 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_a47aa062a98acd5c1fbc1bf58ea89fe1f}\label{classPlayer_a47aa062a98acd5c1fbc1bf58ea89fe1f}} 
+\index{Player@{Player}!fall@{fall}}
+\index{fall@{fall}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{fall()}{fall()}}
+{\footnotesize\ttfamily void Player\+::fall (\begin{DoxyParamCaption}\item[{int \&}]{step }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00188}{188}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00189 \{}
+\DoxyCodeLine{00190 }
+\DoxyCodeLine{00191     \textcolor{keywordflow}{if} (step < 20)}
+\DoxyCodeLine{00192     \{}
+\DoxyCodeLine{00193         m\_coord.z -\/= 0.1;}
+\DoxyCodeLine{00194 }
+\DoxyCodeLine{00195         \mbox{\hyperlink{classPlayer_a668c2b03d3f835e96cd3c90801504fcd}{moveOrientation}}();}
+\DoxyCodeLine{00196         step++;}
+\DoxyCodeLine{00197     \}}
+\DoxyCodeLine{00198     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00199     \{}
+\DoxyCodeLine{00200         step = 0;}
+\DoxyCodeLine{00201         m\_isJumping = \textcolor{keyword}{false};}
+\DoxyCodeLine{00202     \}}
+\DoxyCodeLine{00203 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_ae61ec5417d7f59770c0850a8a7e95508}\label{classPlayer_ae61ec5417d7f59770c0850a8a7e95508}} 
+\index{Player@{Player}!getCoins@{getCoins}}
+\index{getCoins@{getCoins}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getCoins()}{getCoins()}}
+{\footnotesize\ttfamily int Player\+::get\+Coins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026 \{}
+\DoxyCodeLine{00027     \textcolor{keywordflow}{return} m\_coins;}
+\DoxyCodeLine{00028 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_a8cdcea0832a0fa8b0029d41d94c975d2}\label{classPlayer_a8cdcea0832a0fa8b0029d41d94c975d2}} 
+\index{Player@{Player}!getCoord@{getCoord}}
+\index{getCoord@{getCoord}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getCoord()}{getCoord()}}
+{\footnotesize\ttfamily glm\+::vec3 Player\+::get\+Coord (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012 \{}
+\DoxyCodeLine{00013     \textcolor{keywordflow}{return} m\_coord;}
+\DoxyCodeLine{00014 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_ac83539d467be414f62aad93fbf6ba503}\label{classPlayer_ac83539d467be414f62aad93fbf6ba503}} 
+\index{Player@{Player}!getFloorCoord@{getFloorCoord}}
+\index{getFloorCoord@{getFloorCoord}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getFloorCoord()}{getFloorCoord()}}
+{\footnotesize\ttfamily glm\+::vec3 Player\+::get\+Floor\+Coord (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016 \{}
+\DoxyCodeLine{00017     \textcolor{keywordflow}{return} glm::vec3(floor(m\_coord.x), floor(m\_coord.y), m\_coord.z);}
+\DoxyCodeLine{00018 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_aeb38adafb5e2ef723021225410e20668}\label{classPlayer_aeb38adafb5e2ef723021225410e20668}} 
+\index{Player@{Player}!getOrientation@{getOrientation}}
+\index{getOrientation@{getOrientation}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getOrientation()}{getOrientation()}}
+{\footnotesize\ttfamily float Player\+::get\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094 \{}
+\DoxyCodeLine{00095     \textcolor{keywordflow}{return} m\_orientation;}
+\DoxyCodeLine{00096 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_afe0cb6dbead8a14c89af0b488aba7688}\label{classPlayer_afe0cb6dbead8a14c89af0b488aba7688}} 
+\index{Player@{Player}!isJumping@{isJumping}}
+\index{isJumping@{isJumping}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{isJumping()}{isJumping()}}
+{\footnotesize\ttfamily bool Player\+::is\+Jumping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00205}{205}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00206 \{}
+\DoxyCodeLine{00207     \textcolor{keywordflow}{return} m\_isJumping;}
+\DoxyCodeLine{00208 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_a139742048b9191022e257d054bd3b0fc}\label{classPlayer_a139742048b9191022e257d054bd3b0fc}} 
+\index{Player@{Player}!isLife@{isLife}}
+\index{isLife@{isLife}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{isLife()}{isLife()}}
+{\footnotesize\ttfamily bool Player\+::is\+Life (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031 \{}
+\DoxyCodeLine{00032     \textcolor{keywordflow}{return} m\_life;}
+\DoxyCodeLine{00033 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_a460a5a336858ec421b09ed3800702549}\label{classPlayer_a460a5a336858ec421b09ed3800702549}} 
+\index{Player@{Player}!jump@{jump}}
+\index{jump@{jump}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{jump()}{jump()}}
+{\footnotesize\ttfamily void Player\+::jump (\begin{DoxyParamCaption}\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager,  }\item[{bool \&}]{repeat,  }\item[{int \&}]{step }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00176}{176}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00177 \{}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179     \textcolor{keywordflow}{if} (step < 10)}
+\DoxyCodeLine{00180     \{}
+\DoxyCodeLine{00181         m\_coord.z += 0.1;}
+\DoxyCodeLine{00182         m\_isJumping = \textcolor{keyword}{true};}
+\DoxyCodeLine{00183         \mbox{\hyperlink{classPlayer_a668c2b03d3f835e96cd3c90801504fcd}{moveOrientation}}();}
+\DoxyCodeLine{00184         step++;}
+\DoxyCodeLine{00185     \}}
+\DoxyCodeLine{00186 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}\label{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}} 
+\index{Player@{Player}!move@{move}}
+\index{move@{move}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Player\+::move (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{coord\+\_\+add }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036 \{}
+\DoxyCodeLine{00037     m\_coord = glm::vec3(m\_coord[0] + coord\_move[0], m\_coord[1] + coord\_move[1], m\_coord[2] + coord\_move[2]);}
+\DoxyCodeLine{00038 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_a68da82b2dc6b50997d19b9f3569f5241}\label{classPlayer_a68da82b2dc6b50997d19b9f3569f5241}} 
+\index{Player@{Player}!moveEnemyManager@{moveEnemyManager}}
+\index{moveEnemyManager@{moveEnemyManager}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{moveEnemyManager()}{moveEnemyManager()}}
+{\footnotesize\ttfamily void Player\+::move\+Enemy\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classObject}{Object}} $\ast$}]{objet\+\_\+enemy }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00275}{275}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00276 \{}
+\DoxyCodeLine{00277     \textcolor{keywordflow}{if} (objet\_enemy-\/>\mbox{\hyperlink{classObject_ae2e7f745c015b67a580c735609cba5b8}{getName}}() == \textcolor{stringliteral}{"{}up"{}})}
+\DoxyCodeLine{00278     \{}
+\DoxyCodeLine{00279         \mbox{\hyperlink{classPlayer_a1c0b6edb07d01127bf8eb27a6ed29073}{setCoord}}(objet\_enemy-\/>\mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}());}
+\DoxyCodeLine{00280         \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(0, -\/1, 0));}
+\DoxyCodeLine{00281         \mbox{\hyperlink{classPlayer_a4abc7df56be8134ddf0e7b862a833c85}{setOrientation}}(180.);}
+\DoxyCodeLine{00282     \}}
+\DoxyCodeLine{00283 }
+\DoxyCodeLine{00284     \textcolor{keywordflow}{if} (objet\_enemy-\/>\mbox{\hyperlink{classObject_ae2e7f745c015b67a580c735609cba5b8}{getName}}() == \textcolor{stringliteral}{"{}down"{}})}
+\DoxyCodeLine{00285     \{}
+\DoxyCodeLine{00286         \mbox{\hyperlink{classPlayer_a1c0b6edb07d01127bf8eb27a6ed29073}{setCoord}}(objet\_enemy-\/>\mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}());}
+\DoxyCodeLine{00287         \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(0, 1, 0));}
+\DoxyCodeLine{00288         \mbox{\hyperlink{classPlayer_a4abc7df56be8134ddf0e7b862a833c85}{setOrientation}}(0.);}
+\DoxyCodeLine{00289     \}}
+\DoxyCodeLine{00290 }
+\DoxyCodeLine{00291     \textcolor{keywordflow}{if} (objet\_enemy-\/>\mbox{\hyperlink{classObject_ae2e7f745c015b67a580c735609cba5b8}{getName}}() == \textcolor{stringliteral}{"{}right"{}})}
+\DoxyCodeLine{00292     \{}
+\DoxyCodeLine{00293         \mbox{\hyperlink{classPlayer_a1c0b6edb07d01127bf8eb27a6ed29073}{setCoord}}(objet\_enemy-\/>\mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}());}
+\DoxyCodeLine{00294         \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(1, 0, 0));}
+\DoxyCodeLine{00295         \mbox{\hyperlink{classPlayer_a4abc7df56be8134ddf0e7b862a833c85}{setOrientation}}(90.);}
+\DoxyCodeLine{00296     \}}
+\DoxyCodeLine{00297 }
+\DoxyCodeLine{00298     \textcolor{keywordflow}{if} (objet\_enemy-\/>\mbox{\hyperlink{classObject_ae2e7f745c015b67a580c735609cba5b8}{getName}}() == \textcolor{stringliteral}{"{}left"{}})}
+\DoxyCodeLine{00299     \{}
+\DoxyCodeLine{00300         \mbox{\hyperlink{classPlayer_a1c0b6edb07d01127bf8eb27a6ed29073}{setCoord}}(objet\_enemy-\/>\mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}());}
+\DoxyCodeLine{00301         \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(-\/1, 0, 0));}
+\DoxyCodeLine{00302         \mbox{\hyperlink{classPlayer_a4abc7df56be8134ddf0e7b862a833c85}{setOrientation}}(-\/90.);}
+\DoxyCodeLine{00303     \}}
+\DoxyCodeLine{00304 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_a8ccf5599b2310a403fe90002d9a944f9}\label{classPlayer_a8ccf5599b2310a403fe90002d9a944f9}} 
+\index{Player@{Player}!moveManager@{moveManager}}
+\index{moveManager@{moveManager}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{moveManager()}{moveManager()}}
+{\footnotesize\ttfamily void Player\+::move\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classObject}{Object}} $\ast$}]{objet,  }\item[{\mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$}]{camera,  }\item[{int \&}]{score,  }\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager,  }\item[{bool \&}]{repeat,  }\item[{bool \&}]{turn\+\_\+up,  }\item[{bool \&}]{turn\+\_\+down,  }\item[{bool \&}]{turn\+\_\+right,  }\item[{bool \&}]{turn\+\_\+left,  }\item[{int \&}]{step\+\_\+turn }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00210}{210}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00211 \{}
+\DoxyCodeLine{00212     \textcolor{keywordflow}{if} (objet-\/>\mbox{\hyperlink{classObject_ac3088854ee92f65d8bddf0390ac4c37f}{getIfCoins}}() \& !m\_isJumping)}
+\DoxyCodeLine{00213     \{}
+\DoxyCodeLine{00214         objet-\/>\mbox{\hyperlink{classObject_a68012e5a1c065d32282a7b6845e44fa1}{removeCoin}}();}
+\DoxyCodeLine{00215         score += 50;}
+\DoxyCodeLine{00216     \}}
+\DoxyCodeLine{00217     \textcolor{keywordflow}{if} (objet-\/>\mbox{\hyperlink{classObject_ae2e7f745c015b67a580c735609cba5b8}{getName}}() == \textcolor{stringliteral}{"{}straight"{}})}
+\DoxyCodeLine{00218     \{}
+\DoxyCodeLine{00219         \mbox{\hyperlink{classPlayer_aa20973c0ab5734da6a3ba4555670d4b1}{moveside}}(windowManager, repeat, turn\_up, turn\_down, turn\_right, turn\_left);}
+\DoxyCodeLine{00220         \mbox{\hyperlink{classPlayer_af749c93651893717706d825664d562c8}{setJump}}(windowManager, repeat);}
+\DoxyCodeLine{00221     \}}
+\DoxyCodeLine{00222 }
+\DoxyCodeLine{00223     \textcolor{keywordflow}{if} (objet-\/>\mbox{\hyperlink{classObject_ae2e7f745c015b67a580c735609cba5b8}{getName}}() == \textcolor{stringliteral}{"{}up"{}} \& turn\_up)}
+\DoxyCodeLine{00224     \{}
+\DoxyCodeLine{00225         turn\_up = \textcolor{keyword}{false};}
+\DoxyCodeLine{00226         step\_turn = 0;}
+\DoxyCodeLine{00227         \mbox{\hyperlink{classPlayer_a1c0b6edb07d01127bf8eb27a6ed29073}{setCoord}}(objet-\/>\mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}());}
+\DoxyCodeLine{00228         \mbox{\hyperlink{classPlayer_a4abc7df56be8134ddf0e7b862a833c85}{setOrientation}}(180.);}
+\DoxyCodeLine{00229         \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(0, -\/1, 0));}
+\DoxyCodeLine{00230         camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}{rotateLeft}}(\mbox{\hyperlink{classPlayer_aeb38adafb5e2ef723021225410e20668}{getOrientation}}());}
+\DoxyCodeLine{00231     \}}
+\DoxyCodeLine{00232 }
+\DoxyCodeLine{00233     \textcolor{keywordflow}{if} (objet-\/>\mbox{\hyperlink{classObject_ae2e7f745c015b67a580c735609cba5b8}{getName}}() == \textcolor{stringliteral}{"{}down"{}} \& turn\_down)}
+\DoxyCodeLine{00234     \{}
+\DoxyCodeLine{00235         turn\_down = \textcolor{keyword}{false};}
+\DoxyCodeLine{00236         step\_turn = 0;}
+\DoxyCodeLine{00237         \mbox{\hyperlink{classPlayer_a1c0b6edb07d01127bf8eb27a6ed29073}{setCoord}}(objet-\/>\mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}());}
+\DoxyCodeLine{00238         \mbox{\hyperlink{classPlayer_a4abc7df56be8134ddf0e7b862a833c85}{setOrientation}}(0.);}
+\DoxyCodeLine{00239         \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(0, 1, 0));}
+\DoxyCodeLine{00240         camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}{rotateLeft}}(\mbox{\hyperlink{classPlayer_aeb38adafb5e2ef723021225410e20668}{getOrientation}}());}
+\DoxyCodeLine{00241     \}}
+\DoxyCodeLine{00242 }
+\DoxyCodeLine{00243     \textcolor{keywordflow}{if} (objet-\/>\mbox{\hyperlink{classObject_ae2e7f745c015b67a580c735609cba5b8}{getName}}() == \textcolor{stringliteral}{"{}right"{}} \& turn\_right)}
+\DoxyCodeLine{00244     \{}
+\DoxyCodeLine{00245         turn\_right = \textcolor{keyword}{false};}
+\DoxyCodeLine{00246         step\_turn = 0;}
+\DoxyCodeLine{00247         \mbox{\hyperlink{classPlayer_a1c0b6edb07d01127bf8eb27a6ed29073}{setCoord}}(objet-\/>\mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}());}
+\DoxyCodeLine{00248         \mbox{\hyperlink{classPlayer_a4abc7df56be8134ddf0e7b862a833c85}{setOrientation}}(90.);}
+\DoxyCodeLine{00249         \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(1, 0, 0));}
+\DoxyCodeLine{00250         camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}{rotateLeft}}(\mbox{\hyperlink{classPlayer_aeb38adafb5e2ef723021225410e20668}{getOrientation}}());}
+\DoxyCodeLine{00251     \}}
+\DoxyCodeLine{00252 }
+\DoxyCodeLine{00253     \textcolor{keywordflow}{if} (objet-\/>\mbox{\hyperlink{classObject_ae2e7f745c015b67a580c735609cba5b8}{getName}}() == \textcolor{stringliteral}{"{}left"{}} \& turn\_left)}
+\DoxyCodeLine{00254     \{}
+\DoxyCodeLine{00255         turn\_right = \textcolor{keyword}{false};}
+\DoxyCodeLine{00256         step\_turn = 0;}
+\DoxyCodeLine{00257         \mbox{\hyperlink{classPlayer_a1c0b6edb07d01127bf8eb27a6ed29073}{setCoord}}(objet-\/>\mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}());}
+\DoxyCodeLine{00258         \mbox{\hyperlink{classPlayer_a4abc7df56be8134ddf0e7b862a833c85}{setOrientation}}(-\/90.);}
+\DoxyCodeLine{00259         \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(-\/1, 0, 0));}
+\DoxyCodeLine{00260         camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}{rotateLeft}}(\mbox{\hyperlink{classPlayer_aeb38adafb5e2ef723021225410e20668}{getOrientation}}());}
+\DoxyCodeLine{00261     \}}
+\DoxyCodeLine{00262 }
+\DoxyCodeLine{00263     \textcolor{keywordflow}{if} (objet-\/>\mbox{\hyperlink{classObject_ae2e7f745c015b67a580c735609cba5b8}{getName}}() == \textcolor{stringliteral}{"{}empty"{}} \& \mbox{\hyperlink{classPlayer_a8cdcea0832a0fa8b0029d41d94c975d2}{getCoord}}()[2] < 0.3 || \mbox{\hyperlink{classPlayer_a8cdcea0832a0fa8b0029d41d94c975d2}{getCoord}}().x < 0)}
+\DoxyCodeLine{00264     \{}
+\DoxyCodeLine{00265         \mbox{\hyperlink{classPlayer_ae532c685de27244647bf661d3f8245fa}{setLife}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00266     \}}
+\DoxyCodeLine{00267 }
+\DoxyCodeLine{00268     \textcolor{keywordflow}{if} (objet-\/>\mbox{\hyperlink{classObject_ae2e7f745c015b67a580c735609cba5b8}{getName}}() == \textcolor{stringliteral}{"{}obstacle"{}} \& \mbox{\hyperlink{classPlayer_a8cdcea0832a0fa8b0029d41d94c975d2}{getCoord}}()[2] < 0.3)}
+\DoxyCodeLine{00269     \{}
+\DoxyCodeLine{00270         \mbox{\hyperlink{classPlayer_ae532c685de27244647bf661d3f8245fa}{setLife}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00271     \}}
+\DoxyCodeLine{00272 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_a668c2b03d3f835e96cd3c90801504fcd}\label{classPlayer_a668c2b03d3f835e96cd3c90801504fcd}} 
+\index{Player@{Player}!moveOrientation@{moveOrientation}}
+\index{moveOrientation@{moveOrientation}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{moveOrientation()}{moveOrientation()}}
+{\footnotesize\ttfamily void Player\+::move\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069 \{}
+\DoxyCodeLine{00070     \textcolor{keywordflow}{if} (m\_orientation == 0.)}
+\DoxyCodeLine{00071     \{}
+\DoxyCodeLine{00072         \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(0, 0.1, 0));}
+\DoxyCodeLine{00073     \}}
+\DoxyCodeLine{00074     \textcolor{keywordflow}{if} (m\_orientation == 90.)}
+\DoxyCodeLine{00075     \{}
+\DoxyCodeLine{00076         \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(0.1, 0, 0));}
+\DoxyCodeLine{00077     \}}
+\DoxyCodeLine{00078     \textcolor{keywordflow}{if} (m\_orientation == -\/90.)}
+\DoxyCodeLine{00079     \{}
+\DoxyCodeLine{00080         \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(-\/0.1, 0, 0));}
+\DoxyCodeLine{00081     \}}
+\DoxyCodeLine{00082     \textcolor{keywordflow}{if} (m\_orientation == 180.)}
+\DoxyCodeLine{00083     \{}
+\DoxyCodeLine{00084         \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(0, -\/0.1, 0));}
+\DoxyCodeLine{00085     \}}
+\DoxyCodeLine{00086 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_aa20973c0ab5734da6a3ba4555670d4b1}\label{classPlayer_aa20973c0ab5734da6a3ba4555670d4b1}} 
+\index{Player@{Player}!moveside@{moveside}}
+\index{moveside@{moveside}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{moveside()}{moveside()}}
+{\footnotesize\ttfamily void Player\+::moveside (\begin{DoxyParamCaption}\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager,  }\item[{bool \&}]{repeat,  }\item[{bool \&}]{turn\+\_\+up,  }\item[{bool \&}]{turn\+\_\+down,  }\item[{bool \&}]{turn\+\_\+right,  }\item[{bool \&}]{turn\+\_\+left }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099 \{}
+\DoxyCodeLine{00100     \textcolor{keywordflow}{if} (m\_orientation == 0.)}
+\DoxyCodeLine{00101     \{}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_d) \&\& repeat)}
+\DoxyCodeLine{00104         \{}
+\DoxyCodeLine{00105             SDL\_EnableKeyRepeat(0, 0);}
+\DoxyCodeLine{00106             turn\_left = \textcolor{keyword}{true};}
+\DoxyCodeLine{00107             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00108             \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(-\/1., 0, 0));}
+\DoxyCodeLine{00109         \}}
+\DoxyCodeLine{00110         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_q) \&\& repeat)}
+\DoxyCodeLine{00111         \{}
+\DoxyCodeLine{00112             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00113             turn\_right = \textcolor{keyword}{true};}
+\DoxyCodeLine{00114             \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(1., 0, 0));}
+\DoxyCodeLine{00115         \}}
+\DoxyCodeLine{00116     \}}
+\DoxyCodeLine{00117     \textcolor{keywordflow}{if} (m\_orientation == 90.)}
+\DoxyCodeLine{00118     \{}
+\DoxyCodeLine{00119         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_d) \&\& repeat)}
+\DoxyCodeLine{00120         \{}
+\DoxyCodeLine{00121             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00122             turn\_down = \textcolor{keyword}{true};}
+\DoxyCodeLine{00123             \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(0, 1., 0));}
+\DoxyCodeLine{00124         \}}
+\DoxyCodeLine{00125         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_q) \&\& repeat)}
+\DoxyCodeLine{00126         \{}
+\DoxyCodeLine{00127             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00128             turn\_up = \textcolor{keyword}{true};}
+\DoxyCodeLine{00129             \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(0, -\/1., 0));}
+\DoxyCodeLine{00130         \}}
+\DoxyCodeLine{00131     \}}
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133     \textcolor{keywordflow}{if} (m\_orientation == -\/90.)}
+\DoxyCodeLine{00134     \{}
+\DoxyCodeLine{00135         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_d) \&\& repeat)}
+\DoxyCodeLine{00136         \{}
+\DoxyCodeLine{00137             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00138             turn\_up = \textcolor{keyword}{true};}
+\DoxyCodeLine{00139             \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(0, -\/1., 0));}
+\DoxyCodeLine{00140         \}}
+\DoxyCodeLine{00141         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_q) \&\& repeat)}
+\DoxyCodeLine{00142         \{}
+\DoxyCodeLine{00143             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00144             turn\_down = \textcolor{keyword}{true};}
+\DoxyCodeLine{00145             \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(0, 1., 0));}
+\DoxyCodeLine{00146         \}}
+\DoxyCodeLine{00147     \}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149     \textcolor{keywordflow}{if} (m\_orientation == 180.)}
+\DoxyCodeLine{00150     \{}
+\DoxyCodeLine{00151         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_d) \&\& repeat)}
+\DoxyCodeLine{00152         \{}
+\DoxyCodeLine{00153             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00154             turn\_right = \textcolor{keyword}{true};}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156             \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(1., 0, 0));}
+\DoxyCodeLine{00157         \}}
+\DoxyCodeLine{00158         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_q) \&\& repeat)}
+\DoxyCodeLine{00159         \{}
+\DoxyCodeLine{00160             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00161             turn\_left = \textcolor{keyword}{true};}
+\DoxyCodeLine{00162             \mbox{\hyperlink{classPlayer_a13c07f2b971fdcb561a153ea50a6c981}{move}}(glm::vec3(-\/1., 0, 0));}
+\DoxyCodeLine{00163         \}}
+\DoxyCodeLine{00164     \}}
+\DoxyCodeLine{00165 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_a1c0b6edb07d01127bf8eb27a6ed29073}\label{classPlayer_a1c0b6edb07d01127bf8eb27a6ed29073}} 
+\index{Player@{Player}!setCoord@{setCoord}}
+\index{setCoord@{setCoord}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setCoord()}{setCoord()}}
+{\footnotesize\ttfamily void Player\+::set\+Coord (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{coord }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007 \{}
+\DoxyCodeLine{00008     m\_coord = coord;}
+\DoxyCodeLine{00009 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_af749c93651893717706d825664d562c8}\label{classPlayer_af749c93651893717706d825664d562c8}} 
+\index{Player@{Player}!setJump@{setJump}}
+\index{setJump@{setJump}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setJump()}{setJump()}}
+{\footnotesize\ttfamily void Player\+::set\+Jump (\begin{DoxyParamCaption}\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager,  }\item[{bool \&}]{repeat }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00167}{167}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00168 \{}
+\DoxyCodeLine{00169     \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_z) \&\& repeat)}
+\DoxyCodeLine{00170     \{}
+\DoxyCodeLine{00171         m\_isJumping = \textcolor{keyword}{true};}
+\DoxyCodeLine{00172         repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00173     \}}
+\DoxyCodeLine{00174 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_ae532c685de27244647bf661d3f8245fa}\label{classPlayer_ae532c685de27244647bf661d3f8245fa}} 
+\index{Player@{Player}!setLife@{setLife}}
+\index{setLife@{setLife}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setLife()}{setLife()}}
+{\footnotesize\ttfamily void Player\+::set\+Life (\begin{DoxyParamCaption}\item[{bool}]{life }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041 \{}
+\DoxyCodeLine{00042     m\_life = life;}
+\DoxyCodeLine{00043 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPlayer_a4abc7df56be8134ddf0e7b862a833c85}\label{classPlayer_a4abc7df56be8134ddf0e7b862a833c85}} 
+\index{Player@{Player}!setOrientation@{setOrientation}}
+\index{setOrientation@{setOrientation}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{setOrientation()}{setOrientation()}}
+{\footnotesize\ttfamily void Player\+::set\+Orientation (\begin{DoxyParamCaption}\item[{float}]{orientatioin }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089 \{}
+\DoxyCodeLine{00090     m\_orientation = orientation;}
+\DoxyCodeLine{00091 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+game/include/game/\mbox{\hyperlink{Player_8hpp}{Player.\+hpp}}\item 
+game/src/\mbox{\hyperlink{Player_8cpp}{Player.\+cpp}}\end{DoxyCompactItemize}

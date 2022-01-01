@@ -1,0 +1,43 @@
+\hypertarget{Sphere_8hpp_source}{}\doxysection{Sphere.\+hpp}
+\label{Sphere_8hpp_source}\index{glimac/include/glimac/Sphere.hpp@{glimac/include/glimac/Sphere.hpp}}
+\mbox{\hyperlink{Sphere_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{third-party_2include_2glm_2common_8hpp}{common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00007}00007 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglimac}{glimac}} \{}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00009}00009 \textcolor{comment}{// Représente une sphère discrétisée centrée en (0, 0, 0) (dans son repère local)}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00010}00010 \textcolor{comment}{// Son axe vertical est (0, 1, 0) et ses axes transversaux sont (1, 0, 0) et (0, 0, 1)}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00011}\mbox{\hyperlink{classglimac_1_1Sphere}{00011}} \textcolor{keyword}{class }\mbox{\hyperlink{classglimac_1_1Sphere}{Sphere}} \{}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00012}00012     \textcolor{comment}{// Alloue et construit les données (implantation dans le .cpp)}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00013}00013     \textcolor{keywordtype}{void} build(GLfloat radius, GLsizei discLat, GLsizei discLong);}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00015}00015 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00016}00016     \textcolor{comment}{// Constructeur: alloue le tableau de données et construit les attributs des vertex}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00017}\mbox{\hyperlink{classglimac_1_1Sphere_a323f03104a8e5988edf3a72e9218219e}{00017}}     \mbox{\hyperlink{classglimac_1_1Sphere_a323f03104a8e5988edf3a72e9218219e}{Sphere}}(GLfloat radius, GLsizei discLat, GLsizei discLong):}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00018}00018         m\_nVertexCount(0) \{}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00019}00019         build(radius, discLat, discLong); \textcolor{comment}{// Construction (voir le .cpp)}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00020}00020     \}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00022}00022     \textcolor{comment}{// Renvoit le pointeur vers les données}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00023}\mbox{\hyperlink{classglimac_1_1Sphere_acc509f80f256bd3db168c0b453dc8110}{00023}}     \textcolor{keyword}{const} \mbox{\hyperlink{structglimac_1_1ShapeVertex}{ShapeVertex}}* \mbox{\hyperlink{classglimac_1_1Sphere_acc509f80f256bd3db168c0b453dc8110}{getDataPointer}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00024}00024         \textcolor{keywordflow}{return} \&m\_Vertices[0];}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00026}00026     }
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00027}00027     \textcolor{comment}{// Renvoit le nombre de vertex}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00028}\mbox{\hyperlink{classglimac_1_1Sphere_af413d827ffe392ca91770858d8d97285}{00028}}     GLsizei \mbox{\hyperlink{classglimac_1_1Sphere_af413d827ffe392ca91770858d8d97285}{getVertexCount}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00029}00029         \textcolor{keywordflow}{return} m\_nVertexCount;}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00030}00030     \}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00032}00032 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00033}00033     std::vector<ShapeVertex> m\_Vertices;}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00034}00034     GLsizei m\_nVertexCount; \textcolor{comment}{// Nombre de sommets}}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00035}00035 \};}
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00036}00036     }
+\DoxyCodeLine{\Hypertarget{Sphere_8hpp_source_l00037}00037 \}}
+
+\end{DoxyCode}

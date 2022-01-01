@@ -1,0 +1,379 @@
+\hypertarget{main_8cpp}{}\doxysection{TP\+\_\+projet/main.cpp File Reference}
+\label{main_8cpp}\index{TP\_projet/main.cpp@{TP\_projet/main.cpp}}
+{\ttfamily \#include $<$GL/glew.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$ft2build.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$glimac/\+SDLWindow\+Manager.\+hpp$>$}\newline
+{\ttfamily \#include $<$glimac/\+Program.\+hpp$>$}\newline
+{\ttfamily \#include $<$glimac/\+File\+Path.\+hpp$>$}\newline
+{\ttfamily \#include $<$glimac/glm.\+hpp$>$}\newline
+{\ttfamily \#include $<$glimac/\+Image.\+hpp$>$}\newline
+{\ttfamily \#include $<$glimac/\+Sphere.\+hpp$>$}\newline
+{\ttfamily \#include $<$glimac/\+Geometry.\+hpp$>$}\newline
+{\ttfamily \#include $<$rendering/\+Camera.\+hpp$>$}\newline
+{\ttfamily \#include $<$rendering/\+Trackball\+Camera.\+hpp$>$}\newline
+{\ttfamily \#include $<$rendering/\+Eyes\+Camera.\+hpp$>$}\newline
+{\ttfamily \#include $<$rendering/\+Texture.\+hpp$>$}\newline
+{\ttfamily \#include $<$rendering/\+Program.\+hpp$>$}\newline
+{\ttfamily \#include $<$rendering/\+Skybox.\+hpp$>$}\newline
+{\ttfamily \#include $<$rendering/\+Cube.\+hpp$>$}\newline
+{\ttfamily \#include $<$rendering/\+Text.\+hpp$>$}\newline
+{\ttfamily \#include $<$rendering/\+Menu.\+hpp$>$}\newline
+{\ttfamily \#include $<$rendering/\+Cursor.\+hpp$>$}\newline
+{\ttfamily \#include $<$rendering/json.\+hpp$>$}\newline
+{\ttfamily \#include $<$rendering/\+Score.\+hpp$>$}\newline
+{\ttfamily \#include $<$game/\+Course\+Map.\+hpp$>$}\newline
+{\ttfamily \#include $<$game/\+Object.\+hpp$>$}\newline
+{\ttfamily \#include $<$game/\+Player.\+hpp$>$}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{main_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} = \mbox{\hyperlink{namespacenlohmann_a2bfd99e845a2e5cd90aeaf1b1431f474}{nlohmann\+::json}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{main_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}\label{main_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}} 
+\index{main.cpp@{main.cpp}!json@{json}}
+\index{json@{json}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{json}{json}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{Score_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} =  \mbox{\hyperlink{namespacenlohmann_a2bfd99e845a2e5cd90aeaf1b1431f474}{nlohmann\+::json}}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037 \{}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \textcolor{comment}{// Initialize SDL and open a window}}
+\DoxyCodeLine{00040     \mbox{\hyperlink{classglimac_1_1SDLWindowManager}{glimac::SDLWindowManager}} windowManager(1700, 900, \textcolor{stringliteral}{"{}Temple\_Fun"{}});}
+\DoxyCodeLine{00041     \textcolor{keywordtype}{int} previousTime = 0, currentTime = 0;}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     \textcolor{comment}{// Initialize glew for OpenGL3+ support}}
+\DoxyCodeLine{00044     GLenum glewInitError = glewInit();}
+\DoxyCodeLine{00045     \textcolor{keywordflow}{if} (GLEW\_OK != glewInitError)}
+\DoxyCodeLine{00046     \{}
+\DoxyCodeLine{00047         std::cerr << glewGetErrorString(glewInitError) << std::endl;}
+\DoxyCodeLine{00048         \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{00049     \}}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     std::cout << \textcolor{stringliteral}{"{}OpenGL Version : "{}} << glGetString(GL\_VERSION) << std::endl;}
+\DoxyCodeLine{00052     std::cout << \textcolor{stringliteral}{"{}GLEW Version : "{}} << glewGetString(GLEW\_VERSION) << std::endl;}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054 \textcolor{comment}{    /*********************************}}
+\DoxyCodeLine{00055 \textcolor{comment}{    *     INITIALIZATION CODE       *}}
+\DoxyCodeLine{00056 \textcolor{comment}{   *********************************/}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058     \textcolor{comment}{// Menu initialization}}
+\DoxyCodeLine{00059     SDL\_Cursor *cursor = init\_system\_cursor(arrow), *cursor2 = init\_system\_cursor(arrow2);}
+\DoxyCodeLine{00060     \mbox{\hyperlink{classMenu}{Menu}} menu;}
+\DoxyCodeLine{00061     \textcolor{keywordtype}{bool} menu\_bool = \textcolor{keyword}{true}, menu\_score = \textcolor{keyword}{false}, menu\_play\_again = \textcolor{keyword}{false};}
+\DoxyCodeLine{00062     \mbox{\hyperlink{classScore}{Score}} scorejson;}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064     \textcolor{comment}{// Map initialization}}
+\DoxyCodeLine{00065     \mbox{\hyperlink{classCourseMap}{CourseMap}} courseMap;}
+\DoxyCodeLine{00066     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00067     \{}
+\DoxyCodeLine{00068         courseMap.\mbox{\hyperlink{classCourseMap_a8edd6012301f8533835bdccaaa3bb0e6}{loadMap}}(\textcolor{stringliteral}{"{}../Temple\_Fun/assets/map.ppm"{}});}
+\DoxyCodeLine{00069     \}}
+\DoxyCodeLine{00070     \textcolor{keywordflow}{catch} (std::string \&s)}
+\DoxyCodeLine{00071     \{}
+\DoxyCodeLine{00072         std::cerr << \textcolor{stringliteral}{"{}Error : "{}} << s << std::endl;}
+\DoxyCodeLine{00073     \}}
+\DoxyCodeLine{00074     courseMap.\mbox{\hyperlink{classCourseMap_a0c633bcf06c5835c1121d83b9b397f53}{loadCoins}}();}
+\DoxyCodeLine{00075     \mbox{\hyperlink{classPlayer}{Player}} player(courseMap, \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{glm::vec3}}(1, 3, 0)), enemy(courseMap, \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{glm::vec3}}(1, 0, 0));}
+\DoxyCodeLine{00076     \mbox{\hyperlink{classObject}{Object}} *objet = courseMap.\mbox{\hyperlink{classCourseMap_a1919a586b423db04121c770c44c6a8e8}{findObject}}(player.getFloorCoord());}
+\DoxyCodeLine{00077     \mbox{\hyperlink{classObject}{Object}} *objet\_enemy = courseMap.\mbox{\hyperlink{classCourseMap_a1919a586b423db04121c770c44c6a8e8}{findObject}}(enemy.getFloorCoord());}
+\DoxyCodeLine{00078     \textcolor{keywordtype}{int} score = 0;}
+\DoxyCodeLine{00079     \textcolor{keywordtype}{int} speed = 5;}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{comment}{//Camera initialization}}
+\DoxyCodeLine{00082     \mbox{\hyperlink{classrendering_1_1TrackballCamera}{rendering::TrackballCamera}} trackball\_camera(\&player);}
+\DoxyCodeLine{00083     \mbox{\hyperlink{classrendering_1_1EyesCamera}{rendering::EyesCamera}} eyes\_camera(\&player);}
+\DoxyCodeLine{00084     \mbox{\hyperlink{classrendering_1_1Camera}{rendering::Camera}} *camera = \&trackball\_camera;}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     \textcolor{comment}{//Textures and mesh initialization}}
+\DoxyCodeLine{00087     \mbox{\hyperlink{classrendering_1_1Texture}{rendering::Texture}} obstacle(\textcolor{stringliteral}{"{}../Temple\_Fun/assets/textures/ground.png"{}});}
+\DoxyCodeLine{00088     \mbox{\hyperlink{classrendering_1_1Texture}{rendering::Texture}} nemo(\textcolor{stringliteral}{"{}../Temple\_Fun/assets/textures/nemo.jpg"{}});}
+\DoxyCodeLine{00089     \mbox{\hyperlink{classrendering_1_1Texture}{rendering::Texture}} ground(\textcolor{stringliteral}{"{}../Temple\_Fun/assets/textures/stone\_ground.png"{}});}
+\DoxyCodeLine{00090     \mbox{\hyperlink{classrendering_1_1Texture}{rendering::Texture}} coin(\textcolor{stringliteral}{"{}../Temple\_Fun/assets/textures/gold.png"{}});}
+\DoxyCodeLine{00091     \mbox{\hyperlink{classrendering_1_1Texture}{rendering::Texture}} shark(\textcolor{stringliteral}{"{}../Temple\_Fun/assets/textures/shark.png"{}});}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093     \mbox{\hyperlink{classrendering_1_1Cube}{rendering::Cube}} cube\_path(ground, 1), cube\_nemo(nemo, 1), cube\_obstacle(obstacle, 1),}
+\DoxyCodeLine{00094         cube\_coin(coin, 1), cube\_shark(shark, 1);}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096     cube\_path.setBuffers();}
+\DoxyCodeLine{00097     cube\_nemo.setBuffers();}
+\DoxyCodeLine{00098     cube\_coin.setBuffers();}
+\DoxyCodeLine{00099     cube\_obstacle.setBuffers();}
+\DoxyCodeLine{00100     cube\_shark.setBuffers();}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102     std::map<char, rendering::Text> Characters;}
+\DoxyCodeLine{00103     \mbox{\hyperlink{classrendering_1_1Text}{rendering::Text}} text;}
+\DoxyCodeLine{00104     text.\mbox{\hyperlink{classrendering_1_1Text_a7d6776480180973b2ca3d1e1a332e862}{loadFont}}(Characters);}
+\DoxyCodeLine{00105     text.\mbox{\hyperlink{classrendering_1_1Text_a7585872c073340edc4e7f3ad09470b23}{display}}();}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107     \textcolor{comment}{// Shaders loading}}
+\DoxyCodeLine{00108     \mbox{\hyperlink{classglimac_1_1FilePath}{glimac::FilePath}} applicationPath(argv[0]);}
+\DoxyCodeLine{00109     \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering::ShaderManager}} menuShader(applicationPath, \textcolor{stringliteral}{"{}shaders/menu.vs.glsl"{}}, \textcolor{stringliteral}{"{}shaders/menu.fs.glsl"{}});}
+\DoxyCodeLine{00110     menuShader.addUniform(\textcolor{stringliteral}{"{}uModelMatrix"{}});}
+\DoxyCodeLine{00111     menuShader.addUniform(\textcolor{stringliteral}{"{}uColor"{}});}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113     \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering::ShaderManager}} TextureProgram(applicationPath, \textcolor{stringliteral}{"{}shaders/3D.vs.glsl"{}}, \textcolor{stringliteral}{"{}shaders/tex3D.fs.glsl"{}});}
+\DoxyCodeLine{00114     TextureProgram.addUniform(\textcolor{stringliteral}{"{}uMVPMatrix"{}});}
+\DoxyCodeLine{00115     TextureProgram.addUniform(\textcolor{stringliteral}{"{}uMVMatrix"{}});}
+\DoxyCodeLine{00116     TextureProgram.addUniform(\textcolor{stringliteral}{"{}uNormalMatrix"{}});}
+\DoxyCodeLine{00117     TextureProgram.addUniform(\textcolor{stringliteral}{"{}uTexture"{}});}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119     \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering::ShaderManager}} SkyboxProgram(applicationPath, \textcolor{stringliteral}{"{}shaders/skybox.vs.glsl"{}}, \textcolor{stringliteral}{"{}shaders/skybox.fs.glsl"{}});}
+\DoxyCodeLine{00120     SkyboxProgram.addUniform(\textcolor{stringliteral}{"{}projection"{}});}
+\DoxyCodeLine{00121     SkyboxProgram.addUniform(\textcolor{stringliteral}{"{}view"{}});}
+\DoxyCodeLine{00122     SkyboxProgram.addUniform(\textcolor{stringliteral}{"{}uSkybox"{}});}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124     \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering::ShaderManager}} TextProgram(applicationPath, \textcolor{stringliteral}{"{}shaders/text.vs.glsl"{}}, \textcolor{stringliteral}{"{}shaders/text.fs.glsl"{}});}
+\DoxyCodeLine{00125     TextProgram.addUniform(\textcolor{stringliteral}{"{}projection"{}});}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127     \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{glm::mat4}} projection = \mbox{\hyperlink{group__gtc__matrix__transform_ga087d53ee6fc88b262214fd5a0e313f05}{glm::ortho}}(0.0f, 800.0f, 0.0f, 600.0f);}
+\DoxyCodeLine{00128     TextProgram.use();}
+\DoxyCodeLine{00129     \mbox{\hyperlink{dummy_8cpp_a0294e2a1faa1a1ff720a35ac06b4282a}{glUniformMatrix4fv}}(glGetUniformLocation(TextProgram.getId(), \textcolor{stringliteral}{"{}projection"{}}), 1, \mbox{\hyperlink{dummy_8cpp_abca6d43f43fae31f49dcb883b2f301f6}{GL\_FALSE}}, \mbox{\hyperlink{group__gtc__type__ptr_gaa6abca1c01d37b11c0d524bdf74b2094}{glm::value\_ptr}}(projection));}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131     glEnable(GL\_DEPTH\_TEST);}
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133     \textcolor{comment}{// Creation of the Skybox}}
+\DoxyCodeLine{00134     \mbox{\hyperlink{classSkybox}{Skybox}} skybox;}
+\DoxyCodeLine{00135     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} cubemapTexture;}
+\DoxyCodeLine{00136     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00137     \{}
+\DoxyCodeLine{00138         cubemapTexture = \mbox{\hyperlink{namespaceglimac_a66c7ca34dc0d1e17ebb7cc4ee5cb820d}{glimac::loadCubemap}}(\mbox{\hyperlink{Skybox_8hpp_a9f6fe93ec8024281a561220d42ed80b0}{skybox\_sky}});}
+\DoxyCodeLine{00139     \}}
+\DoxyCodeLine{00140     \textcolor{keywordflow}{catch} (std::string \&s)}
+\DoxyCodeLine{00141     \{}
+\DoxyCodeLine{00142         std::cerr << \textcolor{stringliteral}{"{}Error : "{}} << s << std::endl;}
+\DoxyCodeLine{00143     \}}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145     \textcolor{comment}{// Application loop:}}
+\DoxyCodeLine{00146     \textcolor{keywordtype}{bool} done = \textcolor{keyword}{false}, \mbox{\hyperlink{group__gtx__wrap_ga809650c6310ea7c42666e918c117fb6f}{repeat}} = \textcolor{keyword}{false}, again = \textcolor{keyword}{true};}
+\DoxyCodeLine{00147     \textcolor{keywordtype}{int} \mbox{\hyperlink{group__core__func__common_gaf21c84759af7799f573865f70c2f0a86}{step}} = 0, step\_turn = 0;}
+\DoxyCodeLine{00148     \textcolor{keywordtype}{bool} turn\_up = \textcolor{keyword}{false}, turn\_down = \textcolor{keyword}{false}, turn\_right = \textcolor{keyword}{false}, turn\_left = \textcolor{keyword}{false};}
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150     \textcolor{keywordflow}{while} (!done)}
+\DoxyCodeLine{00151     \{}
+\DoxyCodeLine{00152         currentTime = SDL\_GetTicks();}
+\DoxyCodeLine{00153         \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{glm::mat4}} ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155         \textcolor{keywordtype}{int} x, y;}
+\DoxyCodeLine{00156         SDL\_GetMouseState(\&x, \&y);}
+\DoxyCodeLine{00157         SDL\_SetCursor(cursor);}
+\DoxyCodeLine{00158         \mbox{\hyperlink{Cursor_8hpp_aa705073835547f13811710b65535d166}{setCursors}}(menu\_bool, menu\_score, menu\_play\_again, cursor2, x, y);}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160         \textcolor{comment}{// Event loop:}}
+\DoxyCodeLine{00161         SDL\_Event \mbox{\hyperlink{group__gtc__constants_gab83fb6de0f05d6c0d11bdf0479f8319e}{e}};}
+\DoxyCodeLine{00162         \textcolor{keywordflow}{while} (windowManager.pollEvent(\mbox{\hyperlink{group__gtc__constants_gab83fb6de0f05d6c0d11bdf0479f8319e}{e}}))}
+\DoxyCodeLine{00163         \{}
+\DoxyCodeLine{00164             \textcolor{keywordflow}{if} (\mbox{\hyperlink{group__gtc__constants_gab83fb6de0f05d6c0d11bdf0479f8319e}{e}}.type == SDL\_QUIT)}
+\DoxyCodeLine{00165                 done = \textcolor{keyword}{true};}
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00167             \textcolor{comment}{// MENU MANAGER}}
+\DoxyCodeLine{00168             \textcolor{keywordflow}{if} (menu\_bool \& !menu\_score \& !menu\_play\_again \& \mbox{\hyperlink{group__gtc__constants_gab83fb6de0f05d6c0d11bdf0479f8319e}{e}}.type == SDL\_MOUSEBUTTONUP \& x > 764 \& y > 425 \& x < 932 \& y < 467)}
+\DoxyCodeLine{00169             \{}
+\DoxyCodeLine{00170                 menu\_bool = \textcolor{keyword}{false};}
+\DoxyCodeLine{00171             \}}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173             \textcolor{keywordflow}{if} (menu\_play\_again \& !menu\_bool \& !menu\_score \& \mbox{\hyperlink{group__gtc__constants_gab83fb6de0f05d6c0d11bdf0479f8319e}{e}}.type == SDL\_MOUSEBUTTONUP \& x > 679 \& y > 423 \& x < 1018 \& y < 474)}
+\DoxyCodeLine{00174             \{}
+\DoxyCodeLine{00175                 menu\_play\_again = \textcolor{keyword}{false};}
+\DoxyCodeLine{00176             \}}
+\DoxyCodeLine{00177 }
+\DoxyCodeLine{00178             \textcolor{keywordflow}{if} (menu\_play\_again \& !menu\_bool \& !menu\_score \& \mbox{\hyperlink{group__gtc__constants_gab83fb6de0f05d6c0d11bdf0479f8319e}{e}}.type == SDL\_MOUSEBUTTONUP \& x > 764 \& y > 540 \& x < 932 \& y < 583)}
+\DoxyCodeLine{00179             \{}
+\DoxyCodeLine{00180                 menu\_play\_again = \textcolor{keyword}{false};}
+\DoxyCodeLine{00181                 menu\_score = \textcolor{keyword}{true};}
+\DoxyCodeLine{00182             \}}
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184             \textcolor{keywordflow}{if} (menu\_bool \& !menu\_score \& \mbox{\hyperlink{group__gtc__constants_gab83fb6de0f05d6c0d11bdf0479f8319e}{e}}.type == SDL\_MOUSEBUTTONUP \& x > 764 \& y > 540 \& x < 932 \& y < 583)}
+\DoxyCodeLine{00185             \{}
+\DoxyCodeLine{00186                 menu\_score = \textcolor{keyword}{true};}
+\DoxyCodeLine{00187                 menu\_bool = \textcolor{keyword}{false};}
+\DoxyCodeLine{00188             \}}
+\DoxyCodeLine{00189 }
+\DoxyCodeLine{00190             \textcolor{keywordflow}{if} (!menu\_bool \& menu\_score \& \mbox{\hyperlink{group__gtc__constants_gab83fb6de0f05d6c0d11bdf0479f8319e}{e}}.type == SDL\_MOUSEBUTTONUP \& x > 1447 \& y > 789 \& x < 1613 \& y < 829)}
+\DoxyCodeLine{00191             \{}
+\DoxyCodeLine{00192                 menu\_score = \textcolor{keyword}{false};}
+\DoxyCodeLine{00193                 menu\_bool = \textcolor{keyword}{true};}
+\DoxyCodeLine{00194             \}}
+\DoxyCodeLine{00195 }
+\DoxyCodeLine{00196             \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_ESCAPE))}
+\DoxyCodeLine{00197                 menu\_bool = \textcolor{keyword}{true};}
+\DoxyCodeLine{00198 }
+\DoxyCodeLine{00199             \textcolor{comment}{// CAMERA SWITCH AND LOCK}}
+\DoxyCodeLine{00200             \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_c))}
+\DoxyCodeLine{00201             \{}
+\DoxyCodeLine{00202                 \textcolor{keywordflow}{if} (camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a8c10601d747d502c290314c02866cc8a}{getCameraType}}() == 0)}
+\DoxyCodeLine{00203                 \{}
+\DoxyCodeLine{00204                     camera = \&eyes\_camera;}
+\DoxyCodeLine{00205                     camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}{rotateLeft}}(player.getOrientation());}
+\DoxyCodeLine{00206                 \}}
+\DoxyCodeLine{00207                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00208                 \{}
+\DoxyCodeLine{00209                     camera = \&trackball\_camera;}
+\DoxyCodeLine{00210                     camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}{rotateLeft}}(player.getOrientation());}
+\DoxyCodeLine{00211                 \}}
+\DoxyCodeLine{00212             \}}
+\DoxyCodeLine{00213 }
+\DoxyCodeLine{00214             \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_l))    camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_aff8f5e27ca45827b24bbebe77e40fe26}{setLocker}}();}
+\DoxyCodeLine{00215 }
+\DoxyCodeLine{00216             \textcolor{comment}{// PREVENT THE EVENT FROM REPEATING OUTSIDE POLLEVENT}}
+\DoxyCodeLine{00217             \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_d))    \mbox{\hyperlink{group__gtx__wrap_ga809650c6310ea7c42666e918c117fb6f}{repeat}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00218             \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_q))    \mbox{\hyperlink{group__gtx__wrap_ga809650c6310ea7c42666e918c117fb6f}{repeat}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00219             \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_z))    \mbox{\hyperlink{group__gtx__wrap_ga809650c6310ea7c42666e918c117fb6f}{repeat}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00220         \}}
+\DoxyCodeLine{00221 }
+\DoxyCodeLine{00222         \textcolor{comment}{// MAIN MENU DISPLAY}}
+\DoxyCodeLine{00223         \textcolor{keywordflow}{if} (menu\_bool \& !menu\_score \& !menu\_play\_again)}
+\DoxyCodeLine{00224         \{}
+\DoxyCodeLine{00225             menu.\mbox{\hyperlink{classMenu_a19f6c2a27a7140734f76f35b263feb5f}{setMenuBool}}(menuShader);}
+\DoxyCodeLine{00226             text.\mbox{\hyperlink{classrendering_1_1Text_a57568823062e1ffadff09c98b7d54c0d}{renderMenuText}}(TextProgram, Characters);}
+\DoxyCodeLine{00227         \}}
+\DoxyCodeLine{00228 }
+\DoxyCodeLine{00229         \textcolor{comment}{// SCORE DISPLAY}}
+\DoxyCodeLine{00230         \textcolor{keywordflow}{if} (menu\_score \& !menu\_bool \& !menu\_play\_again)}
+\DoxyCodeLine{00231         \{}
+\DoxyCodeLine{00232             menu.\mbox{\hyperlink{classMenu_a974987ef6d710954a84b15bd00cf86a7}{setMenuScore}}(menuShader);}
+\DoxyCodeLine{00233             text.\mbox{\hyperlink{classrendering_1_1Text_a6e36ee7ed6d2f07e90cb929dedd0c827}{renderScoreText}}(TextProgram, Characters, scorejson);}
+\DoxyCodeLine{00234         \}}
+\DoxyCodeLine{00235 }
+\DoxyCodeLine{00236         \textcolor{comment}{// PLAY AGAIN MENU DISPLAY}}
+\DoxyCodeLine{00237         \textcolor{keywordflow}{if} (menu\_play\_again \& !menu\_score \& !menu\_bool)}
+\DoxyCodeLine{00238         \{}
+\DoxyCodeLine{00239             player.setCoord(\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{glm::vec3}}(1, 3, 0));}
+\DoxyCodeLine{00240             enemy.setCoord(\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{glm::vec3}}(1, 0, 0));}
+\DoxyCodeLine{00241             enemy.setOrientation(0);}
+\DoxyCodeLine{00242             player.setLife(\textcolor{keyword}{true});}
+\DoxyCodeLine{00243             player.setOrientation(0);}
+\DoxyCodeLine{00244             camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}{rotateLeft}}(player.getOrientation());}
+\DoxyCodeLine{00245             again = \textcolor{keyword}{true};}
+\DoxyCodeLine{00246 }
+\DoxyCodeLine{00247             menu.\mbox{\hyperlink{classMenu_a8433e4ee602084b8cc8725635515c11d}{setMenuPlayAgain}}(menuShader);}
+\DoxyCodeLine{00248             text.\mbox{\hyperlink{classrendering_1_1Text_a118fee45a66838755411a16d8a8568b9}{renderPlayAgainText}}(TextProgram, Characters, score);}
+\DoxyCodeLine{00249         \}}
+\DoxyCodeLine{00250 }
+\DoxyCodeLine{00251         \textcolor{comment}{// RESET THE GAME DATA IF THE USER WANTS TO PLAY AGAIN}}
+\DoxyCodeLine{00252         \textcolor{keywordflow}{if} (again = \textcolor{keyword}{true} \& !menu\_play\_again \& player.getCoord() == \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{glm::vec3}}(1, 0, 0))}
+\DoxyCodeLine{00253         \{}
+\DoxyCodeLine{00254             courseMap.\mbox{\hyperlink{classCourseMap_a0c633bcf06c5835c1121d83b9b397f53}{loadCoins}}();}
+\DoxyCodeLine{00255             score = 0;}
+\DoxyCodeLine{00256             again = \textcolor{keyword}{false};}
+\DoxyCodeLine{00257         \}}
+\DoxyCodeLine{00258 }
+\DoxyCodeLine{00259         \textcolor{comment}{// GAME DISPLAY}}
+\DoxyCodeLine{00260         \textcolor{keywordflow}{if} (!menu\_bool \& !menu\_score \& !menu\_play\_again)}
+\DoxyCodeLine{00261         \{}
+\DoxyCodeLine{00262             \textcolor{comment}{// GAME LOOP}}
+\DoxyCodeLine{00263             \textcolor{keywordflow}{if} (player.isLife() \& player.getCoord()[1] != courseMap.\mbox{\hyperlink{classCourseMap_aff91a1787af849dbd98173d0540390b4}{end}}() \& player.getCoord()[0] >= 0 \& player.getCoord()[1] >= 0)}
+\DoxyCodeLine{00264             \{}
+\DoxyCodeLine{00265                 objet = courseMap.\mbox{\hyperlink{classCourseMap_a1919a586b423db04121c770c44c6a8e8}{findObject}}(player.getFloorCoord());}
+\DoxyCodeLine{00266                 objet\_enemy = courseMap.\mbox{\hyperlink{classCourseMap_a1919a586b423db04121c770c44c6a8e8}{findObject}}(enemy.getFloorCoord());}
+\DoxyCodeLine{00267 }
+\DoxyCodeLine{00268                 player.moveManager(objet, camera, score, windowManager, \mbox{\hyperlink{group__gtx__wrap_ga809650c6310ea7c42666e918c117fb6f}{repeat}}, turn\_up, turn\_down, turn\_right, turn\_left, step\_turn);}
+\DoxyCodeLine{00269                 enemy.moveEnemyManager(objet\_enemy);}
+\DoxyCodeLine{00270 }
+\DoxyCodeLine{00271                 \textcolor{keywordflow}{if} (currentTime -\/ previousTime > speed)}
+\DoxyCodeLine{00272                 \{}
+\DoxyCodeLine{00273                     player.moveOrientation();}
+\DoxyCodeLine{00274                     enemy.moveOrientation();}
+\DoxyCodeLine{00275 }
+\DoxyCodeLine{00276                     \textcolor{keywordflow}{if} (player.isJumping())}
+\DoxyCodeLine{00277                         player.jump(windowManager, \mbox{\hyperlink{group__gtx__wrap_ga809650c6310ea7c42666e918c117fb6f}{repeat}}, \mbox{\hyperlink{group__core__func__common_gaf21c84759af7799f573865f70c2f0a86}{step}});}
+\DoxyCodeLine{00278 }
+\DoxyCodeLine{00279                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{group__core__func__common_gaf21c84759af7799f573865f70c2f0a86}{step}} >= 10)}
+\DoxyCodeLine{00280                         player.fall(\mbox{\hyperlink{group__core__func__common_gaf21c84759af7799f573865f70c2f0a86}{step}});}
+\DoxyCodeLine{00281 }
+\DoxyCodeLine{00282                     \textcolor{keywordflow}{if} (camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a8c10601d747d502c290314c02866cc8a}{getCameraType}}() == 1)}
+\DoxyCodeLine{00283                         camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a756b34b162fdc8632ec9e803b9aedd43}{moveFront}}(0.1);}
+\DoxyCodeLine{00284 }
+\DoxyCodeLine{00285                     \textcolor{keywordflow}{if} (step\_turn < 30 \& (turn\_right || turn\_up || turn\_down || turn\_left))}
+\DoxyCodeLine{00286                         step\_turn += 1;}
+\DoxyCodeLine{00287 }
+\DoxyCodeLine{00288                     \textcolor{keywordflow}{if} (step\_turn >= 30)}
+\DoxyCodeLine{00289                     \{}
+\DoxyCodeLine{00290                         turn\_up = \textcolor{keyword}{false};}
+\DoxyCodeLine{00291                         turn\_down = \textcolor{keyword}{false};}
+\DoxyCodeLine{00292                         turn\_left = \textcolor{keyword}{false};}
+\DoxyCodeLine{00293                         turn\_up = \textcolor{keyword}{false};}
+\DoxyCodeLine{00294                         step\_turn = 0;}
+\DoxyCodeLine{00295                     \}}
+\DoxyCodeLine{00296 }
+\DoxyCodeLine{00297                     previousTime = currentTime;}
+\DoxyCodeLine{00298                 \}}
+\DoxyCodeLine{00299             \}}
+\DoxyCodeLine{00300 }
+\DoxyCodeLine{00301             \textcolor{keywordflow}{if} (!player.isLife())}
+\DoxyCodeLine{00302             \{}
+\DoxyCodeLine{00303                 scorejson.\mbox{\hyperlink{classScore_a10464bcbde3717b8ef084e2369a4cc0c}{addScore}}(score);}
+\DoxyCodeLine{00304                 menu\_play\_again = \textcolor{keyword}{true};}
+\DoxyCodeLine{00305             \}}
+\DoxyCodeLine{00306 }
+\DoxyCodeLine{00307             \textcolor{keywordflow}{if} (player.getFloorCoord().y == courseMap.\mbox{\hyperlink{classCourseMap_aff91a1787af849dbd98173d0540390b4}{end}}())}
+\DoxyCodeLine{00308             \{}
+\DoxyCodeLine{00309                 scorejson.\mbox{\hyperlink{classScore_a10464bcbde3717b8ef084e2369a4cc0c}{addScore}}(score);}
+\DoxyCodeLine{00310                 menu\_play\_again = \textcolor{keyword}{true};}
+\DoxyCodeLine{00311             \}}
+\DoxyCodeLine{00312 }
+\DoxyCodeLine{00313             camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a98d96dfaf0908e0497aac9b6a1b00154}{eventCamera}}(windowManager);}
+\DoxyCodeLine{00314 }
+\DoxyCodeLine{00315 \textcolor{comment}{            /*********************************}}
+\DoxyCodeLine{00316 \textcolor{comment}{             *      RENDERING CODE           *}}
+\DoxyCodeLine{00317 \textcolor{comment}{             *********************************/}}
+\DoxyCodeLine{00318 }
+\DoxyCodeLine{00319             glClear(GL\_COLOR\_BUFFER\_BIT | GL\_DEPTH\_BUFFER\_BIT);}
+\DoxyCodeLine{00320 }
+\DoxyCodeLine{00321             TextureProgram.use();}
+\DoxyCodeLine{00322             \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{glm::mat4}} ProjMatrix = \mbox{\hyperlink{group__gtc__matrix__transform_ga6725cc60e7c3ed7346bbbc5e4307e485}{glm::perspective}}(\mbox{\hyperlink{group__core__func__trigonometric_ga431d31cdb060059bc5b0696e212f1453}{glm::radians}}(70.f), 1700.f / 900.f, 0.1f, 100.f);}
+\DoxyCodeLine{00323 }
+\DoxyCodeLine{00324             \textcolor{comment}{// Drawing of the Characters as cubes}}
+\DoxyCodeLine{00325             player.draw(cube\_nemo, camera, TextureProgram, ProjMatrix);}
+\DoxyCodeLine{00326             enemy.draw(cube\_shark, camera, TextureProgram, ProjMatrix);}
+\DoxyCodeLine{00327 }
+\DoxyCodeLine{00328             \textcolor{comment}{// Drawing of the Path}}
+\DoxyCodeLine{00329             courseMap.\mbox{\hyperlink{classCourseMap_ac643ef6aad5e045034135073420c851d}{drawMap}}(cube\_path, cube\_coin, camera, TextureProgram, ProjMatrix, windowManager);}
+\DoxyCodeLine{00330             courseMap.\mbox{\hyperlink{classCourseMap_ab40e4a7e9f3bc5efbf9aaccfab29c434}{drawObstacle}}(cube\_obstacle, camera, TextureProgram, ProjMatrix, windowManager);}
+\DoxyCodeLine{00331 }
+\DoxyCodeLine{00332             \textcolor{comment}{// Drawing of the Skybox}}
+\DoxyCodeLine{00333             glDepthFunc(GL\_LEQUAL);}
+\DoxyCodeLine{00334             SkyboxProgram.use();}
+\DoxyCodeLine{00335             skybox.\mbox{\hyperlink{classSkybox_acea00f6b44d702a534f305c65fa55cad}{draw}}(SkyboxProgram, camera, ProjMatrix, cubemapTexture);}
+\DoxyCodeLine{00336 }
+\DoxyCodeLine{00337             \textcolor{comment}{// Display the text}}
+\DoxyCodeLine{00338             text.\mbox{\hyperlink{classrendering_1_1Text_ab2434a0fb4d1907887830521b32d5aee}{renderGameText}}(TextProgram, Characters, score);}
+\DoxyCodeLine{00339         \}}
+\DoxyCodeLine{00340         glDisable(GL\_BLEND);}
+\DoxyCodeLine{00341         windowManager.swapBuffers();}
+\DoxyCodeLine{00342     \}}
+\DoxyCodeLine{00343 }
+\DoxyCodeLine{00344     \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{00345 \}}
+
+\end{DoxyCode}

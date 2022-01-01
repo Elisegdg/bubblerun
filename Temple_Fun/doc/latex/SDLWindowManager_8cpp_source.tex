@@ -1,0 +1,59 @@
+\hypertarget{SDLWindowManager_8cpp_source}{}\doxysection{SDLWindow\+Manager.\+cpp}
+\label{SDLWindowManager_8cpp_source}\index{glimac/src/SDLWindowManager.cpp@{glimac/src/SDLWindowManager.cpp}}
+\mbox{\hyperlink{SDLWindowManager_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{SDLWindowManager_8hpp}{glimac/SDLWindowManager.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00004}00004 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglimac}{glimac}} \{}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00006}\mbox{\hyperlink{classglimac_1_1SDLWindowManager_aaddb3bc2ec58bc1e818276e81605520f}{00006}} \mbox{\hyperlink{classglimac_1_1SDLWindowManager_aaddb3bc2ec58bc1e818276e81605520f}{SDLWindowManager::SDLWindowManager}}(\mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}} width, \mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}} height, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* title) \{}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00007}00007     \textcolor{keywordflow}{if}(0 != SDL\_Init(SDL\_INIT\_VIDEO)) \{}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00008}00008         std::cerr << SDL\_GetError() << std::endl;}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00009}00009         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00010}00010     \}}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00011}00011     \textcolor{keywordflow}{if}(!SDL\_SetVideoMode(width, height, 32, SDL\_OPENGL)) \{}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00012}00012         std::cerr << SDL\_GetError() << std::endl;}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00013}00013         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00014}00014     \}}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00015}00015     SDL\_WM\_SetCaption(title, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00016}00016 \}}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00018}\mbox{\hyperlink{classglimac_1_1SDLWindowManager_a135c3b4ec63bf47ce3b39f2485a0026e}{00018}} \mbox{\hyperlink{classglimac_1_1SDLWindowManager_a135c3b4ec63bf47ce3b39f2485a0026e}{SDLWindowManager::\string~SDLWindowManager}}() \{}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00019}00019     SDL\_Quit();}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00020}00020 \}}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00022}\mbox{\hyperlink{classglimac_1_1SDLWindowManager_a4b2fd3e74f00c28d3b03e0cff3bb0131}{00022}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classglimac_1_1SDLWindowManager_a4b2fd3e74f00c28d3b03e0cff3bb0131}{SDLWindowManager::pollEvent}}(SDL\_Event\& \mbox{\hyperlink{group__gtc__constants_gab83fb6de0f05d6c0d11bdf0479f8319e}{e}}) \{}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00023}00023     \textcolor{keywordflow}{return} SDL\_PollEvent(\&\mbox{\hyperlink{group__gtc__constants_gab83fb6de0f05d6c0d11bdf0479f8319e}{e}});}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00024}00024 \}}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00026}\mbox{\hyperlink{classglimac_1_1SDLWindowManager_afa3e15ceca501ac52df29b1906cbb083}{00026}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classglimac_1_1SDLWindowManager_afa3e15ceca501ac52df29b1906cbb083}{SDLWindowManager::isKeyPressed}}(SDLKey key)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00027}00027     \textcolor{keywordflow}{return} SDL\_GetKeyState(\textcolor{keyword}{nullptr})[key];}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00028}00028 \}}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00030}00030 \textcolor{comment}{// button can SDL\_BUTTON\_LEFT, SDL\_BUTTON\_RIGHT and SDL\_BUTTON\_MIDDLE}}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00031}\mbox{\hyperlink{classglimac_1_1SDLWindowManager_a3f970279f069c97d64845687f1af5743}{00031}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classglimac_1_1SDLWindowManager_a3f970279f069c97d64845687f1af5743}{SDLWindowManager::isMouseButtonPressed}}(\mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}} button)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00032}00032     \textcolor{keywordflow}{return} SDL\_GetMouseState(\textcolor{keyword}{nullptr}, \textcolor{keyword}{nullptr}) \& SDL\_BUTTON(button);}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00033}00033 \}}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00037}\mbox{\hyperlink{classglimac_1_1SDLWindowManager_aac32964a8c7e0e0e790b8fab29ac2831}{00037}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec2}{glm::ivec2}} \mbox{\hyperlink{classglimac_1_1SDLWindowManager_aac32964a8c7e0e0e790b8fab29ac2831}{SDLWindowManager::getMousePosition}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00038}00038     \mbox{\hyperlink{structglm_1_1detail_1_1tvec2}{glm::ivec2}} mousePos;}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00039}00039     SDL\_GetMouseState(\&mousePos.\mbox{\hyperlink{structglm_1_1detail_1_1tvec2_a8eaf23d68c8d88949166dc2f641d19ba}{x}}, \&mousePos.\mbox{\hyperlink{structglm_1_1detail_1_1tvec2_ab30528ab747cef8d129cf793aeec521a}{y}});}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00040}00040     \textcolor{keywordflow}{return} mousePos;}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00041}00041 \}}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00043}\mbox{\hyperlink{classglimac_1_1SDLWindowManager_aee6b4f60e5b418a99d35360aea48bd41}{00043}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classglimac_1_1SDLWindowManager_aee6b4f60e5b418a99d35360aea48bd41}{SDLWindowManager::swapBuffers}}() \{}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00044}00044     SDL\_GL\_SwapBuffers();}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00045}00045 \}}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00047}\mbox{\hyperlink{classglimac_1_1SDLWindowManager_ae79e8321234999083adda1287cf825fe}{00047}} \textcolor{keywordtype}{float} \mbox{\hyperlink{classglimac_1_1SDLWindowManager_ae79e8321234999083adda1287cf825fe}{SDLWindowManager::getTime}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00048}00048     \textcolor{keywordflow}{return} 0.001f * SDL\_GetTicks();}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00049}00049 \}}
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{SDLWindowManager_8cpp_source_l00053}00053 \}}
+
+\end{DoxyCode}

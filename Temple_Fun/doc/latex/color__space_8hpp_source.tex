@@ -1,0 +1,52 @@
+\hypertarget{color__space_8hpp_source}{}\doxysection{color\+\_\+space.\+hpp}
+\label{color__space_8hpp_source}\index{third-\/party/include/glm/gtx/color\_space.hpp@{third-\/party/include/glm/gtx/color\_space.hpp}}
+\mbox{\hyperlink{color__space_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00038}00038 \textcolor{preprocessor}{\#ifndef GLM\_GTX\_color\_space}}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00039}00039 \textcolor{preprocessor}{\#define GLM\_GTX\_color\_space}}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00041}00041 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#include "{}../glm.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#if(defined(GLM\_MESSAGES) \&\& !defined(GLM\_EXT\_INCLUDED))}}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTX\_color\_space extension included"{}})}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00048}00048 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00049}00049 \{}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00055}00055     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00056}\mbox{\hyperlink{group__gtx__color__space_ga01b6da9909aafda7b5d5ecd681214763}{00056}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \mbox{\hyperlink{group__gtx__color__space_ga01b6da9909aafda7b5d5ecd681214763}{rgbColor}}(}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00057}00057         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& hsvValue);}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00061}00061     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00062}\mbox{\hyperlink{group__gtx__color__space_gadd03467335b6befd8c06a5ac14dd27ad}{00062}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \mbox{\hyperlink{group__gtx__color__space_gadd03467335b6befd8c06a5ac14dd27ad}{hsvColor}}(}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00063}00063         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& rgbValue);}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00064}00064         }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00067}00067     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00068}\mbox{\hyperlink{group__gtx__color__space_gab3622d6912ed2a2a675ef4e0a408dec9}{00068}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, defaultp>}} \mbox{\hyperlink{group__gtx__color__space_gab3622d6912ed2a2a675ef4e0a408dec9}{saturation}}(}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00069}00069         T \textcolor{keyword}{const} s);}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00073}00073     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00074}\mbox{\hyperlink{group__gtx__color__space_ga8bc5491c38e42eaccb315176049a0da8}{00074}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \mbox{\hyperlink{group__gtx__color__space_gab3622d6912ed2a2a675ef4e0a408dec9}{saturation}}(}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00075}00075         T \textcolor{keyword}{const} s,}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00076}00076         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& color);}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00077}00077         }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00080}00080     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00081}\mbox{\hyperlink{group__gtx__color__space_ga10a7dc30a930ca3b3a8f7c138e42a887}{00081}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \mbox{\hyperlink{group__gtx__color__space_gab3622d6912ed2a2a675ef4e0a408dec9}{saturation}}(}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00082}00082         T \textcolor{keyword}{const} s,}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00083}00083         \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \textcolor{keyword}{const} \& color);}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00084}00084         }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00087}00087     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00088}\mbox{\hyperlink{group__gtx__color__space_ga3fb6710bbbf4f3e2303b06946e9cf00c}{00088}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} T \mbox{\hyperlink{group__gtx__color__space_ga3fb6710bbbf4f3e2303b06946e9cf00c}{luminosity}}(}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00089}00089         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& color);}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00092}00092 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00094}00094 \textcolor{preprocessor}{\#include "{}color\_space.inl"{}}}
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{color__space_8hpp_source_l00096}00096 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_GTX\_color\_space}}
+
+\end{DoxyCode}

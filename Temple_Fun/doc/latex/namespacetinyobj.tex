@@ -1,0 +1,505 @@
+\hypertarget{namespacetinyobj}{}\doxysection{tinyobj Namespace Reference}
+\label{namespacetinyobj}\index{tinyobj@{tinyobj}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtinyobj_1_1obj__shape}{obj\+\_\+shape}}
+\item 
+struct \mbox{\hyperlink{structtinyobj_1_1vertex__index}{vertex\+\_\+index}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacetinyobj_a02670ede322e1cc5172fbaff43a1bdb5}{Init\+Material}} (material\+\_\+t \&\mbox{\hyperlink{structmaterial}{material}})
+\item 
+std\+::string \mbox{\hyperlink{namespacetinyobj_aff17f9085eec34bcc7ba97025122e732}{Load\+Mtl}} (std\+::map$<$ std\+::string, int $>$ \&material\+\_\+map, std\+::vector$<$ material\+\_\+t $>$ \&materials, std\+::istream \&in\+Stream)
+\item 
+std\+::string \mbox{\hyperlink{namespacetinyobj_a8a1b09e98bbe6ad056bf30fdce87b3c5}{Load\+Obj}} (std\+::vector$<$ shape\+\_\+t $>$ \&shapes, std\+::vector$<$ material\+\_\+t $>$ \&materials, const char $\ast$filename, const char $\ast$mtl\+\_\+basepath)
+\item 
+std\+::string \mbox{\hyperlink{namespacetinyobj_acb20cdb095743e069eac27c0b95d32b8}{Load\+Obj}} (std\+::vector$<$ shape\+\_\+t $>$ \&shapes, std\+::vector$<$ material\+\_\+t $>$ \&materials, std\+::istream \&in\+Stream, Material\+Reader \&read\+Mat\+Fn)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacetinyobj_a02670ede322e1cc5172fbaff43a1bdb5}\label{namespacetinyobj_a02670ede322e1cc5172fbaff43a1bdb5}} 
+\index{tinyobj@{tinyobj}!InitMaterial@{InitMaterial}}
+\index{InitMaterial@{InitMaterial}!tinyobj@{tinyobj}}
+\doxysubsubsection{\texorpdfstring{InitMaterial()}{InitMaterial()}}
+{\footnotesize\ttfamily void tinyobj\+::\+Init\+Material (\begin{DoxyParamCaption}\item[{material\+\_\+t \&}]{material }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{tiny__obj__loader_8cpp_source_l00205}{205}} of file \mbox{\hyperlink{tiny__obj__loader_8cpp_source}{tiny\+\_\+obj\+\_\+loader.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00205                                         \{}
+\DoxyCodeLine{00206   \mbox{\hyperlink{structmaterial}{material}}.name = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00207   \mbox{\hyperlink{structmaterial}{material}}.ambient\_texname = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00208   \mbox{\hyperlink{structmaterial}{material}}.diffuse\_texname = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00209   \mbox{\hyperlink{structmaterial}{material}}.specular\_texname = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00210   \mbox{\hyperlink{structmaterial}{material}}.normal\_texname = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00211   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 3; i ++) \{}
+\DoxyCodeLine{00212     \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a944296102e90b1610967530458f40ba1}{ambient}}[i] = 0.f;}
+\DoxyCodeLine{00213     \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a506a0cc33282fa76872c6aeebd688b39}{diffuse}}[i] = 0.f;}
+\DoxyCodeLine{00214     \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a452d07b4570da7204caeaf798cd01a77}{specular}}[i] = 0.f;}
+\DoxyCodeLine{00215     \mbox{\hyperlink{structmaterial}{material}}.transmittance[i] = 0.f;}
+\DoxyCodeLine{00216     \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a76b696726a2ea73e6840001821942bc3}{emission}}[i] = 0.f;}
+\DoxyCodeLine{00217   \}}
+\DoxyCodeLine{00218   \mbox{\hyperlink{structmaterial}{material}}.illum = 0;}
+\DoxyCodeLine{00219   \mbox{\hyperlink{structmaterial}{material}}.dissolve = 1.f;}
+\DoxyCodeLine{00220   \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_aa3740fd7908ec5a11bbc4a4bd5b21abc}{shininess}} = 1.f;}
+\DoxyCodeLine{00221   \mbox{\hyperlink{structmaterial}{material}}.ior = 1.f;}
+\DoxyCodeLine{00222   \mbox{\hyperlink{structmaterial}{material}}.unknown\_parameter.clear();}
+\DoxyCodeLine{00223 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetinyobj_aff17f9085eec34bcc7ba97025122e732}\label{namespacetinyobj_aff17f9085eec34bcc7ba97025122e732}} 
+\index{tinyobj@{tinyobj}!LoadMtl@{LoadMtl}}
+\index{LoadMtl@{LoadMtl}!tinyobj@{tinyobj}}
+\doxysubsubsection{\texorpdfstring{LoadMtl()}{LoadMtl()}}
+{\footnotesize\ttfamily std\+::string tinyobj\+::\+Load\+Mtl (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, int $>$ \&}]{material\+\_\+map,  }\item[{std\+::vector$<$ material\+\_\+t $>$ \&}]{materials,  }\item[{std\+::istream \&}]{in\+Stream }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{tiny__obj__loader_8cpp_source_l00282}{282}} of file \mbox{\hyperlink{tiny__obj__loader_8cpp_source}{tiny\+\_\+obj\+\_\+loader.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00286 \{}
+\DoxyCodeLine{00287   material\_map.clear();}
+\DoxyCodeLine{00288   std::stringstream err;}
+\DoxyCodeLine{00289 }
+\DoxyCodeLine{00290   material\_t \mbox{\hyperlink{structmaterial}{material}};}
+\DoxyCodeLine{00291   }
+\DoxyCodeLine{00292   \textcolor{keywordtype}{int} maxchars = 8192;  \textcolor{comment}{// Alloc enough size.}}
+\DoxyCodeLine{00293   std::vector<char> buf(maxchars);  \textcolor{comment}{// Alloc enough size.}}
+\DoxyCodeLine{00294   \textcolor{keywordflow}{while} (inStream.peek() != -\/1) \{}
+\DoxyCodeLine{00295     inStream.getline(\&buf[0], maxchars);}
+\DoxyCodeLine{00296 }
+\DoxyCodeLine{00297     std::string linebuf(\&buf[0]);}
+\DoxyCodeLine{00298 }
+\DoxyCodeLine{00299     \textcolor{comment}{// Trim newline '\(\backslash\)r\(\backslash\)n' or '\(\backslash\)n'}}
+\DoxyCodeLine{00300     \textcolor{keywordflow}{if} (linebuf.size() > 0) \{}
+\DoxyCodeLine{00301       \textcolor{keywordflow}{if} (linebuf[linebuf.size()-\/1] == \textcolor{charliteral}{'\(\backslash\)n'}) linebuf.erase(linebuf.size()-\/1);}
+\DoxyCodeLine{00302     \}}
+\DoxyCodeLine{00303     \textcolor{keywordflow}{if} (linebuf.size() > 0) \{}
+\DoxyCodeLine{00304       \textcolor{keywordflow}{if} (linebuf[linebuf.size()-\/1] == \textcolor{charliteral}{'\(\backslash\)r'}) linebuf.erase(linebuf.size()-\/1);}
+\DoxyCodeLine{00305     \}}
+\DoxyCodeLine{00306 }
+\DoxyCodeLine{00307     \textcolor{comment}{// Skip if empty line.}}
+\DoxyCodeLine{00308     \textcolor{keywordflow}{if} (linebuf.empty()) \{}
+\DoxyCodeLine{00309       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00310     \}}
+\DoxyCodeLine{00311 }
+\DoxyCodeLine{00312     \textcolor{comment}{// Skip leading space.}}
+\DoxyCodeLine{00313     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* token = linebuf.c\_str();}
+\DoxyCodeLine{00314     token += strspn(token, \textcolor{stringliteral}{"{} \(\backslash\)t"{}});}
+\DoxyCodeLine{00315 }
+\DoxyCodeLine{00316     assert(token);}
+\DoxyCodeLine{00317     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'\(\backslash\)0'}) \textcolor{keywordflow}{continue}; \textcolor{comment}{// empty line}}
+\DoxyCodeLine{00318     }
+\DoxyCodeLine{00319     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'\#'}) \textcolor{keywordflow}{continue};  \textcolor{comment}{// comment line}}
+\DoxyCodeLine{00320     }
+\DoxyCodeLine{00321     \textcolor{comment}{// new mtl}}
+\DoxyCodeLine{00322     \textcolor{keywordflow}{if} ((0 == strncmp(token, \textcolor{stringliteral}{"{}newmtl"{}}, 6)) \&\& isSpace((token[6]))) \{}
+\DoxyCodeLine{00323       \textcolor{comment}{// flush previous material.}}
+\DoxyCodeLine{00324       \textcolor{keywordflow}{if} (!\mbox{\hyperlink{structmaterial}{material}}.name.empty())}
+\DoxyCodeLine{00325       \{}
+\DoxyCodeLine{00326           material\_map.insert(std::pair<std::string, int>(\mbox{\hyperlink{structmaterial}{material}}.name, materials.size()));}
+\DoxyCodeLine{00327           materials.push\_back(\mbox{\hyperlink{structmaterial}{material}});}
+\DoxyCodeLine{00328       \}}
+\DoxyCodeLine{00329 }
+\DoxyCodeLine{00330       \textcolor{comment}{// initial temporary material}}
+\DoxyCodeLine{00331       \mbox{\hyperlink{namespacetinyobj_a02670ede322e1cc5172fbaff43a1bdb5}{InitMaterial}}(\mbox{\hyperlink{structmaterial}{material}});}
+\DoxyCodeLine{00332 }
+\DoxyCodeLine{00333       \textcolor{comment}{// set new mtl name}}
+\DoxyCodeLine{00334       \textcolor{keywordtype}{char} namebuf[4096];}
+\DoxyCodeLine{00335       token += 7;}
+\DoxyCodeLine{00336       sscanf(token, \textcolor{stringliteral}{"{}\%s"{}}, namebuf);}
+\DoxyCodeLine{00337       \mbox{\hyperlink{structmaterial}{material}}.name = namebuf;}
+\DoxyCodeLine{00338       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00339     \}}
+\DoxyCodeLine{00340     }
+\DoxyCodeLine{00341     \textcolor{comment}{// ambient}}
+\DoxyCodeLine{00342     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'K'} \&\& token[1] == \textcolor{charliteral}{'a'} \&\& isSpace((token[2]))) \{}
+\DoxyCodeLine{00343       token += 2;}
+\DoxyCodeLine{00344       \textcolor{keywordtype}{float} r, g, b;}
+\DoxyCodeLine{00345       parseFloat3(r, g, b, token);}
+\DoxyCodeLine{00346       \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a944296102e90b1610967530458f40ba1}{ambient}}[0] = r;}
+\DoxyCodeLine{00347       \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a944296102e90b1610967530458f40ba1}{ambient}}[1] = g;}
+\DoxyCodeLine{00348       \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a944296102e90b1610967530458f40ba1}{ambient}}[2] = b;}
+\DoxyCodeLine{00349       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00350     \}}
+\DoxyCodeLine{00351     }
+\DoxyCodeLine{00352     \textcolor{comment}{// diffuse}}
+\DoxyCodeLine{00353     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'K'} \&\& token[1] == \textcolor{charliteral}{'d'} \&\& isSpace((token[2]))) \{}
+\DoxyCodeLine{00354       token += 2;}
+\DoxyCodeLine{00355       \textcolor{keywordtype}{float} r, g, b;}
+\DoxyCodeLine{00356       parseFloat3(r, g, b, token);}
+\DoxyCodeLine{00357       \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a506a0cc33282fa76872c6aeebd688b39}{diffuse}}[0] = r;}
+\DoxyCodeLine{00358       \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a506a0cc33282fa76872c6aeebd688b39}{diffuse}}[1] = g;}
+\DoxyCodeLine{00359       \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a506a0cc33282fa76872c6aeebd688b39}{diffuse}}[2] = b;}
+\DoxyCodeLine{00360       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00361     \}}
+\DoxyCodeLine{00362     }
+\DoxyCodeLine{00363     \textcolor{comment}{// specular}}
+\DoxyCodeLine{00364     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'K'} \&\& token[1] == \textcolor{charliteral}{'s'} \&\& isSpace((token[2]))) \{}
+\DoxyCodeLine{00365       token += 2;}
+\DoxyCodeLine{00366       \textcolor{keywordtype}{float} r, g, b;}
+\DoxyCodeLine{00367       parseFloat3(r, g, b, token);}
+\DoxyCodeLine{00368       \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a452d07b4570da7204caeaf798cd01a77}{specular}}[0] = r;}
+\DoxyCodeLine{00369       \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a452d07b4570da7204caeaf798cd01a77}{specular}}[1] = g;}
+\DoxyCodeLine{00370       \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a452d07b4570da7204caeaf798cd01a77}{specular}}[2] = b;}
+\DoxyCodeLine{00371       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00372     \}}
+\DoxyCodeLine{00373     }
+\DoxyCodeLine{00374     \textcolor{comment}{// transmittance}}
+\DoxyCodeLine{00375     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'K'} \&\& token[1] == \textcolor{charliteral}{'t'} \&\& isSpace((token[2]))) \{}
+\DoxyCodeLine{00376       token += 2;}
+\DoxyCodeLine{00377       \textcolor{keywordtype}{float} r, g, b;}
+\DoxyCodeLine{00378       parseFloat3(r, g, b, token);}
+\DoxyCodeLine{00379       \mbox{\hyperlink{structmaterial}{material}}.transmittance[0] = r;}
+\DoxyCodeLine{00380       \mbox{\hyperlink{structmaterial}{material}}.transmittance[1] = g;}
+\DoxyCodeLine{00381       \mbox{\hyperlink{structmaterial}{material}}.transmittance[2] = b;}
+\DoxyCodeLine{00382       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00383     \}}
+\DoxyCodeLine{00384 }
+\DoxyCodeLine{00385     \textcolor{comment}{// ior(index of refraction)}}
+\DoxyCodeLine{00386     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'N'} \&\& token[1] == \textcolor{charliteral}{'i'} \&\& isSpace((token[2]))) \{}
+\DoxyCodeLine{00387       token += 2;}
+\DoxyCodeLine{00388       \mbox{\hyperlink{structmaterial}{material}}.ior = parseFloat(token);}
+\DoxyCodeLine{00389       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00390     \}}
+\DoxyCodeLine{00391 }
+\DoxyCodeLine{00392     \textcolor{comment}{// emission}}
+\DoxyCodeLine{00393     \textcolor{keywordflow}{if}(token[0] == \textcolor{charliteral}{'K'} \&\& token[1] == \textcolor{charliteral}{'e'} \&\& isSpace(token[2])) \{}
+\DoxyCodeLine{00394       token += 2;}
+\DoxyCodeLine{00395       \textcolor{keywordtype}{float} r, g, b;}
+\DoxyCodeLine{00396       parseFloat3(r, g, b, token);}
+\DoxyCodeLine{00397       \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a76b696726a2ea73e6840001821942bc3}{emission}}[0] = r;}
+\DoxyCodeLine{00398       \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a76b696726a2ea73e6840001821942bc3}{emission}}[1] = g;}
+\DoxyCodeLine{00399       \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a76b696726a2ea73e6840001821942bc3}{emission}}[2] = b;}
+\DoxyCodeLine{00400       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00401     \}}
+\DoxyCodeLine{00402 }
+\DoxyCodeLine{00403     \textcolor{comment}{// shininess}}
+\DoxyCodeLine{00404     \textcolor{keywordflow}{if}(token[0] == \textcolor{charliteral}{'N'} \&\& token[1] == \textcolor{charliteral}{'s'} \&\& isSpace(token[2])) \{}
+\DoxyCodeLine{00405       token += 2;}
+\DoxyCodeLine{00406       \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_aa3740fd7908ec5a11bbc4a4bd5b21abc}{shininess}} = parseFloat(token);}
+\DoxyCodeLine{00407       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00408     \}}
+\DoxyCodeLine{00409 }
+\DoxyCodeLine{00410     \textcolor{comment}{// illum model}}
+\DoxyCodeLine{00411     \textcolor{keywordflow}{if} (0 == strncmp(token, \textcolor{stringliteral}{"{}illum"{}}, 5) \&\& isSpace(token[5])) \{}
+\DoxyCodeLine{00412       token += 6;}
+\DoxyCodeLine{00413       \mbox{\hyperlink{structmaterial}{material}}.illum = parseInt(token);}
+\DoxyCodeLine{00414       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00415     \}}
+\DoxyCodeLine{00416 }
+\DoxyCodeLine{00417     \textcolor{comment}{// dissolve}}
+\DoxyCodeLine{00418     \textcolor{keywordflow}{if} ((token[0] == \textcolor{charliteral}{'d'} \&\& isSpace(token[1]))) \{}
+\DoxyCodeLine{00419       token += 1;}
+\DoxyCodeLine{00420       \mbox{\hyperlink{structmaterial}{material}}.dissolve = parseFloat(token);}
+\DoxyCodeLine{00421       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00422     \}}
+\DoxyCodeLine{00423     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'T'} \&\& token[1] == \textcolor{charliteral}{'r'} \&\& isSpace(token[2])) \{}
+\DoxyCodeLine{00424       token += 2;}
+\DoxyCodeLine{00425       \mbox{\hyperlink{structmaterial}{material}}.dissolve = parseFloat(token);}
+\DoxyCodeLine{00426       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00427     \}}
+\DoxyCodeLine{00428 }
+\DoxyCodeLine{00429     \textcolor{comment}{// ambient texture}}
+\DoxyCodeLine{00430     \textcolor{keywordflow}{if} ((0 == strncmp(token, \textcolor{stringliteral}{"{}map\_Ka"{}}, 6)) \&\& isSpace(token[6])) \{}
+\DoxyCodeLine{00431       token += 7;}
+\DoxyCodeLine{00432       \mbox{\hyperlink{structmaterial}{material}}.ambient\_texname = token;}
+\DoxyCodeLine{00433       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00434     \}}
+\DoxyCodeLine{00435 }
+\DoxyCodeLine{00436     \textcolor{comment}{// diffuse texture}}
+\DoxyCodeLine{00437     \textcolor{keywordflow}{if} ((0 == strncmp(token, \textcolor{stringliteral}{"{}map\_Kd"{}}, 6)) \&\& isSpace(token[6])) \{}
+\DoxyCodeLine{00438       token += 7;}
+\DoxyCodeLine{00439       \mbox{\hyperlink{structmaterial}{material}}.diffuse\_texname = token;}
+\DoxyCodeLine{00440       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00441     \}}
+\DoxyCodeLine{00442 }
+\DoxyCodeLine{00443     \textcolor{comment}{// specular texture}}
+\DoxyCodeLine{00444     \textcolor{keywordflow}{if} ((0 == strncmp(token, \textcolor{stringliteral}{"{}map\_Ks"{}}, 6)) \&\& isSpace(token[6])) \{}
+\DoxyCodeLine{00445       token += 7;}
+\DoxyCodeLine{00446       \mbox{\hyperlink{structmaterial}{material}}.specular\_texname = token;}
+\DoxyCodeLine{00447       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00448     \}}
+\DoxyCodeLine{00449 }
+\DoxyCodeLine{00450     \textcolor{comment}{// normal texture}}
+\DoxyCodeLine{00451     \textcolor{keywordflow}{if} ((0 == strncmp(token, \textcolor{stringliteral}{"{}map\_Ns"{}}, 6)) \&\& isSpace(token[6])) \{}
+\DoxyCodeLine{00452       token += 7;}
+\DoxyCodeLine{00453       \mbox{\hyperlink{structmaterial}{material}}.normal\_texname = token;}
+\DoxyCodeLine{00454       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00455     \}}
+\DoxyCodeLine{00456 }
+\DoxyCodeLine{00457     \textcolor{comment}{// unknown parameter}}
+\DoxyCodeLine{00458     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \_space = strchr(token, \textcolor{charliteral}{' '});}
+\DoxyCodeLine{00459     \textcolor{keywordflow}{if}(!\_space) \{}
+\DoxyCodeLine{00460       \_space = strchr(token, \textcolor{charliteral}{'\(\backslash\)t'});}
+\DoxyCodeLine{00461     \}}
+\DoxyCodeLine{00462     \textcolor{keywordflow}{if}(\_space) \{}
+\DoxyCodeLine{00463       \textcolor{keywordtype}{int} len = \_space -\/ token;}
+\DoxyCodeLine{00464       std::string \mbox{\hyperlink{namespacenlohmann_1_1detail_a59e696b1dad6d0d99c172ac4518c2042a3c6e0b8a9c15224a8228b9a98ca1531d}{key}}(token, len);}
+\DoxyCodeLine{00465       std::string \mbox{\hyperlink{namespacenlohmann_1_1detail_a59e696b1dad6d0d99c172ac4518c2042a2063c1608d6e0baf80249c42e2be5804}{value}} = \_space + 1;}
+\DoxyCodeLine{00466       \mbox{\hyperlink{structmaterial}{material}}.unknown\_parameter.insert(std::pair<std::string, std::string>(key, value));}
+\DoxyCodeLine{00467     \}}
+\DoxyCodeLine{00468   \}}
+\DoxyCodeLine{00469   \textcolor{comment}{// flush last material.}}
+\DoxyCodeLine{00470   material\_map.insert(std::pair<std::string, int>(\mbox{\hyperlink{structmaterial}{material}}.name, materials.size()));}
+\DoxyCodeLine{00471   materials.push\_back(\mbox{\hyperlink{structmaterial}{material}});}
+\DoxyCodeLine{00472 }
+\DoxyCodeLine{00473   \textcolor{keywordflow}{return} err.str();}
+\DoxyCodeLine{00474 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetinyobj_a8a1b09e98bbe6ad056bf30fdce87b3c5}\label{namespacetinyobj_a8a1b09e98bbe6ad056bf30fdce87b3c5}} 
+\index{tinyobj@{tinyobj}!LoadObj@{LoadObj}}
+\index{LoadObj@{LoadObj}!tinyobj@{tinyobj}}
+\doxysubsubsection{\texorpdfstring{LoadObj()}{LoadObj()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string tinyobj\+::\+Load\+Obj (\begin{DoxyParamCaption}\item[{std\+::vector$<$ shape\+\_\+t $>$ \&}]{shapes,  }\item[{std\+::vector$<$ material\+\_\+t $>$ \&}]{materials,  }\item[{const char $\ast$}]{filename,  }\item[{const char $\ast$}]{mtl\+\_\+basepath }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{tiny__obj__loader_8cpp_source_l00494}{494}} of file \mbox{\hyperlink{tiny__obj__loader_8cpp_source}{tiny\+\_\+obj\+\_\+loader.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00499 \{}
+\DoxyCodeLine{00500 }
+\DoxyCodeLine{00501   shapes.clear();}
+\DoxyCodeLine{00502 }
+\DoxyCodeLine{00503   std::stringstream err;}
+\DoxyCodeLine{00504 }
+\DoxyCodeLine{00505   std::ifstream ifs(filename);}
+\DoxyCodeLine{00506   \textcolor{keywordflow}{if} (!ifs) \{}
+\DoxyCodeLine{00507     err << \textcolor{stringliteral}{"{}Cannot open file ["{}} << filename << \textcolor{stringliteral}{"{}]"{}} << std::endl;}
+\DoxyCodeLine{00508     \textcolor{keywordflow}{return} err.str();}
+\DoxyCodeLine{00509   \}}
+\DoxyCodeLine{00510 }
+\DoxyCodeLine{00511   std::string basePath;}
+\DoxyCodeLine{00512   \textcolor{keywordflow}{if} (mtl\_basepath) \{}
+\DoxyCodeLine{00513     basePath = mtl\_basepath;}
+\DoxyCodeLine{00514   \}}
+\DoxyCodeLine{00515   MaterialFileReader matFileReader( basePath );}
+\DoxyCodeLine{00516   }
+\DoxyCodeLine{00517   \textcolor{keywordflow}{return} \mbox{\hyperlink{namespacetinyobj_acb20cdb095743e069eac27c0b95d32b8}{LoadObj}}(shapes, materials, ifs, matFileReader);}
+\DoxyCodeLine{00518 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacetinyobj_acb20cdb095743e069eac27c0b95d32b8}\label{namespacetinyobj_acb20cdb095743e069eac27c0b95d32b8}} 
+\index{tinyobj@{tinyobj}!LoadObj@{LoadObj}}
+\index{LoadObj@{LoadObj}!tinyobj@{tinyobj}}
+\doxysubsubsection{\texorpdfstring{LoadObj()}{LoadObj()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string tinyobj\+::\+Load\+Obj (\begin{DoxyParamCaption}\item[{std\+::vector$<$ shape\+\_\+t $>$ \&}]{shapes,  }\item[{std\+::vector$<$ material\+\_\+t $>$ \&}]{materials,  }\item[{std\+::istream \&}]{in\+Stream,  }\item[{Material\+Reader \&}]{read\+Mat\+Fn }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{tiny__obj__loader_8cpp_source_l00520}{520}} of file \mbox{\hyperlink{tiny__obj__loader_8cpp_source}{tiny\+\_\+obj\+\_\+loader.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00525 \{}
+\DoxyCodeLine{00526   std::stringstream err;}
+\DoxyCodeLine{00527 }
+\DoxyCodeLine{00528   std::vector<float> v;}
+\DoxyCodeLine{00529   std::vector<float> vn;}
+\DoxyCodeLine{00530   std::vector<float> vt;}
+\DoxyCodeLine{00531   std::vector<std::vector<vertex\_index> > faceGroup;}
+\DoxyCodeLine{00532   std::string name;}
+\DoxyCodeLine{00533 }
+\DoxyCodeLine{00534   \textcolor{comment}{// material}}
+\DoxyCodeLine{00535   std::map<std::string, int> material\_map;}
+\DoxyCodeLine{00536   std::map<vertex\_index, unsigned int> vertexCache;}
+\DoxyCodeLine{00537   \textcolor{keywordtype}{int}  \mbox{\hyperlink{structmaterial}{material}} = -\/1;}
+\DoxyCodeLine{00538 }
+\DoxyCodeLine{00539   shape\_t shape;}
+\DoxyCodeLine{00540 }
+\DoxyCodeLine{00541   \textcolor{keywordtype}{int} maxchars = 8192;  \textcolor{comment}{// Alloc enough size.}}
+\DoxyCodeLine{00542   std::vector<char> buf(maxchars);  \textcolor{comment}{// Alloc enough size.}}
+\DoxyCodeLine{00543   \textcolor{keywordflow}{while} (inStream.peek() != -\/1) \{}
+\DoxyCodeLine{00544     inStream.getline(\&buf[0], maxchars);}
+\DoxyCodeLine{00545 }
+\DoxyCodeLine{00546     std::string linebuf(\&buf[0]);}
+\DoxyCodeLine{00547 }
+\DoxyCodeLine{00548     \textcolor{comment}{// Trim newline '\(\backslash\)r\(\backslash\)n' or '\(\backslash\)n'}}
+\DoxyCodeLine{00549     \textcolor{keywordflow}{if} (linebuf.size() > 0) \{}
+\DoxyCodeLine{00550       \textcolor{keywordflow}{if} (linebuf[linebuf.size()-\/1] == \textcolor{charliteral}{'\(\backslash\)n'}) linebuf.erase(linebuf.size()-\/1);}
+\DoxyCodeLine{00551     \}}
+\DoxyCodeLine{00552     \textcolor{keywordflow}{if} (linebuf.size() > 0) \{}
+\DoxyCodeLine{00553       \textcolor{keywordflow}{if} (linebuf[linebuf.size()-\/1] == \textcolor{charliteral}{'\(\backslash\)r'}) linebuf.erase(linebuf.size()-\/1);}
+\DoxyCodeLine{00554     \}}
+\DoxyCodeLine{00555 }
+\DoxyCodeLine{00556     \textcolor{comment}{// Skip if empty line.}}
+\DoxyCodeLine{00557     \textcolor{keywordflow}{if} (linebuf.empty()) \{}
+\DoxyCodeLine{00558       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00559     \}}
+\DoxyCodeLine{00560 }
+\DoxyCodeLine{00561     \textcolor{comment}{// Skip leading space.}}
+\DoxyCodeLine{00562     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* token = linebuf.c\_str();}
+\DoxyCodeLine{00563     token += strspn(token, \textcolor{stringliteral}{"{} \(\backslash\)t"{}});}
+\DoxyCodeLine{00564 }
+\DoxyCodeLine{00565     assert(token);}
+\DoxyCodeLine{00566     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'\(\backslash\)0'}) \textcolor{keywordflow}{continue}; \textcolor{comment}{// empty line}}
+\DoxyCodeLine{00567     }
+\DoxyCodeLine{00568     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'\#'}) \textcolor{keywordflow}{continue};  \textcolor{comment}{// comment line}}
+\DoxyCodeLine{00569 }
+\DoxyCodeLine{00570     \textcolor{comment}{// vertex}}
+\DoxyCodeLine{00571     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'v'} \&\& isSpace((token[1]))) \{}
+\DoxyCodeLine{00572       token += 2;}
+\DoxyCodeLine{00573       \textcolor{keywordtype}{float} x, y, z;}
+\DoxyCodeLine{00574       parseFloat3(x, y, z, token);}
+\DoxyCodeLine{00575       v.push\_back(x);}
+\DoxyCodeLine{00576       v.push\_back(y);}
+\DoxyCodeLine{00577       v.push\_back(z);}
+\DoxyCodeLine{00578       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00579     \}}
+\DoxyCodeLine{00580 }
+\DoxyCodeLine{00581     \textcolor{comment}{// normal}}
+\DoxyCodeLine{00582     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'v'} \&\& token[1] == \textcolor{charliteral}{'n'} \&\& isSpace((token[2]))) \{}
+\DoxyCodeLine{00583       token += 3;}
+\DoxyCodeLine{00584       \textcolor{keywordtype}{float} x, y, z;}
+\DoxyCodeLine{00585       parseFloat3(x, y, z, token);}
+\DoxyCodeLine{00586       vn.push\_back(x);}
+\DoxyCodeLine{00587       vn.push\_back(y);}
+\DoxyCodeLine{00588       vn.push\_back(z);}
+\DoxyCodeLine{00589       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00590     \}}
+\DoxyCodeLine{00591 }
+\DoxyCodeLine{00592     \textcolor{comment}{// texcoord}}
+\DoxyCodeLine{00593     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'v'} \&\& token[1] == \textcolor{charliteral}{'t'} \&\& isSpace((token[2]))) \{}
+\DoxyCodeLine{00594       token += 3;}
+\DoxyCodeLine{00595       \textcolor{keywordtype}{float} x, y;}
+\DoxyCodeLine{00596       parseFloat2(x, y, token);}
+\DoxyCodeLine{00597       vt.push\_back(x);}
+\DoxyCodeLine{00598       vt.push\_back(y);}
+\DoxyCodeLine{00599       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00600     \}}
+\DoxyCodeLine{00601 }
+\DoxyCodeLine{00602     \textcolor{comment}{// face}}
+\DoxyCodeLine{00603     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'f'} \&\& isSpace((token[1]))) \{}
+\DoxyCodeLine{00604       token += 2;}
+\DoxyCodeLine{00605       token += strspn(token, \textcolor{stringliteral}{"{} \(\backslash\)t"{}});}
+\DoxyCodeLine{00606 }
+\DoxyCodeLine{00607       std::vector<vertex\_index> face;}
+\DoxyCodeLine{00608       \textcolor{keywordflow}{while} (!isNewLine(token[0])) \{}
+\DoxyCodeLine{00609         vertex\_index vi = parseTriple(token, v.size() / 3, vn.size() / 3, vt.size() / 2);}
+\DoxyCodeLine{00610         face.push\_back(vi);}
+\DoxyCodeLine{00611         \textcolor{keywordtype}{int} n = strspn(token, \textcolor{stringliteral}{"{} \(\backslash\)t\(\backslash\)r"{}});}
+\DoxyCodeLine{00612         token += n;}
+\DoxyCodeLine{00613       \}}
+\DoxyCodeLine{00614 }
+\DoxyCodeLine{00615       faceGroup.push\_back(face);}
+\DoxyCodeLine{00616       }
+\DoxyCodeLine{00617       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00618     \}}
+\DoxyCodeLine{00619 }
+\DoxyCodeLine{00620     \textcolor{comment}{// use mtl}}
+\DoxyCodeLine{00621     \textcolor{keywordflow}{if} ((0 == strncmp(token, \textcolor{stringliteral}{"{}usemtl"{}}, 6)) \&\& isSpace((token[6]))) \{}
+\DoxyCodeLine{00622 }
+\DoxyCodeLine{00623       \textcolor{keywordtype}{char} namebuf[4096];}
+\DoxyCodeLine{00624       token += 7;}
+\DoxyCodeLine{00625       sscanf(token, \textcolor{stringliteral}{"{}\%s"{}}, namebuf);}
+\DoxyCodeLine{00626 }
+\DoxyCodeLine{00627       \textcolor{keywordtype}{bool} ret = exportFaceGroupToShape(shape, vertexCache, v, vn, vt, faceGroup, \mbox{\hyperlink{structmaterial}{material}}, name, \textcolor{keyword}{false});}
+\DoxyCodeLine{00628       faceGroup.clear();}
+\DoxyCodeLine{00629 }
+\DoxyCodeLine{00630       \textcolor{keywordflow}{if} (material\_map.find(namebuf) != material\_map.end()) \{}
+\DoxyCodeLine{00631         \mbox{\hyperlink{structmaterial}{material}} = material\_map[namebuf];}
+\DoxyCodeLine{00632       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00633         \textcolor{comment}{// \{ error!! material not found \}}}
+\DoxyCodeLine{00634         \mbox{\hyperlink{structmaterial}{material}} = -\/1;}
+\DoxyCodeLine{00635       \}}
+\DoxyCodeLine{00636 }
+\DoxyCodeLine{00637       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00638 }
+\DoxyCodeLine{00639     \}}
+\DoxyCodeLine{00640 }
+\DoxyCodeLine{00641     \textcolor{comment}{// load mtl}}
+\DoxyCodeLine{00642     \textcolor{keywordflow}{if} ((0 == strncmp(token, \textcolor{stringliteral}{"{}mtllib"{}}, 6)) \&\& isSpace((token[6]))) \{}
+\DoxyCodeLine{00643       \textcolor{keywordtype}{char} namebuf[4096];}
+\DoxyCodeLine{00644       token += 7;}
+\DoxyCodeLine{00645       sscanf(token, \textcolor{stringliteral}{"{}\%s"{}}, namebuf);}
+\DoxyCodeLine{00646         }
+\DoxyCodeLine{00647       std::string err\_mtl = readMatFn(namebuf, materials, material\_map);}
+\DoxyCodeLine{00648       \textcolor{keywordflow}{if} (!err\_mtl.empty()) \{}
+\DoxyCodeLine{00649         faceGroup.clear();  \textcolor{comment}{// for safety}}
+\DoxyCodeLine{00650         \textcolor{keywordflow}{return} err\_mtl;}
+\DoxyCodeLine{00651       \}}
+\DoxyCodeLine{00652       }
+\DoxyCodeLine{00653       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00654     \}}
+\DoxyCodeLine{00655 }
+\DoxyCodeLine{00656     \textcolor{comment}{// group name}}
+\DoxyCodeLine{00657     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'g'} \&\& isSpace((token[1]))) \{}
+\DoxyCodeLine{00658 }
+\DoxyCodeLine{00659       \textcolor{comment}{// flush previous face group.}}
+\DoxyCodeLine{00660       \textcolor{keywordtype}{bool} ret = exportFaceGroupToShape(shape, vertexCache, v, vn, vt, faceGroup, \mbox{\hyperlink{structmaterial}{material}}, name, \textcolor{keyword}{true});}
+\DoxyCodeLine{00661       \textcolor{keywordflow}{if} (ret) \{}
+\DoxyCodeLine{00662         shapes.push\_back(shape);}
+\DoxyCodeLine{00663       \}}
+\DoxyCodeLine{00664 }
+\DoxyCodeLine{00665       shape = shape\_t();}
+\DoxyCodeLine{00666 }
+\DoxyCodeLine{00667       \textcolor{comment}{//material = -\/1;}}
+\DoxyCodeLine{00668       faceGroup.clear();}
+\DoxyCodeLine{00669 }
+\DoxyCodeLine{00670       std::vector<std::string> names;}
+\DoxyCodeLine{00671       \textcolor{keywordflow}{while} (!isNewLine(token[0])) \{}
+\DoxyCodeLine{00672         std::string str = parseString(token);}
+\DoxyCodeLine{00673         names.push\_back(str);}
+\DoxyCodeLine{00674         token += strspn(token, \textcolor{stringliteral}{"{} \(\backslash\)t\(\backslash\)r"{}}); \textcolor{comment}{// skip tag}}
+\DoxyCodeLine{00675       \}}
+\DoxyCodeLine{00676 }
+\DoxyCodeLine{00677       assert(names.size() > 0);}
+\DoxyCodeLine{00678 }
+\DoxyCodeLine{00679       \textcolor{comment}{// names[0] must be 'g', so skipt 0th element.}}
+\DoxyCodeLine{00680       \textcolor{keywordflow}{if} (names.size() > 1) \{}
+\DoxyCodeLine{00681         name = names[1];}
+\DoxyCodeLine{00682       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00683         name = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00684       \}}
+\DoxyCodeLine{00685 }
+\DoxyCodeLine{00686       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00687     \}}
+\DoxyCodeLine{00688 }
+\DoxyCodeLine{00689     \textcolor{comment}{// object name}}
+\DoxyCodeLine{00690     \textcolor{keywordflow}{if} (token[0] == \textcolor{charliteral}{'o'} \&\& isSpace((token[1]))) \{}
+\DoxyCodeLine{00691 }
+\DoxyCodeLine{00692       \textcolor{comment}{// flush previous face group.}}
+\DoxyCodeLine{00693       \textcolor{keywordtype}{bool} ret = exportFaceGroupToShape(shape, vertexCache, v, vn, vt, faceGroup, \mbox{\hyperlink{structmaterial}{material}}, name, \textcolor{keyword}{true});}
+\DoxyCodeLine{00694       \textcolor{keywordflow}{if} (ret) \{}
+\DoxyCodeLine{00695         shapes.push\_back(shape);}
+\DoxyCodeLine{00696       \}}
+\DoxyCodeLine{00697 }
+\DoxyCodeLine{00698       \textcolor{comment}{//material = -\/1;}}
+\DoxyCodeLine{00699       faceGroup.clear();}
+\DoxyCodeLine{00700       shape = shape\_t();}
+\DoxyCodeLine{00701 }
+\DoxyCodeLine{00702       \textcolor{comment}{// @todo \{ multiple object name? \}}}
+\DoxyCodeLine{00703       \textcolor{keywordtype}{char} namebuf[4096];}
+\DoxyCodeLine{00704       token += 2;}
+\DoxyCodeLine{00705       sscanf(token, \textcolor{stringliteral}{"{}\%s"{}}, namebuf);}
+\DoxyCodeLine{00706       name = std::string(namebuf);}
+\DoxyCodeLine{00707 }
+\DoxyCodeLine{00708 }
+\DoxyCodeLine{00709       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00710     \}}
+\DoxyCodeLine{00711 }
+\DoxyCodeLine{00712     \textcolor{comment}{// Ignore unknown command.}}
+\DoxyCodeLine{00713   \}}
+\DoxyCodeLine{00714 }
+\DoxyCodeLine{00715   \textcolor{keywordtype}{bool} ret = exportFaceGroupToShape(shape, vertexCache, v, vn, vt, faceGroup, \mbox{\hyperlink{structmaterial}{material}}, name, \textcolor{keyword}{true});}
+\DoxyCodeLine{00716   \textcolor{keywordflow}{if} (ret) \{}
+\DoxyCodeLine{00717     shapes.push\_back(shape);}
+\DoxyCodeLine{00718   \}}
+\DoxyCodeLine{00719   faceGroup.clear();  \textcolor{comment}{// for safety}}
+\DoxyCodeLine{00720 }
+\DoxyCodeLine{00721   \textcolor{keywordflow}{return} err.str();}
+\DoxyCodeLine{00722 \}}
+
+\end{DoxyCode}

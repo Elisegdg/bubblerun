@@ -1,3 +1,8 @@
+/**
+ * \file Menu.hpp
+ * \brief Declaration of the class Menu
+*/
+
 #ifndef _MENU_HPP
 #define _MENU_HPP
 
@@ -6,23 +11,62 @@
 #include <vector>
 #include <glimac/common.hpp>
 
-
+namespace rendering{
+/*! \class Menu
+   * \brief Game Menus manager
+   */
 class Menu
 {
 private:
-    GLuint m_vbo;
-    GLuint m_vao;
-    std::vector<glimac::Vertex2DColor> m_vertices;
+    GLuint m_vbo; /*!< vbo of the Menu*/
+    GLuint m_vao; /*!< vao of the Menu*/
+    std::vector<glimac::Vertex2DColor> m_vertices; /*!< Vertices to draw */
 
 public:
+    /*!
+     *  \brief Constructor of the Menu class
+
+     */
+
     Menu();
+
+    /*!
+     *  \brief Destructor of the Menu class
+
+     */
     ~Menu()=default;
+
+    /*!
+     *  \brief Set the main menu
+     *
+     *  \param windowManager : the SDLWindowManager
+     * 
+     */
     void setMenuBool(rendering::ShaderManager &menuShader);
+
+    /*!
+     *  \brief Set the score menu
+     *
+     *  \param windowManager : the SDLWindowManager
+     * 
+     */
     void setMenuScore(rendering::ShaderManager &menuShader);
+    
+    /*!
+     *  \brief Set the "Play Again" menu
+     *
+     *  \param windowManager : the SDLWindowManager
+     * 
+     */
     void setMenuPlayAgain(rendering::ShaderManager &menuShader);
 
+    /*!
+     *  \brief Getter of the vao  
+     */
     GLuint getVaoMenu() { return m_vao; }
 };
+
+
 Menu::Menu()
 {
     glGenBuffers(1, &m_vbo);
@@ -152,5 +196,5 @@ void Menu::setMenuPlayAgain(rendering::ShaderManager &menuShader)
     glDrawArrays(GL_TRIANGLES, 0, 6);
     glBindVertexArray(0);
 }
-
+}
 #endif

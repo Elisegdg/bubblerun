@@ -1,0 +1,81 @@
+\hypertarget{Program_8hpp_source}{}\doxysection{Program.\+hpp}
+\label{Program_8hpp_source}\index{rendering/include/rendering/Program.hpp@{rendering/include/rendering/Program.hpp}}
+\mbox{\hyperlink{Program_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#ifndef \_PROGRAM\_HPP}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#define \_PROGRAM\_HPP}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include <GL/glew.h>}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <glimac/glm.hpp>}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#include <glimac/FilePath.hpp>}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00013}00013 \textcolor{preprocessor}{\#include <glimac/Program.hpp>}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00014}00014 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00015}00015 \textcolor{preprocessor}{\#include<map>}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00018}00018 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacerendering}{rendering}}\{}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00025}\mbox{\hyperlink{classrendering_1_1ShaderManager}{00025}} \textcolor{keyword}{class }\mbox{\hyperlink{classrendering_1_1ShaderManager}{ShaderManager}}\{}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00027}00027 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00028}00028     glimac::Program m\_program; }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00029}00029     glimac::FilePath m\_vsPath; }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00030}00030     glimac::FilePath m\_fsPath; }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00031}00031     std::map<std::string, GLint> m\_uniformVars; }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00033}00033 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00038}\mbox{\hyperlink{classrendering_1_1ShaderManager_a01f93baf8ebcce8c07f25f4836d2b67d}{00038}}     \mbox{\hyperlink{classrendering_1_1ShaderManager_a01f93baf8ebcce8c07f25f4836d2b67d}{ShaderManager}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00046}\mbox{\hyperlink{classrendering_1_1ShaderManager_aa125d81d3bcefa8015666ee054b17b7f}{00046}}     \mbox{\hyperlink{classrendering_1_1ShaderManager_aa125d81d3bcefa8015666ee054b17b7f}{ShaderManager}}(\textcolor{keyword}{const} glimac::FilePath\& applicationPath, \textcolor{keyword}{const} glimac::FilePath \&vs, \textcolor{keyword}{const} glimac::FilePath \&fs):}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00047}00047         m\_vsPath(vs), m\_fsPath(fs), m\_program(glimac::loadProgram(applicationPath.dirPath() + vs, }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00048}00048                                                                 applicationPath.dirPath() +fs))}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00049}00049         \{\}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00051}\mbox{\hyperlink{classrendering_1_1ShaderManager_a843a13dab4c4dfd9b8b8050c8e02e399}{00051}}     \mbox{\hyperlink{classrendering_1_1ShaderManager_a843a13dab4c4dfd9b8b8050c8e02e399}{ShaderManager}}(\textcolor{keyword}{const} \mbox{\hyperlink{classrendering_1_1ShaderManager}{ShaderManager}} \&copy)\{}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00052}00052         }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00053}00053     \}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00058}\mbox{\hyperlink{classrendering_1_1ShaderManager_a71cde737734b8da464ff1eb43407f7bd}{00058}}     \mbox{\hyperlink{classrendering_1_1ShaderManager_a71cde737734b8da464ff1eb43407f7bd}{\string~ShaderManager}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00063}\mbox{\hyperlink{classrendering_1_1ShaderManager_a0772581870858b478ff8d6d1d5a42f84}{00063}}     GLuint \mbox{\hyperlink{classrendering_1_1ShaderManager_a0772581870858b478ff8d6d1d5a42f84}{getId}}() \{}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00064}00064         \textcolor{keywordflow}{return} m\_program.getGLId();}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00071}\mbox{\hyperlink{classrendering_1_1ShaderManager_ab98d2116d6f6b565b966b6a33a6fe21d}{00071}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1ShaderManager_ab98d2116d6f6b565b966b6a33a6fe21d}{addUniform}}(\textcolor{keyword}{const} std::string \&name)\{}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00072}00072         GLint uName = glGetUniformLocation(\mbox{\hyperlink{classrendering_1_1ShaderManager_a0772581870858b478ff8d6d1d5a42f84}{getId}}(), name.c\_str());}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00073}00073         m\_uniformVars.insert(std::pair<std::string, GLint>(name, uName));}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00074}00074     \}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00081}\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{00081}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(std::string name, glm::mat4 value)\{}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00082}00082         glUniformMatrix4fv(m\_uniformVars[name], 1, GL\_FALSE, glm::value\_ptr(value));}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00090}\mbox{\hyperlink{classrendering_1_1ShaderManager_aaab20bfdf3614ad39e1f6a81641d1e8c}{00090}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1ShaderManager_aaab20bfdf3614ad39e1f6a81641d1e8c}{uniformMatrix3fv}}(std::string name, glm::mat3 value)\{}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00091}00091         glUniformMatrix3fv(m\_uniformVars[name], 1, GL\_FALSE, glm::value\_ptr(value));}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00092}00092     \}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00099}\mbox{\hyperlink{classrendering_1_1ShaderManager_ad8f60d9ab9e7a1c0572914e6ea47b498}{00099}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1ShaderManager_ad8f60d9ab9e7a1c0572914e6ea47b498}{uniform1i}}(std::string name, \textcolor{keywordtype}{int} value)\{}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00100}00100         glUniform1i(m\_uniformVars[name], value);}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00101}00101     \}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00108}\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{00108}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(std::string name,\textcolor{keywordtype}{float} value1,\textcolor{keywordtype}{float} value2,\textcolor{keywordtype}{float} value3)}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00109}00109     \{}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00110}00110         glUniform3f(m\_uniformVars[name],value1,value2,value3);}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00112}00112     \}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00113}00113     }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00118}\mbox{\hyperlink{classrendering_1_1ShaderManager_aafe2a52ae6f541da55cb7ac66f9c308e}{00118}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1ShaderManager_aafe2a52ae6f541da55cb7ac66f9c308e}{use}}()\{}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00119}00119         m\_program.use();}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00120}00120     \}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00122}00122 \};}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00124}00124 \}}
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{Program_8hpp_source_l00127}00127 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

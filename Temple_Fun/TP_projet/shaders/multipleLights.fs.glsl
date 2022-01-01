@@ -8,8 +8,6 @@ in vec2 vTexCoords; // Coordonnées de texture du sommet
 
 out vec3 fFragColor;
 
-//Textures
-
 uniform vec3 uKdiffuse;
 uniform vec3 uKspecular;
 uniform vec3 uKdiffuse2;
@@ -20,7 +18,6 @@ uniform vec3 uLightDir_vs;
 uniform vec3 uLightPos_vs;
 uniform vec3 uLightIntensity;
 
-
 uniform sampler2D uTexture;
 
 vec3 directionalLightBlinnPhong(){
@@ -28,7 +25,6 @@ vec3 directionalLightBlinnPhong(){
     vec3 wi = normalize(uLightDir_vs);
     vec3 halfVector = (w0 + wi)/2;
     vec3 directionalLight = uLightIntensity * (uKdiffuse * (dot(wi, vNormal_vs)) + uKspecular * (pow(dot(halfVector,vNormal_vs), uShininess)));
-
     return directionalLight;
 }
 
@@ -38,7 +34,6 @@ vec3 pointLightBlinnPhong(){
     vec3 halfVector = (w0 + wi)/2;
     float d = distance(uLightPos_vs,vPosition_vs);
     vec3 pointLight = (uLightIntensity / (d*d)) * (uKdiffuse2 * (dot(wi, vNormal_vs)) + uKspecular2 * (pow(dot(halfVector,vNormal_vs), uShininess)));
-
     return pointLight;
 }
 
@@ -52,6 +47,4 @@ void main()
     vec3 pointLight = pointLightBlinnPhong();
 
     fFragColor = (dirLight+pointLight)*color.rgb;
-    //fFragColor = vec3(1,0,0);
-    //fFragColor = color.rgb;
 }

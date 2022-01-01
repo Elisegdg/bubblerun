@@ -1,0 +1,56 @@
+\hypertarget{TrackballCamera_8hpp_source}{}\doxysection{Trackball\+Camera.\+hpp}
+\label{TrackballCamera_8hpp_source}\index{rendering/include/rendering/TrackballCamera.hpp@{rendering/include/rendering/TrackballCamera.hpp}}
+\mbox{\hyperlink{TrackballCamera_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#ifndef \_TRACKBALLCAMERA\_HPP}}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#define \_TRACKBALLCAMERA\_HPP}}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}glimac/glm.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Camera_8hpp}{rendering/Camera.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <glimac/SDLWindowManager.hpp>}}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{Player_8hpp}{game/Player.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00015}00015 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacerendering}{rendering}} \{}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00017}\mbox{\hyperlink{namespacerendering_af9ef0474640f1f241c05e9155baa5978}{00017}} \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacerendering_af9ef0474640f1f241c05e9155baa5978}{cameraPlayerDistance}} = 2.f;}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00018}\mbox{\hyperlink{namespacerendering_a86e9cb361b253eb809696c69715bebcf}{00018}} \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacerendering_a86e9cb361b253eb809696c69715bebcf}{minDistance}} = 3.0f;}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00019}\mbox{\hyperlink{namespacerendering_a83540b1fb3b0a5cb7f8ba5929c8deaa6}{00019}} \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacerendering_a83540b1fb3b0a5cb7f8ba5929c8deaa6}{maxDistance}} = 7.0f;}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00027}\mbox{\hyperlink{classrendering_1_1TrackballCamera}{00027}} \textcolor{keyword}{class }\mbox{\hyperlink{classrendering_1_1TrackballCamera}{TrackballCamera}} : \textcolor{keyword}{public} \mbox{\hyperlink{classrendering_1_1Camera}{Camera}}\{}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00029}00029 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00031}00031     \textcolor{keywordtype}{float} m\_fDistance;}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00032}00032     \textcolor{keywordtype}{float} m\_fAngleX;}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00033}00033     \textcolor{keywordtype}{float} m\_fAngleY; }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00034}00034     \mbox{\hyperlink{classgame_1_1Player}{game::Player}}* m\_player;}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00036}00036 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00037}00037     }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00049}\mbox{\hyperlink{classrendering_1_1TrackballCamera_a28f8273c6fbc14dacb92c1b8866a5eff}{00049}}     \mbox{\hyperlink{classrendering_1_1TrackballCamera_a28f8273c6fbc14dacb92c1b8866a5eff}{TrackballCamera}}(\mbox{\hyperlink{classgame_1_1Player}{game::Player}}* player, \textcolor{keywordtype}{float} distance = 5.f, \textcolor{keywordtype}{float} angleX = 0.7f, \textcolor{keywordtype}{float} angleY = 600.f)}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00050}00050     :m\_fDistance(distance), m\_fAngleX(angleX), m\_fAngleY(angleY) }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00051}00051     \{}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00052}00052         \mbox{\hyperlink{classrendering_1_1Camera_a7ac1ad4a06b1afe7798676f84271e46b}{m\_cameraType}} = 0;}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00053}00053         m\_player = player;}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00054}00054         \mbox{\hyperlink{classrendering_1_1Camera_a3a9ad1c6dc7820e106db36b31984c6a3}{m\_locked}} = 0;}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00055}00055         \mbox{\hyperlink{classrendering_1_1Camera_af7c0ffb5fb92c765b697f6d4f7132915}{m\_isRotating}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00061}\mbox{\hyperlink{classrendering_1_1TrackballCamera_a8bf66a34bb5ae0f5d3c98a9d77403127}{00061}}     \mbox{\hyperlink{classrendering_1_1TrackballCamera_a8bf66a34bb5ae0f5d3c98a9d77403127}{\string~TrackballCamera}}()\{\}}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00063}00063     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1TrackballCamera_abb30e99a7530c43416ba35e5fa2b5f3e}{moveFront}}(\textcolor{keywordtype}{float} delta);}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00064}00064     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1TrackballCamera_a24369522a618b8471ce8a109e880bbc5}{moveLeft}}(\textcolor{keywordtype}{float} delta);}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00065}00065     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1TrackballCamera_a43b8a79d1102ff35195e130e80906564}{rotateLeft}}(\textcolor{keywordtype}{float} degrees);}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00066}00066     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1TrackballCamera_a8f7812b19f9202802138645ec79b3b2e}{rotateUp}}(\textcolor{keywordtype}{float} degrees);    }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00067}00067     glm::mat4 \mbox{\hyperlink{classrendering_1_1TrackballCamera_ac570bdbd18186fc4af680015eab0886e}{getViewMatrix}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00068}00068     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1TrackballCamera_a1dad169b4e1d2b5b67a62352d043aa62}{eventCamera}}(glimac::SDLWindowManager\& windowManager);}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00069}00069     }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00071}00071 \};}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00072}00072 \}}
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{TrackballCamera_8hpp_source_l00074}00074 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

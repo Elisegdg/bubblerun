@@ -1,0 +1,304 @@
+\hypertarget{structglm_1_1detail_1_1tquat}{}\doxysection{glm\+::detail\+::tquat\texorpdfstring{$<$}{<} T, P \texorpdfstring{$>$}{>} Struct Template Reference}
+\label{structglm_1_1detail_1_1tquat}\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+
+
+{\ttfamily \#include $<$quaternion.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a61a530a53df553ec85f45e6b5ce6d7c3}{ctor}} \{ \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a61a530a53df553ec85f45e6b5ce6d7c3a8dde10de7e48095da9f3e497c958227c}{null}}
+ \}
+\item 
+typedef T \mbox{\hyperlink{structglm_1_1detail_1_1tquat_af313f5388bc71d19ec712f20fe24cc9b}{value\+\_\+type}}
+\item 
+typedef \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{tvec4}}$<$ bool, P $>$ \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a22ca5a5296466eb23f4f499ffecc8d46}{bool\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{setup_8hpp_a08b807947b47031d3a511f03f89645ad}{GLM\+\_\+\+CONSTEXPR}} \mbox{\hyperlink{namespaceglm_a090a0de2260835bee80e71a702492ed9}{length\+\_\+t}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a766c141bade356af2b5bf512acd37143}{length}} () const
+\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a77703fd267a6c6d9d3a022e9bf5e9b94}{tquat}} ()
+\item 
+{\footnotesize template$<$typename U , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} Q$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat_aa6b415284ed415db4ac328f3c0fd42d7}{tquat}} (\mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ U, Q $>$ const \&q)
+\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat_ade08b913a92f8f7cedaae6c1eba205f2}{tquat}} (T const \&s, \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{tvec3}}$<$ T, P $>$ const \&v)
+\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a7456fffcca390ae90f60dae010c279fd}{tquat}} (T const \&\mbox{\hyperlink{structglm_1_1detail_1_1tquat_a83472ee38e4268c15ac92658e1ebfbb0}{w}}, T const \&\mbox{\hyperlink{structglm_1_1detail_1_1tquat_ae4db777c41ba0c7329107a4c7aa1f956}{x}}, T const \&\mbox{\hyperlink{structglm_1_1detail_1_1tquat_a50895e2da4e59255b25271a44ae3e43d}{y}}, T const \&\mbox{\hyperlink{structglm_1_1detail_1_1tquat_a65c2b0af6a4b59327015b766f25416ef}{z}})
+\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat_ae6e80c7aa98243db384a5497a3f7e7fa}{tquat}} (\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ const \&u, \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ const \&v)
+\begin{DoxyCompactList}\small\item\em Create a quaternion from two normalized axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat_ace748b591ed0774b00dab499733dadc5}{tquat}} (\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{tvec3}}$<$ T, P $>$ const \&\mbox{\hyperlink{group__gtc__quaternion_ga2b4cba3d7226d6ba615c08e8b6ad503a}{euler\+Angles}})
+\begin{DoxyCompactList}\small\item\em Build a quaternion from euler angles (pitch, yaw, roll), in radians. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat_af5b30b316cbc8c6ddc8407ecc8af1df0}{tquat}} (\mbox{\hyperlink{structglm_1_1detail_1_1tmat3x3}{tmat3x3}}$<$ T, P $>$ const \&m)
+\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a1a91da56c16c6a4dda6d97f5f4654ffd}{tquat}} (\mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{tmat4x4}}$<$ T, P $>$ const \&m)
+\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} T \& \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a140693020da3b6a111ad18993dbbba75}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{namespaceglm_a090a0de2260835bee80e71a702492ed9}{length\+\_\+t}} i)
+\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} T const \& \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a9f69d09b896d41628277f7e55702cf3c}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{namespaceglm_a090a0de2260835bee80e71a702492ed9}{length\+\_\+t}} i) const
+\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ T, P $>$ \& \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a642cb9e3b296905a216e9ebd6c622a36}{operator+=}} (\mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ T, P $>$ const \&q)
+\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ T, P $>$ \& \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a2264766f92e780e4c6551e8763fe9d40}{operator$\ast$=}} (\mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ T, P $>$ const \&q)
+\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ T, P $>$ \& \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a924e2898f85a41da26d7d0b504c56133}{operator$\ast$=}} (T const \&s)
+\item 
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ T, P $>$ \& \mbox{\hyperlink{structglm_1_1detail_1_1tquat_aeb5ec3477ce6b11ad1eb36fce95e6151}{operator/=}} (T const \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{structglm_1_1detail_1_1tquat_ae4db777c41ba0c7329107a4c7aa1f956}{x}}
+\item 
+T \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a50895e2da4e59255b25271a44ae3e43d}{y}}
+\item 
+T \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a65c2b0af6a4b59327015b766f25416ef}{z}}
+\item 
+T \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a83472ee38e4268c15ac92658e1ebfbb0}{w}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$\newline
+struct glm\+::detail\+::tquat$<$ T, P $>$}
+
+
+Definition at line \mbox{\hyperlink{gtc_2quaternion_8hpp_source_l00058}{58}} of file \mbox{\hyperlink{gtc_2quaternion_8hpp_source}{quaternion.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a22ca5a5296466eb23f4f499ffecc8d46}\label{structglm_1_1detail_1_1tquat_a22ca5a5296466eb23f4f499ffecc8d46}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!bool\_type@{bool\_type}}
+\index{bool\_type@{bool\_type}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{bool\_type}{bool\_type}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+typedef \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{tvec4}}$<$bool, P$>$ \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::bool\+\_\+type}
+
+
+
+Definition at line \mbox{\hyperlink{gtc_2quaternion_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{gtc_2quaternion_8hpp_source}{quaternion.\+hpp}}.
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_af313f5388bc71d19ec712f20fe24cc9b}\label{structglm_1_1detail_1_1tquat_af313f5388bc71d19ec712f20fe24cc9b}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+typedef T \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::value\+\_\+type}
+
+
+
+Definition at line \mbox{\hyperlink{gtc_2quaternion_8hpp_source_l00062}{62}} of file \mbox{\hyperlink{gtc_2quaternion_8hpp_source}{quaternion.\+hpp}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a61a530a53df553ec85f45e6b5ce6d7c3}\label{structglm_1_1detail_1_1tquat_a61a530a53df553ec85f45e6b5ce6d7c3}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!ctor@{ctor}}
+\index{ctor@{ctor}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{ctor}{ctor}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+enum \mbox{\hyperlink{structglm_1_1detail_1_1tquat_a61a530a53df553ec85f45e6b5ce6d7c3}{glm\+::detail\+::tquat\+::ctor}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{null@{null}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!null@{null}}}\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a61a530a53df553ec85f45e6b5ce6d7c3a8dde10de7e48095da9f3e497c958227c}\label{structglm_1_1detail_1_1tquat_a61a530a53df553ec85f45e6b5ce6d7c3a8dde10de7e48095da9f3e497c958227c}} 
+null&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{gtc_2quaternion_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{gtc_2quaternion_8hpp_source}{quaternion.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060 \{\mbox{\hyperlink{structglm_1_1detail_1_1tquat_a61a530a53df553ec85f45e6b5ce6d7c3a8dde10de7e48095da9f3e497c958227c}{null}}\};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a77703fd267a6c6d9d3a022e9bf5e9b94}\label{structglm_1_1detail_1_1tquat_a77703fd267a6c6d9d3a022e9bf5e9b94}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!tquat@{tquat}}
+\index{tquat@{tquat}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{tquat()}{tquat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::tquat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_aa6b415284ed415db4ac328f3c0fd42d7}\label{structglm_1_1detail_1_1tquat_aa6b415284ed415db4ac328f3c0fd42d7}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!tquat@{tquat}}
+\index{tquat@{tquat}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{tquat()}{tquat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+template$<$typename U , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} Q$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::tquat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ U, Q $>$ const \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_ade08b913a92f8f7cedaae6c1eba205f2}\label{structglm_1_1detail_1_1tquat_ade08b913a92f8f7cedaae6c1eba205f2}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!tquat@{tquat}}
+\index{tquat@{tquat}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{tquat()}{tquat()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::tquat (\begin{DoxyParamCaption}\item[{T const \&}]{s,  }\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{tvec3}}$<$ T, P $>$ const \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a7456fffcca390ae90f60dae010c279fd}\label{structglm_1_1detail_1_1tquat_a7456fffcca390ae90f60dae010c279fd}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!tquat@{tquat}}
+\index{tquat@{tquat}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{tquat()}{tquat()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::tquat (\begin{DoxyParamCaption}\item[{T const \&}]{w,  }\item[{T const \&}]{x,  }\item[{T const \&}]{y,  }\item[{T const \&}]{z }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_ae6e80c7aa98243db384a5497a3f7e7fa}\label{structglm_1_1detail_1_1tquat_ae6e80c7aa98243db384a5497a3f7e7fa}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!tquat@{tquat}}
+\index{tquat@{tquat}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{tquat()}{tquat()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::tquat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ const \&}]{u,  }\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail\+::tvec3}}$<$ T, P $>$ const \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Create a quaternion from two normalized axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & A first normalized axis \\
+\hline
+{\em v} & A second normalized axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{group__gtc__quaternion}{GLM\+\_\+\+GTC\+\_\+quaternion}} 
+
+\href{http://lolengine.net/blog/2013/09/18/beautiful-maths-quaternion-from-vectors}{\texttt{ http\+://lolengine.\+net/blog/2013/09/18/beautiful-\/maths-\/quaternion-\/from-\/vectors}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_ace748b591ed0774b00dab499733dadc5}\label{structglm_1_1detail_1_1tquat_ace748b591ed0774b00dab499733dadc5}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!tquat@{tquat}}
+\index{tquat@{tquat}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{tquat()}{tquat()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::tquat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{tvec3}}$<$ T, P $>$ const \&}]{euler\+Angles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Build a quaternion from euler angles (pitch, yaw, roll), in radians. 
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_af5b30b316cbc8c6ddc8407ecc8af1df0}\label{structglm_1_1detail_1_1tquat_af5b30b316cbc8c6ddc8407ecc8af1df0}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!tquat@{tquat}}
+\index{tquat@{tquat}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{tquat()}{tquat()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::tquat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tmat3x3}{tmat3x3}}$<$ T, P $>$ const \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a1a91da56c16c6a4dda6d97f5f4654ffd}\label{structglm_1_1detail_1_1tquat_a1a91da56c16c6a4dda6d97f5f4654ffd}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!tquat@{tquat}}
+\index{tquat@{tquat}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{tquat()}{tquat()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::tquat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{tmat4x4}}$<$ T, P $>$ const \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a766c141bade356af2b5bf512acd37143}\label{structglm_1_1detail_1_1tquat_a766c141bade356af2b5bf512acd37143}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!length@{length}}
+\index{length@{length}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{setup_8hpp_a08b807947b47031d3a511f03f89645ad}{GLM\+\_\+\+CONSTEXPR}} \mbox{\hyperlink{namespaceglm_a090a0de2260835bee80e71a702492ed9}{length\+\_\+t}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a924e2898f85a41da26d7d0b504c56133}\label{structglm_1_1detail_1_1tquat_a924e2898f85a41da26d7d0b504c56133}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ T, P $>$ \& \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{T const \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a2264766f92e780e4c6551e8763fe9d40}\label{structglm_1_1detail_1_1tquat_a2264766f92e780e4c6551e8763fe9d40}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ T, P $>$ \& \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ T, P $>$ const \&}]{q }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a642cb9e3b296905a216e9ebd6c622a36}\label{structglm_1_1detail_1_1tquat_a642cb9e3b296905a216e9ebd6c622a36}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ T, P $>$ \& \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ T, P $>$ const \&}]{q }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_aeb5ec3477ce6b11ad1eb36fce95e6151}\label{structglm_1_1detail_1_1tquat_aeb5ec3477ce6b11ad1eb36fce95e6151}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{tquat}}$<$ T, P $>$ \& \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::operator/= (\begin{DoxyParamCaption}\item[{T const \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a140693020da3b6a111ad18993dbbba75}\label{structglm_1_1detail_1_1tquat_a140693020da3b6a111ad18993dbbba75}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} T \& \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceglm_a090a0de2260835bee80e71a702492ed9}{length\+\_\+t}}}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a9f69d09b896d41628277f7e55702cf3c}\label{structglm_1_1detail_1_1tquat_a9f69d09b896d41628277f7e55702cf3c}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} T const  \& \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceglm_a090a0de2260835bee80e71a702492ed9}{length\+\_\+t}}}]{i }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a83472ee38e4268c15ac92658e1ebfbb0}\label{structglm_1_1detail_1_1tquat_a83472ee38e4268c15ac92658e1ebfbb0}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!w@{w}}
+\index{w@{w}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+T \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::w}
+
+
+
+Definition at line \mbox{\hyperlink{gtc_2quaternion_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{gtc_2quaternion_8hpp_source}{quaternion.\+hpp}}.
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_ae4db777c41ba0c7329107a4c7aa1f956}\label{structglm_1_1detail_1_1tquat_ae4db777c41ba0c7329107a4c7aa1f956}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!x@{x}}
+\index{x@{x}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+T \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::x}
+
+
+
+Definition at line \mbox{\hyperlink{gtc_2quaternion_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{gtc_2quaternion_8hpp_source}{quaternion.\+hpp}}.
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a50895e2da4e59255b25271a44ae3e43d}\label{structglm_1_1detail_1_1tquat_a50895e2da4e59255b25271a44ae3e43d}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!y@{y}}
+\index{y@{y}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+T \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::y}
+
+
+
+Definition at line \mbox{\hyperlink{gtc_2quaternion_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{gtc_2quaternion_8hpp_source}{quaternion.\+hpp}}.
+
+\mbox{\Hypertarget{structglm_1_1detail_1_1tquat_a65c2b0af6a4b59327015b766f25416ef}\label{structglm_1_1detail_1_1tquat_a65c2b0af6a4b59327015b766f25416ef}} 
+\index{glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}!z@{z}}
+\index{z@{z}!glm::detail::tquat$<$ T, P $>$@{glm::detail::tquat$<$ T, P $>$}}
+\doxysubsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily template$<$typename T , \mbox{\hyperlink{namespaceglm_a0f04f086094c747d227af4425893f545}{precision}} P$>$ \\
+T \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{glm\+::detail\+::tquat}}$<$ T, P $>$\+::z}
+
+
+
+Definition at line \mbox{\hyperlink{gtc_2quaternion_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{gtc_2quaternion_8hpp_source}{quaternion.\+hpp}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+third-\/party/include/glm/\mbox{\hyperlink{fwd_8hpp}{fwd.\+hpp}}\item 
+third-\/party/include/glm/gtc/\mbox{\hyperlink{gtc_2quaternion_8hpp}{quaternion.\+hpp}}\end{DoxyCompactItemize}

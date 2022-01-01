@@ -1,0 +1,93 @@
+\hypertarget{classObstacle}{}\doxysection{Obstacle Class Reference}
+\label{classObstacle}\index{Obstacle@{Obstacle}}
+
+
+{\ttfamily \#include $<$Object.\+hpp$>$}
+
+Inheritance diagram for Obstacle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classObstacle}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classObstacle_a8f734072321fa06a7b7dae2d5f50f352}{Obstacle}} ()
+\item 
+\mbox{\hyperlink{classObstacle_a9fdd13ed632006e691d98b2959f111d3}{$\sim$\+Obstacle}} ()=default
+\item 
+void \mbox{\hyperlink{classObstacle_a5a2520138eb3560c434b1f548e470457}{draw}} (\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&mesh, const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Program, glm\+::mat4 Proj\+Matrix, glimac\+::\+SDLWindow\+Manager \&window\+Manager)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Object_8hpp_source_l00093}{93}} of file \mbox{\hyperlink{Object_8hpp_source}{Object.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classObstacle_a8f734072321fa06a7b7dae2d5f50f352}\label{classObstacle_a8f734072321fa06a7b7dae2d5f50f352}} 
+\index{Obstacle@{Obstacle}!Obstacle@{Obstacle}}
+\index{Obstacle@{Obstacle}!Obstacle@{Obstacle}}
+\doxysubsubsection{\texorpdfstring{Obstacle()}{Obstacle()}}
+{\footnotesize\ttfamily Obstacle\+::\+Obstacle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Object_8hpp_source_l00096}{96}} of file \mbox{\hyperlink{Object_8hpp_source}{Object.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096 : \mbox{\hyperlink{classObject_a192768c5099813aa0a517f466559a28b}{Object}}(\textcolor{stringliteral}{"{}obstacle"{}})\{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classObstacle_a9fdd13ed632006e691d98b2959f111d3}\label{classObstacle_a9fdd13ed632006e691d98b2959f111d3}} 
+\index{Obstacle@{Obstacle}!````~Obstacle@{$\sim$Obstacle}}
+\index{````~Obstacle@{$\sim$Obstacle}!Obstacle@{Obstacle}}
+\doxysubsubsection{\texorpdfstring{$\sim$Obstacle()}{~Obstacle()}}
+{\footnotesize\ttfamily Obstacle\+::$\sim$\+Obstacle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classObstacle_a5a2520138eb3560c434b1f548e470457}\label{classObstacle_a5a2520138eb3560c434b1f548e470457}} 
+\index{Obstacle@{Obstacle}!draw@{draw}}
+\index{draw@{draw}!Obstacle@{Obstacle}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Obstacle\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&}]{mesh,  }\item[{const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$}]{camera,  }\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Program,  }\item[{glm\+::mat4}]{Proj\+Matrix,  }\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classObject_a51742c3e9d8234a53030f4a428bcfabf}{Object}}.
+
+
+
+Definition at line \mbox{\hyperlink{Object_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037 \{}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
+\DoxyCodeLine{00040     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}().x -\/ 1, 0.4, \mbox{\hyperlink{classObject_a05b68de764b133f5a0a27a9c707f9774}{getCoord}}().y));}
+\DoxyCodeLine{00041     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 0.6, 1));}
+\DoxyCodeLine{00042     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
+\DoxyCodeLine{00045     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVMatrix"{}}, ViewMatrix);}
+\DoxyCodeLine{00046     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uNormalMatrix"{}}, NormalMatrix);}
+\DoxyCodeLine{00047     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_ad8f60d9ab9e7a1c0572914e6ea47b498}{uniform1i}}(\textcolor{stringliteral}{"{}uTexture"{}}, 0);}
+\DoxyCodeLine{00048     mesh.\mbox{\hyperlink{classrendering_1_1Model_a71dea11e780bdefb98cd9603cfa1758b}{draw}}();}
+\DoxyCodeLine{00049 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+game/include/game/\mbox{\hyperlink{Object_8hpp}{Object.\+hpp}}\item 
+game/src/\mbox{\hyperlink{Object_8cpp}{Object.\+cpp}}\end{DoxyCompactItemize}

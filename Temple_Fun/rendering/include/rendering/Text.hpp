@@ -1,4 +1,11 @@
-#pragma once
+/**
+ * \file Text.hpp
+ * \brief Declaration of the class Text
+*/
+
+#ifndef _TEXT_HPP
+#define _TEXT_HPP
+
 #include <iostream>
 #include <GL/glew.h>
 #include <glimac/glm.hpp>
@@ -9,38 +16,69 @@
 
 namespace rendering
 {
+    /*! \class Text
+   * \brief Abstract class of Text
+   *
+   *  This class deals with displaying the text on the game window and menus.
+   */
     class Text
     {
     private:
-        unsigned int TextureID; // ID handle of the glyph texture
-        glm::ivec2 Size;        // Size of glyph
-        glm::ivec2 Bearing;     // Offset from baseline to left/top of glyph
-        unsigned int Advance;   // Offset to advance to next glyph
-        GLuint m_vao, m_vbo;
+        unsigned int TextureID; /*!< ID handle of the glyph texture*/
+        glm::ivec2 Size;        /*< Size of glyph*/
+        glm::ivec2 Bearing;     /*< Offset from baseline to left/top of glyph*/
+        unsigned int Advance;   /*< Offset to advance to next glyph*/
+        GLuint m_vao, m_vbo; 
 
     public:
+        /*!
+        *  \brief Default Constructor of the Text class
+        */
         Text() = default;
+
+        /*!
+        *  \brief Destructor of the Text class
+        */
         ~Text() = default;
-        unsigned int getTextureID()
+
+        /*!
+        *  \brief Getter of the Texture Id
+        */
+        unsigned int getTextureID() const
         {
             return TextureID;
         }
 
-        glm::ivec2 getSize()
+        /*!
+        *  \brief Getter of the size of glyph
+        */
+        glm::ivec2 getSize() const
         {
             return Size;
         }
 
-        glm::ivec2 getBearing()
+        /*!
+        *  \brief Getter of the offset from baseline to left/top of glyph
+        */
+        glm::ivec2 getBearing() const
         {
             return Bearing;
         }
 
-        unsigned int getAdvance()
+        /*!
+        *  \brief Getter of the offset to advance to next glyph
+        */
+        unsigned int getAdvance() const
         {
             return Advance;
         }
 
+        /*!
+        *  \brief Loads the font
+        *
+        *  \param Characters All the characters of the font
+        * 
+        */
         void loadFont(std::map<char, Text> &Characters)
         {
 
@@ -103,6 +141,19 @@ namespace rendering
             FT_Done_Face(face);
             FT_Done_FreeType(ft);
         }
+
+     /*!
+     *  \brief Displays the text
+     *
+     *  \param id : The program object to be queried
+     *  \param Characters : a map of all the characters of the font
+     *  \param text : the text that needs to be displayed
+     *  \param x : the position of the text along the X axis
+     *  \param y : the position of the text along the Y axis
+     *  \param scale : defines the size of the displayed text
+     *  \param color : defines the color of the displayed text
+     * 
+     */
         void RenderText(GLuint &id, std::map<char, Text> &Characters, std::string text, float x, float y, float scale, glm::vec3 color)
         {
             // activate corresponding render state
@@ -145,6 +196,14 @@ namespace rendering
             glBindTexture(GL_TEXTURE_2D, 0);
         }
 
+
+        /*!
+        *  \brief Render the text of the Score Menu
+        *
+        *  \param TextProgram : the corresponding ShaderManager
+        *  \param Characters : a map of all the characters of the font
+        *  \param scorejson : the saved scores that we want to display
+        */
         void renderScoreText(rendering::ShaderManager &TextProgram, std::map<char, rendering::Text> &Characters, Score &scorejson)
         {
             glEnable(GL_BLEND);
@@ -163,6 +222,12 @@ namespace rendering
             glDisable(GL_BLEND);
         }
 
+        /*!
+        *  \brief Render the text of the Main Menu
+        *
+        *  \param TextProgram : the corresponding ShaderManager
+        *  \param Characters : a map of all the characters of the font
+        */
         void renderMenuText(rendering::ShaderManager &TextProgram, std::map<char, rendering::Text> &Characters)
         {
             glEnable(GL_BLEND);
@@ -175,6 +240,14 @@ namespace rendering
             glDisable(GL_BLEND);
         }
 
+
+        /*!
+        *  \brief Render the text of the "Play Again" Menu
+        *
+        *  \param TextProgram : the corresponding ShaderManager
+        *  \param Characters : a map of all the characters of the font
+        *  \param score : the latest score
+        */
         void renderPlayAgainText(rendering::ShaderManager &TextProgram, std::map<char, rendering::Text> &Characters, int &score)
         {
             glEnable(GL_BLEND);
@@ -188,6 +261,13 @@ namespace rendering
             glDisable(GL_BLEND);
         }
 
+        /*!
+        *  \brief Render the text of the Game Window
+        *
+        *  \param TextProgram : the corresponding ShaderManager
+        *  \param Characters : a map of all the characters of the font
+        *  \param scorejson : the score of the current gaming session
+        */
         void renderGameText(rendering::ShaderManager &TextProgram, std::map<char, rendering::Text> &Characters, int &score)
         {
             TextProgram.use();
@@ -197,6 +277,9 @@ namespace rendering
             RenderText(id, Characters, "Score : " + scorestring, 650.0f, 570.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f));
         }
 
+        /*!
+        *  \brief Displays the text
+        */
         void display()
         {
             glGenVertexArrays(1, &m_vao);
@@ -214,3 +297,4 @@ namespace rendering
     };
 
 }
+#endif

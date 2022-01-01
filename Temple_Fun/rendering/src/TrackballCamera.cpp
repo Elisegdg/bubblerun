@@ -25,21 +25,6 @@ namespace rendering
         else m_fAngleY = glm::radians(degrees);
     }
 
-    void TrackballCamera::rotateLeftTest(float degrees, int &step)
-    {
-        if(step<=10){
-            m_fAngleY += glm::radians(degrees)/step;
-            step ++;
-        }
-        
-        else{
-            step = 0;
-        }
-
-    m_fAngleY = glm::radians(degrees);
-
-        
-    }
 
     void TrackballCamera::rotateUp(float degrees)
     {
@@ -57,10 +42,6 @@ namespace rendering
         return ViewMatrix;
     }
 
-    float TrackballCamera::getDistance()
-    {
-        return m_fDistance;
-    }
 
     void TrackballCamera::eventCamera(glimac::SDLWindowManager& windowManager)
     {

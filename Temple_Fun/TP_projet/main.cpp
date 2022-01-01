@@ -26,6 +26,7 @@
 #include <rendering/Cursor.hpp>
 #include <rendering/json.hpp>
 #include <rendering/Score.hpp>
+#include <rendering/Light.hpp>
 
 #include <game/CourseMap.hpp>
 #include <game/Object.hpp>
@@ -57,24 +58,24 @@ int main(int argc, char **argv)
 
     // Menu initialization
     SDL_Cursor *cursor = init_system_cursor(arrow), *cursor2 = init_system_cursor(arrow2);
-    Menu menu;
+    rendering::Menu menu;
     bool menu_bool = true, menu_score = false, menu_play_again = false;
-    Score scorejson;
+    rendering::Score scorejson;
 
     // Map initialization
-    CourseMap courseMap;
+    game::CourseMap courseMap;
     try
     {
-        courseMap.loadMap("../Temple_Fun/assets/map.ppm");
+        courseMap.loadMap("../Temple_Fun/assets/map70.ppm");
     }
     catch (std::string &s)
     {
         std::cerr << "Error : " << s << std::endl;
     }
     courseMap.loadCoins();
-    Player player(courseMap, glm::vec3(1, 3, 0)), enemy(courseMap, glm::vec3(1, 0, 0));
-    Object *objet = courseMap.findObject(player.getFloorCoord());
-    Object *objet_enemy = courseMap.findObject(enemy.getFloorCoord());
+    game::Player player(courseMap, glm::vec3(2, 3, 0)), enemy(courseMap, glm::vec3(2, 0, 0));
+    game::Object *objet = courseMap.findObject(player.getFloorCoord());
+    game::Object *objet_enemy = courseMap.findObject(enemy.getFloorCoord());
     int score = 0;
     int speed = 5;
 
@@ -99,6 +100,8 @@ int main(int argc, char **argv)
     cube_obstacle.setBuffers();
     cube_shark.setBuffers();
 
+    rendering::Light light;
+
     std::map<char, rendering::Text> Characters;
     rendering::Text text;
     text.loadFont(Characters);
@@ -110,11 +113,6 @@ int main(int argc, char **argv)
     menuShader.addUniform("uModelMatrix");
     menuShader.addUniform("uColor");
 
-    /*rendering::ShaderManager TextureProgram(applicationPath, "shaders/3D.vs.glsl", "shaders/tex3D.fs.glsl");
-    TextureProgram.addUniform("uMVPMatrix");
-    TextureProgram.addUniform("uMVMatrix");
-    TextureProgram.addUniform("uNormalMatrix");
-    TextureProgram.addUniform("uTexture");*/
 
     rendering::ShaderManager SkyboxProgram(applicationPath, "shaders/skybox.vs.glsl", "shaders/skybox.fs.glsl");
     SkyboxProgram.addUniform("projection");
@@ -135,7 +133,6 @@ int main(int argc, char **argv)
     LightProgram.addUniform("uNormalMatrix");
     LightProgram.addUniform("uTexture");
 
-
     rendering::ShaderManager TextProgram(applicationPath, "shaders/text.vs.glsl", "shaders/text.fs.glsl");
     TextProgram.addUniform("projection");
 
@@ -146,11 +143,11 @@ int main(int argc, char **argv)
     glEnable(GL_DEPTH_TEST);
 
     // Creation of the Skybox
-    Skybox skybox;
+    rendering::Skybox skybox;
     unsigned int cubemapTexture;
     try
     {
-        cubemapTexture = glimac::loadCubemap(skybox_sky);
+        cubemapTexture = glimac::loadCubemap(rendering::skybox_sky);
     }
     catch (std::string &s)
     {
@@ -251,8 +248,8 @@ int main(int argc, char **argv)
         // PLAY AGAIN MENU DISPLAY
         if (menu_play_again & !menu_score & !menu_bool)
         {
-            player.setCoord(glm::vec3(1, 3, 0));
-            enemy.setCoord(glm::vec3(1, 0, 0));
+            player.setCoord(glm::vec3(2, 3, 0));
+            enemy.setCoord(glm::vec3(2, 0, 0));
             enemy.setOrientation(0);
             player.setLife(true);
             player.setOrientation(0);
@@ -346,31 +343,16 @@ int main(int argc, char **argv)
             LightProgram.uniform3f("uKspecular2", 1,0.5,0);
             LightProgram.uniform1i("uShininess", 10);
 
-            glm::vec4 LightDir = camera->getViewMatrix() * glm::vec4(0.0,1.0,0.0,0.0);
-            LightProgram.uniform3f("uLightDir_vs", LightDir.x, LightDir.y, LightDir.z);
+            glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 1700.f / 900.f, 0.1f, 100.f);
+            glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
-            glm::vec4 LightPos =  camera->getViewMatrix() * glm::vec4(player.convertCoord(),1.0);
-            LightProgram.uniform3f("uLightPos_vs", LightPos.x, LightPos.y, LightPos.z);
-
-            LightProgram.uniform3f("uLightIntensity", 0.6,0.6,0.6);
-
-            LightProgram.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
-            LightProgram.uniformMatrix4fv("uMVMatrix", ViewMatrix);
-            LightProgram.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
-
-            ViewMatrix = glm::translate(ViewMatrix, glm::vec3(1., 0.6, 0.));
-            ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));
-        
-            // Drawing of the Characters as cubes
-
+            // Drawing of the different elements
+            light.draw(camera,LightProgram, ProjMatrix, NormalMatrix, player);
             player.draw(cube_nemo, camera, LightProgram, ProjMatrix);
             enemy.draw(cube_shark, camera, LightProgram, ProjMatrix);
-
-            // Drawing of the Path
             courseMap.drawMap(cube_path, cube_coin, camera, LightProgram, ProjMatrix, windowManager);
             courseMap.drawObstacle(cube_obstacle, camera, LightProgram, ProjMatrix, windowManager);
 
-            // Drawing of the Skybox
             glDepthFunc(GL_LEQUAL);
             SkyboxProgram.use();
             skybox.draw(SkyboxProgram, camera, ProjMatrix, cubemapTexture);

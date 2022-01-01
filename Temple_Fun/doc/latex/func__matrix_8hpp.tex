@@ -1,0 +1,57 @@
+\hypertarget{func__matrix_8hpp}{}\doxysection{third-\/party/include/glm/detail/func\+\_\+matrix.hpp File Reference}
+\label{func__matrix_8hpp}\index{third-\/party/include/glm/detail/func\_matrix.hpp@{third-\/party/include/glm/detail/func\_matrix.hpp}}
+{\ttfamily \#include \char`\"{}../detail/precision.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../detail/setup.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../detail/type\+\_\+mat.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vec2.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vec3.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vec4.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../mat2x2.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../mat2x3.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../mat2x4.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../mat3x2.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../mat3x3.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../mat3x4.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../mat4x2.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../mat4x3.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../mat4x4.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}func\+\_\+matrix.\+inl\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structglm_1_1detail_1_1outerProduct__trait_3_01T_00_01P_00_01tvec2_00_01tvec2_01_4}{glm\+::detail\+::outer\+Product\+\_\+trait$<$ T, P, tvec2, tvec2 $>$}}
+\item 
+struct \mbox{\hyperlink{structglm_1_1detail_1_1outerProduct__trait_3_01T_00_01P_00_01tvec2_00_01tvec3_01_4}{glm\+::detail\+::outer\+Product\+\_\+trait$<$ T, P, tvec2, tvec3 $>$}}
+\item 
+struct \mbox{\hyperlink{structglm_1_1detail_1_1outerProduct__trait_3_01T_00_01P_00_01tvec2_00_01tvec4_01_4}{glm\+::detail\+::outer\+Product\+\_\+trait$<$ T, P, tvec2, tvec4 $>$}}
+\item 
+struct \mbox{\hyperlink{structglm_1_1detail_1_1outerProduct__trait_3_01T_00_01P_00_01tvec3_00_01tvec2_01_4}{glm\+::detail\+::outer\+Product\+\_\+trait$<$ T, P, tvec3, tvec2 $>$}}
+\item 
+struct \mbox{\hyperlink{structglm_1_1detail_1_1outerProduct__trait_3_01T_00_01P_00_01tvec3_00_01tvec3_01_4}{glm\+::detail\+::outer\+Product\+\_\+trait$<$ T, P, tvec3, tvec3 $>$}}
+\item 
+struct \mbox{\hyperlink{structglm_1_1detail_1_1outerProduct__trait_3_01T_00_01P_00_01tvec3_00_01tvec4_01_4}{glm\+::detail\+::outer\+Product\+\_\+trait$<$ T, P, tvec3, tvec4 $>$}}
+\item 
+struct \mbox{\hyperlink{structglm_1_1detail_1_1outerProduct__trait_3_01T_00_01P_00_01tvec4_00_01tvec2_01_4}{glm\+::detail\+::outer\+Product\+\_\+trait$<$ T, P, tvec4, tvec2 $>$}}
+\item 
+struct \mbox{\hyperlink{structglm_1_1detail_1_1outerProduct__trait_3_01T_00_01P_00_01tvec4_00_01tvec3_01_4}{glm\+::detail\+::outer\+Product\+\_\+trait$<$ T, P, tvec4, tvec3 $>$}}
+\item 
+struct \mbox{\hyperlink{structglm_1_1detail_1_1outerProduct__trait_3_01T_00_01P_00_01tvec4_00_01tvec4_01_4}{glm\+::detail\+::outer\+Product\+\_\+trait$<$ T, P, tvec4, tvec4 $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceglm}{glm}}
+\begin{DoxyCompactList}\small\item\em Open\+GL Mathematics (glm.\+g-\/truc.\+net) \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespaceglm_1_1detail}{glm\+::detail}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , precision P, template$<$ typename, precision $>$ class mat\+Type$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} mat\+Type$<$ T, P $>$ \mbox{\hyperlink{group__core__func__matrix_ga32bd7e365e5b29e869c0c4cb821bdc14}{glm\+::matrix\+Comp\+Mult}} (mat\+Type$<$ T, P $>$ const \&x, mat\+Type$<$ T, P $>$ const \&y)
+\begin{DoxyCompactList}\small\item\em Multiply matrix x by matrix y component-\/wise, i.\+e., result\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} is the scalar product of x\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} and y\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P, template$<$ typename, precision $>$ class vec\+TypeA, template$<$ typename, precision $>$ class vec\+TypeB$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} detail\+::outer\+Product\+\_\+trait$<$ T, P, vec\+TypeA, vec\+TypeB $>$\+::type \mbox{\hyperlink{group__core__func__matrix_ga4008856dc87a8abcf95a90004379618e}{glm\+::outer\+Product}} (vec\+TypeA$<$ T, P $>$ const \&c, vec\+TypeB$<$ T, P $>$ const \&r)
+\begin{DoxyCompactList}\small\item\em Treats the first parameter c as a column vector and the second parameter r as a row vector and does a linear algebraic matrix multiply c $\ast$ r. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P, template$<$ typename, precision $>$ class mat\+Type$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} T \mbox{\hyperlink{group__core__func__matrix_ga26ea77c574802bc6fc193c40478718d2}{glm\+::determinant}} (mat\+Type$<$ T, P $>$ const \&m)
+\begin{DoxyCompactList}\small\item\em Returns the transposed matrix of x. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , precision P, template$<$ typename, precision $>$ class mat\+Type$>$ }\\\mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\+\_\+\+FUNC\+\_\+\+DECL}} mat\+Type$<$ T, P $>$ \mbox{\hyperlink{group__core__func__matrix_gaff4e89603cf51cdbcedebc57cd8808a3}{glm\+::inverse}} (mat\+Type$<$ T, P $>$ const \&m)
+\begin{DoxyCompactList}\small\item\em Return the inverse of a squared matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}

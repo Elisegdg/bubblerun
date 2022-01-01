@@ -1,0 +1,86 @@
+\hypertarget{matrix__major__storage_8hpp_source}{}\doxysection{matrix\+\_\+major\+\_\+storage.\+hpp}
+\label{matrix__major__storage_8hpp_source}\index{third-\/party/include/glm/gtx/matrix\_major\_storage.hpp@{third-\/party/include/glm/gtx/matrix\_major\_storage.hpp}}
+\mbox{\hyperlink{matrix__major__storage_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00039}00039 \textcolor{preprocessor}{\#ifndef GLM\_GTX\_matrix\_major\_storage}}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00040}00040 \textcolor{preprocessor}{\#define GLM\_GTX\_matrix\_major\_storage}}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00042}00042 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#include "{}../glm.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#if(defined(GLM\_MESSAGES) \&\& !defined(GLM\_EXT\_INCLUDED))}}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTX\_matrix\_major\_storage extension included"{}})}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00047}00047 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00049}00049 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00050}00050 \{}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00056}00056     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00057}\mbox{\hyperlink{group__gtx__matrix__major__storage_ga8b17b6fc051156fd7c0d6e34948d66c3}{00057}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat2x2}{detail::tmat2x2<T, P>}} \mbox{\hyperlink{group__gtx__matrix__major__storage_ga8b17b6fc051156fd7c0d6e34948d66c3}{rowMajor2}}(}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00058}00058         \mbox{\hyperlink{structglm_1_1detail_1_1tvec2}{detail::tvec2<T, P>}} \textcolor{keyword}{const} \& v1, }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00059}00059         \mbox{\hyperlink{structglm_1_1detail_1_1tvec2}{detail::tvec2<T, P>}} \textcolor{keyword}{const} \& v2);}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00060}00060         }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00063}00063     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00064}\mbox{\hyperlink{group__gtx__matrix__major__storage_ga67aecd48551a39c300c3428f49ba71fe}{00064}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat2x2}{detail::tmat2x2<T, P>}} \mbox{\hyperlink{group__gtx__matrix__major__storage_ga8b17b6fc051156fd7c0d6e34948d66c3}{rowMajor2}}(}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00065}00065         \mbox{\hyperlink{structglm_1_1detail_1_1tmat2x2}{detail::tmat2x2<T, P>}} \textcolor{keyword}{const} \& m);}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00069}00069     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00070}\mbox{\hyperlink{group__gtx__matrix__major__storage_ga0f7ba83258a2cae24ca28b8d41259074}{00070}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat3x3}{detail::tmat3x3<T, P>}} \mbox{\hyperlink{group__gtx__matrix__major__storage_ga0f7ba83258a2cae24ca28b8d41259074}{rowMajor3}}(}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00071}00071         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& v1, }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00072}00072         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& v2, }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00073}00073         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& v3);}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00077}00077     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00078}\mbox{\hyperlink{group__gtx__matrix__major__storage_ga3072bfe83e7b6d8f86cea10a8c76cd6b}{00078}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat3x3}{detail::tmat3x3<T, P>}} \mbox{\hyperlink{group__gtx__matrix__major__storage_ga0f7ba83258a2cae24ca28b8d41259074}{rowMajor3}}(}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00079}00079         \mbox{\hyperlink{structglm_1_1detail_1_1tmat3x3}{detail::tmat3x3<T, P>}} \textcolor{keyword}{const} \& m);}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00083}00083     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00084}\mbox{\hyperlink{group__gtx__matrix__major__storage_ga5d38429ea897e2c3f18e87e2e765d1cc}{00084}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, P>}} \mbox{\hyperlink{group__gtx__matrix__major__storage_ga5d38429ea897e2c3f18e87e2e765d1cc}{rowMajor4}}(}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00085}00085         \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \textcolor{keyword}{const} \& v1, }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00086}00086         \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \textcolor{keyword}{const} \& v2,}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00087}00087         \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \textcolor{keyword}{const} \& v3, }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00088}00088         \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \textcolor{keyword}{const} \& v4);}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00092}00092     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00093}\mbox{\hyperlink{group__gtx__matrix__major__storage_gadaf40e377f66137b1de17cc46938730f}{00093}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, P>}} \mbox{\hyperlink{group__gtx__matrix__major__storage_ga5d38429ea897e2c3f18e87e2e765d1cc}{rowMajor4}}(}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00094}00094         \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, P>}} \textcolor{keyword}{const} \& m);}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00098}00098     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00099}\mbox{\hyperlink{group__gtx__matrix__major__storage_ga559749e3716eb4fc6e99b88b30d68ca6}{00099}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat2x2}{detail::tmat2x2<T, P>}} \mbox{\hyperlink{group__gtx__matrix__major__storage_ga559749e3716eb4fc6e99b88b30d68ca6}{colMajor2}}(}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00100}00100         \mbox{\hyperlink{structglm_1_1detail_1_1tvec2}{detail::tvec2<T, P>}} \textcolor{keyword}{const} \& v1, }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00101}00101         \mbox{\hyperlink{structglm_1_1detail_1_1tvec2}{detail::tvec2<T, P>}} \textcolor{keyword}{const} \& v2);}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00102}00102         }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00105}00105     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00106}\mbox{\hyperlink{group__gtx__matrix__major__storage_ga129708bad17f6abf3c08805e8579be7d}{00106}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat2x2}{detail::tmat2x2<T, P>}} \mbox{\hyperlink{group__gtx__matrix__major__storage_ga559749e3716eb4fc6e99b88b30d68ca6}{colMajor2}}(}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00107}00107         \mbox{\hyperlink{structglm_1_1detail_1_1tmat2x2}{detail::tmat2x2<T, P>}} \textcolor{keyword}{const} \& m);}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00111}00111     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00112}\mbox{\hyperlink{group__gtx__matrix__major__storage_ga9bdffb4334a9d6196c0aeab79711b2d7}{00112}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat3x3}{detail::tmat3x3<T, P>}} \mbox{\hyperlink{group__gtx__matrix__major__storage_ga9bdffb4334a9d6196c0aeab79711b2d7}{colMajor3}}(}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00113}00113         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& v1, }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00114}00114         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& v2, }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00115}00115         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& v3);}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00116}00116         }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00119}00119     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00120}\mbox{\hyperlink{group__gtx__matrix__major__storage_ga31c013dd47ee417b11c29e7ddee543ea}{00120}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat3x3}{detail::tmat3x3<T, P>}} \mbox{\hyperlink{group__gtx__matrix__major__storage_ga9bdffb4334a9d6196c0aeab79711b2d7}{colMajor3}}(}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00121}00121         \mbox{\hyperlink{structglm_1_1detail_1_1tmat3x3}{detail::tmat3x3<T, P>}} \textcolor{keyword}{const} \& m);}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00122}00122         }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00125}00125     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00126}\mbox{\hyperlink{group__gtx__matrix__major__storage_ga14282dcc82adc0a8dc08db7d2cd2ed76}{00126}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, P>}} \mbox{\hyperlink{group__gtx__matrix__major__storage_ga14282dcc82adc0a8dc08db7d2cd2ed76}{colMajor4}}(}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00127}00127         \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \textcolor{keyword}{const} \& v1, }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00128}00128         \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \textcolor{keyword}{const} \& v2, }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00129}00129         \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \textcolor{keyword}{const} \& v3, }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00130}00130         \mbox{\hyperlink{structglm_1_1detail_1_1tvec4}{detail::tvec4<T, P>}} \textcolor{keyword}{const} \& v4);}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00131}00131                 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00134}00134     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P> }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00135}\mbox{\hyperlink{group__gtx__matrix__major__storage_ga23f553b8437e2b12634a75f701cbd3ce}{00135}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, P>}} \mbox{\hyperlink{group__gtx__matrix__major__storage_ga14282dcc82adc0a8dc08db7d2cd2ed76}{colMajor4}}(}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00136}00136         \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, P>}} \textcolor{keyword}{const} \& m);}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00139}00139 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00141}00141 \textcolor{preprocessor}{\#include "{}matrix\_major\_storage.inl"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{matrix__major__storage_8hpp_source_l00143}00143 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_GTX\_matrix\_major\_storage}}
+
+\end{DoxyCode}

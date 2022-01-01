@@ -1,0 +1,157 @@
+\hypertarget{classrendering_1_1Cube}{}\doxysection{rendering\+::Cube Class Reference}
+\label{classrendering_1_1Cube}\index{rendering::Cube@{rendering::Cube}}
+
+
+Class of \mbox{\hyperlink{classrendering_1_1Cube}{Cube}}.  
+
+
+
+
+{\ttfamily \#include $<$Cube.\+hpp$>$}
+
+Inheritance diagram for rendering\+::Cube\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrendering_1_1Cube}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrendering_1_1Cube_aa19589050221ec95804889e1082e1601}{Cube}} (\mbox{\hyperlink{classrendering_1_1Texture}{rendering\+::\+Texture}} texture, float size)
+\begin{DoxyCompactList}\small\item\em Constructor of the \mbox{\hyperlink{classrendering_1_1Cube}{Cube}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrendering_1_1Cube_ab0e6a405b5bf7c2cdcdfde86342bbd0f}{$\sim$\+Cube}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor of the \mbox{\hyperlink{classrendering_1_1Cube}{Cube}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Cube_a38ceb3b2de9f0a580b2fc4fc805f7d3d}{build}} (const float \&size)
+\begin{DoxyCompactList}\small\item\em Fills the vertices vector of the cube. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class of \mbox{\hyperlink{classrendering_1_1Cube}{Cube}}. 
+
+This class enables to create a cube-\/shaped mesh. 
+
+Definition at line \mbox{\hyperlink{Cube_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{Cube_8hpp_source}{Cube.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrendering_1_1Cube_aa19589050221ec95804889e1082e1601}\label{classrendering_1_1Cube_aa19589050221ec95804889e1082e1601}} 
+\index{rendering::Cube@{rendering::Cube}!Cube@{Cube}}
+\index{Cube@{Cube}!rendering::Cube@{rendering::Cube}}
+\doxysubsubsection{\texorpdfstring{Cube()}{Cube()}}
+{\footnotesize\ttfamily rendering\+::\+Cube\+::\+Cube (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1Texture}{rendering\+::\+Texture}}}]{texture,  }\item[{float}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor of the \mbox{\hyperlink{classrendering_1_1Cube}{Cube}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & The texture of the cube \\
+\hline
+{\em size} & The size of the cube \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Cube_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{Cube_8hpp_source}{Cube.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028                                                : \mbox{\hyperlink{classrendering_1_1Model_ad5fb02eca2ae3d40fbcab9594ae39df8}{Model}}(texture) \{}
+\DoxyCodeLine{00029         \mbox{\hyperlink{classrendering_1_1Cube_a38ceb3b2de9f0a580b2fc4fc805f7d3d}{build}}(size);}
+\DoxyCodeLine{00030     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Cube_ab0e6a405b5bf7c2cdcdfde86342bbd0f}\label{classrendering_1_1Cube_ab0e6a405b5bf7c2cdcdfde86342bbd0f}} 
+\index{rendering::Cube@{rendering::Cube}!````~Cube@{$\sim$Cube}}
+\index{````~Cube@{$\sim$Cube}!rendering::Cube@{rendering::Cube}}
+\doxysubsubsection{\texorpdfstring{$\sim$Cube()}{~Cube()}}
+{\footnotesize\ttfamily rendering\+::\+Cube\+::$\sim$\+Cube (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor of the \mbox{\hyperlink{classrendering_1_1Cube}{Cube}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrendering_1_1Cube_a38ceb3b2de9f0a580b2fc4fc805f7d3d}\label{classrendering_1_1Cube_a38ceb3b2de9f0a580b2fc4fc805f7d3d}} 
+\index{rendering::Cube@{rendering::Cube}!build@{build}}
+\index{build@{build}!rendering::Cube@{rendering::Cube}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily void rendering\+::\+Cube\+::build (\begin{DoxyParamCaption}\item[{const float \&}]{size }\end{DoxyParamCaption})}
+
+
+
+Fills the vertices vector of the cube. 
+
+
+
+Definition at line \mbox{\hyperlink{Cube_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{Cube_8cpp_source}{Cube.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010     \{}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012         \textcolor{keywordtype}{float} halfSize = size / 2.;}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{00014         \textcolor{comment}{// FRONT FACE}}
+\DoxyCodeLine{00015         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(-\/halfSize, halfSize, halfSize), glm::vec3(-\/halfSize, halfSize, halfSize), glm::vec2(1, 1)\});   \textcolor{comment}{// TOP LEFT}}
+\DoxyCodeLine{00016         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(halfSize, halfSize, halfSize), glm::vec3(halfSize, halfSize, halfSize), glm::vec2(0, 1)\});     \textcolor{comment}{// TOP RIGHT}}
+\DoxyCodeLine{00017         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(-\/halfSize, -\/halfSize, halfSize), glm::vec3(-\/halfSize, -\/halfSize, halfSize), glm::vec2(1, 0)\}); \textcolor{comment}{// BOTTOM LEFT}}
+\DoxyCodeLine{00018         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(halfSize, -\/halfSize, halfSize), glm::vec3(halfSize, -\/halfSize, halfSize), glm::vec2(0, 0)\});   \textcolor{comment}{// BOTTOM RIGHT}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021         \textcolor{comment}{// BACK FACE}}
+\DoxyCodeLine{00022         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(-\/halfSize, halfSize, -\/halfSize), glm::vec3(-\/halfSize, halfSize, -\/halfSize), glm::vec2(1, 1)\});   \textcolor{comment}{// TOP LEFT}}
+\DoxyCodeLine{00023         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(halfSize, halfSize, -\/halfSize), glm::vec3(halfSize, halfSize, -\/halfSize), glm::vec2(0, 1)\});     \textcolor{comment}{// TOP RIGHT}}
+\DoxyCodeLine{00024         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(-\/halfSize, -\/halfSize, -\/halfSize), glm::vec3(-\/halfSize, -\/halfSize, -\/halfSize), glm::vec2(1, 0)\}); \textcolor{comment}{// BOTTOM LEFT}}
+\DoxyCodeLine{00025         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(halfSize, -\/halfSize, -\/halfSize), glm::vec3(halfSize, -\/halfSize, -\/halfSize), glm::vec2(0, 0)\});   \textcolor{comment}{// BOTTOM RIGHT}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028         \textcolor{comment}{// RIGHT FACE}}
+\DoxyCodeLine{00029         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(halfSize, halfSize, -\/halfSize), glm::vec3(halfSize, halfSize, -\/halfSize), glm::vec2(1, 1)\});   \textcolor{comment}{// TOP LEFT}}
+\DoxyCodeLine{00030         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(halfSize, halfSize, halfSize), glm::vec3(halfSize, halfSize, halfSize), glm::vec2(0, 1)\});     \textcolor{comment}{// TOP RIGHT}}
+\DoxyCodeLine{00031         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(halfSize, -\/halfSize, -\/halfSize), glm::vec3(halfSize, -\/halfSize, -\/halfSize), glm::vec2(1, 0)\}); \textcolor{comment}{// BOTTOM LEFT}}
+\DoxyCodeLine{00032         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(halfSize, -\/halfSize, halfSize), glm::vec3(halfSize, -\/halfSize, halfSize), glm::vec2(0, 0)\});   \textcolor{comment}{// BOTTOM RIGHT}}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035         \textcolor{comment}{// LEFT FACE}}
+\DoxyCodeLine{00036         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(-\/halfSize, halfSize, halfSize), glm::vec3(-\/halfSize, halfSize, halfSize), glm::vec2(1, 1)\});   \textcolor{comment}{// TOP LEFT}}
+\DoxyCodeLine{00037         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(-\/halfSize, halfSize, -\/halfSize), glm::vec3(-\/halfSize, halfSize, -\/halfSize), glm::vec2(0, 1)\}); \textcolor{comment}{// TOP RIGHT}}
+\DoxyCodeLine{00038         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(-\/halfSize, -\/halfSize, halfSize), glm::vec3(-\/halfSize, -\/halfSize, halfSize), glm::vec2(1, 0)\}); \textcolor{comment}{// BOTTOM LEFT}}
+\DoxyCodeLine{00039         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(-\/halfSize, -\/halfSize, -\/halfSize), glm::vec3(-\/halfSize, -\/halfSize, -\/halfSize), glm::vec2(0, 0)\}); \textcolor{comment}{// BOTTOM RIGHT}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041         \textcolor{comment}{// UP FACE}}
+\DoxyCodeLine{00042         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(-\/halfSize, halfSize, -\/halfSize), glm::vec3(-\/halfSize, halfSize, -\/halfSize), glm::vec2(1, 1)\}); \textcolor{comment}{// TOP LEFT}}
+\DoxyCodeLine{00043         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(halfSize, halfSize, -\/halfSize), glm::vec3(halfSize, halfSize, -\/halfSize), glm::vec2(0, 1)\});   \textcolor{comment}{// TOP RIGHT}}
+\DoxyCodeLine{00044         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(-\/halfSize, halfSize, halfSize), glm::vec3(halfSize, halfSize, halfSize), glm::vec2(1, 0)\});    \textcolor{comment}{// BOTTOM LEFT}}
+\DoxyCodeLine{00045         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(halfSize, halfSize, halfSize), glm::vec3(halfSize, halfSize, halfSize), glm::vec2(0, 0)\});   \textcolor{comment}{// BOTTOM RIGHT}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047         \textcolor{comment}{// BOTTOM FACE}}
+\DoxyCodeLine{00048         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(-\/halfSize, -\/halfSize, -\/halfSize), glm::vec3(-\/halfSize, -\/halfSize, -\/halfSize), glm::vec2(1, 1)\}); \textcolor{comment}{// TOP LEFT}}
+\DoxyCodeLine{00049         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(halfSize, -\/halfSize, -\/halfSize), glm::vec3(halfSize, -\/halfSize, -\/halfSize), glm::vec2(0, 1)\});   \textcolor{comment}{// TOP RIGHT}}
+\DoxyCodeLine{00050         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(-\/halfSize, -\/halfSize, halfSize), glm::vec3(-\/halfSize, -\/halfSize, halfSize), glm::vec2(1, 0)\});   \textcolor{comment}{// BOTTOM LEFT}}
+\DoxyCodeLine{00051         \mbox{\hyperlink{classrendering_1_1Model_aa5a072d905cf2f57b5729f678e0404bd}{m\_vertices}}.push\_back((glimac::ShapeVertex)\{glm::vec3(halfSize, -\/halfSize, halfSize), glm::vec3(halfSize, -\/halfSize, halfSize), glm::vec2(0, 0)\});   \textcolor{comment}{// BOTTOM RIGHT}}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053         \mbox{\hyperlink{classrendering_1_1Model_af68d6e56dc36e18ff4be587f5f75f5e5}{m\_vertexCount}} = 36;}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055         \mbox{\hyperlink{classrendering_1_1Model_ab9a4020386d3d3df53c88b2738671130}{m\_index}} = \{0,1,2,1,2,3,         \textcolor{comment}{//FRONT FACE}}
+\DoxyCodeLine{00056                        4,5,6,5,6,7,         \textcolor{comment}{//BACK FACE}}
+\DoxyCodeLine{00057                        8,9,10,9,10,11,      \textcolor{comment}{//RIGHT FACE}}
+\DoxyCodeLine{00058                        12,13,14,13,14,15,   \textcolor{comment}{//LEFT FACE}}
+\DoxyCodeLine{00059                        16,17,18,17,18,19,   \textcolor{comment}{//UP FACE}}
+\DoxyCodeLine{00060                        20,21,22,21,22,23    \textcolor{comment}{//BOTTOM FACE}}
+\DoxyCodeLine{00061                        \};  }
+\DoxyCodeLine{00062     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rendering/include/rendering/\mbox{\hyperlink{Cube_8hpp}{Cube.\+hpp}}\item 
+rendering/src/\mbox{\hyperlink{Cube_8cpp}{Cube.\+cpp}}\end{DoxyCompactItemize}

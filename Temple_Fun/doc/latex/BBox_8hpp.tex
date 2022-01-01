@@ -1,0 +1,68 @@
+\hypertarget{BBox_8hpp}{}\doxysection{glimac/include/glimac/\+BBox.hpp File Reference}
+\label{BBox_8hpp}\index{glimac/include/glimac/BBox.hpp@{glimac/include/glimac/BBox.hpp}}
+{\ttfamily \#include \char`\"{}glm.\+hpp\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structglimac_1_1BBox3f}{glimac\+::\+BBox3f}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceglimac}{glimac}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceglimac_af7b3a92359ef55ad38fb46b78d8f56f5}{glimac\+::is\+Empty}} (const BBox3f \&box)
+\item 
+const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \mbox{\hyperlink{namespaceglimac_ae7ea0ad7ad60966328b8b2a198ad1dc5}{glimac\+::center}} (const BBox3f \&box)
+\item 
+const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \mbox{\hyperlink{namespaceglimac_a1286d34984f2db1de4b7a161bcdcc79d}{glimac\+::center2}} (const BBox3f \&box)
+\item 
+const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \mbox{\hyperlink{namespaceglimac_a66029611b8aa9645c13bb0d68c8f581e}{glimac\+::size}} (const BBox3f \&box)
+\item 
+const BBox3f \mbox{\hyperlink{namespaceglimac_a9f099e1c6ba9f33fe41cce02952266f5}{glimac\+::merge}} (const BBox3f \&a, const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&b)
+\item 
+const BBox3f \mbox{\hyperlink{namespaceglimac_af4d6083700d9822693de16c3e39c68c3}{glimac\+::merge}} (const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&a, const BBox3f \&b)
+\item 
+const BBox3f \mbox{\hyperlink{namespaceglimac_adf530cee77a4b3dadb118123627246b7}{glimac\+::merge}} (const BBox3f \&a, const BBox3f \&b)
+\item 
+const BBox3f \mbox{\hyperlink{namespaceglimac_a50870ad9d151e88df52a4e3734bb1643}{glimac\+::merge}} (const BBox3f \&a, const BBox3f \&b, const BBox3f \&c)
+\item 
+const BBox3f \& \mbox{\hyperlink{namespaceglimac_a5ce77dda427c1d6cdb73cc0fcf9b37d6}{glimac\+::operator+=}} (BBox3f \&a, const BBox3f \&b)
+\item 
+const BBox3f \& \mbox{\hyperlink{namespaceglimac_a68ff21159f6d84629b0dbe6930120cb3}{glimac\+::operator+=}} (BBox3f \&a, const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&b)
+\item 
+BBox3f \mbox{\hyperlink{namespaceglimac_a8680d09f3e2292f083f6cefce95d41e7}{glimac\+::merge}} (const BBox3f \&a, const BBox3f \&b, const BBox3f \&c, const BBox3f \&d)
+\item 
+BBox3f \mbox{\hyperlink{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}{glimac\+::merge}} (const BBox3f \&a, const BBox3f \&b, const BBox3f \&c, const BBox3f \&d, const BBox3f \&e, const BBox3f \&f, const BBox3f \&g, const BBox3f \&h)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_a086462f9d14f3af4d2b3d00c9cf61d20}{glimac\+::operator==}} (const BBox3f \&a, const BBox3f \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_af0e6fe83c5779c89714d6a864e9f74ac}{glimac\+::operator!=}} (const BBox3f \&a, const BBox3f \&b)
+\item 
+BBox3f \mbox{\hyperlink{namespaceglimac_af5dfeb56647cba37ceb488d57120c9a2}{glimac\+::operator$\ast$}} (const float \&a, const BBox3f \&b)
+\item 
+const BBox3f \mbox{\hyperlink{namespaceglimac_adb0bbb865d3fd2206875ff7f350a43dc}{glimac\+::intersect}} (const BBox3f \&a, const BBox3f \&b)
+\item 
+const BBox3f \mbox{\hyperlink{namespaceglimac_a5ed913fdee93dbfdc38152ff4866e529}{glimac\+::intersect}} (const BBox3f \&a, const BBox3f \&b, const BBox3f \&c)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_af945047660f89612aee39af324b57ab1}{glimac\+::disjoint}} (const BBox3f \&a, const BBox3f \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_af23f0fc2accb7aa5ab4ba12018cff335}{glimac\+::disjoint}} (const BBox3f \&a, const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_a505e1fd8b32775d812466a118f7203a0}{glimac\+::disjoint}} (const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&a, const BBox3f \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_aafe905569a9383a2d51f203f89bac2e9}{glimac\+::conjoint}} (const BBox3f \&a, const BBox3f \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_a5f57f8def5c4bad5e4ab5c0202fd70f3}{glimac\+::conjoint}} (const BBox3f \&a, const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_ad0e509e8eac7c698b0bc3c4c5777fb74}{glimac\+::conjoint}} (const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&a, const BBox3f \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_a1ae484262ea1ae8e3333ea994ea1a299}{glimac\+::subset}} (const BBox3f \&a, const BBox3f \&b)
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespaceglimac_ae4d43a1972ae8a4a5833277f7f83fe99}{glimac\+::operator$<$$<$}} (std\+::ostream \&cout, const BBox3f \&box)
+\item 
+void \mbox{\hyperlink{namespaceglimac_aa47b0f2b0b1ef75335813a7e06f33d0b}{glimac\+::bounding\+Sphere}} (const BBox3f \&bbox, \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&c, float \&radius)
+\end{DoxyCompactItemize}

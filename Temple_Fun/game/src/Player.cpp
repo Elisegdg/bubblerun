@@ -3,6 +3,8 @@
 #include "../include/game/CourseMap.hpp"
 #include <glimac/glm.hpp>
 
+
+namespace game{
 void Player::setCoord(glm::vec3 coord)
 {
     m_coord = coord;
@@ -44,7 +46,7 @@ void Player::setLife(bool life)
 
 glm::vec3 Player::convertCoord()
 {
-    return glm::vec3(getCoord().x - 1., getCoord().z, getCoord().y);
+    return glm::vec3(getCoord().x-2, getCoord().z, getCoord().y);
 }
 
 void Player::draw(rendering::Model &mesh, rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix)
@@ -301,4 +303,6 @@ void Player::moveEnemyManager(Object* objet_enemy)
         move(glm::vec3(-1, 0, 0));
         setOrientation(-90.);
     }
+}
+
 }

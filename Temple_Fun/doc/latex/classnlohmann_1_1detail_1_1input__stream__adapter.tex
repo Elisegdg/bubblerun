@@ -1,0 +1,157 @@
+\hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter}{}\doxysection{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter Class Reference}
+\label{classnlohmann_1_1detail_1_1input__stream__adapter}\index{nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}}
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter_a72f0713587f6bb3f3fbaae7d34c0ca39}{char\+\_\+type}} = char
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter_a1d29416acc75b02bfaf251d9d8ef8f36}{$\sim$input\+\_\+stream\+\_\+adapter}} ()
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter_af487152e4606d013eb4ec6a90eaf82ea}{input\+\_\+stream\+\_\+adapter}} (std\+::istream \&i)
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter_a5190fe4d0c5ff2e3b348b28ee3bb2218}{input\+\_\+stream\+\_\+adapter}} (const \mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}} \&)=delete
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}} \& \mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter_a4a0effdbafa19bffe6697142678d463e}{operator=}} (\mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}} \&)=delete
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}} \& \mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter_a7e056d16755019b4b60946dab1e140a1}{operator=}} (\mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}} \&\&)=delete
+\item 
+\mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter_a0be44ef098e88e8453eb4c31c9b14421}{input\+\_\+stream\+\_\+adapter}} (\mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}} \&\&rhs) noexcept
+\item 
+std\+::char\+\_\+traits$<$ char $>$\+::int\+\_\+type \mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter_ac00107507868a7e00056d6a814334912}{get\+\_\+character}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Input adapter for a (caching) istream. Ignores a UFT Byte Order Mark at beginning of input. Does not support changing the underlying std\+::streambuf in mid-\/input. Maintains underlying std\+::istream and std\+::streambuf to support subsequent use of standard std\+::istream operations to process any input characters following those used in parsing the JSON input. Clears the std\+::istream flags; any input errors (e.\+g., EOF) will be detected by the first subsequent call for input from the std\+::istream. 
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l05499}{5499}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a72f0713587f6bb3f3fbaae7d34c0ca39}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a72f0713587f6bb3f3fbaae7d34c0ca39}} 
+\index{nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}!char\_type@{char\_type}}
+\index{char\_type@{char\_type}!nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}}
+\doxysubsubsection{\texorpdfstring{char\_type}{char\_type}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter_a72f0713587f6bb3f3fbaae7d34c0ca39}{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::char\+\_\+type}} =  char}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l05502}{5502}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a1d29416acc75b02bfaf251d9d8ef8f36}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a1d29416acc75b02bfaf251d9d8ef8f36}} 
+\index{nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}!````~input\_stream\_adapter@{$\sim$input\_stream\_adapter}}
+\index{````~input\_stream\_adapter@{$\sim$input\_stream\_adapter}!nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}}
+\doxysubsubsection{\texorpdfstring{$\sim$input\_stream\_adapter()}{~input\_stream\_adapter()}}
+{\footnotesize\ttfamily nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::$\sim$input\+\_\+stream\+\_\+adapter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l05504}{5504}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{05505     \{}
+\DoxyCodeLine{05506         \textcolor{comment}{// clear stream flags; we use underlying streambuf I/O, do not}}
+\DoxyCodeLine{05507         \textcolor{comment}{// maintain ifstream flags, except eof}}
+\DoxyCodeLine{05508         \textcolor{keywordflow}{if} (is != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{05509         \{}
+\DoxyCodeLine{05510             is-\/>clear(is-\/>rdstate() \& std::ios::eofbit);}
+\DoxyCodeLine{05511         \}}
+\DoxyCodeLine{05512     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_af487152e4606d013eb4ec6a90eaf82ea}\label{classnlohmann_1_1detail_1_1input__stream__adapter_af487152e4606d013eb4ec6a90eaf82ea}} 
+\index{nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}!input\_stream\_adapter@{input\_stream\_adapter}}
+\index{input\_stream\_adapter@{input\_stream\_adapter}!nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}}
+\doxysubsubsection{\texorpdfstring{input\_stream\_adapter()}{input\_stream\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::input\+\_\+stream\+\_\+adapter (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l05514}{5514}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{05515         : is(\&i), sb(i.rdbuf())}
+\DoxyCodeLine{05516     \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a5190fe4d0c5ff2e3b348b28ee3bb2218}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a5190fe4d0c5ff2e3b348b28ee3bb2218}} 
+\index{nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}!input\_stream\_adapter@{input\_stream\_adapter}}
+\index{input\_stream\_adapter@{input\_stream\_adapter}!nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}}
+\doxysubsubsection{\texorpdfstring{input\_stream\_adapter()}{input\_stream\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::input\+\_\+stream\+\_\+adapter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a0be44ef098e88e8453eb4c31c9b14421}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a0be44ef098e88e8453eb4c31c9b14421}} 
+\index{nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}!input\_stream\_adapter@{input\_stream\_adapter}}
+\index{input\_stream\_adapter@{input\_stream\_adapter}!nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}}
+\doxysubsubsection{\texorpdfstring{input\_stream\_adapter()}{input\_stream\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::input\+\_\+stream\+\_\+adapter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}} \&\&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l05523}{5523}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{05524         : is(rhs.is), sb(rhs.sb)}
+\DoxyCodeLine{05525     \{}
+\DoxyCodeLine{05526         rhs.is = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{05527         rhs.sb = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{05528     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_ac00107507868a7e00056d6a814334912}\label{classnlohmann_1_1detail_1_1input__stream__adapter_ac00107507868a7e00056d6a814334912}} 
+\index{nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}!get\_character@{get\_character}}
+\index{get\_character@{get\_character}!nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}}
+\doxysubsubsection{\texorpdfstring{get\_character()}{get\_character()}}
+{\footnotesize\ttfamily std\+::char\+\_\+traits$<$ char $>$\+::int\+\_\+type nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::get\+\_\+character (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{json_8hpp_source_l05533}{5533}} of file \mbox{\hyperlink{json_8hpp_source}{json.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{05534     \{}
+\DoxyCodeLine{05535         \textcolor{keyword}{auto} res = sb-\/>sbumpc();}
+\DoxyCodeLine{05536         \textcolor{comment}{// set eof manually, as we don't use the istream interface.}}
+\DoxyCodeLine{05537         \textcolor{keywordflow}{if} (\mbox{\hyperlink{json_8hpp_a8df7de76ab3c9445f46f6994ec205bcd}{JSON\_HEDLEY\_UNLIKELY}}(res == std::char\_traits<char>::eof()))}
+\DoxyCodeLine{05538         \{}
+\DoxyCodeLine{05539             is-\/>clear(is-\/>rdstate() | std::ios::eofbit);}
+\DoxyCodeLine{05540         \}}
+\DoxyCodeLine{05541         \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{05542     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a7e056d16755019b4b60946dab1e140a1}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a7e056d16755019b4b60946dab1e140a1}} 
+\index{nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}} \& nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a4a0effdbafa19bffe6697142678d463e}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a4a0effdbafa19bffe6697142678d463e}} 
+\index{nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}!operator=@{operator=}}
+\index{operator=@{operator=}!nlohmann::detail::input\_stream\_adapter@{nlohmann::detail::input\_stream\_adapter}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}} \& nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+rendering/include/rendering/\mbox{\hyperlink{json_8hpp}{json.\+hpp}}\end{DoxyCompactItemize}

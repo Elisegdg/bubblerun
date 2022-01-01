@@ -1,0 +1,504 @@
+\hypertarget{classrendering_1_1Text}{}\doxysection{rendering\+::Text Class Reference}
+\label{classrendering_1_1Text}\index{rendering::Text@{rendering::Text}}
+
+
+Abstract class of \mbox{\hyperlink{classrendering_1_1Text}{Text}}.  
+
+
+
+
+{\ttfamily \#include $<$Text.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrendering_1_1Text_ab01f93a457cf9de7f7d16d960bbe40d0}{Text}} ()=default
+\begin{DoxyCompactList}\small\item\em Default Constructor of the \mbox{\hyperlink{classrendering_1_1Text}{Text}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrendering_1_1Text_a8710f197ff7dd7fbd6868a24d701ab4a}{$\sim$\+Text}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor of the \mbox{\hyperlink{classrendering_1_1Text}{Text}} class. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classrendering_1_1Text_a6a468f154183fa93a20b6ccb40b20380}{get\+Texture\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Getter of the \mbox{\hyperlink{classrendering_1_1Texture}{Texture}} Id. \end{DoxyCompactList}\item 
+glm\+::ivec2 \mbox{\hyperlink{classrendering_1_1Text_a83dd9d4f133502a799c410d0c93da06f}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Getter of the size of glyph. \end{DoxyCompactList}\item 
+glm\+::ivec2 \mbox{\hyperlink{classrendering_1_1Text_a6ad25d2a52edbb80e972352c43a16972}{get\+Bearing}} () const
+\begin{DoxyCompactList}\small\item\em Getter of the offset from baseline to left/top of glyph. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classrendering_1_1Text_a9df70ff7e9ef15fc840754e78456e7eb}{get\+Advance}} () const
+\begin{DoxyCompactList}\small\item\em Getter of the offset to advance to next glyph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Text_a7d6776480180973b2ca3d1e1a332e862}{load\+Font}} (std\+::map$<$ char, \mbox{\hyperlink{classrendering_1_1Text}{Text}} $>$ \&Characters)
+\begin{DoxyCompactList}\small\item\em Loads the font. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{Render\+Text}} (GLuint \&id, std\+::map$<$ char, \mbox{\hyperlink{classrendering_1_1Text}{Text}} $>$ \&Characters, std\+::string text, float x, float y, float scale, glm\+::vec3 color)
+\begin{DoxyCompactList}\small\item\em Displays the text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Text_a6e36ee7ed6d2f07e90cb929dedd0c827}{render\+Score\+Text}} (\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Text\+Program, std\+::map$<$ char, \mbox{\hyperlink{classrendering_1_1Text}{rendering\+::\+Text}} $>$ \&Characters, \mbox{\hyperlink{classrendering_1_1Score}{Score}} \&scorejson)
+\begin{DoxyCompactList}\small\item\em Render the text of the \mbox{\hyperlink{classrendering_1_1Score}{Score}} \mbox{\hyperlink{classrendering_1_1Menu}{Menu}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Text_a57568823062e1ffadff09c98b7d54c0d}{render\+Menu\+Text}} (\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Text\+Program, std\+::map$<$ char, \mbox{\hyperlink{classrendering_1_1Text}{rendering\+::\+Text}} $>$ \&Characters)
+\begin{DoxyCompactList}\small\item\em Render the text of the Main \mbox{\hyperlink{classrendering_1_1Menu}{Menu}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Text_a118fee45a66838755411a16d8a8568b9}{render\+Play\+Again\+Text}} (\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Text\+Program, std\+::map$<$ char, \mbox{\hyperlink{classrendering_1_1Text}{rendering\+::\+Text}} $>$ \&Characters, int \&score)
+\begin{DoxyCompactList}\small\item\em Render the text of the \char`\"{}\+Play Again\char`\"{} \mbox{\hyperlink{classrendering_1_1Menu}{Menu}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Text_ab2434a0fb4d1907887830521b32d5aee}{render\+Game\+Text}} (\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Text\+Program, std\+::map$<$ char, \mbox{\hyperlink{classrendering_1_1Text}{rendering\+::\+Text}} $>$ \&Characters, int \&score)
+\begin{DoxyCompactList}\small\item\em Render the text of the Game Window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1Text_a7585872c073340edc4e7f3ad09470b23}{display}} ()
+\begin{DoxyCompactList}\small\item\em Displays the text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class of \mbox{\hyperlink{classrendering_1_1Text}{Text}}. 
+
+This class deals with displaying the text on the game window and menus. 
+
+Definition at line \mbox{\hyperlink{Text_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{Text_8hpp_source}{Text.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrendering_1_1Text_ab01f93a457cf9de7f7d16d960bbe40d0}\label{classrendering_1_1Text_ab01f93a457cf9de7f7d16d960bbe40d0}} 
+\index{rendering::Text@{rendering::Text}!Text@{Text}}
+\index{Text@{Text}!rendering::Text@{rendering::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}}
+{\footnotesize\ttfamily rendering\+::\+Text\+::\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default Constructor of the \mbox{\hyperlink{classrendering_1_1Text}{Text}} class. 
+
+\mbox{\Hypertarget{classrendering_1_1Text_a8710f197ff7dd7fbd6868a24d701ab4a}\label{classrendering_1_1Text_a8710f197ff7dd7fbd6868a24d701ab4a}} 
+\index{rendering::Text@{rendering::Text}!````~Text@{$\sim$Text}}
+\index{````~Text@{$\sim$Text}!rendering::Text@{rendering::Text}}
+\doxysubsubsection{\texorpdfstring{$\sim$Text()}{~Text()}}
+{\footnotesize\ttfamily rendering\+::\+Text\+::$\sim$\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor of the \mbox{\hyperlink{classrendering_1_1Text}{Text}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrendering_1_1Text_a7585872c073340edc4e7f3ad09470b23}\label{classrendering_1_1Text_a7585872c073340edc4e7f3ad09470b23}} 
+\index{rendering::Text@{rendering::Text}!display@{display}}
+\index{display@{display}!rendering::Text@{rendering::Text}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void rendering\+::\+Text\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Displays the text. 
+
+
+
+Definition at line \mbox{\hyperlink{Text_8hpp_source_l00283}{283}} of file \mbox{\hyperlink{Text_8hpp_source}{Text.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00284         \{}
+\DoxyCodeLine{00285             glGenVertexArrays(1, \&m\_vao);}
+\DoxyCodeLine{00286             glGenBuffers(1, \&m\_vbo);}
+\DoxyCodeLine{00287             glBindVertexArray(m\_vao);}
+\DoxyCodeLine{00288             glBindBuffer(GL\_ARRAY\_BUFFER, m\_vbo);}
+\DoxyCodeLine{00289             glBufferData(GL\_ARRAY\_BUFFER, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}) * 6 * 4, NULL, GL\_DYNAMIC\_DRAW);}
+\DoxyCodeLine{00290             glEnableVertexAttribArray(0);}
+\DoxyCodeLine{00291             glVertexAttribPointer(0, 4, GL\_FLOAT, GL\_FALSE, 4 * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}), 0);}
+\DoxyCodeLine{00292             glBindBuffer(GL\_ARRAY\_BUFFER, 0);}
+\DoxyCodeLine{00293             glBindVertexArray(0);}
+\DoxyCodeLine{00294 }
+\DoxyCodeLine{00295             glEnable(GL\_DEPTH\_TEST);}
+\DoxyCodeLine{00296         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Text_a9df70ff7e9ef15fc840754e78456e7eb}\label{classrendering_1_1Text_a9df70ff7e9ef15fc840754e78456e7eb}} 
+\index{rendering::Text@{rendering::Text}!getAdvance@{getAdvance}}
+\index{getAdvance@{getAdvance}!rendering::Text@{rendering::Text}}
+\doxysubsubsection{\texorpdfstring{getAdvance()}{getAdvance()}}
+{\footnotesize\ttfamily unsigned int rendering\+::\+Text\+::get\+Advance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter of the offset to advance to next glyph. 
+
+
+
+Definition at line \mbox{\hyperlink{Text_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{Text_8hpp_source}{Text.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072         \{}
+\DoxyCodeLine{00073             \textcolor{keywordflow}{return} Advance;}
+\DoxyCodeLine{00074         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Text_a6ad25d2a52edbb80e972352c43a16972}\label{classrendering_1_1Text_a6ad25d2a52edbb80e972352c43a16972}} 
+\index{rendering::Text@{rendering::Text}!getBearing@{getBearing}}
+\index{getBearing@{getBearing}!rendering::Text@{rendering::Text}}
+\doxysubsubsection{\texorpdfstring{getBearing()}{getBearing()}}
+{\footnotesize\ttfamily glm\+::ivec2 rendering\+::\+Text\+::get\+Bearing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter of the offset from baseline to left/top of glyph. 
+
+
+
+Definition at line \mbox{\hyperlink{Text_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{Text_8hpp_source}{Text.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064         \{}
+\DoxyCodeLine{00065             \textcolor{keywordflow}{return} Bearing;}
+\DoxyCodeLine{00066         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Text_a83dd9d4f133502a799c410d0c93da06f}\label{classrendering_1_1Text_a83dd9d4f133502a799c410d0c93da06f}} 
+\index{rendering::Text@{rendering::Text}!getSize@{getSize}}
+\index{getSize@{getSize}!rendering::Text@{rendering::Text}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily glm\+::ivec2 rendering\+::\+Text\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter of the size of glyph. 
+
+
+
+Definition at line \mbox{\hyperlink{Text_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{Text_8hpp_source}{Text.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056         \{}
+\DoxyCodeLine{00057             \textcolor{keywordflow}{return} Size;}
+\DoxyCodeLine{00058         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Text_a6a468f154183fa93a20b6ccb40b20380}\label{classrendering_1_1Text_a6a468f154183fa93a20b6ccb40b20380}} 
+\index{rendering::Text@{rendering::Text}!getTextureID@{getTextureID}}
+\index{getTextureID@{getTextureID}!rendering::Text@{rendering::Text}}
+\doxysubsubsection{\texorpdfstring{getTextureID()}{getTextureID()}}
+{\footnotesize\ttfamily unsigned int rendering\+::\+Text\+::get\+Texture\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter of the \mbox{\hyperlink{classrendering_1_1Texture}{Texture}} Id. 
+
+
+
+Definition at line \mbox{\hyperlink{Text_8hpp_source_l00047}{47}} of file \mbox{\hyperlink{Text_8hpp_source}{Text.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048         \{}
+\DoxyCodeLine{00049             \textcolor{keywordflow}{return} TextureID;}
+\DoxyCodeLine{00050         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Text_a7d6776480180973b2ca3d1e1a332e862}\label{classrendering_1_1Text_a7d6776480180973b2ca3d1e1a332e862}} 
+\index{rendering::Text@{rendering::Text}!loadFont@{loadFont}}
+\index{loadFont@{loadFont}!rendering::Text@{rendering::Text}}
+\doxysubsubsection{\texorpdfstring{loadFont()}{loadFont()}}
+{\footnotesize\ttfamily void rendering\+::\+Text\+::load\+Font (\begin{DoxyParamCaption}\item[{std\+::map$<$ char, \mbox{\hyperlink{classrendering_1_1Text}{Text}} $>$ \&}]{Characters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Loads the font. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Characters} & All the characters of the font \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Text_8hpp_source_l00082}{82}} of file \mbox{\hyperlink{Text_8hpp_source}{Text.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083         \{}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085             FT\_Library ft;}
+\DoxyCodeLine{00086             \textcolor{keywordflow}{if} (FT\_Init\_FreeType(\&ft))}
+\DoxyCodeLine{00087             \{}
+\DoxyCodeLine{00088                 std::cout << \textcolor{stringliteral}{"{}ERROR::FREETYPE: Could not init FreeType Library"{}} << std::endl;}
+\DoxyCodeLine{00089             \}}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091             FT\_Face face;}
+\DoxyCodeLine{00092             \textcolor{keywordflow}{if} (FT\_New\_Face(ft, \textcolor{stringliteral}{"{}../Temple\_Fun/assets/fonts/Findet Nemo.ttf"{}}, 0, \&face))}
+\DoxyCodeLine{00093             \{}
+\DoxyCodeLine{00094                 std::cout << \textcolor{stringliteral}{"{}ERROR::FREETYPE: Failed to load font"{}} << std::endl;}
+\DoxyCodeLine{00095             \}}
+\DoxyCodeLine{00096             FT\_Set\_Pixel\_Sizes(face, 0, 48);}
+\DoxyCodeLine{00097             \textcolor{keywordflow}{if} (FT\_Load\_Char(face, \textcolor{charliteral}{'X'}, FT\_LOAD\_RENDER))}
+\DoxyCodeLine{00098             \{}
+\DoxyCodeLine{00099                 std::cout << \textcolor{stringliteral}{"{}ERROR::FREETYTPE: Failed to load Glyph"{}} << std::endl;}
+\DoxyCodeLine{00100             \}}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102             glPixelStorei(GL\_UNPACK\_ALIGNMENT, 1); \textcolor{comment}{// disable byte-\/alignment restriction}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c = 0; c < 128; c++)}
+\DoxyCodeLine{00105             \{}
+\DoxyCodeLine{00106                 \textcolor{comment}{// load character glyph}}
+\DoxyCodeLine{00107                 \textcolor{keywordflow}{if} (FT\_Load\_Char(face, c, FT\_LOAD\_RENDER))}
+\DoxyCodeLine{00108                 \{}
+\DoxyCodeLine{00109                     std::cout << \textcolor{stringliteral}{"{}ERROR::FREETYTPE: Failed to load Glyph"{}} << std::endl;}
+\DoxyCodeLine{00110                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00111                 \}}
+\DoxyCodeLine{00112                 \textcolor{comment}{// generate texture}}
+\DoxyCodeLine{00113                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} texture;}
+\DoxyCodeLine{00114                 glGenTextures(1, \&texture);}
+\DoxyCodeLine{00115                 glBindTexture(GL\_TEXTURE\_2D, texture);}
+\DoxyCodeLine{00116                 glTexImage2D(}
+\DoxyCodeLine{00117                     GL\_TEXTURE\_2D,}
+\DoxyCodeLine{00118                     0,}
+\DoxyCodeLine{00119                     GL\_RED,}
+\DoxyCodeLine{00120                     face-\/>glyph-\/>bitmap.width,}
+\DoxyCodeLine{00121                     face-\/>glyph-\/>bitmap.rows,}
+\DoxyCodeLine{00122                     0,}
+\DoxyCodeLine{00123                     GL\_RED,}
+\DoxyCodeLine{00124                     GL\_UNSIGNED\_BYTE,}
+\DoxyCodeLine{00125                     face-\/>glyph-\/>bitmap.buffer);}
+\DoxyCodeLine{00126                 \textcolor{comment}{// set texture options}}
+\DoxyCodeLine{00127                 glTexParameteri(GL\_TEXTURE\_2D, GL\_TEXTURE\_WRAP\_S, GL\_CLAMP\_TO\_EDGE);}
+\DoxyCodeLine{00128                 glTexParameteri(GL\_TEXTURE\_2D, GL\_TEXTURE\_WRAP\_T, GL\_CLAMP\_TO\_EDGE);}
+\DoxyCodeLine{00129                 glTexParameteri(GL\_TEXTURE\_2D, GL\_TEXTURE\_MIN\_FILTER, GL\_LINEAR);}
+\DoxyCodeLine{00130                 glTexParameteri(GL\_TEXTURE\_2D, GL\_TEXTURE\_MAG\_FILTER, GL\_LINEAR);}
+\DoxyCodeLine{00131                 \textcolor{comment}{// now store character for later use}}
+\DoxyCodeLine{00132                 \textcolor{comment}{// now store character for later use}}
+\DoxyCodeLine{00133                 \mbox{\hyperlink{classrendering_1_1Text_ab01f93a457cf9de7f7d16d960bbe40d0}{Text}} character;}
+\DoxyCodeLine{00134                 character.TextureID = texture;}
+\DoxyCodeLine{00135                 character.Size = glm::ivec2(face-\/>glyph-\/>bitmap.width, face-\/>glyph-\/>bitmap.rows);}
+\DoxyCodeLine{00136                 character.Bearing = glm::ivec2(face-\/>glyph-\/>bitmap\_left, face-\/>glyph-\/>bitmap\_top);}
+\DoxyCodeLine{00137                 character.Advance = face-\/>glyph-\/>advance.x;}
+\DoxyCodeLine{00138                 Characters.insert(std::pair<char, Text>(c, character));}
+\DoxyCodeLine{00139             \}}
+\DoxyCodeLine{00140             glPixelStorei(GL\_UNPACK\_ALIGNMENT, 1);}
+\DoxyCodeLine{00141             FT\_Done\_Face(face);}
+\DoxyCodeLine{00142             FT\_Done\_FreeType(ft);}
+\DoxyCodeLine{00143         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Text_ab2434a0fb4d1907887830521b32d5aee}\label{classrendering_1_1Text_ab2434a0fb4d1907887830521b32d5aee}} 
+\index{rendering::Text@{rendering::Text}!renderGameText@{renderGameText}}
+\index{renderGameText@{renderGameText}!rendering::Text@{rendering::Text}}
+\doxysubsubsection{\texorpdfstring{renderGameText()}{renderGameText()}}
+{\footnotesize\ttfamily void rendering\+::\+Text\+::render\+Game\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Text\+Program,  }\item[{std\+::map$<$ char, \mbox{\hyperlink{classrendering_1_1Text}{rendering\+::\+Text}} $>$ \&}]{Characters,  }\item[{int \&}]{score }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Render the text of the Game Window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Text\+Program} & \+: the corresponding \mbox{\hyperlink{classrendering_1_1ShaderManager}{Shader\+Manager}} \\
+\hline
+{\em Characters} & \+: a map of all the characters of the font \\
+\hline
+{\em scorejson} & \+: the score of the current gaming session \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Text_8hpp_source_l00271}{271}} of file \mbox{\hyperlink{Text_8hpp_source}{Text.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00272         \{}
+\DoxyCodeLine{00273             TextProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aafe2a52ae6f541da55cb7ac66f9c308e}{use}}();}
+\DoxyCodeLine{00274             GLuint \textcolor{keywordtype}{id} = TextProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_a0772581870858b478ff8d6d1d5a42f84}{getId}}();}
+\DoxyCodeLine{00275             std::string scorestring = std::to\_string(score);}
+\DoxyCodeLine{00276             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}BUBBLE RUN"{}}, 25.0f, 25.0f, 1.0f, glm::vec3(0.87f, 0.325f, 0.03f));}
+\DoxyCodeLine{00277             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}Score : "{}} + scorestring, 650.0f, 570.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f));}
+\DoxyCodeLine{00278         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Text_a57568823062e1ffadff09c98b7d54c0d}\label{classrendering_1_1Text_a57568823062e1ffadff09c98b7d54c0d}} 
+\index{rendering::Text@{rendering::Text}!renderMenuText@{renderMenuText}}
+\index{renderMenuText@{renderMenuText}!rendering::Text@{rendering::Text}}
+\doxysubsubsection{\texorpdfstring{renderMenuText()}{renderMenuText()}}
+{\footnotesize\ttfamily void rendering\+::\+Text\+::render\+Menu\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Text\+Program,  }\item[{std\+::map$<$ char, \mbox{\hyperlink{classrendering_1_1Text}{rendering\+::\+Text}} $>$ \&}]{Characters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Render the text of the Main \mbox{\hyperlink{classrendering_1_1Menu}{Menu}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Text\+Program} & \+: the corresponding \mbox{\hyperlink{classrendering_1_1ShaderManager}{Shader\+Manager}} \\
+\hline
+{\em Characters} & \+: a map of all the characters of the font \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Text_8hpp_source_l00231}{231}} of file \mbox{\hyperlink{Text_8hpp_source}{Text.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00232         \{}
+\DoxyCodeLine{00233             glEnable(GL\_BLEND);}
+\DoxyCodeLine{00234             glDepthFunc(GL\_LEQUAL);}
+\DoxyCodeLine{00235             TextProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aafe2a52ae6f541da55cb7ac66f9c308e}{use}}();}
+\DoxyCodeLine{00236             GLuint \textcolor{keywordtype}{id} = TextProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_a0772581870858b478ff8d6d1d5a42f84}{getId}}();}
+\DoxyCodeLine{00237             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}... BUBBLE RUN ..."{}}, 270.0f, 400.0f, 0.8f, glm::vec3(0.87f, 0.325f, 0.03f));}
+\DoxyCodeLine{00238             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}play :"{}}, 365.0f, 290.0f, 0.5f, glm::vec3(0.87f, 0.325f, 0.03f));}
+\DoxyCodeLine{00239             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}score :"{}}, 360.0f, 215.0f, 0.5f, glm::vec3(0.87f, 0.325f, 0.03f));}
+\DoxyCodeLine{00240             glDisable(GL\_BLEND);}
+\DoxyCodeLine{00241         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Text_a118fee45a66838755411a16d8a8568b9}\label{classrendering_1_1Text_a118fee45a66838755411a16d8a8568b9}} 
+\index{rendering::Text@{rendering::Text}!renderPlayAgainText@{renderPlayAgainText}}
+\index{renderPlayAgainText@{renderPlayAgainText}!rendering::Text@{rendering::Text}}
+\doxysubsubsection{\texorpdfstring{renderPlayAgainText()}{renderPlayAgainText()}}
+{\footnotesize\ttfamily void rendering\+::\+Text\+::render\+Play\+Again\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Text\+Program,  }\item[{std\+::map$<$ char, \mbox{\hyperlink{classrendering_1_1Text}{rendering\+::\+Text}} $>$ \&}]{Characters,  }\item[{int \&}]{score }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Render the text of the \char`\"{}\+Play Again\char`\"{} \mbox{\hyperlink{classrendering_1_1Menu}{Menu}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Text\+Program} & \+: the corresponding \mbox{\hyperlink{classrendering_1_1ShaderManager}{Shader\+Manager}} \\
+\hline
+{\em Characters} & \+: a map of all the characters of the font \\
+\hline
+{\em score} & \+: the latest score \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Text_8hpp_source_l00251}{251}} of file \mbox{\hyperlink{Text_8hpp_source}{Text.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00252         \{}
+\DoxyCodeLine{00253             glEnable(GL\_BLEND);}
+\DoxyCodeLine{00254             glDepthFunc(GL\_LEQUAL);}
+\DoxyCodeLine{00255             TextProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aafe2a52ae6f541da55cb7ac66f9c308e}{use}}();}
+\DoxyCodeLine{00256             GLuint \textcolor{keywordtype}{id} = TextProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_a0772581870858b478ff8d6d1d5a42f84}{getId}}();}
+\DoxyCodeLine{00257             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}... BUBBLE RUN ..."{}}, 270.0f, 400.0f, 0.8f, glm::vec3(0.87f, 0.325f, 0.03f));}
+\DoxyCodeLine{00258             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}play again :"{}}, 325.0f, 290.0f, 0.5f, glm::vec3(0.87f, 0.325f, 0.03f));}
+\DoxyCodeLine{00259             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}score :"{}}, 360.0f, 215.0f, 0.5f, glm::vec3(0.87f, 0.325f, 0.03f));}
+\DoxyCodeLine{00260             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}your score : "{}} + std::to\_string(score), 300.0f, 350.0f, 0.4f, glm::vec3(0.f, 0.04f, 0.39f));}
+\DoxyCodeLine{00261             glDisable(GL\_BLEND);}
+\DoxyCodeLine{00262         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Text_a6e36ee7ed6d2f07e90cb929dedd0c827}\label{classrendering_1_1Text_a6e36ee7ed6d2f07e90cb929dedd0c827}} 
+\index{rendering::Text@{rendering::Text}!renderScoreText@{renderScoreText}}
+\index{renderScoreText@{renderScoreText}!rendering::Text@{rendering::Text}}
+\doxysubsubsection{\texorpdfstring{renderScoreText()}{renderScoreText()}}
+{\footnotesize\ttfamily void rendering\+::\+Text\+::render\+Score\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Text\+Program,  }\item[{std\+::map$<$ char, \mbox{\hyperlink{classrendering_1_1Text}{rendering\+::\+Text}} $>$ \&}]{Characters,  }\item[{\mbox{\hyperlink{classrendering_1_1Score}{Score}} \&}]{scorejson }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Render the text of the \mbox{\hyperlink{classrendering_1_1Score}{Score}} \mbox{\hyperlink{classrendering_1_1Menu}{Menu}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Text\+Program} & \+: the corresponding \mbox{\hyperlink{classrendering_1_1ShaderManager}{Shader\+Manager}} \\
+\hline
+{\em Characters} & \+: a map of all the characters of the font \\
+\hline
+{\em scorejson} & \+: the saved scores that we want to display \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Text_8hpp_source_l00207}{207}} of file \mbox{\hyperlink{Text_8hpp_source}{Text.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00208         \{}
+\DoxyCodeLine{00209             glEnable(GL\_BLEND);}
+\DoxyCodeLine{00210             glDepthFunc(GL\_LEQUAL);}
+\DoxyCodeLine{00211             TextProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aafe2a52ae6f541da55cb7ac66f9c308e}{use}}();}
+\DoxyCodeLine{00212             GLuint \textcolor{keywordtype}{id} = TextProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_a0772581870858b478ff8d6d1d5a42f84}{getId}}();}
+\DoxyCodeLine{00213             \textcolor{keywordtype}{int} first = scorejson.getArray()[\textcolor{stringliteral}{"{}score"{}}][0];}
+\DoxyCodeLine{00214             \textcolor{keywordtype}{int} second = scorejson.getArray()[\textcolor{stringliteral}{"{}score"{}}][1];}
+\DoxyCodeLine{00215             \textcolor{keywordtype}{int} third = scorejson.getArray()[\textcolor{stringliteral}{"{}score"{}}][2];}
+\DoxyCodeLine{00216             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}Best scores :"{}}, 300.0f, 400.0f, 0.6f, glm::vec3(0.87f, 0.325f, 0.03f));}
+\DoxyCodeLine{00217             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}First    "{}} + std::to\_string(first), 320.0f, 300.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f));}
+\DoxyCodeLine{00218             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}Second   "{}} + std::to\_string(second), 320.0f, 250.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f));}
+\DoxyCodeLine{00219             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}Third    "{}} + std::to\_string(third), 320.0f, 200.0f, 0.5f, glm::vec3(0.f, 0.04f, 0.39f));}
+\DoxyCodeLine{00220             \mbox{\hyperlink{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}{RenderText}}(\textcolor{keywordtype}{id}, Characters, \textcolor{stringliteral}{"{}Back"{}}, 690.0f, 50.0f, 0.5f, glm::vec3(0.87f, 0.325f, 0.03f));}
+\DoxyCodeLine{00221 }
+\DoxyCodeLine{00222             glDisable(GL\_BLEND);}
+\DoxyCodeLine{00223         \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}\label{classrendering_1_1Text_af4584734bd15fd5ef3dbd5a65fbe304e}} 
+\index{rendering::Text@{rendering::Text}!RenderText@{RenderText}}
+\index{RenderText@{RenderText}!rendering::Text@{rendering::Text}}
+\doxysubsubsection{\texorpdfstring{RenderText()}{RenderText()}}
+{\footnotesize\ttfamily void rendering\+::\+Text\+::\+Render\+Text (\begin{DoxyParamCaption}\item[{GLuint \&}]{id,  }\item[{std\+::map$<$ char, \mbox{\hyperlink{classrendering_1_1Text}{Text}} $>$ \&}]{Characters,  }\item[{std\+::string}]{text,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{scale,  }\item[{glm\+::vec3}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Displays the text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \+: The program object to be queried \\
+\hline
+{\em Characters} & \+: a map of all the characters of the font \\
+\hline
+{\em text} & \+: the text that needs to be displayed \\
+\hline
+{\em x} & \+: the position of the text along the X axis \\
+\hline
+{\em y} & \+: the position of the text along the Y axis \\
+\hline
+{\em scale} & \+: defines the size of the displayed text \\
+\hline
+{\em color} & \+: defines the color of the displayed text \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Text_8hpp_source_l00157}{157}} of file \mbox{\hyperlink{Text_8hpp_source}{Text.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00158         \{}
+\DoxyCodeLine{00159             \textcolor{comment}{// activate corresponding render state}}
+\DoxyCodeLine{00160             glUniform3f(glGetUniformLocation(\textcolor{keywordtype}{id}, \textcolor{stringliteral}{"{}textColor"{}}), color.x, color.y, color.z);}
+\DoxyCodeLine{00161             glActiveTexture(GL\_TEXTURE0);}
+\DoxyCodeLine{00162             glBindVertexArray(m\_vao);}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164             \textcolor{comment}{// iterate through all characters}}
+\DoxyCodeLine{00165             std::string::const\_iterator c;}
+\DoxyCodeLine{00166             \textcolor{keywordflow}{for} (c = text.begin(); c != text.end(); c++)}
+\DoxyCodeLine{00167             \{}
+\DoxyCodeLine{00168                 \mbox{\hyperlink{classrendering_1_1Text_ab01f93a457cf9de7f7d16d960bbe40d0}{Text}} ch = Characters[*c];}
+\DoxyCodeLine{00169 }
+\DoxyCodeLine{00170                 \textcolor{keywordtype}{float} xpos = x + ch.getBearing().x * scale;}
+\DoxyCodeLine{00171                 \textcolor{keywordtype}{float} ypos = y -\/ (ch.getSize().y -\/ ch.getBearing().y) * scale;}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173                 \textcolor{keywordtype}{float} w = ch.getSize().x * scale;}
+\DoxyCodeLine{00174                 \textcolor{keywordtype}{float} h = ch.getSize().y * scale;}
+\DoxyCodeLine{00175                 \textcolor{comment}{// update m\_vbo for each character}}
+\DoxyCodeLine{00176                 \textcolor{keywordtype}{float} vertices[6][4] = \{}
+\DoxyCodeLine{00177                     \{xpos, ypos + h, 0.0f, 0.0f\},}
+\DoxyCodeLine{00178                     \{xpos, ypos, 0.0f, 1.0f\},}
+\DoxyCodeLine{00179                     \{xpos + w, ypos, 1.0f, 1.0f\},}
+\DoxyCodeLine{00180 }
+\DoxyCodeLine{00181                     \{xpos, ypos + h, 0.0f, 0.0f\},}
+\DoxyCodeLine{00182                     \{xpos + w, ypos, 1.0f, 1.0f\},}
+\DoxyCodeLine{00183                     \{xpos + w, ypos + h, 1.0f, 0.0f\}\};}
+\DoxyCodeLine{00184                 \textcolor{comment}{// render glyph texture over quad}}
+\DoxyCodeLine{00185                 glBindTexture(GL\_TEXTURE\_2D, ch.getTextureID());}
+\DoxyCodeLine{00186                 \textcolor{comment}{// update content of m\_vbo memory}}
+\DoxyCodeLine{00187                 glBindBuffer(GL\_ARRAY\_BUFFER, m\_vbo);}
+\DoxyCodeLine{00188                 glBufferSubData(GL\_ARRAY\_BUFFER, 0, \textcolor{keyword}{sizeof}(vertices), vertices);}
+\DoxyCodeLine{00189                 glBindBuffer(GL\_ARRAY\_BUFFER, 0);}
+\DoxyCodeLine{00190                 \textcolor{comment}{// render quad}}
+\DoxyCodeLine{00191                 glDrawArrays(GL\_TRIANGLES, 0, 6);}
+\DoxyCodeLine{00192                 \textcolor{comment}{// now advance cursors for next glyph (note that advance is number of 1/64 pixels)}}
+\DoxyCodeLine{00193                 x += (ch.getAdvance() >> 6) * scale; \textcolor{comment}{// bitshift by 6 to get value in pixels (2\string^6 = 64)}}
+\DoxyCodeLine{00194             \}}
+\DoxyCodeLine{00195             glBindVertexArray(0);}
+\DoxyCodeLine{00196             glBindTexture(GL\_TEXTURE\_2D, 0);}
+\DoxyCodeLine{00197         \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+rendering/include/rendering/\mbox{\hyperlink{Text_8hpp}{Text.\+hpp}}\end{DoxyCompactItemize}

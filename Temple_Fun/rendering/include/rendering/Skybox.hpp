@@ -1,3 +1,8 @@
+/**
+ * \file Skybox.hpp
+ * \brief Declaration of the class Skybox
+*/
+
 #ifndef _SKYBOX_HPP
 #define _SKYBOX_HPP
 
@@ -6,6 +11,7 @@
 #include <GL/glew.h>
 #include <rendering/Program.hpp>
 
+namespace rendering{
 float skyboxVertices[] = {
     // positions
     -1.0f, 1.0f, -1.0f,
@@ -59,17 +65,26 @@ std::vector<std::string> skybox_sky =
         "../Temple_Fun/assets/textures/underwater/front.png",
         "../Temple_Fun/assets/textures/underwater/back.png"};
 
+/*! \class Skybox
+   * \brief Class of Skybox
+   *
+   *  This class allows to create and draw the skybox. 
+   * The hpp file also contains the path to the textures and the vertices.
+   */
 class Skybox
 {
 private:
-    GLuint m_vao;
-    GLuint m_vbo;
+    GLuint m_vao; /*!< vao of the skybox*/
+    GLuint m_vbo; /*!< vbo of the skybox*/
 
 public:
     
+    /*!
+    *  \brief Constructor of the Skybox
+    *  It initializes and binds the buffers
+    */
     Skybox()
     {
-
         glGenVertexArrays(1, &m_vao);
         glGenBuffers(1, &m_vbo);
         glBindVertexArray(m_vao);
@@ -79,8 +94,22 @@ public:
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
     }
 
-    ~Skybox() = default;
+    /*!
+    *  \brief Destructor of the Skybox
+    *  It deletes the buffers
+    */
+    ~Skybox(){
+        glDeleteBuffers(1, &m_vbo);
+        glDeleteVertexArrays(1, &m_vao);
+    }
     
+    /*!
+    *  \brief Drawing of the Skybox
+    *  \param SkyboxProgram The shader of the skybox
+    *  \param camera The camera to get the view matrix
+    *  \param ProjMatrix The Projection Matrix
+    *  \param cubemapTexture The texture
+    */
     void draw(rendering::ShaderManager& SkyboxProgram, rendering::Camera* camera, glm::mat4 &ProjMatrix, unsigned int cubemapTexture)
     {
         glm::mat4 skyboxViewMatrix = glm::mat4(glm::mat3(camera->getViewMatrix()));
@@ -104,6 +133,6 @@ public:
     }
 };
 
-
+}
 
 #endif

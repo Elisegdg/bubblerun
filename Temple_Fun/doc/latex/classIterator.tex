@@ -1,0 +1,155 @@
+\hypertarget{classIterator}{}\doxysection{Iterator\texorpdfstring{$<$}{<} T, U \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classIterator}\index{Iterator$<$ T, U $>$@{Iterator$<$ T, U $>$}}
+
+
+Class of \mbox{\hyperlink{classIterator}{Iterator}}.  
+
+
+
+
+{\ttfamily \#include $<$Iterator.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ T $>$\+::iterator \mbox{\hyperlink{classIterator_a87f7f2e2f155be4b4bb44297b4e5a279}{iter\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIterator_a239e5223eebd9728e2406c28e66cc46a}{Iterator}} (U $\ast$p\+\_\+data, bool reverse=false)
+\item 
+void \mbox{\hyperlink{classIterator_a3d4d67f362c1290616acebaf0d919d05}{First}} ()
+\item 
+void \mbox{\hyperlink{classIterator_adc8e3fc9596883617a572306cc156f8a}{Next}} ()
+\item 
+bool \mbox{\hyperlink{classIterator_a61f1fc1d55461d6019a5b2ad6869a42b}{Is\+Done}} ()
+\item 
+\mbox{\hyperlink{classIterator_a87f7f2e2f155be4b4bb44297b4e5a279}{iter\+\_\+type}} \mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename U$>$\newline
+class Iterator$<$ T, U $>$}
+Class of \mbox{\hyperlink{classIterator}{Iterator}}. 
+
+This class is built as the Design Pattern \mbox{\hyperlink{classIterator}{Iterator}}. It enables to read a container without knowing how it is built. 
+
+Definition at line \mbox{\hyperlink{Iterator_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{Iterator_8hpp_source}{Iterator.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classIterator_a87f7f2e2f155be4b4bb44297b4e5a279}\label{classIterator_a87f7f2e2f155be4b4bb44297b4e5a279}} 
+\index{Iterator$<$ T, U $>$@{Iterator$<$ T, U $>$}!iter\_type@{iter\_type}}
+\index{iter\_type@{iter\_type}!Iterator$<$ T, U $>$@{Iterator$<$ T, U $>$}}
+\doxysubsubsection{\texorpdfstring{iter\_type}{iter\_type}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+typedef std\+::vector$<$T$>$\+::iterator \mbox{\hyperlink{classIterator}{Iterator}}$<$ T, U $>$\+::iter\+\_\+type}
+
+
+
+Definition at line \mbox{\hyperlink{Iterator_8hpp_source_l00019}{19}} of file \mbox{\hyperlink{Iterator_8hpp_source}{Iterator.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIterator_a239e5223eebd9728e2406c28e66cc46a}\label{classIterator_a239e5223eebd9728e2406c28e66cc46a}} 
+\index{Iterator$<$ T, U $>$@{Iterator$<$ T, U $>$}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!Iterator$<$ T, U $>$@{Iterator$<$ T, U $>$}}
+\doxysubsubsection{\texorpdfstring{Iterator()}{Iterator()}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+\mbox{\hyperlink{classIterator}{Iterator}}$<$ T, U $>$\mbox{\hyperlink{classIterator}{\+::\+Iterator}} (\begin{DoxyParamCaption}\item[{U $\ast$}]{p\+\_\+data,  }\item[{bool}]{reverse = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Iterator_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{Iterator_8hpp_source}{Iterator.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020                                             : m\_p\_data\_(p\_data) \{}
+\DoxyCodeLine{00021     m\_it\_ = m\_p\_data\_-\/>m\_data\_.begin();}
+\DoxyCodeLine{00022   \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}\label{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}} 
+\index{Iterator$<$ T, U $>$@{Iterator$<$ T, U $>$}!Current@{Current}}
+\index{Current@{Current}!Iterator$<$ T, U $>$@{Iterator$<$ T, U $>$}}
+\doxysubsubsection{\texorpdfstring{Current()}{Current()}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+\mbox{\hyperlink{classIterator_a87f7f2e2f155be4b4bb44297b4e5a279}{iter\+\_\+type}} \mbox{\hyperlink{classIterator}{Iterator}}$<$ T, U $>$\+::\+Current (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Iterator_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{Iterator_8hpp_source}{Iterator.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036                       \{}
+\DoxyCodeLine{00037     \textcolor{keywordflow}{return} m\_it\_;}
+\DoxyCodeLine{00038   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIterator_a3d4d67f362c1290616acebaf0d919d05}\label{classIterator_a3d4d67f362c1290616acebaf0d919d05}} 
+\index{Iterator$<$ T, U $>$@{Iterator$<$ T, U $>$}!First@{First}}
+\index{First@{First}!Iterator$<$ T, U $>$@{Iterator$<$ T, U $>$}}
+\doxysubsubsection{\texorpdfstring{First()}{First()}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+void \mbox{\hyperlink{classIterator}{Iterator}}$<$ T, U $>$\+::\+First (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Iterator_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{Iterator_8hpp_source}{Iterator.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024                \{}
+\DoxyCodeLine{00025     m\_it\_ = m\_p\_data\_-\/>m\_data\_.begin();}
+\DoxyCodeLine{00026   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIterator_a61f1fc1d55461d6019a5b2ad6869a42b}\label{classIterator_a61f1fc1d55461d6019a5b2ad6869a42b}} 
+\index{Iterator$<$ T, U $>$@{Iterator$<$ T, U $>$}!IsDone@{IsDone}}
+\index{IsDone@{IsDone}!Iterator$<$ T, U $>$@{Iterator$<$ T, U $>$}}
+\doxysubsubsection{\texorpdfstring{IsDone()}{IsDone()}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+bool \mbox{\hyperlink{classIterator}{Iterator}}$<$ T, U $>$\+::\+Is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Iterator_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{Iterator_8hpp_source}{Iterator.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032                 \{}
+\DoxyCodeLine{00033     \textcolor{keywordflow}{return} (m\_it\_ == m\_p\_data\_-\/>m\_data\_.end());}
+\DoxyCodeLine{00034   \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classIterator_adc8e3fc9596883617a572306cc156f8a}\label{classIterator_adc8e3fc9596883617a572306cc156f8a}} 
+\index{Iterator$<$ T, U $>$@{Iterator$<$ T, U $>$}!Next@{Next}}
+\index{Next@{Next}!Iterator$<$ T, U $>$@{Iterator$<$ T, U $>$}}
+\doxysubsubsection{\texorpdfstring{Next()}{Next()}}
+{\footnotesize\ttfamily template$<$typename T , typename U $>$ \\
+void \mbox{\hyperlink{classIterator}{Iterator}}$<$ T, U $>$\+::\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Iterator_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{Iterator_8hpp_source}{Iterator.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028               \{}
+\DoxyCodeLine{00029     m\_it\_++;}
+\DoxyCodeLine{00030   \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+game/include/game/\mbox{\hyperlink{Iterator_8hpp}{Iterator.\+hpp}}\end{DoxyCompactItemize}

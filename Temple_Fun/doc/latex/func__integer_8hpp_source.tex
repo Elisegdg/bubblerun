@@ -1,0 +1,73 @@
+\hypertarget{func__integer_8hpp_source}{}\doxysection{func\+\_\+integer.\+hpp}
+\label{func__integer_8hpp_source}\index{third-\/party/include/glm/detail/func\_integer.hpp@{third-\/party/include/glm/detail/func\_integer.hpp}}
+\mbox{\hyperlink{func__integer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00038}00038 \textcolor{preprocessor}{\#ifndef glm\_core\_func\_integer}}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00039}00039 \textcolor{preprocessor}{\#define glm\_core\_func\_integer}}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{setup_8hpp}{setup.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00043}00043 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00044}00044 \{}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00056}00056     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genUType>}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00057}\mbox{\hyperlink{group__core__func__integer_ga19276bb7adbe9f0d74515ae49e40b481}{00057}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} genUType \mbox{\hyperlink{group__core__func__integer_ga19276bb7adbe9f0d74515ae49e40b481}{uaddCarry}}(}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00058}00058         genUType \textcolor{keyword}{const} \& x,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00059}00059         genUType \textcolor{keyword}{const} \& y,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00060}00060         genUType \& carry);}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00070}00070     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genUType>}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00071}\mbox{\hyperlink{group__core__func__integer_gae5b4a6cefd1e21fd2e1b8526b4c964a7}{00071}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} genUType \mbox{\hyperlink{group__core__func__integer_gae5b4a6cefd1e21fd2e1b8526b4c964a7}{usubBorrow}}(}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00072}00072         genUType \textcolor{keyword}{const} \& x,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00073}00073         genUType \textcolor{keyword}{const} \& y,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00074}00074         genUType \& borrow);}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00075}00075         }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00084}00084     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genUType>}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00085}\mbox{\hyperlink{group__core__func__integer_gad991bf53779a4309a920bb7bfcf2639c}{00085}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \textcolor{keywordtype}{void} \mbox{\hyperlink{group__core__func__integer_gad991bf53779a4309a920bb7bfcf2639c}{umulExtended}}(}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00086}00086         genUType \textcolor{keyword}{const} \& x,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00087}00087         genUType \textcolor{keyword}{const} \& y,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00088}00088         genUType \& msb,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00089}00089         genUType \& lsb);}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00090}00090         }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00099}00099     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genIType>}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00100}\mbox{\hyperlink{group__core__func__integer_ga7d284e3ea5059cae9fe8f0fe1a76dd02}{00100}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \textcolor{keywordtype}{void} \mbox{\hyperlink{group__core__func__integer_ga7d284e3ea5059cae9fe8f0fe1a76dd02}{imulExtended}}(}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00101}00101         genIType \textcolor{keyword}{const} \& x,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00102}00102         genIType \textcolor{keyword}{const} \& y,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00103}00103         genIType \& msb,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00104}00104         genIType \& lsb);}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00121}00121     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genIUType>}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00122}\mbox{\hyperlink{group__core__func__integer_ga251d309beb171bf95117d2c301b2ad8b}{00122}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} genIUType \mbox{\hyperlink{group__core__func__integer_ga251d309beb171bf95117d2c301b2ad8b}{bitfieldExtract}}(}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00123}00123         genIUType \textcolor{keyword}{const} \& Value,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00124}00124         \textcolor{keywordtype}{int} \textcolor{keyword}{const} \& Offset,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00125}00125         \textcolor{keywordtype}{int} \textcolor{keyword}{const} \& Bits);}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00141}00141     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genIUType>}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00142}\mbox{\hyperlink{group__core__func__integer_ga7ab09972d52094d97d2480982e657dd0}{00142}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} genIUType \mbox{\hyperlink{group__core__func__integer_ga7ab09972d52094d97d2480982e657dd0}{bitfieldInsert}}(}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00143}00143         genIUType \textcolor{keyword}{const} \& Base,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00144}00144         genIUType \textcolor{keyword}{const} \& Insert,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00145}00145         \textcolor{keywordtype}{int} \textcolor{keyword}{const} \& Offset,}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00146}00146         \textcolor{keywordtype}{int} \textcolor{keyword}{const} \& Bits);}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00156}00156     \textcolor{keyword}{template} <\textcolor{keyword}{typename} genIUType>}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00157}\mbox{\hyperlink{group__core__func__integer_gac28880e609c6eeb0a28f1a54b1edc715}{00157}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} genIUType \mbox{\hyperlink{group__core__func__integer_gac28880e609c6eeb0a28f1a54b1edc715}{bitfieldReverse}}(genIUType \textcolor{keyword}{const} \& Value);}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00158}00158         }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00167}00167     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{template} <\textcolor{keyword}{typename}> \textcolor{keyword}{class }genIUType>}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00168}\mbox{\hyperlink{group__core__func__integer_gaf57da048eb6f759fc01e836de4d0ab31}{00168}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \textcolor{keyword}{typename} genIUType<T>::signed\_type \mbox{\hyperlink{group__core__func__integer_gaf57da048eb6f759fc01e836de4d0ab31}{bitCount}}(genIUType<T> \textcolor{keyword}{const} \& Value);}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00180}00180     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{template} <\textcolor{keyword}{typename}> \textcolor{keyword}{class }genIUType>}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00181}\mbox{\hyperlink{group__core__func__integer_gad71f97e4fdeef9a04f6f987344d119cd}{00181}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \textcolor{keyword}{typename} genIUType<T>::signed\_type \mbox{\hyperlink{group__core__func__integer_gad71f97e4fdeef9a04f6f987344d119cd}{findLSB}}(genIUType<T> \textcolor{keyword}{const} \& Value);}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00194}00194     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, \textcolor{keyword}{template} <\textcolor{keyword}{typename}> \textcolor{keyword}{class }genIUType>}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00195}\mbox{\hyperlink{group__core__func__integer_gae6af6aba31eae35d23a06f40ab25fee9}{00195}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \textcolor{keyword}{typename} genIUType<T>::signed\_type \mbox{\hyperlink{group__core__func__integer_gae6af6aba31eae35d23a06f40ab25fee9}{findMSB}}(genIUType<T> \textcolor{keyword}{const} \& Value);}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00196}00196 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00198}00198 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00199}00199 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00200}00200 \textcolor{preprocessor}{\#include "{}func\_integer.inl"{}}}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00201}00201 }
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00202}00202 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//glm\_core\_func\_integer}}
+\DoxyCodeLine{\Hypertarget{func__integer_8hpp_source_l00203}00203 }
+
+\end{DoxyCode}

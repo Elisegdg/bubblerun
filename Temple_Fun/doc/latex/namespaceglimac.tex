@@ -1,0 +1,682 @@
+\hypertarget{namespaceglimac}{}\doxysection{glimac Namespace Reference}
+\label{namespaceglimac}\index{glimac@{glimac}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}}
+\item 
+class \mbox{\hyperlink{classglimac_1_1Cone}{Cone}}
+\item 
+class \mbox{\hyperlink{classglimac_1_1FilePath}{File\+Path}}
+\item 
+class \mbox{\hyperlink{classglimac_1_1FreeflyCamera}{Freefly\+Camera}}
+\item 
+class \mbox{\hyperlink{classglimac_1_1Geometry}{Geometry}}
+\item 
+class \mbox{\hyperlink{classglimac_1_1Image}{Image}}
+\item 
+class \mbox{\hyperlink{classglimac_1_1ImageManager}{Image\+Manager}}
+\item 
+class \mbox{\hyperlink{classglimac_1_1Program}{Program}}
+\item 
+class \mbox{\hyperlink{classglimac_1_1SDLWindowManager}{SDLWindow\+Manager}}
+\item 
+class \mbox{\hyperlink{classglimac_1_1Shader}{Shader}}
+\item 
+struct \mbox{\hyperlink{structglimac_1_1ShapeVertex}{Shape\+Vertex}}
+\item 
+class \mbox{\hyperlink{classglimac_1_1Sphere}{Sphere}}
+\item 
+struct \mbox{\hyperlink{structglimac_1_1Vertex2DColor}{Vertex2\+DColor}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceglimac_af7b3a92359ef55ad38fb46b78d8f56f5}{is\+Empty}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&box)
+\item 
+const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \mbox{\hyperlink{namespaceglimac_ae7ea0ad7ad60966328b8b2a198ad1dc5}{center}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&box)
+\item 
+const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \mbox{\hyperlink{namespaceglimac_a1286d34984f2db1de4b7a161bcdcc79d}{center2}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&box)
+\item 
+const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \mbox{\hyperlink{namespaceglimac_a66029611b8aa9645c13bb0d68c8f581e}{size}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&box)
+\item 
+const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \mbox{\hyperlink{namespaceglimac_a9f099e1c6ba9f33fe41cce02952266f5}{merge}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&b)
+\item 
+const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \mbox{\hyperlink{namespaceglimac_af4d6083700d9822693de16c3e39c68c3}{merge}} (const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b)
+\item 
+const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \mbox{\hyperlink{namespaceglimac_adf530cee77a4b3dadb118123627246b7}{merge}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b)
+\item 
+const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \mbox{\hyperlink{namespaceglimac_a50870ad9d151e88df52a4e3734bb1643}{merge}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&c)
+\item 
+const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \& \mbox{\hyperlink{namespaceglimac_a5ce77dda427c1d6cdb73cc0fcf9b37d6}{operator+=}} (\mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b)
+\item 
+const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \& \mbox{\hyperlink{namespaceglimac_a68ff21159f6d84629b0dbe6930120cb3}{operator+=}} (\mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&b)
+\item 
+\mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \mbox{\hyperlink{namespaceglimac_a8680d09f3e2292f083f6cefce95d41e7}{merge}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&c, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&d)
+\item 
+\mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \mbox{\hyperlink{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}{merge}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&c, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&d, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&e, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&f, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&g, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&h)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_a086462f9d14f3af4d2b3d00c9cf61d20}{operator==}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_af0e6fe83c5779c89714d6a864e9f74ac}{operator!=}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b)
+\item 
+\mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \mbox{\hyperlink{namespaceglimac_af5dfeb56647cba37ceb488d57120c9a2}{operator$\ast$}} (const float \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b)
+\item 
+const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \mbox{\hyperlink{namespaceglimac_adb0bbb865d3fd2206875ff7f350a43dc}{intersect}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b)
+\item 
+const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \mbox{\hyperlink{namespaceglimac_a5ed913fdee93dbfdc38152ff4866e529}{intersect}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&c)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_af945047660f89612aee39af324b57ab1}{disjoint}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_af23f0fc2accb7aa5ab4ba12018cff335}{disjoint}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_a505e1fd8b32775d812466a118f7203a0}{disjoint}} (const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_aafe905569a9383a2d51f203f89bac2e9}{conjoint}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_a5f57f8def5c4bad5e4ab5c0202fd70f3}{conjoint}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_ad0e509e8eac7c698b0bc3c4c5777fb74}{conjoint}} (const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b)
+\item 
+bool \mbox{\hyperlink{namespaceglimac_a1ae484262ea1ae8e3333ea994ea1a299}{subset}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&a, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&b)
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespaceglimac_ae4d43a1972ae8a4a5833277f7f83fe99}{operator$<$$<$}} (std\+::ostream \&cout, const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&box)
+\item 
+void \mbox{\hyperlink{namespaceglimac_aa47b0f2b0b1ef75335813a7e06f33d0b}{bounding\+Sphere}} (const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&bbox, \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&c, float \&radius)
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classglimac_1_1Image}{Image}} $>$ \mbox{\hyperlink{namespaceglimac_a7d92f451f5235a3299fa0faef1a335f5}{load\+Image}} (const \mbox{\hyperlink{classglimac_1_1FilePath}{File\+Path}} \&filepath)
+\item 
+unsigned int \mbox{\hyperlink{namespaceglimac_a66c7ca34dc0d1e17ebb7cc4ee5cb820d}{load\+Cubemap}} (std\+::vector$<$ std\+::string $>$ faces)
+\item 
+\mbox{\hyperlink{classglimac_1_1Program}{Program}} \mbox{\hyperlink{namespaceglimac_a3d534d78277f9bab3c4fa83f263f3633}{build\+Program}} (const GLchar $\ast$vs\+Src, const GLchar $\ast$fs\+Src)
+\item 
+\mbox{\hyperlink{classglimac_1_1Program}{Program}} \mbox{\hyperlink{namespaceglimac_a9c42759cac55f7ef947d2972b19e18a6}{load\+Program}} (const \mbox{\hyperlink{classglimac_1_1FilePath}{File\+Path}} \&vs\+File, const \mbox{\hyperlink{classglimac_1_1FilePath}{File\+Path}} \&fs\+File)
+\item 
+\mbox{\hyperlink{classglimac_1_1Shader}{Shader}} \mbox{\hyperlink{namespaceglimac_aa154f6bbc6caafaa2b8aa5e4dc433523}{load\+Shader}} (GLenum type, const \mbox{\hyperlink{classglimac_1_1FilePath}{File\+Path}} \&filepath)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceglimac_aa47b0f2b0b1ef75335813a7e06f33d0b}\label{namespaceglimac_aa47b0f2b0b1ef75335813a7e06f33d0b}} 
+\index{glimac@{glimac}!boundingSphere@{boundingSphere}}
+\index{boundingSphere@{boundingSphere}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{boundingSphere()}{boundingSphere()}}
+{\footnotesize\ttfamily void glimac\+::bounding\+Sphere (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{bbox,  }\item[{\mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&}]{c,  }\item[{float \&}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00096}{96}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097                                           \{}
+\DoxyCodeLine{00098     c = \mbox{\hyperlink{namespaceglimac_ae7ea0ad7ad60966328b8b2a198ad1dc5}{center}}(bbox);}
+\DoxyCodeLine{00099     radius = \mbox{\hyperlink{group__core__func__geometric_ga03b2831439defb8922832b540b91b8a7}{glm::length}}(\mbox{\hyperlink{namespaceglimac_a66029611b8aa9645c13bb0d68c8f581e}{size}}(bbox)) * 0.5f;}
+\DoxyCodeLine{00100 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a3d534d78277f9bab3c4fa83f263f3633}\label{namespaceglimac_a3d534d78277f9bab3c4fa83f263f3633}} 
+\index{glimac@{glimac}!buildProgram@{buildProgram}}
+\index{buildProgram@{buildProgram}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{buildProgram()}{buildProgram()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classglimac_1_1Program}{Program}} glimac\+::build\+Program (\begin{DoxyParamCaption}\item[{const GLchar $\ast$}]{vs\+Src,  }\item[{const GLchar $\ast$}]{fs\+Src }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Program_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{Program_8cpp_source}{Program.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024                                                                \{}
+\DoxyCodeLine{00025     \mbox{\hyperlink{classglimac_1_1Shader}{Shader}} vs(GL\_VERTEX\_SHADER);}
+\DoxyCodeLine{00026     vs.setSource(vsSrc);}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     \textcolor{keywordflow}{if}(!vs.compile()) \{}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Compilation error for vertex shader: "{}} + vs.getInfoLog());}
+\DoxyCodeLine{00030     \}}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     Shader fs(GL\_FRAGMENT\_SHADER);}
+\DoxyCodeLine{00033     fs.setSource(fsSrc);}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     \textcolor{keywordflow}{if}(!fs.compile()) \{}
+\DoxyCodeLine{00036         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Compilation error for fragment shader: "{}} + fs.getInfoLog());}
+\DoxyCodeLine{00037     \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     Program program;}
+\DoxyCodeLine{00040     program.attachShader(vs);}
+\DoxyCodeLine{00041     program.attachShader(fs);}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043     \textcolor{keywordflow}{if}(!program.link()) \{}
+\DoxyCodeLine{00044         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Link error: "{}} + program.getInfoLog());}
+\DoxyCodeLine{00045     \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{keywordflow}{return} program;}
+\DoxyCodeLine{00048 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_ae7ea0ad7ad60966328b8b2a198ad1dc5}\label{namespaceglimac_ae7ea0ad7ad60966328b8b2a198ad1dc5}} 
+\index{glimac@{glimac}!center@{center}}
+\index{center@{center}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{center()}{center()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} glimac\+::center (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{box }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+computes the center of the box 
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031 \{ \textcolor{keywordflow}{return} .5f * (box.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}} + box.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a1286d34984f2db1de4b7a161bcdcc79d}\label{namespaceglimac_a1286d34984f2db1de4b7a161bcdcc79d}} 
+\index{glimac@{glimac}!center2@{center2}}
+\index{center2@{center2}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{center2()}{center2()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} glimac\+::center2 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{box }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032 \{ \textcolor{keywordflow}{return} box.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}} + box.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_aafe905569a9383a2d51f203f89bac2e9}\label{namespaceglimac_aafe905569a9383a2d51f203f89bac2e9}} 
+\index{glimac@{glimac}!conjoint@{conjoint}}
+\index{conjoint@{conjoint}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{conjoint()}{conjoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool glimac\+::conjoint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+tests if bounding boxes (and points) are conjoint (non-\/empty intersection) 
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077 \{ \textcolor{keyword}{const} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{glm::vec3}} d = \mbox{\hyperlink{group__core__func__common_ga3dc90dbd66c9ca1dd5625c93d9c50f02}{glm::min}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}, b.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}) -\/ \mbox{\hyperlink{group__core__func__common_gaa228561a9da55898f8f72ad2403fafac}{glm::max}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}, b.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}); \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{size\_t} i = 0 ; i < BBox3f::dim ; i++ ) \textcolor{keywordflow}{if} ( d[i] < 0.f ) \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a5f57f8def5c4bad5e4ab5c0202fd70f3}\label{namespaceglimac_a5f57f8def5c4bad5e4ab5c0202fd70f3}} 
+\index{glimac@{glimac}!conjoint@{conjoint}}
+\index{conjoint@{conjoint}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{conjoint()}{conjoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool glimac\+::conjoint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00078}{78}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079 \{ \textcolor{keyword}{const} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{glm::vec3}} d = \mbox{\hyperlink{group__core__func__common_ga3dc90dbd66c9ca1dd5625c93d9c50f02}{glm::min}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}, b)       -\/ \mbox{\hyperlink{group__core__func__common_gaa228561a9da55898f8f72ad2403fafac}{glm::max}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}, b);       \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{size\_t} i = 0 ; i < BBox3f::dim ; i++ ) \textcolor{keywordflow}{if} ( d[i] < 0.f ) \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_ad0e509e8eac7c698b0bc3c4c5777fb74}\label{namespaceglimac_ad0e509e8eac7c698b0bc3c4c5777fb74}} 
+\index{glimac@{glimac}!conjoint@{conjoint}}
+\index{conjoint@{conjoint}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{conjoint()}{conjoint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool glimac\+::conjoint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00080}{80}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081 \{ \textcolor{keyword}{const} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{glm::vec3}} d = \mbox{\hyperlink{group__core__func__common_ga3dc90dbd66c9ca1dd5625c93d9c50f02}{glm::min}}(a, b.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}})       -\/ \mbox{\hyperlink{group__core__func__common_gaa228561a9da55898f8f72ad2403fafac}{glm::max}}(a, b.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}});       \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{size\_t} i = 0 ; i < BBox3f::dim ; i++ ) \textcolor{keywordflow}{if} ( d[i] < 0.f ) \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_af945047660f89612aee39af324b57ab1}\label{namespaceglimac_af945047660f89612aee39af324b57ab1}} 
+\index{glimac@{glimac}!disjoint@{disjoint}}
+\index{disjoint@{disjoint}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{disjoint()}{disjoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool glimac\+::disjoint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+tests if bounding boxes (and points) are disjoint (empty intersection) 
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00068}{68}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069 \{ \textcolor{keyword}{const} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{glm::vec3}} d = \mbox{\hyperlink{group__core__func__common_ga3dc90dbd66c9ca1dd5625c93d9c50f02}{glm::min}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}, b.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}) -\/ \mbox{\hyperlink{group__core__func__common_gaa228561a9da55898f8f72ad2403fafac}{glm::max}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}, b.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}); \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{size\_t} i = 0 ; i < BBox3f::dim ; i++ ) \textcolor{keywordflow}{if} ( d[i] < 0.f ) \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_af23f0fc2accb7aa5ab4ba12018cff335}\label{namespaceglimac_af23f0fc2accb7aa5ab4ba12018cff335}} 
+\index{glimac@{glimac}!disjoint@{disjoint}}
+\index{disjoint@{disjoint}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{disjoint()}{disjoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool glimac\+::disjoint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00070}{70}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071 \{ \textcolor{keyword}{const} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{glm::vec3}} d = \mbox{\hyperlink{group__core__func__common_ga3dc90dbd66c9ca1dd5625c93d9c50f02}{glm::min}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}, b)       -\/ \mbox{\hyperlink{group__core__func__common_gaa228561a9da55898f8f72ad2403fafac}{glm::max}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}, b);       \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{size\_t} i = 0 ; i < BBox3f::dim ; i++ ) \textcolor{keywordflow}{if} ( d[i] < 0.f ) \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a505e1fd8b32775d812466a118f7203a0}\label{namespaceglimac_a505e1fd8b32775d812466a118f7203a0}} 
+\index{glimac@{glimac}!disjoint@{disjoint}}
+\index{disjoint@{disjoint}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{disjoint()}{disjoint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool glimac\+::disjoint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073 \{ \textcolor{keyword}{const} \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{glm::vec3}} d = \mbox{\hyperlink{group__core__func__common_ga3dc90dbd66c9ca1dd5625c93d9c50f02}{glm::min}}(a, b.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}})       -\/ \mbox{\hyperlink{group__core__func__common_gaa228561a9da55898f8f72ad2403fafac}{glm::max}}(a, b.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}});       \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{size\_t} i = 0 ; i < BBox3f::dim ; i++ ) \textcolor{keywordflow}{if} ( d[i] < 0.f ) \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_adb0bbb865d3fd2206875ff7f350a43dc}\label{namespaceglimac_adb0bbb865d3fd2206875ff7f350a43dc}} 
+\index{glimac@{glimac}!intersect@{intersect}}
+\index{intersect@{intersect}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{intersect()}{intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} glimac\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+intersect bounding boxes 
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00064}{64}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}}(\mbox{\hyperlink{group__core__func__common_gaa228561a9da55898f8f72ad2403fafac}{glm::max}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}, b.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}), \mbox{\hyperlink{group__core__func__common_ga3dc90dbd66c9ca1dd5625c93d9c50f02}{glm::min}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}, b.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}})); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a5ed913fdee93dbfdc38152ff4866e529}\label{namespaceglimac_a5ed913fdee93dbfdc38152ff4866e529}} 
+\index{glimac@{glimac}!intersect@{intersect}}
+\index{intersect@{intersect}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{intersect()}{intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} glimac\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00065}{65}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceglimac_a5ed913fdee93dbfdc38152ff4866e529}{intersect}}(a,\mbox{\hyperlink{namespaceglimac_a5ed913fdee93dbfdc38152ff4866e529}{intersect}}(b,c)); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_af7b3a92359ef55ad38fb46b78d8f56f5}\label{namespaceglimac_af7b3a92359ef55ad38fb46b78d8f56f5}} 
+\index{glimac@{glimac}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool glimac\+::is\+Empty (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{box }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+tests if box is empty 
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028 \{ \textcolor{keywordflow}{return} box.\mbox{\hyperlink{structglimac_1_1BBox3f_a96444ed68bfab6e7c648467f2e8f9218}{empty}}(); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a66c7ca34dc0d1e17ebb7cc4ee5cb820d}\label{namespaceglimac_a66c7ca34dc0d1e17ebb7cc4ee5cb820d}} 
+\index{glimac@{glimac}!loadCubemap@{loadCubemap}}
+\index{loadCubemap@{loadCubemap}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{loadCubemap()}{loadCubemap()}}
+{\footnotesize\ttfamily unsigned int glimac\+::load\+Cubemap (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{faces }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Image_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{Image_8cpp_source}{Image.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050 \{}
+\DoxyCodeLine{00051     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} textureID;}
+\DoxyCodeLine{00052     glGenTextures(1, \&textureID);}
+\DoxyCodeLine{00053     glBindTexture(GL\_TEXTURE\_CUBE\_MAP, textureID);}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \textcolor{keywordtype}{int} width, height, nrComponents;}
+\DoxyCodeLine{00056     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < faces.size(); i++)}
+\DoxyCodeLine{00057     \{}
+\DoxyCodeLine{00058         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *data = stbi\_load(faces[i].c\_str(), \&width, \&height, \&nrComponents, 0);}
+\DoxyCodeLine{00059         \textcolor{keywordflow}{if} (data)}
+\DoxyCodeLine{00060         \{}
+\DoxyCodeLine{00061             glTexImage2D(GL\_TEXTURE\_CUBE\_MAP\_POSITIVE\_X + i, 0, GL\_RGB, width, height, 0, GL\_RGB, GL\_UNSIGNED\_BYTE, data);}
+\DoxyCodeLine{00062             stbi\_image\_free(data);}
+\DoxyCodeLine{00063         \}}
+\DoxyCodeLine{00064         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00065         \{}
+\DoxyCodeLine{00066             \textcolor{keywordflow}{throw} std::string(\textcolor{stringliteral}{"{}Cubemap texture failed to load at path "{}}+ faces[i]);}
+\DoxyCodeLine{00067             stbi\_image\_free(data);}
+\DoxyCodeLine{00068         \}}
+\DoxyCodeLine{00069     \}}
+\DoxyCodeLine{00070     glTexParameteri(GL\_TEXTURE\_CUBE\_MAP, GL\_TEXTURE\_MIN\_FILTER, GL\_LINEAR);}
+\DoxyCodeLine{00071     glTexParameteri(GL\_TEXTURE\_CUBE\_MAP, GL\_TEXTURE\_MAG\_FILTER, GL\_LINEAR);}
+\DoxyCodeLine{00072     glTexParameteri(GL\_TEXTURE\_CUBE\_MAP, GL\_TEXTURE\_WRAP\_S, GL\_CLAMP\_TO\_EDGE);}
+\DoxyCodeLine{00073     glTexParameteri(GL\_TEXTURE\_CUBE\_MAP, GL\_TEXTURE\_WRAP\_T, GL\_CLAMP\_TO\_EDGE);}
+\DoxyCodeLine{00074     glTexParameteri(GL\_TEXTURE\_CUBE\_MAP, GL\_TEXTURE\_WRAP\_R, GL\_CLAMP\_TO\_EDGE);}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076     \textcolor{keywordflow}{return} textureID;}
+\DoxyCodeLine{00077 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a7d92f451f5235a3299fa0faef1a335f5}\label{namespaceglimac_a7d92f451f5235a3299fa0faef1a335f5}} 
+\index{glimac@{glimac}!loadImage@{loadImage}}
+\index{loadImage@{loadImage}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{loadImage()}{loadImage()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classglimac_1_1Image}{Image}} $>$ glimac\+::load\+Image (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classglimac_1_1FilePath}{File\+Path}} \&}]{filepath }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Image_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{Image_8cpp_source}{Image.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011                                                          \{}
+\DoxyCodeLine{00012     \textcolor{keywordtype}{int} x, y, n;}
+\DoxyCodeLine{00013     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *data = stbi\_load(filepath.\mbox{\hyperlink{classglimac_1_1FilePath_ae823251a25bf0f9a9294368ac020e5e8}{c\_str}}(), \&x, \&y, \&n, 4);}
+\DoxyCodeLine{00014     \textcolor{keywordflow}{if}(!data) \{}
+\DoxyCodeLine{00015         \textcolor{keywordflow}{return} std::unique\_ptr<Image>();}
+\DoxyCodeLine{00016     \}}
+\DoxyCodeLine{00017     std::unique\_ptr<Image> pImage(\textcolor{keyword}{new} Image(x, y));}
+\DoxyCodeLine{00018     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespaceglimac_a66029611b8aa9645c13bb0d68c8f581e}{size}} = x * y;}
+\DoxyCodeLine{00019     \textcolor{keyword}{auto} \mbox{\hyperlink{group__gtc__matrix__transform_gaa91a55ba567dfc382ba3ea562496c22f}{scale}} = 1.f / 255;}
+\DoxyCodeLine{00020     \textcolor{keyword}{auto} ptr = pImage-\/>getPixels();}
+\DoxyCodeLine{00021     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i = 0u; i < \mbox{\hyperlink{namespaceglimac_a66029611b8aa9645c13bb0d68c8f581e}{size}}; ++i) \{}
+\DoxyCodeLine{00022         \textcolor{keyword}{auto} offset = 4 * i;}
+\DoxyCodeLine{00023         ptr-\/>r = data[offset] * \mbox{\hyperlink{group__gtc__matrix__transform_gaa91a55ba567dfc382ba3ea562496c22f}{scale}};}
+\DoxyCodeLine{00024         ptr-\/>g = data[offset + 1] * \mbox{\hyperlink{group__gtc__matrix__transform_gaa91a55ba567dfc382ba3ea562496c22f}{scale}};}
+\DoxyCodeLine{00025         ptr-\/>b = data[offset + 2] * \mbox{\hyperlink{group__gtc__matrix__transform_gaa91a55ba567dfc382ba3ea562496c22f}{scale}};}
+\DoxyCodeLine{00026         ptr-\/>a = data[offset + 3] * \mbox{\hyperlink{group__gtc__matrix__transform_gaa91a55ba567dfc382ba3ea562496c22f}{scale}};}
+\DoxyCodeLine{00027         ++ptr;}
+\DoxyCodeLine{00028     \}}
+\DoxyCodeLine{00029     stbi\_image\_free(data);}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{return} pImage;}
+\DoxyCodeLine{00031 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a9c42759cac55f7ef947d2972b19e18a6}\label{namespaceglimac_a9c42759cac55f7ef947d2972b19e18a6}} 
+\index{glimac@{glimac}!loadProgram@{loadProgram}}
+\index{loadProgram@{loadProgram}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{loadProgram()}{loadProgram()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classglimac_1_1Program}{Program}} glimac\+::load\+Program (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classglimac_1_1FilePath}{File\+Path}} \&}]{vs\+File,  }\item[{const \mbox{\hyperlink{classglimac_1_1FilePath}{File\+Path}} \&}]{fs\+File }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Program_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{Program_8cpp_source}{Program.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051                                                                     \{}
+\DoxyCodeLine{00052     \mbox{\hyperlink{classglimac_1_1Shader}{Shader}} vs = \mbox{\hyperlink{namespaceglimac_aa154f6bbc6caafaa2b8aa5e4dc433523}{loadShader}}(GL\_VERTEX\_SHADER, vsFile);}
+\DoxyCodeLine{00053     \mbox{\hyperlink{classglimac_1_1Shader}{Shader}} fs = \mbox{\hyperlink{namespaceglimac_aa154f6bbc6caafaa2b8aa5e4dc433523}{loadShader}}(GL\_FRAGMENT\_SHADER, fsFile);}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \textcolor{keywordflow}{if}(!vs.\mbox{\hyperlink{classglimac_1_1Shader_a1e6c6814a6275dd698b3befdb89aa647}{compile}}()) \{}
+\DoxyCodeLine{00056         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Compilation error for vertex shader (from file "{}} + std::string(vsFile) + \textcolor{stringliteral}{"{}): "{}} + vs.\mbox{\hyperlink{classglimac_1_1Shader_aa0de6702041087187d8eca874000cfa6}{getInfoLog}}());}
+\DoxyCodeLine{00057     \}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     \textcolor{keywordflow}{if}(!fs.\mbox{\hyperlink{classglimac_1_1Shader_a1e6c6814a6275dd698b3befdb89aa647}{compile}}()) \{}
+\DoxyCodeLine{00060         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Compilation error for fragment shader (from file "{}} + std::string(fsFile) + \textcolor{stringliteral}{"{}): "{}} + fs.\mbox{\hyperlink{classglimac_1_1Shader_aa0de6702041087187d8eca874000cfa6}{getInfoLog}}());}
+\DoxyCodeLine{00061     \}}
+\DoxyCodeLine{00062 }
+\DoxyCodeLine{00063     Program program;}
+\DoxyCodeLine{00064     program.attachShader(vs);}
+\DoxyCodeLine{00065     program.attachShader(fs);}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     \textcolor{keywordflow}{if}(!program.link()) \{}
+\DoxyCodeLine{00068         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Link error (for files "{}} + vsFile.\mbox{\hyperlink{classglimac_1_1FilePath_adaf6363c96f8247c9c4519674cf7c943}{str}}() + \textcolor{stringliteral}{"{} and "{}} + fsFile.\mbox{\hyperlink{classglimac_1_1FilePath_adaf6363c96f8247c9c4519674cf7c943}{str}}() + \textcolor{stringliteral}{"{}): "{}} + program.getInfoLog());}
+\DoxyCodeLine{00069     \}}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     \textcolor{keywordflow}{return} program;}
+\DoxyCodeLine{00072 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_aa154f6bbc6caafaa2b8aa5e4dc433523}\label{namespaceglimac_aa154f6bbc6caafaa2b8aa5e4dc433523}} 
+\index{glimac@{glimac}!loadShader@{loadShader}}
+\index{loadShader@{loadShader}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{loadShader()}{loadShader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classglimac_1_1Shader}{Shader}} glimac\+::load\+Shader (\begin{DoxyParamCaption}\item[{GLenum}]{type,  }\item[{const \mbox{\hyperlink{classglimac_1_1FilePath}{File\+Path}} \&}]{filepath }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Shader_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{Shader_8cpp_source}{Shader.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027                                                          \{}
+\DoxyCodeLine{00028     std::ifstream input(filepath.\mbox{\hyperlink{classglimac_1_1FilePath_ae823251a25bf0f9a9294368ac020e5e8}{c\_str}}());}
+\DoxyCodeLine{00029     \textcolor{keywordflow}{if}(!input) \{}
+\DoxyCodeLine{00030         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Unable to load the file "{}} + filepath.\mbox{\hyperlink{classglimac_1_1FilePath_adaf6363c96f8247c9c4519674cf7c943}{str}}());}
+\DoxyCodeLine{00031     \}}
+\DoxyCodeLine{00032     }
+\DoxyCodeLine{00033     std::stringstream buffer;}
+\DoxyCodeLine{00034     buffer << input.rdbuf();}
+\DoxyCodeLine{00035     }
+\DoxyCodeLine{00036     Shader shader(type);}
+\DoxyCodeLine{00037     shader.setSource(buffer.str().c\_str());}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     \textcolor{keywordflow}{return} shader;}
+\DoxyCodeLine{00040 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_adf530cee77a4b3dadb118123627246b7}\label{namespaceglimac_adf530cee77a4b3dadb118123627246b7}} 
+\index{glimac@{glimac}!merge@{merge}}
+\index{merge@{merge}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} glimac\+::merge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}}(\mbox{\hyperlink{group__core__func__common_ga3dc90dbd66c9ca1dd5625c93d9c50f02}{glm::min}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}, b.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}), \mbox{\hyperlink{group__core__func__common_gaa228561a9da55898f8f72ad2403fafac}{glm::max}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}, b.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}})); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a50870ad9d151e88df52a4e3734bb1643}\label{namespaceglimac_a50870ad9d151e88df52a4e3734bb1643}} 
+\index{glimac@{glimac}!merge@{merge}}
+\index{merge@{merge}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} glimac\+::merge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}{merge}}(a,\mbox{\hyperlink{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}{merge}}(b,c)); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a8680d09f3e2292f083f6cefce95d41e7}\label{namespaceglimac_a8680d09f3e2292f083f6cefce95d41e7}} 
+\index{glimac@{glimac}!merge@{merge}}
+\index{merge@{merge}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} glimac\+::merge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{c,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Merges four boxes. 
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046                                                                                         \{}
+\DoxyCodeLine{00047   \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}{merge}}(\mbox{\hyperlink{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}{merge}}(a,b),\mbox{\hyperlink{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}{merge}}(c,d));}
+\DoxyCodeLine{00048 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}\label{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}} 
+\index{glimac@{glimac}!merge@{merge}}
+\index{merge@{merge}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} glimac\+::merge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{c,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{d,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{e,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{f,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{g,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Merges eight boxes. 
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052                                                                                                                      \{}
+\DoxyCodeLine{00053   \textcolor{keywordflow}{return} \mbox{\hyperlink{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}{merge}}(\mbox{\hyperlink{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}{merge}}(a,b,c,d),\mbox{\hyperlink{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}{merge}}(\mbox{\hyperlink{group__gtc__constants_gab83fb6de0f05d6c0d11bdf0479f8319e}{e}},f,g,h));}
+\DoxyCodeLine{00054 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a9f099e1c6ba9f33fe41cce02952266f5}\label{namespaceglimac_a9f099e1c6ba9f33fe41cce02952266f5}} 
+\index{glimac@{glimac}!merge@{merge}}
+\index{merge@{merge}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} glimac\+::merge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+merges bounding boxes and points 
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00038}{38}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}}(\mbox{\hyperlink{group__core__func__common_ga3dc90dbd66c9ca1dd5625c93d9c50f02}{glm::min}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}, b    ), \mbox{\hyperlink{group__core__func__common_gaa228561a9da55898f8f72ad2403fafac}{glm::max}}(a.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}, b    )); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_af4d6083700d9822693de16c3e39c68c3}\label{namespaceglimac_af4d6083700d9822693de16c3e39c68c3}} 
+\index{glimac@{glimac}!merge@{merge}}
+\index{merge@{merge}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} glimac\+::merge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}}(\mbox{\hyperlink{group__core__func__common_ga3dc90dbd66c9ca1dd5625c93d9c50f02}{glm::min}}(a    , b.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}), \mbox{\hyperlink{group__core__func__common_gaa228561a9da55898f8f72ad2403fafac}{glm::max}}(a    , b.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}})); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_af0e6fe83c5779c89714d6a864e9f74ac}\label{namespaceglimac_af0e6fe83c5779c89714d6a864e9f74ac}} 
+\index{glimac@{glimac}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool glimac\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00058}{58}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058 \{ \textcolor{keywordflow}{return} a.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}} != b.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}} || a.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}} != b.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_af5dfeb56647cba37ceb488d57120c9a2}\label{namespaceglimac_af5dfeb56647cba37ceb488d57120c9a2}} 
+\index{glimac@{glimac}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} glimac\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const float \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+scaling 
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00061}{61}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061 \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}}(a*b.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}},a*b.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a5ce77dda427c1d6cdb73cc0fcf9b37d6}\label{namespaceglimac_a5ce77dda427c1d6cdb73cc0fcf9b37d6}} 
+\index{glimac@{glimac}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \& glimac\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00042}{42}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042 \{ \textcolor{keywordflow}{return} a = \mbox{\hyperlink{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}{merge}}(a,b); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a68ff21159f6d84629b0dbe6930120cb3}\label{namespaceglimac_a68ff21159f6d84629b0dbe6930120cb3}} 
+\index{glimac@{glimac}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \& glimac\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043 \{ \textcolor{keywordflow}{return} a = \mbox{\hyperlink{namespaceglimac_a2c45c463e7e0e8e818226772ae1319d8}{merge}}(a,b); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_ae4d43a1972ae8a4a5833277f7f83fe99}\label{namespaceglimac_ae4d43a1972ae8a4a5833277f7f83fe99}} 
+\index{glimac@{glimac}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& glimac\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{cout,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{box }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+output operator 
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00092}{92}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092                                                                    \{}
+\DoxyCodeLine{00093   \textcolor{keywordflow}{return} cout << \textcolor{stringliteral}{"{}["{}} << box.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}} << \textcolor{stringliteral}{"{}; "{}} << box.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}} << \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00094 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a086462f9d14f3af4d2b3d00c9cf61d20}\label{namespaceglimac_a086462f9d14f3af4d2b3d00c9cf61d20}} 
+\index{glimac@{glimac}!operator==@{operator==}}
+\index{operator==@{operator==}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool glimac\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Comparison Operators 
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00057}{57}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057 \{ \textcolor{keywordflow}{return} a.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}} == b.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}} \&\& a.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}} == b.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a66029611b8aa9645c13bb0d68c8f581e}\label{namespaceglimac_a66029611b8aa9645c13bb0d68c8f581e}} 
+\index{glimac@{glimac}!size@{size}}
+\index{size@{size}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm\+::vec3}} glimac\+::size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{box }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+computes the size of the box 
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035 \{ \textcolor{keywordflow}{return} box.\mbox{\hyperlink{structglimac_1_1BBox3f_aca6b2f64a4a904fe8b42a8121ee7f087}{size}}(); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceglimac_a1ae484262ea1ae8e3333ea994ea1a299}\label{namespaceglimac_a1ae484262ea1ae8e3333ea994ea1a299}} 
+\index{glimac@{glimac}!subset@{subset}}
+\index{subset@{subset}!glimac@{glimac}}
+\doxysubsubsection{\texorpdfstring{subset()}{subset()}}
+{\footnotesize\ttfamily bool glimac\+::subset (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{a,  }\item[{const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+subset relation 
+
+Definition at line \mbox{\hyperlink{BBox_8hpp_source_l00084}{84}} of file \mbox{\hyperlink{BBox_8hpp_source}{BBox.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085 \{}
+\DoxyCodeLine{00086   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{size\_t} i = 0 ; i < BBox3f::dim ; i++ ) \textcolor{keywordflow}{if} ( a.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}[i]*1.00001f < b.\mbox{\hyperlink{structglimac_1_1BBox3f_a6416c303ada3a2433fb742021e021c27}{lower}}[i] ) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00087   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{size\_t} i = 0 ; i < BBox3f::dim ; i++ ) \textcolor{keywordflow}{if} ( a.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}[i] > b.\mbox{\hyperlink{structglimac_1_1BBox3f_a5446e619162abd8011cab858f98d1954}{upper}}[i]*1.00001f ) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00088   \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00089 \}}
+
+\end{DoxyCode}

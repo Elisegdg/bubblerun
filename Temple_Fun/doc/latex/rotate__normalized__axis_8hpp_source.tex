@@ -1,0 +1,40 @@
+\hypertarget{rotate__normalized__axis_8hpp_source}{}\doxysection{rotate\+\_\+normalized\+\_\+axis.\+hpp}
+\label{rotate__normalized__axis_8hpp_source}\index{third-\/party/include/glm/gtx/rotate\_normalized\_axis.hpp@{third-\/party/include/glm/gtx/rotate\_normalized\_axis.hpp}}
+\mbox{\hyperlink{rotate__normalized__axis_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00040}00040 \textcolor{preprocessor}{\#ifndef GLM\_GTX\_rotate\_normalized\_axis}}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#define GLM\_GTX\_rotate\_normalized\_axis}}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00043}00043 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#include "{}../glm.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#include "{}../gtc/epsilon.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#include "{}../gtc/quaternion.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00048}00048 \textcolor{preprocessor}{\#if(defined(GLM\_MESSAGES) \&\& !defined(GLM\_EXT\_INCLUDED))}}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00049}00049 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTX\_rotate\_normalized\_axis extension included"{}})}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00050}00050 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00052}00052 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00053}00053 \{}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00068}00068     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00069}\mbox{\hyperlink{group__gtx__rotate__normalized__axis_ga312e3b72871bdeca0628df972851aafb}{00069}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, P>}} \mbox{\hyperlink{group__gtx__rotate__normalized__axis_ga312e3b72871bdeca0628df972851aafb}{rotateNormalizedAxis}}(}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00070}00070         \mbox{\hyperlink{structglm_1_1detail_1_1tmat4x4}{detail::tmat4x4<T, P>}} \textcolor{keyword}{const} \& m,}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00071}00071         T \textcolor{keyword}{const} \& \mbox{\hyperlink{group__gtc__quaternion_ga23a3fc7ada5bbb665ff84c92c6e0542c}{angle}},}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00072}00072         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& \mbox{\hyperlink{group__gtc__quaternion_ga75c94bf12205cbf57cb61a61a09fcdb1}{axis}});}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00081}00081     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T, precision P>}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00082}\mbox{\hyperlink{group__gtx__rotate__normalized__axis_ga57234ea179d4ebb157276b36454f06fa}{00082}}     \mbox{\hyperlink{setup_8hpp_ab2d052de21a70539923e9bcbf6e83a51}{GLM\_FUNC\_DECL}} \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{detail::tquat<T, P>}} \mbox{\hyperlink{group__gtx__rotate__normalized__axis_ga312e3b72871bdeca0628df972851aafb}{rotateNormalizedAxis}}(}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00083}00083         \mbox{\hyperlink{structglm_1_1detail_1_1tquat}{detail::tquat<T, P>}} \textcolor{keyword}{const} \& q,}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00084}00084         T \textcolor{keyword}{const} \& \mbox{\hyperlink{group__gtc__quaternion_ga23a3fc7ada5bbb665ff84c92c6e0542c}{angle}},}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00085}00085         \mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{detail::tvec3<T, P>}} \textcolor{keyword}{const} \& \mbox{\hyperlink{group__gtc__quaternion_ga75c94bf12205cbf57cb61a61a09fcdb1}{axis}});}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00088}00088 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00090}00090 \textcolor{preprocessor}{\#include "{}rotate\_normalized\_axis.inl"{}}}
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{rotate__normalized__axis_8hpp_source_l00092}00092 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_GTX\_rotate\_normalized\_axis}}
+
+\end{DoxyCode}

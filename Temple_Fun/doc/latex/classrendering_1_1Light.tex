@@ -1,0 +1,99 @@
+\hypertarget{classrendering_1_1Light}{}\doxysection{rendering\+::Light Class Reference}
+\label{classrendering_1_1Light}\index{rendering::Light@{rendering::Light}}
+
+
+Class of \mbox{\hyperlink{classrendering_1_1Light}{Light}}.  
+
+
+
+
+{\ttfamily \#include $<$Light.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrendering_1_1Light_a8002b5f3d652375d4a0618f4d8a8522e}{Light}} ()=default
+\item 
+void \mbox{\hyperlink{classrendering_1_1Light_ac52ddbf85e7ad00f0e56d018c9a5a3c4}{draw}} (\mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Light\+Program, glm\+::mat4 Proj\+Matrix, glm\+::mat4 Normal\+Matrix)
+\begin{DoxyCompactList}\small\item\em Draw the Lights. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class of \mbox{\hyperlink{classrendering_1_1Light}{Light}}. 
+
+This class enables to manage the Lights 
+
+Definition at line \mbox{\hyperlink{Light_8hpp_source_l00019}{19}} of file \mbox{\hyperlink{Light_8hpp_source}{Light.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrendering_1_1Light_a8002b5f3d652375d4a0618f4d8a8522e}\label{classrendering_1_1Light_a8002b5f3d652375d4a0618f4d8a8522e}} 
+\index{rendering::Light@{rendering::Light}!Light@{Light}}
+\index{Light@{Light}!rendering::Light@{rendering::Light}}
+\doxysubsubsection{\texorpdfstring{Light()}{Light()}}
+{\footnotesize\ttfamily rendering\+::\+Light\+::\+Light (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrendering_1_1Light_ac52ddbf85e7ad00f0e56d018c9a5a3c4}\label{classrendering_1_1Light_ac52ddbf85e7ad00f0e56d018c9a5a3c4}} 
+\index{rendering::Light@{rendering::Light}!draw@{draw}}
+\index{draw@{draw}!rendering::Light@{rendering::Light}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void rendering\+::\+Light\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$}]{camera,  }\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Light\+Program,  }\item[{glm\+::mat4}]{Proj\+Matrix,  }\item[{glm\+::mat4}]{Normal\+Matrix }\end{DoxyParamCaption})}
+
+
+
+Draw the Lights. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & The camera to get the View\+Matrix \\
+\hline
+{\em Light\+Program} & The corresponding shader \\
+\hline
+{\em Proj\+Matrix} & The Projection Matrix \\
+\hline
+{\em Normal\+Matrix} & The Normal Matrix \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Light_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{Light_8cpp_source}{Light.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007     \{}
+\DoxyCodeLine{00008 }
+\DoxyCodeLine{00009         glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
+\DoxyCodeLine{00010         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aafe2a52ae6f541da55cb7ac66f9c308e}{use}}();}
+\DoxyCodeLine{00011         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uKd"{}}, 0.4, 0.4, 1.0);}
+\DoxyCodeLine{00012         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uKs"{}}, 0.2, 0.5, 0.8);}
+\DoxyCodeLine{00013         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uKd2"{}}, 0.5, 0.0, 0);}
+\DoxyCodeLine{00014         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uKs2"{}}, 0.5, 0, 0);}
+\DoxyCodeLine{00015         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_ad8f60d9ab9e7a1c0572914e6ea47b498}{uniform1i}}(\textcolor{stringliteral}{"{}uShininess"{}}, 10);}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017         glm::vec4 LightDir = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}() * glm::vec4(0.0, 1.0, 0.0, 0.0);}
+\DoxyCodeLine{00018         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uLightDir\_vs"{}}, LightDir.x, LightDir.y, LightDir.z);}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020         glm::vec4 LightPos = glm::vec4(0.5, 0.5, 0.5, 0.0) * camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
+\DoxyCodeLine{00021         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uLightPos\_vs"{}}, LightPos.x, LightPos.y, LightPos.z);}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uLightIntensity"{}}, 0.6, 0.6, 0.6);}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
+\DoxyCodeLine{00026         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVMatrix"{}}, ViewMatrix);}
+\DoxyCodeLine{00027         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uNormalMatrix"{}}, NormalMatrix);}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029         ViewMatrix = glm::translate(ViewMatrix, glm::vec3(1., 0.6, 0.));}
+\DoxyCodeLine{00030         ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));}
+\DoxyCodeLine{00031     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rendering/include/rendering/\mbox{\hyperlink{Light_8hpp}{Light.\+hpp}}\item 
+rendering/src/\mbox{\hyperlink{Light_8cpp}{Light.\+cpp}}\end{DoxyCompactItemize}

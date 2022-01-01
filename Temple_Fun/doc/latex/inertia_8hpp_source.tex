@@ -1,0 +1,67 @@
+\hypertarget{inertia_8hpp_source}{}\doxysection{inertia.\+hpp}
+\label{inertia_8hpp_source}\index{third-\/party/include/glm/gtx/inertia.hpp@{third-\/party/include/glm/gtx/inertia.hpp}}
+\mbox{\hyperlink{inertia_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00039}00039 \textcolor{preprocessor}{\#ifndef GLM\_GTX\_inertia}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00040}00040 \textcolor{preprocessor}{\#define GLM\_GTX\_inertia}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00042}00042 \textcolor{comment}{// Dependency:}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#include "{}../glm.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#if(defined(GLM\_MESSAGES) \&\& !defined(GLM\_EXT\_INCLUDED))}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#   pragma message("{}GLM: GLM\_GTX\_inertia extension included"{}})}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00047}00047 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00049}00049 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00050}00050 \{}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00051}00051     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00054}00054 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00057}00057 \textcolor{comment}{    template <typename T, precision P>}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00058}00058 \textcolor{comment}{    detail::tmat3x3<T, P> boxInertia3(}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00059}00059 \textcolor{comment}{        T const \& Mass, }}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00060}00060 \textcolor{comment}{        detail::tvec3<T, P> const \& Scale);}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00061}00061 \textcolor{comment}{        }}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00064}00064 \textcolor{comment}{    template <typename T, precision P>}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00065}00065 \textcolor{comment}{    detail::tmat4x4<T, P> boxInertia4(}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00066}00066 \textcolor{comment}{        T const \& Mass, }}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00067}00067 \textcolor{comment}{        detail::tvec3<T, P> const \& Scale);}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00068}00068 \textcolor{comment}{        }}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00071}00071 \textcolor{comment}{    template <typename T, precision P>}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00072}00072 \textcolor{comment}{    detail::tmat3x3<T, P> diskInertia3(}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00073}00073 \textcolor{comment}{        T const \& Mass, }}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00074}00074 \textcolor{comment}{        T const \& Radius);}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00075}00075 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00078}00078 \textcolor{comment}{    template <typename T, precision P>}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00079}00079 \textcolor{comment}{    detail::tmat4x4<T, P> diskInertia4(}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00080}00080 \textcolor{comment}{        T const \& Mass, }}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00081}00081 \textcolor{comment}{        T const \& Radius);}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00082}00082 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00085}00085 \textcolor{comment}{    template <typename T, precision P>}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00086}00086 \textcolor{comment}{    detail::tmat3x3<T, P> ballInertia3(}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00087}00087 \textcolor{comment}{        T const \& Mass, }}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00088}00088 \textcolor{comment}{        T const \& Radius);}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00089}00089 \textcolor{comment}{        }}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00092}00092 \textcolor{comment}{    template <typename T, precision P>}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00093}00093 \textcolor{comment}{    detail::tmat4x4<T, P> ballInertia4(}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00094}00094 \textcolor{comment}{        T const \& Mass, }}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00095}00095 \textcolor{comment}{        T const \& Radius);}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00096}00096 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00099}00099 \textcolor{comment}{    template <typename T, precision P>}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00100}00100 \textcolor{comment}{    detail::tmat3x3<T, P> sphereInertia3(}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00101}00101 \textcolor{comment}{        T const \& Mass, }}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00102}00102 \textcolor{comment}{        T const \& Radius);}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00103}00103 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00106}00106 \textcolor{comment}{    template <typename T, precision P> }}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00107}00107 \textcolor{comment}{    detail::tmat4x4<T, P> sphereInertia4(}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00108}00108 \textcolor{comment}{        T const \& Mass, }}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00109}00109 \textcolor{comment}{        T const \& Radius);}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00110}00110 \textcolor{comment}{    */}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00112}00112 \}\textcolor{comment}{// namespace glm}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00114}00114 \textcolor{preprocessor}{\#include "{}inertia.inl"{}}}
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{inertia_8hpp_source_l00116}00116 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_GTX\_inertia}}
+
+\end{DoxyCode}

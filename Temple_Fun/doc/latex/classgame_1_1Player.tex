@@ -1,0 +1,830 @@
+\hypertarget{classgame_1_1Player}{}\doxysection{game\+::Player Class Reference}
+\label{classgame_1_1Player}\index{game::Player@{game::Player}}
+
+
+Class of \mbox{\hyperlink{classgame_1_1Player}{Player}}.  
+
+
+
+
+{\ttfamily \#include $<$Player.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgame_1_1Player_acac2e28c8c3a8e457148e953c6f31b3b}{Player}} (\mbox{\hyperlink{classgame_1_1CourseMap}{Course\+Map}} \mbox{\hyperlink{classgame_1_1CourseMap}{Course\+Map}}, glm\+::vec3 initial\+Pos)
+\begin{DoxyCompactList}\small\item\em Constructor of the \mbox{\hyperlink{classgame_1_1Player}{Player}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgame_1_1Player_af5b4ba7c390977f64b6b515a2e159897}{$\sim$\+Player}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor of the \mbox{\hyperlink{classgame_1_1Player}{Player}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Player_a49fcedfa6f909f2a8ef384564ecbd4ea}{set\+Coord}} (glm\+::vec3 coord)
+\begin{DoxyCompactList}\small\item\em Setter of the \mbox{\hyperlink{classgame_1_1Player}{Player}} coordinates. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{classgame_1_1Player_a2e1a227dc219988c003ec8bae4c2a4d1}{get\+Coord}} ()
+\begin{DoxyCompactList}\small\item\em Getter of the \mbox{\hyperlink{classgame_1_1Player}{Player}} coordinate in the .ppm coordinate system. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{classgame_1_1Player_a6f3acd2018014738d709abe2d7246637}{get\+Floor\+Coord}} ()
+\begin{DoxyCompactList}\small\item\em Getter of the integral part of the \mbox{\hyperlink{classgame_1_1Player}{Player}} coordinate in the .ppm coordinate system. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{classgame_1_1Player_aad867a4cf1f38f390d81f29daf9745c9}{convert\+Coord}} ()
+\begin{DoxyCompactList}\small\item\em Converts the \mbox{\hyperlink{classgame_1_1Player}{Player}}\textquotesingle{}s coordinates between the .ppm coordinates system and the Open\+Gl coordinates system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Player_abf16e22e09de3fe1c23171f1296884bf}{add\+Coins}} ()
+\begin{DoxyCompactList}\small\item\em Increases the number of \mbox{\hyperlink{classgame_1_1Coins}{Coins}} of the \mbox{\hyperlink{classgame_1_1Player}{Player}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classgame_1_1Player_a7dd16b96c65fd01b3687f704e1d19656}{get\+Coins}} ()
+\begin{DoxyCompactList}\small\item\em Getter of the number of \mbox{\hyperlink{classgame_1_1Coins}{Coins}} that the \mbox{\hyperlink{classgame_1_1Player}{Player}} has. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classgame_1_1Player_abfcb3d3d19af160d3c5ff16cb85a7a33}{is\+Life}} ()
+\begin{DoxyCompactList}\small\item\em Check if the \mbox{\hyperlink{classgame_1_1Player}{Player}} is still alive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Player_a677083a4a5c3eea2b7525bd5a2d677dc}{set\+Life}} (bool life)
+\begin{DoxyCompactList}\small\item\em Change the state of life of the \mbox{\hyperlink{classgame_1_1Player}{Player}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}} (glm\+::vec3 coord\+\_\+add)
+\begin{DoxyCompactList}\small\item\em Add a coordinate vector to the current coordinates of the \mbox{\hyperlink{classgame_1_1Player}{Player}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Player_a4532a7ef15be3ef8633836cf8c5e77d9}{move\+Orientation}} ()
+\begin{DoxyCompactList}\small\item\em Move the \mbox{\hyperlink{classgame_1_1Player}{Player}} according to its orientation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Player_abdabf5083b54fbd8b692cd4644ddb703}{set\+Orientation}} (float orientatioin)
+\begin{DoxyCompactList}\small\item\em Setter of the \mbox{\hyperlink{classgame_1_1Player}{Player}}\textquotesingle{}s orientation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classgame_1_1Player_a050de77af0f638d6bceae26df7000695}{get\+Orientation}} ()
+\begin{DoxyCompactList}\small\item\em getter of the \mbox{\hyperlink{classgame_1_1Player}{Player}}\textquotesingle{}s orientation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Player_af5bdf672c8e0ad11ebef7db0275a7397}{moveside}} (glimac\+::\+SDLWindow\+Manager \&window\+Manager, bool \&repeat, bool \&turn\+\_\+up, bool \&turn\+\_\+down, bool \&turn\+\_\+right, bool \&turn\+\_\+left)
+\begin{DoxyCompactList}\small\item\em Move the player to its right or left. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Player_a09a284bc7d49ed1d3a72385a21857837}{jump}} (glimac\+::\+SDLWindow\+Manager \&window\+Manager, bool \&repeat, int \&step)
+\begin{DoxyCompactList}\small\item\em Makes the player jump. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Player_ad365549f06c98cf9334451ab4cd18744}{fall}} (int \&step)
+\begin{DoxyCompactList}\small\item\em Makes the player fall after a jump. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classgame_1_1Player_ad352e5fa1deaa0c6655092e87cac6529}{is\+Jumping}} ()
+\begin{DoxyCompactList}\small\item\em Says if the player is jumping, getter of the jumping boolean. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Player_a5d67278e1ce7e3eca0f3be8d860e0222}{set\+Jump}} (glimac\+::\+SDLWindow\+Manager \&window\+Manager, bool \&repeat)
+\begin{DoxyCompactList}\small\item\em Set the jump. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Player_ab1f7cde9d7919fae2c62981c07333dd0}{move\+Manager}} (\mbox{\hyperlink{classgame_1_1Object}{Object}} $\ast$objet, \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, int \&score, glimac\+::\+SDLWindow\+Manager \&window\+Manager, bool \&repeat, bool \&turn\+\_\+up, bool \&turn\+\_\+down, bool \&turn\+\_\+right, bool \&turn\+\_\+left, int \&step\+\_\+turn)
+\begin{DoxyCompactList}\small\item\em Manages how the \mbox{\hyperlink{classgame_1_1Player}{Player}} mooves according to the orientation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Player_a94274ac942cc8611015fcdb904c26f7a}{move\+Enemy\+Manager}} (\mbox{\hyperlink{classgame_1_1Object}{Object}} $\ast$objet\+\_\+enemy)
+\begin{DoxyCompactList}\small\item\em Manages how the Enemy mooves according to the orientation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1Player_a381c2dea6ca30f80f5dbc37cce810abb}{draw}} (\mbox{\hyperlink{classrendering_1_1Model}{rendering\+::\+Model}} \&mesh, \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Program, glm\+::mat4 Proj\+Matrix)
+\begin{DoxyCompactList}\small\item\em Draw the \mbox{\hyperlink{classgame_1_1Player}{Player}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class of \mbox{\hyperlink{classgame_1_1Player}{Player}}. 
+
+This class manages the player and its movements. 
+
+Definition at line \mbox{\hyperlink{Player_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{Player_8hpp_source}{Player.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgame_1_1Player_acac2e28c8c3a8e457148e953c6f31b3b}\label{classgame_1_1Player_acac2e28c8c3a8e457148e953c6f31b3b}} 
+\index{game::Player@{game::Player}!Player@{Player}}
+\index{Player@{Player}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily game\+::\+Player\+::\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgame_1_1CourseMap}{Course\+Map}}}]{Course\+Map,  }\item[{glm\+::vec3}]{initial\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor of the \mbox{\hyperlink{classgame_1_1Player}{Player}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Coursemap} & Map to follow \\
+\hline
+{\em initial\+Pos} & Initial position of the player. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Player_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{Player_8hpp_source}{Player.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043 :m\_coord(initialPos),m\_coins(0),m\_life(\textcolor{keyword}{true}),m\_orientation(0), m\_isJumping(\textcolor{keyword}{false})\{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_af5b4ba7c390977f64b6b515a2e159897}\label{classgame_1_1Player_af5b4ba7c390977f64b6b515a2e159897}} 
+\index{game::Player@{game::Player}!````~Player@{$\sim$Player}}
+\index{````~Player@{$\sim$Player}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{$\sim$Player()}{~Player()}}
+{\footnotesize\ttfamily game\+::\+Player\+::$\sim$\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor of the \mbox{\hyperlink{classgame_1_1Player}{Player}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgame_1_1Player_abf16e22e09de3fe1c23171f1296884bf}\label{classgame_1_1Player_abf16e22e09de3fe1c23171f1296884bf}} 
+\index{game::Player@{game::Player}!addCoins@{addCoins}}
+\index{addCoins@{addCoins}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{addCoins()}{addCoins()}}
+{\footnotesize\ttfamily void game\+::\+Player\+::add\+Coins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increases the number of \mbox{\hyperlink{classgame_1_1Coins}{Coins}} of the \mbox{\hyperlink{classgame_1_1Player}{Player}}. 
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023 \{}
+\DoxyCodeLine{00024     m\_coins++;}
+\DoxyCodeLine{00025 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_aad867a4cf1f38f390d81f29daf9745c9}\label{classgame_1_1Player_aad867a4cf1f38f390d81f29daf9745c9}} 
+\index{game::Player@{game::Player}!convertCoord@{convertCoord}}
+\index{convertCoord@{convertCoord}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{convertCoord()}{convertCoord()}}
+{\footnotesize\ttfamily glm\+::vec3 game\+::\+Player\+::convert\+Coord (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converts the \mbox{\hyperlink{classgame_1_1Player}{Player}}\textquotesingle{}s coordinates between the .ppm coordinates system and the Open\+Gl coordinates system. 
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048 \{}
+\DoxyCodeLine{00049     \textcolor{keywordflow}{return} glm::vec3(\mbox{\hyperlink{classgame_1_1Player_a2e1a227dc219988c003ec8bae4c2a4d1}{getCoord}}().x -\/ 1., \mbox{\hyperlink{classgame_1_1Player_a2e1a227dc219988c003ec8bae4c2a4d1}{getCoord}}().z, \mbox{\hyperlink{classgame_1_1Player_a2e1a227dc219988c003ec8bae4c2a4d1}{getCoord}}().y);}
+\DoxyCodeLine{00050 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_a381c2dea6ca30f80f5dbc37cce810abb}\label{classgame_1_1Player_a381c2dea6ca30f80f5dbc37cce810abb}} 
+\index{game::Player@{game::Player}!draw@{draw}}
+\index{draw@{draw}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void game\+::\+Player\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1Model}{rendering\+::\+Model}} \&}]{mesh,  }\item[{\mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$}]{camera,  }\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Program,  }\item[{glm\+::mat4}]{Proj\+Matrix }\end{DoxyParamCaption})}
+
+
+
+Draw the \mbox{\hyperlink{classgame_1_1Player}{Player}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & The corresponding mesh of the \mbox{\hyperlink{classgame_1_1Player}{Player}} \\
+\hline
+{\em camera} & The camera to get the View\+Matrix \\
+\hline
+{\em Program} & The corresponding shader \\
+\hline
+{\em Proj\+Matrix} & The Projection Matrix \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053 \{}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
+\DoxyCodeLine{00056     ViewMatrix = glm::translate(ViewMatrix, \mbox{\hyperlink{classgame_1_1Player_aad867a4cf1f38f390d81f29daf9745c9}{convertCoord}}());}
+\DoxyCodeLine{00057     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0, 0.6, 0));}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059     ViewMatrix = glm::scale(ViewMatrix, glm::vec3(1, 1, 1));}
+\DoxyCodeLine{00060     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
+\DoxyCodeLine{00063     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVMatrix"{}}, ViewMatrix);}
+\DoxyCodeLine{00064     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uNormalMatrix"{}}, NormalMatrix);}
+\DoxyCodeLine{00065     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_ad8f60d9ab9e7a1c0572914e6ea47b498}{uniform1i}}(\textcolor{stringliteral}{"{}uTexture"{}}, 0);}
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067     mesh.\mbox{\hyperlink{classrendering_1_1Model_a71dea11e780bdefb98cd9603cfa1758b}{draw}}();}
+\DoxyCodeLine{00068 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_ad365549f06c98cf9334451ab4cd18744}\label{classgame_1_1Player_ad365549f06c98cf9334451ab4cd18744}} 
+\index{game::Player@{game::Player}!fall@{fall}}
+\index{fall@{fall}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{fall()}{fall()}}
+{\footnotesize\ttfamily void game\+::\+Player\+::fall (\begin{DoxyParamCaption}\item[{int \&}]{step }\end{DoxyParamCaption})}
+
+
+
+Makes the player fall after a jump. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em step} & manage the different step of the fall \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00190}{190}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00191 \{}
+\DoxyCodeLine{00192 }
+\DoxyCodeLine{00193     \textcolor{keywordflow}{if} (step < 20)}
+\DoxyCodeLine{00194     \{}
+\DoxyCodeLine{00195         m\_coord.z -\/= 0.1;}
+\DoxyCodeLine{00196 }
+\DoxyCodeLine{00197         \mbox{\hyperlink{classgame_1_1Player_a4532a7ef15be3ef8633836cf8c5e77d9}{moveOrientation}}();}
+\DoxyCodeLine{00198         step++;}
+\DoxyCodeLine{00199     \}}
+\DoxyCodeLine{00200     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00201     \{}
+\DoxyCodeLine{00202         step = 0;}
+\DoxyCodeLine{00203         m\_isJumping = \textcolor{keyword}{false};}
+\DoxyCodeLine{00204     \}}
+\DoxyCodeLine{00205 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_a7dd16b96c65fd01b3687f704e1d19656}\label{classgame_1_1Player_a7dd16b96c65fd01b3687f704e1d19656}} 
+\index{game::Player@{game::Player}!getCoins@{getCoins}}
+\index{getCoins@{getCoins}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{getCoins()}{getCoins()}}
+{\footnotesize\ttfamily int game\+::\+Player\+::get\+Coins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter of the number of \mbox{\hyperlink{classgame_1_1Coins}{Coins}} that the \mbox{\hyperlink{classgame_1_1Player}{Player}} has. 
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028 \{}
+\DoxyCodeLine{00029     \textcolor{keywordflow}{return} m\_coins;}
+\DoxyCodeLine{00030 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_a2e1a227dc219988c003ec8bae4c2a4d1}\label{classgame_1_1Player_a2e1a227dc219988c003ec8bae4c2a4d1}} 
+\index{game::Player@{game::Player}!getCoord@{getCoord}}
+\index{getCoord@{getCoord}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{getCoord()}{getCoord()}}
+{\footnotesize\ttfamily glm\+::vec3 game\+::\+Player\+::get\+Coord (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter of the \mbox{\hyperlink{classgame_1_1Player}{Player}} coordinate in the .ppm coordinate system. 
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014 \{}
+\DoxyCodeLine{00015     \textcolor{keywordflow}{return} m\_coord;}
+\DoxyCodeLine{00016 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_a6f3acd2018014738d709abe2d7246637}\label{classgame_1_1Player_a6f3acd2018014738d709abe2d7246637}} 
+\index{game::Player@{game::Player}!getFloorCoord@{getFloorCoord}}
+\index{getFloorCoord@{getFloorCoord}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{getFloorCoord()}{getFloorCoord()}}
+{\footnotesize\ttfamily glm\+::vec3 game\+::\+Player\+::get\+Floor\+Coord (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter of the integral part of the \mbox{\hyperlink{classgame_1_1Player}{Player}} coordinate in the .ppm coordinate system. 
+
+Allows to get the cells where the player is 
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018 \{}
+\DoxyCodeLine{00019     \textcolor{keywordflow}{return} glm::vec3(floor(m\_coord.x), floor(m\_coord.y), m\_coord.z);}
+\DoxyCodeLine{00020 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_a050de77af0f638d6bceae26df7000695}\label{classgame_1_1Player_a050de77af0f638d6bceae26df7000695}} 
+\index{game::Player@{game::Player}!getOrientation@{getOrientation}}
+\index{getOrientation@{getOrientation}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{getOrientation()}{getOrientation()}}
+{\footnotesize\ttfamily float game\+::\+Player\+::get\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+getter of the \mbox{\hyperlink{classgame_1_1Player}{Player}}\textquotesingle{}s orientation 
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00095}{95}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096 \{}
+\DoxyCodeLine{00097     \textcolor{keywordflow}{return} m\_orientation;}
+\DoxyCodeLine{00098 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_ad352e5fa1deaa0c6655092e87cac6529}\label{classgame_1_1Player_ad352e5fa1deaa0c6655092e87cac6529}} 
+\index{game::Player@{game::Player}!isJumping@{isJumping}}
+\index{isJumping@{isJumping}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{isJumping()}{isJumping()}}
+{\footnotesize\ttfamily bool game\+::\+Player\+::is\+Jumping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Says if the player is jumping, getter of the jumping boolean. 
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00207}{207}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00208 \{}
+\DoxyCodeLine{00209     \textcolor{keywordflow}{return} m\_isJumping;}
+\DoxyCodeLine{00210 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_abfcb3d3d19af160d3c5ff16cb85a7a33}\label{classgame_1_1Player_abfcb3d3d19af160d3c5ff16cb85a7a33}} 
+\index{game::Player@{game::Player}!isLife@{isLife}}
+\index{isLife@{isLife}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{isLife()}{isLife()}}
+{\footnotesize\ttfamily bool game\+::\+Player\+::is\+Life (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if the \mbox{\hyperlink{classgame_1_1Player}{Player}} is still alive. 
+
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033 \{}
+\DoxyCodeLine{00034     \textcolor{keywordflow}{return} m\_life;}
+\DoxyCodeLine{00035 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_a09a284bc7d49ed1d3a72385a21857837}\label{classgame_1_1Player_a09a284bc7d49ed1d3a72385a21857837}} 
+\index{game::Player@{game::Player}!jump@{jump}}
+\index{jump@{jump}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{jump()}{jump()}}
+{\footnotesize\ttfamily void game\+::\+Player\+::jump (\begin{DoxyParamCaption}\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager,  }\item[{bool \&}]{repeat,  }\item[{int \&}]{step }\end{DoxyParamCaption})}
+
+
+
+Makes the player jump. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+Manager} & SDLWindow\+Manager to get the event \\
+\hline
+{\em repeat} & boolean to prevent the event from repeating in SDL1 \\
+\hline
+{\em step} & manage the different step of the jump \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00178}{178}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00179 \{}
+\DoxyCodeLine{00180 }
+\DoxyCodeLine{00181     \textcolor{keywordflow}{if} (step < 10)}
+\DoxyCodeLine{00182     \{}
+\DoxyCodeLine{00183         m\_coord.z += 0.1;}
+\DoxyCodeLine{00184         m\_isJumping = \textcolor{keyword}{true};}
+\DoxyCodeLine{00185         \mbox{\hyperlink{classgame_1_1Player_a4532a7ef15be3ef8633836cf8c5e77d9}{moveOrientation}}();}
+\DoxyCodeLine{00186         step++;}
+\DoxyCodeLine{00187     \}}
+\DoxyCodeLine{00188 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}\label{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}} 
+\index{game::Player@{game::Player}!move@{move}}
+\index{move@{move}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void game\+::\+Player\+::move (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{coord\+\_\+add }\end{DoxyParamCaption})}
+
+
+
+Add a coordinate vector to the current coordinates of the \mbox{\hyperlink{classgame_1_1Player}{Player}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord\+\_\+add} & Coordinate to add \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038 \{}
+\DoxyCodeLine{00039     m\_coord = glm::vec3(m\_coord[0] + coord\_move[0], m\_coord[1] + coord\_move[1], m\_coord[2] + coord\_move[2]);}
+\DoxyCodeLine{00040 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_a94274ac942cc8611015fcdb904c26f7a}\label{classgame_1_1Player_a94274ac942cc8611015fcdb904c26f7a}} 
+\index{game::Player@{game::Player}!moveEnemyManager@{moveEnemyManager}}
+\index{moveEnemyManager@{moveEnemyManager}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{moveEnemyManager()}{moveEnemyManager()}}
+{\footnotesize\ttfamily void game\+::\+Player\+::move\+Enemy\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgame_1_1Object}{Object}} $\ast$}]{objet\+\_\+enemy }\end{DoxyParamCaption})}
+
+
+
+Manages how the Enemy mooves according to the orientation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objet\+\_\+enemy} & the \mbox{\hyperlink{classgame_1_1Object}{Object}} on which the Enemy is \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00277}{277}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00278 \{}
+\DoxyCodeLine{00279     \textcolor{keywordflow}{if} (objet\_enemy-\/>getName() == \textcolor{stringliteral}{"{}up"{}})}
+\DoxyCodeLine{00280     \{}
+\DoxyCodeLine{00281         \mbox{\hyperlink{classgame_1_1Player_a49fcedfa6f909f2a8ef384564ecbd4ea}{setCoord}}(objet\_enemy-\/>getCoord());}
+\DoxyCodeLine{00282         \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(0, -\/1, 0));}
+\DoxyCodeLine{00283         \mbox{\hyperlink{classgame_1_1Player_abdabf5083b54fbd8b692cd4644ddb703}{setOrientation}}(180.);}
+\DoxyCodeLine{00284     \}}
+\DoxyCodeLine{00285 }
+\DoxyCodeLine{00286     \textcolor{keywordflow}{if} (objet\_enemy-\/>getName() == \textcolor{stringliteral}{"{}down"{}})}
+\DoxyCodeLine{00287     \{}
+\DoxyCodeLine{00288         \mbox{\hyperlink{classgame_1_1Player_a49fcedfa6f909f2a8ef384564ecbd4ea}{setCoord}}(objet\_enemy-\/>getCoord());}
+\DoxyCodeLine{00289         \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(0, 1, 0));}
+\DoxyCodeLine{00290         \mbox{\hyperlink{classgame_1_1Player_abdabf5083b54fbd8b692cd4644ddb703}{setOrientation}}(0.);}
+\DoxyCodeLine{00291     \}}
+\DoxyCodeLine{00292 }
+\DoxyCodeLine{00293     \textcolor{keywordflow}{if} (objet\_enemy-\/>getName() == \textcolor{stringliteral}{"{}right"{}})}
+\DoxyCodeLine{00294     \{}
+\DoxyCodeLine{00295         \mbox{\hyperlink{classgame_1_1Player_a49fcedfa6f909f2a8ef384564ecbd4ea}{setCoord}}(objet\_enemy-\/>getCoord());}
+\DoxyCodeLine{00296         \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(1, 0, 0));}
+\DoxyCodeLine{00297         \mbox{\hyperlink{classgame_1_1Player_abdabf5083b54fbd8b692cd4644ddb703}{setOrientation}}(90.);}
+\DoxyCodeLine{00298     \}}
+\DoxyCodeLine{00299 }
+\DoxyCodeLine{00300     \textcolor{keywordflow}{if} (objet\_enemy-\/>getName() == \textcolor{stringliteral}{"{}left"{}})}
+\DoxyCodeLine{00301     \{}
+\DoxyCodeLine{00302         \mbox{\hyperlink{classgame_1_1Player_a49fcedfa6f909f2a8ef384564ecbd4ea}{setCoord}}(objet\_enemy-\/>getCoord());}
+\DoxyCodeLine{00303         \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(-\/1, 0, 0));}
+\DoxyCodeLine{00304         \mbox{\hyperlink{classgame_1_1Player_abdabf5083b54fbd8b692cd4644ddb703}{setOrientation}}(-\/90.);}
+\DoxyCodeLine{00305     \}}
+\DoxyCodeLine{00306 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_ab1f7cde9d7919fae2c62981c07333dd0}\label{classgame_1_1Player_ab1f7cde9d7919fae2c62981c07333dd0}} 
+\index{game::Player@{game::Player}!moveManager@{moveManager}}
+\index{moveManager@{moveManager}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{moveManager()}{moveManager()}}
+{\footnotesize\ttfamily void game\+::\+Player\+::move\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classgame_1_1Object}{Object}} $\ast$}]{objet,  }\item[{\mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$}]{camera,  }\item[{int \&}]{score,  }\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager,  }\item[{bool \&}]{repeat,  }\item[{bool \&}]{turn\+\_\+up,  }\item[{bool \&}]{turn\+\_\+down,  }\item[{bool \&}]{turn\+\_\+right,  }\item[{bool \&}]{turn\+\_\+left,  }\item[{int \&}]{step\+\_\+turn }\end{DoxyParamCaption})}
+
+
+
+Manages how the \mbox{\hyperlink{classgame_1_1Player}{Player}} mooves according to the orientation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objet} & the \mbox{\hyperlink{classgame_1_1Object}{Object}} on which the \mbox{\hyperlink{classgame_1_1Player}{Player}} is \\
+\hline
+{\em camera} & the camera to be rotated when there is a turn \\
+\hline
+{\em score} & The score that increases if the \mbox{\hyperlink{classgame_1_1Player}{Player}} collects the coin \\
+\hline
+{\em window\+Manager} & the SDLWindow\+Manager to get the event \\
+\hline
+{\em repeat} & Boolean to prevent the event from repeating in SDL1 \\
+\hline
+{\em turn\+\_\+left} & boolean to determine if the \mbox{\hyperlink{classgame_1_1Player}{Player}} will turn in the corner \\
+\hline
+{\em turn\+\_\+right} & boolean to determine if the \mbox{\hyperlink{classgame_1_1Player}{Player}} will turn in the corner \\
+\hline
+{\em turn\+\_\+up} & boolean to determine if the \mbox{\hyperlink{classgame_1_1Player}{Player}} will turn in the corner \\
+\hline
+{\em turn\+\_\+down} & boolean to determine if the \mbox{\hyperlink{classgame_1_1Player}{Player}} will turn in the corner \\
+\hline
+{\em step\+\_\+turn} & manage the different step of the turn \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00212}{212}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00213 \{}
+\DoxyCodeLine{00214     \textcolor{keywordflow}{if} (objet-\/>getIfCoins() \& !m\_isJumping)}
+\DoxyCodeLine{00215     \{}
+\DoxyCodeLine{00216         objet-\/>removeCoin();}
+\DoxyCodeLine{00217         score += 50;}
+\DoxyCodeLine{00218     \}}
+\DoxyCodeLine{00219     \textcolor{keywordflow}{if} (objet-\/>getName() == \textcolor{stringliteral}{"{}straight"{}})}
+\DoxyCodeLine{00220     \{}
+\DoxyCodeLine{00221         \mbox{\hyperlink{classgame_1_1Player_af5bdf672c8e0ad11ebef7db0275a7397}{moveside}}(windowManager, repeat, turn\_up, turn\_down, turn\_right, turn\_left);}
+\DoxyCodeLine{00222         \mbox{\hyperlink{classgame_1_1Player_a5d67278e1ce7e3eca0f3be8d860e0222}{setJump}}(windowManager, repeat);}
+\DoxyCodeLine{00223     \}}
+\DoxyCodeLine{00224 }
+\DoxyCodeLine{00225     \textcolor{keywordflow}{if} (objet-\/>getName() == \textcolor{stringliteral}{"{}up"{}} \& turn\_up)}
+\DoxyCodeLine{00226     \{}
+\DoxyCodeLine{00227         turn\_up = \textcolor{keyword}{false};}
+\DoxyCodeLine{00228         step\_turn = 0;}
+\DoxyCodeLine{00229         \mbox{\hyperlink{classgame_1_1Player_a49fcedfa6f909f2a8ef384564ecbd4ea}{setCoord}}(objet-\/>getCoord());}
+\DoxyCodeLine{00230         \mbox{\hyperlink{classgame_1_1Player_abdabf5083b54fbd8b692cd4644ddb703}{setOrientation}}(180.);}
+\DoxyCodeLine{00231         \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(0, -\/1, 0));}
+\DoxyCodeLine{00232         camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}{rotateLeft}}(\mbox{\hyperlink{classgame_1_1Player_a050de77af0f638d6bceae26df7000695}{getOrientation}}());}
+\DoxyCodeLine{00233     \}}
+\DoxyCodeLine{00234 }
+\DoxyCodeLine{00235     \textcolor{keywordflow}{if} (objet-\/>getName() == \textcolor{stringliteral}{"{}down"{}} \& turn\_down)}
+\DoxyCodeLine{00236     \{}
+\DoxyCodeLine{00237         turn\_down = \textcolor{keyword}{false};}
+\DoxyCodeLine{00238         step\_turn = 0;}
+\DoxyCodeLine{00239         \mbox{\hyperlink{classgame_1_1Player_a49fcedfa6f909f2a8ef384564ecbd4ea}{setCoord}}(objet-\/>getCoord());}
+\DoxyCodeLine{00240         \mbox{\hyperlink{classgame_1_1Player_abdabf5083b54fbd8b692cd4644ddb703}{setOrientation}}(0.);}
+\DoxyCodeLine{00241         \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(0, 1, 0));}
+\DoxyCodeLine{00242         camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}{rotateLeft}}(\mbox{\hyperlink{classgame_1_1Player_a050de77af0f638d6bceae26df7000695}{getOrientation}}());}
+\DoxyCodeLine{00243     \}}
+\DoxyCodeLine{00244 }
+\DoxyCodeLine{00245     \textcolor{keywordflow}{if} (objet-\/>getName() == \textcolor{stringliteral}{"{}right"{}} \& turn\_right)}
+\DoxyCodeLine{00246     \{}
+\DoxyCodeLine{00247         turn\_right = \textcolor{keyword}{false};}
+\DoxyCodeLine{00248         step\_turn = 0;}
+\DoxyCodeLine{00249         \mbox{\hyperlink{classgame_1_1Player_a49fcedfa6f909f2a8ef384564ecbd4ea}{setCoord}}(objet-\/>getCoord());}
+\DoxyCodeLine{00250         \mbox{\hyperlink{classgame_1_1Player_abdabf5083b54fbd8b692cd4644ddb703}{setOrientation}}(90.);}
+\DoxyCodeLine{00251         \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(1, 0, 0));}
+\DoxyCodeLine{00252         camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}{rotateLeft}}(\mbox{\hyperlink{classgame_1_1Player_a050de77af0f638d6bceae26df7000695}{getOrientation}}());}
+\DoxyCodeLine{00253     \}}
+\DoxyCodeLine{00254 }
+\DoxyCodeLine{00255     \textcolor{keywordflow}{if} (objet-\/>getName() == \textcolor{stringliteral}{"{}left"{}} \& turn\_left)}
+\DoxyCodeLine{00256     \{}
+\DoxyCodeLine{00257         turn\_right = \textcolor{keyword}{false};}
+\DoxyCodeLine{00258         step\_turn = 0;}
+\DoxyCodeLine{00259         \mbox{\hyperlink{classgame_1_1Player_a49fcedfa6f909f2a8ef384564ecbd4ea}{setCoord}}(objet-\/>getCoord());}
+\DoxyCodeLine{00260         \mbox{\hyperlink{classgame_1_1Player_abdabf5083b54fbd8b692cd4644ddb703}{setOrientation}}(-\/90.);}
+\DoxyCodeLine{00261         \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(-\/1, 0, 0));}
+\DoxyCodeLine{00262         camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}{rotateLeft}}(\mbox{\hyperlink{classgame_1_1Player_a050de77af0f638d6bceae26df7000695}{getOrientation}}());}
+\DoxyCodeLine{00263     \}}
+\DoxyCodeLine{00264 }
+\DoxyCodeLine{00265     \textcolor{keywordflow}{if} (objet-\/>getName() == \textcolor{stringliteral}{"{}empty"{}} \& \mbox{\hyperlink{classgame_1_1Player_a2e1a227dc219988c003ec8bae4c2a4d1}{getCoord}}()[2] < 0.3 || \mbox{\hyperlink{classgame_1_1Player_a2e1a227dc219988c003ec8bae4c2a4d1}{getCoord}}().x < 0)}
+\DoxyCodeLine{00266     \{}
+\DoxyCodeLine{00267         \mbox{\hyperlink{classgame_1_1Player_a677083a4a5c3eea2b7525bd5a2d677dc}{setLife}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00268     \}}
+\DoxyCodeLine{00269 }
+\DoxyCodeLine{00270     \textcolor{keywordflow}{if} (objet-\/>getName() == \textcolor{stringliteral}{"{}obstacle"{}} \& \mbox{\hyperlink{classgame_1_1Player_a2e1a227dc219988c003ec8bae4c2a4d1}{getCoord}}()[2] < 0.3)}
+\DoxyCodeLine{00271     \{}
+\DoxyCodeLine{00272         \mbox{\hyperlink{classgame_1_1Player_a677083a4a5c3eea2b7525bd5a2d677dc}{setLife}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00273     \}}
+\DoxyCodeLine{00274 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_a4532a7ef15be3ef8633836cf8c5e77d9}\label{classgame_1_1Player_a4532a7ef15be3ef8633836cf8c5e77d9}} 
+\index{game::Player@{game::Player}!moveOrientation@{moveOrientation}}
+\index{moveOrientation@{moveOrientation}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{moveOrientation()}{moveOrientation()}}
+{\footnotesize\ttfamily void game\+::\+Player\+::move\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Move the \mbox{\hyperlink{classgame_1_1Player}{Player}} according to its orientation. 
+
+Enables to determine if moving forwards means incrementing the position on the x or z axis (Open\+Gl coordinate system) 
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071 \{}
+\DoxyCodeLine{00072     \textcolor{keywordflow}{if} (m\_orientation == 0.)}
+\DoxyCodeLine{00073     \{}
+\DoxyCodeLine{00074         \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(0, 0.1, 0));}
+\DoxyCodeLine{00075     \}}
+\DoxyCodeLine{00076     \textcolor{keywordflow}{if} (m\_orientation == 90.)}
+\DoxyCodeLine{00077     \{}
+\DoxyCodeLine{00078         \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(0.1, 0, 0));}
+\DoxyCodeLine{00079     \}}
+\DoxyCodeLine{00080     \textcolor{keywordflow}{if} (m\_orientation == -\/90.)}
+\DoxyCodeLine{00081     \{}
+\DoxyCodeLine{00082         \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(-\/0.1, 0, 0));}
+\DoxyCodeLine{00083     \}}
+\DoxyCodeLine{00084     \textcolor{keywordflow}{if} (m\_orientation == 180.)}
+\DoxyCodeLine{00085     \{}
+\DoxyCodeLine{00086         \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(0, -\/0.1, 0));}
+\DoxyCodeLine{00087     \}}
+\DoxyCodeLine{00088 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_af5bdf672c8e0ad11ebef7db0275a7397}\label{classgame_1_1Player_af5bdf672c8e0ad11ebef7db0275a7397}} 
+\index{game::Player@{game::Player}!moveside@{moveside}}
+\index{moveside@{moveside}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{moveside()}{moveside()}}
+{\footnotesize\ttfamily void game\+::\+Player\+::moveside (\begin{DoxyParamCaption}\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager,  }\item[{bool \&}]{repeat,  }\item[{bool \&}]{turn\+\_\+up,  }\item[{bool \&}]{turn\+\_\+down,  }\item[{bool \&}]{turn\+\_\+right,  }\item[{bool \&}]{turn\+\_\+left }\end{DoxyParamCaption})}
+
+
+
+Move the player to its right or left. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+Manager} & SDLWindow\+Manager to get the event \\
+\hline
+{\em repeat} & boolean to prevent the event from repeating in SDL1 \\
+\hline
+{\em turn\+\_\+up} & boolean to determine if the \mbox{\hyperlink{classgame_1_1Player}{Player}} will turn in the corner \\
+\hline
+{\em turn\+\_\+down} & boolean to determine if the \mbox{\hyperlink{classgame_1_1Player}{Player}} will turn in the corner \\
+\hline
+{\em turn\+\_\+right} & boolean to determine if the \mbox{\hyperlink{classgame_1_1Player}{Player}} will turn in the corner \\
+\hline
+{\em turn\+\_\+left} & boolean to determine if the \mbox{\hyperlink{classgame_1_1Player}{Player}} will turn in the corner \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00101 \{}
+\DoxyCodeLine{00102     \textcolor{keywordflow}{if} (m\_orientation == 0.)}
+\DoxyCodeLine{00103     \{}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_d) \&\& repeat)}
+\DoxyCodeLine{00106         \{}
+\DoxyCodeLine{00107             SDL\_EnableKeyRepeat(0, 0);}
+\DoxyCodeLine{00108             turn\_left = \textcolor{keyword}{true};}
+\DoxyCodeLine{00109             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00110             \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(-\/1., 0, 0));}
+\DoxyCodeLine{00111         \}}
+\DoxyCodeLine{00112         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_q) \&\& repeat)}
+\DoxyCodeLine{00113         \{}
+\DoxyCodeLine{00114             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00115             turn\_right = \textcolor{keyword}{true};}
+\DoxyCodeLine{00116             \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(1., 0, 0));}
+\DoxyCodeLine{00117         \}}
+\DoxyCodeLine{00118     \}}
+\DoxyCodeLine{00119     \textcolor{keywordflow}{if} (m\_orientation == 90.)}
+\DoxyCodeLine{00120     \{}
+\DoxyCodeLine{00121         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_d) \&\& repeat)}
+\DoxyCodeLine{00122         \{}
+\DoxyCodeLine{00123             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00124             turn\_down = \textcolor{keyword}{true};}
+\DoxyCodeLine{00125             \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(0, 1., 0));}
+\DoxyCodeLine{00126         \}}
+\DoxyCodeLine{00127         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_q) \&\& repeat)}
+\DoxyCodeLine{00128         \{}
+\DoxyCodeLine{00129             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00130             turn\_up = \textcolor{keyword}{true};}
+\DoxyCodeLine{00131             \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(0, -\/1., 0));}
+\DoxyCodeLine{00132         \}}
+\DoxyCodeLine{00133     \}}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135     \textcolor{keywordflow}{if} (m\_orientation == -\/90.)}
+\DoxyCodeLine{00136     \{}
+\DoxyCodeLine{00137         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_d) \&\& repeat)}
+\DoxyCodeLine{00138         \{}
+\DoxyCodeLine{00139             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00140             turn\_up = \textcolor{keyword}{true};}
+\DoxyCodeLine{00141             \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(0, -\/1., 0));}
+\DoxyCodeLine{00142         \}}
+\DoxyCodeLine{00143         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_q) \&\& repeat)}
+\DoxyCodeLine{00144         \{}
+\DoxyCodeLine{00145             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00146             turn\_down = \textcolor{keyword}{true};}
+\DoxyCodeLine{00147             \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(0, 1., 0));}
+\DoxyCodeLine{00148         \}}
+\DoxyCodeLine{00149     \}}
+\DoxyCodeLine{00150 }
+\DoxyCodeLine{00151     \textcolor{keywordflow}{if} (m\_orientation == 180.)}
+\DoxyCodeLine{00152     \{}
+\DoxyCodeLine{00153         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_d) \&\& repeat)}
+\DoxyCodeLine{00154         \{}
+\DoxyCodeLine{00155             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00156             turn\_right = \textcolor{keyword}{true};}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{00158             \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(1., 0, 0));}
+\DoxyCodeLine{00159         \}}
+\DoxyCodeLine{00160         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_q) \&\& repeat)}
+\DoxyCodeLine{00161         \{}
+\DoxyCodeLine{00162             repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00163             turn\_left = \textcolor{keyword}{true};}
+\DoxyCodeLine{00164             \mbox{\hyperlink{classgame_1_1Player_a911a6ef215cccb776f6e60b14d300722}{move}}(glm::vec3(-\/1., 0, 0));}
+\DoxyCodeLine{00165         \}}
+\DoxyCodeLine{00166     \}}
+\DoxyCodeLine{00167 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_a49fcedfa6f909f2a8ef384564ecbd4ea}\label{classgame_1_1Player_a49fcedfa6f909f2a8ef384564ecbd4ea}} 
+\index{game::Player@{game::Player}!setCoord@{setCoord}}
+\index{setCoord@{setCoord}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{setCoord()}{setCoord()}}
+{\footnotesize\ttfamily void game\+::\+Player\+::set\+Coord (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{coord }\end{DoxyParamCaption})}
+
+
+
+Setter of the \mbox{\hyperlink{classgame_1_1Player}{Player}} coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord} & Coordinates to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009 \{}
+\DoxyCodeLine{00010     m\_coord = coord;}
+\DoxyCodeLine{00011 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_a5d67278e1ce7e3eca0f3be8d860e0222}\label{classgame_1_1Player_a5d67278e1ce7e3eca0f3be8d860e0222}} 
+\index{game::Player@{game::Player}!setJump@{setJump}}
+\index{setJump@{setJump}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{setJump()}{setJump()}}
+{\footnotesize\ttfamily void game\+::\+Player\+::set\+Jump (\begin{DoxyParamCaption}\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager,  }\item[{bool \&}]{repeat }\end{DoxyParamCaption})}
+
+
+
+Set the jump. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+Manager} & SDLWindow\+Manager to get the event \\
+\hline
+{\em repeat} & boolean to prevent the event from repeating in SDL1 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00169}{169}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00170 \{}
+\DoxyCodeLine{00171     \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_z) \&\& repeat)}
+\DoxyCodeLine{00172     \{}
+\DoxyCodeLine{00173         m\_isJumping = \textcolor{keyword}{true};}
+\DoxyCodeLine{00174         repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{00175     \}}
+\DoxyCodeLine{00176 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_a677083a4a5c3eea2b7525bd5a2d677dc}\label{classgame_1_1Player_a677083a4a5c3eea2b7525bd5a2d677dc}} 
+\index{game::Player@{game::Player}!setLife@{setLife}}
+\index{setLife@{setLife}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{setLife()}{setLife()}}
+{\footnotesize\ttfamily void game\+::\+Player\+::set\+Life (\begin{DoxyParamCaption}\item[{bool}]{life }\end{DoxyParamCaption})}
+
+
+
+Change the state of life of the \mbox{\hyperlink{classgame_1_1Player}{Player}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em life} & Boolean to set to the player state of life \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043 \{}
+\DoxyCodeLine{00044     m\_life = life;}
+\DoxyCodeLine{00045 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_abdabf5083b54fbd8b692cd4644ddb703}\label{classgame_1_1Player_abdabf5083b54fbd8b692cd4644ddb703}} 
+\index{game::Player@{game::Player}!setOrientation@{setOrientation}}
+\index{setOrientation@{setOrientation}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{setOrientation()}{setOrientation()}}
+{\footnotesize\ttfamily void game\+::\+Player\+::set\+Orientation (\begin{DoxyParamCaption}\item[{float}]{orientatioin }\end{DoxyParamCaption})}
+
+
+
+Setter of the \mbox{\hyperlink{classgame_1_1Player}{Player}}\textquotesingle{}s orientation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em orientation} & Orientation to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Player_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{Player_8cpp_source}{Player.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091 \{}
+\DoxyCodeLine{00092     m\_orientation = orientation;}
+\DoxyCodeLine{00093 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+game/include/game/\mbox{\hyperlink{Player_8hpp}{Player.\+hpp}}\item 
+game/src/\mbox{\hyperlink{Player_8cpp}{Player.\+cpp}}\end{DoxyCompactItemize}

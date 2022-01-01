@@ -1,0 +1,50 @@
+\hypertarget{group__gtc}{}\doxysection{GTC Extensions (Stable)}
+\label{group__gtc}\index{GTC Extensions (Stable)@{GTC Extensions (Stable)}}
+
+
+Functions and types that the GLSL specification doesn\textquotesingle{}t define, but useful to have for a C++ program.  
+
+
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__gtc__constants}{GLM\+\_\+\+GTC\+\_\+constants}}
+\begin{DoxyCompactList}\small\item\em Provide a list of constants and precomputed useful values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__epsilon}{GLM\+\_\+\+GTC\+\_\+epsilon}}
+\begin{DoxyCompactList}\small\item\em Comparison functions for a user defined epsilon values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__matrix__access}{GLM\+\_\+\+GTC\+\_\+matrix\+\_\+access}}
+\begin{DoxyCompactList}\small\item\em Defines functions to access rows or columns of a matrix easily. \texorpdfstring{$<$}{<}\mbox{\hyperlink{matrix__access_8hpp}{glm/gtc/matrix\+\_\+access.\+hpp}}\texorpdfstring{$>$}{>} need to be included to use these functionalities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__matrix__integer}{GLM\+\_\+\+GTC\+\_\+matrix\+\_\+integer}}
+\begin{DoxyCompactList}\small\item\em Defines a number of matrices with integer types. \texorpdfstring{$<$}{<}\mbox{\hyperlink{matrix__integer_8hpp}{glm/gtc/matrix\+\_\+integer.\+hpp}}\texorpdfstring{$>$}{>} need to be included to use these functionalities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__matrix__inverse}{GLM\+\_\+\+GTC\+\_\+matrix\+\_\+inverse}}
+\begin{DoxyCompactList}\small\item\em Defines additional matrix inverting functions. \texorpdfstring{$<$}{<}\mbox{\hyperlink{matrix__inverse_8hpp}{glm/gtc/matrix\+\_\+inverse.\+hpp}}\texorpdfstring{$>$}{>} need to be included to use these functionalities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__matrix__transform}{GLM\+\_\+\+GTC\+\_\+matrix\+\_\+transform}}
+\begin{DoxyCompactList}\small\item\em Defines functions that generate common transformation matrices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__noise}{GLM\+\_\+\+GTC\+\_\+noise}}
+\begin{DoxyCompactList}\small\item\em Defines 2D, 3D and 4D procedural noise functions Based on the work of Stefan Gustavson and Ashima Arts on \char`\"{}webgl-\/noise\char`\"{}\+: \href{https://github.com/ashima/webgl-noise}{\texttt{ https\+://github.\+com/ashima/webgl-\/noise}} Following Stefan Gustavson\textquotesingle{}s paper \char`\"{}\+Simplex noise demystified\char`\"{}\+: \href{http://www.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf}{\texttt{ http\+://www.\+itn.\+liu.\+se/$\sim$stegu/simplexnoise/simplexnoise.\+pdf}} \texorpdfstring{$<$}{<}\mbox{\hyperlink{gtc_2noise_8hpp}{glm/gtc/noise.\+hpp}}\texorpdfstring{$>$}{>} need to be included to use these functionalities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__packing}{GLM\+\_\+\+GTC\+\_\+packing}}
+\begin{DoxyCompactList}\small\item\em This extension provides a set of function to convert vertors to packed formats. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__quaternion}{GLM\+\_\+\+GTC\+\_\+quaternion}}
+\begin{DoxyCompactList}\small\item\em Defines a templated quaternion type and several quaternion operations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__random}{GLM\+\_\+\+GTC\+\_\+random}}
+\begin{DoxyCompactList}\small\item\em Generate random number from various distribution methods. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__reciprocal}{GLM\+\_\+\+GTC\+\_\+reciprocal}}
+\begin{DoxyCompactList}\small\item\em Define secant, cosecant and cotangent functions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__type__precision}{GLM\+\_\+\+GTC\+\_\+type\+\_\+precision}}
+\begin{DoxyCompactList}\small\item\em Defines specific C++-\/based precision types. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__type__ptr}{GLM\+\_\+\+GTC\+\_\+type\+\_\+ptr}}
+\begin{DoxyCompactList}\small\item\em Handles the interaction between pointers and vector, matrix types. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__ulp}{GLM\+\_\+\+GTC\+\_\+ulp}}
+\begin{DoxyCompactList}\small\item\em Allow the measurement of the accuracy of a function against a reference implementation. This extension works on floating-\/point data and provide results in ULP. \texorpdfstring{$<$}{<}\mbox{\hyperlink{gtc_2ulp_8hpp}{glm/gtc/ulp.\+hpp}}\texorpdfstring{$>$}{>} need to be included to use these features. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtc__dual__quaternion}{GLM\+\_\+\+GTX\+\_\+dual\+\_\+quaternion}}
+\begin{DoxyCompactList}\small\item\em Defines a templated dual-\/quaternion type and several dual-\/quaternion operations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__gtx__rotate__normalized__axis}{GLM\+\_\+\+GTX\+\_\+rotate\+\_\+normalized\+\_\+axis}}
+\begin{DoxyCompactList}\small\item\em Quaternions and matrices rotations around normalized axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions and types that the GLSL specification doesn\textquotesingle{}t define, but useful to have for a C++ program. 
+
+GTC extensions aim to be stable.
+
+Even if it\textquotesingle{}s highly unrecommended, it\textquotesingle{}s possible to include all the extensions at once by including \texorpdfstring{$<$}{<}\mbox{\hyperlink{ext_8hpp}{glm/ext.\+hpp}}\texorpdfstring{$>$}{>}. Otherwise, each extension needs to be included a specific file. 

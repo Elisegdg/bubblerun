@@ -1,0 +1,179 @@
+\hypertarget{Geometry_8cpp_source}{}\doxysection{Geometry.\+cpp}
+\label{Geometry_8cpp_source}\index{glimac/src/Geometry.cpp@{glimac/src/Geometry.cpp}}
+\mbox{\hyperlink{Geometry_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Geometry_8hpp}{glimac/Geometry.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}tiny\_obj\_loader.h"{}}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00006}00006 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglimac}{glimac}} \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00008}00008 \textcolor{keywordtype}{void} Geometry::generateNormals(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} meshIndex) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00009}00009     \textcolor{keyword}{auto} indexOffset = m\_MeshBuffer[meshIndex].m\_nIndexOffset;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00010}00010     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} j = 0u; j < m\_MeshBuffer[meshIndex].m\_nIndexCount; j += 3) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00011}00011         \textcolor{keyword}{auto} i1 = m\_IndexBuffer[indexOffset + j];}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00012}00012         \textcolor{keyword}{auto} i2 = m\_IndexBuffer[indexOffset + j + 1];}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00013}00013         \textcolor{keyword}{auto} i3 = m\_IndexBuffer[indexOffset + j + 2];}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00015}00015         \textcolor{keyword}{auto} n = \mbox{\hyperlink{group__core__func__geometric_ga51c1d4b224118e93c64eae4a29a67cc5}{glm::cross}}(\mbox{\hyperlink{group__core__func__geometric_ga15aa87101457e41663b08a8dcc3357f8}{glm::normalize}}(m\_VertexBuffer[i2].m\_Position -\/ m\_VertexBuffer[i1].m\_Position),}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00016}00016                             \mbox{\hyperlink{group__core__func__geometric_ga15aa87101457e41663b08a8dcc3357f8}{glm::normalize}}(m\_VertexBuffer[i3].m\_Position -\/ m\_VertexBuffer[i1].m\_Position));}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00018}00018         m\_VertexBuffer[i1].m\_Normal = n;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00019}00019         m\_VertexBuffer[i2].m\_Normal = n;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00020}00020         m\_VertexBuffer[i3].m\_Normal = n;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00021}00021     \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00022}00022 \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00024}\mbox{\hyperlink{classglimac_1_1Geometry_af796a2bd4c60c32de47b3bcb53bb3cef}{00024}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classglimac_1_1Geometry_af796a2bd4c60c32de47b3bcb53bb3cef}{Geometry::loadOBJ}}(\textcolor{keyword}{const} \mbox{\hyperlink{classglimac_1_1FilePath}{FilePath}}\& filepath, \textcolor{keyword}{const} \mbox{\hyperlink{classglimac_1_1FilePath}{FilePath}}\& mtlBasePath, \textcolor{keywordtype}{bool} loadTextures) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00025}00025     std::vector<tinyobj::shape\_t> shapes;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00026}00026     std::vector<tinyobj::material\_t> materials;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00028}00028     std::clog << \textcolor{stringliteral}{"{}Load OBJ "{}} << filepath << std::endl;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00029}00029     std::string objErr = \mbox{\hyperlink{namespacetinyobj_a8a1b09e98bbe6ad056bf30fdce87b3c5}{tinyobj::LoadObj}}(shapes, materials,}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00030}00030         filepath.\mbox{\hyperlink{classglimac_1_1FilePath_ae823251a25bf0f9a9294368ac020e5e8}{c\_str}}(), mtlBasePath.\mbox{\hyperlink{classglimac_1_1FilePath_ae823251a25bf0f9a9294368ac020e5e8}{c\_str}}());}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00032}00032     std::clog << \textcolor{stringliteral}{"{}done."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00034}00034     \textcolor{keywordflow}{if} (!objErr.empty()) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00035}00035         std::cerr << objErr << std::endl;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00036}00036         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00039}00039     std::clog << \textcolor{stringliteral}{"{}Load materials"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00040}00040     m\_Materials.reserve(m\_Materials.size() + materials.size());}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00041}00041     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& \mbox{\hyperlink{structmaterial}{material}}: materials) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00042}00042         m\_Materials.emplace\_back();}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00043}00043         \textcolor{keyword}{auto}\& m = m\_Materials.back();}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00045}00045         m.m\_Ka = \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm::vec3}}(\mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a944296102e90b1610967530458f40ba1}{ambient}}[0], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a944296102e90b1610967530458f40ba1}{ambient}}[1], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a944296102e90b1610967530458f40ba1}{ambient}}[2]);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00046}00046         m.m\_Kd = \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm::vec3}}(\mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a506a0cc33282fa76872c6aeebd688b39}{diffuse}}[0], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a506a0cc33282fa76872c6aeebd688b39}{diffuse}}[1], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a506a0cc33282fa76872c6aeebd688b39}{diffuse}}[2]);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00047}00047         m.m\_Ks = \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm::vec3}}(\mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a452d07b4570da7204caeaf798cd01a77}{specular}}[0], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a452d07b4570da7204caeaf798cd01a77}{specular}}[1], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a452d07b4570da7204caeaf798cd01a77}{specular}}[2]);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00048}00048         m.m\_Tr = \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm::vec3}}(\mbox{\hyperlink{structmaterial}{material}}.transmittance[0], \mbox{\hyperlink{structmaterial}{material}}.transmittance[1], \mbox{\hyperlink{structmaterial}{material}}.transmittance[2]);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00049}00049         m.m\_Le = \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm::vec3}}(\mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a76b696726a2ea73e6840001821942bc3}{emission}}[0], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a76b696726a2ea73e6840001821942bc3}{emission}}[1], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a76b696726a2ea73e6840001821942bc3}{emission}}[2]);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00050}00050         m.m\_Shininess = \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_aa3740fd7908ec5a11bbc4a4bd5b21abc}{shininess}};}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00051}00051         m.m\_RefractionIndex = \mbox{\hyperlink{structmaterial}{material}}.ior;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00052}00052         m.m\_Dissolve = \mbox{\hyperlink{structmaterial}{material}}.dissolve;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00054}00054         \textcolor{keywordflow}{if}(loadTextures) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00055}00055             \textcolor{keywordflow}{if}(!\mbox{\hyperlink{structmaterial}{material}}.ambient\_texname.empty()) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00056}00056                 \textcolor{comment}{//std::replace(material.ambient\_texname.begin(), material.ambient\_texname.end(), '\(\backslash\)\(\backslash\)', '/');}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00057}00057                 \mbox{\hyperlink{classglimac_1_1FilePath}{FilePath}} texturePath = mtlBasePath + \mbox{\hyperlink{structmaterial}{material}}.ambient\_texname;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00058}00058                 std::clog << \textcolor{stringliteral}{"{}load "{}} << texturePath << std::endl;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00059}00059                 m.m\_pKaMap = \mbox{\hyperlink{classglimac_1_1ImageManager_a491965842042b2ef01eade7136ddb54d}{ImageManager::loadImage}}(texturePath);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00060}00060             \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00062}00062             \textcolor{keywordflow}{if}(!\mbox{\hyperlink{structmaterial}{material}}.diffuse\_texname.empty()) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00063}00063                 \textcolor{comment}{//std::replace(material.diffuse\_texname.begin(), material.diffuse\_texname.end(), '\(\backslash\)\(\backslash\)', '/');}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00064}00064                 \mbox{\hyperlink{classglimac_1_1FilePath}{FilePath}} texturePath = mtlBasePath + \mbox{\hyperlink{structmaterial}{material}}.diffuse\_texname;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00065}00065                 std::clog << \textcolor{stringliteral}{"{}load "{}} << texturePath << std::endl;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00066}00066                 m.m\_pKdMap = \mbox{\hyperlink{classglimac_1_1ImageManager_a491965842042b2ef01eade7136ddb54d}{ImageManager::loadImage}}(texturePath);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00067}00067             \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00069}00069             \textcolor{keywordflow}{if}(!\mbox{\hyperlink{structmaterial}{material}}.specular\_texname.empty()) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00070}00070                 \textcolor{comment}{//std::replace(material.specular\_texname.begin(), material.specular\_texname.end(), '\(\backslash\)\(\backslash\)', '/');}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00071}00071                 \mbox{\hyperlink{classglimac_1_1FilePath}{FilePath}} texturePath = mtlBasePath + \mbox{\hyperlink{structmaterial}{material}}.specular\_texname;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00072}00072                 std::clog << \textcolor{stringliteral}{"{}load "{}} << texturePath << std::endl;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00073}00073                 m.m\_pKsMap = \mbox{\hyperlink{classglimac_1_1ImageManager_a491965842042b2ef01eade7136ddb54d}{ImageManager::loadImage}}(texturePath);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00074}00074             \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00076}00076             \textcolor{keywordflow}{if}(!\mbox{\hyperlink{structmaterial}{material}}.normal\_texname.empty()) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00077}00077                 \textcolor{comment}{//std::replace(material.normal\_texname.begin(), material.normal\_texname.end(), '\(\backslash\)\(\backslash\)', '/');}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00078}00078                 \mbox{\hyperlink{classglimac_1_1FilePath}{FilePath}} texturePath = mtlBasePath + \mbox{\hyperlink{structmaterial}{material}}.normal\_texname;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00079}00079                 std::clog << \textcolor{stringliteral}{"{}load "{}} << texturePath << std::endl;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00080}00080                 m.m\_pNormalMap = \mbox{\hyperlink{classglimac_1_1ImageManager_a491965842042b2ef01eade7136ddb54d}{ImageManager::loadImage}}(texturePath);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00081}00081             \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00082}00082         \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00084}00084     std::clog << \textcolor{stringliteral}{"{}done."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00086}00086     \textcolor{keyword}{auto} globalVertexOffset = m\_VertexBuffer.size();}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00087}00087     \textcolor{keyword}{auto} globalIndexOffset = m\_IndexBuffer.size();}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00089}00089     \textcolor{keyword}{auto} nbVertex = 0u;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00090}00090     \textcolor{keyword}{auto} nbIndex = 0u;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00091}00091     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& shape: shapes) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00092}00092         nbVertex += shape.mesh.positions.size();}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00093}00093         nbIndex += shape.mesh.indices.size();}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00094}00094     \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00096}00096     std::clog << \textcolor{stringliteral}{"{}Number of meshes: "{}} << shapes.size() << std::endl;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00097}00097     std::clog << \textcolor{stringliteral}{"{}Number of vertices: "{}} << nbVertex << std::endl;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00098}00098     std::clog << \textcolor{stringliteral}{"{}Number of triangles: "{}} << (nbIndex) / 3 << std::endl;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00100}00100     m\_BBox = \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}}(\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{glm::vec3}}(shapes[0].mesh.positions[0], shapes[0].mesh.positions[1], shapes[0].mesh.positions[2]));}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00102}00102     m\_VertexBuffer.resize(m\_VertexBuffer.size() + nbVertex);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00103}00103     m\_IndexBuffer.resize(m\_IndexBuffer.size() + nbIndex);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00105}00105     \textcolor{keyword}{auto} pVertex = (\mbox{\hyperlink{structglimac_1_1Geometry_1_1Vertex}{Vertex}}*) m\_VertexBuffer.data() + globalVertexOffset;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00106}00106     \textcolor{keyword}{auto} pIndex = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}*) m\_IndexBuffer.data() + globalIndexOffset;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00108}00108     m\_MeshBuffer.reserve(m\_MeshBuffer.size() + shapes.size());}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00110}00110     \textcolor{keyword}{auto} vertexOffset = globalVertexOffset;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00111}00111     \textcolor{keyword}{auto} indexOffset = globalIndexOffset;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00112}00112     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < shapes.size(); i++) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00113}00113         \textcolor{keyword}{auto} pVertexTmp = pVertex;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00114}00114         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} j = 0u; j < shapes[i].mesh.positions.size(); j += 3) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00115}00115             pVertexTmp-\/>m\_Position.x = shapes[i].mesh.positions[j];}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00116}00116             pVertexTmp-\/>m\_Position.y = shapes[i].mesh.positions[j + 1];}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00117}00117             pVertexTmp-\/>m\_Position.z = shapes[i].mesh.positions[j + 2];}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00119}00119             m\_BBox.grow(pVertexTmp-\/>m\_Position);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00121}00121             ++pVertexTmp;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00122}00122         \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00123}00123         pVertexTmp = pVertex;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00124}00124         \textcolor{keywordflow}{if}(shapes[i].mesh.normals.size()) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00125}00125             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} j = 0u; j < shapes[i].mesh.normals.size(); j += 3) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00126}00126                 pVertexTmp-\/>m\_Normal.x = shapes[i].mesh.normals[j];}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00127}00127                 pVertexTmp-\/>m\_Normal.y = shapes[i].mesh.normals[j + 1];}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00128}00128                 pVertexTmp-\/>m\_Normal.z = shapes[i].mesh.normals[j + 2];}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00129}00129                 ++pVertexTmp;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00130}00130             \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00131}00131         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00132}00132             \textcolor{comment}{// should create normals from triangles...}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00133}00133         \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00134}00134         pVertexTmp = pVertex;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00135}00135         \textcolor{keywordflow}{if}(shapes[i].mesh.texcoords.size()) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00136}00136             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} j = 0u; j < shapes[i].mesh.texcoords.size(); j += 2) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00137}00137                 pVertexTmp-\/>m\_TexCoords.x = shapes[i].mesh.texcoords[j];}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00138}00138                 pVertexTmp-\/>m\_TexCoords.y = shapes[i].mesh.texcoords[j + 1];}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00139}00139                 ++pVertexTmp;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00140}00140             \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00141}00141         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00142}00142             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} j = 0u; j < shapes[i].mesh.texcoords.size(); j += 2) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00143}00143                 pVertexTmp-\/>m\_TexCoords.x =  0.f;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00144}00144                 pVertexTmp-\/>m\_TexCoords.x =  0.f;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00145}00145                 ++pVertexTmp;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00146}00146             \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00147}00147         \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00149}00149         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} j = 0u; j < shapes[i].mesh.indices.size(); ++j) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00150}00150             pIndex[j] = vertexOffset + shapes[i].mesh.indices[j];}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00151}00151         \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00153}00153         \textcolor{keywordtype}{int} materialIndex = -\/1;}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00154}00154         \textcolor{keywordflow}{if}(!shapes[i].mesh.material\_ids.empty()) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00155}00155             materialIndex = shapes[i].mesh.material\_ids[0];}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00156}00156         \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00158}00158         m\_MeshBuffer.emplace\_back(shapes[i].name, indexOffset, shapes[i].mesh.indices.size(), materialIndex);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00160}00160         \textcolor{keywordflow}{if}(shapes[i].mesh.normals.size() == 0u) \{}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00161}00161             generateNormals(m\_MeshBuffer.size() -\/ 1);}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00162}00162         \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00164}00164         pVertex += shapes[i].mesh.positions.size();}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00165}00165         vertexOffset += shapes[i].mesh.positions.size();}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00166}00166         pIndex += shapes[i].mesh.indices.size();}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00167}00167         indexOffset += shapes[i].mesh.indices.size();}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00168}00168     \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00170}00170     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00171}00171 \}}
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{Geometry_8cpp_source_l00173}00173 \}}
+
+\end{DoxyCode}

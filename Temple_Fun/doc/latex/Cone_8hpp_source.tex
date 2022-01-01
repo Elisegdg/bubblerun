@@ -1,0 +1,42 @@
+\hypertarget{Cone_8hpp_source}{}\doxysection{Cone.\+hpp}
+\label{Cone_8hpp_source}\index{glimac/include/glimac/Cone.hpp@{glimac/include/glimac/Cone.hpp}}
+\mbox{\hyperlink{Cone_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00003}00003 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{third-party_2include_2glm_2common_8hpp}{common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00006}00006 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglimac}{glimac}} \{}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00007}00007     }
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00008}00008 \textcolor{comment}{// Représente un cone ouvert discrétisé dont la base est centrée en (0, 0, 0) (dans son repère local)}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00009}00009 \textcolor{comment}{// Son axe vertical est (0, 1, 0) et ses axes transversaux sont (1, 0, 0) et (0, 0, 1)}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00010}\mbox{\hyperlink{classglimac_1_1Cone}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{classglimac_1_1Cone}{Cone}} \{}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00011}00011     \textcolor{comment}{// Alloue et construit les données (implantation dans le .cpp)}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00012}00012     \textcolor{keywordtype}{void} build(GLfloat height, GLfloat radius, GLsizei discLat, GLsizei discHeight);}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00014}00014 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00015}00015     \textcolor{comment}{// Constructeur: alloue le tableau de données et construit les attributs des vertex}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00016}\mbox{\hyperlink{classglimac_1_1Cone_ab404498854c02fec6129d4233b58c70f}{00016}}     \mbox{\hyperlink{classglimac_1_1Cone_ab404498854c02fec6129d4233b58c70f}{Cone}}(GLfloat height, GLfloat radius, GLsizei discLat, GLsizei discHeight):}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00017}00017         m\_nVertexCount(0) \{}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00018}00018         build(height, radius, discLat, discHeight); \textcolor{comment}{// Construction (voir le .cpp)}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00019}00019     \}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00021}00021     \textcolor{comment}{// Renvoit le pointeur vers les données}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00022}\mbox{\hyperlink{classglimac_1_1Cone_ad98b90d570a7e20a2c98cc313b15495f}{00022}}     \textcolor{keyword}{const} \mbox{\hyperlink{structglimac_1_1ShapeVertex}{ShapeVertex}}* \mbox{\hyperlink{classglimac_1_1Cone_ad98b90d570a7e20a2c98cc313b15495f}{getDataPointer}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00023}00023         \textcolor{keywordflow}{return} \&m\_Vertices[0];}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00024}00024     \}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00025}00025     }
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00026}00026     \textcolor{comment}{// Renvoit le nombre de vertex}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00027}\mbox{\hyperlink{classglimac_1_1Cone_a7185ac37a58d1f4e176422c214cdcce5}{00027}}     GLsizei \mbox{\hyperlink{classglimac_1_1Cone_a7185ac37a58d1f4e176422c214cdcce5}{getVertexCount}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00028}00028         \textcolor{keywordflow}{return} m\_nVertexCount;}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00029}00029     \}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00031}00031 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00032}00032     std::vector<ShapeVertex> m\_Vertices;}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00033}00033     GLsizei m\_nVertexCount; \textcolor{comment}{// Nombre de sommets}}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00034}00034 \};}
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00035}00035     }
+\DoxyCodeLine{\Hypertarget{Cone_8hpp_source_l00036}00036 \}}
+
+\end{DoxyCode}

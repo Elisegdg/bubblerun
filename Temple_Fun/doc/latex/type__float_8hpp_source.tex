@@ -1,0 +1,56 @@
+\hypertarget{type__float_8hpp_source}{}\doxysection{type\+\_\+float.\+hpp}
+\label{type__float_8hpp_source}\index{third-\/party/include/glm/detail/type\_float.hpp@{third-\/party/include/glm/detail/type\_float.hpp}}
+\mbox{\hyperlink{type__float_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#ifndef glm\_core\_type\_float}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00030}00030 \textcolor{preprocessor}{\#define glm\_core\_type\_float}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{setup_8hpp}{setup.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00034}00034 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00035}00035 \textcolor{keyword}{namespace }detail}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00036}00036 \{}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00037}\mbox{\hyperlink{namespaceglm_1_1detail_ad60558c5c304624de0b54c51b5857737}{00037}}     \textcolor{keyword}{typedef} \textcolor{keywordtype}{float}               \mbox{\hyperlink{namespaceglm_1_1detail_ad60558c5c304624de0b54c51b5857737}{float32}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00038}\mbox{\hyperlink{namespaceglm_1_1detail_a5a0a9a1be3fd5dbe6d47ae45c3022b06}{00038}}     \textcolor{keyword}{typedef} \textcolor{keywordtype}{double}              \mbox{\hyperlink{namespaceglm_1_1detail_a5a0a9a1be3fd5dbe6d47ae45c3022b06}{float64}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00039}00039 \}\textcolor{comment}{//namespace detail}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00040}00040     }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00041}\mbox{\hyperlink{namespaceglm_a0a43b64238afac063f27ee7620205bf2}{00041}}     \textcolor{keyword}{typedef} \textcolor{keywordtype}{float}               \mbox{\hyperlink{namespaceglm_a0a43b64238afac063f27ee7620205bf2}{lowp\_float\_t}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00042}\mbox{\hyperlink{namespaceglm_aec127979a2b6edbf05b485cb4e8c47cc}{00042}}     \textcolor{keyword}{typedef} \textcolor{keywordtype}{float}               \mbox{\hyperlink{namespaceglm_aec127979a2b6edbf05b485cb4e8c47cc}{mediump\_float\_t}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00043}\mbox{\hyperlink{namespaceglm_af6f4e45ae06ae3f979dd30cafe7d07c6}{00043}}     \textcolor{keyword}{typedef} \textcolor{keywordtype}{double}              \mbox{\hyperlink{namespaceglm_af6f4e45ae06ae3f979dd30cafe7d07c6}{highp\_float\_t}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00053}\mbox{\hyperlink{group__core__precision_ga2887fbc729ac5c1c5caeb7cd57a7145c}{00053}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{namespaceglm_a0a43b64238afac063f27ee7620205bf2}{lowp\_float\_t}}        \mbox{\hyperlink{group__core__precision_ga2887fbc729ac5c1c5caeb7cd57a7145c}{lowp\_float}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00060}\mbox{\hyperlink{group__core__precision_gac785826c039fe6c97c03b37c81c1a68e}{00060}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{namespaceglm_aec127979a2b6edbf05b485cb4e8c47cc}{mediump\_float\_t}}      \mbox{\hyperlink{group__core__precision_gac785826c039fe6c97c03b37c81c1a68e}{mediump\_float}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00067}\mbox{\hyperlink{group__core__precision_ga3d443a093adc053638ed7f81c5bfe300}{00067}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{namespaceglm_af6f4e45ae06ae3f979dd30cafe7d07c6}{highp\_float\_t}}      \mbox{\hyperlink{group__core__precision_ga3d443a093adc053638ed7f81c5bfe300}{highp\_float}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00069}00069 \textcolor{preprocessor}{\#if(!defined(GLM\_PRECISION\_HIGHP\_FLOAT) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_FLOAT) \&\& !defined(GLM\_PRECISION\_LOWP\_FLOAT))}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00070}\mbox{\hyperlink{group__core__precision_gae01b87f81bd15327230bf1b47c482b24}{00070}}     \textcolor{keyword}{typedef} \mbox{\hyperlink{group__core__precision_gac785826c039fe6c97c03b37c81c1a68e}{mediump\_float}}      \mbox{\hyperlink{group__core__precision_gae01b87f81bd15327230bf1b47c482b24}{float\_t}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00071}00071 \textcolor{preprocessor}{\#elif(defined(GLM\_PRECISION\_HIGHP\_FLOAT) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_FLOAT) \&\& !defined(GLM\_PRECISION\_LOWP\_FLOAT))}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00072}00072     \textcolor{keyword}{typedef} \mbox{\hyperlink{group__core__precision_ga3d443a093adc053638ed7f81c5bfe300}{highp\_float}}          \mbox{\hyperlink{group__core__precision_gae01b87f81bd15327230bf1b47c482b24}{float\_t}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00073}00073 \textcolor{preprocessor}{\#elif(!defined(GLM\_PRECISION\_HIGHP\_FLOAT) \&\& defined(GLM\_PRECISION\_MEDIUMP\_FLOAT) \&\& !defined(GLM\_PRECISION\_LOWP\_FLOAT))}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00074}00074     \textcolor{keyword}{typedef} \mbox{\hyperlink{group__core__precision_gac785826c039fe6c97c03b37c81c1a68e}{mediump\_float}}      \mbox{\hyperlink{group__core__precision_gae01b87f81bd15327230bf1b47c482b24}{float\_t}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00075}00075 \textcolor{preprocessor}{\#elif(!defined(GLM\_PRECISION\_HIGHP\_FLOAT) \&\& !defined(GLM\_PRECISION\_MEDIUMP\_FLOAT) \&\& defined(GLM\_PRECISION\_LOWP\_FLOAT))}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00076}00076     \textcolor{keyword}{typedef} \mbox{\hyperlink{group__core__precision_ga2887fbc729ac5c1c5caeb7cd57a7145c}{lowp\_float}}            \mbox{\hyperlink{group__core__precision_gae01b87f81bd15327230bf1b47c482b24}{float\_t}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00077}00077 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00078}00078 \textcolor{preprocessor}{\#   error "{}GLM error: multiple default precision requested for floating-\/point types"{}}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00079}00079 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00081}\mbox{\hyperlink{group__gtc__type__precision_ga814f2f65354b6588b067cc5c67a6b340}{00081}}     \textcolor{keyword}{typedef} \textcolor{keywordtype}{float}               \mbox{\hyperlink{group__gtc__type__precision_ga814f2f65354b6588b067cc5c67a6b340}{float32}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00082}\mbox{\hyperlink{group__gtc__type__precision_gab721f828b41f46b20cf4883b50733d3b}{00082}}     \textcolor{keyword}{typedef} \textcolor{keywordtype}{double}              \mbox{\hyperlink{group__gtc__type__precision_gab721f828b41f46b20cf4883b50733d3b}{float64}};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00085}00085 \textcolor{comment}{// check type sizes}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00086}00086 \textcolor{preprocessor}{\#ifndef GLM\_STATIC\_ASSERT\_NULL}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00087}00087     \mbox{\hyperlink{setup_8hpp_a6893d4a6bf0ecab00f7c73166379245a}{GLM\_STATIC\_ASSERT}}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__gtc__type__precision_ga814f2f65354b6588b067cc5c67a6b340}{glm::float32}}) == 4, \textcolor{stringliteral}{"{}float32 size isn't 4 bytes on this platform"{}});}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00088}00088     \mbox{\hyperlink{setup_8hpp_a6893d4a6bf0ecab00f7c73166379245a}{GLM\_STATIC\_ASSERT}}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__gtc__type__precision_gab721f828b41f46b20cf4883b50733d3b}{glm::float64}}) == 8, \textcolor{stringliteral}{"{}float64 size isn't 8 bytes on this platform"{}});}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00089}00089 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_STATIC\_ASSERT\_NULL}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00093}00093 \}\textcolor{comment}{//namespace glm}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00095}00095 \textcolor{preprocessor}{\#endif}\textcolor{comment}{//glm\_core\_type\_float}}
+
+\end{DoxyCode}

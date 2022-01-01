@@ -1,0 +1,44 @@
+\hypertarget{group__core}{}\doxysection{GLM Core}
+\label{group__core}\index{GLM Core@{GLM Core}}
+
+
+The core of GLM, which implements exactly and only the GLSL specification to the degree possible.  
+
+
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__core__func__common}{Common functions}}
+\begin{DoxyCompactList}\small\item\em These all operate component-\/wise. The description is per component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__func__exponential}{Exponential functions}}
+\begin{DoxyCompactList}\small\item\em These all operate component-\/wise. The description is per component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__func__geometric}{Geometric functions}}
+\begin{DoxyCompactList}\small\item\em These operate on vectors as vectors, not component-\/wise. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__func__integer}{Integer functions}}
+\begin{DoxyCompactList}\small\item\em These all operate component-\/wise. The description is per component. The notation \mbox{[}a, b\mbox{]} means the set of bits from bit-\/number a through bit-\/number b, inclusive. The lowest-\/order bit is bit 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__func__matrix}{Matrix functions}}
+\begin{DoxyCompactList}\small\item\em For each of the following built-\/in matrix functions, there is both a single-\/precision floating point version, where all arguments and return values are single precision, and a double-\/precision floating version, where all arguments and return values are double precision. Only the single-\/precision floating point version is shown. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__func__noise}{Noise functions}}
+\begin{DoxyCompactList}\small\item\em Noise functions are stochastic functions that can be used to increase visual complexity. Values returned by the following noise functions give the appearance of randomness, but are not truly random. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__func__packing}{Floating-\/\+Point Pack and Unpack Functions}}
+\begin{DoxyCompactList}\small\item\em These functions do not operate component-\/wise, rather as described in each case. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__func__trigonometric}{Angle and Trigonometry Functions}}
+\begin{DoxyCompactList}\small\item\em Function parameters specified as angle are assumed to be in units of radians. In no case will any of these functions result in a divide by zero error. If the divisor of a ratio is 0, then results will be undefined. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__func__vector__relational}{Vector Relational Functions}}
+\begin{DoxyCompactList}\small\item\em Relational and equality operators (\texorpdfstring{$<$}{<}, \texorpdfstring{$<$}{<}=, \texorpdfstring{$>$}{>}, \texorpdfstring{$>$}{>}=, ==, !=) are defined to operate on scalars and produce scalar Boolean results. For vector results, use the following built-\/in functions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__types}{Types}}
+\begin{DoxyCompactList}\small\item\em The standard types defined by the specification. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__precision}{Precision types}}
+\begin{DoxyCompactList}\small\item\em Non-\/\+GLSL types that are used to define precision-\/based types. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__template}{Template types}}
+\begin{DoxyCompactList}\small\item\em The generic template types used as the basis for the core types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The core of GLM, which implements exactly and only the GLSL specification to the degree possible. 
+
+The GLM core consists of \mbox{\hyperlink{group__core__types}{C++ types that mirror GLSL types}} and C++ functions that mirror the GLSL functions. It also includes \mbox{\hyperlink{group__core__precision}{a set of precision-\/based types}} that can be used in the appropriate functions. The C++ types are all based on a basic set of \mbox{\hyperlink{group__core__template}{template types}}.
+
+The best documentation for GLM Core is the current GLSL specification, \href{http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.clean.pdf}{\texttt{ version 4.\+2 (pdf file)}}. There are a few differences between GLM core and GLSL.
+
+GLM core functionnalities require \texorpdfstring{$<$}{<}\mbox{\hyperlink{third-party_2include_2glm_2glm_8hpp}{glm/glm.\+hpp}}\texorpdfstring{$>$}{>} to be included to be used. 

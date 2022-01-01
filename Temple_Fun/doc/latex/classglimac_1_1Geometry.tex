@@ -1,0 +1,331 @@
+\hypertarget{classglimac_1_1Geometry}{}\doxysection{glimac\+::Geometry Class Reference}
+\label{classglimac_1_1Geometry}\index{glimac::Geometry@{glimac::Geometry}}
+
+
+{\ttfamily \#include $<$Geometry.\+hpp$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structglimac_1_1Geometry_1_1Material}{Material}}
+\item 
+struct \mbox{\hyperlink{structglimac_1_1Geometry_1_1Mesh}{Mesh}}
+\item 
+struct \mbox{\hyperlink{structglimac_1_1Geometry_1_1Vertex}{Vertex}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structglimac_1_1Geometry_1_1Vertex}{Vertex}} $\ast$ \mbox{\hyperlink{classglimac_1_1Geometry_a87d1ef686fabadc99a1c78596ce1e2d8}{get\+Vertex\+Buffer}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classglimac_1_1Geometry_adf2d769d9b6195c2ab88f6dfe6abd8d9}{get\+Vertex\+Count}} () const
+\item 
+const unsigned int $\ast$ \mbox{\hyperlink{classglimac_1_1Geometry_a0cbd4977e1acceb074f0ed0749cd04c4}{get\+Index\+Buffer}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classglimac_1_1Geometry_aaadc2607a96a09f9fdc36190809e915b}{get\+Index\+Count}} () const
+\item 
+const \mbox{\hyperlink{structglimac_1_1Geometry_1_1Mesh}{Mesh}} $\ast$ \mbox{\hyperlink{classglimac_1_1Geometry_a65c038283aae78dd89490afd5e171814}{get\+Mesh\+Buffer}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classglimac_1_1Geometry_ab57f1169fb19e5a02866d2f36308dd91}{get\+Mesh\+Count}} () const
+\item 
+bool \mbox{\hyperlink{classglimac_1_1Geometry_af796a2bd4c60c32de47b3bcb53bb3cef}{load\+OBJ}} (const \mbox{\hyperlink{classglimac_1_1FilePath}{File\+Path}} \&filepath, const \mbox{\hyperlink{classglimac_1_1FilePath}{File\+Path}} \&mtl\+Base\+Path, bool load\+Textures=true)
+\item 
+const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \& \mbox{\hyperlink{classglimac_1_1Geometry_a34df7104ce05f0fd6dd96483920f4d36}{get\+Bounding\+Box}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Geometry_8hpp_source_l00012}{12}} of file \mbox{\hyperlink{Geometry_8hpp_source}{Geometry.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classglimac_1_1Geometry_a34df7104ce05f0fd6dd96483920f4d36}\label{classglimac_1_1Geometry_a34df7104ce05f0fd6dd96483920f4d36}} 
+\index{glimac::Geometry@{glimac::Geometry}!getBoundingBox@{getBoundingBox}}
+\index{getBoundingBox@{getBoundingBox}!glimac::Geometry@{glimac::Geometry}}
+\doxysubsubsection{\texorpdfstring{getBoundingBox()}{getBoundingBox()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structglimac_1_1BBox3f}{BBox3f}} \& glimac\+::\+Geometry\+::get\+Bounding\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Geometry_8hpp_source_l00082}{82}} of file \mbox{\hyperlink{Geometry_8hpp_source}{Geometry.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082                                          \{}
+\DoxyCodeLine{00083         \textcolor{keywordflow}{return} m\_BBox;}
+\DoxyCodeLine{00084     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classglimac_1_1Geometry_a0cbd4977e1acceb074f0ed0749cd04c4}\label{classglimac_1_1Geometry_a0cbd4977e1acceb074f0ed0749cd04c4}} 
+\index{glimac::Geometry@{glimac::Geometry}!getIndexBuffer@{getIndexBuffer}}
+\index{getIndexBuffer@{getIndexBuffer}!glimac::Geometry@{glimac::Geometry}}
+\doxysubsubsection{\texorpdfstring{getIndexBuffer()}{getIndexBuffer()}}
+{\footnotesize\ttfamily const unsigned int $\ast$ glimac\+::\+Geometry\+::get\+Index\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Geometry_8hpp_source_l00064}{64}} of file \mbox{\hyperlink{Geometry_8hpp_source}{Geometry.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064                                                \{}
+\DoxyCodeLine{00065         \textcolor{keywordflow}{return} m\_IndexBuffer.data();}
+\DoxyCodeLine{00066     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classglimac_1_1Geometry_aaadc2607a96a09f9fdc36190809e915b}\label{classglimac_1_1Geometry_aaadc2607a96a09f9fdc36190809e915b}} 
+\index{glimac::Geometry@{glimac::Geometry}!getIndexCount@{getIndexCount}}
+\index{getIndexCount@{getIndexCount}!glimac::Geometry@{glimac::Geometry}}
+\doxysubsubsection{\texorpdfstring{getIndexCount()}{getIndexCount()}}
+{\footnotesize\ttfamily size\+\_\+t glimac\+::\+Geometry\+::get\+Index\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Geometry_8hpp_source_l00068}{68}} of file \mbox{\hyperlink{Geometry_8hpp_source}{Geometry.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068                                  \{}
+\DoxyCodeLine{00069         \textcolor{keywordflow}{return} m\_IndexBuffer.size();}
+\DoxyCodeLine{00070     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classglimac_1_1Geometry_a65c038283aae78dd89490afd5e171814}\label{classglimac_1_1Geometry_a65c038283aae78dd89490afd5e171814}} 
+\index{glimac::Geometry@{glimac::Geometry}!getMeshBuffer@{getMeshBuffer}}
+\index{getMeshBuffer@{getMeshBuffer}!glimac::Geometry@{glimac::Geometry}}
+\doxysubsubsection{\texorpdfstring{getMeshBuffer()}{getMeshBuffer()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structglimac_1_1Geometry_1_1Mesh}{Mesh}} $\ast$ glimac\+::\+Geometry\+::get\+Mesh\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Geometry_8hpp_source_l00072}{72}} of file \mbox{\hyperlink{Geometry_8hpp_source}{Geometry.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072                                       \{}
+\DoxyCodeLine{00073         \textcolor{keywordflow}{return} m\_MeshBuffer.data();}
+\DoxyCodeLine{00074     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classglimac_1_1Geometry_ab57f1169fb19e5a02866d2f36308dd91}\label{classglimac_1_1Geometry_ab57f1169fb19e5a02866d2f36308dd91}} 
+\index{glimac::Geometry@{glimac::Geometry}!getMeshCount@{getMeshCount}}
+\index{getMeshCount@{getMeshCount}!glimac::Geometry@{glimac::Geometry}}
+\doxysubsubsection{\texorpdfstring{getMeshCount()}{getMeshCount()}}
+{\footnotesize\ttfamily size\+\_\+t glimac\+::\+Geometry\+::get\+Mesh\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Geometry_8hpp_source_l00076}{76}} of file \mbox{\hyperlink{Geometry_8hpp_source}{Geometry.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076                                 \{}
+\DoxyCodeLine{00077         \textcolor{keywordflow}{return} m\_MeshBuffer.size();}
+\DoxyCodeLine{00078     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classglimac_1_1Geometry_a87d1ef686fabadc99a1c78596ce1e2d8}\label{classglimac_1_1Geometry_a87d1ef686fabadc99a1c78596ce1e2d8}} 
+\index{glimac::Geometry@{glimac::Geometry}!getVertexBuffer@{getVertexBuffer}}
+\index{getVertexBuffer@{getVertexBuffer}!glimac::Geometry@{glimac::Geometry}}
+\doxysubsubsection{\texorpdfstring{getVertexBuffer()}{getVertexBuffer()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structglimac_1_1Geometry_1_1Vertex}{Vertex}} $\ast$ glimac\+::\+Geometry\+::get\+Vertex\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Geometry_8hpp_source_l00056}{56}} of file \mbox{\hyperlink{Geometry_8hpp_source}{Geometry.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056                                           \{}
+\DoxyCodeLine{00057         \textcolor{keywordflow}{return} m\_VertexBuffer.data();}
+\DoxyCodeLine{00058     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classglimac_1_1Geometry_adf2d769d9b6195c2ab88f6dfe6abd8d9}\label{classglimac_1_1Geometry_adf2d769d9b6195c2ab88f6dfe6abd8d9}} 
+\index{glimac::Geometry@{glimac::Geometry}!getVertexCount@{getVertexCount}}
+\index{getVertexCount@{getVertexCount}!glimac::Geometry@{glimac::Geometry}}
+\doxysubsubsection{\texorpdfstring{getVertexCount()}{getVertexCount()}}
+{\footnotesize\ttfamily size\+\_\+t glimac\+::\+Geometry\+::get\+Vertex\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Geometry_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{Geometry_8hpp_source}{Geometry.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060                                   \{}
+\DoxyCodeLine{00061         \textcolor{keywordflow}{return} m\_VertexBuffer.size();}
+\DoxyCodeLine{00062     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classglimac_1_1Geometry_af796a2bd4c60c32de47b3bcb53bb3cef}\label{classglimac_1_1Geometry_af796a2bd4c60c32de47b3bcb53bb3cef}} 
+\index{glimac::Geometry@{glimac::Geometry}!loadOBJ@{loadOBJ}}
+\index{loadOBJ@{loadOBJ}!glimac::Geometry@{glimac::Geometry}}
+\doxysubsubsection{\texorpdfstring{loadOBJ()}{loadOBJ()}}
+{\footnotesize\ttfamily bool glimac\+::\+Geometry\+::load\+OBJ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classglimac_1_1FilePath}{File\+Path}} \&}]{filepath,  }\item[{const \mbox{\hyperlink{classglimac_1_1FilePath}{File\+Path}} \&}]{mtl\+Base\+Path,  }\item[{bool}]{load\+Textures = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Geometry_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{Geometry_8cpp_source}{Geometry.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024                                                                                                \{}
+\DoxyCodeLine{00025     std::vector<tinyobj::shape\_t> shapes;}
+\DoxyCodeLine{00026     std::vector<tinyobj::material\_t> materials;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028     std::clog << \textcolor{stringliteral}{"{}Load OBJ "{}} << filepath << std::endl;}
+\DoxyCodeLine{00029     std::string objErr = \mbox{\hyperlink{namespacetinyobj_a8a1b09e98bbe6ad056bf30fdce87b3c5}{tinyobj::LoadObj}}(shapes, materials,}
+\DoxyCodeLine{00030         filepath.c\_str(), mtlBasePath.c\_str());}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     std::clog << \textcolor{stringliteral}{"{}done."{}} << std::endl;}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034     \textcolor{keywordflow}{if} (!objErr.empty()) \{}
+\DoxyCodeLine{00035         std::cerr << objErr << std::endl;}
+\DoxyCodeLine{00036         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00037     \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039     std::clog << \textcolor{stringliteral}{"{}Load materials"{}} << std::endl;}
+\DoxyCodeLine{00040     m\_Materials.reserve(m\_Materials.size() + materials.size());}
+\DoxyCodeLine{00041     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& \mbox{\hyperlink{structmaterial}{material}}: materials) \{}
+\DoxyCodeLine{00042         m\_Materials.emplace\_back();}
+\DoxyCodeLine{00043         \textcolor{keyword}{auto}\& m = m\_Materials.back();}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045         m.m\_Ka = \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm::vec3}}(\mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a944296102e90b1610967530458f40ba1}{ambient}}[0], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a944296102e90b1610967530458f40ba1}{ambient}}[1], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a944296102e90b1610967530458f40ba1}{ambient}}[2]);}
+\DoxyCodeLine{00046         m.m\_Kd = \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm::vec3}}(\mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a506a0cc33282fa76872c6aeebd688b39}{diffuse}}[0], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a506a0cc33282fa76872c6aeebd688b39}{diffuse}}[1], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a506a0cc33282fa76872c6aeebd688b39}{diffuse}}[2]);}
+\DoxyCodeLine{00047         m.m\_Ks = \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm::vec3}}(\mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a452d07b4570da7204caeaf798cd01a77}{specular}}[0], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a452d07b4570da7204caeaf798cd01a77}{specular}}[1], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a452d07b4570da7204caeaf798cd01a77}{specular}}[2]);}
+\DoxyCodeLine{00048         m.m\_Tr = \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm::vec3}}(\mbox{\hyperlink{structmaterial}{material}}.transmittance[0], \mbox{\hyperlink{structmaterial}{material}}.transmittance[1], \mbox{\hyperlink{structmaterial}{material}}.transmittance[2]);}
+\DoxyCodeLine{00049         m.m\_Le = \mbox{\hyperlink{group__core__types_ga1c47e8b3386109bc992b6c48e91b0be7}{glm::vec3}}(\mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a76b696726a2ea73e6840001821942bc3}{emission}}[0], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a76b696726a2ea73e6840001821942bc3}{emission}}[1], \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_a76b696726a2ea73e6840001821942bc3}{emission}}[2]);}
+\DoxyCodeLine{00050         m.m\_Shininess = \mbox{\hyperlink{structmaterial}{material}}.\mbox{\hyperlink{structmaterial_aa3740fd7908ec5a11bbc4a4bd5b21abc}{shininess}};}
+\DoxyCodeLine{00051         m.m\_RefractionIndex = \mbox{\hyperlink{structmaterial}{material}}.ior;}
+\DoxyCodeLine{00052         m.m\_Dissolve = \mbox{\hyperlink{structmaterial}{material}}.dissolve;}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054         \textcolor{keywordflow}{if}(loadTextures) \{}
+\DoxyCodeLine{00055             \textcolor{keywordflow}{if}(!\mbox{\hyperlink{structmaterial}{material}}.ambient\_texname.empty()) \{}
+\DoxyCodeLine{00056                 \textcolor{comment}{//std::replace(material.ambient\_texname.begin(), material.ambient\_texname.end(), '\(\backslash\)\(\backslash\)', '/');}}
+\DoxyCodeLine{00057                 FilePath texturePath = mtlBasePath + \mbox{\hyperlink{structmaterial}{material}}.ambient\_texname;}
+\DoxyCodeLine{00058                 std::clog << \textcolor{stringliteral}{"{}load "{}} << texturePath << std::endl;}
+\DoxyCodeLine{00059                 m.m\_pKaMap = \mbox{\hyperlink{classglimac_1_1ImageManager_a491965842042b2ef01eade7136ddb54d}{ImageManager::loadImage}}(texturePath);}
+\DoxyCodeLine{00060             \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062             \textcolor{keywordflow}{if}(!\mbox{\hyperlink{structmaterial}{material}}.diffuse\_texname.empty()) \{}
+\DoxyCodeLine{00063                 \textcolor{comment}{//std::replace(material.diffuse\_texname.begin(), material.diffuse\_texname.end(), '\(\backslash\)\(\backslash\)', '/');}}
+\DoxyCodeLine{00064                 FilePath texturePath = mtlBasePath + \mbox{\hyperlink{structmaterial}{material}}.diffuse\_texname;}
+\DoxyCodeLine{00065                 std::clog << \textcolor{stringliteral}{"{}load "{}} << texturePath << std::endl;}
+\DoxyCodeLine{00066                 m.m\_pKdMap = \mbox{\hyperlink{classglimac_1_1ImageManager_a491965842042b2ef01eade7136ddb54d}{ImageManager::loadImage}}(texturePath);}
+\DoxyCodeLine{00067             \}}
+\DoxyCodeLine{00068 }
+\DoxyCodeLine{00069             \textcolor{keywordflow}{if}(!\mbox{\hyperlink{structmaterial}{material}}.specular\_texname.empty()) \{}
+\DoxyCodeLine{00070                 \textcolor{comment}{//std::replace(material.specular\_texname.begin(), material.specular\_texname.end(), '\(\backslash\)\(\backslash\)', '/');}}
+\DoxyCodeLine{00071                 FilePath texturePath = mtlBasePath + \mbox{\hyperlink{structmaterial}{material}}.specular\_texname;}
+\DoxyCodeLine{00072                 std::clog << \textcolor{stringliteral}{"{}load "{}} << texturePath << std::endl;}
+\DoxyCodeLine{00073                 m.m\_pKsMap = \mbox{\hyperlink{classglimac_1_1ImageManager_a491965842042b2ef01eade7136ddb54d}{ImageManager::loadImage}}(texturePath);}
+\DoxyCodeLine{00074             \}}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076             \textcolor{keywordflow}{if}(!\mbox{\hyperlink{structmaterial}{material}}.normal\_texname.empty()) \{}
+\DoxyCodeLine{00077                 \textcolor{comment}{//std::replace(material.normal\_texname.begin(), material.normal\_texname.end(), '\(\backslash\)\(\backslash\)', '/');}}
+\DoxyCodeLine{00078                 FilePath texturePath = mtlBasePath + \mbox{\hyperlink{structmaterial}{material}}.normal\_texname;}
+\DoxyCodeLine{00079                 std::clog << \textcolor{stringliteral}{"{}load "{}} << texturePath << std::endl;}
+\DoxyCodeLine{00080                 m.m\_pNormalMap = \mbox{\hyperlink{classglimac_1_1ImageManager_a491965842042b2ef01eade7136ddb54d}{ImageManager::loadImage}}(texturePath);}
+\DoxyCodeLine{00081             \}}
+\DoxyCodeLine{00082         \}}
+\DoxyCodeLine{00083     \}}
+\DoxyCodeLine{00084     std::clog << \textcolor{stringliteral}{"{}done."{}} << std::endl;}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086     \textcolor{keyword}{auto} globalVertexOffset = m\_VertexBuffer.size();}
+\DoxyCodeLine{00087     \textcolor{keyword}{auto} globalIndexOffset = m\_IndexBuffer.size();}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089     \textcolor{keyword}{auto} nbVertex = 0u;}
+\DoxyCodeLine{00090     \textcolor{keyword}{auto} nbIndex = 0u;}
+\DoxyCodeLine{00091     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& shape: shapes) \{}
+\DoxyCodeLine{00092         nbVertex += shape.mesh.positions.size();}
+\DoxyCodeLine{00093         nbIndex += shape.mesh.indices.size();}
+\DoxyCodeLine{00094     \}}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096     std::clog << \textcolor{stringliteral}{"{}Number of meshes: "{}} << shapes.size() << std::endl;}
+\DoxyCodeLine{00097     std::clog << \textcolor{stringliteral}{"{}Number of vertices: "{}} << nbVertex << std::endl;}
+\DoxyCodeLine{00098     std::clog << \textcolor{stringliteral}{"{}Number of triangles: "{}} << (nbIndex) / 3 << std::endl;}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{00100     m\_BBox = BBox3f(\mbox{\hyperlink{structglm_1_1detail_1_1tvec3}{glm::vec3}}(shapes[0].mesh.positions[0], shapes[0].mesh.positions[1], shapes[0].mesh.positions[2]));}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102     m\_VertexBuffer.resize(m\_VertexBuffer.size() + nbVertex);}
+\DoxyCodeLine{00103     m\_IndexBuffer.resize(m\_IndexBuffer.size() + nbIndex);}
+\DoxyCodeLine{00104 }
+\DoxyCodeLine{00105     \textcolor{keyword}{auto} pVertex = (Vertex*) m\_VertexBuffer.data() + globalVertexOffset;}
+\DoxyCodeLine{00106     \textcolor{keyword}{auto} pIndex = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}*) m\_IndexBuffer.data() + globalIndexOffset;}
+\DoxyCodeLine{00107 }
+\DoxyCodeLine{00108     m\_MeshBuffer.reserve(m\_MeshBuffer.size() + shapes.size());}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110     \textcolor{keyword}{auto} vertexOffset = globalVertexOffset;}
+\DoxyCodeLine{00111     \textcolor{keyword}{auto} indexOffset = globalIndexOffset;}
+\DoxyCodeLine{00112     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < shapes.size(); i++) \{}
+\DoxyCodeLine{00113         \textcolor{keyword}{auto} pVertexTmp = pVertex;}
+\DoxyCodeLine{00114         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} j = 0u; j < shapes[i].mesh.positions.size(); j += 3) \{}
+\DoxyCodeLine{00115             pVertexTmp-\/>m\_Position.x = shapes[i].mesh.positions[j];}
+\DoxyCodeLine{00116             pVertexTmp-\/>m\_Position.y = shapes[i].mesh.positions[j + 1];}
+\DoxyCodeLine{00117             pVertexTmp-\/>m\_Position.z = shapes[i].mesh.positions[j + 2];}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119             m\_BBox.grow(pVertexTmp-\/>m\_Position);}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121             ++pVertexTmp;}
+\DoxyCodeLine{00122         \}}
+\DoxyCodeLine{00123         pVertexTmp = pVertex;}
+\DoxyCodeLine{00124         \textcolor{keywordflow}{if}(shapes[i].mesh.normals.size()) \{}
+\DoxyCodeLine{00125             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} j = 0u; j < shapes[i].mesh.normals.size(); j += 3) \{}
+\DoxyCodeLine{00126                 pVertexTmp-\/>m\_Normal.x = shapes[i].mesh.normals[j];}
+\DoxyCodeLine{00127                 pVertexTmp-\/>m\_Normal.y = shapes[i].mesh.normals[j + 1];}
+\DoxyCodeLine{00128                 pVertexTmp-\/>m\_Normal.z = shapes[i].mesh.normals[j + 2];}
+\DoxyCodeLine{00129                 ++pVertexTmp;}
+\DoxyCodeLine{00130             \}}
+\DoxyCodeLine{00131         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00132             \textcolor{comment}{// should create normals from triangles...}}
+\DoxyCodeLine{00133         \}}
+\DoxyCodeLine{00134         pVertexTmp = pVertex;}
+\DoxyCodeLine{00135         \textcolor{keywordflow}{if}(shapes[i].mesh.texcoords.size()) \{}
+\DoxyCodeLine{00136             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} j = 0u; j < shapes[i].mesh.texcoords.size(); j += 2) \{}
+\DoxyCodeLine{00137                 pVertexTmp-\/>m\_TexCoords.x = shapes[i].mesh.texcoords[j];}
+\DoxyCodeLine{00138                 pVertexTmp-\/>m\_TexCoords.y = shapes[i].mesh.texcoords[j + 1];}
+\DoxyCodeLine{00139                 ++pVertexTmp;}
+\DoxyCodeLine{00140             \}}
+\DoxyCodeLine{00141         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00142             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} j = 0u; j < shapes[i].mesh.texcoords.size(); j += 2) \{}
+\DoxyCodeLine{00143                 pVertexTmp-\/>m\_TexCoords.x =  0.f;}
+\DoxyCodeLine{00144                 pVertexTmp-\/>m\_TexCoords.x =  0.f;}
+\DoxyCodeLine{00145                 ++pVertexTmp;}
+\DoxyCodeLine{00146             \}}
+\DoxyCodeLine{00147         \}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} j = 0u; j < shapes[i].mesh.indices.size(); ++j) \{}
+\DoxyCodeLine{00150             pIndex[j] = vertexOffset + shapes[i].mesh.indices[j];}
+\DoxyCodeLine{00151         \}}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153         \textcolor{keywordtype}{int} materialIndex = -\/1;}
+\DoxyCodeLine{00154         \textcolor{keywordflow}{if}(!shapes[i].mesh.material\_ids.empty()) \{}
+\DoxyCodeLine{00155             materialIndex = shapes[i].mesh.material\_ids[0];}
+\DoxyCodeLine{00156         \}}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{00158         m\_MeshBuffer.emplace\_back(shapes[i].name, indexOffset, shapes[i].mesh.indices.size(), materialIndex);}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00160         \textcolor{keywordflow}{if}(shapes[i].mesh.normals.size() == 0u) \{}
+\DoxyCodeLine{00161             generateNormals(m\_MeshBuffer.size() -\/ 1);}
+\DoxyCodeLine{00162         \}}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164         pVertex += shapes[i].mesh.positions.size();}
+\DoxyCodeLine{00165         vertexOffset += shapes[i].mesh.positions.size();}
+\DoxyCodeLine{00166         pIndex += shapes[i].mesh.indices.size();}
+\DoxyCodeLine{00167         indexOffset += shapes[i].mesh.indices.size();}
+\DoxyCodeLine{00168     \}}
+\DoxyCodeLine{00169 }
+\DoxyCodeLine{00170     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00171 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+glimac/include/glimac/\mbox{\hyperlink{Geometry_8hpp}{Geometry.\+hpp}}\item 
+glimac/src/\mbox{\hyperlink{Geometry_8cpp}{Geometry.\+cpp}}\end{DoxyCompactItemize}
