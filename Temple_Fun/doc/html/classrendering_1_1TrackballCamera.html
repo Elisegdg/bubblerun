@@ -113,6 +113,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1dad169b4e1d2b5b67a62352d043aa62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1TrackballCamera.html#a1dad169b4e1d2b5b67a62352d043aa62">eventCamera</a> (glimac::SDLWindowManager &amp;windowManager)</td></tr>
 <tr class="memdesc:a1dad169b4e1d2b5b67a62352d043aa62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the event related to the camera.  <a href="classrendering_1_1TrackballCamera.html#a1dad169b4e1d2b5b67a62352d043aa62">More...</a><br /></td></tr>
 <tr class="separator:a1dad169b4e1d2b5b67a62352d043aa62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a510d9cf5c3fde03bc04e322667cde1b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1TrackballCamera.html#a510d9cf5c3fde03bc04e322667cde1b1">reset</a> ()</td></tr>
+<tr class="memdesc:a510d9cf5c3fde03bc04e322667cde1b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the camera to its original values.  <a href="classrendering_1_1TrackballCamera.html#a510d9cf5c3fde03bc04e322667cde1b1">More...</a><br /></td></tr>
+<tr class="separator:a510d9cf5c3fde03bc04e322667cde1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classrendering_1_1Camera"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrendering_1_1Camera')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classrendering_1_1Camera.html">rendering::Camera</a></td></tr>
 <tr class="memitem:a8c10601d747d502c290314c02866cc8a inherit pub_methods_classrendering_1_1Camera"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1Camera.html#a8c10601d747d502c290314c02866cc8a">getCameraType</a> () const</td></tr>
 <tr class="memdesc:a8c10601d747d502c290314c02866cc8a inherit pub_methods_classrendering_1_1Camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the type of camera.  <a href="classrendering_1_1Camera.html#a8c10601d747d502c290314c02866cc8a">More...</a><br /></td></tr>
@@ -138,6 +141,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aff8f5e27ca45827b24bbebe77e40fe26 inherit pub_methods_classrendering_1_1Camera"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1Camera.html#aff8f5e27ca45827b24bbebe77e40fe26">setLocker</a> ()</td></tr>
 <tr class="memdesc:aff8f5e27ca45827b24bbebe77e40fe26 inherit pub_methods_classrendering_1_1Camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches the camera between locked / unlocked.  <a href="classrendering_1_1Camera.html#aff8f5e27ca45827b24bbebe77e40fe26">More...</a><br /></td></tr>
 <tr class="separator:aff8f5e27ca45827b24bbebe77e40fe26 inherit pub_methods_classrendering_1_1Camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9a5ecf910053a98874d9f2a9ff7bbe3 inherit pub_methods_classrendering_1_1Camera"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1Camera.html#ae9a5ecf910053a98874d9f2a9ff7bbe3">reset</a> ()=0</td></tr>
+<tr class="memdesc:ae9a5ecf910053a98874d9f2a9ff7bbe3 inherit pub_methods_classrendering_1_1Camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the camera to its original values.  <a href="classrendering_1_1Camera.html#ae9a5ecf910053a98874d9f2a9ff7bbe3">More...</a><br /></td></tr>
+<tr class="separator:ae9a5ecf910053a98874d9f2a9ff7bbe3 inherit pub_methods_classrendering_1_1Camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -438,6 +444,42 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   14</span>    {</div>
 <div class="line"><span class="lineno">   15</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   16</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a510d9cf5c3fde03bc04e322667cde1b1" name="a510d9cf5c3fde03bc04e322667cde1b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a510d9cf5c3fde03bc04e322667cde1b1">&#9670;&nbsp;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rendering::TrackballCamera::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset the camera to its original values. </p>
+
+<p>Implements <a class="el" href="classrendering_1_1Camera.html#ae9a5ecf910053a98874d9f2a9ff7bbe3">rendering::Camera</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="TrackballCamera_8cpp_source.html#l00067">67</a> of file <a class="el" href="TrackballCamera_8cpp_source.html">TrackballCamera.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>    {</div>
+<div class="line"><span class="lineno">   69</span>        m_fDistance = 5.f;</div>
+<div class="line"><span class="lineno">   70</span>        m_fAngleX = 0.7f; </div>
+<div class="line"><span class="lineno">   71</span>        m_fAngleY = 600.f;</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

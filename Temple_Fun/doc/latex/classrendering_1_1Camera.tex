@@ -33,7 +33,9 @@ virtual glm\+::mat4 \mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1
 virtual void \mbox{\hyperlink{classrendering_1_1Camera_a98d96dfaf0908e0497aac9b6a1b00154}{event\+Camera}} (glimac\+::\+SDLWindow\+Manager \&window\+Manager)=0
 \begin{DoxyCompactList}\small\item\em Defines the event related to the camera. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrendering_1_1Camera_aff8f5e27ca45827b24bbebe77e40fe26}{set\+Locker}} ()
-\begin{DoxyCompactList}\small\item\em Switches the camera between locked / unlocked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Switches the camera between locked / unlocked. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classrendering_1_1Camera_ae9a5ecf910053a98874d9f2a9ff7bbe3}{reset}} ()=0
+\begin{DoxyCompactList}\small\item\em Reset the camera to its original values. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -149,6 +151,20 @@ Moves the camera to the left/right.
 
 
 Implemented in \mbox{\hyperlink{classrendering_1_1TrackballCamera_a24369522a618b8471ce8a109e880bbc5}{rendering\+::\+Trackball\+Camera}}, and \mbox{\hyperlink{classrendering_1_1EyesCamera_aedcafcb2c0e5336c1c6303f172363783}{rendering\+::\+Eyes\+Camera}}.
+
+\mbox{\Hypertarget{classrendering_1_1Camera_ae9a5ecf910053a98874d9f2a9ff7bbe3}\label{classrendering_1_1Camera_ae9a5ecf910053a98874d9f2a9ff7bbe3}} 
+\index{rendering::Camera@{rendering::Camera}!reset@{reset}}
+\index{reset@{reset}!rendering::Camera@{rendering::Camera}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily virtual void rendering\+::\+Camera\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reset the camera to its original values. 
+
+
+
+Implemented in \mbox{\hyperlink{classrendering_1_1EyesCamera_a96680e6a7057809ba681a53ac402e49e}{rendering\+::\+Eyes\+Camera}}, and \mbox{\hyperlink{classrendering_1_1TrackballCamera_a510d9cf5c3fde03bc04e322667cde1b1}{rendering\+::\+Trackball\+Camera}}.
 
 \mbox{\Hypertarget{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}\label{classrendering_1_1Camera_a53b67ba7d03905cdf167691b5e70c897}} 
 \index{rendering::Camera@{rendering::Camera}!rotateLeft@{rotateLeft}}

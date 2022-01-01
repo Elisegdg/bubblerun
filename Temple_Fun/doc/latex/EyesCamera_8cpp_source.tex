@@ -83,26 +83,31 @@
 \DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00079}00079 }
 \DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00080}\mbox{\hyperlink{classrendering_1_1EyesCamera_ade7bb9ab10d6eacf215de7ea41a44d69}{00080}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1EyesCamera_ade7bb9ab10d6eacf215de7ea41a44d69}{EyesCamera::eventCamera}}(glimac::SDLWindowManager\& windowManager)}
 \DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00081}00081     \{}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00082}00082 }
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00083}00083         }
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00084}00084         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_q))}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00085}00085             \mbox{\hyperlink{classrendering_1_1EyesCamera_aedcafcb2c0e5336c1c6303f172363783}{moveLeft}}(1);}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00086}00086         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_d))}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00087}00087             \mbox{\hyperlink{classrendering_1_1EyesCamera_aedcafcb2c0e5336c1c6303f172363783}{moveLeft}}(-\/1);}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00082}00082         }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00083}00083         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_q))}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00084}00084             \mbox{\hyperlink{classrendering_1_1EyesCamera_aedcafcb2c0e5336c1c6303f172363783}{moveLeft}}(1);}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00085}00085         \textcolor{keywordflow}{if} (windowManager.isKeyPressed(SDLK\_d))}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00086}00086             \mbox{\hyperlink{classrendering_1_1EyesCamera_aedcafcb2c0e5336c1c6303f172363783}{moveLeft}}(-\/1);}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00087}00087         }
 \DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00088}00088         }
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00089}00089         }
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00090}00090         glm::ivec2 mousePos = glm::ivec2(0.0);}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00091}00091         \textcolor{keywordflow}{if} (windowManager.isMouseButtonPressed(SDL\_BUTTON\_LEFT))}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00092}00092         \{}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00093}00093             mousePos = windowManager.getMousePosition();}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00094}00094             \textcolor{keywordtype}{float} mousePosX = mousePos.x / 1700.0f -\/ 0.5;}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00095}00095             \textcolor{keywordtype}{float} mousePosY = mousePos.y / 900.0f -\/ 0.5;}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00096}00096 }
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00097}00097             \mbox{\hyperlink{classrendering_1_1EyesCamera_a7ef7012bf988d502732a1f352e89b644}{rotateLeftMouse}}(-\/2 * mousePosX);}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00098}00098             \mbox{\hyperlink{classrendering_1_1EyesCamera_a9a9cd4c99b364d1e50cdf2f0e9a7fe92}{rotateUp}}(-\/2 * mousePosY);}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00099}00099         \}}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00100}00100     \}}
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00101}00101 }
-\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00102}00102 \}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00089}00089         glm::ivec2 mousePos = glm::ivec2(0.0);}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00090}00090         \textcolor{keywordflow}{if} (windowManager.isMouseButtonPressed(SDL\_BUTTON\_LEFT))}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00091}00091         \{}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00092}00092             mousePos = windowManager.getMousePosition();}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00093}00093             \textcolor{keywordtype}{float} mousePosX = mousePos.x / 1700.0f -\/ 0.5;}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00094}00094             \textcolor{keywordtype}{float} mousePosY = mousePos.y / 900.0f -\/ 0.5;}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00096}00096             \mbox{\hyperlink{classrendering_1_1EyesCamera_a7ef7012bf988d502732a1f352e89b644}{rotateLeftMouse}}(-\/2 * mousePosX);}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00097}00097             \mbox{\hyperlink{classrendering_1_1EyesCamera_a9a9cd4c99b364d1e50cdf2f0e9a7fe92}{rotateUp}}(-\/2 * mousePosY);}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00098}00098         \}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00099}00099     \}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00101}\mbox{\hyperlink{classrendering_1_1EyesCamera_a96680e6a7057809ba681a53ac402e49e}{00101}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1EyesCamera_a96680e6a7057809ba681a53ac402e49e}{EyesCamera::reset}}()}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00102}00102     \{}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00103}00103         m\_fPhi = 0.;}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00104}00104         m\_fTheta = -\/0.4;}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00105}00105     \}}
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{EyesCamera_8cpp_source_l00107}00107 \}}
 
 \end{DoxyCode}

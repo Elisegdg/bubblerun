@@ -119,6 +119,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a99bb4bd96d773166bb5e62d530bb4259"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1EyesCamera.html#a99bb4bd96d773166bb5e62d530bb4259">computeDirectionVectors</a> ()</td></tr>
 <tr class="memdesc:a99bb4bd96d773166bb5e62d530bb4259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the Up / Left / Front vectors.  <a href="classrendering_1_1EyesCamera.html#a99bb4bd96d773166bb5e62d530bb4259">More...</a><br /></td></tr>
 <tr class="separator:a99bb4bd96d773166bb5e62d530bb4259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96680e6a7057809ba681a53ac402e49e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1EyesCamera.html#a96680e6a7057809ba681a53ac402e49e">reset</a> ()</td></tr>
+<tr class="memdesc:a96680e6a7057809ba681a53ac402e49e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the camera to its original values.  <a href="classrendering_1_1EyesCamera.html#a96680e6a7057809ba681a53ac402e49e">More...</a><br /></td></tr>
+<tr class="separator:a96680e6a7057809ba681a53ac402e49e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classrendering_1_1Camera"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrendering_1_1Camera')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classrendering_1_1Camera.html">rendering::Camera</a></td></tr>
 <tr class="memitem:a8c10601d747d502c290314c02866cc8a inherit pub_methods_classrendering_1_1Camera"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1Camera.html#a8c10601d747d502c290314c02866cc8a">getCameraType</a> () const</td></tr>
 <tr class="memdesc:a8c10601d747d502c290314c02866cc8a inherit pub_methods_classrendering_1_1Camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter of the type of camera.  <a href="classrendering_1_1Camera.html#a8c10601d747d502c290314c02866cc8a">More...</a><br /></td></tr>
@@ -144,6 +147,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aff8f5e27ca45827b24bbebe77e40fe26 inherit pub_methods_classrendering_1_1Camera"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1Camera.html#aff8f5e27ca45827b24bbebe77e40fe26">setLocker</a> ()</td></tr>
 <tr class="memdesc:aff8f5e27ca45827b24bbebe77e40fe26 inherit pub_methods_classrendering_1_1Camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches the camera between locked / unlocked.  <a href="classrendering_1_1Camera.html#aff8f5e27ca45827b24bbebe77e40fe26">More...</a><br /></td></tr>
 <tr class="separator:aff8f5e27ca45827b24bbebe77e40fe26 inherit pub_methods_classrendering_1_1Camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9a5ecf910053a98874d9f2a9ff7bbe3 inherit pub_methods_classrendering_1_1Camera"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1Camera.html#ae9a5ecf910053a98874d9f2a9ff7bbe3">reset</a> ()=0</td></tr>
+<tr class="memdesc:ae9a5ecf910053a98874d9f2a9ff7bbe3 inherit pub_methods_classrendering_1_1Camera"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the camera to its original values.  <a href="classrendering_1_1Camera.html#ae9a5ecf910053a98874d9f2a9ff7bbe3">More...</a><br /></td></tr>
+<tr class="separator:ae9a5ecf910053a98874d9f2a9ff7bbe3 inherit pub_methods_classrendering_1_1Camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -199,7 +205,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   47</span>        m_player = player;</div>
 <div class="line"><span class="lineno">   48</span>        m_Position = glm::vec3(0, 2., 0); <span class="comment">//2is the &quot;height&quot; of the hero</span></div>
 <div class="line"><span class="lineno">   49</span>        m_fPhi = 0.;</div>
-<div class="line"><span class="lineno">   50</span>        m_fTheta = 0.;</div>
+<div class="line"><span class="lineno">   50</span>        m_fTheta = -0.4;</div>
 <div class="line"><span class="lineno">   51</span>        <a class="code hl_variable" href="classrendering_1_1Camera.html#a7ac1ad4a06b1afe7798676f84271e46b">m_cameraType</a> = 1;</div>
 <div class="line"><span class="lineno">   52</span>        m_fMaxAngleX = 0.6;</div>
 <div class="line"><span class="lineno">   53</span>        m_fMaxAngleY = 0.8;</div>
@@ -305,25 +311,24 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="EyesCamera_8cpp_source.html#l00080">80</a> of file <a class="el" href="EyesCamera_8cpp_source.html">EyesCamera.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   81</span>    {</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>        </div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">if</span> (windowManager.isKeyPressed(SDLK_q))</div>
-<div class="line"><span class="lineno">   85</span>            <a class="code hl_function" href="classrendering_1_1EyesCamera.html#aedcafcb2c0e5336c1c6303f172363783">moveLeft</a>(1);</div>
-<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">if</span> (windowManager.isKeyPressed(SDLK_d))</div>
-<div class="line"><span class="lineno">   87</span>            <a class="code hl_function" href="classrendering_1_1EyesCamera.html#aedcafcb2c0e5336c1c6303f172363783">moveLeft</a>(-1);</div>
+<div class="line"><span class="lineno">   82</span>        </div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span> (windowManager.isKeyPressed(SDLK_q))</div>
+<div class="line"><span class="lineno">   84</span>            <a class="code hl_function" href="classrendering_1_1EyesCamera.html#aedcafcb2c0e5336c1c6303f172363783">moveLeft</a>(1);</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">if</span> (windowManager.isKeyPressed(SDLK_d))</div>
+<div class="line"><span class="lineno">   86</span>            <a class="code hl_function" href="classrendering_1_1EyesCamera.html#aedcafcb2c0e5336c1c6303f172363783">moveLeft</a>(-1);</div>
+<div class="line"><span class="lineno">   87</span>        </div>
 <div class="line"><span class="lineno">   88</span>        </div>
-<div class="line"><span class="lineno">   89</span>        </div>
-<div class="line"><span class="lineno">   90</span>        glm::ivec2 mousePos = glm::ivec2(0.0);</div>
-<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">if</span> (windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT))</div>
-<div class="line"><span class="lineno">   92</span>        {</div>
-<div class="line"><span class="lineno">   93</span>            mousePos = windowManager.getMousePosition();</div>
-<div class="line"><span class="lineno">   94</span>            <span class="keywordtype">float</span> mousePosX = mousePos.x / 1700.0f - 0.5;</div>
-<div class="line"><span class="lineno">   95</span>            <span class="keywordtype">float</span> mousePosY = mousePos.y / 900.0f - 0.5;</div>
-<div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>            <a class="code hl_function" href="classrendering_1_1EyesCamera.html#a7ef7012bf988d502732a1f352e89b644">rotateLeftMouse</a>(-2 * mousePosX);</div>
-<div class="line"><span class="lineno">   98</span>            <a class="code hl_function" href="classrendering_1_1EyesCamera.html#a9a9cd4c99b364d1e50cdf2f0e9a7fe92">rotateUp</a>(-2 * mousePosY);</div>
-<div class="line"><span class="lineno">   99</span>        }</div>
-<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">   89</span>        glm::ivec2 mousePos = glm::ivec2(0.0);</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">if</span> (windowManager.isMouseButtonPressed(SDL_BUTTON_LEFT))</div>
+<div class="line"><span class="lineno">   91</span>        {</div>
+<div class="line"><span class="lineno">   92</span>            mousePos = windowManager.getMousePosition();</div>
+<div class="line"><span class="lineno">   93</span>            <span class="keywordtype">float</span> mousePosX = mousePos.x / 1700.0f - 0.5;</div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordtype">float</span> mousePosY = mousePos.y / 900.0f - 0.5;</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>            <a class="code hl_function" href="classrendering_1_1EyesCamera.html#a7ef7012bf988d502732a1f352e89b644">rotateLeftMouse</a>(-2 * mousePosX);</div>
+<div class="line"><span class="lineno">   97</span>            <a class="code hl_function" href="classrendering_1_1EyesCamera.html#a9a9cd4c99b364d1e50cdf2f0e9a7fe92">rotateUp</a>(-2 * mousePosY);</div>
+<div class="line"><span class="lineno">   98</span>        }</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
 <div class="ttc" id="aclassrendering_1_1EyesCamera_html_a7ef7012bf988d502732a1f352e89b644"><div class="ttname"><a href="classrendering_1_1EyesCamera.html#a7ef7012bf988d502732a1f352e89b644">rendering::EyesCamera::rotateLeftMouse</a></div><div class="ttdeci">void rotateLeftMouse(float degrees)</div><div class="ttdoc">Rotates the camera to the left/right and blocks it at a certain angle.</div><div class="ttdef"><b>Definition:</b> <a href="EyesCamera_8cpp_source.html#l00035">EyesCamera.cpp:35</a></div></div>
 <div class="ttc" id="aclassrendering_1_1EyesCamera_html_a9a9cd4c99b364d1e50cdf2f0e9a7fe92"><div class="ttname"><a href="classrendering_1_1EyesCamera.html#a9a9cd4c99b364d1e50cdf2f0e9a7fe92">rendering::EyesCamera::rotateUp</a></div><div class="ttdeci">void rotateUp(float degrees)</div><div class="ttdoc">Rotates the camera upwards / downwards.</div><div class="ttdef"><b>Definition:</b> <a href="EyesCamera_8cpp_source.html#l00049">EyesCamera.cpp:49</a></div></div>
 <div class="ttc" id="aclassrendering_1_1EyesCamera_html_aedcafcb2c0e5336c1c6303f172363783"><div class="ttname"><a href="classrendering_1_1EyesCamera.html#aedcafcb2c0e5336c1c6303f172363783">rendering::EyesCamera::moveLeft</a></div><div class="ttdeci">void moveLeft(float t)</div><div class="ttdoc">Moves the camera to the left/right.</div><div class="ttdef"><b>Definition:</b> <a href="EyesCamera_8cpp_source.html#l00015">EyesCamera.cpp:15</a></div></div>
@@ -448,6 +453,41 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   17</span>        m_Position = glm::vec3(m_player-&gt;<a class="code hl_function" href="classgame_1_1Player.html#aad867a4cf1f38f390d81f29daf9745c9">convertCoord</a>().x, m_player-&gt;<a class="code hl_function" href="classgame_1_1Player.html#aad867a4cf1f38f390d81f29daf9745c9">convertCoord</a>().y +2. , m_player-&gt;<a class="code hl_function" href="classgame_1_1Player.html#aad867a4cf1f38f390d81f29daf9745c9">convertCoord</a>().z);</div>
 <div class="line"><span class="lineno">   18</span>        <a class="code hl_function" href="classrendering_1_1EyesCamera.html#a99bb4bd96d773166bb5e62d530bb4259">computeDirectionVectors</a>();</div>
 <div class="line"><span class="lineno">   19</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a96680e6a7057809ba681a53ac402e49e" name="a96680e6a7057809ba681a53ac402e49e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96680e6a7057809ba681a53ac402e49e">&#9670;&nbsp;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rendering::EyesCamera::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset the camera to its original values. </p>
+
+<p>Implements <a class="el" href="classrendering_1_1Camera.html#ae9a5ecf910053a98874d9f2a9ff7bbe3">rendering::Camera</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="EyesCamera_8cpp_source.html#l00101">101</a> of file <a class="el" href="EyesCamera_8cpp_source.html">EyesCamera.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>    {</div>
+<div class="line"><span class="lineno">  103</span>        m_fPhi = 0.;</div>
+<div class="line"><span class="lineno">  104</span>        m_fTheta = -0.4;</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

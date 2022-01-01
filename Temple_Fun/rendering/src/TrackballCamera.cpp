@@ -64,4 +64,11 @@ namespace rendering
         }
     }
 
+    void TrackballCamera::reset()
+    {
+        m_fDistance = 5.f;
+        m_fAngleX = 0.7f; 
+        m_fAngleY = 600.f;
+    }
+
 }

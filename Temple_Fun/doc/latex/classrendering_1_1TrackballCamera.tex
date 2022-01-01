@@ -33,7 +33,9 @@ void \mbox{\hyperlink{classrendering_1_1TrackballCamera_a8f7812b19f9202802138645
 glm\+::mat4 \mbox{\hyperlink{classrendering_1_1TrackballCamera_ac570bdbd18186fc4af680015eab0886e}{get\+View\+Matrix}} () const
 \begin{DoxyCompactList}\small\item\em Calculates and returns the View\+Matrix. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrendering_1_1TrackballCamera_a1dad169b4e1d2b5b67a62352d043aa62}{event\+Camera}} (glimac\+::\+SDLWindow\+Manager \&window\+Manager)
-\begin{DoxyCompactList}\small\item\em Defines the event related to the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines the event related to the camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrendering_1_1TrackballCamera_a510d9cf5c3fde03bc04e322667cde1b1}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the camera to its original values. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -242,6 +244,33 @@ Definition at line \mbox{\hyperlink{TrackballCamera_8cpp_source_l00013}{13}} of 
 \DoxyCodeLine{00014     \{}
 \DoxyCodeLine{00015         \textcolor{keywordflow}{return};}
 \DoxyCodeLine{00016     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classrendering_1_1TrackballCamera_a510d9cf5c3fde03bc04e322667cde1b1}\label{classrendering_1_1TrackballCamera_a510d9cf5c3fde03bc04e322667cde1b1}} 
+\index{rendering::TrackballCamera@{rendering::TrackballCamera}!reset@{reset}}
+\index{reset@{reset}!rendering::TrackballCamera@{rendering::TrackballCamera}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void rendering\+::\+Trackball\+Camera\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reset the camera to its original values. 
+
+
+
+Implements \mbox{\hyperlink{classrendering_1_1Camera_ae9a5ecf910053a98874d9f2a9ff7bbe3}{rendering\+::\+Camera}}.
+
+
+
+Definition at line \mbox{\hyperlink{TrackballCamera_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{TrackballCamera_8cpp_source}{Trackball\+Camera.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068     \{}
+\DoxyCodeLine{00069         m\_fDistance = 5.f;}
+\DoxyCodeLine{00070         m\_fAngleX = 0.7f; }
+\DoxyCodeLine{00071         m\_fAngleY = 600.f;}
+\DoxyCodeLine{00072     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classrendering_1_1TrackballCamera_a43b8a79d1102ff35195e130e80906564}\label{classrendering_1_1TrackballCamera_a43b8a79d1102ff35195e130e80906564}} 

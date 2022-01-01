@@ -49,6 +49,15 @@ void CourseMap::addObject(int r, int g, int b)
     }
 }
 
+void CourseMap::clearCourseMap(){
+        Iterator<Object*, Container<Object*>> *it = m_CourseMap.CreateIterator();
+        for (it->First(); !it->IsDone(); it->Next())
+        {
+            delete (*it->Current());
+            (*it->Current()) = nullptr;
+        }
+}
+
 void CourseMap::loadMap(const glimac::FilePath &file)
 {
     std::ifstream fileMap(file);
@@ -59,11 +68,8 @@ void CourseMap::loadMap(const glimac::FilePath &file)
         return;
     }
 
-    if (file.ext() != "ppm")
-    {
-        throw std::string("Please load a .ppm file");
-        return;
-    }
+    assert((file.ext() == "ppm") && "Error : please load a .ppm file");
+    
 
     std::string line;
     getline(fileMap, line);

@@ -7,33 +7,32 @@
 \DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00003}00003 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacerendering}{rendering}}}
 \DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00004}00004 \{}
 \DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00005}00005 }
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00006}\mbox{\hyperlink{classrendering_1_1Light_ac52ddbf85e7ad00f0e56d018c9a5a3c4}{00006}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1Light_ac52ddbf85e7ad00f0e56d018c9a5a3c4}{Light::draw}}(\mbox{\hyperlink{classrendering_1_1Camera}{rendering::Camera}} *camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering::ShaderManager}} \&LightProgram, glm::mat4 ProjMatrix, glm::mat4 NormalMatrix)}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00006}\mbox{\hyperlink{classrendering_1_1Light_a83f4378506f90c24e1a27656b2178e56}{00006}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classrendering_1_1Light_a83f4378506f90c24e1a27656b2178e56}{Light::draw}}(\mbox{\hyperlink{classrendering_1_1Camera}{rendering::Camera}} *camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering::ShaderManager}} \&LightProgram, glm::mat4 ProjMatrix, glm::mat4 NormalMatrix, \mbox{\hyperlink{classgame_1_1Player}{game::Player}} \&player)}
 \DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00007}00007     \{}
 \DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00008}00008 }
 \DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00009}00009         glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
 \DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00010}00010         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aafe2a52ae6f541da55cb7ac66f9c308e}{use}}();}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00011}00011         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uKd"{}}, 0.4, 0.4, 1.0);}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00012}00012         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uKs"{}}, 0.2, 0.5, 0.8);}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00013}00013         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uKd2"{}}, 0.5, 0.0, 0);}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00014}00014         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uKs2"{}}, 0.5, 0, 0);}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00011}00011         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uKdiffuse"{}}, 0.4,0.4,1.0);}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00012}00012         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uKspecular"{}}, 0.2,0.5,0.8);}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00013}00013         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uKdiffuse2"{}}, 1,0.5,0);}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00014}00014         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uKspecular2"{}}, 1,0.5,0);}
 \DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00015}00015         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_ad8f60d9ab9e7a1c0572914e6ea47b498}{uniform1i}}(\textcolor{stringliteral}{"{}uShininess"{}}, 10);}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00016}00016         }
 \DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00017}00017         glm::vec4 LightDir = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}() * glm::vec4(0.0, 1.0, 0.0, 0.0);}
 \DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00018}00018         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uLightDir\_vs"{}}, LightDir.x, LightDir.y, LightDir.z);}
 \DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00019}00019 }
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00020}00020         glm::vec4 LightPos = glm::vec4(0.5, 0.5, 0.5, 0.0) * camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00021}00021         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uLightPos\_vs"{}}, LightPos.x, LightPos.y, LightPos.z);}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00022}00022 }
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00023}00023         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uLightIntensity"{}}, 0.6, 0.6, 0.6);}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00024}00024 }
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00025}00025         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00026}00026         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVMatrix"{}}, ViewMatrix);}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00027}00027         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uNormalMatrix"{}}, NormalMatrix);}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00028}00028 }
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00029}00029         ViewMatrix = glm::translate(ViewMatrix, glm::vec3(1., 0.6, 0.));}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00030}00030         ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00031}00031     \}}
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00032}00032 }
-\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00033}00033 \}}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00020}00020         glm::vec4 LightPos =  camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}() * glm::vec4(player.\mbox{\hyperlink{classgame_1_1Player_aad867a4cf1f38f390d81f29daf9745c9}{convertCoord}}(),1.0);        LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uLightPos\_vs"{}}, LightPos.x, LightPos.y, LightPos.z);}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00022}00022         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_aa98ac1bfcb3116448fbd139b9308fa41}{uniform3f}}(\textcolor{stringliteral}{"{}uLightIntensity"{}}, 0.6, 0.6, 0.6);}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00024}00024         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00025}00025         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVMatrix"{}}, ViewMatrix);}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00026}00026         LightProgram.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uNormalMatrix"{}}, NormalMatrix);}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00028}00028         ViewMatrix = glm::translate(ViewMatrix, glm::vec3(1., 0.6, 0.));}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00029}00029         ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00030}00030     \}}
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{Light_8cpp_source_l00032}00032 \}}
 
 \end{DoxyCode}

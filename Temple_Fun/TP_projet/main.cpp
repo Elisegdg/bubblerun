@@ -66,7 +66,7 @@ int main(int argc, char **argv)
     game::CourseMap courseMap;
     try
     {
-        courseMap.loadMap("../Temple_Fun/assets/map70.ppm");
+        courseMap.loadMap("../Temple_Fun/assets/map/map70.ppm");
     }
     catch (std::string &s)
     {
@@ -254,6 +254,7 @@ int main(int argc, char **argv)
             player.setLife(true);
             player.setOrientation(0);
             camera->rotateLeft(player.getOrientation());
+            camera->reset();
             again = true;
 
             menu.setMenuPlayAgain(menuShader);
@@ -350,6 +351,7 @@ int main(int argc, char **argv)
         glDisable(GL_BLEND);
         windowManager.swapBuffers();
     }
+    courseMap.clearCourseMap();
 
     return EXIT_SUCCESS;
 }

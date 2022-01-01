@@ -80,6 +80,7 @@ public:
      *  \brief Calculates the Up / Left / Front vectors 
      */
     void computeDirectionVectors();
+    void reset();
 
 
 };

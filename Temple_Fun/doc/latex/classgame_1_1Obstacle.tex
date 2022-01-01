@@ -105,7 +105,7 @@ Definition at line \mbox{\hyperlink{Object_8cpp_source_l00036}{36}} of file \mbo
 \DoxyCodeLine{00037 \{}
 \DoxyCodeLine{00038 }
 \DoxyCodeLine{00039     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
-\DoxyCodeLine{00040     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().x -\/ 1, 0.4, \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().y));}
+\DoxyCodeLine{00040     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().x-\/2, 0.4, \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().y));}
 \DoxyCodeLine{00041     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 0.6, 1));}
 \DoxyCodeLine{00042     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
 \DoxyCodeLine{00043 }

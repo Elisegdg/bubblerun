@@ -98,6 +98,12 @@ public:
         else    m_locked = 0;    
     }
 
+    /*!
+     *  \brief Reset the camera to its original values
+     * 
+     */
+    virtual void reset()=0;
+
 
 };
 

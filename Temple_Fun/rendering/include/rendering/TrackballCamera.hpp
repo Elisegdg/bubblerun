@@ -66,6 +66,7 @@ public:
     void rotateUp(float degrees);    
     glm::mat4 getViewMatrix() const;
     void eventCamera(glimac::SDLWindowManager& windowManager);
+    void reset();
     
 
 };

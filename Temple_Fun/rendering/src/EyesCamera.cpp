@@ -79,7 +79,6 @@ namespace rendering
 
     void EyesCamera::eventCamera(glimac::SDLWindowManager& windowManager)
     {
-
         
         if (windowManager.isKeyPressed(SDLK_q))
             moveLeft(1);
@@ -97,6 +96,12 @@ namespace rendering
             rotateLeftMouse(-2 * mousePosX);
             rotateUp(-2 * mousePosY);
         }
+    }
+
+    void EyesCamera::reset()
+    {
+        m_fPhi = 0.;
+        m_fTheta = -0.4;
     }
 
 }

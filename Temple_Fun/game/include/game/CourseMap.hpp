@@ -35,6 +35,8 @@ private:
 
 public:
 
+    
+
     /*!
      *  \brief Fill the Container of objects.
      *  
@@ -53,6 +55,16 @@ public:
      *
      *  \param file Filepath of the map (.ppm)
      */
+
+    /*!
+     *  \brief Free the memory
+     *  
+     * Deletes each pointer object that we created with a "new" in the addObject function.
+     * 
+     *
+     */
+    void clearCourseMap();
+
     void loadMap(const glimac::FilePath &file);
 
     /*!

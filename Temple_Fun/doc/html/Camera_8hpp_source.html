@@ -108,12 +108,14 @@ $(function() {
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">else</span>    <a class="code hl_variable" href="classrendering_1_1Camera.html#a3a9ad1c6dc7820e106db36b31984c6a3">m_locked</a> = 0;    </div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>};</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classrendering_1_1Camera.html#ae9a5ecf910053a98874d9f2a9ff7bbe3">  105</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classrendering_1_1Camera.html#ae9a5ecf910053a98874d9f2a9ff7bbe3">reset</a>()=0;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>};</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassrendering_1_1Camera_html"><div class="ttname"><a href="classrendering_1_1Camera.html">rendering::Camera</a></div><div class="ttdoc">Abstract class of Camera.</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8hpp_source.html#l00026">Camera.hpp:26</a></div></div>
 <div class="ttc" id="aclassrendering_1_1Camera_html_a3a9ad1c6dc7820e106db36b31984c6a3"><div class="ttname"><a href="classrendering_1_1Camera.html#a3a9ad1c6dc7820e106db36b31984c6a3">rendering::Camera::m_locked</a></div><div class="ttdeci">unsigned int m_locked</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8hpp_source.html#l00031">Camera.hpp:31</a></div></div>
 <div class="ttc" id="aclassrendering_1_1Camera_html_a53b67ba7d03905cdf167691b5e70c897"><div class="ttname"><a href="classrendering_1_1Camera.html#a53b67ba7d03905cdf167691b5e70c897">rendering::Camera::rotateLeft</a></div><div class="ttdeci">virtual void rotateLeft(float degrees)=0</div><div class="ttdoc">Rotates the camera to the left/right.</div></div>
@@ -124,6 +126,7 @@ $(function() {
 <div class="ttc" id="aclassrendering_1_1Camera_html_a94328dd5d51ce6615dc324dc27b6b146"><div class="ttname"><a href="classrendering_1_1Camera.html#a94328dd5d51ce6615dc324dc27b6b146">rendering::Camera::rotateUp</a></div><div class="ttdeci">virtual void rotateUp(float degrees)=0</div><div class="ttdoc">Rotates the camera upwards / downwards.</div></div>
 <div class="ttc" id="aclassrendering_1_1Camera_html_a98d96dfaf0908e0497aac9b6a1b00154"><div class="ttname"><a href="classrendering_1_1Camera.html#a98d96dfaf0908e0497aac9b6a1b00154">rendering::Camera::eventCamera</a></div><div class="ttdeci">virtual void eventCamera(glimac::SDLWindowManager &amp;windowManager)=0</div><div class="ttdoc">Defines the event related to the camera.</div></div>
 <div class="ttc" id="aclassrendering_1_1Camera_html_ad1a2f332b6e0551c1aa1c0c1c2b49169"><div class="ttname"><a href="classrendering_1_1Camera.html#ad1a2f332b6e0551c1aa1c0c1c2b49169">rendering::Camera::getViewMatrix</a></div><div class="ttdeci">virtual glm::mat4 getViewMatrix() const =0</div><div class="ttdoc">Calculates and returns the ViewMatrix.</div></div>
+<div class="ttc" id="aclassrendering_1_1Camera_html_ae9a5ecf910053a98874d9f2a9ff7bbe3"><div class="ttname"><a href="classrendering_1_1Camera.html#ae9a5ecf910053a98874d9f2a9ff7bbe3">rendering::Camera::reset</a></div><div class="ttdeci">virtual void reset()=0</div><div class="ttdoc">Reset the camera to its original values.</div></div>
 <div class="ttc" id="aclassrendering_1_1Camera_html_af7c0ffb5fb92c765b697f6d4f7132915"><div class="ttname"><a href="classrendering_1_1Camera.html#af7c0ffb5fb92c765b697f6d4f7132915">rendering::Camera::m_isRotating</a></div><div class="ttdeci">bool m_isRotating</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8hpp_source.html#l00032">Camera.hpp:32</a></div></div>
 <div class="ttc" id="aclassrendering_1_1Camera_html_aff8f5e27ca45827b24bbebe77e40fe26"><div class="ttname"><a href="classrendering_1_1Camera.html#aff8f5e27ca45827b24bbebe77e40fe26">rendering::Camera::setLocker</a></div><div class="ttdeci">void setLocker()</div><div class="ttdoc">Switches the camera between locked / unlocked.</div><div class="ttdef"><b>Definition:</b> <a href="Camera_8hpp_source.html#l00095">Camera.hpp:95</a></div></div>
 <div class="ttc" id="anamespacerendering_html"><div class="ttname"><a href="namespacerendering.html">rendering</a></div><div class="ttdoc">Our rendering library.</div></div>

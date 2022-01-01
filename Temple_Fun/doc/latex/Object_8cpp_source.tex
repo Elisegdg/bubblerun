@@ -25,7 +25,7 @@
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00021}\mbox{\hyperlink{classgame_1_1Object_a95fd4656e1ed6d9a11caeb58c131a657}{00021}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classgame_1_1Object_a95fd4656e1ed6d9a11caeb58c131a657}{Object::draw}}(\mbox{\hyperlink{classrendering_1_1Cube}{rendering::Cube}}\& mesh,\textcolor{keyword}{const} \mbox{\hyperlink{classrendering_1_1Camera}{rendering::Camera}}* camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering::ShaderManager}}\& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager\& windowManager)}
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00022}00022 \{}
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00023}00023     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
-\DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00024}00024     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().x -\/ 1, 0, \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().y));}
+\DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00024}00024     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().x-\/2 , 0, \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().y));}
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00025}00025     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 0.2, 1));}
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00026}00026     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00027}00027 }
@@ -41,7 +41,7 @@
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00037}00037 \{}
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00038}00038 }
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00039}00039     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
-\DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00040}00040     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().x -\/ 1, 0.4, \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().y));}
+\DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00040}00040     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().x-\/2, 0.4, \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().y));}
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00041}00041     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 0.6, 1));}
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00042}00042     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00043}00043 }
@@ -63,7 +63,7 @@
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00059}00059 \{}
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00060}00060 }
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00061}00061     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
-\DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00062}00062     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().x -\/ 1, 0.2, \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().y));}
+\DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00062}00062     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().x-\/2, 0.2, \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().y));}
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00063}00063     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(0.3, 0.3, 0.3));}
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00064}00064     \textcolor{comment}{//ViewMatrix = glm::rotate(ViewMatrix, windowManager.getTime(), glm::vec3(0,1,0)); // Translation * Rotation}}
 \DoxyCodeLine{\Hypertarget{Object_8cpp_source_l00065}00065     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
