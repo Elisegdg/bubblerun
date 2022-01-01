@@ -343,8 +343,6 @@ int main(int argc, char **argv)
             LightProgram.uniform3f("uKspecular2", 1,0.5,0);
             LightProgram.uniform1i("uShininess", 10);
 
-            glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 1700.f / 900.f, 0.1f, 100.f);
-            glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
             // Drawing of the different elements
             light.draw(camera,LightProgram, ProjMatrix, NormalMatrix, player);
