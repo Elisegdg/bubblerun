@@ -1,5 +1,9 @@
 #include <rendering/Model.hpp>
 
+#define TINYOBJLOADER_IMPLEMENTATION
+#include <glimac/tiny_obj_loader.h>
+
+
 namespace rendering{
 
 
@@ -60,12 +64,12 @@ namespace rendering{
         return &m_index[0];
     }
 
-    void Model::loadModel(const std::string& fileName){
+    void Model::loadModel(const std::string& objName, const std::string& mtlName){
         
         // Load 3D object
-        std::string inputfile = "./assets/models/"+fileName;
+        std::string inputfile = "../Temple_Fun/assets/models/"+objName;
         tinyobj::ObjReaderConfig reader_config;
-        reader_config.mtl_search_path = "./assets/models/cornell_box.mtl"; // Path to material files
+        reader_config.mtl_search_path = "/../Temple_Fun/assets/models/"+mtlName; // Path to material files
 
         tinyobj::ObjReader reader;
 

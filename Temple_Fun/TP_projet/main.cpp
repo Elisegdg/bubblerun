@@ -6,6 +6,7 @@
 #include FT_FREETYPE_H
 #include <string.h>
 
+
 #include <glimac/SDLWindowManager.hpp>
 #include <glimac/Program.hpp>
 #include <glimac/FilePath.hpp>
@@ -145,7 +146,7 @@ int main(int argc, char **argv)
 
     // Load of the obj
     rendering::Model obj;
-    obj.loadModel("cornell_box.obj");
+    obj.loadModel("cornell_box.obj", "cornell_box.mtl");
 
     // Creation of the Skybox
     rendering::Skybox skybox;
