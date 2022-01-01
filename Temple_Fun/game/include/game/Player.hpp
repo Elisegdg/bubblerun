@@ -193,7 +193,14 @@ public:
      * 
      */
     void draw(rendering::Model& mesh, rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix);
+
+    float getRotation(){
+        return glm::radians(m_orientation);
+    }
+
 };
+
+
 
 }
 
