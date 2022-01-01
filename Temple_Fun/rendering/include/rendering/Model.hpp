@@ -13,7 +13,7 @@
 #include <GL/glew.h>
 #include <rendering/Texture.hpp>
 #include <glimac/common.hpp>
-#include <glimac/src/tiny_obj_loader.h>
+#include <glimac/tiny_obj_loader.h>
 
 
 namespace rendering{
@@ -33,9 +33,6 @@ protected:
     std::vector<glimac::ShapeVertex> m_vertices; /*!< Vector that contains the vertices (position, texture, normals) */
     std::vector<int> m_index; /*!< Number of indices to draw */
     GLsizei m_vertexCount; /*!< Number of vertices to draw */
-
-
-private :
     
 
 public:
