@@ -334,15 +334,6 @@ int main(int argc, char **argv)
             glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 2000.f / 1000.f, 0.1f, 100.f);
             glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
-            // Draw the lights
-            LightProgram.use();
-
-            LightProgram.uniform3f("uKdiffuse", 0.4,0.4,1.0);
-            LightProgram.uniform3f("uKspecular", 0.2,0.5,0.8);
-            LightProgram.uniform3f("uKdiffuse2", 1,0.5,0);
-            LightProgram.uniform3f("uKspecular2", 1,0.5,0);
-            LightProgram.uniform1i("uShininess", 10);
-
 
             // Drawing of the different elements
             light.draw(camera,LightProgram, ProjMatrix, NormalMatrix, player);
