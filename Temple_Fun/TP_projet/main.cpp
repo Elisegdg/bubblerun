@@ -122,10 +122,10 @@ int main(int argc, char **argv)
     SkyboxProgram.addUniform("uSkybox");
 
     rendering::ShaderManager LightProgram(applicationPath, "shaders/3D.vs.glsl", "shaders/multipleLights.fs.glsl");
-    LightProgram.addUniform("uKd");
-    LightProgram.addUniform("uKs");
-    LightProgram.addUniform("uKd2");
-    LightProgram.addUniform("uKs2");
+    LightProgram.addUniform("uKdiffuse");
+    LightProgram.addUniform("uKspecular");
+    LightProgram.addUniform("uKdiffuse2");
+    LightProgram.addUniform("uKspecular2");
     LightProgram.addUniform("uShininess");
     LightProgram.addUniform("uLightDir_vs");
     LightProgram.addUniform("uLightPos_vs");
@@ -332,7 +332,7 @@ int main(int argc, char **argv)
              *********************************/
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+            
 
             glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 2000.f / 1000.f, 0.1f, 100.f);
             glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
@@ -340,16 +340,16 @@ int main(int argc, char **argv)
             // Draw the lights
             LightProgram.use();
 
-            LightProgram.uniform3f("uKd", 0.4,0.4,1.0);
-            LightProgram.uniform3f("uKs", 0.2,0.5,0.8);
-            LightProgram.uniform3f("uKd2", 0.5,0.0,0);
-            LightProgram.uniform3f("uKs2", 0.5,0,0);
+            LightProgram.uniform3f("uKdiffuse", 0.4,0.4,1.0);
+            LightProgram.uniform3f("uKspecular", 0.2,0.5,0.8);
+            LightProgram.uniform3f("uKdiffuse2", 1,0.5,0);
+            LightProgram.uniform3f("uKspecular2", 1,0.5,0);
             LightProgram.uniform1i("uShininess", 10);
 
             glm::vec4 LightDir = camera->getViewMatrix() * glm::vec4(0.0,1.0,0.0,0.0);
             LightProgram.uniform3f("uLightDir_vs", LightDir.x, LightDir.y, LightDir.z);
 
-            glm::vec4 LightPos = glm::vec4(0.5,0.5,0.5,0.0) * camera->getViewMatrix();
+            glm::vec4 LightPos =  camera->getViewMatrix() * glm::vec4(player.convertCoord(),1.0);
             LightProgram.uniform3f("uLightPos_vs", LightPos.x, LightPos.y, LightPos.z);
 
             LightProgram.uniform3f("uLightIntensity", 0.6,0.6,0.6);
@@ -362,6 +362,7 @@ int main(int argc, char **argv)
             ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));
         
             // Drawing of the Characters as cubes
+
             player.draw(cube_nemo, camera, LightProgram, ProjMatrix);
             enemy.draw(cube_shark, camera, LightProgram, ProjMatrix);
 
