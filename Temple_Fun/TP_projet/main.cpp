@@ -159,10 +159,16 @@ int main(int argc, char **argv)
 
 
     // TEST TINY OBJ
-    rendering::Model obj;
-    obj.loadModel("alliance.obj");
-    obj.setVbo();
-    obj.setVao();
+    rendering::Model nemo_obj;
+    nemo_obj.loadModel("Nemo.obj");
+    nemo_obj.setVbo();
+    nemo_obj.setVao();
+
+    rendering::Model shark_obj;
+    shark_obj.loadModel("shark.obj");
+    shark_obj.setVbo();
+    shark_obj.setVao();
+
 
 
 
@@ -348,13 +354,10 @@ int main(int argc, char **argv)
 
             // Drawing of the different elements
             light.draw(camera,LightProgram, ProjMatrix, NormalMatrix, player);
-            player.draw(cube_nemo, camera, LightProgram, ProjMatrix);
-            enemy.draw(cube_shark, camera, LightProgram, ProjMatrix);
+            player.draw(nemo_obj, camera, LightProgram, ProjMatrix);
+            enemy.draw(nemo_obj, camera, LightProgram, ProjMatrix);
             courseMap.drawMap(cube_path, cube_coin, camera, LightProgram, ProjMatrix, windowManager);
-            courseMap.drawObstacle(cube_obstacle, camera, LightProgram, ProjMatrix, windowManager);
-            
-            obj.draw_model(camera, LightProgram, ProjMatrix);
-            
+            courseMap.drawObstacle(cube_obstacle, camera, LightProgram, ProjMatrix, windowManager);         
             
             
             glDepthFunc(GL_LEQUAL);
