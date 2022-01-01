@@ -154,6 +154,14 @@ int main(int argc, char **argv)
         std::cerr << "Error : " << s << std::endl;
     }
 
+
+    // TEST TINY OBJ
+
+    rendering::Model obj;
+    obj.loadModel("cornell_box.obj");
+
+
+
     // Application loop:
     bool done = false, repeat = false, again = true;
     int step = 0, step_turn = 0;

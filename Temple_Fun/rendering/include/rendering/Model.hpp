@@ -39,7 +39,8 @@ public:
     Model(rendering::Texture texture):
         m_texture(texture)
         {}
-
+    Model() = default;
+    
     /*!
     *  \brief Destructor of the Model class
     * Deletes the buffers
@@ -114,6 +115,8 @@ public:
 
 
     const int* getIndexPointer() const;
+
+    void loadModel(const std::string& fileName);
 
 };
 
