@@ -66,14 +66,14 @@ int main(int argc, char **argv)
     game::CourseMap courseMap;
     try
     {
-        courseMap.loadMap("../Temple_Fun/assets/map.ppm");
+        courseMap.loadMap("../Temple_Fun/assets/map70.ppm");
     }
     catch (std::string &s)
     {
         std::cerr << "Error : " << s << std::endl;
     }
     courseMap.loadCoins();
-    game::Player player(courseMap, glm::vec3(1, 3, 0)), enemy(courseMap, glm::vec3(1, 0, 0));
+    game::Player player(courseMap, glm::vec3(2, 3, 0)), enemy(courseMap, glm::vec3(2, 0, 0));
     game::Object *objet = courseMap.findObject(player.getFloorCoord());
     game::Object *objet_enemy = courseMap.findObject(enemy.getFloorCoord());
     int score = 0;
@@ -120,10 +120,10 @@ int main(int argc, char **argv)
     SkyboxProgram.addUniform("uSkybox");
 
     rendering::ShaderManager LightProgram(applicationPath, "shaders/3D.vs.glsl", "shaders/multipleLights.fs.glsl");
-    LightProgram.addUniform("uKd");
-    LightProgram.addUniform("uKs");
-    LightProgram.addUniform("uKd2");
-    LightProgram.addUniform("uKs2");
+    LightProgram.addUniform("uKdiffuse");
+    LightProgram.addUniform("uKspecular");
+    LightProgram.addUniform("uKdiffuse2");
+    LightProgram.addUniform("uKspecular2");
     LightProgram.addUniform("uShininess");
     LightProgram.addUniform("uLightDir_vs");
     LightProgram.addUniform("uLightPos_vs");
@@ -248,8 +248,8 @@ int main(int argc, char **argv)
         // PLAY AGAIN MENU DISPLAY
         if (menu_play_again & !menu_score & !menu_bool)
         {
-            player.setCoord(glm::vec3(1, 3, 0));
-            enemy.setCoord(glm::vec3(1, 0, 0));
+            player.setCoord(glm::vec3(2, 3, 0));
+            enemy.setCoord(glm::vec3(2, 0, 0));
             enemy.setOrientation(0);
             player.setLife(true);
             player.setOrientation(0);
@@ -334,7 +334,7 @@ int main(int argc, char **argv)
             glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
             // Drawing of the different elements
-            light.draw(camera,LightProgram, ProjMatrix, NormalMatrix);
+            light.draw(camera,LightProgram, ProjMatrix, NormalMatrix, player);
             player.draw(cube_nemo, camera, LightProgram, ProjMatrix);
             enemy.draw(cube_shark, camera, LightProgram, ProjMatrix);
             courseMap.drawMap(cube_path, cube_coin, camera, LightProgram, ProjMatrix, windowManager);

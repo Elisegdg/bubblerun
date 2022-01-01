@@ -47,7 +47,7 @@ public:
         m_player = player;
         m_Position = glm::vec3(0, 2., 0); //2is the "height" of the hero
 	    m_fPhi = 0.;
-        m_fTheta = 0.;
+        m_fTheta = -0.4;
         m_cameraType = 1;
         m_fMaxAngleX = 0.6;
         m_fMaxAngleY = 0.8;

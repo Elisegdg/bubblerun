@@ -46,7 +46,7 @@ void Player::setLife(bool life)
 
 glm::vec3 Player::convertCoord()
 {
-    return glm::vec3(getCoord().x - 1., getCoord().z, getCoord().y);
+    return glm::vec3(getCoord().x-2, getCoord().z, getCoord().y);
 }
 
 void Player::draw(rendering::Model &mesh, rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix)
