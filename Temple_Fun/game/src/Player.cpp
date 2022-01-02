@@ -65,6 +65,10 @@ void Player::draw(rendering::Model &mesh, rendering::Camera *camera, rendering::
     Program.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
     
     mesh.draw();
+
+    /*glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D,0);
+    glBindVertexArray(0);*/
 }
 
 void Player::moveOrientation()

@@ -6,6 +6,7 @@
 #include FT_FREETYPE_H
 #include <string.h>
 
+
 #include <glimac/SDLWindowManager.hpp>
 #include <glimac/Program.hpp>
 #include <glimac/FilePath.hpp>
@@ -23,6 +24,7 @@
 #include <rendering/Cube.hpp>
 #include <rendering/Text.hpp>
 #include <rendering/Menu.hpp>
+#include <rendering/Model.hpp>
 #include <rendering/Cursor.hpp>
 #include <rendering/json.hpp>
 #include <rendering/Score.hpp>
@@ -158,6 +160,7 @@ int main(int argc, char **argv)
     glUniformMatrix4fv(glGetUniformLocation(TextProgram.getId(), "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 
     glEnable(GL_DEPTH_TEST);
+
 
     // Creation of the Skybox
     rendering::Skybox skybox;
@@ -348,9 +351,11 @@ int main(int argc, char **argv)
              *********************************/
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            
 
-            glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 1700.f / 900.f, 0.1f, 100.f);
+            glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 2000.f / 1000.f, 0.1f, 100.f);
             glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
+
 
             // Drawing of the different elements
             light.drawDirectionnal(camera,LightProgram, ProjMatrix, NormalMatrix);
