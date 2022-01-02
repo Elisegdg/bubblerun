@@ -122,10 +122,10 @@ int main(int argc, char **argv)
     SkyboxProgram.addUniform("uSkybox");
 
     rendering::ShaderManager LightProgram(applicationPath, "shaders/3D.vs.glsl", "shaders/multipleLights.fs.glsl");
-    LightProgram.addUniform("uKdiffuse");
-    LightProgram.addUniform("uKspecular");
-    LightProgram.addUniform("uKdiffuse2");
-    LightProgram.addUniform("uKspecular2");
+    LightProgram.addUniform("uKdiffuseD");
+    LightProgram.addUniform("uKspecularD");
+    LightProgram.addUniform("uKdiffuseP");
+    LightProgram.addUniform("uKspecularP");
     LightProgram.addUniform("uShininess");
     LightProgram.addUniform("uLightDir_vs");
     LightProgram.addUniform("uLightPos_vs");
@@ -359,7 +359,8 @@ int main(int argc, char **argv)
 
 
             // Drawing of the different elements
-            light.draw(camera,LightProgram, ProjMatrix, NormalMatrix, player);
+            light.drawDirectionnal(camera,LightProgram, ProjMatrix, NormalMatrix, player);
+            light.drawPonctual(camera,LightProgram, ProjMatrix, NormalMatrix, player);
             player.draw(nemo_obj,  camera, LightProgram, ProjMatrix);
             enemy.draw(nemo_obj, camera, LightProgram, ProjMatrix);
             courseMap.drawMap(cube_path, cube_coin, camera, LightProgram, ProjMatrix, windowManager);

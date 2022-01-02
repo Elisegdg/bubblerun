@@ -30,7 +30,8 @@ public:
      *  \param NormalMatrix The Normal Matrix
      * 
      */
-    void draw(rendering::Camera* camera, rendering::ShaderManager& LightProgram, glm::mat4 ProjMatrix, glm::mat4 NormalMatrix, game::Player &player);
+    void drawDirectionnal(rendering::Camera* camera, rendering::ShaderManager& LightProgram, glm::mat4 ProjMatrix, glm::mat4 NormalMatrix, game::Player &player);
+    void drawPonctual(rendering::Camera* camera, rendering::ShaderManager& LightProgram, glm::mat4 ProjMatrix, glm::mat4 NormalMatrix, game::Player &player);
 
 };
 }
