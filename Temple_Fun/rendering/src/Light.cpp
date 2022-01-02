@@ -14,9 +14,7 @@ namespace rendering
         
         glm::vec4 LightDir = camera->getViewMatrix() * glm::vec4(0.0, 1.0, 0.0, 0.0);
         LightProgram.uniform3f("uLightDir_vs", LightDir.x, LightDir.y, LightDir.z);
-
         LightProgram.uniform3f("uLightIntensity", 0.6, 0.6, 0.6);
-
         LightProgram.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
         LightProgram.uniformMatrix4fv("uMVMatrix", ViewMatrix);
         LightProgram.uniformMatrix4fv("uNormalMatrix", NormalMatrix);

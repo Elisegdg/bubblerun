@@ -7,7 +7,6 @@
 
 namespace rendering{
 
-
 void Model::setVbo(){
     GLuint vbo;
     m_vbo = vbo;
@@ -86,48 +85,5 @@ void Model::loadModel(const std::string& fileName){
         if (!ret) {
             exit(1);
         }
-
-        // Loop over shapes
-        for (size_t s = 0; s < shapes.size(); s++) {
-            // Loop over faces(polygon)
-            size_t index_offset = 0;
-            for (size_t f = 0; f < shapes[s].mesh.num_face_vertices.size(); f++) {
-                size_t fv = size_t(shapes[s].mesh.num_face_vertices[f]);
-
-                // Loop over vertices in the face.
-                for (size_t v = 0; v < fv; v++) {
-
-                    tinyobj::index_t idx = shapes[s].mesh.indices[index_offset + v];
-                    // access to vertex
-                    glimac::ShapeVertex newVertex = glimac::ShapeVertex(
-                        
-                        // POSITION
-                        glm::vec3(
-                            tinyobj::real_t(attrib.vertices[3*size_t(idx.vertex_index)+0]),
-                            tinyobj::real_t(attrib.vertices[3*size_t(idx.vertex_index)+1]),
-                            tinyobj::real_t(attrib.vertices[3*size_t(idx.vertex_index)+2])
-                        ),
-
-                        // NORMAL
-                        glm::vec3(
-                            tinyobj::real_t(attrib.normals[3*size_t(idx.normal_index)+0]),  // nx
-                            tinyobj::real_t(attrib.normals[3*size_t(idx.normal_index)+1]),  // ny
-                            tinyobj::real_t(attrib.normals[3*size_t(idx.normal_index)+2])   // nz
-                        ),
-
-                        // TEXTURE_COORDINATES
-                        glm::vec2(
-                            tinyobj::real_t(attrib.texcoords[2*size_t(idx.texcoord_index)+0]),  //tx
-                            tinyobj::real_t(attrib.texcoords[2*size_t(idx.texcoord_index)+1])   //ty
-                        )
-                    );
-
-                    m_vertices.push_back(newVertex);
-                }
-                index_offset += fv;
-            }
-        }
-        m_vertexCount = m_vertices.size();
 }
-
 }

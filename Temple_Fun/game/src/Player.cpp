@@ -59,11 +59,11 @@ void Player::draw(rendering::Model &mesh, rendering::Camera *camera, rendering::
     ViewMatrix = glm::scale(ViewMatrix, glm::vec3(1.3, 1.3, 1.3));
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
+    Program.uniform1i("uTexture", 0);
     Program.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
     Program.uniformMatrix4fv("uMVMatrix", ViewMatrix);
     Program.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
-    Program.uniform1i("uTexture", 0);
-
+    
     mesh.draw();
 }
 
