@@ -129,6 +129,7 @@ public:
 
     const int* getIndexPointer() const;
 
+    /*void loadTexture(const std::string& fileName, GLuint &texture);*/
     void loadModel(const std::string& fileName);
     void setVbo(std::vector<glimac::ShapeVertex> &model);
     void draw_model(rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix)

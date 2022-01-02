@@ -1,9 +1,12 @@
 #include <rendering/Model.hpp>
 #include <glimac/common.hpp>
+#include <GL/glew.h>
 
 
 #define TINYOBJLOADER_IMPLEMENTATION
 #include <glimac/tiny_obj_loader.h>
+
+
 
 namespace rendering{
 
@@ -66,6 +69,21 @@ const glimac::ShapeVertex* Model::getDataPointer() const{
 const int* Model::getIndexPointer() const{
     return &m_index[0];
 }
+
+/*void Model::loadTexture(const std::string& fileName, GLuint &texture){
+    std::unique_ptr<glimac::Image> image = glimac::loadImage("../Temple_Fun/assets/models/"+fileName);
+
+    if(image=nullptr){
+        std::cout << "image non chargée" << std::endl;
+    }
+
+    glEnable(GL_TEXTURE_2D);
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image->getWidth(), image->getHeight(),0, GL_RGBA, GL_FLOAT, image->getPixels());
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glBindTexture(GL_TEXTURE_2D,0);
+}*/
 
 void Model::loadModel(const std::string& fileName){
         

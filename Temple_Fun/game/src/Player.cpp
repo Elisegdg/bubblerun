@@ -49,7 +49,7 @@ glm::vec3 Player::convertCoord()
     return glm::vec3(getCoord().x-2, getCoord().z, getCoord().y);
 }
 
-void Player::draw(rendering::Model &mesh, rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix)
+void Player::draw(rendering::Model &mesh, GLuint &texture, rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix)
 {
 
     glm::mat4 ViewMatrix = camera->getViewMatrix();
@@ -59,12 +59,21 @@ void Player::draw(rendering::Model &mesh, rendering::Camera *camera, rendering::
     ViewMatrix = glm::scale(ViewMatrix, glm::vec3(1, 1, 1));
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
+    Program.uniform1i("uTexture", 0);
+
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture);
+
     Program.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
     Program.uniformMatrix4fv("uMVMatrix", ViewMatrix);
     Program.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
-    Program.uniform1i("uTexture", 0);
+    
 
     mesh.draw();
+
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D,0);
+    glBindVertexArray(0);
 }
 
 void Player::moveOrientation()
