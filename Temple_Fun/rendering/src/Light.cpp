@@ -30,8 +30,8 @@ namespace rendering
 
         glm::mat4 ViewMatrix = camera->getViewMatrix();
         LightProgram.use();
-        LightProgram.uniform3f("uKdiffuseP", 1,0.5,0);
-        LightProgram.uniform3f("uKspecularP", 1,0.5,0);
+        LightProgram.uniform3f("uKdiffuseP", 0.,0.,0.);
+        LightProgram.uniform3f("uKspecularP", 0.3,0.1,0.);
         LightProgram.uniform1i("uShininess", 10);
 
         glm::vec4 LightPos =  camera->getViewMatrix() * glm::vec4(player.convertCoord(),1.0);        
