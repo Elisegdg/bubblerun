@@ -24,7 +24,7 @@ glm\+::vec3 \mbox{\hyperlink{classgame_1_1CourseMap_a5996b26f0e9de3c05c1de2f92b1
 \begin{DoxyCompactList}\small\item\em Getter of the beginning of the path. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classgame_1_1CourseMap_a03173e0093c47ef9978ce946c0752b19}{end}} () const
 \begin{DoxyCompactList}\small\item\em Getter of the finishing line. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classgame_1_1CourseMap_ae10e2a4fae5d7fb67adfc4ac4a3c5527}{draw\+Map}} (\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&mesh\+\_\+path, \mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&mesh\+\_\+coin, const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Program, glm\+::mat4 Proj\+Matrix, glimac\+::\+SDLWindow\+Manager \&window\+Manager)
+void \mbox{\hyperlink{classgame_1_1CourseMap_ad0467a4553ac7f641dfd6f7f28ae879c}{draw\+Map}} (\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&mesh\+\_\+path, \mbox{\hyperlink{classrendering_1_1Model}{rendering\+::\+Model}} \&mesh\+\_\+coin, const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Program, glm\+::mat4 Proj\+Matrix, glimac\+::\+SDLWindow\+Manager \&window\+Manager)
 \begin{DoxyCompactList}\small\item\em Draw the map and the coins. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classgame_1_1CourseMap_a6ffd09a3d6a688385ec1a1ec45b59699}{draw\+Obstacle}} (\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&mesh, const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Program, glm\+::mat4 Proj\+Matrix, glimac\+::\+SDLWindow\+Manager \&window\+Manager)
 \begin{DoxyCompactList}\small\item\em Draw the obstacles. \end{DoxyCompactList}\item 
@@ -37,7 +37,7 @@ Class of \mbox{\hyperlink{classgame_1_1CourseMap}{Course\+Map}}.
 
 This class manages the Coursemap. It reads, loads and draws its data. 
 
-Definition at line \mbox{\hyperlink{CourseMap_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{CourseMap_8hpp_source}{Course\+Map.\+hpp}}.
+Definition at line \mbox{\hyperlink{CourseMap_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{CourseMap_8hpp_source}{Course\+Map.\+hpp}}.
 
 
 
@@ -65,42 +65,42 @@ According to the pixel color of the .ppm where the map is drawn, fill the \mbox{
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
+Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00019 \{}
-\DoxyCodeLine{00020     \textcolor{keywordflow}{if} (r == 255 \& g == 255 \& b == 255)}
-\DoxyCodeLine{00021     \{}
-\DoxyCodeLine{00022         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Empty);}
-\DoxyCodeLine{00023     \}}
-\DoxyCodeLine{00024 }
-\DoxyCodeLine{00025     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (r == 255 \& g == 255)}
-\DoxyCodeLine{00026     \{}
-\DoxyCodeLine{00027         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Up);}
-\DoxyCodeLine{00028     \}}
-\DoxyCodeLine{00029     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (r == 255 \& b == 255)}
-\DoxyCodeLine{00030     \{}
-\DoxyCodeLine{00031         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Down);}
-\DoxyCodeLine{00032     \}}
-\DoxyCodeLine{00033     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (r == 255)}
-\DoxyCodeLine{00034     \{}
-\DoxyCodeLine{00035         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Straight(\textcolor{keyword}{false}));}
-\DoxyCodeLine{00036     \}}
-\DoxyCodeLine{00037     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (b == 255)}
-\DoxyCodeLine{00038     \{}
-\DoxyCodeLine{00039         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Right);}
-\DoxyCodeLine{00040     \}}
-\DoxyCodeLine{00041     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (g == 255)}
-\DoxyCodeLine{00042     \{}
-\DoxyCodeLine{00043         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Left);}
-\DoxyCodeLine{00044     \}}
-\DoxyCodeLine{00045 }
-\DoxyCodeLine{00046     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00047     \{}
-\DoxyCodeLine{00048         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Obstacle);}
-\DoxyCodeLine{00049     \}}
-\DoxyCodeLine{00050 \}}
+\DoxyCodeLine{00020 \{}
+\DoxyCodeLine{00021     \textcolor{keywordflow}{if} (r == 255 \& g == 255 \& b == 255)}
+\DoxyCodeLine{00022     \{}
+\DoxyCodeLine{00023         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Empty);}
+\DoxyCodeLine{00024     \}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (r == 255 \& g == 255)}
+\DoxyCodeLine{00027     \{}
+\DoxyCodeLine{00028         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Up);}
+\DoxyCodeLine{00029     \}}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (r == 255 \& b == 255)}
+\DoxyCodeLine{00031     \{}
+\DoxyCodeLine{00032         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Down);}
+\DoxyCodeLine{00033     \}}
+\DoxyCodeLine{00034     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (r == 255)}
+\DoxyCodeLine{00035     \{}
+\DoxyCodeLine{00036         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Straight(\textcolor{keyword}{false}));}
+\DoxyCodeLine{00037     \}}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (b == 255)}
+\DoxyCodeLine{00039     \{}
+\DoxyCodeLine{00040         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Right);}
+\DoxyCodeLine{00041     \}}
+\DoxyCodeLine{00042     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (g == 255)}
+\DoxyCodeLine{00043     \{}
+\DoxyCodeLine{00044         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Left);}
+\DoxyCodeLine{00045     \}}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00048     \{}
+\DoxyCodeLine{00049         m\_CourseMap.\mbox{\hyperlink{classContainer_a1ca036583ddcf593316bad504b7761ba}{Add}}(\textcolor{keyword}{new} Obstacle);}
+\DoxyCodeLine{00050     \}}
+\DoxyCodeLine{00051 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classgame_1_1CourseMap_a41eb984636eea791b647c88100937f55}\label{classgame_1_1CourseMap_a41eb984636eea791b647c88100937f55}} 
@@ -122,25 +122,25 @@ Free the memory
 
 Deletes each pointer object that we created with a \char`\"{}new\char`\"{} in the add\+Object function. 
 
-Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
+Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00052                               \{}
-\DoxyCodeLine{00053         \mbox{\hyperlink{classIterator}{Iterator<Object*, Container<Object*>}}> *it = m\_CourseMap.\mbox{\hyperlink{classContainer_afbe712898018142078934bf51ddf575d}{CreateIterator}}();}
-\DoxyCodeLine{00054         \textcolor{keywordflow}{for} (it-\/>\mbox{\hyperlink{classIterator_a3d4d67f362c1290616acebaf0d919d05}{First}}(); !it-\/>\mbox{\hyperlink{classIterator_a61f1fc1d55461d6019a5b2ad6869a42b}{IsDone}}(); it-\/>\mbox{\hyperlink{classIterator_adc8e3fc9596883617a572306cc156f8a}{Next}}())}
-\DoxyCodeLine{00055         \{}
-\DoxyCodeLine{00056             \textcolor{keyword}{delete} (*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}());}
-\DoxyCodeLine{00057             (*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}()) = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00058         \}}
-\DoxyCodeLine{00059 \}}
+\DoxyCodeLine{00053                               \{}
+\DoxyCodeLine{00054         \mbox{\hyperlink{classIterator}{Iterator<Object*, Container<Object*>}}> *it = m\_CourseMap.\mbox{\hyperlink{classContainer_afbe712898018142078934bf51ddf575d}{CreateIterator}}();}
+\DoxyCodeLine{00055         \textcolor{keywordflow}{for} (it-\/>\mbox{\hyperlink{classIterator_a3d4d67f362c1290616acebaf0d919d05}{First}}(); !it-\/>\mbox{\hyperlink{classIterator_a61f1fc1d55461d6019a5b2ad6869a42b}{IsDone}}(); it-\/>\mbox{\hyperlink{classIterator_adc8e3fc9596883617a572306cc156f8a}{Next}}())}
+\DoxyCodeLine{00056         \{}
+\DoxyCodeLine{00057             \textcolor{keyword}{delete} (*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}());}
+\DoxyCodeLine{00058             (*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}()) = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00059         \}}
+\DoxyCodeLine{00060 \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{classgame_1_1CourseMap_ae10e2a4fae5d7fb67adfc4ac4a3c5527}\label{classgame_1_1CourseMap_ae10e2a4fae5d7fb67adfc4ac4a3c5527}} 
+\mbox{\Hypertarget{classgame_1_1CourseMap_ad0467a4553ac7f641dfd6f7f28ae879c}\label{classgame_1_1CourseMap_ad0467a4553ac7f641dfd6f7f28ae879c}} 
 \index{game::CourseMap@{game::CourseMap}!drawMap@{drawMap}}
 \index{drawMap@{drawMap}!game::CourseMap@{game::CourseMap}}
 \doxysubsubsection{\texorpdfstring{drawMap()}{drawMap()}}
-{\footnotesize\ttfamily void game\+::\+Course\+Map\+::draw\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&}]{mesh\+\_\+path,  }\item[{\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&}]{mesh\+\_\+coin,  }\item[{const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$}]{camera,  }\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Program,  }\item[{glm\+::mat4}]{Proj\+Matrix,  }\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void game\+::\+Course\+Map\+::draw\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&}]{mesh\+\_\+path,  }\item[{\mbox{\hyperlink{classrendering_1_1Model}{rendering\+::\+Model}} \&}]{mesh\+\_\+coin,  }\item[{const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$}]{camera,  }\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Program,  }\item[{glm\+::mat4}]{Proj\+Matrix,  }\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager }\end{DoxyParamCaption})}
 
 
 
@@ -163,26 +163,26 @@ Draw the map and the coins.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00155}{155}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
+Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00156}{156}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00156 \{}
-\DoxyCodeLine{00157     \mbox{\hyperlink{classIterator}{Iterator<Object*, Container<Object*>}}> *it = m\_CourseMap.\mbox{\hyperlink{classContainer_afbe712898018142078934bf51ddf575d}{CreateIterator}}();}
-\DoxyCodeLine{00158     \textcolor{keywordflow}{for} (it-\/>\mbox{\hyperlink{classIterator_a3d4d67f362c1290616acebaf0d919d05}{First}}(); !it-\/>\mbox{\hyperlink{classIterator_a61f1fc1d55461d6019a5b2ad6869a42b}{IsDone}}(); it-\/>\mbox{\hyperlink{classIterator_adc8e3fc9596883617a572306cc156f8a}{Next}}())}
-\DoxyCodeLine{00159     \{}
-\DoxyCodeLine{00160         \textcolor{keywordflow}{if} ((*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>getName() != \textcolor{stringliteral}{"{}obstacle"{}})}
-\DoxyCodeLine{00161         \{}
-\DoxyCodeLine{00162             (*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>draw(mesh\_path, camera, Program, ProjMatrix, windowManager);}
-\DoxyCodeLine{00163         \}}
-\DoxyCodeLine{00164         \textcolor{keywordflow}{if} ((*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>getIfCoins())}
-\DoxyCodeLine{00165         \{}
-\DoxyCodeLine{00166             (*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>drawCoins(mesh\_coin, camera, Program, ProjMatrix, windowManager);}
-\DoxyCodeLine{00167         \}}
-\DoxyCodeLine{00168     \}}
-\DoxyCodeLine{00169     \textcolor{keyword}{delete} it;}
-\DoxyCodeLine{00170 }
-\DoxyCodeLine{00171 \}}
+\DoxyCodeLine{00157 \{}
+\DoxyCodeLine{00158     \mbox{\hyperlink{classIterator}{Iterator<Object*, Container<Object*>}}> *it = m\_CourseMap.\mbox{\hyperlink{classContainer_afbe712898018142078934bf51ddf575d}{CreateIterator}}();}
+\DoxyCodeLine{00159     \textcolor{keywordflow}{for} (it-\/>\mbox{\hyperlink{classIterator_a3d4d67f362c1290616acebaf0d919d05}{First}}(); !it-\/>\mbox{\hyperlink{classIterator_a61f1fc1d55461d6019a5b2ad6869a42b}{IsDone}}(); it-\/>\mbox{\hyperlink{classIterator_adc8e3fc9596883617a572306cc156f8a}{Next}}())}
+\DoxyCodeLine{00160     \{}
+\DoxyCodeLine{00161         \textcolor{keywordflow}{if} ((*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>getName() != \textcolor{stringliteral}{"{}obstacle"{}})}
+\DoxyCodeLine{00162         \{}
+\DoxyCodeLine{00163             (*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>draw(mesh\_path, camera, Program, ProjMatrix, windowManager);}
+\DoxyCodeLine{00164         \}}
+\DoxyCodeLine{00165         \textcolor{keywordflow}{if} ((*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>getIfCoins())}
+\DoxyCodeLine{00166         \{}
+\DoxyCodeLine{00167             (*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>drawCoins(mesh\_coin, camera, Program, ProjMatrix, windowManager);}
+\DoxyCodeLine{00168         \}}
+\DoxyCodeLine{00169     \}}
+\DoxyCodeLine{00170     \textcolor{keyword}{delete} it;}
+\DoxyCodeLine{00171 }
+\DoxyCodeLine{00172 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classgame_1_1CourseMap_a6ffd09a3d6a688385ec1a1ec45b59699}\label{classgame_1_1CourseMap_a6ffd09a3d6a688385ec1a1ec45b59699}} 
@@ -210,21 +210,21 @@ Draw the obstacles.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00173}{173}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
+Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00174}{174}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00174 \{}
-\DoxyCodeLine{00175     \mbox{\hyperlink{classIterator}{Iterator<Object*, Container<Object*>}}> *it = m\_CourseMap.\mbox{\hyperlink{classContainer_afbe712898018142078934bf51ddf575d}{CreateIterator}}();}
-\DoxyCodeLine{00176     \textcolor{keywordflow}{for} (it-\/>\mbox{\hyperlink{classIterator_a3d4d67f362c1290616acebaf0d919d05}{First}}(); !it-\/>\mbox{\hyperlink{classIterator_a61f1fc1d55461d6019a5b2ad6869a42b}{IsDone}}(); it-\/>\mbox{\hyperlink{classIterator_adc8e3fc9596883617a572306cc156f8a}{Next}}())}
-\DoxyCodeLine{00177     \{}
-\DoxyCodeLine{00178         \textcolor{keywordflow}{if} ((*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>getName() == \textcolor{stringliteral}{"{}obstacle"{}})}
-\DoxyCodeLine{00179         \{}
-\DoxyCodeLine{00180             (*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>draw(mesh, camera, Program, ProjMatrix, windowManager);}
-\DoxyCodeLine{00181         \}}
-\DoxyCodeLine{00182     \}}
-\DoxyCodeLine{00183     \textcolor{keyword}{delete} it;}
-\DoxyCodeLine{00184 \}}
+\DoxyCodeLine{00175 \{}
+\DoxyCodeLine{00176     \mbox{\hyperlink{classIterator}{Iterator<Object*, Container<Object*>}}> *it = m\_CourseMap.\mbox{\hyperlink{classContainer_afbe712898018142078934bf51ddf575d}{CreateIterator}}();}
+\DoxyCodeLine{00177     \textcolor{keywordflow}{for} (it-\/>\mbox{\hyperlink{classIterator_a3d4d67f362c1290616acebaf0d919d05}{First}}(); !it-\/>\mbox{\hyperlink{classIterator_a61f1fc1d55461d6019a5b2ad6869a42b}{IsDone}}(); it-\/>\mbox{\hyperlink{classIterator_adc8e3fc9596883617a572306cc156f8a}{Next}}())}
+\DoxyCodeLine{00178     \{}
+\DoxyCodeLine{00179         \textcolor{keywordflow}{if} ((*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>getName() == \textcolor{stringliteral}{"{}obstacle"{}})}
+\DoxyCodeLine{00180         \{}
+\DoxyCodeLine{00181             (*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>draw(mesh, camera, Program, ProjMatrix, windowManager);}
+\DoxyCodeLine{00182         \}}
+\DoxyCodeLine{00183     \}}
+\DoxyCodeLine{00184     \textcolor{keyword}{delete} it;}
+\DoxyCodeLine{00185 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classgame_1_1CourseMap_a03173e0093c47ef9978ce946c0752b19}\label{classgame_1_1CourseMap_a03173e0093c47ef9978ce946c0752b19}} 
@@ -242,13 +242,13 @@ the finishing line
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00150}{150}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
+Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00151}{151}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00151 \{}
-\DoxyCodeLine{00152     \textcolor{keywordflow}{return} m\_sizey -\/ 1;}
-\DoxyCodeLine{00153 \}}
+\DoxyCodeLine{00152 \{}
+\DoxyCodeLine{00153     \textcolor{keywordflow}{return} m\_sizey -\/ 1;}
+\DoxyCodeLine{00154 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classgame_1_1CourseMap_ad5b1fb188b8246774277176ee68b3c52}\label{classgame_1_1CourseMap_ad5b1fb188b8246774277176ee68b3c52}} 
@@ -271,43 +271,43 @@ the type of object located at coord
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00103}{103}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
+Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00104 \{}
-\DoxyCodeLine{00105     Object *ptrObj = \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00106     \textcolor{keywordtype}{float} m;}
-\DoxyCodeLine{00107     \textcolor{keywordtype}{bool} trv = \textcolor{keyword}{false};}
-\DoxyCodeLine{00108     \textcolor{keywordtype}{int} deb = 1;}
-\DoxyCodeLine{00109     \textcolor{keywordtype}{int} fin = m\_sizex * m\_sizey;}
-\DoxyCodeLine{00110 }
-\DoxyCodeLine{00111     \textcolor{keywordflow}{while} (!trv \& deb <= fin)}
-\DoxyCodeLine{00112     \{}
-\DoxyCodeLine{00113 }
-\DoxyCodeLine{00114         m = floor((deb + fin) / 2);}
-\DoxyCodeLine{00115 }
-\DoxyCodeLine{00116         \textcolor{keywordflow}{if} (m\_CourseMap[m]-\/>getCoord().x == coord.x \& m\_CourseMap[m]-\/>getCoord().y == coord.y)}
-\DoxyCodeLine{00117         \{}
-\DoxyCodeLine{00118 }
-\DoxyCodeLine{00119             trv = \textcolor{keyword}{true};}
-\DoxyCodeLine{00120         \}}
-\DoxyCodeLine{00121 }
-\DoxyCodeLine{00122         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (coord.y > m\_CourseMap[m]-\/>getCoord().y || (coord.y == m\_CourseMap[m]-\/>getCoord().y \&\& coord.x > m\_CourseMap[m]-\/>getCoord().x))}
-\DoxyCodeLine{00123         \{}
-\DoxyCodeLine{00124             deb = m + 1;}
-\DoxyCodeLine{00125         \}}
-\DoxyCodeLine{00126         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (coord.y < m\_CourseMap[m]-\/>getCoord().y || (coord.y == m\_CourseMap[m]-\/>getCoord().y \&\& coord.x < m\_CourseMap[m]-\/>getCoord().x))}
-\DoxyCodeLine{00127         \{}
-\DoxyCodeLine{00128             fin = m -\/ 1;}
-\DoxyCodeLine{00129         \}}
-\DoxyCodeLine{00130     \}}
-\DoxyCodeLine{00131     ptrObj = m\_CourseMap[m];}
-\DoxyCodeLine{00132 }
-\DoxyCodeLine{00133     \textcolor{keywordflow}{return} m\_CourseMap[m];}
-\DoxyCodeLine{00134 }
+\DoxyCodeLine{00105 \{}
+\DoxyCodeLine{00106     Object *ptrObj = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00107     \textcolor{keywordtype}{float} m;}
+\DoxyCodeLine{00108     \textcolor{keywordtype}{bool} trv = \textcolor{keyword}{false};}
+\DoxyCodeLine{00109     \textcolor{keywordtype}{int} deb = 1;}
+\DoxyCodeLine{00110     \textcolor{keywordtype}{int} fin = m\_sizex * m\_sizey;}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112     \textcolor{keywordflow}{while} (!trv \& deb <= fin)}
+\DoxyCodeLine{00113     \{}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00115         m = floor((deb + fin) / 2);}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117         \textcolor{keywordflow}{if} (m\_CourseMap[m]-\/>getCoord().x == coord.x \& m\_CourseMap[m]-\/>getCoord().y == coord.y)}
+\DoxyCodeLine{00118         \{}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120             trv = \textcolor{keyword}{true};}
+\DoxyCodeLine{00121         \}}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (coord.y > m\_CourseMap[m]-\/>getCoord().y || (coord.y == m\_CourseMap[m]-\/>getCoord().y \&\& coord.x > m\_CourseMap[m]-\/>getCoord().x))}
+\DoxyCodeLine{00124         \{}
+\DoxyCodeLine{00125             deb = m + 1;}
+\DoxyCodeLine{00126         \}}
+\DoxyCodeLine{00127         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (coord.y < m\_CourseMap[m]-\/>getCoord().y || (coord.y == m\_CourseMap[m]-\/>getCoord().y \&\& coord.x < m\_CourseMap[m]-\/>getCoord().x))}
+\DoxyCodeLine{00128         \{}
+\DoxyCodeLine{00129             fin = m -\/ 1;}
+\DoxyCodeLine{00130         \}}
+\DoxyCodeLine{00131     \}}
+\DoxyCodeLine{00132     ptrObj = m\_CourseMap[m];}
+\DoxyCodeLine{00133 }
+\DoxyCodeLine{00134     \textcolor{keywordflow}{return} m\_CourseMap[m];}
 \DoxyCodeLine{00135 }
-\DoxyCodeLine{00136 \}}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classgame_1_1CourseMap_ac2a7ac1962e07a3e10056785fbe3c9fe}\label{classgame_1_1CourseMap_ac2a7ac1962e07a3e10056785fbe3c9fe}} 
@@ -322,21 +322,21 @@ Load the coins and place them randomly.
 
 
 
-Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00187}{187}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
+Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00188}{188}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00188 \{}
-\DoxyCodeLine{00189     \mbox{\hyperlink{classIterator}{Iterator<Object*, Container<Object*>}}> *it = m\_CourseMap.\mbox{\hyperlink{classContainer_afbe712898018142078934bf51ddf575d}{CreateIterator}}();}
-\DoxyCodeLine{00190     \textcolor{keywordflow}{for} (it-\/>\mbox{\hyperlink{classIterator_a3d4d67f362c1290616acebaf0d919d05}{First}}(); !it-\/>\mbox{\hyperlink{classIterator_a61f1fc1d55461d6019a5b2ad6869a42b}{IsDone}}(); it-\/>\mbox{\hyperlink{classIterator_adc8e3fc9596883617a572306cc156f8a}{Next}}())}
-\DoxyCodeLine{00191         \textcolor{keywordflow}{if} ((*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>getName() == \textcolor{stringliteral}{"{}straight"{}})}
-\DoxyCodeLine{00192         \{}
-\DoxyCodeLine{00193             std::default\_random\_engine re(std::chrono::system\_clock::now().time\_since\_epoch().count());}
-\DoxyCodeLine{00194             std::uniform\_int\_distribution<int>distrib\{0,1\};    }
-\DoxyCodeLine{00195             (*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>setCoins(distrib(re));}
-\DoxyCodeLine{00196         \}}
-\DoxyCodeLine{00197     \textcolor{keyword}{delete} it; }
-\DoxyCodeLine{00198     \}}
+\DoxyCodeLine{00189 \{}
+\DoxyCodeLine{00190     \mbox{\hyperlink{classIterator}{Iterator<Object*, Container<Object*>}}> *it = m\_CourseMap.\mbox{\hyperlink{classContainer_afbe712898018142078934bf51ddf575d}{CreateIterator}}();}
+\DoxyCodeLine{00191     \textcolor{keywordflow}{for} (it-\/>\mbox{\hyperlink{classIterator_a3d4d67f362c1290616acebaf0d919d05}{First}}(); !it-\/>\mbox{\hyperlink{classIterator_a61f1fc1d55461d6019a5b2ad6869a42b}{IsDone}}(); it-\/>\mbox{\hyperlink{classIterator_adc8e3fc9596883617a572306cc156f8a}{Next}}())}
+\DoxyCodeLine{00192         \textcolor{keywordflow}{if} ((*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>getName() == \textcolor{stringliteral}{"{}straight"{}})}
+\DoxyCodeLine{00193         \{}
+\DoxyCodeLine{00194             std::default\_random\_engine re(std::chrono::system\_clock::now().time\_since\_epoch().count());}
+\DoxyCodeLine{00195             std::uniform\_int\_distribution<int>distrib\{0,1\};    }
+\DoxyCodeLine{00196             (*it-\/>\mbox{\hyperlink{classIterator_a0b6c492c28ab77433afbd0ec98e914a1}{Current}}())-\/>setCoins(distrib(re));}
+\DoxyCodeLine{00197         \}}
+\DoxyCodeLine{00198     \textcolor{keyword}{delete} it; }
+\DoxyCodeLine{00199     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classgame_1_1CourseMap_a889eda68e65105045f7218b053b87505}\label{classgame_1_1CourseMap_a889eda68e65105045f7218b053b87505}} 
@@ -347,50 +347,50 @@ Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00187}{187}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
+Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00062 \{}
-\DoxyCodeLine{00063     std::ifstream fileMap(file);}
-\DoxyCodeLine{00064 }
-\DoxyCodeLine{00065     \textcolor{keywordflow}{if} (fileMap.fail())}
-\DoxyCodeLine{00066     \{}
-\DoxyCodeLine{00067         \textcolor{keywordflow}{throw} std::string(\textcolor{stringliteral}{"{}Loading of the map failed"{}});}
-\DoxyCodeLine{00068         \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00069     \}}
-\DoxyCodeLine{00070 }
-\DoxyCodeLine{00071     assert((file.ext() == \textcolor{stringliteral}{"{}ppm"{}}) \&\& \textcolor{stringliteral}{"{}Error : please load a .ppm file"{}});}
-\DoxyCodeLine{00072     }
-\DoxyCodeLine{00073 }
-\DoxyCodeLine{00074     std::string line;}
-\DoxyCodeLine{00075     getline(fileMap, line);}
+\DoxyCodeLine{00063 \{}
+\DoxyCodeLine{00064     std::ifstream fileMap(file);}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066     \textcolor{keywordflow}{if} (fileMap.fail())}
+\DoxyCodeLine{00067     \{}
+\DoxyCodeLine{00068         \textcolor{keywordflow}{throw} std::string(\textcolor{stringliteral}{"{}Loading of the map failed"{}});}
+\DoxyCodeLine{00069         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00070     \}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072     assert((file.ext() == \textcolor{stringliteral}{"{}ppm"{}}) \&\& \textcolor{stringliteral}{"{}Error : please load a .ppm file"{}});}
+\DoxyCodeLine{00073     }
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075     std::string line;}
 \DoxyCodeLine{00076     getline(fileMap, line);}
-\DoxyCodeLine{00077 }
-\DoxyCodeLine{00078     fileMap >> m\_sizex >> m\_sizey;}
-\DoxyCodeLine{00079 }
-\DoxyCodeLine{00080     \textcolor{keywordtype}{int} r, g, b;}
-\DoxyCodeLine{00081 }
-\DoxyCodeLine{00082     fileMap >> r;}
-\DoxyCodeLine{00083 }
-\DoxyCodeLine{00084     \textcolor{keywordtype}{int} iterator = 0;}
-\DoxyCodeLine{00085 }
-\DoxyCodeLine{00086     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < m\_sizey; i++)}
-\DoxyCodeLine{00087     \{}
-\DoxyCodeLine{00088         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < m\_sizex; j++)}
-\DoxyCodeLine{00089         \{}
-\DoxyCodeLine{00090 }
-\DoxyCodeLine{00091             fileMap >> r;}
-\DoxyCodeLine{00092             fileMap >> g;}
-\DoxyCodeLine{00093             fileMap >> b;}
-\DoxyCodeLine{00094 }
-\DoxyCodeLine{00095             \mbox{\hyperlink{classgame_1_1CourseMap_a008415fd0af8c3cdd4d1b890663acbf8}{addObject}}(r, g, b);}
-\DoxyCodeLine{00096             m\_CourseMap[iterator]-\/>addCoord(j, i, 0);}
-\DoxyCodeLine{00097 }
-\DoxyCodeLine{00098             iterator++;}
-\DoxyCodeLine{00099         \}}
-\DoxyCodeLine{00100     \}}
-\DoxyCodeLine{00101 \}}
+\DoxyCodeLine{00077     getline(fileMap, line);}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079     fileMap >> m\_sizex >> m\_sizey;}
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00081     \textcolor{keywordtype}{int} r, g, b;}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083     fileMap >> r;}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085     \textcolor{keywordtype}{int} iterator = 0;}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < m\_sizey; i++)}
+\DoxyCodeLine{00088     \{}
+\DoxyCodeLine{00089         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < m\_sizex; j++)}
+\DoxyCodeLine{00090         \{}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092             fileMap >> r;}
+\DoxyCodeLine{00093             fileMap >> g;}
+\DoxyCodeLine{00094             fileMap >> b;}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096             \mbox{\hyperlink{classgame_1_1CourseMap_a008415fd0af8c3cdd4d1b890663acbf8}{addObject}}(r, g, b);}
+\DoxyCodeLine{00097             m\_CourseMap[iterator]-\/>addCoord(j, i, 0);}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099             iterator++;}
+\DoxyCodeLine{00100         \}}
+\DoxyCodeLine{00101     \}}
+\DoxyCodeLine{00102 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classgame_1_1CourseMap_a5996b26f0e9de3c05c1de2f92b1f84d7}\label{classgame_1_1CourseMap_a5996b26f0e9de3c05c1de2f92b1f84d7}} 
@@ -408,20 +408,20 @@ the beginning of the path
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00138}{138}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
+Definition at line \mbox{\hyperlink{CourseMap_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{CourseMap_8cpp_source}{Course\+Map.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00139 \{}
-\DoxyCodeLine{00140     \textcolor{keywordtype}{int} i = 0;}
-\DoxyCodeLine{00141     \textcolor{keywordflow}{while} (m\_CourseMap[i]-\/>getName() != \textcolor{stringliteral}{"{}straight"{}})}
-\DoxyCodeLine{00142     \{}
-\DoxyCodeLine{00143 }
-\DoxyCodeLine{00144         i++;}
-\DoxyCodeLine{00145     \}}
-\DoxyCodeLine{00146 }
-\DoxyCodeLine{00147     \textcolor{keywordflow}{return} glm::vec3(i + 1, 0, 0);}
-\DoxyCodeLine{00148 \}}
+\DoxyCodeLine{00140 \{}
+\DoxyCodeLine{00141     \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{00142     \textcolor{keywordflow}{while} (m\_CourseMap[i]-\/>getName() != \textcolor{stringliteral}{"{}straight"{}})}
+\DoxyCodeLine{00143     \{}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145         i++;}
+\DoxyCodeLine{00146     \}}
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148     \textcolor{keywordflow}{return} glm::vec3(i + 1, 0, 0);}
+\DoxyCodeLine{00149 \}}
 
 \end{DoxyCode}
 

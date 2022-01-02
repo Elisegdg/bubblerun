@@ -56,7 +56,7 @@ void Player::draw(rendering::Model &mesh, rendering::Camera *camera, rendering::
     ViewMatrix = glm::translate(ViewMatrix, convertCoord());
     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0, 0.6, 0));
     ViewMatrix = glm::rotate(ViewMatrix, getRotation(), glm::vec3(0.,1.,0.));
-    ViewMatrix = glm::scale(ViewMatrix, glm::vec3(1, 1, 1));
+    ViewMatrix = glm::scale(ViewMatrix, glm::vec3(1.3, 1.3, 1.3));
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
     Program.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);

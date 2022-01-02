@@ -7,5 +7,6 @@ var searchData=
   ['loadcoins_4',['loadCoins',['../classgame_1_1CourseMap.html#ac2a7ac1962e07a3e10056785fbe3c9fe',1,'game::CourseMap']]],
   ['loadfont_5',['loadFont',['../classrendering_1_1Text.html#a7d6776480180973b2ca3d1e1a332e862',1,'rendering::Text']]],
   ['loadmap_6',['loadMap',['../classgame_1_1CourseMap.html#a889eda68e65105045f7218b053b87505',1,'game::CourseMap']]],
-  ['loadtexture_7',['loadTexture',['../classrendering_1_1Texture.html#af40ec554f6504d00ce743e3268983066',1,'rendering::Texture']]]
+  ['loadmodel_7',['loadModel',['../classrendering_1_1Model.html#a8d70db2573f8f365bf778310c2934e5d',1,'rendering::Model']]],
+  ['loadtexture_8',['loadTexture',['../classrendering_1_1Texture.html#af40ec554f6504d00ce743e3268983066',1,'rendering::Texture']]]
 ];

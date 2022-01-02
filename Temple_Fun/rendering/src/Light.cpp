@@ -21,8 +21,6 @@ namespace rendering
         LightProgram.uniformMatrix4fv("uMVMatrix", ViewMatrix);
         LightProgram.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
 
-        ViewMatrix = glm::translate(ViewMatrix, glm::vec3(1., 0.6, 0.));
-        ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));
     }
 
     void Light::drawPonctual(const rendering::Camera *camera, rendering::ShaderManager &LightProgram, glm::mat4 ProjMatrix, glm::mat4 NormalMatrix, glm::vec3 coord)
@@ -30,21 +28,19 @@ namespace rendering
 
         glm::mat4 ViewMatrix = camera->getViewMatrix();
         LightProgram.use();
-        LightProgram.uniform3f("uKdiffuseP", 1,0.5,0);
-        LightProgram.uniform3f("uKspecularP", 1,0.5,0);
+        LightProgram.uniform3f("uKdiffuseP", 0.,0.,0);
+        LightProgram.uniform3f("uKspecularP", 0.3,0.1,0);
         LightProgram.uniform1i("uShininess", 10);
 
         glm::vec4 LightPos =  camera->getViewMatrix() * glm::vec4(coord,1.0);        
         LightProgram.uniform3f("uLightPos_vs", LightPos.x, LightPos.y, LightPos.z);
 
-        LightProgram.uniform3f("uLightIntensityPonctual", 0.01, 0.01, 0.01);
+        LightProgram.uniform3f("uLightIntensityPonctual", 0.6, 0.6, 0.6);
 
         LightProgram.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
         LightProgram.uniformMatrix4fv("uMVMatrix", ViewMatrix);
         LightProgram.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
 
-        ViewMatrix = glm::translate(ViewMatrix, glm::vec3(1., 0.6, 0.));
-        ViewMatrix = glm::scale(ViewMatrix, glm::vec3(0.5, 1.2, 0.5));
     }
 
 }

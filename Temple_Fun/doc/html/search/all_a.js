@@ -18,7 +18,7 @@ var searchData=
   ['menu_15',['Menu',['../classrendering_1_1Menu.html#a7c7dc6f0638ca6317d3c0b681126bfa9',1,'rendering::Menu::Menu()'],['../classrendering_1_1Menu.html',1,'rendering::Menu']]],
   ['menu_2ehpp_16',['Menu.hpp',['../Menu_8hpp.html',1,'']]],
   ['mindistance_17',['minDistance',['../namespacerendering.html#a86e9cb361b253eb809696c69715bebcf',1,'rendering']]],
-  ['model_18',['Model',['../classrendering_1_1Model.html#ad5fb02eca2ae3d40fbcab9594ae39df8',1,'rendering::Model::Model()'],['../classrendering_1_1Model.html',1,'rendering::Model']]],
+  ['model_18',['Model',['../classrendering_1_1Model.html#ad5fb02eca2ae3d40fbcab9594ae39df8',1,'rendering::Model::Model(rendering::Texture texture)'],['../classrendering_1_1Model.html#a26b0485c5eb5862d0c9491108788ccea',1,'rendering::Model::Model()=default'],['../classrendering_1_1Model.html',1,'rendering::Model']]],
   ['model_2ecpp_19',['Model.cpp',['../Model_8cpp.html',1,'']]],
   ['model_2ehpp_20',['Model.hpp',['../Model_8hpp.html',1,'']]],
   ['move_21',['move',['../classgame_1_1Player.html#a911a6ef215cccb776f6e60b14d300722',1,'game::Player']]],

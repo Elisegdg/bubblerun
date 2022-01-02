@@ -92,7 +92,7 @@ public:
      *  \param windowManager The SDLWindowManager
      * 
      */
-    void drawCoins(rendering::Model& mesh, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager, rendering::Light light);
+    void drawCoins(rendering::Model& mesh, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager);
     
     /*!
      *  \brief Setter of the Coin

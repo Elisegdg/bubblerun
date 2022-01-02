@@ -93,6 +93,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad5fb02eca2ae3d40fbcab9594ae39df8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1Model.html#ad5fb02eca2ae3d40fbcab9594ae39df8">Model</a> (<a class="el" href="classrendering_1_1Texture.html">rendering::Texture</a> texture)</td></tr>
 <tr class="memdesc:ad5fb02eca2ae3d40fbcab9594ae39df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classrendering_1_1Model.html" title="Class of Model.">Model</a> class.  <a href="classrendering_1_1Model.html#ad5fb02eca2ae3d40fbcab9594ae39df8">More...</a><br /></td></tr>
 <tr class="separator:ad5fb02eca2ae3d40fbcab9594ae39df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b0485c5eb5862d0c9491108788ccea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1Model.html#a26b0485c5eb5862d0c9491108788ccea">Model</a> ()=default</td></tr>
+<tr class="separator:a26b0485c5eb5862d0c9491108788ccea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dd5f24b8b6147b73f72577acedbb86c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1Model.html#a2dd5f24b8b6147b73f72577acedbb86c">~Model</a> ()</td></tr>
 <tr class="memdesc:a2dd5f24b8b6147b73f72577acedbb86c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor of the <a class="el" href="classrendering_1_1Model.html" title="Class of Model.">Model</a> class Deletes the buffers.  <a href="classrendering_1_1Model.html#a2dd5f24b8b6147b73f72577acedbb86c">More...</a><br /></td></tr>
 <tr class="separator:a2dd5f24b8b6147b73f72577acedbb86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,6 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1b18132062f390fd76171e30fce8e345"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc2949adef22aef0707208a1535db3d7"><td class="memItemLeft" align="right" valign="top">const int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1Model.html#acc2949adef22aef0707208a1535db3d7">getIndexPointer</a> () const</td></tr>
 <tr class="separator:acc2949adef22aef0707208a1535db3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d70db2573f8f365bf778310c2934e5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrendering_1_1Model.html#a8d70db2573f8f365bf778310c2934e5d">loadModel</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a8d70db2573f8f365bf778310c2934e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">.obj file loader with TinyObj  <a href="classrendering_1_1Model.html#a8d70db2573f8f365bf778310c2934e5d">More...</a><br /></td></tr>
+<tr class="separator:a8d70db2573f8f365bf778310c2934e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -151,10 +156,10 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p >Class of <a class="el" href="classrendering_1_1Model.html" title="Class of Model.">Model</a>. </p>
 <p >This class enables to create meshes </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00021">21</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00024">24</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad5fb02eca2ae3d40fbcab9594ae39df8" name="ad5fb02eca2ae3d40fbcab9594ae39df8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5fb02eca2ae3d40fbcab9594ae39df8">&#9670;&nbsp;</a></span>Model()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5fb02eca2ae3d40fbcab9594ae39df8">&#9670;&nbsp;</a></span>Model() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -185,12 +190,37 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00039">39</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>                                   :</div>
-<div class="line"><span class="lineno">   40</span>        <a class="code hl_variable" href="classrendering_1_1Model.html#abc479d7aec5fa43dd2c14c5b9073dba0">m_texture</a>(texture)</div>
-<div class="line"><span class="lineno">   41</span>        {}</div>
-<div class="ttc" id="aclassrendering_1_1Model_html_abc479d7aec5fa43dd2c14c5b9073dba0"><div class="ttname"><a href="classrendering_1_1Model.html#abc479d7aec5fa43dd2c14c5b9073dba0">rendering::Model::m_texture</a></div><div class="ttdeci">rendering::Texture m_texture</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00028">Model.hpp:28</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00042">42</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>                                   :</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_variable" href="classrendering_1_1Model.html#abc479d7aec5fa43dd2c14c5b9073dba0">m_texture</a>(texture)</div>
+<div class="line"><span class="lineno">   44</span>        {}</div>
+<div class="ttc" id="aclassrendering_1_1Model_html_abc479d7aec5fa43dd2c14c5b9073dba0"><div class="ttname"><a href="classrendering_1_1Model.html#abc479d7aec5fa43dd2c14c5b9073dba0">rendering::Model::m_texture</a></div><div class="ttdeci">rendering::Texture m_texture</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00031">Model.hpp:31</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="a26b0485c5eb5862d0c9491108788ccea" name="a26b0485c5eb5862d0c9491108788ccea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26b0485c5eb5862d0c9491108788ccea">&#9670;&nbsp;</a></span>Model() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rendering::Model::Model </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a id="a2dd5f24b8b6147b73f72577acedbb86c" name="a2dd5f24b8b6147b73f72577acedbb86c"></a>
@@ -218,13 +248,13 @@ Protected Attributes</h2></td></tr>
 
 <p>Destructor of the <a class="el" href="classrendering_1_1Model.html" title="Class of Model.">Model</a> class Deletes the buffers. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00048">48</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>            {</div>
-<div class="line"><span class="lineno">   49</span>        glDeleteBuffers(1, &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">m_vbo</a>);</div>
-<div class="line"><span class="lineno">   50</span>        glDeleteVertexArrays(1, &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a>);</div>
-<div class="line"><span class="lineno">   51</span>    };</div>
-<div class="ttc" id="aclassrendering_1_1Model_html_a1b4e4749b3ed3d9412b59adcded10c86"><div class="ttname"><a href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">rendering::Model::m_vbo</a></div><div class="ttdeci">GLuint m_vbo</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00024">Model.hpp:24</a></div></div>
-<div class="ttc" id="aclassrendering_1_1Model_html_ab7f6d0aab1e64bf7ba03d2b986fc08b4"><div class="ttname"><a href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">rendering::Model::m_vao</a></div><div class="ttdeci">GLuint m_vao</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00025">Model.hpp:25</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00052">52</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>            {</div>
+<div class="line"><span class="lineno">   53</span>        glDeleteBuffers(1, &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">m_vbo</a>);</div>
+<div class="line"><span class="lineno">   54</span>        glDeleteVertexArrays(1, &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a>);</div>
+<div class="line"><span class="lineno">   55</span>    };</div>
+<div class="ttc" id="aclassrendering_1_1Model_html_a1b4e4749b3ed3d9412b59adcded10c86"><div class="ttname"><a href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">rendering::Model::m_vbo</a></div><div class="ttdeci">GLuint m_vbo</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00027">Model.hpp:27</a></div></div>
+<div class="ttc" id="aclassrendering_1_1Model_html_ab7f6d0aab1e64bf7ba03d2b986fc08b4"><div class="ttname"><a href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">rendering::Model::m_vao</a></div><div class="ttdeci">GLuint m_vao</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00028">Model.hpp:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -254,19 +284,19 @@ Protected Attributes</h2></td></tr>
 
 <p>Draw the model. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00056">56</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>               {</div>
-<div class="line"><span class="lineno">   57</span>        glBindVertexArray(<a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a>);</div>
-<div class="line"><span class="lineno">   58</span>        glBindTexture(GL_TEXTURE_2D, <a class="code hl_variable" href="classrendering_1_1Model.html#abc479d7aec5fa43dd2c14c5b9073dba0">m_texture</a>.<a class="code hl_function" href="classrendering_1_1Texture.html#a1b12f268ef0314ce316378f76c64ef52">getTextureId</a>());</div>
-<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="classrendering_1_1Model.html#ad1ad57b7c16e0be1c3700b4555a07693">m_isIbo</a>){</div>
-<div class="line"><span class="lineno">   60</span>            glDrawElements(GL_TRIANGLES, <a class="code hl_function" href="classrendering_1_1Model.html#a1b18132062f390fd76171e30fce8e345">getVertexCount</a>(), GL_UNSIGNED_INT,0);</div>
-<div class="line"><span class="lineno">   61</span>        }</div>
-<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">   63</span>            glDrawArrays(GL_TRIANGLES, 0, <a class="code hl_function" href="classrendering_1_1Model.html#a1b18132062f390fd76171e30fce8e345">getVertexCount</a>());</div>
-<div class="line"><span class="lineno">   64</span>        }</div>
-<div class="line"><span class="lineno">   65</span>}</div>
-<div class="ttc" id="aclassrendering_1_1Model_html_a1b18132062f390fd76171e30fce8e345"><div class="ttname"><a href="classrendering_1_1Model.html#a1b18132062f390fd76171e30fce8e345">rendering::Model::getVertexCount</a></div><div class="ttdeci">GLsizei getVertexCount() const</div><div class="ttdoc">Getter of the number of vertices.</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00111">Model.hpp:111</a></div></div>
-<div class="ttc" id="aclassrendering_1_1Model_html_ad1ad57b7c16e0be1c3700b4555a07693"><div class="ttname"><a href="classrendering_1_1Model.html#ad1ad57b7c16e0be1c3700b4555a07693">rendering::Model::m_isIbo</a></div><div class="ttdeci">bool m_isIbo</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00027">Model.hpp:27</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00060">60</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>               {</div>
+<div class="line"><span class="lineno">   61</span>        glBindVertexArray(<a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a>);</div>
+<div class="line"><span class="lineno">   62</span>        glBindTexture(GL_TEXTURE_2D, <a class="code hl_variable" href="classrendering_1_1Model.html#abc479d7aec5fa43dd2c14c5b9073dba0">m_texture</a>.<a class="code hl_function" href="classrendering_1_1Texture.html#a1b12f268ef0314ce316378f76c64ef52">getTextureId</a>());</div>
+<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">if</span>(<a class="code hl_variable" href="classrendering_1_1Model.html#ad1ad57b7c16e0be1c3700b4555a07693">m_isIbo</a>){</div>
+<div class="line"><span class="lineno">   64</span>            glDrawElements(GL_TRIANGLES, <a class="code hl_function" href="classrendering_1_1Model.html#a1b18132062f390fd76171e30fce8e345">getVertexCount</a>(), GL_UNSIGNED_INT,0);</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
+<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">   67</span>            glDrawArrays(GL_TRIANGLES, 0, <a class="code hl_function" href="classrendering_1_1Model.html#a1b18132062f390fd76171e30fce8e345">getVertexCount</a>());</div>
+<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="line"><span class="lineno">   69</span>}</div>
+<div class="ttc" id="aclassrendering_1_1Model_html_a1b18132062f390fd76171e30fce8e345"><div class="ttname"><a href="classrendering_1_1Model.html#a1b18132062f390fd76171e30fce8e345">rendering::Model::getVertexCount</a></div><div class="ttdeci">GLsizei getVertexCount() const</div><div class="ttdoc">Getter of the number of vertices.</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00115">Model.hpp:115</a></div></div>
+<div class="ttc" id="aclassrendering_1_1Model_html_ad1ad57b7c16e0be1c3700b4555a07693"><div class="ttname"><a href="classrendering_1_1Model.html#ad1ad57b7c16e0be1c3700b4555a07693">rendering::Model::m_isIbo</a></div><div class="ttdeci">bool m_isIbo</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00030">Model.hpp:30</a></div></div>
 <div class="ttc" id="aclassrendering_1_1Texture_html_a1b12f268ef0314ce316378f76c64ef52"><div class="ttname"><a href="classrendering_1_1Texture.html#a1b12f268ef0314ce316378f76c64ef52">rendering::Texture::getTextureId</a></div><div class="ttdeci">GLuint getTextureId() const</div><div class="ttdoc">Getter of the texture id.</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00076">Texture.hpp:76</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -286,11 +316,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00053">53</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>                                                    {</div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#aa5a072d905cf2f57b5729f678e0404bd">m_vertices</a>[0];</div>
-<div class="line"><span class="lineno">   55</span>}</div>
-<div class="ttc" id="aclassrendering_1_1Model_html_aa5a072d905cf2f57b5729f678e0404bd"><div class="ttname"><a href="classrendering_1_1Model.html#aa5a072d905cf2f57b5729f678e0404bd">rendering::Model::m_vertices</a></div><div class="ttdeci">std::vector&lt; glimac::ShapeVertex &gt; m_vertices</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00029">Model.hpp:29</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00060">60</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>                                                    {</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">return</span> &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#aa5a072d905cf2f57b5729f678e0404bd">m_vertices</a>[0];</div>
+<div class="line"><span class="lineno">   62</span>}</div>
+<div class="ttc" id="aclassrendering_1_1Model_html_aa5a072d905cf2f57b5729f678e0404bd"><div class="ttname"><a href="classrendering_1_1Model.html#aa5a072d905cf2f57b5729f678e0404bd">rendering::Model::m_vertices</a></div><div class="ttdeci">std::vector&lt; glimac::ShapeVertex &gt; m_vertices</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00032">Model.hpp:32</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -319,10 +349,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Getter of the ibo of the model. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00084">84</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>                         {</div>
-<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a>;</div>
-<div class="line"><span class="lineno">   86</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00088">88</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>                         {</div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a>;</div>
+<div class="line"><span class="lineno">   90</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -341,11 +371,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00059">59</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>                                       {</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">return</span> &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#ab9a4020386d3d3df53c88b2738671130">m_index</a>[0];</div>
-<div class="line"><span class="lineno">   61</span>}</div>
-<div class="ttc" id="aclassrendering_1_1Model_html_ab9a4020386d3d3df53c88b2738671130"><div class="ttname"><a href="classrendering_1_1Model.html#ab9a4020386d3d3df53c88b2738671130">rendering::Model::m_index</a></div><div class="ttdeci">std::vector&lt; int &gt; m_index</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00030">Model.hpp:30</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00066">66</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>                                       {</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">return</span> &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#ab9a4020386d3d3df53c88b2738671130">m_index</a>[0];</div>
+<div class="line"><span class="lineno">   68</span>}</div>
+<div class="ttc" id="aclassrendering_1_1Model_html_ab9a4020386d3d3df53c88b2738671130"><div class="ttname"><a href="classrendering_1_1Model.html#ab9a4020386d3d3df53c88b2738671130">rendering::Model::m_index</a></div><div class="ttdeci">std::vector&lt; int &gt; m_index</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00033">Model.hpp:33</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -374,10 +404,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Getter of the vao of the model. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00070">70</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   70</span>                         {</div>
-<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a>;</div>
-<div class="line"><span class="lineno">   72</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00074">74</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>                         {</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a>;</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -406,10 +436,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Getter of the vbo of the model. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00077">77</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>                          {</div>
-<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">m_vbo</a>;</div>
-<div class="line"><span class="lineno">   79</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00081">81</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                          {</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">m_vbo</a>;</div>
+<div class="line"><span class="lineno">   83</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -438,11 +468,101 @@ Protected Attributes</h2></td></tr>
 
 <p>Getter of the number of vertices. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00111">111</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  111</span>                                  {</div>
-<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classrendering_1_1Model.html#af68d6e56dc36e18ff4be587f5f75f5e5">m_vertexCount</a>;</div>
-<div class="line"><span class="lineno">  113</span>    }</div>
-<div class="ttc" id="aclassrendering_1_1Model_html_af68d6e56dc36e18ff4be587f5f75f5e5"><div class="ttname"><a href="classrendering_1_1Model.html#af68d6e56dc36e18ff4be587f5f75f5e5">rendering::Model::m_vertexCount</a></div><div class="ttdeci">GLsizei m_vertexCount</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00031">Model.hpp:31</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00115">115</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>                                  {</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classrendering_1_1Model.html#af68d6e56dc36e18ff4be587f5f75f5e5">m_vertexCount</a>;</div>
+<div class="line"><span class="lineno">  117</span>    }</div>
+<div class="ttc" id="aclassrendering_1_1Model_html_af68d6e56dc36e18ff4be587f5f75f5e5"><div class="ttname"><a href="classrendering_1_1Model.html#af68d6e56dc36e18ff4be587f5f75f5e5">rendering::Model::m_vertexCount</a></div><div class="ttdeci">GLsizei m_vertexCount</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00034">Model.hpp:34</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8d70db2573f8f365bf778310c2934e5d" name="a8d70db2573f8f365bf778310c2934e5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d70db2573f8f365bf778310c2934e5d">&#9670;&nbsp;</a></span>loadModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rendering::Model::loadModel </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>.obj file loader with TinyObj </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>Name of the .obj file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00070">70</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>                                              {</div>
+<div class="line"><span class="lineno">   71</span>        </div>
+<div class="line"><span class="lineno">   72</span>        <span class="comment">// Load 3D object</span></div>
+<div class="line"><span class="lineno">   73</span>        std::string inputfile = <span class="stringliteral">&quot;../Temple_Fun/assets/models/&quot;</span>+fileName;</div>
+<div class="line"><span class="lineno">   74</span>        tinyobj::attrib_t attrib;</div>
+<div class="line"><span class="lineno">   75</span>        std::vector&lt;tinyobj::shape_t&gt; shapes;</div>
+<div class="line"><span class="lineno">   76</span>        std::vector&lt;tinyobj::material_t&gt; materials; </div>
+<div class="line"><span class="lineno">   77</span>        </div>
+<div class="line"><span class="lineno">   78</span>        std::string warn;</div>
+<div class="line"><span class="lineno">   79</span>        std::string err;</div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordtype">bool</span> ret = tinyobj::LoadObj(&amp;attrib,&amp;shapes,&amp;materials, &amp;warn, &amp;err, inputfile.c_str(), <span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">   81</span>        </div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">if</span> (!err.empty()) { <span class="comment">// `err` may contain warning message.</span></div>
+<div class="line"><span class="lineno">   83</span>            std::cerr &lt;&lt; err &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   84</span>        }</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">if</span> (!ret) {</div>
+<div class="line"><span class="lineno">   87</span>            exit(1);</div>
+<div class="line"><span class="lineno">   88</span>        }</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>        <span class="comment">// Loop over shapes</span></div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> s = 0; s &lt; shapes.size(); s++) {</div>
+<div class="line"><span class="lineno">   92</span>            <span class="comment">// Loop over faces(polygon)</span></div>
+<div class="line"><span class="lineno">   93</span>            <span class="keywordtype">size_t</span> index_offset = 0;</div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> f = 0; f &lt; shapes[s].mesh.num_face_vertices.size(); f++) {</div>
+<div class="line"><span class="lineno">   95</span>                <span class="keywordtype">size_t</span> fv = size_t(shapes[s].mesh.num_face_vertices[f]);</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>                <span class="comment">// Loop over vertices in the face.</span></div>
+<div class="line"><span class="lineno">   98</span>                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> v = 0; v &lt; fv; v++) {</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>                    tinyobj::index_t idx = shapes[s].mesh.indices[index_offset + v];</div>
+<div class="line"><span class="lineno">  101</span>                    <span class="comment">// access to vertex</span></div>
+<div class="line"><span class="lineno">  102</span>                    glimac::ShapeVertex newVertex = glimac::ShapeVertex(</div>
+<div class="line"><span class="lineno">  103</span>                        </div>
+<div class="line"><span class="lineno">  104</span>                        <span class="comment">// POSITION</span></div>
+<div class="line"><span class="lineno">  105</span>                        glm::vec3(</div>
+<div class="line"><span class="lineno">  106</span>                            tinyobj::real_t(attrib.vertices[3*<span class="keywordtype">size_t</span>(idx.vertex_index)+0]),</div>
+<div class="line"><span class="lineno">  107</span>                            tinyobj::real_t(attrib.vertices[3*<span class="keywordtype">size_t</span>(idx.vertex_index)+1]),</div>
+<div class="line"><span class="lineno">  108</span>                            tinyobj::real_t(attrib.vertices[3*<span class="keywordtype">size_t</span>(idx.vertex_index)+2])</div>
+<div class="line"><span class="lineno">  109</span>                        ),</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>                        <span class="comment">// NORMAL</span></div>
+<div class="line"><span class="lineno">  112</span>                        glm::vec3(</div>
+<div class="line"><span class="lineno">  113</span>                            tinyobj::real_t(attrib.normals[3*<span class="keywordtype">size_t</span>(idx.normal_index)+0]),  <span class="comment">// nx</span></div>
+<div class="line"><span class="lineno">  114</span>                            tinyobj::real_t(attrib.normals[3*<span class="keywordtype">size_t</span>(idx.normal_index)+1]),  <span class="comment">// ny</span></div>
+<div class="line"><span class="lineno">  115</span>                            tinyobj::real_t(attrib.normals[3*<span class="keywordtype">size_t</span>(idx.normal_index)+2])   <span class="comment">// nz</span></div>
+<div class="line"><span class="lineno">  116</span>                        ),</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>                        <span class="comment">// TEXTURE_COORDINATES</span></div>
+<div class="line"><span class="lineno">  119</span>                        glm::vec2(</div>
+<div class="line"><span class="lineno">  120</span>                            tinyobj::real_t(attrib.texcoords[2*<span class="keywordtype">size_t</span>(idx.texcoord_index)+0]),  <span class="comment">//tx</span></div>
+<div class="line"><span class="lineno">  121</span>                            tinyobj::real_t(attrib.texcoords[2*<span class="keywordtype">size_t</span>(idx.texcoord_index)+1])   <span class="comment">//ty</span></div>
+<div class="line"><span class="lineno">  122</span>                        )</div>
+<div class="line"><span class="lineno">  123</span>                    );</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>                    <a class="code hl_variable" href="classrendering_1_1Model.html#aa5a072d905cf2f57b5729f678e0404bd">m_vertices</a>.push_back(newVertex);</div>
+<div class="line"><span class="lineno">  126</span>                }</div>
+<div class="line"><span class="lineno">  127</span>                index_offset += fv;</div>
+<div class="line"><span class="lineno">  128</span>            }</div>
+<div class="line"><span class="lineno">  129</span>        }</div>
+<div class="line"><span class="lineno">  130</span>        <a class="code hl_variable" href="classrendering_1_1Model.html#af68d6e56dc36e18ff4be587f5f75f5e5">m_vertexCount</a> = <a class="code hl_variable" href="classrendering_1_1Model.html#aa5a072d905cf2f57b5729f678e0404bd">m_vertices</a>.size();</div>
+<div class="line"><span class="lineno">  131</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -463,15 +583,15 @@ Protected Attributes</h2></td></tr>
 
 <p>Set the buffers. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00047">47</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>                       {</div>
-<div class="line"><span class="lineno">   48</span>    <a class="code hl_function" href="classrendering_1_1Model.html#acf3b673e2481d91ecc9115c0926fcaad">setVbo</a>();</div>
-<div class="line"><span class="lineno">   49</span>    <a class="code hl_function" href="classrendering_1_1Model.html#abe5fba00ce7ffce494d161a0bb2b5899">setIbo</a>();  </div>
-<div class="line"><span class="lineno">   50</span>    <a class="code hl_function" href="classrendering_1_1Model.html#a68c2100e9f8bbbdd77be0accd1e9835c">setVao</a>();</div>
-<div class="line"><span class="lineno">   51</span>}</div>
-<div class="ttc" id="aclassrendering_1_1Model_html_a68c2100e9f8bbbdd77be0accd1e9835c"><div class="ttname"><a href="classrendering_1_1Model.html#a68c2100e9f8bbbdd77be0accd1e9835c">rendering::Model::setVao</a></div><div class="ttdeci">void setVao()</div><div class="ttdoc">Set and bind the vao.</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00025">Model.cpp:25</a></div></div>
-<div class="ttc" id="aclassrendering_1_1Model_html_abe5fba00ce7ffce494d161a0bb2b5899"><div class="ttname"><a href="classrendering_1_1Model.html#abe5fba00ce7ffce494d161a0bb2b5899">rendering::Model::setIbo</a></div><div class="ttdeci">void setIbo()</div><div class="ttdoc">Set and bind the ibo.</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00015">Model.cpp:15</a></div></div>
-<div class="ttc" id="aclassrendering_1_1Model_html_acf3b673e2481d91ecc9115c0926fcaad"><div class="ttname"><a href="classrendering_1_1Model.html#acf3b673e2481d91ecc9115c0926fcaad">rendering::Model::setVbo</a></div><div class="ttdeci">void setVbo()</div><div class="ttdoc">Set and bind the vbo.</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00006">Model.cpp:6</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00054">54</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>                       {</div>
+<div class="line"><span class="lineno">   55</span>    <a class="code hl_function" href="classrendering_1_1Model.html#acf3b673e2481d91ecc9115c0926fcaad">setVbo</a>();</div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_function" href="classrendering_1_1Model.html#abe5fba00ce7ffce494d161a0bb2b5899">setIbo</a>();  </div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_function" href="classrendering_1_1Model.html#a68c2100e9f8bbbdd77be0accd1e9835c">setVao</a>();</div>
+<div class="line"><span class="lineno">   58</span>}</div>
+<div class="ttc" id="aclassrendering_1_1Model_html_a68c2100e9f8bbbdd77be0accd1e9835c"><div class="ttname"><a href="classrendering_1_1Model.html#a68c2100e9f8bbbdd77be0accd1e9835c">rendering::Model::setVao</a></div><div class="ttdeci">void setVao()</div><div class="ttdoc">Set and bind the vao.</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00032">Model.cpp:32</a></div></div>
+<div class="ttc" id="aclassrendering_1_1Model_html_abe5fba00ce7ffce494d161a0bb2b5899"><div class="ttname"><a href="classrendering_1_1Model.html#abe5fba00ce7ffce494d161a0bb2b5899">rendering::Model::setIbo</a></div><div class="ttdeci">void setIbo()</div><div class="ttdoc">Set and bind the ibo.</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00022">Model.cpp:22</a></div></div>
+<div class="ttc" id="aclassrendering_1_1Model_html_acf3b673e2481d91ecc9115c0926fcaad"><div class="ttname"><a href="classrendering_1_1Model.html#acf3b673e2481d91ecc9115c0926fcaad">rendering::Model::setVbo</a></div><div class="ttdeci">void setVbo()</div><div class="ttdoc">Set and bind the vbo.</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00011">Model.cpp:11</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -492,18 +612,18 @@ Protected Attributes</h2></td></tr>
 
 <p>Set and bind the ibo. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00015">15</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   15</span>                  {</div>
-<div class="line"><span class="lineno">   16</span>    GLuint ibo;</div>
-<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="classrendering_1_1Model.html#ac38fe327945479fb45cd30e093c15ef2">m_ibo</a> = ibo;</div>
-<div class="line"><span class="lineno">   18</span>    <a class="code hl_variable" href="classrendering_1_1Model.html#ad1ad57b7c16e0be1c3700b4555a07693">m_isIbo</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   19</span>    glGenBuffers(1, &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#ac38fe327945479fb45cd30e093c15ef2">m_ibo</a>);</div>
-<div class="line"><span class="lineno">   20</span>    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, <a class="code hl_variable" href="classrendering_1_1Model.html#ac38fe327945479fb45cd30e093c15ef2">m_ibo</a>);</div>
-<div class="line"><span class="lineno">   21</span>    glBufferData(GL_ELEMENT_ARRAY_BUFFER, <a class="code hl_function" href="classrendering_1_1Model.html#a1b18132062f390fd76171e30fce8e345">getVertexCount</a>() * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), <a class="code hl_function" href="classrendering_1_1Model.html#acc2949adef22aef0707208a1535db3d7">getIndexPointer</a>(), GL_STATIC_DRAW);</div>
-<div class="line"><span class="lineno">   22</span>    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);</div>
-<div class="line"><span class="lineno">   23</span>}</div>
-<div class="ttc" id="aclassrendering_1_1Model_html_ac38fe327945479fb45cd30e093c15ef2"><div class="ttname"><a href="classrendering_1_1Model.html#ac38fe327945479fb45cd30e093c15ef2">rendering::Model::m_ibo</a></div><div class="ttdeci">GLuint m_ibo</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00026">Model.hpp:26</a></div></div>
-<div class="ttc" id="aclassrendering_1_1Model_html_acc2949adef22aef0707208a1535db3d7"><div class="ttname"><a href="classrendering_1_1Model.html#acc2949adef22aef0707208a1535db3d7">rendering::Model::getIndexPointer</a></div><div class="ttdeci">const int * getIndexPointer() const</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00059">Model.cpp:59</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00022">22</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>                  {</div>
+<div class="line"><span class="lineno">   23</span>    GLuint ibo;</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="classrendering_1_1Model.html#ac38fe327945479fb45cd30e093c15ef2">m_ibo</a> = ibo;</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="classrendering_1_1Model.html#ad1ad57b7c16e0be1c3700b4555a07693">m_isIbo</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   26</span>    glGenBuffers(1, &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#ac38fe327945479fb45cd30e093c15ef2">m_ibo</a>);</div>
+<div class="line"><span class="lineno">   27</span>    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, <a class="code hl_variable" href="classrendering_1_1Model.html#ac38fe327945479fb45cd30e093c15ef2">m_ibo</a>);</div>
+<div class="line"><span class="lineno">   28</span>    glBufferData(GL_ELEMENT_ARRAY_BUFFER, <a class="code hl_function" href="classrendering_1_1Model.html#a1b18132062f390fd76171e30fce8e345">getVertexCount</a>() * <span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), <a class="code hl_function" href="classrendering_1_1Model.html#acc2949adef22aef0707208a1535db3d7">getIndexPointer</a>(), GL_STATIC_DRAW);</div>
+<div class="line"><span class="lineno">   29</span>    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);</div>
+<div class="line"><span class="lineno">   30</span>}</div>
+<div class="ttc" id="aclassrendering_1_1Model_html_ac38fe327945479fb45cd30e093c15ef2"><div class="ttname"><a href="classrendering_1_1Model.html#ac38fe327945479fb45cd30e093c15ef2">rendering::Model::m_ibo</a></div><div class="ttdeci">GLuint m_ibo</div><div class="ttdef"><b>Definition:</b> <a href="Model_8hpp_source.html#l00029">Model.hpp:29</a></div></div>
+<div class="ttc" id="aclassrendering_1_1Model_html_acc2949adef22aef0707208a1535db3d7"><div class="ttname"><a href="classrendering_1_1Model.html#acc2949adef22aef0707208a1535db3d7">rendering::Model::getIndexPointer</a></div><div class="ttdeci">const int * getIndexPointer() const</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00066">Model.cpp:66</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -524,28 +644,28 @@ Protected Attributes</h2></td></tr>
 
 <p>Set and bind the vao. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00025">25</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   25</span>                  {</div>
-<div class="line"><span class="lineno">   26</span>    GLuint vao;</div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a> = vao;</div>
-<div class="line"><span class="lineno">   28</span>    glGenVertexArrays(1, &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a>);</div>
-<div class="line"><span class="lineno">   29</span>    glBindVertexArray(<a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a>);</div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classrendering_1_1Model.html#ad1ad57b7c16e0be1c3700b4555a07693">m_isIbo</a>){        </div>
-<div class="line"><span class="lineno">   31</span>        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, <a class="code hl_variable" href="classrendering_1_1Model.html#ac38fe327945479fb45cd30e093c15ef2">m_ibo</a>);</div>
-<div class="line"><span class="lineno">   32</span>    }</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keyword">const</span> GLuint VERTEX_ATTR_POSITION = 0;</div>
-<div class="line"><span class="lineno">   34</span>    <span class="keyword">const</span> GLuint VERTEX_ATTR_NORMAL = 1;</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keyword">const</span> GLuint VERTEX_ATTR_TEXCOORDS = 2;</div>
-<div class="line"><span class="lineno">   36</span>    glEnableVertexAttribArray(VERTEX_ATTR_POSITION);</div>
-<div class="line"><span class="lineno">   37</span>    glEnableVertexAttribArray(VERTEX_ATTR_NORMAL);</div>
-<div class="line"><span class="lineno">   38</span>    glEnableVertexAttribArray(VERTEX_ATTR_TEXCOORDS);</div>
-<div class="line"><span class="lineno">   39</span>    glBindBuffer(GL_ARRAY_BUFFER, <a class="code hl_variable" href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">m_vbo</a>);</div>
-<div class="line"><span class="lineno">   40</span>    glVertexAttribPointer(VERTEX_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, <span class="keyword">sizeof</span>(glimac::ShapeVertex), (<span class="keyword">const</span> GLvoid *)offsetof(glimac::ShapeVertex, position));</div>
-<div class="line"><span class="lineno">   41</span>    glVertexAttribPointer(VERTEX_ATTR_NORMAL, 3, GL_FLOAT, GL_FALSE, <span class="keyword">sizeof</span>(glimac::ShapeVertex), (<span class="keyword">const</span> GLvoid *)offsetof(glimac::ShapeVertex, normal));</div>
-<div class="line"><span class="lineno">   42</span>    glVertexAttribPointer(VERTEX_ATTR_TEXCOORDS, 2, GL_FLOAT, GL_FALSE, <span class="keyword">sizeof</span>(glimac::ShapeVertex), (<span class="keyword">const</span> GLvoid *)offsetof(glimac::ShapeVertex, texCoords));</div>
-<div class="line"><span class="lineno">   43</span>    glBindBuffer(GL_ARRAY_BUFFER, 0);</div>
-<div class="line"><span class="lineno">   44</span>    glBindVertexArray(0);</div>
-<div class="line"><span class="lineno">   45</span>}</div>
+<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00032">32</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>                  {</div>
+<div class="line"><span class="lineno">   33</span>    GLuint vao;</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a> = vao;</div>
+<div class="line"><span class="lineno">   35</span>    glGenVertexArrays(1, &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a>);</div>
+<div class="line"><span class="lineno">   36</span>    glBindVertexArray(<a class="code hl_variable" href="classrendering_1_1Model.html#ab7f6d0aab1e64bf7ba03d2b986fc08b4">m_vao</a>);</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classrendering_1_1Model.html#ad1ad57b7c16e0be1c3700b4555a07693">m_isIbo</a>){        </div>
+<div class="line"><span class="lineno">   38</span>        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, <a class="code hl_variable" href="classrendering_1_1Model.html#ac38fe327945479fb45cd30e093c15ef2">m_ibo</a>);</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keyword">const</span> GLuint VERTEX_ATTR_POSITION = 0;</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keyword">const</span> GLuint VERTEX_ATTR_NORMAL = 1;</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keyword">const</span> GLuint VERTEX_ATTR_TEXCOORDS = 2;</div>
+<div class="line"><span class="lineno">   43</span>    glEnableVertexAttribArray(VERTEX_ATTR_POSITION);</div>
+<div class="line"><span class="lineno">   44</span>    glEnableVertexAttribArray(VERTEX_ATTR_NORMAL);</div>
+<div class="line"><span class="lineno">   45</span>    glEnableVertexAttribArray(VERTEX_ATTR_TEXCOORDS);</div>
+<div class="line"><span class="lineno">   46</span>    glBindBuffer(GL_ARRAY_BUFFER, <a class="code hl_variable" href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">m_vbo</a>);</div>
+<div class="line"><span class="lineno">   47</span>    glVertexAttribPointer(VERTEX_ATTR_POSITION, 3, GL_FLOAT, GL_FALSE, <span class="keyword">sizeof</span>(glimac::ShapeVertex), (<span class="keyword">const</span> GLvoid *)offsetof(glimac::ShapeVertex, position));</div>
+<div class="line"><span class="lineno">   48</span>    glVertexAttribPointer(VERTEX_ATTR_NORMAL, 3, GL_FLOAT, GL_FALSE, <span class="keyword">sizeof</span>(glimac::ShapeVertex), (<span class="keyword">const</span> GLvoid *)offsetof(glimac::ShapeVertex, normal));</div>
+<div class="line"><span class="lineno">   49</span>    glVertexAttribPointer(VERTEX_ATTR_TEXCOORDS, 2, GL_FLOAT, GL_FALSE, <span class="keyword">sizeof</span>(glimac::ShapeVertex), (<span class="keyword">const</span> GLvoid *)offsetof(glimac::ShapeVertex, texCoords));</div>
+<div class="line"><span class="lineno">   50</span>    glBindBuffer(GL_ARRAY_BUFFER, 0);</div>
+<div class="line"><span class="lineno">   51</span>    glBindVertexArray(0);</div>
+<div class="line"><span class="lineno">   52</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -566,16 +686,16 @@ Protected Attributes</h2></td></tr>
 
 <p>Set and bind the vbo. </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00006">6</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    6</span>                  {</div>
-<div class="line"><span class="lineno">    7</span>    GLuint vbo;</div>
-<div class="line"><span class="lineno">    8</span>    <a class="code hl_variable" href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">m_vbo</a> = vbo;</div>
-<div class="line"><span class="lineno">    9</span>    glGenBuffers(1, &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">m_vbo</a>);</div>
-<div class="line"><span class="lineno">   10</span>    glBindBuffer(GL_ARRAY_BUFFER, <a class="code hl_variable" href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">m_vbo</a>);</div>
-<div class="line"><span class="lineno">   11</span>    glBufferData(GL_ARRAY_BUFFER, <a class="code hl_function" href="classrendering_1_1Model.html#a1b18132062f390fd76171e30fce8e345">getVertexCount</a>() * <span class="keyword">sizeof</span>(glimac::ShapeVertex), <a class="code hl_function" href="classrendering_1_1Model.html#a763e16cede9c66fd3e575c0325580650">getDataPointer</a>(), GL_STATIC_DRAW);</div>
-<div class="line"><span class="lineno">   12</span>    glBindBuffer(GL_ARRAY_BUFFER, 0);</div>
-<div class="line"><span class="lineno">   13</span>}</div>
-<div class="ttc" id="aclassrendering_1_1Model_html_a763e16cede9c66fd3e575c0325580650"><div class="ttname"><a href="classrendering_1_1Model.html#a763e16cede9c66fd3e575c0325580650">rendering::Model::getDataPointer</a></div><div class="ttdeci">const glimac::ShapeVertex * getDataPointer() const</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00053">Model.cpp:53</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Model_8cpp_source.html#l00011">11</a> of file <a class="el" href="Model_8cpp_source.html">Model.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>                  {</div>
+<div class="line"><span class="lineno">   12</span>    GLuint vbo;</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">m_vbo</a> = vbo;</div>
+<div class="line"><span class="lineno">   14</span>    glGenBuffers(1, &amp;<a class="code hl_variable" href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">m_vbo</a>);</div>
+<div class="line"><span class="lineno">   15</span>    glBindBuffer(GL_ARRAY_BUFFER, <a class="code hl_variable" href="classrendering_1_1Model.html#a1b4e4749b3ed3d9412b59adcded10c86">m_vbo</a>);</div>
+<div class="line"><span class="lineno">   16</span>    glBufferData(GL_ARRAY_BUFFER, <a class="code hl_function" href="classrendering_1_1Model.html#a1b18132062f390fd76171e30fce8e345">getVertexCount</a>() * <span class="keyword">sizeof</span>(glimac::ShapeVertex), <a class="code hl_function" href="classrendering_1_1Model.html#a763e16cede9c66fd3e575c0325580650">getDataPointer</a>(), GL_STATIC_DRAW);</div>
+<div class="line"><span class="lineno">   17</span>    glBindBuffer(GL_ARRAY_BUFFER, 0);</div>
+<div class="line"><span class="lineno">   18</span>}</div>
+<div class="ttc" id="aclassrendering_1_1Model_html_a763e16cede9c66fd3e575c0325580650"><div class="ttname"><a href="classrendering_1_1Model.html#a763e16cede9c66fd3e575c0325580650">rendering::Model::getDataPointer</a></div><div class="ttdeci">const glimac::ShapeVertex * getDataPointer() const</div><div class="ttdef"><b>Definition:</b> <a href="Model_8cpp_source.html#l00060">Model.cpp:60</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -601,7 +721,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >ibo of the model </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00026">26</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00029">29</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -626,7 +746,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Number of indices to draw </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00030">30</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00033">33</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -651,7 +771,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Boolean that shows if there is an ibo or not </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00027">27</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00030">30</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -676,7 +796,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >texture of the model </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00028">28</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00031">31</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -701,7 +821,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >vao of the model </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00025">25</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00028">28</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -726,7 +846,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >vbo of the model </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00024">24</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00027">27</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -751,7 +871,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Number of vertices to draw </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00031">31</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00034">34</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -776,7 +896,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p >Vector that contains the vertices (position, texture, normals) </p>
 
-<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00029">29</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Model_8hpp_source.html#l00032">32</a> of file <a class="el" href="Model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>

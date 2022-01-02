@@ -102,7 +102,7 @@ public:
      *  \param WindowManager The SDLWindowManager
      * 
      */
-    void drawMap(rendering::Cube& mesh_path, rendering::Model & mesh_coin, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager, rendering::Light light) ;
+    void drawMap(rendering::Cube& mesh_path, rendering::Model & mesh_coin, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager) ;
 
     /*!
      *  \brief Draw the obstacles
@@ -111,9 +111,7 @@ public:
      *  \param camera The camera (to get the ViewMatrix)
      *  \param Program The shader
      *  \param ProjMatrix The Projection Matrix
-     *  \param WindowManager The SDLWindowManager
-     *  \param light Boolean to check if ponctual light needs to be drawn
-     * 
+     *  \param WindowManager The SDLWindowManager 
      */
     void drawObstacle(rendering::Cube& mesh, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager) ;
     

@@ -23,7 +23,7 @@ public:
     Light() = default;
 
     /*!
-     *  \brief Draw the Lights
+     *  \brief Draw the Directionnal Light that comes from above
      *  \param camera The camera to get the ViewMatrix
      *  \param LightProgram The corresponding shader
      *  \param ProjMatrix The Projection Matrix
@@ -31,6 +31,18 @@ public:
      * 
      */
     void drawDirectionnal(rendering::Camera* camera, rendering::ShaderManager& LightProgram, glm::mat4 ProjMatrix, glm::mat4 NormalMatrix);
+    
+    
+
+    /*!
+     *  \brief Draw the Ponctual Light that is attached to the player
+     *  \param camera The camera to get the ViewMatrix
+     *  \param LightProgram The corresponding shader
+     *  \param ProjMatrix The Projection Matrix
+     *  \param NormalMatrix The Normal Matrix
+     *  \param coord Coordinates of the light
+     * 
+     */
     void drawPonctual(const rendering::Camera* camera, rendering::ShaderManager& LightProgram, glm::mat4 ProjMatrix, glm::mat4 NormalMatrix, glm::vec3 coord);
 
 

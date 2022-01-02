@@ -153,7 +153,7 @@ int CourseMap::end() const
     return m_sizey - 1;
 }
 
-void CourseMap::drawMap(rendering::Cube &mesh_path, rendering::Model &mesh_coin, const rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager &windowManager, rendering::Light light)
+void CourseMap::drawMap(rendering::Cube &mesh_path, rendering::Model &mesh_coin, const rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager &windowManager)
 {
     Iterator<Object*, Container<Object*>> *it = m_CourseMap.CreateIterator();
     for (it->First(); !it->IsDone(); it->Next())
@@ -164,7 +164,7 @@ void CourseMap::drawMap(rendering::Cube &mesh_path, rendering::Model &mesh_coin,
         }
         if ((*it->Current())->getIfCoins())
         {
-            (*it->Current())->drawCoins(mesh_coin, camera, Program, ProjMatrix, windowManager, light);
+            (*it->Current())->drawCoins(mesh_coin, camera, Program, ProjMatrix, windowManager);
         }
     }
     delete it;

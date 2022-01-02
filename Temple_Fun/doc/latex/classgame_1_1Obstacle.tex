@@ -98,23 +98,23 @@ Reimplemented from \mbox{\hyperlink{classgame_1_1Object_a95fd4656e1ed6d9a11caeb5
 
 
 
-Definition at line \mbox{\hyperlink{Object_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
+Definition at line \mbox{\hyperlink{Object_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00037 \{}
-\DoxyCodeLine{00038 }
-\DoxyCodeLine{00039     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
-\DoxyCodeLine{00040     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().x-\/2, 0.4, \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().y));}
-\DoxyCodeLine{00041     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 0.6, 1));}
-\DoxyCodeLine{00042     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
-\DoxyCodeLine{00043 }
-\DoxyCodeLine{00044     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
-\DoxyCodeLine{00045     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVMatrix"{}}, ViewMatrix);}
-\DoxyCodeLine{00046     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uNormalMatrix"{}}, NormalMatrix);}
-\DoxyCodeLine{00047     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_ad8f60d9ab9e7a1c0572914e6ea47b498}{uniform1i}}(\textcolor{stringliteral}{"{}uTexture"{}}, 0);}
-\DoxyCodeLine{00048     mesh.\mbox{\hyperlink{classrendering_1_1Model_a71dea11e780bdefb98cd9603cfa1758b}{draw}}();}
-\DoxyCodeLine{00049 \}}
+\DoxyCodeLine{00038 \{}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
+\DoxyCodeLine{00041     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().x-\/2, 0.4, \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().y));}
+\DoxyCodeLine{00042     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 0.6, 1));}
+\DoxyCodeLine{00043     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
+\DoxyCodeLine{00046     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVMatrix"{}}, ViewMatrix);}
+\DoxyCodeLine{00047     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uNormalMatrix"{}}, NormalMatrix);}
+\DoxyCodeLine{00048     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_ad8f60d9ab9e7a1c0572914e6ea47b498}{uniform1i}}(\textcolor{stringliteral}{"{}uTexture"{}}, 0);}
+\DoxyCodeLine{00049     mesh.\mbox{\hyperlink{classrendering_1_1Model_a71dea11e780bdefb98cd9603cfa1758b}{draw}}();}
+\DoxyCodeLine{00050 \}}
 
 \end{DoxyCode}
 

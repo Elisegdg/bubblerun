@@ -28,7 +28,7 @@ glm\+::vec3 \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afc
 \begin{DoxyCompactList}\small\item\em Get the coordinates of the \mbox{\hyperlink{classgame_1_1Object}{Object}}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classgame_1_1Object_a95fd4656e1ed6d9a11caeb58c131a657}{draw}} (\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&mesh, const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Program, glm\+::mat4 Proj\+Matrix, glimac\+::\+SDLWindow\+Manager \&window\+Manager)
 \begin{DoxyCompactList}\small\item\em Draw the object. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classgame_1_1Object_a90e14e87e538275df1e7c5ec0398456b}{draw\+Coins}} (\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&mesh, const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Program, glm\+::mat4 Proj\+Matrix, glimac\+::\+SDLWindow\+Manager \&window\+Manager)
+void \mbox{\hyperlink{classgame_1_1Object_a7f3d72be77fa4495d9c4176b3485ef4a}{draw\+Coins}} (\mbox{\hyperlink{classrendering_1_1Model}{rendering\+::\+Model}} \&mesh, const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Program, glm\+::mat4 Proj\+Matrix, glimac\+::\+SDLWindow\+Manager \&window\+Manager)
 \begin{DoxyCompactList}\small\item\em Draw the coin. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classgame_1_1Object_a207b56cbf0a9c09afa21aef608ec8a9e}{set\+Coins}} (bool coins)
 \begin{DoxyCompactList}\small\item\em Setter of the Coin. \end{DoxyCompactList}\item 
@@ -119,13 +119,13 @@ Setter of the coordinate of an object.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{Object_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
+Definition at line \mbox{\hyperlink{Object_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00011 \{}
-\DoxyCodeLine{00012     \mbox{\hyperlink{classgame_1_1Object_a102603e65750822cd927cdbe4ec4e92b}{m\_coord}} = glm::vec3(x,y,z);}
-\DoxyCodeLine{00013 \}}
+\DoxyCodeLine{00012 \{}
+\DoxyCodeLine{00013     \mbox{\hyperlink{classgame_1_1Object_a102603e65750822cd927cdbe4ec4e92b}{m\_coord}} = glm::vec3(x,y,z);}
+\DoxyCodeLine{00014 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classgame_1_1Object_a95fd4656e1ed6d9a11caeb58c131a657}\label{classgame_1_1Object_a95fd4656e1ed6d9a11caeb58c131a657}} 
@@ -157,30 +157,30 @@ Reimplemented in \mbox{\hyperlink{classgame_1_1Obstacle_af14029b4ca81e4ec75b0404
 
 
 
-Definition at line \mbox{\hyperlink{Object_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
+Definition at line \mbox{\hyperlink{Object_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022 \{}
-\DoxyCodeLine{00023     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
-\DoxyCodeLine{00024     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().x-\/2 , 0, \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().y));}
-\DoxyCodeLine{00025     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 0.2, 1));}
-\DoxyCodeLine{00026     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
-\DoxyCodeLine{00027 }
-\DoxyCodeLine{00028     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
-\DoxyCodeLine{00029     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVMatrix"{}}, ViewMatrix);}
-\DoxyCodeLine{00030     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uNormalMatrix"{}}, NormalMatrix);}
-\DoxyCodeLine{00031     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_ad8f60d9ab9e7a1c0572914e6ea47b498}{uniform1i}}(\textcolor{stringliteral}{"{}uTexture"{}}, 0);}
-\DoxyCodeLine{00032     mesh.\mbox{\hyperlink{classrendering_1_1Model_a71dea11e780bdefb98cd9603cfa1758b}{draw}}();}
-\DoxyCodeLine{00033     }
-\DoxyCodeLine{00034 \}}
+\DoxyCodeLine{00023 \{}
+\DoxyCodeLine{00024     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
+\DoxyCodeLine{00025     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().x-\/2 , 0, \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().y));}
+\DoxyCodeLine{00026     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(1, 0.2, 1));}
+\DoxyCodeLine{00027     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
+\DoxyCodeLine{00030     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVMatrix"{}}, ViewMatrix);}
+\DoxyCodeLine{00031     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uNormalMatrix"{}}, NormalMatrix);}
+\DoxyCodeLine{00032     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_ad8f60d9ab9e7a1c0572914e6ea47b498}{uniform1i}}(\textcolor{stringliteral}{"{}uTexture"{}}, 0);}
+\DoxyCodeLine{00033     mesh.\mbox{\hyperlink{classrendering_1_1Model_a71dea11e780bdefb98cd9603cfa1758b}{draw}}();}
+\DoxyCodeLine{00034     }
+\DoxyCodeLine{00035 \}}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{classgame_1_1Object_a90e14e87e538275df1e7c5ec0398456b}\label{classgame_1_1Object_a90e14e87e538275df1e7c5ec0398456b}} 
+\mbox{\Hypertarget{classgame_1_1Object_a7f3d72be77fa4495d9c4176b3485ef4a}\label{classgame_1_1Object_a7f3d72be77fa4495d9c4176b3485ef4a}} 
 \index{game::Object@{game::Object}!drawCoins@{drawCoins}}
 \index{drawCoins@{drawCoins}!game::Object@{game::Object}}
 \doxysubsubsection{\texorpdfstring{drawCoins()}{drawCoins()}}
-{\footnotesize\ttfamily void game\+::\+Object\+::draw\+Coins (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1Cube}{rendering\+::\+Cube}} \&}]{mesh,  }\item[{const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$}]{camera,  }\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Program,  }\item[{glm\+::mat4}]{Proj\+Matrix,  }\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void game\+::\+Object\+::draw\+Coins (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrendering_1_1Model}{rendering\+::\+Model}} \&}]{mesh,  }\item[{const \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$}]{camera,  }\item[{\mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&}]{Program,  }\item[{glm\+::mat4}]{Proj\+Matrix,  }\item[{glimac\+::\+SDLWindow\+Manager \&}]{window\+Manager }\end{DoxyParamCaption})}
 
 
 
@@ -203,16 +203,15 @@ Checks all the object to determine if there is a coin or not. If it\textquotesin
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{Object_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
+Definition at line \mbox{\hyperlink{Object_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00059 \{}
-\DoxyCodeLine{00060 }
+\DoxyCodeLine{00060 \{}
 \DoxyCodeLine{00061     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
 \DoxyCodeLine{00062     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(\mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().x-\/2, 0.2, \mbox{\hyperlink{classgame_1_1Object_a175e53f373121e22dc93580b882afcbc}{getCoord}}().y));}
-\DoxyCodeLine{00063     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(0.3, 0.3, 0.3));}
-\DoxyCodeLine{00064     \textcolor{comment}{//ViewMatrix = glm::rotate(ViewMatrix, windowManager.getTime(), glm::vec3(0,1,0)); // Translation * Rotation}}
+\DoxyCodeLine{00063     ViewMatrix = glm::scale(ViewMatrix,glm::vec3(0.08,0.08, 0.08));}
+\DoxyCodeLine{00064     ViewMatrix = glm::rotate(ViewMatrix, windowManager.getTime(), glm::vec3(0,1,0)); \textcolor{comment}{// Translation * Rotation}}
 \DoxyCodeLine{00065     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
 \DoxyCodeLine{00066 }
 \DoxyCodeLine{00067     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
@@ -238,13 +237,13 @@ the coordinate of the \mbox{\hyperlink{classgame_1_1Object}{Object}}
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{Object_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
+Definition at line \mbox{\hyperlink{Object_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{Object_8cpp_source}{Object.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00016 \{}
-\DoxyCodeLine{00017     \textcolor{keywordflow}{return} \mbox{\hyperlink{classgame_1_1Object_a102603e65750822cd927cdbe4ec4e92b}{m\_coord}};}
-\DoxyCodeLine{00018 \}}
+\DoxyCodeLine{00017 \{}
+\DoxyCodeLine{00018     \textcolor{keywordflow}{return} \mbox{\hyperlink{classgame_1_1Object_a102603e65750822cd927cdbe4ec4e92b}{m\_coord}};}
+\DoxyCodeLine{00019 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classgame_1_1Object_ac97a2e3cd7589000bc023bd148a2d40e}\label{classgame_1_1Object_ac97a2e3cd7589000bc023bd148a2d40e}} 

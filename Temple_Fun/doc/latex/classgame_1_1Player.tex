@@ -55,7 +55,9 @@ void \mbox{\hyperlink{classgame_1_1Player_ab1f7cde9d7919fae2c62981c07333dd0}{mov
 void \mbox{\hyperlink{classgame_1_1Player_a94274ac942cc8611015fcdb904c26f7a}{move\+Enemy\+Manager}} (\mbox{\hyperlink{classgame_1_1Object}{Object}} $\ast$objet\+\_\+enemy)
 \begin{DoxyCompactList}\small\item\em Manages how the Enemy mooves according to the orientation. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classgame_1_1Player_a381c2dea6ca30f80f5dbc37cce810abb}{draw}} (\mbox{\hyperlink{classrendering_1_1Model}{rendering\+::\+Model}} \&mesh, \mbox{\hyperlink{classrendering_1_1Camera}{rendering\+::\+Camera}} $\ast$camera, \mbox{\hyperlink{classrendering_1_1ShaderManager}{rendering\+::\+Shader\+Manager}} \&Program, glm\+::mat4 Proj\+Matrix)
-\begin{DoxyCompactList}\small\item\em Draw the \mbox{\hyperlink{classgame_1_1Player}{Player}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Draw the \mbox{\hyperlink{classgame_1_1Player}{Player}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classgame_1_1Player_a35340d147cf5678535f418fbfb950e08}{get\+Rotation}} ()
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -181,8 +183,8 @@ Definition at line \mbox{\hyperlink{Player_8cpp_source_l00052}{52}} of file \mbo
 \DoxyCodeLine{00055     glm::mat4 ViewMatrix = camera-\/>\mbox{\hyperlink{classrendering_1_1Camera_ad1a2f332b6e0551c1aa1c0c1c2b49169}{getViewMatrix}}();}
 \DoxyCodeLine{00056     ViewMatrix = glm::translate(ViewMatrix, \mbox{\hyperlink{classgame_1_1Player_aad867a4cf1f38f390d81f29daf9745c9}{convertCoord}}());}
 \DoxyCodeLine{00057     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0, 0.6, 0));}
-\DoxyCodeLine{00058 }
-\DoxyCodeLine{00059     ViewMatrix = glm::scale(ViewMatrix, glm::vec3(1, 1, 1));}
+\DoxyCodeLine{00058     ViewMatrix = glm::rotate(ViewMatrix, \mbox{\hyperlink{classgame_1_1Player_a35340d147cf5678535f418fbfb950e08}{getRotation}}(), glm::vec3(0.,1.,0.));}
+\DoxyCodeLine{00059     ViewMatrix = glm::scale(ViewMatrix, glm::vec3(1.3, 1.3, 1.3));}
 \DoxyCodeLine{00060     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));}
 \DoxyCodeLine{00061 }
 \DoxyCodeLine{00062     Program.\mbox{\hyperlink{classrendering_1_1ShaderManager_a82a9b9279c7ee3501bc0ba8916365405}{uniformMatrix4fv}}(\textcolor{stringliteral}{"{}uMVPMatrix"{}}, ProjMatrix * ViewMatrix);}
@@ -314,6 +316,23 @@ Definition at line \mbox{\hyperlink{Player_8cpp_source_l00095}{95}} of file \mbo
 \DoxyCodeLine{00096 \{}
 \DoxyCodeLine{00097     \textcolor{keywordflow}{return} m\_orientation;}
 \DoxyCodeLine{00098 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classgame_1_1Player_a35340d147cf5678535f418fbfb950e08}\label{classgame_1_1Player_a35340d147cf5678535f418fbfb950e08}} 
+\index{game::Player@{game::Player}!getRotation@{getRotation}}
+\index{getRotation@{getRotation}!game::Player@{game::Player}}
+\doxysubsubsection{\texorpdfstring{getRotation()}{getRotation()}}
+{\footnotesize\ttfamily float game\+::\+Player\+::get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Player_8hpp_source_l00197}{197}} of file \mbox{\hyperlink{Player_8hpp_source}{Player.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00197                        \{}
+\DoxyCodeLine{00198         \textcolor{keywordflow}{return} glm::radians(m\_orientation);}
+\DoxyCodeLine{00199     \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classgame_1_1Player_ad352e5fa1deaa0c6655092e87cac6529}\label{classgame_1_1Player_ad352e5fa1deaa0c6655092e87cac6529}} 

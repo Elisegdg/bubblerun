@@ -15,12 +15,13 @@ var searchData=
   ['getindexpointer_12',['getIndexPointer',['../classrendering_1_1Model.html#acc2949adef22aef0707208a1535db3d7',1,'rendering::Model']]],
   ['getname_13',['getName',['../classgame_1_1Object.html#a4a2388e20824361ceccdd0811cd4d6db',1,'game::Object']]],
   ['getorientation_14',['getOrientation',['../classgame_1_1Player.html#a050de77af0f638d6bceae26df7000695',1,'game::Player']]],
-  ['getsize_15',['getSize',['../classrendering_1_1Text.html#a83dd9d4f133502a799c410d0c93da06f',1,'rendering::Text']]],
-  ['gettextureid_16',['getTextureID',['../classrendering_1_1Text.html#a6a468f154183fa93a20b6ccb40b20380',1,'rendering::Text']]],
-  ['gettextureid_17',['getTextureId',['../classrendering_1_1Texture.html#a1b12f268ef0314ce316378f76c64ef52',1,'rendering::Texture']]],
-  ['getvao_18',['getVao',['../classrendering_1_1Model.html#a7dc70738e2eb5a03c0c2ae9c3e0b2c88',1,'rendering::Model']]],
-  ['getvaomenu_19',['getVaoMenu',['../classrendering_1_1Menu.html#af6eb03ce759583379aa2d9e08c1b5e89',1,'rendering::Menu']]],
-  ['getvbo_20',['getVbo',['../classrendering_1_1Model.html#a1057fb2255cba45733fd7578899cb8ab',1,'rendering::Model']]],
-  ['getvertexcount_21',['getVertexCount',['../classrendering_1_1Model.html#a1b18132062f390fd76171e30fce8e345',1,'rendering::Model']]],
-  ['getviewmatrix_22',['getViewMatrix',['../classrendering_1_1Camera.html#ad1a2f332b6e0551c1aa1c0c1c2b49169',1,'rendering::Camera::getViewMatrix()'],['../classrendering_1_1EyesCamera.html#af534fc34cb0858bd13c6e5931d87f3e8',1,'rendering::EyesCamera::getViewMatrix()'],['../classrendering_1_1TrackballCamera.html#ac570bdbd18186fc4af680015eab0886e',1,'rendering::TrackballCamera::getViewMatrix()']]]
+  ['getrotation_15',['getRotation',['../classgame_1_1Player.html#a35340d147cf5678535f418fbfb950e08',1,'game::Player']]],
+  ['getsize_16',['getSize',['../classrendering_1_1Text.html#a83dd9d4f133502a799c410d0c93da06f',1,'rendering::Text']]],
+  ['gettextureid_17',['getTextureID',['../classrendering_1_1Text.html#a6a468f154183fa93a20b6ccb40b20380',1,'rendering::Text']]],
+  ['gettextureid_18',['getTextureId',['../classrendering_1_1Texture.html#a1b12f268ef0314ce316378f76c64ef52',1,'rendering::Texture']]],
+  ['getvao_19',['getVao',['../classrendering_1_1Model.html#a7dc70738e2eb5a03c0c2ae9c3e0b2c88',1,'rendering::Model']]],
+  ['getvaomenu_20',['getVaoMenu',['../classrendering_1_1Menu.html#af6eb03ce759583379aa2d9e08c1b5e89',1,'rendering::Menu']]],
+  ['getvbo_21',['getVbo',['../classrendering_1_1Model.html#a1057fb2255cba45733fd7578899cb8ab',1,'rendering::Model']]],
+  ['getvertexcount_22',['getVertexCount',['../classrendering_1_1Model.html#a1b18132062f390fd76171e30fce8e345',1,'rendering::Model']]],
+  ['getviewmatrix_23',['getViewMatrix',['../classrendering_1_1Camera.html#ad1a2f332b6e0551c1aa1c0c1c2b49169',1,'rendering::Camera::getViewMatrix()'],['../classrendering_1_1EyesCamera.html#af534fc34cb0858bd13c6e5931d87f3e8',1,'rendering::EyesCamera::getViewMatrix()'],['../classrendering_1_1TrackballCamera.html#ac570bdbd18186fc4af680015eab0886e',1,'rendering::TrackballCamera::getViewMatrix()']]]
 ];

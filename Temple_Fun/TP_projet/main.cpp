@@ -65,7 +65,7 @@ int main(int argc, char **argv)
     bool menu_bool = true, menu_score = false, menu_play_again = false;
     rendering::Score scorejson;
 
-    // Map initialization
+    // Map and game initialization
     game::CourseMap courseMap;
     try
     {
@@ -82,6 +82,8 @@ int main(int argc, char **argv)
     int score = 0;
     int speed = 5;
 
+    //Rendering initialization
+
     //Camera initialization
     rendering::TrackballCamera trackball_camera(&player);
     rendering::EyesCamera eyes_camera(&player);
@@ -91,14 +93,12 @@ int main(int argc, char **argv)
     rendering::Texture obstacle("../Temple_Fun/assets/textures/ground.png");
     rendering::Texture nemo("../Temple_Fun/assets/models/TEX_Nemo_low.png");
     rendering::Texture ground("../Temple_Fun/assets/textures/stone_ground.png");
-    rendering::Texture coin("../Temple_Fun/assets/textures/gold.png");
+    rendering::Texture coin("../Temple_Fun/assets/models/Crystal.png");
     rendering::Texture shark("../Temple_Fun/assets/models/TEX_Squirt_Low.png");
-
 
     rendering::Cube cube_path(ground, 1),cube_obstacle(obstacle, 1);
     rendering::Model nemo_obj(nemo);
     rendering::Model shark_obj(shark);
-
 
     nemo_obj.loadModel("Nemo.obj");
     nemo_obj.setVbo();
@@ -111,7 +111,7 @@ int main(int argc, char **argv)
     shark_obj.setVbo();
     shark_obj.setVao();
 
-    rendering::Model coin_obj;
+    rendering::Model coin_obj(coin);
     coin_obj.loadModel("Gem.obj");
     coin_obj.setVbo();
     coin_obj.setVao();
@@ -170,12 +170,6 @@ int main(int argc, char **argv)
     {
         std::cerr << "Error : " << s << std::endl;
     }
-
-
-    // TEST TINY OBJ
-
-
-
 
 
     // Application loop:
@@ -362,10 +356,11 @@ int main(int argc, char **argv)
             light.drawDirectionnal(camera,LightProgram, ProjMatrix, NormalMatrix);
             player.draw(nemo_obj, camera, LightProgram, ProjMatrix);
             enemy.draw(shark_obj, camera, LightProgram, ProjMatrix);
-            courseMap.drawMap(cube_path, nemo_obj, camera, LightProgram, ProjMatrix, windowManager, light);
+            courseMap.drawMap(cube_path, coin_obj, camera, LightProgram, ProjMatrix, windowManager);
             courseMap.drawObstacle(cube_obstacle, camera, LightProgram, ProjMatrix, windowManager);         
-            
-            
+            light.drawPonctual(camera,LightProgram,ProjMatrix,NormalMatrix, player.convertCoord());
+
+
             glDepthFunc(GL_LEQUAL);
             SkyboxProgram.use();
             skybox.draw(SkyboxProgram, camera, ProjMatrix, cubemapTexture);
