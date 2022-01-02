@@ -1,4 +1,3 @@
-
 #version 330 core
 
 const int MAX_POINT_LIGHTS = 5;
@@ -48,5 +47,4 @@ void main()
     vec3 pointLight = pointLightBlinnPhong();
 
     fFragColor = (dirLight+pointLight)*color.rgb;
-
 }

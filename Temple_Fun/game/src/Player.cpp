@@ -55,16 +55,27 @@ void Player::draw(rendering::Model &mesh, rendering::Camera *camera, rendering::
     glm::mat4 ViewMatrix = camera->getViewMatrix();
     ViewMatrix = glm::translate(ViewMatrix, convertCoord());
     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(0, 0.6, 0));
-    ViewMatrix = glm::rotate(ViewMatrix, getRotation(), glm::vec3(0.,1.,0.));
+
+    ViewMatrix = glm::rotate(ViewMatrix,getRotation(), glm::vec3(0.,1.,0.));
     ViewMatrix = glm::scale(ViewMatrix, glm::vec3(1, 1, 1));
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
+
+    Program.uniform1i("uTexture", 0);
+
+    /*glBindVertexArray(m_vao);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, texture);*/
 
     Program.uniformMatrix4fv("uMVPMatrix", ProjMatrix * ViewMatrix);
     Program.uniformMatrix4fv("uMVMatrix", ViewMatrix);
     Program.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
-    Program.uniform1i("uTexture", 0);
+    
 
     mesh.draw();
+
+    /*glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D,0);
+    glBindVertexArray(0);*/
 }
 
 void Player::moveOrientation()

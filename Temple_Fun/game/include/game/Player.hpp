@@ -197,7 +197,6 @@ public:
     float getRotation(){
         return glm::radians(m_orientation);
     }
-
 };
 
 

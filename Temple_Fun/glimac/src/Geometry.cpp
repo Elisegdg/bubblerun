@@ -1,9 +1,9 @@
 #include "glimac/Geometry.hpp"
-#include "tiny_obj_loader.h"
+#include "glimac/tiny_obj_loader.h"
 #include <iostream>
 #include <algorithm>
 
-namespace glimac {
+/*namespace glimac {
 
 void Geometry::generateNormals(unsigned int meshIndex) {
     auto indexOffset = m_MeshBuffer[meshIndex].m_nIndexOffset;
@@ -170,4 +170,4 @@ bool Geometry::loadOBJ(const FilePath& filepath, const FilePath& mtlBasePath, bo
     return true;
 }
 
-}
+} */

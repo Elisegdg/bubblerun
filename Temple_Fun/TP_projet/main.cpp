@@ -6,6 +6,7 @@
 #include FT_FREETYPE_H
 #include <string.h>
 
+
 #include <glimac/SDLWindowManager.hpp>
 #include <glimac/Program.hpp>
 #include <glimac/FilePath.hpp>
@@ -23,6 +24,7 @@
 #include <rendering/Cube.hpp>
 #include <rendering/Text.hpp>
 #include <rendering/Menu.hpp>
+#include <rendering/Model.hpp>
 #include <rendering/Cursor.hpp>
 #include <rendering/json.hpp>
 #include <rendering/Score.hpp>
@@ -142,6 +144,7 @@ int main(int argc, char **argv)
 
     glEnable(GL_DEPTH_TEST);
 
+
     // Creation of the Skybox
     rendering::Skybox skybox;
     unsigned int cubemapTexture;
@@ -153,6 +156,25 @@ int main(int argc, char **argv)
     {
         std::cerr << "Error : " << s << std::endl;
     }
+
+    // Load objects texture
+    rendering::Texture textureNemo("../Temple_Fun/assets/models/TEX_Nemo.png");
+    textureNemo.loadTexture();
+
+    rendering::Texture textureShark("../Temple_Fun/assets/models/TEX_Nemo.png");
+    textureShark.loadTexture();
+
+    // Load objects
+    rendering::Model nemo_obj(textureNemo);
+    nemo_obj.loadModel("Nemo.obj");
+    nemo_obj.setVbo();
+    nemo_obj.setVao();
+
+    rendering::Model shark_obj(textureShark);
+    shark_obj.loadModel("shark.obj");
+    shark_obj.setVbo();
+    shark_obj.setVao();
+
 
     // Application loop:
     bool done = false, repeat = false, again = true;
@@ -330,14 +352,16 @@ int main(int argc, char **argv)
              *********************************/
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+            
 
-            glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 1700.f / 900.f, 0.1f, 100.f);
+            glm::mat4 ProjMatrix = glm::perspective(glm::radians(70.f), 2000.f / 1000.f, 0.1f, 100.f);
             glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
+
 
             // Drawing of the different elements
             light.draw(camera,LightProgram, ProjMatrix, NormalMatrix, player);
-            player.draw(cube_nemo, camera, LightProgram, ProjMatrix);
-            enemy.draw(cube_shark, camera, LightProgram, ProjMatrix);
+            player.draw(nemo_obj,  camera, LightProgram, ProjMatrix);
+            enemy.draw(nemo_obj, camera, LightProgram, ProjMatrix);
             courseMap.drawMap(cube_path, cube_coin, camera, LightProgram, ProjMatrix, windowManager);
             courseMap.drawObstacle(cube_obstacle, camera, LightProgram, ProjMatrix, windowManager);
 

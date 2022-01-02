@@ -1,4 +1,12 @@
 #include <rendering/Model.hpp>
+#include <glimac/common.hpp>
+#include <GL/glew.h>
+
+
+#define TINYOBJLOADER_IMPLEMENTATION
+#include <glimac/tiny_obj_loader.h>
+
+
 
 namespace rendering{
 
@@ -11,6 +19,8 @@ void Model::setVbo(){
     glBufferData(GL_ARRAY_BUFFER, getVertexCount() * sizeof(glimac::ShapeVertex), getDataPointer(), GL_STATIC_DRAW);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
+
+
 
 void Model::setIbo(){
     GLuint ibo;
@@ -60,7 +70,82 @@ const int* Model::getIndexPointer() const{
     return &m_index[0];
 }
 
+/*void Model::loadTexture(const std::string& fileName, GLuint &texture){
+    std::unique_ptr<glimac::Image> image = glimac::loadImage("../Temple_Fun/assets/models/"+fileName);
 
+    if(image=nullptr){
+        std::cout << "image non chargée" << std::endl;
+    }
 
+    glEnable(GL_TEXTURE_2D);
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image->getWidth(), image->getHeight(),0, GL_RGBA, GL_FLOAT, image->getPixels());
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glBindTexture(GL_TEXTURE_2D,0);
+}*/
+
+void Model::loadModel(const std::string& fileName){
+        
+        // Load 3D object
+        std::string inputfile = "../Temple_Fun/assets/models/"+fileName;
+        tinyobj::attrib_t attrib;
+        std::vector<tinyobj::shape_t> shapes;
+        std::vector<tinyobj::material_t> materials; 
+        
+        std::string warn;
+        std::string err;
+        bool ret = tinyobj::LoadObj(&attrib,&shapes,&materials, &warn, &err, inputfile.c_str(), nullptr);
+        
+        if (!err.empty()) { // `err` may contain warning message.
+            std::cerr << err << std::endl;
+        }
+
+        if (!ret) {
+            exit(1);
+        }
+
+        // Loop over shapes
+        for (size_t s = 0; s < shapes.size(); s++) {
+            // Loop over faces(polygon)
+            size_t index_offset = 0;
+            for (size_t f = 0; f < shapes[s].mesh.num_face_vertices.size(); f++) {
+                size_t fv = size_t(shapes[s].mesh.num_face_vertices[f]);
+
+                // Loop over vertices in the face.
+                for (size_t v = 0; v < fv; v++) {
+
+                    tinyobj::index_t idx = shapes[s].mesh.indices[index_offset + v];
+                    // access to vertex
+                    glimac::ShapeVertex newVertex = glimac::ShapeVertex(
+                        
+                        // POSITION
+                        glm::vec3(
+                            tinyobj::real_t(attrib.vertices[3*size_t(idx.vertex_index)+0]),
+                            tinyobj::real_t(attrib.vertices[3*size_t(idx.vertex_index)+1]),
+                            tinyobj::real_t(attrib.vertices[3*size_t(idx.vertex_index)+2])
+                        ),
+
+                        // NORMAL
+                        glm::vec3(
+                            tinyobj::real_t(attrib.normals[3*size_t(idx.normal_index)+0]),  // nx
+                            tinyobj::real_t(attrib.normals[3*size_t(idx.normal_index)+1]),  // ny
+                            tinyobj::real_t(attrib.normals[3*size_t(idx.normal_index)+2])   // nz
+                        ),
+
+                        // TEXTURE_COORDINATES
+                        glm::vec2(
+                            tinyobj::real_t(attrib.texcoords[2*size_t(idx.texcoord_index)+0]),  //tx
+                            tinyobj::real_t(attrib.texcoords[2*size_t(idx.texcoord_index)+1])   //ty
+                        )
+                    );
+
+                    m_vertices.push_back(newVertex);
+                }
+                index_offset += fv;
+            }
+        }
+        m_vertexCount = m_vertices.size();
+}
 
 }
