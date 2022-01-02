@@ -89,7 +89,7 @@ namespace rendering
             }
 
             FT_Face face;
-            if (FT_New_Face(ft, "../Temple_Fun/assets/fonts/Findet Nemo.ttf", 0, &face))
+            if (FT_New_Face(ft, "../Bubble_Run/assets/fonts/Findet Nemo.ttf", 0, &face))
             {
                 std::cout << "ERROR::FREETYPE: Failed to load font" << std::endl;
             }

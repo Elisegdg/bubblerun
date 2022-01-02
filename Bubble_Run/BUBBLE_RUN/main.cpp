@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 {
 
     // Initialize SDL and open a window
-    glimac::SDLWindowManager windowManager(1700, 900, "Temple_Fun");
+    glimac::SDLWindowManager windowManager(1700, 900, "Bubble_Run");
     int previousTime = 0, currentTime = 0;
 
     // Initialize glew for OpenGL3+ support
@@ -71,7 +71,7 @@ int main(int argc, char **argv)
     game::CourseMap courseMap;
     try
     {
-        courseMap.loadMap("../Temple_Fun/assets/map/map70.ppm");
+        courseMap.loadMap("../Bubble_Run/assets/map/map70.ppm");
     }
     catch (std::string &s)
     {
@@ -92,11 +92,11 @@ int main(int argc, char **argv)
     rendering::Camera *camera = &trackball_camera;
 
     //Textures and mesh initialization
-    rendering::Texture obstacle("../Temple_Fun/assets/textures/ground.png");
-    rendering::Texture nemo("../Temple_Fun/assets/models/TEX_Nemo_low.png");
-    rendering::Texture ground("../Temple_Fun/assets/textures/stone_ground.png");
-    rendering::Texture coin("../Temple_Fun/assets/models/Crystal.png");
-    rendering::Texture shark("../Temple_Fun/assets/models/TEX_Squirt_Low.png");
+    rendering::Texture obstacle("../Bubble_Run/assets/textures/ground.png");
+    rendering::Texture nemo("../Bubble_Run/assets/models/TEX_Nemo_low.png");
+    rendering::Texture ground("../Bubble_Run/assets/textures/stone_ground.png");
+    rendering::Texture coin("../Bubble_Run/assets/models/Crystal.png");
+    rendering::Texture shark("../Bubble_Run/assets/models/TEX_Squirt_Low.png");
 
     rendering::Cube cube_path(ground, 1),cube_obstacle(obstacle, 1);
     rendering::Model nemo_obj(nemo);

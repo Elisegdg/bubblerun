@@ -31,8 +31,8 @@ add_subdirectory(game)
 
 
 
-file(GLOB TP_DIRECTORIES "TP*")
+file(GLOB PROJ_DIRECTORIES "BUBBLE_RUN")
 
-foreach(TP ${TP_DIRECTORIES})
+foreach(TP ${PROJ_DIRECTORIES})
     add_subdirectory(${TP})
 endforeach()
