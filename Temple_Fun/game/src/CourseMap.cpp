@@ -9,6 +9,7 @@
 #include <rendering/Texture.hpp>
 #include <rendering/Model.hpp>
 #include <rendering/Cube.hpp>
+#include <rendering/Light.hpp>
 #include <random>
 #include <iostream>
 #include <functional>
@@ -152,7 +153,7 @@ int CourseMap::end() const
     return m_sizey - 1;
 }
 
-void CourseMap::drawMap(rendering::Cube &mesh_path, rendering::Cube &mesh_coin, const rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager &windowManager)
+void CourseMap::drawMap(rendering::Cube &mesh_path, rendering::Model &mesh_coin, const rendering::Camera *camera, rendering::ShaderManager &Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager &windowManager, rendering::Light light)
 {
     Iterator<Object*, Container<Object*>> *it = m_CourseMap.CreateIterator();
     for (it->First(); !it->IsDone(); it->Next())
@@ -163,7 +164,7 @@ void CourseMap::drawMap(rendering::Cube &mesh_path, rendering::Cube &mesh_coin, 
         }
         if ((*it->Current())->getIfCoins())
         {
-            (*it->Current())->drawCoins(mesh_coin, camera, Program, ProjMatrix, windowManager);
+            (*it->Current())->drawCoins(mesh_coin, camera, Program, ProjMatrix, windowManager, light);
         }
     }
     delete it;

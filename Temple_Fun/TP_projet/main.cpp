@@ -89,19 +89,32 @@ int main(int argc, char **argv)
 
     //Textures and mesh initialization
     rendering::Texture obstacle("../Temple_Fun/assets/textures/ground.png");
-    rendering::Texture nemo("../Temple_Fun/assets/textures/nemo.jpg");
+    rendering::Texture nemo("../Temple_Fun/assets/models/TEX_Nemo_low.png");
     rendering::Texture ground("../Temple_Fun/assets/textures/stone_ground.png");
     rendering::Texture coin("../Temple_Fun/assets/textures/gold.png");
-    rendering::Texture shark("../Temple_Fun/assets/textures/shark.png");
+    rendering::Texture shark("../Temple_Fun/assets/models/TEX_Squirt_Low.png");
 
-    rendering::Cube cube_path(ground, 1), cube_nemo(nemo, 1), cube_obstacle(obstacle, 1),
-        cube_coin(coin, 1), cube_shark(shark, 1);
+
+    rendering::Cube cube_path(ground, 1),cube_obstacle(obstacle, 1);
+    rendering::Model nemo_obj(nemo);
+    rendering::Model shark_obj(shark);
+
+
+    nemo_obj.loadModel("Nemo.obj");
+    nemo_obj.setVbo();
+    nemo_obj.setVao();
 
     cube_path.setBuffers();
-    cube_nemo.setBuffers();
-    cube_coin.setBuffers();
     cube_obstacle.setBuffers();
-    cube_shark.setBuffers();
+
+    shark_obj.loadModel("Squirt_LD.obj");
+    shark_obj.setVbo();
+    shark_obj.setVao();
+
+    rendering::Model coin_obj;
+    coin_obj.loadModel("Gem.obj");
+    coin_obj.setVbo();
+    coin_obj.setVao();
 
     rendering::Light light;
 
@@ -123,14 +136,15 @@ int main(int argc, char **argv)
     SkyboxProgram.addUniform("uSkybox");
 
     rendering::ShaderManager LightProgram(applicationPath, "shaders/3D.vs.glsl", "shaders/multipleLights.fs.glsl");
-    LightProgram.addUniform("uKdiffuse");
-    LightProgram.addUniform("uKspecular");
-    LightProgram.addUniform("uKdiffuse2");
-    LightProgram.addUniform("uKspecular2");
+    LightProgram.addUniform("uKdiffuseD");
+    LightProgram.addUniform("uKspecularD");
+    LightProgram.addUniform("uKdiffuseP");
+    LightProgram.addUniform("uKspecularP");
     LightProgram.addUniform("uShininess");
     LightProgram.addUniform("uLightDir_vs");
     LightProgram.addUniform("uLightPos_vs");
     LightProgram.addUniform("uLightIntensity");
+    LightProgram.addUniform("uLightIntensityPonctual");
     LightProgram.addUniform("uMVPMatrix");
     LightProgram.addUniform("uMVMatrix");
     LightProgram.addUniform("uNormalMatrix");
@@ -159,15 +173,7 @@ int main(int argc, char **argv)
 
 
     // TEST TINY OBJ
-    rendering::Model nemo_obj;
-    nemo_obj.loadModel("Nemo.obj");
-    nemo_obj.setVbo();
-    nemo_obj.setVao();
 
-    rendering::Model shark_obj;
-    shark_obj.loadModel("shark.obj");
-    shark_obj.setVbo();
-    shark_obj.setVao();
 
 
 
@@ -353,10 +359,10 @@ int main(int argc, char **argv)
             glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
             // Drawing of the different elements
-            light.draw(camera,LightProgram, ProjMatrix, NormalMatrix, player);
+            light.drawDirectionnal(camera,LightProgram, ProjMatrix, NormalMatrix);
             player.draw(nemo_obj, camera, LightProgram, ProjMatrix);
-            enemy.draw(nemo_obj, camera, LightProgram, ProjMatrix);
-            courseMap.drawMap(cube_path, cube_coin, camera, LightProgram, ProjMatrix, windowManager);
+            enemy.draw(shark_obj, camera, LightProgram, ProjMatrix);
+            courseMap.drawMap(cube_path, nemo_obj, camera, LightProgram, ProjMatrix, windowManager, light);
             courseMap.drawObstacle(cube_obstacle, camera, LightProgram, ProjMatrix, windowManager);         
             
             

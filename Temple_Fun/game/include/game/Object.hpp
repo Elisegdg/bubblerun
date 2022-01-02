@@ -16,7 +16,7 @@
 #include<rendering/Cube.hpp>
 #include<rendering/Texture.hpp>
 #include <glimac/SDLWindowManager.hpp>
-
+#include <rendering/Light.hpp>
 
 namespace game{
 
@@ -92,7 +92,7 @@ public:
      *  \param windowManager The SDLWindowManager
      * 
      */
-    void drawCoins(rendering::Cube& mesh, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager);
+    void drawCoins(rendering::Model& mesh, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager, rendering::Light light);
     
     /*!
      *  \brief Setter of the Coin

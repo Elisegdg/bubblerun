@@ -8,7 +8,7 @@
 
 #include <rendering/Camera.hpp>
 #include <rendering/Program.hpp>
-#include <game/Player.hpp>
+
 
 
 namespace rendering{
@@ -30,7 +30,10 @@ public:
      *  \param NormalMatrix The Normal Matrix
      * 
      */
-    void draw(rendering::Camera* camera, rendering::ShaderManager& LightProgram, glm::mat4 ProjMatrix, glm::mat4 NormalMatrix, game::Player &player);
+    void drawDirectionnal(rendering::Camera* camera, rendering::ShaderManager& LightProgram, glm::mat4 ProjMatrix, glm::mat4 NormalMatrix);
+    void drawPonctual(const rendering::Camera* camera, rendering::ShaderManager& LightProgram, glm::mat4 ProjMatrix, glm::mat4 NormalMatrix, glm::vec3 coord);
+
+
 
 };
 }

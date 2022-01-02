@@ -13,6 +13,7 @@
 #include <glimac/FilePath.hpp>
 #include "Object.hpp"
 #include <game/Iterator.hpp>
+#include <rendering/Light.hpp>
 
 /*! \namespace game
  *  \brief Our game library
@@ -101,7 +102,7 @@ public:
      *  \param WindowManager The SDLWindowManager
      * 
      */
-    void drawMap(rendering::Cube& mesh_path, rendering::Cube& mesh_coin, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager) ;
+    void drawMap(rendering::Cube& mesh_path, rendering::Model & mesh_coin, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager, rendering::Light light) ;
 
     /*!
      *  \brief Draw the obstacles
@@ -111,6 +112,7 @@ public:
      *  \param Program The shader
      *  \param ProjMatrix The Projection Matrix
      *  \param WindowManager The SDLWindowManager
+     *  \param light Boolean to check if ponctual light needs to be drawn
      * 
      */
     void drawObstacle(rendering::Cube& mesh, const rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager) ;

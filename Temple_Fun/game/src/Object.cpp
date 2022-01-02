@@ -3,6 +3,7 @@
 #include <rendering/Program.hpp>
 #include <rendering/Camera.hpp>
 #include <rendering/Model.hpp>
+#include <rendering/Light.hpp>
 #include <glimac/SDLWindowManager.hpp>
 
 namespace game{
@@ -55,12 +56,12 @@ void Empty::draw(rendering::Cube& mesh,const rendering::Camera* camera, renderin
 }
 
 
-void Object::drawCoins(rendering::Cube& mesh, const rendering::Camera *camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager)
+void Object::drawCoins(rendering::Model& mesh, const rendering::Camera *camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix, glimac::SDLWindowManager& windowManager, rendering::Light light)
 {
 
     glm::mat4 ViewMatrix = camera->getViewMatrix();
     ViewMatrix = glm::translate(ViewMatrix, glm::vec3(getCoord().x-2, 0.2, getCoord().y));
-    ViewMatrix = glm::scale(ViewMatrix,glm::vec3(0.3, 0.3, 0.3));
+    ViewMatrix = glm::scale(ViewMatrix,glm::vec3(0.5,0.5, 0.5));
     //ViewMatrix = glm::rotate(ViewMatrix, windowManager.getTime(), glm::vec3(0,1,0)); // Translation * Rotation
     glm::mat4 NormalMatrix = glm::transpose(glm::inverse(ViewMatrix));
 
@@ -69,5 +70,6 @@ void Object::drawCoins(rendering::Cube& mesh, const rendering::Camera *camera, r
     Program.uniformMatrix4fv("uNormalMatrix", NormalMatrix);
     Program.uniform1i("uTexture", 0);
     mesh.draw();
+    light.drawPonctual(camera, Program, ProjMatrix, NormalMatrix, glm::vec3(getCoord().x-1.5, 0.2, getCoord().y));
 }
 }
