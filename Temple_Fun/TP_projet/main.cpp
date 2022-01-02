@@ -36,21 +36,6 @@
 
 using json = nlohmann::json;
 
-    void loadTexture(const std::string& fileName, GLuint &texture){
-        std::unique_ptr<glimac::Image> image = glimac::loadImage("../Temple_Fun/assets/models/"+fileName);
-
-        if(image=nullptr){
-            std::cout << "image non chargée" << std::endl;
-        }
-
-        glEnable(GL_TEXTURE_2D);
-        glGenTextures(1, &texture);
-        glBindTexture(GL_TEXTURE_2D, texture);
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image->getWidth(), image->getHeight(),0, GL_RGBA, GL_FLOAT, image->getPixels());
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        glBindTexture(GL_TEXTURE_2D,0);
-    };
-
 int main(int argc, char **argv)
 {
 
@@ -172,24 +157,24 @@ int main(int argc, char **argv)
         std::cerr << "Error : " << s << std::endl;
     }
 
+    // Load objects texture
+    rendering::Texture textureNemo("../Temple_Fun/assets/models/TEX_Nemo.png");
+    textureNemo.loadTexture();
+
+    rendering::Texture textureShark("../Temple_Fun/assets/models/TEX_Nemo.png");
+    textureShark.loadTexture();
 
     // Load objects
-    rendering::Model nemo_obj;
+    rendering::Model nemo_obj(textureNemo);
     nemo_obj.loadModel("Nemo.obj");
     nemo_obj.setVbo();
     nemo_obj.setVao();
 
-    rendering::Model shark_obj;
+    rendering::Model shark_obj(textureShark);
     shark_obj.loadModel("shark.obj");
     shark_obj.setVbo();
     shark_obj.setVao();
 
-    // Load objects texture
-    GLuint textureNemo;
-    loadTexture("TEX_nemo.png", textureNemo);
-
-    //GLuint textureShark;
-    //shark_obj.loadTexture("", textureShark);
 
     // Application loop:
     bool done = false, repeat = false, again = true;
@@ -374,8 +359,8 @@ int main(int argc, char **argv)
 
             // Drawing of the different elements
             light.draw(camera,LightProgram, ProjMatrix, NormalMatrix, player);
-            player.draw(nemo_obj, textureNemo, camera, LightProgram, ProjMatrix);
-            enemy.draw(nemo_obj,textureNemo, camera, LightProgram, ProjMatrix);
+            player.draw(nemo_obj,  camera, LightProgram, ProjMatrix);
+            enemy.draw(nemo_obj, camera, LightProgram, ProjMatrix);
             courseMap.drawMap(cube_path, cube_coin, camera, LightProgram, ProjMatrix, windowManager);
             courseMap.drawObstacle(cube_obstacle, camera, LightProgram, ProjMatrix, windowManager);
 

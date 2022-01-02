@@ -192,7 +192,7 @@ public:
      *  \param ProjMatrix The Projection Matrix
      * 
      */
-    void draw(rendering::Model& mesh, GLuint &texture, rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix);
+    void draw(rendering::Model& mesh, rendering::Camera* camera, rendering::ShaderManager& Program, glm::mat4 ProjMatrix);
 };
 
 }
