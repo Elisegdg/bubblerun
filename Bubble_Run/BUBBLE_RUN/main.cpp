@@ -283,7 +283,7 @@ int main(int argc, char **argv)
         }
 
         // RESET THE GAME DATA IF THE USER WANTS TO PLAY AGAIN
-        if (again = true & !menu_play_again & player.getCoord() == glm::vec3(1, 0, 0))
+        if (again = true & !menu_play_again & !menu_bool & player.getCoord() == glm::vec3(2, 3, 0))
         {
             courseMap.loadCoins();
             score = 0;
